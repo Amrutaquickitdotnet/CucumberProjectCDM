@@ -18,6 +18,9 @@ public class EdgeDevicesPage extends CommonActions {
 		super(driver, logger);
 		PageFactory.initElements(driver, this);
 	}
+	
+	@FindBy(xpath = "//span[contains(text(),'Add')]")
+	WebElement AddButtonEdgeDevice;
 
 	@FindBy(xpath = "//h2[@class='titleHeading']")
 	WebElement WebDevices_heading;
@@ -113,7 +116,24 @@ public class EdgeDevicesPage extends CommonActions {
 	//
 	@FindBy(css = ".cdk-overlay-backdrop-showing")
 	WebElement backDropShowing;
-
+	
+	@FindBy(css = ".cdk-overlay-backdrop cdk-overlay-transparent-backdrop cdk-overlay-backdrop-showing")
+	WebElement backDropTransparent;
+	
+	@FindBy(xpath = "//tbody/tr[1]/td[7]/img[4]")
+	WebElement deployclickfromActionsColumn;
+	
+	/*
+	 * @FindBy(xpath =
+	 * "//body/app-root[1]/app-root[1]/app-home[1]/mat-sidenav-container[1]/mat-sidenav-content[1]/div[2]/div[1]/app-edgegroup-config[1]/div[1]/h4[1]")
+	 * WebElement deployListpageVerification;
+	 */
+	
+	
+	public void clickondeployimage() {
+		deployclickfromActionsColumn.click();
+	}
+	
 	
 	public String get_Text_ToolTipviewAlert() {
 		scrollingElementRightBar("div.example-container", "900");
@@ -142,6 +162,9 @@ public class EdgeDevicesPage extends CommonActions {
 		mouseHover(DeleteButton);
 	}
 
+	
+	
+	
 	public String get_Text_ToolTipDelete() {
 		// To get the tool tip text and assert
 		scrollingElementRightBar("div.example-container", "900");
@@ -182,6 +205,12 @@ public class EdgeDevicesPage extends CommonActions {
 	public void backDropShowing_Div_Click() {
 		if(backDropShowing!=null) {
 			backDropShowing.click();
+		}
+	}
+	
+	public void backDropTransparent_Div_Click() {
+		if(backDropTransparent!=null) {
+			backDropTransparent.click();
 		}
 	}
 	
@@ -324,6 +353,15 @@ public String removalofEneredTextForEdgeId() {
 			e.printStackTrace();
 		}
 		DeleteButton.click();
+	}
+	
+public String get_Text_AddEdgeDevice() {
+	
+	String BreadcrumbAdd = AddButtonEdgeDevice.getText();
+	System.out.println("toolTipText-->" + BreadcrumbAdd);
+	return BreadcrumbAdd;
+	
+		
 	}
 
 }

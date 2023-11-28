@@ -250,32 +250,30 @@ Feature: EDGE Devices
 #Then Click on EDGE Device module from side menu bar
 #Then Click on search icon i.e. three dots & search text field visible with cursor
 #
-@Test
-Scenario: TC34_Verification of the removal of search results and text for all columns in the EDGE Device screen
-Given User launch application in chrome browser
-When user enters credentials and click on login button
-Then Click on EDGE Device module from side menu bar
-Then Click on search icon i.e. three dots & search text field visible 
-And Enter valid inputs as per required from table details into search text field and enter backspace & click on enter
+#@Test
+#Scenario: TC34_Verification of the removal of search results and text for all columns in the EDGE Device screen
+#Given User launch application in chrome browser
+#When user enters credentials and click on login button
+#Then Click on EDGE Device module from side menu bar
+#Then Click on search icon i.e. three dots & search text field visible 
+#And Enter valid inputs as per required from table details into search text field and enter backspace & click on enter
 
 #@Test
 #Scenario: TC35_Verification of the search functionality for overall table in the EDGE Device screen
 #Given User launch application in chrome browser
-#When user enters URL
-#And user enters credentials and click on login button
-#And Click on the EDGE Device module from side menu bar
+#When user enters credentials and click on login button
+#Then Click on EDGE Device module from side menu bar
 #Then Click on search menu bar on the top of the screen.
 #Then Enter invalid inputs into search text field & click on search
 #
-#@Test
-#Scenario: TC36_Verification of blank value rejections in available fields of Identity section in Add screen of EDGE Device module 
-#Given User launch application in chrome browser
-#When user enters URL
-#And user enters credentials and click on login button
-#And Click on the EDGE Device module from side menu bar
-#And After landing on EDGE Device List screen
-#Then Click on ADD New button on the top right side & landed on EDGE > ADD Screen
-#
+@Test
+Scenario: TC36_Verification of Add screen of EDGE Device module 
+Given User launch application in chrome browser
+When user enters credentials and click on login button
+Then Click on EDGE Device module from side menu bar
+And Click on ADD New button on the top right side 
+Then user is landed on EDGE > ADD Screen
+
 #@Test
 #Scenario: TC37_Verification of blank value rejections in available fields of Health section in Add screen of EDGE Device module
 #Given User launch application in chrome browser
@@ -495,9 +493,8 @@ And Enter valid inputs as per required from table details into search text field
 #@Test
 #Scenario: TC57_Verification of Viewing of all the steppers & select the application to deploy application in Individual EDGE Device
 #Given User launch application in chrome browser
-#When user enters URL
-#And user enters credentials and click on login button
-#And Click on the EDGE Device module from side menu bar
+#When user enters credentials and click on login button
+#Then Click on EDGE Device module from side menu bar
 #And After landing on EDGE Device List screen
 #Then Click on Deploy apps button on the Actions column
 #And landed on EDGE>Application Deployment screen 

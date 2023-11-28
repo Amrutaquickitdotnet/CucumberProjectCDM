@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRunner" project="CDMProject" tests="1" started="1" failures="1" errors="0" ignored="0">
+  <testsuite name="com.cdm.runner.TestRunner" time="33.203">
+    <testsuite name="EDGE Devices" time="33.203">
+      <testcase name="TC57_Verification of Viewing of all the steppers &amp; select the application to deploy application in Individual EDGE Device" classname="EDGE Devices" time="33.203">
+        <failure>
+          <expected>1EDGE Devices &gt; Application Deployment</expected>
+          <actual>EDGE Devices &gt; Application Deployment</actual>
+          org.junit.ComparisonFailure: Edge Group Configuration breadcrum does not matching  expected:&lt;[1]EDGE Devices &gt; Appli...&gt; but was:&lt;[]EDGE Devices &gt; Appli...&gt;&#13;
+	at org.junit.Assert.assertEquals(Assert.java:117)&#13;
+	at com.cdm.Stepdefinitions.EDGEDevicesSteps.landed_on_edge_application_deployment_screen(EDGEDevicesSteps.java:273)&#13;
+	at ✽.landed on EDGE&gt;Application Deployment screen(file:///E:/Devendra/cdm/CDMCucumber/CDMProject/src/test/resources/Features/EDGEDevices.feature:500)&#13;
+&#13;
+
+        </failure>
+      </testcase>
+    </testsuite>
+  </testsuite>
+</testrun>

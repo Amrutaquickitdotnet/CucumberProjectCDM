@@ -13,7 +13,7 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(
 		//features = "src/test/resources/Features/",  
 		//features = "src/test/resources/Features/LoginApp.feature",
-	 glue = {"com.cdm.Stepdefinitions"},
+	glue = {"com.cdm.Stepdefinitions"},
 	    features = "src/test/resources/Features/EDGEDevices.feature",
 		//glue = {"com.cdm.Stepdefinitions.EDGEDevices"},
 				//glue = {"helpers","com.cdm.Stepdefinitions/loginSteps.java"},
