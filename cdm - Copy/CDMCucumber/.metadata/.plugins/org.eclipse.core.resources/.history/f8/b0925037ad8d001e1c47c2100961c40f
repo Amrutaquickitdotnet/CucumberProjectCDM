@@ -1,0 +1,201 @@
+package com.cdm.pages;
+
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.PageFactory;
+
+import com.aventstack.extentreports.ExtentTest;
+import com.cdm.common.CommonActions;
+
+public class EdgeDevicesPage extends CommonActions {
+
+	public EdgeDevicesPage(WebDriver driver, ExtentTest logger) {
+		super(driver, logger);
+		PageFactory.initElements(driver, this);
+	}
+
+	@FindBy(xpath = "//h2[@class='titleHeading']")
+	WebElement WebDevices_heading;
+
+	// ScrollIntoView
+	@FindBy(xpath = "/html/body/app-root/app-root/app-home/mat-sidenav-container/mat-sidenav-content/div[2]/div/app-device/div/div[2]/div/table/thead/tr/th[6]/div/span/div/div[1]")
+	WebElement Status_Heading;
+
+	@FindBy(xpath = "//td[@class='mat-cell cdk-cell table-data cdk-column-devicename mat-column-devicename ng-star-inserted']")
+	WebElement Number_of_devices;
+
+	@FindBy(how = How.XPATH, using = "//body/app-root[1]/app-root[1]/app-home[1]/mat-sidenav-container[1]/mat-sidenav-content[1]/div[2]/div[1]/app-device[1]/div[1]/div[1]/div[1]/img[1]")
+	WebElement Refresh_btn;
+
+	@FindBy(xpath = "//body/app-root[1]/app-root[1]/app-home[1]/mat-sidenav-container[1]/mat-sidenav-content[1]/div[2]/div[1]/app-device[1]/div[1]/div[1]/div[1]/img[2]")
+	WebElement Add_btn;
+
+	@FindBy(xpath = "//body/app-root[1]/app-root[1]/app-home[1]/mat-sidenav-container[1]/mat-sidenav-content[1]/div[2]/div[1]/app-device[1]/div[1]/div[1]/div[1]/img[3]")
+	WebElement BulkUpload_btn;
+
+	@FindBy(xpath = "//body/app-root[1]/app-root[1]/app-home[1]/mat-sidenav-container[1]/mat-sidenav-content[1]/div[2]/div[1]/app-device[1]/div[1]/div[1]/div[1]/img[4]")
+	WebElement Download_btn;
+
+	@FindBy(xpath = "//body/app-root[1]/app-root[1]/app-home[1]/mat-sidenav-container[1]/mat-sidenav-content[1]/div[2]/div[1]/app-device[1]/div[1]/div[1]/div[1]/img[5]")
+	WebElement Configuration_Icon_Button;
+	
+	
+	@FindBy(xpath="//thead/tr[1]/th[1]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]")
+	WebElement Search_Button;
+	
+	@FindBy(xpath="//input[@name=\"devicename\"]")
+	WebElement devicename;
+	
+	@FindBy(xpath="//tbody/tr[1]/td[7]/img[1]")
+	WebElement EditButton;
+	
+	
+	@FindBy(xpath="//tbody/tr[1]/td[7]/img[2]")
+	WebElement DeleteButton;
+	
+	@FindBy(xpath="//body/div[3]/div[2]/div[1]/mat-dialog-container[1]/app-confirmationdelete[1]/div[1]/mat-dialog-actions[1]/button[1]")
+	WebElement ConfirmationYesButton;
+	
+	@FindBy(xpath="//span[contains(text(),'No')]")
+	WebElement ConfirmationNoButton;
+	
+	
+	@FindBy(xpath="//tbody/tr[1]/td[7]/img[2]")
+	WebElement DeleteButtonToolTip;
+	
+	
+	public void  mouseRollHoverDelete() {
+		  JavascriptExecutor js = (JavascriptExecutor)driver;
+		    js.executeScript("window.scrollBy(250,0)", "");
+		    try {
+				Thread.sleep(5000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		mouseHover(DeleteButton);
+	}
+	
+	public void Show_ToolTipDelete() {
+		// To get the tool tip text and assert
+		 JavascriptExecutor js = (JavascriptExecutor)driver;
+		    js.executeScript("window.scrollBy(250,0)", "");
+		    try {
+				Thread.sleep(5000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		String deletetoolTipText = DeleteButtonToolTip.getText();
+		System.out.println("toolTipText-->"+deletetoolTipText);
+		
+	}
+
+
+	public void Search_Button() {
+
+		Search_Button.click();
+	}
+	
+	
+	public void Confirmation_YesButton() {
+
+		ConfirmationYesButton.click();
+	}
+	
+	
+	public void Confirmation_NoButton() {
+
+		ConfirmationNoButton.click();
+	}
+
+	
+	public void clickRefreshButton() {
+
+		Refresh_btn.click();
+	}
+	
+	public void sendValueSearchIcon(String value) {
+
+		
+		devicename.sendKeys(value);
+	}
+
+	public void clickAddButton() {
+
+		Add_btn.click();
+	}
+
+	public void clickBulkUpload() {
+
+		BulkUpload_btn.click();
+	}
+
+	public void clickDownload() {
+
+		Download_btn.click();
+	}
+
+	public void clickConfiguration() {
+
+		Configuration_Icon_Button.click();
+	}
+
+	public boolean isVisibleRefresh() {
+
+		return Refresh_btn != null && Refresh_btn.isDisplayed();
+	}
+
+	public boolean isVisibleAdd() {
+
+		return Add_btn != null && Add_btn.isDisplayed();
+	}
+
+	public boolean isVisibleUpload() {
+
+		return BulkUpload_btn != null && BulkUpload_btn.isDisplayed();
+	}
+
+	public boolean isVisibleDownload() {
+
+		return Download_btn != null && Download_btn.isDisplayed();
+	}
+
+	public boolean isVisibleSettingButton() {
+
+		return Configuration_Icon_Button != null && Configuration_Icon_Button.isDisplayed();
+	}
+
+	
+	public void clickEditButton() {
+
+		
+		    JavascriptExecutor js = (JavascriptExecutor)driver;
+		    js.executeScript("window.scrollBy(250,0)", "");
+		    try {
+				Thread.sleep(5000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		    EditButton.click();
+	}
+	
+	public void clickDeleteButton() {
+
+		
+	    JavascriptExecutor js = (JavascriptExecutor)driver;
+	    js.executeScript("window.scrollBy(250,0)", "");
+	    try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	    DeleteButton.click();
+}
+	
+}

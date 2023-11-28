@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRunner" project="CDMProject" tests="1" started="1" failures="1" errors="0" ignored="0">
+  <testsuite name="com.cdm.runner.TestRunner" time="23.441">
+    <testsuite name="EDGE Devices" time="23.441">
+      <testcase name="TC14_Verification of tooltip functionality for Delete" classname="EDGE Devices" time="23.441">
+        <failure>
+          <expected>delete2</expected>
+          <actual>Delete</actual>
+          org.junit.ComparisonFailure: Tooltip of delete button expected:&lt;[delete2]&gt; but was:&lt;[Delete]&gt;&#13;
+	at org.junit.Assert.assertEquals(Assert.java:117)&#13;
+	at com.cdm.Stepdefinitions.EDGEDevicesSteps.after_landing_on_edge_device_list_screen_and_mousehover_on_delete_icon_button(EDGEDevicesSteps.java:144)&#13;
+	at ✽.After landing on EDGE Device List screen And Mousehover on DELETE icon button(file:///E:/Devendra/cdm/CDMCucumber/CDMProject/src/test/resources/Features/EDGEDevices.feature:103)&#13;
+&#13;
+
+        </failure>
+      </testcase>
+    </testsuite>
+  </testsuite>
+</testrun>

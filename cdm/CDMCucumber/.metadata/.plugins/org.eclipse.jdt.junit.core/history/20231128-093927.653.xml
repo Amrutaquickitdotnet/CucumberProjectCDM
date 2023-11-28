@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRunner" project="CDMProject" tests="1" started="1" failures="0" errors="1" ignored="0">
+  <testsuite name="com.cdm.runner.TestRunner" time="25.986">
+    <testsuite name="EDGE Devices" time="25.986">
+      <testcase name="TC08_Verification of Application Configuration button functionality" classname="EDGE Devices" time="25.986">
+        <error>io.cucumber.junit.UndefinedStepException: The step 'After landing on EDGE Device List screen' is undefined.
+You can implement this step using the snippet(s) below:
+
+@Then("After landing on EDGE Device List screen")
+public void after_landing_on_edge_device_list_screen() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+&#13;
+&#13;
+</error>
+      </testcase>
+    </testsuite>
+  </testsuite>
+</testrun>

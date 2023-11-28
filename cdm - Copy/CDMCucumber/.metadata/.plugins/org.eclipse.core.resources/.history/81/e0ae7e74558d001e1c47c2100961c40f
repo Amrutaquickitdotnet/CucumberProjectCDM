@@ -1,0 +1,102 @@
+package com.cdm.Stepdefinitions;
+
+import java.util.Collection;
+import java.util.Iterator;
+
+import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
+
+import com.cdm.pages.EdgeDevicesPage;
+import com.cdm.pages.LoginPage;
+import com.cdm.pages.Menu;
+
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+public class EDGEDevicesSteps extends BaseTest{
+
+	@Then("Click on EDGE Device module from side menu bar")
+	public void click_on_edge_device_module_from_side_menu_bar() {
+		Menu edp=new Menu(driver,logger);
+		edp.clickEdgeDevices();
+		
+		try {
+			Thread.sleep(7000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	
+	@Then("Verify the all the buttons are present on the screen")
+	public void verify_the_all_the_buttons_are_present_on_the_screen() throws InterruptedException {
+	   
+		EdgeDevicesPage edp=new EdgeDevicesPage(driver, logger);
+	 Assert.assertTrue("Refresh button is not visible",edp.isVisibleRefresh());
+	 Assert.assertTrue("Add button is not visible",edp.isVisibleAdd());
+	 Assert.assertTrue("Upload button is not visible",edp.isVisibleUpload());
+	 Assert.assertTrue("Download button is not visible",edp.isVisibleDownload());
+	 Assert.assertTrue("SettingButton button is not visible",edp.isVisibleSettingButton());
+	}
+	
+	
+	@Then("After landing on EDGE Device List screen, and Click on Refresh button")
+	public void after_landing_on_edge_device_list_screen_and_click_on_refresh_button() {
+		EdgeDevicesPage edp=new EdgeDevicesPage(driver, logger);
+		edp.clickRefreshButton();
+	}
+	
+	@Then("After landing on EDGE Device List screen, Click on ADD New button")
+	public void after_landing_on_edge_device_list_screen_click_on_add_new_button() {
+		EdgeDevicesPage edp=new EdgeDevicesPage(driver, logger);
+		edp.clickAddButton();
+	}
+	
+	@Then("After landing on EDGE Device List screen, Click on Search bar after entering data")
+	public void after_landing_on_edge_device_list_screen_click_on_search_bar_after_entering_data() {
+		EdgeDevicesPage edp=new EdgeDevicesPage(driver, logger);
+		edp.Search_Button();
+		//edp.sendValueSearchIcon();
+		
+	}
+
+	
+	
+		@Given("move to EdgeDevices tab")
+		public void move_to_edge_devices_tab() {
+		    // Write code here that turns the phrase above into concrete actions
+			initiationData();
+		}
+
+		@Then("EdgeDevices tab should open")
+		public void edge_devices_tab_should_open() {
+		    // Write code here that turns the phrase above into concrete actions
+		   
+		}
+
+		@Then("check for Heading")
+		public void check_for_heading() {
+		    // Write code here that turns the phrase above into concrete actions
+		    
+		}
+
+		@Then("check for the table rows")
+		public void check_for_the_table_rows() {
+		    // Write code here that turns the phrase above into concrete actions
+		    
+		}
+
+		@Then("check for collapse button")
+		public void check_for_collapse_button() {
+		    // Write code here that turns the phrase above into concrete actions
+		     
+		}
+
+}

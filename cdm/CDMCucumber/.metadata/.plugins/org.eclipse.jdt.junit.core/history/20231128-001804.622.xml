@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRunner" project="CDMProject" tests="1" started="1" failures="0" errors="1" ignored="0">
+  <testsuite name="com.cdm.runner.TestRunner" time="27.26">
+    <testsuite name="EDGE Devices" time="27.26">
+      <testcase name="TC07_Verification of Search button functionality" classname="EDGE Devices" time="27.26">
+        <error>java.lang.IllegalArgumentException: Keys to send should be a not null CharSequence&#13;
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:97)&#13;
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)&#13;
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)&#13;
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)&#13;
+	at jdk.proxy2/jdk.proxy2.$Proxy22.sendKeys(Unknown Source)&#13;
+	at com.cdm.pages.EdgeDevicesPage.sendValueSearchIcon(EdgeDevicesPage.java:60)&#13;
+	at com.cdm.Stepdefinitions.EDGEDevicesSteps.after_landing_on_edge_device_list_screen_click_on_search_bar_after_entering_data(EDGEDevicesSteps.java:66)&#13;
+	at ✽.After landing on EDGE Device List screen, Click on Search bar after entering data(file:///E:/Devendra/cdm/CDMCucumber/CDMProject/src/test/resources/Features/EDGEDevices.feature:52)&#13;
+&#13;
+</error>
+      </testcase>
+    </testsuite>
+  </testsuite>
+</testrun>

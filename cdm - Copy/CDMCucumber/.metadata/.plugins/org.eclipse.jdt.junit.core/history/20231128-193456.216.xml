@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRunner" project="CDMProject" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="com.cdm.runner.TestRunner" time="31.25">
+    <testsuite name="EDGE Devices" time="31.25">
+      <testcase name="TC34_Verification of the removal of search results and text for all columns in the EDGE Device screen" classname="EDGE Devices" time="31.25"/>
+    </testsuite>
+  </testsuite>
+</testrun>

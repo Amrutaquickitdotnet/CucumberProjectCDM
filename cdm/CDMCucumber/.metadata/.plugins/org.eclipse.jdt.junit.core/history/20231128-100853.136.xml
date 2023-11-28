@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRunner" project="CDMProject" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="com.cdm.runner.TestRunner" time="30.056">
+    <testsuite name="EDGE Devices" time="30.056">
+      <testcase name="TC11_Verification of Delete functionality" classname="EDGE Devices" time="30.056"/>
+    </testsuite>
+  </testsuite>
+</testrun>

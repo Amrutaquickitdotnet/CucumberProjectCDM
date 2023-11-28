@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRunner" project="CDMProject" tests="1" started="1" failures="0" errors="1" ignored="0">
+  <testsuite name="com.cdm.runner.TestRunner" time="0.394">
+    <testsuite name="EDGE Devices" time="0.394">
+      <testcase name="TC09_Verification of Bulk download button functionality" classname="EDGE Devices" time="0.394">
+        <error>io.cucumber.junit.UndefinedStepException: The step 'User launch application in chrome browser' and 3 other step(s) are undefined.
+You can implement these steps using the snippet(s) below:
+
+@Given("User launch application in chrome browser")
+public void user_launch_application_in_chrome_browser() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@When("user enters credentials and click on login button")
+public void user_enters_credentials_and_click_on_login_button() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("Click on EDGE Device module from side menu bar")
+public void click_on_edge_device_module_from_side_menu_bar() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("After landing on EDGE Device List screen Click on Download icon Button")
+public void after_landing_on_edge_device_list_screen_click_on_download_icon_button() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+&#13;
+&#13;
+</error>
+      </testcase>
+    </testsuite>
+  </testsuite>
+</testrun>

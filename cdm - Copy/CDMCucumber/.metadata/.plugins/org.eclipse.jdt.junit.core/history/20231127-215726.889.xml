@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRunner" project="CDMProject" tests="3" started="3" failures="0" errors="1" ignored="0">
+  <testsuite name="com.cdm.runner.TestRunner" time="45.201">
+    <testsuite name="EDGE Devices" time="45.201">
+      <testcase name="TC01_Verification of Browser Compatibility of EDGE Device module" classname="EDGE Devices" time="18.272"/>
+      <testcase name="TC02_Resizing_login_page_screen(Zoom Levels)" classname="EDGE Devices" time="14.024"/>
+      <testcase name="TC03_Verification of displaying the EDGE Device table details" classname="EDGE Devices" time="12.904">
+        <error>io.cucumber.junit.UndefinedStepException: The step 'Click on EDGE Device module from side menu bar' is undefined.
+You can implement this step using the snippet(s) below:
+
+@Then("Click on EDGE Device module from side menu bar")
+public void click_on_edge_device_module_from_side_menu_bar() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+&#13;
+&#13;
+</error>
+      </testcase>
+    </testsuite>
+  </testsuite>
+</testrun>

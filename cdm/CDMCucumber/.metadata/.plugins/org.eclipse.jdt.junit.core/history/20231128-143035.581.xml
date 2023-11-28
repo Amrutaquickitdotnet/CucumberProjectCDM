@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRunner" project="CDMProject" tests="1" started="1" failures="0" errors="1" ignored="0">
+  <testsuite name="com.cdm.runner.TestRunner" time="6.783">
+    <testsuite name="EDGE Devices" time="6.783">
+      <testcase name="TC24_Verification of the search functionality for EDGE ID column" classname="EDGE Devices" time="6.783">
+        <error>io.cucumber.junit.UndefinedStepException: The step 'user enters URL' and 2 other step(s) are undefined.
+You can implement these steps using the snippet(s) below:
+
+@When("user enters URL")
+public void user_enters_url() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@When("Click on the EDGE Device module from side menu bar")
+public void click_on_the_edge_device_module_from_side_menu_bar() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("Click on EDGE ID search icon i.e. three dots.")
+public void click_on_edge_id_search_icon_i_e_three_dots() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+&#13;
+&#13;
+</error>
+      </testcase>
+    </testsuite>
+  </testsuite>
+</testrun>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRunner" project="CDMProject" tests="1" started="1" failures="0" errors="1" ignored="0">
+  <testsuite name="com.cdm.runner.TestRunner" time="3.784">
+    <testsuite name="EDGE Devices" time="3.784">
+      <testcase name="TC34_Verification of the removal of search results and text for all columns in the EDGE Device screen" classname="EDGE Devices" time="3.784">
+        <error>java.lang.NullPointerException: Cannot invoke "java.util.Map.get(Object)" because the return value of "java.util.Map.get(Object)" is null&#13;
+	at com.cdm.Stepdefinitions.Common.user_launch_application_in_chrome_browser(Common.java:51)&#13;
+	at ✽.User launch application in chrome browser(file:///E:/Devendra/cdm/CDMCucumber/CDMProject/src/test/resources/Features/EDGEDevices.feature:255)&#13;
+&#13;
+</error>
+      </testcase>
+    </testsuite>
+  </testsuite>
+</testrun>

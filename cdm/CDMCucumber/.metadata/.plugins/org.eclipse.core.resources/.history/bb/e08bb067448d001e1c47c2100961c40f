@@ -1,0 +1,37 @@
+package com.cdm.Stepdefinitions;
+
+import java.util.Collection;
+import java.util.Iterator;
+
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
+
+public class Common extends BaseTest {
+	@Before
+	public void getScenario(Scenario scenario) {
+		//initiation();
+		vTCName = scenario.getName();
+		Collection<String> tagNames= scenario.getSourceTagNames();
+		Iterator<String> itrator =tagNames.iterator();		
+		while (itrator.hasNext()) {			 
+			String temp=itrator.next();
+			System.out.println("I am tag Name" + temp);
+			if(temp.startsWith("@Sheet")) {
+				tagName=temp.replace("@", "");
+			System.out.println("I am tag Name" + tagName);
+			}
+		}
+		initiationData();
+		logger = extent.createTest(vTCName);
+	}
+	
+
+@After
+	public void savereport()
+	{
+		extent.flush();
+		driver.close();
+	}
+	
+}

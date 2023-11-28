@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRunner" project="CDMProject" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="com.cdm.runner.TestRunner" time="25.636">
+    <testsuite name="EDGE Devices" time="25.636">
+      <testcase name="TC05_Verification of Refreshing button functionality" classname="EDGE Devices" time="25.637"/>
+    </testsuite>
+  </testsuite>
+</testrun>

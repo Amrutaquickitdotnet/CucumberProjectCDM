@@ -1,0 +1,10 @@
+#chrome,firfox, edge structure
+Browser=chrome
+BrowserPath=D:\\code\\chromedriver\\chromedriver.exe
+AppUrl=http://20.127.21.109/
+ImplicitWait=5
+
+DBHost= 
+DBUserid=
+DBPwd=
+DBName=
