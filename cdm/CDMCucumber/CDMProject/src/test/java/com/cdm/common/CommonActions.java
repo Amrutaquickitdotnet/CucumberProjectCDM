@@ -35,6 +35,8 @@ public class CommonActions {
 	}
 	
 	
+	
+	
 	public void SetInput(WebElement elm, String data,String msg)
 	{
 		try
@@ -221,6 +223,19 @@ public String removalofEneredText(WebElement element) {
 			}
 	}
 	
+	public void scrollingvertical(String cssSelector,String startingPoint, String height) {
+		
+		 JavascriptExecutor js = (JavascriptExecutor)driver;
+		    js.executeScript("document.querySelector('"+cssSelector+"').scrollTo("+startingPoint+", "+height+")");
+		    try {
+				Thread.sleep(5000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				
+				
+				e.printStackTrace();
+			}
+	}
 	
 	
 	
@@ -228,10 +243,18 @@ public String removalofEneredText(WebElement element) {
 	{
 		Select s = new Select(dropdownEle);
 		s.selectByVisibleText(text);
-	List<WebElement>allOptions =	s.getOptions();
-	for(WebElement paginationOptions:allOptions) {
-		String paginationOptionText = paginationOptions.getText();
-		System.out.println(paginationOptionText);
+//	List<WebElement>allOptions =	s.getOptions();
+//	for(WebElement paginationOptions:allOptions) {
+//		String paginationOptionText = paginationOptions.getText();
+//		System.out.println(paginationOptionText);
+//	}
+	
+	
 	}
+	public void SelectMatOption(WebElement ele,String text) throws InterruptedException {
+		ele.click();
+		String xpath="//mat-option/span[contains(text(),'"+text+"')]";
+		 WebElement optionToSelect = driver.findElement(By.xpath(xpath));
+		 optionToSelect.click();
 	}
 }

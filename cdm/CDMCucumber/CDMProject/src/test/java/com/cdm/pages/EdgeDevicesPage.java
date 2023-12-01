@@ -19,6 +19,9 @@ public class EdgeDevicesPage extends CommonActions {
 		PageFactory.initElements(driver, this);
 	}
 	
+	
+	
+	
 	@FindBy(xpath = "//span[contains(text(),'Add')]")
 	WebElement AddButtonEdgeDevice;
 
@@ -280,6 +283,8 @@ public String removalofEneredTextForEdgeId() {
 		 
 	}
 	
+
+
 	
 	public void clickAddButton() {
 
@@ -363,5 +368,18 @@ public String get_Text_AddEdgeDevice() {
 	
 		
 	}
+
+public String get_Text_EdgeListHeading() {
+	
+	String EdgeDeviceList = WebDevices_heading.getText();
+	System.out.println("Title on Edge Device List page-->" + EdgeDeviceList);
+	return EdgeDeviceList;
+	
+		
+	}
+
+
+
+
 
 }

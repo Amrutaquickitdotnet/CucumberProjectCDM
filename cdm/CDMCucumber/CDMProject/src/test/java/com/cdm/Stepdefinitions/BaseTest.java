@@ -116,7 +116,16 @@ public static String tagName="";
 
 		for(int i=0;i<clms.size();i++)
 		{			
-			rowdata.put(clms.get(i), recordset.getField(clms.get(i)));
+			String value=recordset.getField(clms.get(i));
+			if(value!=null && value.startsWith("'")) {
+				if(value.length()>1) {
+					value=value.substring(1).trim();
+				}
+				else {
+					value="";
+				}
+			}
+			rowdata.put(clms.get(i), value);
 		}
 		alldata.put(TCName, rowdata);
 		}

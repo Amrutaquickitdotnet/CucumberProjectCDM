@@ -222,6 +222,7 @@ Feature: EDGE Devices
 #When user enters URL
 #And user enters credentials and click on login button
 #And Click on the EDGE Device module from side menu bar
+#Then Click on ADD New button on the top right side & landed on EDGE>ADD Screen
 #Then Click on HEALTH STATUS search icon
 #Then Click on three dots & enter Valid inputs into search text field.
 #
@@ -266,57 +267,52 @@ Feature: EDGE Devices
 #Then Click on search menu bar on the top of the screen.
 #Then Enter invalid inputs into search text field & click on search
 #
-@Test
-Scenario: TC36_Verification of Add screen of EDGE Device module 
-Given User launch application in chrome browser
-When user enters credentials and click on login button
-Then Click on EDGE Device module from side menu bar
-And Click on ADD New button on the top right side 
-Then user is landed on EDGE > ADD Screen
+#@Test
+#Scenario: TC36_Verification of Add screen of EDGE Device module 
+#Given User launch application in chrome browser
+#When user enters credentials and click on login button
+#Then Click on EDGE Device module from side menu bar
+#And Click on ADD New button on the top right side 
+#Then user is landed on EDGE > ADD Screen
 
 #@Test
 #Scenario: TC37_Verification of blank value rejections in available fields of Health section in Add screen of EDGE Device module
 #Given User launch application in chrome browser
-#When user enters URL
-#And user enters credentials and click on login button
-#And Click on the EDGE Device module from side menu bar
+#When user enters credentials and click on login button
+#Then Click on EDGE Device module from side menu bar
 #And After landing on EDGE Device List screen
 #Then Click on ADD New button on the top right side & landed on EDGE>ADD Screen
-#
+
 #@Test
 #Scenario: TC38_Verification of blank value rejections in available fields of Registration & Licence sections in Add screen of EDGE Device module
 #Given User launch application in chrome browser
-#When user enters URL
-#And user enters credentials and click on login button
-#And Click on the EDGE Device module from side menu bar
+#When user enters credentials and click on login button
+#Then Click on EDGE Device module from side menu bar
 #And After landing on EDGE Device List screen
-#Then Click on ADD New button on the top right side
-#Then landed on EDGE > ADD Screen
+#Then Click on ADD New button on the top right side & landed on EDGE>ADD Screen
 #And without enter any values
-#Then  click on save
-#Then scroll up
+#Then scroll down
+#Then click on save
+
 #
 #@Test
 #Scenario: TC39_Verification of blank value rejections in available fields of Deployment section in Add screen
 #Given User launch application in chrome browser
-#When user enters URL
-#And user enters credentials and click on login button
-#And Click on the EDGE Device module from side menu bar
+#When user enters credentials and click on login button
+#Then Click on EDGE Device module from side menu bar
 #And After landing on EDGE Device List screen
-#Then Click on ADD New button on the top right side
-#Then landed on EDGE>ADD Screen & without enter any values
-#Then click on save
-#Then scroll down
-#
+#Then Click on ADD New button on the top right side & landed on EDGE>ADD Screen
+#And without enter any values
+#Then scroll down to deployment section
+#Then click on save button
+
 #@Test
 #Scenario: TC40_Verification of redirection functionality for Cancel icon in Add screen
 #Given User launch application in chrome browser
-#When user enters URL
-#And user enters credentials and click on login button
-#And Click on the EDGE Device module from side menu bar
-#Then landing on EDGE Device List screen
-#Then Click on ADD New button ("+" Icon) on the top right side
-#Then landed on EDGE>ADD Screen
+#When user enters credentials and click on login button
+#Then Click on EDGE Device module from side menu bar
+#And After landing on EDGE Device List screen
+#Then Click on ADD New button(+) icon on the top right side & landed on EDGE>ADD Screen
 #Then click on cancel button in EDGE>ADD screen
 #
 #@Test
@@ -324,7 +320,7 @@ Then user is landed on EDGE > ADD Screen
 #Given User launch application in chrome browser
 #When user enters URL
 #And user enters credentials and click on login button
-#And Click on the EDGE Device module from side menu bar
+#Then Click on EDGE Device module from side menu bar
 #And After landing on EDGE Device List screen
 #Then Click on ADD New button on the top right side
 #Then landed on EDGE>ADD Screen
@@ -333,75 +329,68 @@ Then user is landed on EDGE > ADD Screen
 #@Test
 #Scenario: TC42_Verification of entry of valid data for all the text fields (Mandatory & Optional) in Add screen 
 #Given User launch application in chrome browser
-#When user enters URL
-#And user enters credentials and click on login button
-#And Click on the EDGE Device module from side menu bar
+#When user enters credentials and click on login button
+#Then Click on EDGE Device module from side menu bar
 #And After landing on EDGE Device List screen
 #Then Click on ADD New button on the top right side & landed on EDGE>ADD Screen
-#And enter valid  values for all text fields
-#And click on save
-#
+#And enter valid values for all text fields
+#And click on save button on add page
+
 #@Test
 #Scenario: TC43_Verification of the acceptance of Numeric values in EDGE ID Text field in the Identity section of User Add screen
 #Given User launch application in chrome browser
-#When user enters URL
-#And user enters credentials and click on login button
-#And Click on the EDGE Device module from side menu bar
+#When user enters credentials and click on login button
+#Then Click on EDGE Device module from side menu bar
 #And After landing on EDGE Device List screen
 #Then Click on ADD New button on the top right side & landed on EDGE>ADD Screen
 #And Enter numeric values into EDGE ID text fields
 #
 #
 #@Test
-#Scenario: TC44_Verification of the acceptance of Alphanumeric and special characters values in EDGE Name Text field in the Identity section of User Add screen
+#Scenario: TC44_Verification of the acceptance of alphanumeric with special char values EDGE Name Text field in the Identity section of User Add screen
 #Given User launch application in chrome browser
-#When user enters URL
-#And user enters credentials and click on login button
-#And Click on the EDGE Device module from side menu bar
+#When user enters credentials and click on login button
+#Then Click on EDGE Device module from side menu bar
 #And After landing on EDGE Device List screen
 #Then Click on ADD New button on the top right side & landed on EDGE>ADD Screen
 #And Enter alphanumeric with special char values into EDGE Name text fields
-#
+
 #@Test
 #Scenario: TC45_Verification of breaching the Max character limit in EDGE ID Text field in the Identity section of User Add screen
 #Given User launch application in chrome browser
-#When user enters URL
-#And user enters credentials and click on login button
-#And Click on the EDGE Device module from side menu bar
+#When user enters credentials and click on login button
+#Then Click on EDGE Device module from side menu bar
 #And After landing on EDGE Device List screen
 #Then Click on ADD New button on the top right side & landed on EDGE>ADD Screen
-#And Enter numeric values into EDGE ID text fields
-#
+#And Enter numeric values to check character strength into EDGE ID text fields
+
 #@Test
 #Scenario: TC46_Verification of breaching the Max character limit in EDGE  Name Text field in the Identity section of User Add screen
 #Given User launch application in chrome browser
-#When user enters URL
-#And user enters credentials and click on login button
-#And Click on the EDGE Device module from side menu bar
+#When user enters credentials and click on login button
+#Then Click on EDGE Device module from side menu bar
 #And After landing on EDGE Device List screen
 #Then Click on ADD New button on the top right side & landed on EDGE>ADD Screen
-#And Enter numeric values into EDGE ID text fields
+#And Enter numeric values to check character strength into EDGE NAME text fields
 #
 #
 #@Test
-#Scenario: TC47_Verification of selection of the from organization drop down in the Identity section of User Add screen b
+#Scenario: TC47_Verification of selection of the from organization drop down in the Identity section of User Add screen
 #Given User launch application in chrome browser
-#When user enters URL
-#And user enters credentials and click on login button
-#And Click on the EDGE Device module from side menu bar
+#When user enters credentials and click on login button
+#Then Click on EDGE Device module from side menu bar
 #And After landing on EDGE Device List screen
-#Then Click on ADD New button on the top right side & landed on EDGE>ADD Screen and Click
+#Then Click on ADD New button on the top right side & landed on EDGE>ADD Screen
 #Then select options from Organization drop down
 #
 #@Test
 #Scenario: TC48_Verification of selection of the from EDGE Group Name drop down in the Identity section of User Add screen
 #Given User launch application in chrome browser
-#When user enters URL
-#And user enters credentials and click on login button
-#And Click on the EDGE Device module from side menu bar
+#When user enters credentials and click on login button
+#Then Click on EDGE Device module from side menu bar
 #And After landing on EDGE Device List screen
-#Then Click on ADD New button on the top right side & landed on EDGE>ADD Screen and click
-#And select options from EDGE Group Nmae drop down
+#Then Click on ADD New button on the top right side & landed on EDGE>ADD Screen
+#And select options from EDGE Group Name drop down
 #
 #
 #@Test
@@ -448,12 +437,11 @@ Then user is landed on EDGE > ADD Screen
 #@Test
 #Scenario: TC53_Verification of modify the value in available mandatory fields of Identity section in EDIT screen
 #Given User launch application in chrome browser
-#When user enters URL
-#And user enters credentials and click on login button
-#And Click on the EDGE Device module from side menu bar
+#When user enters credentials and click on login button
+#Then Click on EDGE Device module from side menu bar
 #And After landing on EDGE Device List screen
 #Then Click on EDIT (Pen icon) button on the Actions column & landed on EDGE>UPDATE Screen
-#And modify few text fields i.e. EDGE ID, EDGE NAME & click on Save button
+#And modify few text fields like EDGE NAME & click on Save button
 #
 #
 #@Test
@@ -464,7 +452,7 @@ Then user is landed on EDGE > ADD Screen
 #And Click on the EDGE Device module from side menu bar
 #And After landing on EDGE Device List screen
 #Then Click on EDIT (Pen icon) button on the Actions column & landed on EDGE>UPDATE Screen
-#And modify few text fields i.e. EDGE ID, EDGE NAME,assigned to (Operator),Location& Description text fields 
+#And modify few text fields i.e. EDGE NAME,assigned to(Operator)and Description text fields 
 #Then click on Save button
 #
 #@Test
@@ -630,7 +618,21 @@ Then user is landed on EDGE > ADD Screen
 #
 #
 #
-#
+@Test
+Scenario: TC70_Verification of all fields available on ADD Screen
+Given User launch application in chrome browser
+When user enters credentials and click on login button
+Then Click on EDGE Device module from side menu bar
+And After landing on EDGE Device List screen
+Then Click on ADD New button on the top right side & landed on EDGE>ADD Screen
+Then fill details of Edge Id , Edge Name , Select dropdown organization
+And select value from dropdown Edge Group Name 
+And enter the role of assigner
+And select hardwareName from hardware dropdown
+And Scrolldown bar and inside regisration accordion add Serial Number , Onboarding Key, Image Version
+And Scroll down the page and enter server port from the deployment dropdown and select application group dropdown
+And enter Edge user and password inside well mapping accordion
+ 
 #
 #
 #
