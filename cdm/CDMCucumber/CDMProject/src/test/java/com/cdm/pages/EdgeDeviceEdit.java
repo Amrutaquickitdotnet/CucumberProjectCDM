@@ -15,9 +15,55 @@ public class EdgeDeviceEdit extends CommonActions {
 		super(driver, logger);
 		PageFactory.initElements(driver, this);
 	}
+	@FindBy(name = "serialNo")
+	WebElement serialNumberUpdate;
+	
+	
+	@FindBy(xpath = "//input[@data-placeholder='Onboarding Key']")
+	WebElement onboardingKeyUpdate;
+	
+	
+	@FindBy(xpath = "//input[@data-placeholder='Image Version']")
+	WebElement imageVersionUpdate;
 
+	
+	
+	@FindBy(xpath = "//input[@formcontrolname='appinstanceload']")
+	WebElement serverportUpdate;
+	
+	@FindBy(xpath = "//input[@formcontrolname='edgeuser']")
+	WebElement edgeUserUpdate;
+	
+	@FindBy(xpath = "//input[@formcontrolname='edgepassword']")
+	WebElement edgePasswordUpdate;
 	@FindBy(xpath = "//tbody/tr[1]/td[7]/img[1]")
 	WebElement editEdgeDevice;
+	
+	
+	
+
+	@FindBy(xpath = "//input[@formcontrolname='displayname']")
+	WebElement edgeNameInputUpdate;
+	
+	@FindBy(xpath = "//input[@name=\"appgroupname\"]")
+	 WebElement edgeAppgroupsInput;
+	
+
+	@FindBy(css = "mat-select[formcontrolname=controllerid] span")
+	WebElement edgeGroupNameUpdate;
+	
+	@FindBy(xpath = "//input[@name=\"hardwarename\"]")
+	WebElement hardWareNameInputUpdate;
+	
+	@FindBy(xpath = "//input[@name=\"assignedto\"]")
+	WebElement edgeAssignedToUpdate;
+	
+	@FindBy(xpath = "//input[@name=\"description\"]")
+	WebElement edgeDescriptionUpdate;
+	
+	
+
+	
 
 	@FindBy(xpath = "(//input[@formcontrolname='devicename']/../../../../../span)[2]")
 	WebElement validationMessageEdgeId;
@@ -65,13 +111,16 @@ public class EdgeDeviceEdit extends CommonActions {
 		identityedgeId.sendKeys(value);
 	}
 
-	public void identityedgeName(String value) {
-		identityedgeName.sendKeys(value);
-	}
-
+	
 	public void organization(String value) throws InterruptedException {
 
 		SelectMatOption(organization, value);
+	}
+	
+	
+	public void edgeAssignedToUpdate(String value) throws InterruptedException {
+
+		edgeAssignedToUpdate.sendKeys(value);;
 	}
 
 	public void edgeGroupName(String value) throws InterruptedException {
@@ -86,10 +135,12 @@ public class EdgeDeviceEdit extends CommonActions {
 		SelectMatOption(applicationGroupSelect, value);
 	}
 
-	public void clearEnteredId() {
-		identityedgeId.clear();
+	public void clearEnteredName() {
+		identityedgeName.clear();
 	}
 
+	
+	
 	public void hardWareName(String value) throws InterruptedException {
 
 		SelectMatOption(hardwareName, value);
@@ -157,5 +208,80 @@ public class EdgeDeviceEdit extends CommonActions {
 
 		editidentityedgeName.clear();
 	}
+	
+	
 
+	public void identityedgeNameUpdate(String value) {
+		edgeNameInputUpdate.sendKeys(value);
+	}
+
+	public void organizationUpdate(String value) throws InterruptedException {
+
+		SelectMatOption(organization, value);
+	}
+	
+	public void hardwareNameUpdate(String value) throws InterruptedException {
+
+		SelectMatOption(hardwareName, value);
+	}
+
+	public void edgeGroupNameUpdate(String value) throws InterruptedException {
+		SelectMatOption(edgeGroupNameUpdate, value);
+	}
+
+	public void identityedgeName(String value) {
+		identityedgeName.sendKeys(value);
+	}
+	
+	public void onBoardingKeyInput(String value) {
+		onboardingKeyUpdate.sendKeys(value);
+	}
+	
+	public void serialNumberInput(String value) {
+		serialNumberUpdate.sendKeys(value);
+	}
+	
+	public void imageVersionInput(String value) {
+		imageVersionUpdate.sendKeys(value);
+	}
+	
+	public void ongoingBoardUpdate(String value) {
+		onboardingKeyUpdate.sendKeys(value);
+	}
+
+	
+	public void serialNumberUpdate(String value) {
+		serialNumberUpdate.sendKeys(value);
+	}
+	
+	public void imageVersionUpdate(String value) {
+		imageVersionUpdate.sendKeys(value);
+	}
+	
+	public void serverPortUpdate(String value) {
+		serverportUpdate.sendKeys(value);
+	}
+	public void edgeUserNameUpdate(String value) {
+		edgeUserUpdate.sendKeys(value);
+	}
+	
+	public void edgePasswordUpdate(String value) {
+		edgePasswordUpdate.sendKeys(value);
+	}
+	public void applicationGroupUpdate(String value) throws InterruptedException {
+		SelectMatOption(applicationGroupSelect,value);
+	}
+	public void serverPortInput(String value) {
+		serverportUpdate.sendKeys(value);
+	}
+	
+	public String removalofEneredTextForEdgeId() {
+		
+		return removalofEneredText(edgeNameInputUpdate);
+			 
+		}
+	
+	public void updatesaveAddDataBtn() {
+		saveAddDataBtn.click();
+	}
 }

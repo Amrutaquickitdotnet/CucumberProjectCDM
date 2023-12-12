@@ -2,6 +2,7 @@ package com.cdm.pages;
 
 import java.util.Iterator;
 
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -18,9 +19,6 @@ public class EdgeDevicesPage extends CommonActions {
 		super(driver, logger);
 		PageFactory.initElements(driver, this);
 	}
-	
-	
-	
 	
 	@FindBy(xpath = "//span[contains(text(),'Add')]")
 	WebElement AddButtonEdgeDevice;
@@ -73,21 +71,21 @@ public class EdgeDevicesPage extends CommonActions {
 	
 	
 	
-	@FindBy(xpath = "//input[@name=\"devicename\"]")
+	@FindBy(xpath = "//input[@name='devicename']")
 	WebElement edgeIdInput;
 	
 
-	@FindBy(xpath = "//input[@name=\"displayname\"]")
+	@FindBy(xpath = "//input[@name= 'displayname']")
 	WebElement edgeNameInput;
 	
-	@FindBy(xpath = "//input[@name=\"appgroupname\"]")
+	@FindBy(xpath = "//input[@name= 'appgroupname']")
 	 WebElement edgeAppgroupsInput;
 	
 
-	@FindBy(xpath = "//input[@name=\"controllername\"]")
+	@FindBy(xpath = "//input[@name='controllername']")
 	WebElement edgeGroupNameInput;
 	
-	@FindBy(xpath = "//input[@name=\"hardwarename\"]")
+	@FindBy(xpath = "//input[@name='hardwarename']")
 	WebElement hardWareNameInput;
 	
 	
@@ -134,7 +132,9 @@ public class EdgeDevicesPage extends CommonActions {
 	
 	
 	public void clickondeployimage() {
-		deployclickfromActionsColumn.click();
+		
+		clickElement(deployclickfromActionsColumn, "Clicking on deploy icon from the list page");
+		//deployclickfromActionsColumn.click();
 	}
 	
 	
@@ -196,13 +196,16 @@ public class EdgeDevicesPage extends CommonActions {
 	}
 
 	public void edgeIdSearch_Button() {
+		
+		clickElement(edgeIdsearchClickDot, "Clicking on 3 dots for Edge Id ");
 
-		edgeIdsearchClickDot.click();
+		//edgeIdsearchClickDot.click();
 	}
 
 	public void edgeNameSearch_Button() {
-
-		edgeNameSearchIconDot.click();
+		
+		clickElement(edgeNameSearchIconDot, "Clicking on 3 dots for Edge Name ");
+		//edgeNameSearchIconDot.click();
 	}
 	
 	public void backDropShowing_Div_Click() {
@@ -219,34 +222,36 @@ public class EdgeDevicesPage extends CommonActions {
 	
 	public void edgeGroupNameSearch_Button() {
 
-		edgeGroupNameIconDot.click();
+		clickElement(edgeGroupNameIconDot, "Clicking on 3 dots of edgeGroupName");
+		//edgeGroupNameIconDot.click();
 	}
 	
 	public void edgeAppGroupsSearch_Button() {
-
-		edgeappGroupsIconDot.click();
+		clickElement(edgeappGroupsIconDot, "Clicking on 3 dots of edgeAppGroups");
+		//edgeappGroupsIconDot.click();
 	}
 	
 	public void hardwareNameSearchDot() {
+		clickElement(hardwareName, "Clicking on 3 dots of HardwareName");
 
-		hardwareName.click();
+		//hardwareName.click();
 	}
 	public void  headingClick() {
-		
-		headingTitle.click();
+		clickElement(headingTitle, "Clicking on Title of heading");
+		//headingTitle.click();
 	}
 	public void Confirmation_YesButton() {
-
-		ConfirmationYesButton.click();
+		clickElement(ConfirmationYesButton, "Clicking on confirmation message");
+		//ConfirmationYesButton.click();
 	}
 
 	public void Confirmation_NoButton() {
-
+		clickElement(ConfirmationNoButton, "Clicking on confirmation on Cancel button");
 		ConfirmationNoButton.click();
 	}
 
 	public void clickRefreshButton() {
-
+		clickElement(Refresh_btn, "Clicking on confirmation on refresh button");
 		Refresh_btn.click();
 	}
 
@@ -258,6 +263,8 @@ public class EdgeDevicesPage extends CommonActions {
 	public void sendValueSearchIconByEdgeName(String value) {
 
 		edgeNameInput.sendKeys(value);
+		edgeNameInput.sendKeys(Keys.ENTER);
+		
 	}
 	
 	public void sendValueSearchinputBoxForEdgeGroupName(String value) {
@@ -287,12 +294,12 @@ public String removalofEneredTextForEdgeId() {
 
 	
 	public void clickAddButton() {
-
-		Add_btn.click();
+		clickElement(Add_btn, "Clicking on add button");
+		//Add_btn.click();
 	}
 
 	public void clickBulkUpload() {
-
+		clickElement(BulkUpload_btn, "Clicking on bulkUpload button");
 		BulkUpload_btn.click();
 	}
 
@@ -377,6 +384,12 @@ public String get_Text_EdgeListHeading() {
 	
 		
 	}
+
+
+public  void setZoomLevel(int height , int width) {
+	Dimension d = new Dimension(height, width);
+	driver.manage().window().setSize(d);
+}
 
 
 

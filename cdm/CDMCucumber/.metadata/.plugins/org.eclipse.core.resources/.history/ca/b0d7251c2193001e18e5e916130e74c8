@@ -1,0 +1,24 @@
+package com.cdm.pages;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import com.aventstack.extentreports.ExtentTest;
+import com.cdm.common.CommonActions;
+
+public class WellMapping extends CommonActions {
+	
+	private WebDriver driver;
+
+	public WellMapping(WebDriver driver, ExtentTest logger) {
+		super(driver, logger);
+		PageFactory.initElements(driver, this);
+
+}
+	@FindBy(xpath = "/html/body/app-root/app-root/app-home/mat-sidenav-container/mat-sidenav-content/div[2]/div/app-configuration-app/div/div[2]/div[1]/div/div/table/tbody/tr/td[7]/div")
+	WebElement responseBodyIcon;
+	
+	
+}

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRunner" project="CDMProject" tests="3" started="3" failures="0" errors="0" ignored="0">
-  <testsuite name="com.cdm.runner.TestRunner" incomplete="true">
-    <testsuite name="EDGE Devices" incomplete="true">
-      <testcase name="TC01_Verification of Browser Compatibility of EDGE Device module" classname="EDGE Devices" time="36.63"/>
-      <testcase name="TC02_Resizing_login_page_screen(Zoom Levels)" classname="EDGE Devices" time="8.484"/>
-      <testcase name="TC03_Verification of displaying the EDGE Device table details" classname="EDGE Devices" incomplete="true"/>
-    </testsuite>
-  </testsuite>
-</testrun>

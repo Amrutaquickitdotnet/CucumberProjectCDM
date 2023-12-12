@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRunner" project="CDMProject" tests="1" started="1" failures="0" errors="0" ignored="0">
-  <testsuite name="com.cdm.runner.TestRunner" time="24.483">
-    <testsuite name="EDGE Devices" time="24.483">
-      <testcase name="TC35_Verification of the search functionality for overall table in the EDGE Device screen" classname="EDGE Devices" time="24.483"/>
-    </testsuite>
-  </testsuite>
-</testrun>

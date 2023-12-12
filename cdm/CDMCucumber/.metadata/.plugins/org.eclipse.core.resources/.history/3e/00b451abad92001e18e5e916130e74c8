@@ -1,0 +1,50 @@
+package com.cdm.pages;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import com.aventstack.extentreports.ExtentTest;
+import com.cdm.common.CommonActions;
+
+public class EnvironmentalVariable extends CommonActions {
+
+	public EnvironmentalVariable(WebDriver driver, ExtentTest logger) {
+		super(driver, logger);
+		PageFactory.initElements(driver, this);
+	}
+
+	@FindBy(xpath = "//a[contains(text(),'Environment variable')]")
+	WebElement environmentalVariableTab;
+
+	@FindBy(xpath = "//img[@class='mat-tooltip-trigger'")
+	WebElement environmentalVariableAddButton;
+
+	@FindBy(xpath = "//input[@formcontrolname = 'configvalue')]")
+	WebElement ConfigValue;
+
+	@FindBy(xpath = "//input[@formcontrolname = 'configname')]")
+	WebElement ConfigName;
+
+	@FindBy(xpath = "//span[contains(text(),'Active')]")
+	WebElement sliderOn;
+
+	@FindBy(xpath = "//input[@formcontrolname = 'Inactive')]")
+	WebElement sliderOff;
+
+	@FindBy(xpath = "//button[contains(text(),'Save')])]")
+	WebElement saveButton;
+
+	public void saveData() {
+
+		saveButton.click();
+	}
+
+	public void moveSlideroffCondition(String m) {
+		Actions actions = new Actions(driver); 
+		 actions.moveToElement(sliderOff).dragAndDropBy(sliderOff, 150, 0).build().perform(); 
+	}
+
+}

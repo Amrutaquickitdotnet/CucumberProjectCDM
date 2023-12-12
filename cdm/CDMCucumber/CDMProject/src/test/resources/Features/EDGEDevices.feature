@@ -1,27 +1,27 @@
-
+#
 @Sheet3
 Feature: EDGE Devices
-
-
+#
+#
 #@Test
 #Scenario: TC01_Verification of Browser Compatibility of EDGE Device module
 #Given User launch application in chrome browser
 #When user enters credentials and click on login button
 #And Succesfull login should be happen
-
+#
 #@Test
 #Scenario: TC02_Resizing_login_page_screen(Zoom Levels)
 #Given User launch application in chrome browser
 #When user enters credentials and click on login button
-#Then verify page with resize the login page
+#Then verify page with resize option the login page
 
 #@Test    
 #Scenario: TC03_Verification of displaying the EDGE Device table details
 #Given User launch application in chrome browser
 #When user enters credentials and click on login button
 #Then Click on EDGE Device module from side menu bar
-
-
+#
+#
 #@Test
 #Scenario: TC04_Verification of Add,Refresh,Application configuration,Bulk Upload & Download button icons
 #Given User launch application in chrome browser
@@ -35,7 +35,7 @@ Feature: EDGE Devices
 #When user enters credentials and click on login button
 #Then Click on EDGE Device module from side menu bar
 #Then After landing on EDGE Device List screen, and Click on Refresh button
-#
+
 #@Test
 #Scenario: TC06_Verification of Add button functionality
 #Given User launch application in chrome browser
@@ -56,7 +56,7 @@ Feature: EDGE Devices
 #When user enters credentials and click on login button
 #Then Click on EDGE Device module from side menu bar
 #Then After landing on EDGE Device List screen Click on Configuration icon button
-
+#
 #@Test
 #Scenario: TC09_Verification of Bulk download button functionality
 #Given User launch application in chrome browser
@@ -100,14 +100,14 @@ Feature: EDGE Devices
 #When user enters credentials and click on login button
 #Then Click on EDGE Device module from side menu bar
 #Then After landing on EDGE Device List screen And Mousehover on DELETE icon button
-
+#
 #@Test
 #Scenario: TC15_Verification of tooltip functionality for View Alert(s)
 #Given User launch application in chrome browser
 #When user enters credentials and click on login button
 #Then Click on EDGE Device module from side menu bar
 #Then After landing on EDGE Device List screen And Mousehover on View ALERTS icon button
-
+#
 #@Test  
 #Scenario: TC16_Verification of reduction in the number of records in pagination section
 #Given User launch application in chrome browser
@@ -133,9 +133,8 @@ Feature: EDGE Devices
 #@Test
 #Scenario: TC19_Verification of displaying the total number of records with pagination icons
 #Given User launch application in chrome browser
-#When user enters URL
 #And user enters credentials and click on login button
-#And Click on the EDGE Device module from side menu bar
+#Then Click on EDGE Device module from side menu bar
 #Then Click on pagination it will display default records will display 
 #
 #@Test
@@ -175,7 +174,7 @@ Feature: EDGE Devices
 #Given User launch application in chrome browser
 #When user enters credentials and click on login button
 #Then Click on EDGE Device module from side menu bar
-#Then Click on EDGE ID search icon i.e. three dots.
+#Then Click on EDGE Group ID search icon i.e. three dots & enter Valid inputs into search text field
  #
 #@Test
 #Scenario: TC25_Verification of the search functionality for EDGE Group Name column (Valid Group Name)
@@ -197,7 +196,7 @@ Feature: EDGE Devices
 #When user enters credentials and click on login button
 #Then Click on EDGE Device module from side menu bar
 #Then Click on EDGE Name search icon i.e. three dots & enter Valid inputs into search text field.
-
+#
 #@Test
 #Scenario: TC28_Verification of the search functionality for App Group column
 #Given User launch application in chrome browser
@@ -258,7 +257,7 @@ Feature: EDGE Devices
 #Then Click on EDGE Device module from side menu bar
 #Then Click on search icon i.e. three dots & search text field visible 
 #And Enter valid inputs as per required from table details into search text field and enter backspace & click on enter
-
+#
 #@Test
 #Scenario: TC35_Verification of the search functionality for overall table in the EDGE Device screen
 #Given User launch application in chrome browser
@@ -274,7 +273,7 @@ Feature: EDGE Devices
 #Then Click on EDGE Device module from side menu bar
 #And Click on ADD New button on the top right side 
 #Then user is landed on EDGE > ADD Screen
-
+#
 #@Test
 #Scenario: TC37_Verification of blank value rejections in available fields of Health section in Add screen of EDGE Device module
 #Given User launch application in chrome browser
@@ -282,7 +281,7 @@ Feature: EDGE Devices
 #Then Click on EDGE Device module from side menu bar
 #And After landing on EDGE Device List screen
 #Then Click on ADD New button on the top right side & landed on EDGE>ADD Screen
-
+#
 #@Test
 #Scenario: TC38_Verification of blank value rejections in available fields of Registration & Licence sections in Add screen of EDGE Device module
 #Given User launch application in chrome browser
@@ -293,7 +292,7 @@ Feature: EDGE Devices
 #And without enter any values
 #Then scroll down
 #Then click on save
-
+#
 #
 #@Test
 #Scenario: TC39_Verification of blank value rejections in available fields of Deployment section in Add screen
@@ -305,7 +304,7 @@ Feature: EDGE Devices
 #And without enter any values
 #Then scroll down to deployment section
 #Then click on save button
-
+#
 #@Test
 #Scenario: TC40_Verification of redirection functionality for Cancel icon in Add screen
 #Given User launch application in chrome browser
@@ -335,7 +334,7 @@ Feature: EDGE Devices
 #Then Click on ADD New button on the top right side & landed on EDGE>ADD Screen
 #And enter valid values for all text fields
 #And click on save button on add page
-
+#
 #@Test
 #Scenario: TC43_Verification of the acceptance of Numeric values in EDGE ID Text field in the Identity section of User Add screen
 #Given User launch application in chrome browser
@@ -354,7 +353,7 @@ Feature: EDGE Devices
 #And After landing on EDGE Device List screen
 #Then Click on ADD New button on the top right side & landed on EDGE>ADD Screen
 #And Enter alphanumeric with special char values into EDGE Name text fields
-
+#
 #@Test
 #Scenario: TC45_Verification of breaching the Max character limit in EDGE ID Text field in the Identity section of User Add screen
 #Given User launch application in chrome browser
@@ -363,7 +362,7 @@ Feature: EDGE Devices
 #And After landing on EDGE Device List screen
 #Then Click on ADD New button on the top right side & landed on EDGE>ADD Screen
 #And Enter numeric values to check character strength into EDGE ID text fields
-
+#
 #@Test
 #Scenario: TC46_Verification of breaching the Max character limit in EDGE  Name Text field in the Identity section of User Add screen
 #Given User launch application in chrome browser
@@ -618,22 +617,119 @@ Feature: EDGE Devices
 #
 #
 #
+#@Test
+#Scenario: TC70_Verification of all fields available on ADD Screen
+#Given User launch application in chrome browser
+#When user enters credentials and click on login button
+#Then Click on EDGE Device module from side menu bar
+#And After landing on EDGE Device List screen
+#Then Click on ADD New button on the top right side & landed on EDGE>ADD Screen
+#Then fill details of Edge Id , Edge Name , Select dropdown organization
+#And select value from dropdown Edge Group Name 
+#And enter the role of assigner
+#And select hardwareName from hardware dropdown
+#And Scrolldown bar and inside regisration accordion add Serial Number , Onboarding Key, Image Version
+#And Scroll down the page and enter server port from the deployment dropdown and select application group dropdown
+#And enter Edge user and password inside well mapping accordion
+
+#@Test
+#Scenario: TC71_Verification of deployment List Functionality
+#Given User launch application in chrome browser
+#And user enters credentials and click on login button
+#Then Click on EDGE Device module from side menu bar
+#And After landing on EDGE Device List screen
+#Then Click on EDGE Group name search icon i.e. three dots & enter Valid inputs into search text field
+#Then After landing on EDGE Device List screen scroll horizontal and Click on EDIT icon button
+#And Click on Deployments tab
+#Then Click on Deployment Edge Name and search icon i.e. three dots & enter Valid inputs into search text field
+#Then Click on Deployment Status and search icon i.e. three dots & enter Valid inputs into search text field
+#Then verify Status in Deployment List
+#Then verify Expected Version in Deployment List
+
+
+#@Test
+#Scenario: TC72_Verification of Environmental variable Add inactive Functionality
+#Given User launch application in chrome browser
+#And user enters credentials and click on login button
+#Then Click on EDGE Device module from side menu bar
+#And After landing on EDGE Device List screen
+#Then Click on EDGE Group name search icon i.e. three dots & enter Valid inputs into search text field
+#Then After landing on EDGE Device List screen scroll horizont and Click on EDIT icon button
+#And Click on Deployments tab
+#And Click on Environment Variable
+#And Click on Add new button
+#And Enter details for Config Name and Config Value
+#And inactivate environmental variable
+#Then Click on save button for environmental variable
+
+#@Test
+#Scenario: TC73_Verification of Environmental variable delete Functionality
+#Given User launch application in chrome browser
+#And user enters credentials and click on login button
+#Then Click on EDGE Device module from side menu bar
+#And After landing on EDGE Device List screen
+#Then Click on EDGE Group name search icon i.e. three dots & enter Valid inputs into search text field
+#Then After landing on EDGE Device List screen scroll horizont and Click on EDIT icon button
+#And Click on Deployments tab
+#And Click on Environment Variable
+#And Click on Delete button
+
+
+#@Test
+#Scenario: TC74_Verification of Environmental variable edit Functionality
+#Given User launch application in chrome browser
+#And user enters credentials and click on login button
+#Then Click on EDGE Device module from side menu bar
+#And After landing on EDGE Device List screen
+#Then Click on EDGE Group name search icon i.e. three dots & enter Valid inputs into search text field
+#Then After landing on EDGE Device List screen scroll horizont and Click on EDIT icon button
+#And Click on Deployments tab
+#And Click on Environment Variable
+#And Click on Edit button
+
+
+#@Test
+#Scenario: TC75_Verification of Environmental variable bulk upload Functionality
+#Given User launch application in chrome browser
+#And user enters credentials and click on login button
+#Then Click on EDGE Device module from side menu bar
+#And After landing on EDGE Device List screen
+#Then Click on EDGE Group name search icon i.e. three dots & enter Valid inputs into search text field
+#Then After landing on EDGE Device List screen scroll horizont and Click on EDIT icon button
+#And Click on Deployments tab
+#And Click on Environment Variable
+#And Click on bulk upload button
+
+#@Test
+#Scenario: TC76_Verification of Environmental variable search Functionality
+#Given User launch application in chrome browser
+#And user enters credentials and click on login button
+#Then Click on EDGE Device module from side menu bar
+#And After landing on EDGE Device List screen
+#Then Click on EDGE Group name search icon i.e. three dots & enter Valid inputs into search text field
+#Then After landing on EDGE Device List screen scroll horizont and Click on EDIT icon button
+#And Click on Deployments tab
+#And Click on Environment Variable
+#And Click on search icon of configName Config value 
+
+
+
 @Test
-Scenario: TC70_Verification of all fields available on ADD Screen
+Scenario: TC77_Verification of Well Mapping Functionality
 Given User launch application in chrome browser
-When user enters credentials and click on login button
+And user enters credentials and click on login button
 Then Click on EDGE Device module from side menu bar
 And After landing on EDGE Device List screen
-Then Click on ADD New button on the top right side & landed on EDGE>ADD Screen
-Then fill details of Edge Id , Edge Name , Select dropdown organization
-And select value from dropdown Edge Group Name 
-And enter the role of assigner
-And select hardwareName from hardware dropdown
-And Scrolldown bar and inside regisration accordion add Serial Number , Onboarding Key, Image Version
-And Scroll down the page and enter server port from the deployment dropdown and select application group dropdown
-And enter Edge user and password inside well mapping accordion
- 
-#
-#
-#
-  #
+Then Click on EDGE Name search icon i.e. three dots & enter Valid inputs into search text field.
+Then After landing on EDGE Device List screen scroll horizont and Click on EDIT icon button
+And Click on Deployments tab
+And Click on Environment Variable
+And Click on Add new button
+And Enter details for Config Name and Config Value
+Then Click on save button for environmental variable
+And Click on Device Log Tab
+And Click on Config Tab
+And Click on Well Mapping Tab
+
+
+

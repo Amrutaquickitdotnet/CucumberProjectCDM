@@ -12,6 +12,7 @@ import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
@@ -23,7 +24,7 @@ import com.codoid.products.fillo.Connection;
 import com.codoid.products.fillo.Fillo;
 import com.codoid.products.fillo.Recordset;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+
 
 public class BaseTest {
 	
@@ -62,19 +63,21 @@ public static String tagName="";
 		//WebDriverManager.chromedriver().setup();
 		String chromeDriverpath=	prop.getProperty("BrowserPath");
 		System.out.println("I am in launchApp" + chromeDriverpath);
+		ChromeOptions options = new ChromeOptions(); 
+		options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"}); 
 		
 		System.setProperty("webdriver.chrome.drive", chromeDriverpath);
-		 driver = new ChromeDriver();
+		 driver = new ChromeDriver(options);
 		 System.out.println("I am in launchApp");
 		}
 		else if(prop.getProperty("Browser").equals("firefox"))
 		{
-		WebDriverManager.firefoxdriver().setup();
+		
 		 driver = new FirefoxDriver();
 		}
 		else if(prop.getProperty("Browser").equals("edge"))
 		{
-		WebDriverManager.edgedriver().setup();
+	
 		 driver = new EdgeDriver();
 		}
 		
@@ -153,14 +156,16 @@ public static String tagName="";
 		extent.attachReporter(htmlReporter);
 		extent.setSystemInfo("Host Name", "Automation Test Hub");
 		    	extent.setSystemInfo("Environment", "Test");
-		extent.setSystemInfo("User Name", "Rajesh U");
-		htmlReporter.config().setDocumentTitle("Title of the Report Comes here "); 
+		extent.setSystemInfo("User Name", "Devendaram");
+		htmlReporter.config().setDocumentTitle("ForeSite Edge Centeralised Device Management "); 
 		            // Name of the report
-		htmlReporter.config().setReportName("Name of the Report Comes here "); 
+		htmlReporter.config().setReportName("ForeSite Edge Centeralised Device Management"); 
 		            // Dark Theme
 		htmlReporter.config().setTheme(Theme.DARK); 
 		
 	}
+	
+	
 	
 	
 

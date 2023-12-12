@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRunner" project="CDMProject" tests="1" started="1" failures="0" errors="1" ignored="0">
+  <testsuite name="com.cdm.runner.TestRunner" time="32.367">
+    <testsuite name="EDGE Devices" time="32.367">
+      <testcase name="TC75_Verification of Environmental variable bulk upload Functionality" classname="EDGE Devices" time="32.367">
+        <error>io.cucumber.junit.UndefinedStepException: The step 'Click on bulk upload button' is undefined.
+You can implement this step using the snippet(s) below:
+
+@Then("Click on bulk upload button")
+public void click_on_bulk_upload_button() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+&#13;
+&#13;
+</error>
+      </testcase>
+    </testsuite>
+  </testsuite>
+</testrun>

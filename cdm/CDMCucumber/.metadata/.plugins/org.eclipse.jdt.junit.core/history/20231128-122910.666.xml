@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRunner" project="CDMProject" tests="1" started="1" failures="0" errors="0" ignored="0">
-  <testsuite name="com.cdm.runner.TestRunner" time="23.3">
-    <testsuite name="EDGE Devices" time="23.3">
-      <testcase name="TC15_Verification of tooltip functionality for View Alert(s)" classname="EDGE Devices" time="23.3"/>
-    </testsuite>
-  </testsuite>
-</testrun>

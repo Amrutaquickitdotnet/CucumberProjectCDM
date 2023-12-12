@@ -18,7 +18,7 @@ import io.cucumber.java.en.When;
 
 public class Common extends BaseTest {
 	@Before
-	public void getScenario(Scenario scenario) {
+	public void getScenario(Scenario scenario) throws InterruptedException {
 		//initiation();
 		vTCName = scenario.getName();
 		Collection<String> tagNames= scenario.getSourceTagNames();
@@ -33,12 +33,17 @@ public class Common extends BaseTest {
 		}
 		initiationData();
 		logger = extent.createTest(vTCName);
+		
+		 
 	}
 	
 
 @After
 	public void savereport()
 	{
+	//T=
+	
+	//logger.addScreenCaptureFromBase64String(tagName);
 		extent.flush();
 		driver.close();
 	}

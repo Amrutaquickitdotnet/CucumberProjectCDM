@@ -27,7 +27,7 @@ public class CommonActions {
 	
 	protected WebDriver driver;
 	private ExtentTest logger;
-	
+	private boolean isLocalMachine=true;
 	public CommonActions(WebDriver driver,ExtentTest logger)
 	{
 		this.driver = driver;
@@ -168,6 +168,11 @@ public class CommonActions {
 	
 	public String getScreenshot() 
 	{
+		
+		if(isLocalMachine) {
+			
+		}
+		
 		Date d = new Date();
 		DateFormat ft = new SimpleDateFormat("ddMMyyyyhhmmss");
 		String fileName = ft.format(d);
@@ -191,6 +196,39 @@ public class CommonActions {
 		Actions actions = new Actions(driver);
 		actions.moveToElement(e).build().perform();
 	}
+	
+public String removalofEneredText(WebElement element,String message) {
+
+	try
+	{
+	WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(20));
+	wait.until(ExpectedConditions.visibilityOf(element));
+	
+		String text=element.getDomProperty("value");
+		String[] arr=text.split("");
+		for (int i = 0; i < arr.length; i++) {
+			element.sendKeys(Keys.BACK_SPACE);
+		}		
+		element.sendKeys(Keys.ENTER);
+		text=element.getDomProperty("value");
+		
+		logger.pass("Text got removed");
+		return text;
+	}
+	catch(Exception e)
+	{
+		System.out.println(e.getMessage());
+		logger.fail("Step failed due to "+e.getMessage()+"<span class='label end-time'><a href="+getScreenshot()+">Screenshot</a></span>");
+	}
+	
+	return ".";
+		//edgeNameInput.clear();
+		//edgeGroupNameInput.clear();
+		//edgeAppgroupsInput.clear();
+		//hardWareNameInput.clear();
+	}
+	
+
 
 public String removalofEneredText(WebElement element) {
 		
@@ -252,9 +290,13 @@ public String removalofEneredText(WebElement element) {
 	
 	}
 	public void SelectMatOption(WebElement ele,String text) throws InterruptedException {
-		ele.click();
-		String xpath="//mat-option/span[contains(text(),'"+text+"')]";
+		 ele.click();
+		 String xpath="//mat-option/span[contains(text(),'"+text+"')]";
 		 WebElement optionToSelect = driver.findElement(By.xpath(xpath));
 		 optionToSelect.click();
 	}
+	
+	
+
+	 
 }

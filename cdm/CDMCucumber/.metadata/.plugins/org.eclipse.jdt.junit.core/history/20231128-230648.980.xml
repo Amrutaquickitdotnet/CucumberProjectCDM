@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRunner" project="CDMProject" tests="1" started="1" failures="0" errors="0" ignored="0">
-  <testsuite name="com.cdm.runner.TestRunner" time="25.536">
-    <testsuite name="EDGE Devices" time="25.536">
-      <testcase name="TC36_Verification of Add screen of EDGE Device module" classname="EDGE Devices" time="25.536"/>
-    </testsuite>
-  </testsuite>
-</testrun>

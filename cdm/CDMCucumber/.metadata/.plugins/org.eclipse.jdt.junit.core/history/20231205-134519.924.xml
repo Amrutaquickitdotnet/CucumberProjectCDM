@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRunner" project="CDMProject" tests="1" started="1" failures="0" errors="1" ignored="0">
+  <testsuite name="com.cdm.runner.TestRunner" time="40.519">
+    <testsuite name="EDGE Devices" time="40.519">
+      <testcase name="TC75_Verification of Environmental variable bulk upload Functionality" classname="EDGE Devices" time="40.519">
+        <error>java.lang.NullPointerException: Cannot invoke "String.toString()" because the return value of "java.util.Map.get(Object)" is null&#13;
+	at com.cdm.Stepdefinitions.EDGEDevicesSteps.click_on_bulk_upload_button(EDGEDevicesSteps.java:763)&#13;
+	at ✽.Click on bulk upload button(file:///E:/Devendra/cdm/CDMCucumber/CDMProject/src/test/resources/Features/EDGEDevices.feature:701)&#13;
+&#13;
+</error>
+      </testcase>
+    </testsuite>
+  </testsuite>
+</testrun>

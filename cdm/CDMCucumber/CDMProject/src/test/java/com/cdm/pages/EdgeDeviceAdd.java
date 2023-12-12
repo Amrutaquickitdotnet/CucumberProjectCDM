@@ -30,7 +30,7 @@ public class EdgeDeviceAdd extends CommonActions {
 	
 	
 	@FindBy(xpath = "//input[@formcontrolname='appinstanceload']")
-	WebElement Serverport;
+	WebElement serverport;
 	
 	@FindBy(xpath = "//input[@formcontrolname='edgeuser']")
 	WebElement edgeUser;
@@ -98,12 +98,16 @@ public class EdgeDeviceAdd extends CommonActions {
 		onboardingKey.sendKeys(value);
 	}
 	
-	public void serailNumberInput(String value) {
+	public void serialNumberInput(String value) {
 		serialNumber.sendKeys(value);
 	}
 	
 	public void imageVersionInput(String value) {
 		imageVersion.sendKeys(value);
+	}
+	
+	public void serverPortInput(String value) {
+		serverport.sendKeys(value);
 	}
 	
 	public void organization(String value) throws InterruptedException {
@@ -195,12 +199,17 @@ public class EdgeDeviceAdd extends CommonActions {
 
 	public void editEdgeDeviceClick() {
 
-		editEdgeDevice.click();
+		
+		clickElement(editEdgeDevice,"Click on Edit icon of Edge Device");
+		
 	}
 
 	public void setEditClearField() {
+		
+		
+		SetInput(editidentityedgeName,"","Entered text is clear");
 
-		editidentityedgeName.clear();
+	
 	}
 
 }

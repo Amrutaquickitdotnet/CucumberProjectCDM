@@ -11,7 +11,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
-import org.testng.annotations.AfterSuite;
+
 
 import com.cdm.pages.HomePage;
 import com.cdm.pages.LoginPage;
@@ -24,7 +24,7 @@ import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.github.bonigarcia.wdm.WebDriverManager;
+
 
 public class loginSteps extends BaseTest {
 	
@@ -115,7 +115,7 @@ public class loginSteps extends BaseTest {
 
 	@Given("User launch application in edge browser and perform login")
 	public void user_launch_application_in_edge_browser() throws InterruptedException {
-		WebDriverManager.edgedriver().setup();
+		
 		WebDriver d = new EdgeDriver();
 		d.get(prop.getProperty("AppUrl")+alldata.get(vTCName).get("Url"));
 		Thread.sleep(5000);
