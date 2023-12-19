@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRunner" project="CDMProject" tests="1" started="1" failures="0" errors="0" ignored="0">
-  <testsuite name="com.cdm.runner.TestRunner" time="37.058">
-    <testsuite name="EDGE Devices" time="37.058">
-      <testcase name="TC74_Verification of Environmental variable edit Functionality" classname="EDGE Devices" time="37.058"/>
-    </testsuite>
-  </testsuite>
-</testrun>

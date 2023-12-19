@@ -16,6 +16,12 @@ public class EdgeDeviceAdd extends CommonActions {
 		PageFactory.initElements(driver, this);
 	}
 	
+	@FindBy(xpath = "//*[@id=\"togBtn\"]")
+	WebElement sliderOnCheckBox;
+
+	@FindBy(xpath = "//*[@id=\"togBtn\"]/..")
+	WebElement sliderOnCheckBoxLabel;
+	
 	@FindBy(name = "serialNo")
 	WebElement serialNumber;
 	
@@ -71,7 +77,7 @@ public class EdgeDeviceAdd extends CommonActions {
 	@FindBy(xpath = "//mat-select[@formcontrolname='orgid']")
 	WebElement organization;
 
-	@FindBy(css = "mat-select[formcontrolname=controllerid] span")
+	@FindBy(css = "mat-select[formcontrolname='controllerid'] span")
 	WebElement edgeGroupName;
 
 	@FindBy(name = "assignedto")
@@ -80,7 +86,7 @@ public class EdgeDeviceAdd extends CommonActions {
 //	@FindBy(xpath="//input[@data-placeholder='Location']")
 //	WebElement location;
 
-	@FindBy(css = "mat-select[formcontrolname=format] span")
+	@FindBy(css = "mat-select[formcontrolname=format]  div.mat-select-arrow")
 	WebElement hardwareName;
 
 	@FindBy(xpath = "//mat-select[@formcontrolname='appgroupid']")
@@ -147,7 +153,7 @@ public class EdgeDeviceAdd extends CommonActions {
 	}
 	
 	public void edgeUserInput(String value) {
-		edgePassword.sendKeys(value);;
+		edgeUser.sendKeys(value);;
 	}
 	
 	public void edgeUserPassword(String value) {
@@ -211,5 +217,10 @@ public class EdgeDeviceAdd extends CommonActions {
 
 	
 	}
+	
+	//Either checked or unchecked 
+		public void moveSliderCondition(String m) {
+			moveSliderCondition(sliderOnCheckBox,sliderOnCheckBoxLabel,m);
+		}
 
 }

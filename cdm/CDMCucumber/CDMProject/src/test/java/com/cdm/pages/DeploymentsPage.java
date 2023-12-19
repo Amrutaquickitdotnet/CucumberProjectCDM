@@ -15,12 +15,22 @@ public class DeploymentsPage extends CommonActions {
 	public DeploymentsPage(WebDriver driver, ExtentTest logger) // created WebDriver Constructor
 	{
 		super(driver, logger);
-		this.driver = driver;
+		
 		PageFactory.initElements(driver, this);
 	}
 
-	private WebDriver driver;
+	
+	@FindBy(xpath = "//body[1]/app-root[1]/app-root[1]/app-home[1]/mat-sidenav-container[1]/mat-sidenav-content[1]/div[2]/div[1]/app-edgegroup-config[1]/div[1]/div[1]/mat-horizontal-stepper[1]/div[2]/div[4]/form[1]/div[1]/div[1]/div[1]/div[1]/table[1]/thead[1]/tr[1]/th[1]/mat-checkbox[1]/label[1]/span[1]")
+	WebElement applicationdeploymentCheckboxAll;
+	
+	@FindBy(xpath = "//tbody/tr[1]/td[7]/img[4]")
+	WebElement deploymenticonColumnsection;
 
+	@FindBy(xpath = "//span[@class='titleHeadingsub']")
+	WebElement headingTitle;
+	
+	
+	
 	@FindBy(xpath = "//input[@name='appname']")
 	WebElement deploymenticonColumn;
 
@@ -166,6 +176,12 @@ public class DeploymentsPage extends CommonActions {
 	}
 
 	public void deploymenticonColumnClick() {
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		deploymenticonColumn.click();
 	}
 
@@ -180,6 +196,10 @@ public class DeploymentsPage extends CommonActions {
 		deploymentStatusInput.sendKeys(Keys.ENTER);
 	}
 
+	public void  headingClick() {
+		headingTitle.click();
+		
+	}
 	public void edgeAppNameSearchvalidate(String value) {
 		edgeAppNameSearch.click();
 
@@ -201,5 +221,19 @@ public class DeploymentsPage extends CommonActions {
 		System.out.println("Deployment status is ->" + deploymentStatus);
 		return deploymentStatus;
 
+	}
+	
+	public void deploymenticonColumnsection() {
+		
+		try {
+			Thread.sleep(3000);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		deploymenticonColumnsection.click();
+	}
+	
+	public void applicationdeploymentCheckboxAll() {
+		applicationdeploymentCheckboxAll.click();
 	}
 }

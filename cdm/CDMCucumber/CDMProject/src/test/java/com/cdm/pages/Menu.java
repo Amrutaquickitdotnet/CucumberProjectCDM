@@ -24,9 +24,18 @@ private WebDriver driver;
 	@FindBy(xpath="//app-home/mat-sidenav-container/mat-sidenav/div/mat-nav-list/ul/li[3]/a/span")  //these all are locators
 	WebElement edgeDevices;
 	
+
+	@FindBy(xpath="//app-home[1]/mat-sidenav-container[1]/mat-sidenav[1]/div[1]/mat-nav-list[1]/ul[1]/li[2]/a[1]")  //these all are locators
+	WebElement edgeGroups;
+	
 	public void clickEdgeDevices()
 	{
 		clickElement(edgeDevices,"CLicked On Edge Device");
+	}
+	
+	public void clickEdgeGroups()
+	{
+		clickElement(edgeGroups,"CLicked On Edge Device");
 	}
 
 }

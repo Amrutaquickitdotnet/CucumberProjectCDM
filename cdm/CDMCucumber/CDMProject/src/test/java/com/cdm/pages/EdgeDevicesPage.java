@@ -258,10 +258,19 @@ public class EdgeDevicesPage extends CommonActions {
 	public void sendValueSearchIcon(String value) {
 
 		edgeIdInput.sendKeys(value);
+		edgeIdInput.sendKeys(Keys.ENTER);
 	}
 
 	public void sendValueSearchIconByEdgeName(String value) {
 
+		edgeNameInput.sendKeys(value);
+		edgeNameInput.sendKeys(Keys.ENTER);
+		
+	}
+	
+	public void editValueSearchIconByEdgeName(String value) {
+        edgeNameInput.sendKeys(Keys.ENTER);
+        
 		edgeNameInput.sendKeys(value);
 		edgeNameInput.sendKeys(Keys.ENTER);
 		
@@ -287,6 +296,12 @@ public class EdgeDevicesPage extends CommonActions {
 public String removalofEneredTextForEdgeId() {
 		
 	return removalofEneredText(edgeIdInput);
+		 
+	}
+
+public String removalofEneredTextForEdgeName() {
+	
+	return removalofEneredText(edgeNameInput);
 		 
 	}
 	
@@ -390,7 +405,10 @@ public  void setZoomLevel(int height , int width) {
 	Dimension d = new Dimension(height, width);
 	driver.manage().window().setSize(d);
 }
-
+public void WebDevices_heading() 
+{
+	WebDevices_heading.click();
+	}
 
 
 

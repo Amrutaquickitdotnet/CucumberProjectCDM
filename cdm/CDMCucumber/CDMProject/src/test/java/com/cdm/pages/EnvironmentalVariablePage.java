@@ -21,6 +21,9 @@ public class EnvironmentalVariablePage extends CommonActions {
 		super(driver, logger);
 		PageFactory.initElements(driver, this);
 	}
+	
+
+	
 
 	@FindBy(css = ".cdk-overlay-backdrop-showing")
 	WebElement backDropShowing;
@@ -28,7 +31,7 @@ public class EnvironmentalVariablePage extends CommonActions {
 	@FindBy(xpath = "//h4/span")
 	WebElement headingTitle;
 
-	@FindBy(xpath = "//button[@class='mat-focus-indicator btnNext mat-button mat-button-base mat-primary']")
+	@FindBy(xpath = "//body/div[3]/div[2]/div[1]/mat-dialog-container[1]/app-confirmationdelete[1]/div[1]/mat-dialog-actions[1]/button[1]")
 	WebElement confirmationYesButton;
 
 	@FindBy(xpath = "//input[@name='configname']")
@@ -116,18 +119,9 @@ public class EnvironmentalVariablePage extends CommonActions {
 		environmentalVariableTab.click();
 	}
 
+	//Either checked or unchecked 
 	public void moveSliderCondition(String m) {
-		boolean isSelected = sliderOnCheckBox.isSelected();
-		if (m == "checked") {
-			if (!isSelected) {
-				sliderOnCheckBoxLabel.click();
-			}
-		} else {
-			if (isSelected) {
-				sliderOnCheckBoxLabel.click();
-			}
-		}
-
+		moveSliderCondition(sliderOnCheckBox,sliderOnCheckBoxLabel,m);
 	}
 
 	public void environmentalVariableAddButton() {

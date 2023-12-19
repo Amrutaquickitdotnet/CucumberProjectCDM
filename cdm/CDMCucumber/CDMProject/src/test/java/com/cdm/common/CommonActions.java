@@ -34,7 +34,19 @@ public class CommonActions {
 		this.logger = logger;
 	}
 	
-	
+	public void moveSliderCondition(WebElement sliderOnCheckBox,WebElement sliderOnCheckBoxLabel, String m) {
+		boolean isSelected = sliderOnCheckBox.isSelected();
+		if (m == "checked") {
+			if (!isSelected) {
+				sliderOnCheckBoxLabel.click();
+			}
+		} else {
+			if (isSelected) {
+				sliderOnCheckBoxLabel.click();
+			}
+		}
+
+	}
 	
 	
 	public void SetInput(WebElement elm, String data,String msg)
@@ -291,7 +303,8 @@ public String removalofEneredText(WebElement element) {
 	}
 	public void SelectMatOption(WebElement ele,String text) throws InterruptedException {
 		 ele.click();
-		 String xpath="//mat-option/span[contains(text(),'"+text+"')]";
+		 Thread.sleep(10);
+		 String xpath= "//mat-option/span[contains(text(),'"+text+"')]";
 		 WebElement optionToSelect = driver.findElement(By.xpath(xpath));
 		 optionToSelect.click();
 	}
