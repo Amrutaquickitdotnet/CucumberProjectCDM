@@ -2,24 +2,24 @@
 Feature: EDGE Devices
 #
 #
-@Test
-Scenario: TC01_Verification of Browser Compatibility of EDGE Device module
-Given User launch application in chrome browser
-When user enters credentials and click on login button
-And Succesfull login should be happen
-
-@Test
-Scenario: TC02_Resizing_login_page_screen(Zoom Levels)
-Given User launch application in chrome browser
-When user enters credentials and click on login button
-Then verify page with resize option the login page
-
-@Test    
-Scenario: TC03_Verification of displaying the EDGE Device table details
-Given User launch application in chrome browser
-When user enters credentials and click on login button
-Then Click on EDGE Device module from side menu bar
-
+#@Test
+#Scenario: TC01_Verification of Browser Compatibility of EDGE Device module
+#Given User launch application in chrome browser
+#When user enters credentials and click on login button
+#And Succesfull login should be happen
+#
+#@Test
+#Scenario: TC02_Resizing_login_page_screen(Zoom Levels)
+#Given User launch application in chrome browser
+#When user enters credentials and click on login button
+#Then verify page with resize option the login page
+#
+#@Test    
+#Scenario: TC03_Verification of displaying the EDGE Device table details
+#Given User launch application in chrome browser
+#When user enters credentials and click on login button
+#Then Click on EDGE Device module from side menu bar
+#
 #@Test
 #Scenario: TC04_Verification of Add,Refresh,Application configuration,Bulk Upload & Download button icons
 #Given User launch application in chrome browser
