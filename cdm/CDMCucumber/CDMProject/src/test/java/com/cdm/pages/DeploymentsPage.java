@@ -1,6 +1,7 @@
 package com.cdm.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,22 +16,19 @@ public class DeploymentsPage extends CommonActions {
 	public DeploymentsPage(WebDriver driver, ExtentTest logger) // created WebDriver Constructor
 	{
 		super(driver, logger);
-		
+
 		PageFactory.initElements(driver, this);
 	}
 
-	
 	@FindBy(xpath = "//body[1]/app-root[1]/app-root[1]/app-home[1]/mat-sidenav-container[1]/mat-sidenav-content[1]/div[2]/div[1]/app-edgegroup-config[1]/div[1]/div[1]/mat-horizontal-stepper[1]/div[2]/div[4]/form[1]/div[1]/div[1]/div[1]/div[1]/table[1]/thead[1]/tr[1]/th[1]/mat-checkbox[1]/label[1]/span[1]")
 	WebElement applicationdeploymentCheckboxAll;
-	
+
 	@FindBy(xpath = "//tbody/tr[1]/td[7]/img[4]")
 	WebElement deploymenticonColumnsection;
 
 	@FindBy(xpath = "//span[@class='titleHeadingsub']")
 	WebElement headingTitle;
-	
-	
-	
+
 	@FindBy(xpath = "//input[@name='appname']")
 	WebElement deploymenticonColumn;
 
@@ -61,14 +59,14 @@ public class DeploymentsPage extends CommonActions {
 	@FindBy(xpath = "//input[@name='appname']")
 	WebElement deploymentAppName;
 
-	@FindBy(xpath = "//thead/tr[1]/th[1]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]")
-	WebElement edgeNameSearch;
+	@FindBy(xpath = "//div[@id='matTable']/table/thead/tr/th/div/app-filter/div/a/mat-icon")
+	WebElement edgeNameSearchDot;
 
 	@FindBy(xpath = "//thead/tr[1]/th[2]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]']")
 	WebElement edgeAppNameSearch;
 
-	@FindBy(xpath = "//input[@formcontrolname='displayname']")
-	WebElement edgeNameInputUpdate;
+	@FindBy(xpath = "//input[name='devicename']")
+	WebElement edgeNameInput;
 
 	@FindBy(xpath = "//table[@matsortactive='created']")
 
@@ -82,9 +80,12 @@ public class DeploymentsPage extends CommonActions {
 
 	WebElement EdgeAppNameDeploymentInput;
 
-	@FindBy(xpath = "//a[contains(text(),'Deployments')]")
+	@FindBy(xpath = "//span[contains(text(),'Deployments')]")
 	WebElement deployment_tab;
 
+	@FindBy(css = ".nav li:nth-of-type(2) [data-toggle]")
+	WebElement deploymenttoggle;
+	
 	@FindBy(xpath = "//img[@class='mat-tooltip-trigger ml-1 ng-star-inserted']")
 	WebElement view_eye_btn;
 
@@ -96,27 +97,26 @@ public class DeploymentsPage extends CommonActions {
 
 	@FindBy(className = "mat-tooltip-trigger")
 	WebElement i_mark;
-	// Need to attach number of rows in table using WebElements
+	
 
 	public void backDropShowing_Div_Click() {
 		if (backDropShowing != null) {
-		try {
-			backDropShowing.click();
-		}catch(Exception ex){}
+			try {
+				backDropShowing.click();
+			} catch (Exception ex) {
+			}
 		}
 	}
 
 	public void backDropTransparent_Div_Click() {
 		if (backDropTransparent != null) {
-			try {    
+			try {
 				backDropTransparent.click();
+			} catch (Exception ex) {
+
 			}
-			catch(Exception ex){
-				
-			}
-			}    
 		}
-	
+	}
 
 	public void verifyTitle() {
 		ElementExist(Deploy_heading, getScreenshot());
@@ -166,11 +166,11 @@ public class DeploymentsPage extends CommonActions {
 		EditButton.click();
 	}
 
-	public void edgeNameSearchvalidate(String value) {
+	public void EdgeNameDeploymentInput(String value) {
 
 		backDropTransparent_Div_Click();
-		edgeNameSearch.click();
-
+		
+		EdgeNameDeploymentInput.sendKeys(Keys.ENTER);
 		EdgeNameDeploymentInput.sendKeys(value);
 
 	}
@@ -196,10 +196,11 @@ public class DeploymentsPage extends CommonActions {
 		deploymentStatusInput.sendKeys(Keys.ENTER);
 	}
 
-	public void  headingClick() {
+	public void headingClick() {
 		headingTitle.click();
-		
+
 	}
+
 	public void edgeAppNameSearchvalidate(String value) {
 		edgeAppNameSearch.click();
 
@@ -222,9 +223,9 @@ public class DeploymentsPage extends CommonActions {
 		return deploymentStatus;
 
 	}
-	
+
 	public void deploymenticonColumnsection() {
-		
+
 		try {
 			Thread.sleep(3000);
 		} catch (Exception e) {
@@ -232,8 +233,25 @@ public class DeploymentsPage extends CommonActions {
 		}
 		deploymenticonColumnsection.click();
 	}
-	
+
 	public void applicationdeploymentCheckboxAll() {
 		applicationdeploymentCheckboxAll.click();
+	}
+
+	public void setZoomLevel(int width, int height) {
+		Dimension d = new Dimension(width, height);
+		driver.manage().window().setSize(d);
+	}
+	
+	public void edgeNameSearchDot() {
+		edgeNameSearchDot.click();
+	}
+	public void edgeNameInput(String value) {
+		edgeNameInput.sendKeys(Keys.ENTER);
+		edgeNameInput.sendKeys(value);
+	}
+	
+	public void deploymenttoggle() {
+		deploymenttoggle.click();
 	}
 }

@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="character"/>
+		<item key="selection" value="Click on Well Mapping Tab"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
-			<item value="character"/>
-			<item value="displayname"/>
-			<item value="TC36_Verification of Add functionality of Edge Group"/>
-			<item value="edgeGroupIDInput"/>
-			<item value="groupid"/>
-			<item value="slider"/>
-			<item value="Group Name"/>
-			<item value="save."/>
-			<item value="enter valid  values for all mandatory text fields &amp; click on save"/>
-			<item value="groupname"/>
-			<item value="blank"/>
-			<item value="Add"/>
-			<item value="licenseUploadChooseFile"/>
-			<item value="browse the upload document and upload for License section"/>
-			<item value=" browse the upload document and upload for License section"/>
+			<item value="Click on Well Mapping Tab"/>
+			<item value="checkbox"/>
+			<item value="Click on save button for environmental variable"/>
+			<item value="Enter details for Config Name and Config Value"/>
+			<item value="Click on search icon of configName Config value"/>
+			<item value="Click on search icon of configName"/>
+			<item value="deployments tab"/>
+			<item value="tab"/>
+			<item value="Deployments"/>
+			<item value="After landing on EDGE Device List screen scroll horizont and Click on EDIT icon button"/>
+			<item value="Then After landing on EDGE Device List screen scroll horizont and Click on EDIT icon button"/>
+			<item value="Click on Delete button"/>
+			<item value="Click on Deployments tab"/>
+			<item value="Click on EDGE ID"/>
+			<item value="Click on EDGE ID name search icon i.e. three dots &amp; enter Valid inputs into search text field"/>
 		</list>
 		<list key="replacehistory">
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="592"/>
-		<item key="DIALOG_Y_ORIGIN" value="176"/>
+		<item key="DIALOG_X_ORIGIN" value="716"/>
+		<item key="DIALOG_Y_ORIGIN" value="167"/>
 		<item key="DIALOG_WIDTH" value="511"/>
 		<item key="DIALOG_HEIGHT" value="523"/>
 		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-18|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>

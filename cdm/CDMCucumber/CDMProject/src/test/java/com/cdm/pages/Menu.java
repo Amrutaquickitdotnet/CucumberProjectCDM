@@ -28,14 +28,25 @@ private WebDriver driver;
 	@FindBy(xpath="//app-home[1]/mat-sidenav-container[1]/mat-sidenav[1]/div[1]/mat-nav-list[1]/ul[1]/li[2]/a[1]")  //these all are locators
 	WebElement edgeGroups;
 	
+	
+	@FindBy(xpath="//span[contains(text(),'App Groups')]")  //these all are locators
+	WebElement AppGroups;
+	
+	
 	public void clickEdgeDevices()
 	{
-		clickElement(edgeDevices,"CLicked On Edge Device");
+		clickElement(edgeDevices,"Clicked On Edge Device");
 	}
 	
 	public void clickEdgeGroups()
 	{
-		clickElement(edgeGroups,"CLicked On Edge Device");
+		clickElement(edgeGroups,"Clicked On Edge Device");
 	}
 
+	public void clickAppGroups()
+	{
+		clickElement(AppGroups,"Clicked On App Groups");
+	}
+	
+	
 }

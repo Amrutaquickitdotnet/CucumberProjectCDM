@@ -3,20 +3,22 @@ package com.cdm.Stepdefinitions;
 import java.io.IOException;
 
 import org.junit.Assert;
-import org.openqa.selenium.Alert;
+
 
 import com.cdm.pages.ConfigurationsPage;
 import com.cdm.pages.DeploymentsPage;
 import com.cdm.pages.DeviceLogs;
+import com.cdm.pages.EdgeAppConfigurationPage;
 import com.cdm.pages.EdgeDeviceAdd;
 import com.cdm.pages.EdgeDeviceEdit;
 import com.cdm.pages.EdgeDevicesPage;
-import com.cdm.pages.EdgeGroupConfiguration;
+import com.cdm.pages.EdgeGroupConfigurationPage;
 import com.cdm.pages.EnvironmentalVariablePage;
 import com.cdm.pages.Menu;
 import com.cdm.pages.Pagination;
 import com.cdm.pages.WellMapping;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -132,6 +134,16 @@ public class EDGEDevicesSteps extends BaseTest {
 		EdgeDevicesPage edp = new EdgeDevicesPage(driver, logger);
 		edp.edgeIdSearch_Button();
 	}
+	
+	@Then("Click on EDGE ID name search icon i.e. three dots & enter Valid inputs into search text field")
+	public void click_on_edge_id_name_search_icon_i_e_three_dots_enter_valid_inputs_into_search_text_field() throws InterruptedException {
+		EdgeDevicesPage edp = new EdgeDevicesPage(driver, logger);
+		edp.edgeIdSearch_Button();
+		edp.sendValueSearchIcon(alldata.get(vTCName).get("Value1").toString());
+		edp.backDropShowing_Div_Click();
+		edp.headingClick();
+		Thread.sleep(3000);
+	}
 
 	@Then("Click on EDGE Group Name search icon i.e. three dots & enter Invalid inputs into search text field")
 	public void click_on_edge_group_name_search_icon_i_e_three_dots_enter_invalid_inputs_into_search_text_field()
@@ -153,6 +165,17 @@ public class EDGEDevicesSteps extends BaseTest {
 		edp.headingClick();
 
 	}
+	
+
+@Then("Click on EDGE Id field search icon i.e. three dots & enter Valid inputs into search text field.")
+public void click_on_edge_id_field_search_icon_i_e_three_dots_enter_valid_inputs_into_search_text_field() throws InterruptedException {
+	EdgeDevicesPage edp = new EdgeDevicesPage(driver, logger);
+	edp.edgeIdSearch_Button();
+	edp.sendValueSearchIcon(alldata.get(vTCName).get("Value1").toString());
+	Thread.sleep(8000);
+	edp.backDropShowing_Div_Click();
+	edp.headingClick();
+}
 
 	@When("After pagination all default records will display in Next page")
 	public void after_pagination_all_default_records_will_display_in_next_page() {
@@ -163,6 +186,11 @@ public class EDGEDevicesSteps extends BaseTest {
 	public void click_on_app_group_name_search_icon() {
 		EdgeDevicesPage edp = new EdgeDevicesPage(driver, logger);
 		edp.edgeAppGroupsSearch_Button();
+	}
+	@Then("enter value for App Group name")
+	public void enter_value_for_app_group_name() {
+		EdgeDevicesPage edp = new EdgeDevicesPage(driver, logger);
+		edp.sendValueSearchIconByAppGroups(alldata.get(vTCName).get("Value1").toString());
 	}
 
 	@Then("Click on three dots & enter Valid inputs into search text field.")
@@ -232,7 +260,7 @@ public class EDGEDevicesSteps extends BaseTest {
 
 		// edp.WebDevices_heading();
 		edp.edgeNameSearch_Button();
-		
+
 		edp.sendValueSearchIconByEdgeName(alldata.get(vTCName).get("Value2").toString());
 		Assert.assertEquals("EdgeName search text box is not empty", "", edp.removalofEneredTextForEdgeName());
 
@@ -253,24 +281,24 @@ public class EDGEDevicesSteps extends BaseTest {
 
 		edp.backDropShowing_Div_Click();
 		edp.edgeNameSearch_Button();
-		;
+		
 		edp.sendValueSearchIconByEdgeName(alldata.get(vTCName).get("Value2").toString());
 
 		edp.backDropShowing_Div_Click();
 		edp.edgeGroupNameSearch_Button();
-		;
+		
 		edp.sendValueSearchinputBoxForEdgeGroupName(alldata.get(vTCName).get("Value3").toString());
 
 		edp.backDropShowing_Div_Click();
 		edp.edgeAppGroupsSearch_Button();
-		;
+		
 		edp.sendValueSearchIconByAppGroups(alldata.get(vTCName).get("Value4").toString());
 
 		edp.scrollingElementRightBar("div.example-container", "900");
 
 		edp.backDropShowing_Div_Click();
 		edp.hardwareNameSearchDot();
-		;
+		
 		edp.hardwareNameInput(alldata.get(vTCName).get("Value5").toString());
 
 	}
@@ -395,7 +423,7 @@ public class EDGEDevicesSteps extends BaseTest {
 	@Then("landed on EDGE>Application Deployment screen")
 	public void landed_on_edge_application_deployment_screen() {
 
-		EdgeGroupConfiguration egc = new EdgeGroupConfiguration(driver, logger);
+		EdgeGroupConfigurationPage egc = new EdgeGroupConfigurationPage(driver, logger);
 
 		Assert.assertEquals("Edge Group Configuration breadcrum does not matching ",
 				"EDGE Devices > Application Deployment", egc.verifyDeployBreadcrumb());
@@ -722,7 +750,7 @@ public class EDGEDevicesSteps extends BaseTest {
 	@Then("Click on Deployments tab")
 	public void click_on_deployments_tab() throws InterruptedException {
 		DeploymentsPage dp = new DeploymentsPage(driver, logger);
-		dp.deploymenttabclick();
+		dp.deploymenttoggle();
 		Thread.sleep(5000);
 	}
 
@@ -772,13 +800,12 @@ public class EDGEDevicesSteps extends BaseTest {
 	}
 
 	@Then("After landing on EDGE Device List screen scroll horizont and Click on EDIT icon button")
-	public void after_landing_on_edge_device_list_screen_scroll_horizont_and_click_on_edit_icon_button() {
+	public void after_landing_on_edge_device_list_screen_scroll_horizont_and_click_on_edit_icon_button() throws InterruptedException {
 		EdgeDevicesPage edp = new EdgeDevicesPage(driver, logger);
-		try {
-			edp.clickEditButton();
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
+		Thread.sleep(5000);
+		
+		edp.clickEditButton();
+		Thread.sleep(4000);
 
 	}
 
@@ -833,8 +860,8 @@ public class EDGEDevicesSteps extends BaseTest {
 		EnvironmentalVariablePage ev = new EnvironmentalVariablePage(driver, logger);
 		ev.deleteButtonClick();
 		Thread.sleep(3000);
-		ev.confirmationYesDeleteButton();
-		// ev.confirmationCancelDeleteButton();
+		//ev.confirmationYesDeleteButton();
+		 ev.confirmationCancelDeleteButton();
 	}
 
 	@Then("Click on EDGE ID search icon i.e. three dots & enter Valid inputs into search text field")
@@ -874,13 +901,13 @@ public class EDGEDevicesSteps extends BaseTest {
 	public void click_on_search_icon_of_config_name_config_value() {
 		EnvironmentalVariablePage ev = new EnvironmentalVariablePage(driver, logger);
 		ev.configNameSearch();
-		ev.configNameInput(alldata.get(vTCName).get("Value1").toString());
+		ev.configNameInput(alldata.get(vTCName).get("Value13").toString());
 
 		ev.backDropShowing_Div_Click();
 		ev.headingClick();
 
 		ev.configValue();
-		ev.configValueInput(alldata.get(vTCName).get("Value2").toString());
+		ev.configValueInput(alldata.get(vTCName).get("Value14").toString());
 
 		ev.backDropShowing_Div_Click();
 	}
@@ -908,7 +935,7 @@ public class EDGEDevicesSteps extends BaseTest {
 		wp.backDropShowing_Div_Click();
 		wp.headingClick();
 
-		wp.checkWellMap();
+		wp.selectedCheckboxforWell();
 
 	}
 
@@ -952,5 +979,88 @@ public class EDGEDevicesSteps extends BaseTest {
 		EdgeDevicesPage edp = new EdgeDevicesPage(driver, logger);
 		edp.scrollingElementRightBar("div.example-container", "900");
 	}
+
+	@When("Click on Bulk Application Configuration button")
+	public void click_on_bulk_application_configuration_button() {
+		EdgeDevicesPage edp = new EdgeDevicesPage(driver, logger);
+		edp.Configuration_Icon_Button();
+	}
+
+	@Then("verify App Group functionality")
+	public void verify_app_group_functionality() throws InterruptedException {
+		EdgeAppConfigurationPage eacp = new EdgeAppConfigurationPage(driver, logger);
+		eacp.appGroupNameDot();
+
+		eacp.appGroupNameInputdeploy(alldata.get(vTCName).get("Value6").toString());
+
+		eacp.backDropShowing_Div_Click();
+
+		eacp.checkboxEdgeGroupNameStepOneName();
+
+		eacp.NextButtonStep1();
+		Thread.sleep(4000);
+	}
+
+	@Then("verify Edge Device functionality")
+	public void verify_edge_device_functionality() throws InterruptedException {
+		EdgeAppConfigurationPage eacp = new EdgeAppConfigurationPage(driver, logger);
+		eacp.deploymentEdgeGroupId();
+
+		eacp.applicationconfigurationEdgeIDDevice(alldata.get(vTCName).get("Value7").toString());
+
+		eacp.backDropShowing_Div_Click();
+
+		eacp.checkboxEdgeNameStepFour();
+
+		eacp.NextButtonStep2();
+		Thread.sleep(4000);
+	}
+
+	@Then("verify application functionality")
+	public void verify_application_functionality() throws InterruptedException {
+
+		EdgeAppConfigurationPage eacp = new EdgeAppConfigurationPage(driver, logger);
+		eacp.appNameDot();
+
+		eacp.appNameInput(alldata.get(vTCName).get("Value8").toString());
+
+		eacp.backDropShowing_Div_Click();
+
+		eacp.checkboxEdgeStepThreeName();
+
+		eacp.NextButtonStep3();
+		Thread.sleep(4000);
+	}
+
+	@Then("Verify Configuration functionality")
+	public void verify_configuration_functionality() throws InterruptedException {
+		EdgeAppConfigurationPage eacp = new EdgeAppConfigurationPage(driver, logger);
+		eacp.ConfigNameAppDeploymentDot();
+		eacp.ConfigNameAppDeploymentInput(alldata.get(vTCName).get("Value9").toString());
+		eacp.backDropShowing_Div_Click();
+
+		eacp.checkboxConfiguration();
+
+		eacp.NextButtonStep4();
+	
+	}
+
+	@Then("Verify deployment functionality")
+	public void verify_deployment_functionality() {
+
+	}
+	@And("click on edit button beside search items")
+	public void click_on_edit_button_beside_search_items() {
+		EdgeDevicesPage edp = new EdgeDevicesPage(driver, logger);
+		edp.clickEditButton();
+	}
+	@Then("Click on save well map")
+	public void click_on_save_well_map() {
+	    WellMapping wp = new WellMapping(driver, logger);
+	    wp.saveWellData();
+	}
+	
+	
+
 
 }

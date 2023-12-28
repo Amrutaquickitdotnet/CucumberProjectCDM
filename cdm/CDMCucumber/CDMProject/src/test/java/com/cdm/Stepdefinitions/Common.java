@@ -27,8 +27,8 @@ public class Common extends BaseTest {
 			String temp = itrator.next();
 			System.out.println("I am tag Name" + temp);
 			if (temp.startsWith("@Sheet")) {
-				tagName = temp.replace("@", "");
-				System.out.println("I am tag Name" + tagName);
+				tagName = temp.replace("@Sheet", "");
+				System.out.println("I am in Sheet" + tagName);
 			}
 		}
 		initiationData();
@@ -43,6 +43,8 @@ public class Common extends BaseTest {
 		// logger.addScreenCaptureFromBase64String(tagName);
 		extent.flush();
 		driver.close();
+		driver.quit();
+		driver=null;
 	}
 
 	@Given("User launch application in chrome browser")

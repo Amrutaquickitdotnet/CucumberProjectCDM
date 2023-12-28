@@ -1,0 +1,60 @@
+package com.cdm.pages;
+
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import com.aventstack.extentreports.ExtentTest;
+import com.cdm.common.CommonActions;
+
+public class AppGroupsPage extends CommonActions{
+
+	public AppGroupsPage(WebDriver driver, ExtentTest logger) {
+		super(driver, logger);
+		PageFactory.initElements(driver, this);
+		
+	}
+
+	@FindBy(css = ".cdk-overlay-backdrop-showing")
+	WebElement backDropShowing;
+
+	@FindBy(xpath =  "//input[@name='appgroupname']")
+	WebElement appGroupNameInput;
+
+	@FindBy(xpath =  "//input[@name='displayname']")
+	WebElement appGroupDisplayNameInput;
+	
+	 
+	
+	
+	@FindBy(xpath = "//thead/tr[1]/th[1]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]")
+	WebElement appGroupNameDot;
+
+	
+	public void movetoAppGroup() {
+		appGroupNameDot.click();
+	}
+	
+	public void checktitle(String exp) {
+		verifyTitle(exp);
+	}
+	
+	public void checkactivebtn() {
+		//ElementExist(Active_state_check, getScreenshot());
+	}
+	public void appGroupNameInput(String value) {
+		appGroupNameInput.sendKeys(Keys.ENTER);
+		appGroupNameInput.sendKeys(value);
+	}
+	public void appGroupDisplayNameInput(String value) {
+		appGroupDisplayNameInput.sendKeys(Keys.ENTER);
+		appGroupDisplayNameInput.sendKeys(value);
+	}
+	public void backDropShowing_Div_Click() {
+		if (backDropShowing != null) {
+			backDropShowing.click();
+		}
+	}
+}

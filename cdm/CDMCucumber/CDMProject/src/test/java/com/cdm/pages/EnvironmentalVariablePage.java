@@ -84,6 +84,10 @@ public class EnvironmentalVariablePage extends CommonActions {
 
 	@FindBy(xpath = "//button[contains(text(),'Save')]")
 	WebElement saveButton;
+	
+	@FindBy(css = ".addButton")
+	WebElement saveButtonEnvironmental;
+	
 
 	@FindBy(xpath = "//input[@formcontrolname='uploadfile']")
 	WebElement chooseFile;

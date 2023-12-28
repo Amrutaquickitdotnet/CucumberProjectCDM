@@ -1,0 +1,57 @@
+package com.cdm.pages;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import com.aventstack.extentreports.ExtentTest;
+import com.cdm.common.CommonActions;
+
+public class EdgeGroupConfiguration extends CommonActions {
+
+	public EdgeGroupConfiguration(WebDriver driver, ExtentTest logger) {
+		super(driver, logger);
+		PageFactory.initElements(driver, this);
+	}
+
+	@FindBy(xpath = "//h4/span[contains(text(),'Application Deployment')]")
+	WebElement headingConfigurationTitle;
+	
+	@FindBy(css = ".tableCard h4")
+	WebElement deployListpageVerification;
+	
+	@FindBy(xpath = "//div[contains(text(),'App Name')]/../../..//mat-icon")
+
+	WebElement appNameDot;
+	@FindBy(xpath = "(//button//span[contains(text(),'Next')])[1]/..")
+	WebElement NextButton1;
+
+	@FindBy(xpath = "(//button//span[contains(text(),'Next')])[2]/..")
+	WebElement NextButton2;
+
+	@FindBy(xpath = "(//button//span[contains(text(),'Next')])[3]/..")
+	WebElement NextButton3;
+
+	@FindBy(xpath = "(//button//span[contains(text(),'Next')])[4]/..")
+	WebElement NextButton4;
+	
+	public void headingConfigurationTitleClick() {
+		// clickElement(headingTitle, "Clicking on Title of heading");
+		headingConfigurationTitle.click();
+	}
+	public void BulkAppDeploymentButton() {
+		clickElement(BulkAppDeploymentButton, getScreenshot());
+		ElementExist(BulkAppDeploymentButton, getScreenshot());
+
+	}
+
+	
+	public String verifyDeployBreadcrumb() {
+		String breadcrumb = deployListpageVerification.getText();
+        return breadcrumb;
+		
+	}
+	
+
+}

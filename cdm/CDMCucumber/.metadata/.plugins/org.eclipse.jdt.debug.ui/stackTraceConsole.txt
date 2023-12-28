@@ -1,8 +1,8 @@
-io.cucumber.junit.UndefinedStepException: The step 'enter value for the maximum server nodes' is undefined.
+io.cucumber.junit.UndefinedStepException: The step 'Click on save well map' is undefined.
 You can implement this step using the snippet(s) below:
 
-@Then("enter value for the maximum server nodes")
-public void enter_value_for_the_maximum_server_nodes() {
+@Then("Click on save well map")
+public void click_on_save_well_map() {
     // Write code here that turns the phrase above into concrete actions
     throw new io.cucumber.java.PendingException();
 }

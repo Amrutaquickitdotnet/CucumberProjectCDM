@@ -1,8 +1,10 @@
 package com.cdm.Stepdefinitions;
 
 import org.junit.Assert;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.StaleElementReferenceException;
 
-import com.cdm.pages.EdgeDeviceAdd;
+import com.cdm.pages.EdgeGroupConfigurationPage;
 import com.cdm.pages.EdgeGroupsPage;
 import com.cdm.pages.Menu;
 import com.cdm.pages.Pagination;
@@ -66,9 +68,20 @@ public class EdgeGroupSteps extends BaseTest {
 	public void enter_text_in_the_field_of_group_name() throws InterruptedException {
 		EdgeGroupsPage egp = new EdgeGroupsPage(driver, logger);
 		egp.groupNameInputSearch(alldata.get(vTCName).get("Value1").toString());
-		Thread.sleep(8000);
+		Thread.sleep(2000);
 		egp.backDropShowing_Div_Click();
-		egp.headingClick();
+		Thread.sleep(4000);
+		egp.headingEdgeGroupListClick();
+	}
+
+	@Then("enter text in the GroupName")
+	public void enter_text_in_the_group_name() throws InterruptedException {
+		EdgeGroupsPage egp = new EdgeGroupsPage(driver, logger);
+		egp.groupNameInputSearch(alldata.get(vTCName).get("Value1").toString());
+		Thread.sleep(2000);
+		// egp.backDropShowing_Div_Click();
+		Thread.sleep(4000);
+		egp.headingEdgeGroupListClick();
 	}
 
 	@Then("click on bulk Download button EDGE Group")
@@ -165,7 +178,8 @@ public class EdgeGroupSteps extends BaseTest {
 	}
 
 	@Then("After landing on EDGE Group List screen and Mousehover on EDIT icon button Verify tooltip functionality")
-	public void after_landing_on_edge_group_list_screen_and_mousehover_on_edit_icon_button_verify_tooltip_functionality() {
+	public void after_landing_on_edge_group_list_screen_and_mousehover_on_edit_icon_button_verify_tooltip_functionality()
+			throws InterruptedException {
 		EdgeGroupsPage egp = new EdgeGroupsPage(driver, logger);
 		Assert.assertEquals("Tooltip of Edit button", "Edit", egp.get_Text_EditButtonToolTip());
 	}
@@ -175,14 +189,14 @@ public class EdgeGroupSteps extends BaseTest {
 			throws InterruptedException {
 		EdgeGroupsPage egp = new EdgeGroupsPage(driver, logger);
 
-		Assert.assertEquals("Tooltip of Delete button", "Delete1", egp.get_Text_DeleteButtonToolTip());
+		Assert.assertEquals("Tooltip of Delete button", "Delete", egp.get_Text_DeleteButtonToolTip());
 	}
 
 	@Then("After landing on EDGE Group List screen and Mousehover on STOP icon button Verify tooltip functionality")
 	public void after_landing_on_edge_group_list_screen_and_mousehover_on_stop_icon_button_verify_tooltip_functionality() {
 		EdgeGroupsPage egp = new EdgeGroupsPage(driver, logger);
 
-		Assert.assertEquals("Tooltip of Stop button", "STOP", egp.get_Text_StopButtonToolTip());
+		Assert.assertEquals("Tooltip of Stop button", "Stop", egp.get_Text_StopButtonToolTip());
 	}
 
 	@Then("After landing on EDGE Group List screen and Mousehover on Console icon button Verify tooltip functionality")
@@ -255,9 +269,11 @@ public class EdgeGroupSteps extends BaseTest {
 	}
 
 	@Then("Click on download icon of Licensing")
-	public void click_on_download_icon_of_licensing() {
+	public void click_on_download_icon_of_licensing() throws InterruptedException {
 		EdgeGroupsPage egp = new EdgeGroupsPage(driver, logger);
+		Thread.sleep(4000);
 		egp.licenceDownloadButton();
+		Thread.sleep(4000);
 	}
 
 	@Then("Click on Refresh icon of Licensing")
@@ -278,7 +294,30 @@ public class EdgeGroupSteps extends BaseTest {
 
 		egp.controllerConfigurationCertificateUpload(alldata.get(vTCName).get("Value4").toString());
 
-		egp.serialKey(alldata.get(vTCName).get("Value2").toString());
+	}
+
+	@Then("browse the upload document and upload for Registration section for OnBoarding Certificate")
+	public void browse_the_upload_document_and_upload_for_registration_section_for_on_boarding_certificate() {
+		EdgeGroupsPage egp = new EdgeGroupsPage(driver, logger);
+
+		egp.controllerConfigurationCertificateUpload(alldata.get(vTCName).get("Value4").toString());
+
+		egp.serialKey(alldata.get(vTCName).get("Value3").toString());
+
+		egp.saveButtononboardingCertificateIcon();
+		egp.saveButtonfinalonboarding();
+	}
+
+	@Then("Click on save button to save document")
+	public void click_on_save_button_to_save_document() {
+		EdgeGroupsPage egp = new EdgeGroupsPage(driver, logger);
+		egp.saveButtonUpload();
+	}
+
+	@Then("Click on save data for Edge Group")
+	public void click_on_save_data_for_edge_group() {
+		EdgeGroupsPage egp = new EdgeGroupsPage(driver, logger);
+		egp.saveButtonforEdgeGroup();
 	}
 
 	@Then("Click on License icon from Licensing section")
@@ -315,10 +354,11 @@ public class EdgeGroupSteps extends BaseTest {
 	}
 
 	@Then("without enter any values click on save then scroll down")
-	public void without_enter_any_values_click_on_save_then_scroll_down() {
+	public void without_enter_any_values_click_on_save_then_scroll_down() throws InterruptedException {
 		EdgeGroupsPage egp = new EdgeGroupsPage(driver, logger);
 		egp.scrollingvertical();
 		egp.saveButtonforEdgeGroup();
+		Thread.sleep(5000);
 	}
 
 	@Then("scroll down page")
@@ -331,6 +371,18 @@ public class EdgeGroupSteps extends BaseTest {
 	public void click_on_download_icon_of_edge_configurations() {
 		EdgeGroupsPage egp = new EdgeGroupsPage(driver, logger);
 		egp.checkBulkDownloadButton();
+	}
+
+	@Then("Click on download icon of Edge Configurations of License section")
+	public void click_on_download_icon_of_edge_configurations_of_license_section() throws InterruptedException {
+		EdgeGroupsPage egp = new EdgeGroupsPage(driver, logger);
+		try {
+			egp.licenceDownloadButton();
+			Thread.sleep(4000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
 	}
 
 	@Then("remove the text for Edge group Name which already entered and fill with new entry")
@@ -350,8 +402,9 @@ public class EdgeGroupSteps extends BaseTest {
 	@Then("add Group Id, Group Name Under Identity section")
 	public void add_group_id_group_name_under_identity_section() {
 		EdgeGroupsPage egp = new EdgeGroupsPage(driver, logger);
+
 		egp.identitySection(alldata.get(vTCName).get("Value1").toString());
-		egp.groupNameInputSearch(alldata.get(vTCName).get("Value2").toString());
+		egp.groupNameAdd(alldata.get(vTCName).get("Value2").toString());
 	}
 
 	@Then("make status active for health toggle")
@@ -429,6 +482,7 @@ public class EdgeGroupSteps extends BaseTest {
 	public void click_on_save_button_to_save_certificates() {
 		EdgeGroupsPage egp = new EdgeGroupsPage(driver, logger);
 		egp.saveButtonUpload();
+		egp.saveButtonforEdgeGroup();
 	}
 
 	@Then("enter valid values and click on save")
@@ -441,17 +495,123 @@ public class EdgeGroupSteps extends BaseTest {
 	public void enter_alphanumeric_with_special_char_values_into_edge_group_name_text_fields() {
 		EdgeGroupsPage egp = new EdgeGroupsPage(driver, logger);
 		egp.edgenameInput(alldata.get(vTCName).get("Value2").toString());
-        egp.saveButtonforEdgeGroup();
-		Assert.assertEquals("EdgeId message not matching",
-				"  Alphanumerics of length Min = 2, Max = 64 are allowed ! ", egp.verifyValidationMessageEdgeName());
+		Assert.assertEquals("Edge ID validation for 64 char is not valid", "Expected messsage",
+				egp.verifyValidationMessageEdgeId());
+
+	}
+
+	@Then("Enter alphanumeric with special char values  with max character into EDGE Group Name text fields")
+	public void enter_alphanumeric_with_special_char_values_with_max_character_into_edge_group_name_text_fields() {
+		EdgeGroupsPage egp = new EdgeGroupsPage(driver, logger);
+		egp.edgenameInput(alldata.get(vTCName).get("Value2").toString());
+		Assert.assertEquals("Edge Group Name Validation message is not matching",
+				"Alphanumerics of length Min = 2, Max = 64 are allowed !", egp.verifyValidationMessageEdgeName());
+
 	}
 
 	@Then("Enter alphanumeric with special char values into EDGE Group ID text fields")
 	public void enter_alphanumeric_with_special_char_values_into_edge_group_id_text_fields() {
 		EdgeGroupsPage egp = new EdgeGroupsPage(driver, logger);
 		egp.identitySection(alldata.get(vTCName).get("Value1").toString());
+		Assert.assertEquals("Edge ID validation for 64 char is not valid", "Expected messsage",
+				egp.verifyValidationMessageEdgeId());
 
-		Assert.assertEquals("EdgeName message not matching",
-				"   Mandatory field - required !  ", egp.verifyValidationMessageEdgeId());
+		Assert.assertEquals("EdgeId Min and max message not matching",
+				"   Alphanumerics of length Min = 2, Max = 64 are allowed !", egp.verifyValidationMessageEdgeId());
 	}
+
+	@Then("After landing on EDGE Group List screen and Click on APP DEPLOY icon button on the top right side")
+	public void after_landing_on_edge_group_list_screen_and_click_on_app_deploy_icon_button_on_the_top_right_side() {
+		EdgeGroupConfigurationPage egcp = new EdgeGroupConfigurationPage(driver, logger);
+		egcp.BulkAppDeploymentButton();
+	}
+
+	@Then("verify for Edge Group functionality")
+	public void verify_for_edge_group_name_functionality() throws InterruptedException {
+
+		EdgeGroupConfigurationPage egcp = new EdgeGroupConfigurationPage(driver, logger);
+		egcp.edgeGroupNameConfigDot();
+
+		egcp.applicationDeploymentGroupNameSearch(alldata.get(vTCName).get("Value2").toString());
+		// egcp.backDropShowing_Div_Click();
+		egcp.headingConfigurationTitleClick();
+
+		egcp.checkboxEdgeGroupNameStepOneName();
+
+		egcp.NextButtonStep1();
+
+	}
+
+	@Then("verify for App Group functionality")
+	public void verify_for_app_group_functionality() throws InterruptedException {
+
+		EdgeGroupConfigurationPage egcp = new EdgeGroupConfigurationPage(driver, logger);
+
+		egcp.appGroupNameDot();
+
+		Thread.sleep(3000);
+
+		egcp.appGroupNameInputdeploy(alldata.get(vTCName).get("Value3").toString());
+		egcp.backDropShowing_Div_Click();
+
+		egcp.checkboxAppNameStepTwoName();
+
+		egcp.NextButtonStep2();
+
+	}
+
+	@Then("verify for Edge Name functionality")
+	public void verify_for_edge_name_functionality() throws InterruptedException {
+		EdgeGroupConfigurationPage egcp = new EdgeGroupConfigurationPage(driver, logger);
+		egcp.edgeDot();
+		Thread.sleep(3000);
+
+		egcp.edgeDeployment(alldata.get(vTCName).get("Value4").toString());
+
+		egcp.backDropShowing_Div_Click();
+
+		egcp.headingConfigurationTitleClick();
+
+		egcp.checkboxEdgeStepThreeName();
+
+		egcp.NextButtonStep3();
+	}
+
+	@Then("verify for App Name functionality")
+	public void verify_for_app_name_functionality() throws InterruptedException {
+		EdgeGroupConfigurationPage egcp = new EdgeGroupConfigurationPage(driver, logger);
+		egcp.appNameDot();
+
+		egcp.appNameInput(alldata.get(vTCName).get("Value5").toString());
+
+		egcp.backDropShowing_Div_Click();
+
+		egcp.checkboxEdgeNameStepFour();
+		egcp.NextButtonStep4();
+	}
+
+	@Then("select the single check box valid Application name with latest version tag column and click on NEXT button")
+	public void select_the_single_check_box_valid_application_name_with_latest_version_tag_column_and_click_on_next_button() {
+		EdgeGroupConfigurationPage egcp = new EdgeGroupConfigurationPage(driver, logger);
+		egcp.edgeVersionDot();
+
+		egcp.edgeVersionNameInput(alldata.get(vTCName).get("Value6").toString());
+
+		egcp.backDropShowing_Div_Click();
+
+		egcp.checkboxEdgeNameStepFour();
+	}
+
+	@Then("click on App Deployment button EDGE Group")
+	public void click_on_app_deployment_button_edge_group() {
+		EdgeGroupConfigurationPage egcp = new EdgeGroupConfigurationPage(driver, logger);
+		egcp.BulkAppDeploymentButton();
+	}
+
+	@Then("Click on Confirm button and Click on Deploy button")
+	public void click_on_confirm_button_and_click_on_deploy_button() {
+		EdgeGroupConfigurationPage egcp = new EdgeGroupConfigurationPage(driver, logger);
+		egcp.confirmDeployButton();
+	}
+
 }

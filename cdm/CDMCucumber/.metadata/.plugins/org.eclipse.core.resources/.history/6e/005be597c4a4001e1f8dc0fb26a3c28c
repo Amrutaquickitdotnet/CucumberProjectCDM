@@ -1,0 +1,20 @@
+@SheetDEPLOYMENTS
+Feature: DEPLOYMENTS
+
+
+#@Test
+#Scenario: TC01_Verification of Browser Compatibility of EDGE Device module
+#Given User launch application in chrome browser
+#When user enters credentials and click on login button
+#And Succesfull login should be happen
+
+#@Test
+#Scenario: TC02_Resizing_login_page_screen(Zoom Levels)
+#Given User launch application in chrome browser
+#When user enters credentials and click on login button
+#Then verify page with resize option the login page
+
+
+
+
+

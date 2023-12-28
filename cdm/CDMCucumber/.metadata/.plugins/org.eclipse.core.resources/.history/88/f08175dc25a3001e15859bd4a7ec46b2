@@ -1,0 +1,31 @@
+package com.cdm.Stepdefinitions;
+
+import com.cdm.pages.AppGroupsPage;
+import com.cdm.pages.Menu;
+
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+public class AppGroupsSteps extends BaseTest {
+	
+	@When("Click on App Groups tab")
+	public void click_on_edge_group() {
+		Menu edp = new Menu(driver, logger);
+		edp.clickAppGroups();
+
+		try {
+			Thread.sleep(7000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	@When("Click on the three dots of App Group Name")
+	public void click_on_the_three_dots_of_app_group_name() {
+		
+	//	AppGroupsPage agp = new AppGroupsPage(driver, logger);
+	//	agp.movetoAppGroup();
+	}
+
+}

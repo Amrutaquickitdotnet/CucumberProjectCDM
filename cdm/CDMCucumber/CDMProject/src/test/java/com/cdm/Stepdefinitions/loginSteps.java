@@ -1,26 +1,20 @@
 package com.cdm.Stepdefinitions;
 
-import java.util.Collection;
-import java.util.Iterator;
+
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.PageLoadStrategy;
+
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
+
 import org.openqa.selenium.edge.EdgeDriver;
 
 
-import com.cdm.pages.HomePage;
+
 import com.cdm.pages.LoginPage;
 
-import io.cucumber.java.After;
-import io.cucumber.java.AfterAll;
-import io.cucumber.java.Before;
-import io.cucumber.java.BeforeAll;
-import io.cucumber.java.Scenario;
+
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -169,7 +163,8 @@ public class loginSteps extends BaseTest {
 
 	@When("open new tab")
 	public void open_new_tab() {
-          
+		LoginPage lp = new LoginPage(driver,logger);
+		lp.newTab();
 	}
 
 	@When("user enters alphanumeric value in userid")

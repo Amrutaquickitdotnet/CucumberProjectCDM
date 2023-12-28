@@ -1,0 +1,88 @@
+package com.cdm.Stepdefinitions;
+
+import org.junit.Assert;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.StaleElementReferenceException;
+
+import com.cdm.pages.EdgeGroupConfigurationPage;
+import com.cdm.pages.EdgeGroupsPage;
+import com.cdm.pages.Menu;
+import com.cdm.pages.Pagination;
+
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+public class EdgeGroupConfigurationSteps extends BaseTest {
+
+	@When("click on EDGE Group")
+	public void click_on_edge_group() {
+		Menu edp = new Menu(driver, logger);
+		edp.clickEdgeGroups();
+
+		try {
+			Thread.sleep(7000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	@Then("land on the dashbord")
+	public void land_on_the_dashbord() {
+		System.out.println("User is landing on Dashboard");
+	}
+
+	
+	
+	
+
+
+
+	
+
+	@Then("Pagination is in footer\\(Below) right side")
+	public void pagination_is_in_footer_below_right_side() throws Exception {
+		Pagination appgroup = new Pagination(driver, logger);
+
+		String value = alldata.get(vTCName).get("Value1").toString();
+		appgroup.SelectPageMatOption(value);
+		int rowPerPage = Integer.parseInt(value);
+		Assert.assertTrue("Row count match for last page", appgroup.LastPageClickAndCount(rowPerPage));
+
+		Assert.assertTrue("Row count match for last page", appgroup.nextPageClickAndCountOnLastPage(rowPerPage));
+	}
+
+	@Then("pagination all default records will display in Next page")
+	public void pagination_all_default_records_will_display_in_next_page() throws Exception {
+		Pagination appgroup3 = new Pagination(driver, logger);
+		String value = alldata.get(vTCName).get("Value1").toString();
+		appgroup3.SelectPageMatOption(value);
+		int rowPerPage = Integer.parseInt(value);
+		Assert.assertTrue("Row count match for last page", appgroup3.LastPageClickAndCount(rowPerPage));
+
+		Assert.assertTrue("Row count match for last page", appgroup3.nextPageClickAndCountOnLastPage(rowPerPage));
+	}
+
+	@Then("After pagination,previous page all default records will display")
+	public void after_pagination_previous_page_all_default_records_will_display() throws Exception {
+		Pagination appgroup4 = new Pagination(driver, logger);
+		String value = alldata.get(vTCName).get("Value1").toString();
+		appgroup4.SelectPageMatOption(value);
+		int rowPerPage = Integer.parseInt(value);
+		Assert.assertTrue("Row count match for last page", appgroup4.LastPageClickAndCount(rowPerPage));
+
+		Assert.assertTrue("Row count match for last page", appgroup4.nextPageClickAndCountOnLastPage(rowPerPage));
+	}
+
+	
+
+	@Then("Click on download icon of Edge Configurations")
+	public void click_on_download_icon_of_edge_configurations() {
+		EdgeGroupsPage egp = new EdgeGroupsPage(driver, logger);
+		egp.checkBulkDownloadButton();
+	}
+
+	
+	
+
+}

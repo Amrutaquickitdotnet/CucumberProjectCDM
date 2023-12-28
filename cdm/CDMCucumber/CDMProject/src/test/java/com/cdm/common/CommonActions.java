@@ -234,10 +234,7 @@ public String removalofEneredText(WebElement element,String message) {
 	}
 	
 	return ".";
-		//edgeNameInput.clear();
-		//edgeGroupNameInput.clear();
-		//edgeAppgroupsInput.clear();
-		//hardWareNameInput.clear();
+		
 	}
 	
 

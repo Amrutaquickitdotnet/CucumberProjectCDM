@@ -1,6 +1,6 @@
 package com.cdm.pages;
 
-import java.util.Iterator;
+
 
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Keys;
@@ -92,7 +92,7 @@ public class EdgeDevicesPage extends CommonActions {
 	@FindBy(xpath = "//h2[contains(text(),'EDGE Devices')]")
 	WebElement headingTitle;
 
-	@FindBy(xpath = "//tbody/tr[1]/td[7]/img[1]")
+	@FindBy(xpath = "//div[@id='matTable']/table[@id='matTable']/tbody/tr[@role='row']/td[7]/img[1]")
 	WebElement EditButton;
 
 	@FindBy(xpath = "//tbody/tr[1]/td[7]/img[2]")
@@ -409,7 +409,9 @@ public void WebDevices_heading()
 {
 	WebDevices_heading.click();
 	}
-
+public void Configuration_Icon_Button() {
+	Configuration_Icon_Button.click();
+}
 
 
 

@@ -1,0 +1,12 @@
+@SheetAppGroups
+Feature: DEPLOYMENT
+
+
+@Test
+Scenario: TC01_Verification of search functionality for Edge Name
+Given User launch application in chrome browser
+When user enters credentials and click on login button
+And Succesfull login should be happen
+
+
+
