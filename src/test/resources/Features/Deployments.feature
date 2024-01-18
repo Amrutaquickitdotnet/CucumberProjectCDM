@@ -1,26 +1,48 @@
 @SheetDEPLOYMENTS
 Feature: DEPLOYMENTS
 
-#
 #@Test
-#Scenario: TC01_Verification of Browser Compatibility of EDGE Device module
+#Scenario: TC01_Verification of Browser Compatibility
 #Given User launch application in chrome browser
 #When user enters credentials and click on login button
 #And Succesfull login should be happen
-
+#
 #@Test
-#Scenario: TC02_Resizing_login_page_screen(Zoom Levels)
+#Scenario: TC02_Verification of resizing the Deployment as per different zoom levels
 #Given User launch application in chrome browser
 #When user enters credentials and click on login button
-#Then verify page with resize option the login page
+#Then verify page with resize option for the deployment page
+
+
+#@Test
+#Scenario: TC03_Verification of displaying the Deployment table details after clicking on Deployment module option from side menu bar by Super admin/Admin user
+#Given User launch application in chrome browser
+#When user enters credentials and click on login button
+#Then Click on Deployments module from side menu bar
 
 @Test
-Scenario: TC03_Verify search functionality for Edge Name
+Scenario: TC04_Verification of Bulk download button functionality in the Deployment List screen by Super admin/Admin user
 Given User launch application in chrome browser
 When user enters credentials and click on login button
-Then click on three dots for Edge Name
-And user is landing on dashboard then click on Deployment tab at the left corner of the page
-And enter the value for Edge Name
+Then Click on Deployments module from side menu bar
+Then Click on the Bulk Download button
+
+@Test
+Scenario: TC05_Verification of Refreshing button functionality in the Deployment List screen by Super admin/Admin user
+Given User launch application in chrome browser
+When user enters credentials and click on login button
+Then Click on Deployments module from side menu bar
+Then Click on the Refresh button
+
+
+@Test
+Scenario: TC06_Verification of current view functionality in the Deployment List screen by Super admin/Admin user
+Given User launch application in chrome browser
+When user enters credentials and click on login button
+Then Click on Deployments module from side menu bar
+Then Click on the Current View button
+
+
 
 
 

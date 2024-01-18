@@ -10,6 +10,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 
+import org.apache.commons.mail.DefaultAuthenticator;
+import org.apache.commons.mail.EmailAttachment;
+import org.apache.commons.mail.EmailException;
+import org.apache.commons.mail.MultiPartEmail;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -161,18 +165,44 @@ public static String tagName="";
     	// Create an object of Extent Reports
 		extent = new ExtentReports();  
 		extent.attachReporter(htmlReporter);
-		extent.setSystemInfo("Host Name", "Automation Test Hub");
+		extent.setSystemInfo("Host Name", "BirlaSoft");
 		    	extent.setSystemInfo("Environment", "Test");
-		extent.setSystemInfo("User Name", "Rajesh U");
-		htmlReporter.config().setDocumentTitle("Title of the Report Comes here "); 
+		extent.setSystemInfo("User Name", "Devendaram");
+		htmlReporter.config().setDocumentTitle("Foresite Centeralized Device Management"); 
 		            // Name of the report
-		htmlReporter.config().setReportName("Name of the Report Comes here "); 
+		htmlReporter.config().setReportName("Foresite Centeralized Device Management"); 
 		            // Dark Theme
-		htmlReporter.config().setTheme(Theme.DARK); 
+		htmlReporter.config().setTheme(Theme.STANDARD); 
+		htmlReporter.config().setTimeStampFormat("MMM dd, yyyy HH:mm:ss a");
 		
 	}
 	
-	
+	public void email() throws Exception {
+		Date d = new Date();
+		DateFormat ft = new SimpleDateFormat("ddMMyyyyhhmmss");
+		String fileName = ft.format(d);
+		EmailAttachment attachment = new EmailAttachment();
+
+        attachment.setPath(System.getProperty("user.dir") + "/src/test/java/com/cdm/reports/ExtentReport"+fileName+".html");
+
+        attachment.setDisposition(EmailAttachment.ATTACHMENT);
+        attachment.setDescription(" Test Execution Report");
+        attachment.setName("Report.html");
+
+        // Create the email message
+        MultiPartEmail email = new MultiPartEmail();
+        email.setHostName("smtp.gmail.com");
+        email.setSSLOnConnect(true);
+        email.setSmtpPort(465);
+        email.setAuthenticator(new DefaultAuthenticator("your email", "authentication_code"));
+        email.addTo("toemail", "Test");
+        email.setFrom("from email", "Me");
+        email.setSubject("Automation Test Execution Report");
+        email.setMsg("Automation Test Execution Report");
+        email.attach(attachment);
+
+        email.send();
+	}
 	
 	
 
