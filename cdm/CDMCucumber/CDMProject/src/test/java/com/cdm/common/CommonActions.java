@@ -7,6 +7,7 @@ import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.Date;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
@@ -249,10 +250,7 @@ public String removalofEneredText(WebElement element) {
 		element.sendKeys(Keys.ENTER);
 		text=element.getDomProperty("value");
 		return text;
-		//edgeNameInput.clear();
-		//edgeGroupNameInput.clear();
-		//edgeAppgroupsInput.clear();
-		//hardWareNameInput.clear();
+	
 	}
 	
 	
@@ -275,7 +273,7 @@ public String removalofEneredText(WebElement element) {
 		 JavascriptExecutor js = (JavascriptExecutor)driver;
 		    js.executeScript("document.querySelector('"+cssSelector+"').scrollTo("+startingPoint+", "+height+")");
 		    try {
-				Thread.sleep(5000);
+				Thread.sleep(8000);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				
@@ -305,7 +303,16 @@ public String removalofEneredText(WebElement element) {
 		 WebElement optionToSelect = driver.findElement(By.xpath(xpath));
 		 optionToSelect.click();
 	}
-	
+	public static String capture(WebDriver driver,String screenShotName) throws IOException
+    {
+        TakesScreenshot ts = (TakesScreenshot)driver;
+        File source = ts.getScreenshotAs(OutputType.FILE);
+        String dest = System.getProperty("user.dir") +"\\ErrorScreenshots\\"+screenShotName+".png";
+        File destination = new File(dest);
+        FileUtils.copyFile(source, destination);        
+                     
+        return dest;
+    }
 	
 
 	 

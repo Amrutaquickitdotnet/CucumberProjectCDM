@@ -14,9 +14,9 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(
 
 		// features = "src/test/resources/Features/LoginApp.feature",
-		features = "src/test/resources/Features/EDGEDevices.feature",
+		  // features = "src/test/resources/Features/EDGEDevices.feature",
 		//features = "src/test/resources/Features/EDGEGroups.feature",
-		//features = "src/test/resources/Features/Deployments.feature",
+		features = "src/test/resources/Features/Deployments.feature",
 
 		// features = "src/test/resources/Features/AppGroups.feature",
 

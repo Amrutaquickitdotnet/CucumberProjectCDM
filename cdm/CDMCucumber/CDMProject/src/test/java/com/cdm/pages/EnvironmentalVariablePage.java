@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.Properties;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -61,8 +62,8 @@ public class EnvironmentalVariablePage extends CommonActions {
 	@FindBy(xpath = "//tbody/tr[1]/td[4]/img[1]")
 	WebElement EditButton;
 
-	@FindBy(xpath = "//tbody/tr[2]/td[4]/img[2]")
-	WebElement deleteButton;
+	@FindBy(xpath = "//tbody/tr[3]/td[4]/img[2]")
+	WebElement deleteButtonConfig;
 
 	@FindBy(xpath = "//body/app-root[1]/app-root[1]/app-home[1]/mat-sidenav-container[1]/mat-sidenav-content[1]/div[2]/div[1]/app-device-add-edit-detail-page[1]/div[1]/div[1]/div[1]/div[1]/app-config[1]/div[1]/div[1]/div[2]/span[1]/img[1]")
 	WebElement environmentalVariableAddButton;
@@ -133,10 +134,12 @@ public class EnvironmentalVariablePage extends CommonActions {
 	}
 
 	public void environmentalConfigName(String value) {
+		ConfigName.sendKeys(Keys.ENTER);
 		ConfigName.sendKeys(value);
 	}
 
 	public void environmentalConfigValue(String value) {
+		ConfigValue.sendKeys(Keys.ENTER);
 		ConfigValue.sendKeys(value);
 	}
 
@@ -152,9 +155,9 @@ public class EnvironmentalVariablePage extends CommonActions {
 		EditButton.click();
 	}
 
-	public void deleteButtonClick() {
+	public void deleteButtonConfigClick() {
 
-		deleteButton.click();
+		deleteButtonConfig.click();
 	}
 
 	public void confirmationYesDeleteButton() {
@@ -198,7 +201,8 @@ public class EnvironmentalVariablePage extends CommonActions {
 	}
 
 	public void configValue() {
-		clickElement(configValueSearch,"configValue");
+		
+		configValueSearch.click();
 	}
 
 	public void configNameInput(String value) {

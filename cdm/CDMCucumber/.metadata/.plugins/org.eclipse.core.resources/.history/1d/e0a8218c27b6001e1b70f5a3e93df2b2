@@ -1,0 +1,27 @@
+package com.cdm.pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import com.aventstack.extentreports.ExtentTest;
+import com.cdm.common.CommonActions;
+
+public class DeploymentsmodulePage extends CommonActions {
+
+	public DeploymentsmodulePage(WebDriver driver, ExtentTest logger) // created WebDriver Constructor
+	{
+		super(driver, logger);
+
+		PageFactory.initElements(driver, this);
+	}
+
+	@FindBy(xpath = "//body[1]/app-root[1]/app-root[1]/app-home[1]/mat-sidenav-container[1]/mat-sidenav-content[1]/div[2]/div[1]/app-edgegroup-config[1]/div[1]/div[1]/mat-horizontal-stepper[1]/div[2]/div[4]/form[1]/div[1]/div[1]/div[1]/div[1]/table[1]/thead[1]/tr[1]/th[1]/mat-checkbox[1]/label[1]/span[1]")
+	WebElement applicationdeploymentCheckboxAll;
+
+	
+}

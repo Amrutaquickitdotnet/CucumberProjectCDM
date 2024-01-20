@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRunner" project="CDMProject" tests="8" started="8" failures="0" errors="2" ignored="0">
+  <testsuite name="com.cdm.runner.TestRunner" time="247.752">
+    <testsuite name="DEPLOYMENTS" time="247.752">
+      <testcase name="TC09_Verification of reduction in the number of records in pagination section of Deployment details screen" classname="DEPLOYMENTS" time="46.615"/>
+      <testcase name="TC10_Verification of changing the items per page functionality in the Deployment List screen by Super admin/Admin user" classname="DEPLOYMENTS" time="15.351">
+        <error>org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found
+  (Session info: chrome=120.0.6099.225)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Build info: version: '4.14.1', revision: '03f8ede370'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [9cdf80922f5f6a8c25851d4daad795de, clickElement {id=5908A282931583D032BE6ABAE79ACF41_element_28}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.225, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Windows\TEMP\scoped_dir6...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58993}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58993/devtoo..., se:cdpVersion: 120.0.6099.225, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (9cdf80922f5f6a8c25851d4daad795de)] -&gt; xpath: //span[contains(text(),'Deployments')]]
+Session ID: 9cdf80922f5f6a8c25851d4daad795de&#13;
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)&#13;
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)&#13;
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)&#13;
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)&#13;
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)&#13;
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)&#13;
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)&#13;
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)&#13;
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)&#13;
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)&#13;
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:224)&#13;
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)&#13;
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)&#13;
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)&#13;
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)&#13;
+	at jdk.proxy2/jdk.proxy2.$Proxy23.click(Unknown Source)&#13;
+	at com.cdm.pages.DeploymentsmodulePage.deploymenttabclick(DeploymentsmodulePage.java:56)&#13;
+	at com.cdm.Stepdefinitions.DeploymentsSteps.click_on_deployments_module_from_side_menu_bar(DeploymentsSteps.java:44)&#13;
+	at ✽.Click on Deployments module from side menu bar(file:///E:/Devendra/cdm/CDMCucumber/CDMProject/src/test/resources/Features/Deployments.feature:76)&#13;
+&#13;
+</error>
+      </testcase>
+      <testcase name="TC11_Verification of displaying the items per page by default i.e. 25 per page in the Deployment List screen by Super admin/Admin user" classname="DEPLOYMENTS" time="29.135"/>
+      <testcase name="TC12_Verification of displaying the total number of records with pagination icons in the Deployment List screen by Super admin/Admin user" classname="DEPLOYMENTS" time="40.236"/>
+      <testcase name="TC13_Verification of displaying the First page (Full Backward arrow) button in the Deployment List screen by Super admin/Admin user" classname="DEPLOYMENTS" time="40.223"/>
+      <testcase name="TC14_Verification of displaying the Last page (Full Forward arrow button in the Deployment List screen by Super admin/Admin user" classname="DEPLOYMENTS" time="2.198">
+        <error>java.lang.NullPointerException: Cannot invoke "java.util.Map.get(Object)" because the return value of "java.util.Map.get(Object)" is null&#13;
+	at com.cdm.Stepdefinitions.Common.user_launch_application_in_chrome_browser(Common.java:53)&#13;
+	at ✽.User launch application in chrome browser(file:///E:/Devendra/cdm/CDMCucumber/CDMProject/src/test/resources/Features/Deployments.feature:109)&#13;
+&#13;
+</error>
+      </testcase>
+      <testcase name="TC15_Verification of displaying the Next page (Forward arrow button in the Deployment List screen by Super admin/Admin user" classname="DEPLOYMENTS" time="33.158"/>
+      <testcase name="TC16_Verification of displaying the Previous page (Backward arrow button in the Deployment List screen by Super admin/Admin user" classname="DEPLOYMENTS" time="40.835"/>
+    </testsuite>
+  </testsuite>
+</testrun>

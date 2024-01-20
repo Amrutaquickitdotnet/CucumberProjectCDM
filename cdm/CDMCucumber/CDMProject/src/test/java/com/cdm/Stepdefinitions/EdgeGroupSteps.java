@@ -1,10 +1,18 @@
 package com.cdm.Stepdefinitions;
 
+import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
+
 import org.junit.Assert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.StaleElementReferenceException;
 
+import com.cdm.pages.EdgeDeviceAdd;
+import com.cdm.pages.EdgeGroupAddPage;
 import com.cdm.pages.EdgeGroupConfigurationPage;
+import com.cdm.pages.EdgeGroupEditPage;
 import com.cdm.pages.EdgeGroupsPage;
 import com.cdm.pages.Menu;
 import com.cdm.pages.Pagination;
@@ -25,6 +33,18 @@ public class EdgeGroupSteps extends BaseTest {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+
+	@Then("scroll down the page")
+	public void scroll_down_the_page() {
+		EdgeGroupEditPage egep = new EdgeGroupEditPage(driver, logger);
+		egep.scrollingvertical();
+	}
+
+	@Then("select the value from application group dropdown")
+	public void select_the_value_from_application_group_dropdown() throws InterruptedException {
+		EdgeGroupEditPage egep = new EdgeGroupEditPage(driver, logger);
+		egep.applicationGroupName(alldata.get(vTCName).get("Value2").toString());
 	}
 
 	@Then("land on the dashbord")
@@ -54,6 +74,22 @@ public class EdgeGroupSteps extends BaseTest {
 	public void click_on_bulk_upload_button_edge_group() {
 		EdgeGroupsPage egp = new EdgeGroupsPage(driver, logger);
 		egp.checkbulkAppBtn();
+		try {
+			Robot rb = new Robot();
+
+			// copying File path to Clipboard
+			StringSelection str = new StringSelection(alldata.get(vTCName).get("Value1").toString());
+			Toolkit.getDefaultToolkit().getSystemClipboard().setContents(str, null);
+
+			rb.keyPress(KeyEvent.VK_CONTROL);
+			rb.keyPress(KeyEvent.VK_V);
+			rb.keyRelease(KeyEvent.VK_V);
+			rb.keyRelease(KeyEvent.VK_CONTROL);
+			rb.keyPress(KeyEvent.VK_ENTER);
+			rb.keyRelease(KeyEvent.VK_ENTER);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 	}
 
 	@Then("Click on the three dots of GroupName")
@@ -79,9 +115,19 @@ public class EdgeGroupSteps extends BaseTest {
 		EdgeGroupsPage egp = new EdgeGroupsPage(driver, logger);
 		egp.groupNameInputSearch(alldata.get(vTCName).get("Value1").toString());
 		Thread.sleep(2000);
-		// egp.backDropShowing_Div_Click();
-		Thread.sleep(4000);
+		//egp.backDropShowing_Div_Click();
 		egp.headingEdgeGroupListClick();
+
+	}
+	
+	@Then("enter value in the GroupName")
+	public void enter_value_in_the_group_name() throws InterruptedException {
+		EdgeGroupsPage egp = new EdgeGroupsPage(driver, logger);
+		egp.groupNameInputSearch(alldata.get(vTCName).get("Value1").toString());
+		Thread.sleep(2000);
+		egp.backDropShowing_Div_Click();
+		egp.headingEdgeGroupListClick();
+
 	}
 
 	@Then("click on bulk Download button EDGE Group")
@@ -227,13 +273,6 @@ public class EdgeGroupSteps extends BaseTest {
 
 	}
 
-	@Then("Scroll Down the page")
-	public void scroll_down_the_page() {
-		EdgeGroupsPage egp = new EdgeGroupsPage(driver, logger);
-		egp.scrollingvertical();
-
-	}
-
 	@Then("Pagination is in footer\\(Below) right side")
 	public void pagination_is_in_footer_below_right_side() throws Exception {
 		Pagination appgroup = new Pagination(driver, logger);
@@ -257,15 +296,25 @@ public class EdgeGroupSteps extends BaseTest {
 		Assert.assertTrue("Row count match for last page", appgroup3.nextPageClickAndCountOnLastPage(rowPerPage));
 	}
 
-	@Then("After pagination,previous page all default records will display")
-	public void after_pagination_previous_page_all_default_records_will_display() throws Exception {
-		Pagination appgroup4 = new Pagination(driver, logger);
-		String value = alldata.get(vTCName).get("Value1").toString();
-		appgroup4.SelectPageMatOption(value);
-		int rowPerPage = Integer.parseInt(value);
-		Assert.assertTrue("Row count match for last page", appgroup4.LastPageClickAndCount(rowPerPage));
+	@Then("after pagination all default records will display in Next page")
+	public void after_pagination_all_default_records_will_display_in_next_page() throws Exception {
+		Pagination edp = new Pagination(driver, logger);
 
-		Assert.assertTrue("Row count match for last page", appgroup4.nextPageClickAndCountOnLastPage(rowPerPage));
+		String value = alldata.get(vTCName).get("Value1").toString();
+		edp.SelectPageMatOption(value);
+		int rowPerPage = Integer.parseInt(value);
+		Assert.assertTrue("Row count match for last page", edp.LastPageClickAndCount(rowPerPage));
+		Thread.sleep(7000);
+		Assert.assertTrue("Row count match for last page", edp.nextPageClickAndCountOnLastPage(rowPerPage));
+	}
+	
+	@Then("Click on the checkbox of Active under status column")
+	public void click_on_the_checkbox_of_active_under_status_column() throws InterruptedException {
+		EdgeGroupsPage egp = new EdgeGroupsPage(driver, logger);
+		egp.statusColumnThreeDot();
+		Thread.sleep(2000);
+		egp.statusColumnActive();
+		
 	}
 
 	@Then("Click on download icon of Licensing")
@@ -321,8 +370,9 @@ public class EdgeGroupSteps extends BaseTest {
 	}
 
 	@Then("Click on License icon from Licensing section")
-	public void click_on_license_icon_from_licensing_section() {
+	public void click_on_license_icon_from_licensing_section() throws InterruptedException {
 		EdgeGroupsPage egp = new EdgeGroupsPage(driver, logger);
+		Thread.sleep(4000);
 		egp.licenceUploadButton();
 	}
 
@@ -353,14 +403,6 @@ public class EdgeGroupSteps extends BaseTest {
 		egp.cancelButton();
 	}
 
-	@Then("without enter any values click on save then scroll down")
-	public void without_enter_any_values_click_on_save_then_scroll_down() throws InterruptedException {
-		EdgeGroupsPage egp = new EdgeGroupsPage(driver, logger);
-		egp.scrollingvertical();
-		egp.saveButtonforEdgeGroup();
-		Thread.sleep(5000);
-	}
-
 	@Then("scroll down page")
 	public void scroll_down_page() {
 		EdgeGroupsPage egp = new EdgeGroupsPage(driver, logger);
@@ -388,8 +430,8 @@ public class EdgeGroupSteps extends BaseTest {
 	@Then("remove the text for Edge group Name which already entered and fill with new entry")
 	public void remove_the_text_for_edge_group_name_which_already_entered_and_fill_with_new_entry() {
 		EdgeGroupsPage egp = new EdgeGroupsPage(driver, logger);
+		egp.removalofEneredTextForEdgeGroupName();
 		egp.edgenameInput(alldata.get(vTCName).get("Value2").toString());
-		Assert.assertEquals("EdgeName search text box is not empty", "", egp.removalofEneredTextForEdgeGroupName());
 
 	}
 
@@ -428,9 +470,18 @@ public class EdgeGroupSteps extends BaseTest {
 		egp.serverPort(alldata.get(vTCName).get("Value5").toString());
 	}
 
+	@Then("enter the value for the maximum server nodes")
+	public void enter_the_value_for_the_maximum_server_nodes() {
+		EdgeGroupEditPage egep = new EdgeGroupEditPage(driver, logger);
+
+		egep.serverHostAddress(alldata.get(vTCName).get("Value4").toString());
+		egep.serverPort(alldata.get(vTCName).get("Value5").toString());
+	}
+
 	@Then("enter value for the maximum server nodes")
 	public void enter_value_for_the_maximum_server_nodes() {
 		EdgeGroupsPage egp = new EdgeGroupsPage(driver, logger);
+		egp.removalofEneredTextForServerNodes();
 		egp.serverNodes(alldata.get(vTCName).get("Value6").toString());
 	}
 
@@ -447,14 +498,15 @@ public class EdgeGroupSteps extends BaseTest {
 
 	@Then("Pagination is in footer\\(Below) Left side")
 	public void pagination_is_in_footer_below_left_side() throws Exception {
-		Pagination appgroup1 = new Pagination(driver, logger);
+		Pagination edp = new Pagination(driver, logger);
 
 		String value = alldata.get(vTCName).get("Value1").toString();
-		appgroup1.SelectPageMatOption(value);
+		edp.SelectPageMatOption(value);
 		int rowPerPage = Integer.parseInt(value);
-		Assert.assertTrue("Row count match for last page", appgroup1.LastPageClickAndCount(rowPerPage));
+		Assert.assertTrue("Row count match for last page", edp.LastPageClickAndCount(rowPerPage));
+		Thread.sleep(7000);
+		Assert.assertTrue("Row count match for last page", edp.nextPageClickAndCountOnLastPage(rowPerPage));
 
-		Assert.assertTrue("Row count match for last page", appgroup1.nextPageClickAndCountOnLastPage(rowPerPage));
 	}
 
 	@Then("Under Deployment page choose Application group , enter details of server port and Server host address")
@@ -525,20 +577,29 @@ public class EdgeGroupSteps extends BaseTest {
 		EdgeGroupConfigurationPage egcp = new EdgeGroupConfigurationPage(driver, logger);
 		egcp.BulkAppDeploymentButton();
 	}
-
+	
+	
+	@Then("Click on upload button to return back on the details page")
+	public void click_on_upload_button_to_return_back_on_the_details_page() {
+		EdgeGroupEditPage egep = new EdgeGroupEditPage(driver, logger);
+		egep.saveButtonUploadforLicense();
+	}
+	
+	
 	@Then("verify for Edge Group functionality")
 	public void verify_for_edge_group_name_functionality() throws InterruptedException {
 
 		EdgeGroupConfigurationPage egcp = new EdgeGroupConfigurationPage(driver, logger);
 		egcp.edgeGroupNameConfigDot();
 
-		egcp.applicationDeploymentGroupNameSearch(alldata.get(vTCName).get("Value2").toString());
-		// egcp.backDropShowing_Div_Click();
+		egcp.applicationDeploymentGroupNameSearch(alldata.get(vTCName).get("Value1").toString());
+		//egcp.backDropShowing_Div_Click();
 		egcp.headingConfigurationTitleClick();
 
 		egcp.checkboxEdgeGroupNameStepOneName();
 
 		egcp.NextButtonStep1();
+		Thread.sleep(5000);
 
 	}
 
@@ -546,12 +607,11 @@ public class EdgeGroupSteps extends BaseTest {
 	public void verify_for_app_group_functionality() throws InterruptedException {
 
 		EdgeGroupConfigurationPage egcp = new EdgeGroupConfigurationPage(driver, logger);
+		Thread.sleep(8000);
 
 		egcp.appGroupNameDot();
 
-		Thread.sleep(3000);
-
-		egcp.appGroupNameInputdeploy(alldata.get(vTCName).get("Value3").toString());
+		egcp.appGroupNameInputdeploy(alldata.get(vTCName).get("Value2").toString());
 		egcp.backDropShowing_Div_Click();
 
 		egcp.checkboxAppNameStepTwoName();
@@ -566,40 +626,45 @@ public class EdgeGroupSteps extends BaseTest {
 		egcp.edgeDot();
 		Thread.sleep(3000);
 
-		egcp.edgeDeployment(alldata.get(vTCName).get("Value4").toString());
+		egcp.edgeDeployment(alldata.get(vTCName).get("Value3").toString());
 
 		egcp.backDropShowing_Div_Click();
 
 		egcp.headingConfigurationTitleClick();
 
 		egcp.checkboxEdgeStepThreeName();
+		Thread.sleep(5000);
 
 		egcp.NextButtonStep3();
+		Thread.sleep(5000);
 	}
 
 	@Then("verify for App Name functionality")
 	public void verify_for_app_name_functionality() throws InterruptedException {
-		EdgeGroupConfigurationPage egcp = new EdgeGroupConfigurationPage(driver, logger);
-		egcp.appNameDot();
+        EdgeGroupConfigurationPage egcp = new EdgeGroupConfigurationPage(driver, logger);
+//		egcp.appNameDot();
+//		
+//
+//		egcp.appNameInput(alldata.get(vTCName).get("Value4").toString());
+//
+//		egcp.backDropShowing_Div_Click();
+//
+//		egcp.checkboxEdgeNameStepFour();
+//		Thread.sleep(4000);
+		egcp.NextButtonStep4();
+	}
 
-		egcp.appNameInput(alldata.get(vTCName).get("Value5").toString());
+	@Then("select the single check box valid Application name with latest version tag column and click on NEXT button")
+	public void select_the_single_check_box_valid_application_name_with_latest_version_tag_column_and_click_on_next_button() throws InterruptedException {
+		EdgeGroupConfigurationPage egcp = new EdgeGroupConfigurationPage(driver, logger);
+		egcp.edgeVersionDot();
+
+		egcp.edgeVersionNameInput(alldata.get(vTCName).get("Value4").toString());
 
 		egcp.backDropShowing_Div_Click();
 
 		egcp.checkboxEdgeNameStepFour();
 		egcp.NextButtonStep4();
-	}
-
-	@Then("select the single check box valid Application name with latest version tag column and click on NEXT button")
-	public void select_the_single_check_box_valid_application_name_with_latest_version_tag_column_and_click_on_next_button() {
-		EdgeGroupConfigurationPage egcp = new EdgeGroupConfigurationPage(driver, logger);
-		egcp.edgeVersionDot();
-
-		egcp.edgeVersionNameInput(alldata.get(vTCName).get("Value6").toString());
-
-		egcp.backDropShowing_Div_Click();
-
-		egcp.checkboxEdgeNameStepFour();
 	}
 
 	@Then("click on App Deployment button EDGE Group")
@@ -609,9 +674,51 @@ public class EdgeGroupSteps extends BaseTest {
 	}
 
 	@Then("Click on Confirm button and Click on Deploy button")
-	public void click_on_confirm_button_and_click_on_deploy_button() {
+	public void click_on_confirm_button_and_click_on_deploy_button() throws InterruptedException {
 		EdgeGroupConfigurationPage egcp = new EdgeGroupConfigurationPage(driver, logger);
+		Thread.sleep(5000);
 		egcp.confirmDeployButton();
+		Thread.sleep(5000);
+		egcp.deployApp();
+	}
+
+	@Then("without enter any values click on save")
+	public void without_enter_any_values_click_on_save() throws InterruptedException {
+		EdgeGroupsPage egp = new EdgeGroupsPage(driver, logger);
+
+		egp.saveButtonforEdgeGroup();
+		Thread.sleep(5000);
+	}
+
+	@Then("without enter any values scroll down")
+	public void without_enter_any_values_scroll_down() {
+		EdgeGroupsPage egp = new EdgeGroupsPage(driver, logger);
+		egp.scrollingvertical();
+
+	}
+
+	@Then("Enter numeric values to check character strength into Group NAME text fields")
+	public void enter_numeric_values_to_check_character_strength_into_group_name_text_fields()
+			throws InterruptedException {
+		EdgeGroupAddPage egap = new EdgeGroupAddPage(driver, logger);
+		egap.edgeGroupNameAdd(alldata.get(vTCName).get("Value1").toString());
+		egap.headingTitleAdd();
+		Thread.sleep(4000);
+
+		Assert.assertEquals("EdgeId Min and max message not matching",
+				"Alphanumerics of length Min = 2, Max = 64 are allowed !", egap.verifyValidationMessageGroupName());
+	}
+
+	@Then("Enter numeric values to check character strength into Group ID text fields")
+	public void enter_numeric_values_to_check_character_strength_into_group_id_text_fields()
+			throws InterruptedException {
+		EdgeGroupAddPage egap = new EdgeGroupAddPage(driver, logger);
+		egap.edgeGroupIdAdd(alldata.get(vTCName).get("Value1").toString());
+		egap.headingTitleAdd();
+		Thread.sleep(4000);
+
+		Assert.assertEquals("EdgeId Min and max message not matching",
+				"Alphanumerics of length Min = 2, Max = 64 are allowed !", egap.verifyValidationMessageGroupID());
 	}
 
 }

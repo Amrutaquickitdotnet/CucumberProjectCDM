@@ -1,0 +1,49 @@
+package com.cdm.Stepdefinitions;
+
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
+import java.io.IOException;
+
+import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+
+import com.cdm.pages.ConfigurationsPage;
+import com.cdm.pages.DeploymentsPage;
+import com.cdm.pages.DeviceLogs;
+import com.cdm.pages.EdgeAppConfigurationPage;
+import com.cdm.pages.EdgeDeviceAdd;
+import com.cdm.pages.EdgeDeviceEdit;
+import com.cdm.pages.EdgeDevicesPage;
+import com.cdm.pages.EdgeGroupConfigurationPage;
+import com.cdm.pages.EnvironmentalVariablePage;
+import com.cdm.pages.Menu;
+import com.cdm.pages.Pagination;
+import com.cdm.pages.WellMapping;
+
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+public class DeploymentsSteps extends BaseTest {
+	@Then("verify page with resize option the login page")
+	public void verify_page_with_resize_option_the_login_page() {
+		driver.manage().window().fullscreen();
+		EdgeDevicesPage edp = new EdgeDevicesPage(driver, logger);
+		edp.setZoomLevel(800, 600);
+		edp.edgeDeviceScreenshot();
+
+	}
+
+								
+
+	}
+
+	
+
+

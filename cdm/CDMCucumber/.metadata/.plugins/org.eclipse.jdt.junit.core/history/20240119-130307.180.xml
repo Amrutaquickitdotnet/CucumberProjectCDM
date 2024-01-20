@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRunner" project="CDMProject" tests="8" started="8" failures="0" errors="8" ignored="0">
+  <testsuite name="com.cdm.runner.TestRunner" time="132.851">
+    <testsuite name="DEPLOYMENTS" time="132.851">
+      <testcase name="TC09_Verification of reduction in the number of records in pagination section of Deployment details screen" classname="DEPLOYMENTS" time="35.67">
+        <error>io.cucumber.junit.UndefinedStepException: The step 'Click on deployment pagination it will display default records will display' is undefined.
+You can implement this step using the snippet(s) below:
+
+@Then("Click on deployment pagination it will display default records will display")
+public void click_on_deployment_pagination_it_will_display_default_records_will_display() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+&#13;
+&#13;
+</error>
+      </testcase>
+      <testcase name="TC10_Verification of changing the items per page functionality in the Deployment List screen by Super admin/Admin user" classname="DEPLOYMENTS" time="13.144">
+        <error>io.cucumber.junit.UndefinedStepException: The step 'Click on deployment pagination it will display default records will display' is undefined.
+You can implement this step using the snippet(s) below:
+
+@Then("Click on deployment pagination it will display default records will display")
+public void click_on_deployment_pagination_it_will_display_default_records_will_display() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+&#13;
+&#13;
+</error>
+      </testcase>
+      <testcase name="TC11_Verification of displaying the items per page by default i.e. 25 per page in the Deployment List screen by Super admin/Admin user" classname="DEPLOYMENTS" time="15.607">
+        <error>io.cucumber.junit.UndefinedStepException: The step 'Click on deployment pagination it will display default records will display' is undefined.
+You can implement this step using the snippet(s) below:
+
+@Then("Click on deployment pagination it will display default records will display")
+public void click_on_deployment_pagination_it_will_display_default_records_will_display() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+&#13;
+&#13;
+</error>
+      </testcase>
+      <testcase name="TC12_Verification of displaying the total number of records with pagination icons in the Deployment List screen by Super admin/Admin user" classname="DEPLOYMENTS" time="15.399">
+        <error>io.cucumber.junit.UndefinedStepException: The step 'Click on deployment pagination it will display default records will display' is undefined.
+You can implement this step using the snippet(s) below:
+
+@Then("Click on deployment pagination it will display default records will display")
+public void click_on_deployment_pagination_it_will_display_default_records_will_display() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+&#13;
+&#13;
+</error>
+      </testcase>
+      <testcase name="TC13_Verification of displaying the First page (Full Backward arrow) button in the Deployment List screen by Super admin/Admin user" classname="DEPLOYMENTS" time="16.817">
+        <error>io.cucumber.junit.UndefinedStepException: The step 'Click on deployment pagination it will display default records will display' is undefined.
+You can implement this step using the snippet(s) below:
+
+@Then("Click on deployment pagination it will display default records will display")
+public void click_on_deployment_pagination_it_will_display_default_records_will_display() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+&#13;
+&#13;
+</error>
+      </testcase>
+      <testcase name="TC14_Verification of displaying the Last page (Full Forward arrow button in the Deployment List screen by Super admin/Admin user" classname="DEPLOYMENTS" time="2.826">
+        <error>java.lang.NullPointerException: Cannot invoke "java.util.Map.get(Object)" because the return value of "java.util.Map.get(Object)" is null&#13;
+	at com.cdm.Stepdefinitions.Common.user_launch_application_in_chrome_browser(Common.java:53)&#13;
+	at ✽.User launch application in chrome browser(file:///E:/Devendra/cdm/CDMCucumber/CDMProject/src/test/resources/Features/Deployments.feature:109)&#13;
+&#13;
+</error>
+      </testcase>
+      <testcase name="TC15_Verification of displaying the Next page (Forward arrow button in the Deployment List screen by Super admin/Admin user" classname="DEPLOYMENTS" time="17.304">
+        <error>io.cucumber.junit.UndefinedStepException: The step 'Click on deployment pagination it will display default records will display' is undefined.
+You can implement this step using the snippet(s) below:
+
+@Then("Click on deployment pagination it will display default records will display")
+public void click_on_deployment_pagination_it_will_display_default_records_will_display() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+&#13;
+&#13;
+</error>
+      </testcase>
+      <testcase name="TC16_Verification of displaying the Previous page (Backward arrow button in the Deployment List screen by Super admin/Admin user" classname="DEPLOYMENTS" time="16.075">
+        <error>io.cucumber.junit.UndefinedStepException: The step 'Click on deployment pagination it will display default records will display' is undefined.
+You can implement this step using the snippet(s) below:
+
+@Then("Click on deployment pagination it will display default records will display")
+public void click_on_deployment_pagination_it_will_display_default_records_will_display() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+&#13;
+&#13;
+</error>
+      </testcase>
+    </testsuite>
+  </testsuite>
+</testrun>

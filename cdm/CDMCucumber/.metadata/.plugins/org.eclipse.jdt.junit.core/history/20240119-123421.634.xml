@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRunner" project="CDMProject" tests="8" started="8" failures="0" errors="4" ignored="0">
+  <testsuite name="com.cdm.runner.TestRunner" time="227.24">
+    <testsuite name="DEPLOYMENTS" time="227.24">
+      <testcase name="TC09_Verification of reduction in the number of records in pagination section of Deployment details screen" classname="DEPLOYMENTS" time="44.969"/>
+      <testcase name="TC10_Verification of changing the items per page functionality in the Deployment List screen by Super admin/Admin user" classname="DEPLOYMENTS" time="35.846"/>
+      <testcase name="TC11_Verification of displaying the items per page by default i.e. 25 per page in the Deployment List screen by Super admin/Admin user" classname="DEPLOYMENTS" time="17.222">
+        <error>java.lang.ArrayIndexOutOfBoundsException: Index 4 out of bounds for length 3&#13;
+	at com.cdm.pages.Pagination.LastPageClickAndCount(Pagination.java:89)&#13;
+	at com.cdm.Stepdefinitions.EDGEDevicesSteps.click_on_pagination_it_will_display_default_records_will_display(EDGEDevicesSteps.java:898)&#13;
+	at ✽.Click on pagination it will display default records will display(file:///E:/Devendra/cdm/CDMCucumber/CDMProject/src/test/resources/Features/Deployments.feature:86)&#13;
+&#13;
+</error>
+      </testcase>
+      <testcase name="TC12_Verification of displaying the total number of records with pagination icons in the Deployment List screen by Super admin/Admin user" classname="DEPLOYMENTS" time="17.058">
+        <error>java.lang.ArrayIndexOutOfBoundsException: Index 4 out of bounds for length 3&#13;
+	at com.cdm.pages.Pagination.LastPageClickAndCount(Pagination.java:89)&#13;
+	at com.cdm.Stepdefinitions.EDGEDevicesSteps.click_on_pagination_it_will_display_default_records_will_display(EDGEDevicesSteps.java:898)&#13;
+	at ✽.Click on pagination it will display default records will display(file:///E:/Devendra/cdm/CDMCucumber/CDMProject/src/test/resources/Features/Deployments.feature:95)&#13;
+&#13;
+</error>
+      </testcase>
+      <testcase name="TC13_Verification of displaying the First page (Full Backward arrow) button in the Deployment List screen by Super admin/Admin user" classname="DEPLOYMENTS" time="43.462"/>
+      <testcase name="TC14_Verification of displaying the Last page (Full Forward arrow button in the Deployment List screen by Super admin/Admin user" classname="DEPLOYMENTS" time="2.563">
+        <error>java.lang.NullPointerException: Cannot invoke "java.util.Map.get(Object)" because the return value of "java.util.Map.get(Object)" is null&#13;
+	at com.cdm.Stepdefinitions.Common.user_launch_application_in_chrome_browser(Common.java:53)&#13;
+	at ✽.User launch application in chrome browser(file:///E:/Devendra/cdm/CDMCucumber/CDMProject/src/test/resources/Features/Deployments.feature:109)&#13;
+&#13;
+</error>
+      </testcase>
+      <testcase name="TC15_Verification of displaying the Next page (Forward arrow button in the Deployment List screen by Super admin/Admin user" classname="DEPLOYMENTS" time="37.118"/>
+      <testcase name="TC16_Verification of displaying the Previous page (Backward arrow button in the Deployment List screen by Super admin/Admin user" classname="DEPLOYMENTS" time="29.001">
+        <error>java.lang.ArrayIndexOutOfBoundsException: Index 4 out of bounds for length 3&#13;
+	at com.cdm.pages.Pagination.LastPageClickAndCount(Pagination.java:89)&#13;
+	at com.cdm.Stepdefinitions.EDGEDevicesSteps.click_on_pagination_it_will_display_default_records_will_display(EDGEDevicesSteps.java:898)&#13;
+	at ✽.Click on pagination it will display default records will display(file:///E:/Devendra/cdm/CDMCucumber/CDMProject/src/test/resources/Features/Deployments.feature:130)&#13;
+&#13;
+</error>
+      </testcase>
+    </testsuite>
+  </testsuite>
+</testrun>

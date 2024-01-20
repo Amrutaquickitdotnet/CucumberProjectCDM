@@ -1,0 +1,29 @@
+@SheetDEPLOYMENTS
+Feature: DEPLOYMENTS
+
+@Test
+Scenario: TC01_Verification of Browser Compatibility
+Given User launch application in chrome browser
+When user enters credentials and click on login button
+And Succesfull login should be happen
+
+@Test
+Scenario: TC02_Verification of resizing the Deployment as per different zoom levels
+Given User launch application in chrome browser
+When user enters credentials and click on login button
+Then verify page with resize option for the deployment page
+
+
+@Test
+Scenario: TC03_Verification of displaying the Deployment table details after clicking on Deployment module option from side menu bar by Super admin/Admin user
+Given User launch application in chrome browser
+When user enters credentials and click on login button
+Then user is landing on dashboard
+Then click on Deployment tab
+
+
+
+
+
+
+

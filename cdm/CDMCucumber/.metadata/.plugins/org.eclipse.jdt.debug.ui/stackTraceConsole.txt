@@ -1,8 +1,8 @@
-io.cucumber.junit.UndefinedStepException: The step 'Click on save well map' is undefined.
+io.cucumber.junit.UndefinedStepException: The step 'Click on the Current View button' is undefined.
 You can implement this step using the snippet(s) below:
 
-@Then("Click on save well map")
-public void click_on_save_well_map() {
+@Then("Click on the Current View button")
+public void click_on_the_current_view_button() {
     // Write code here that turns the phrase above into concrete actions
     throw new io.cucumber.java.PendingException();
 }

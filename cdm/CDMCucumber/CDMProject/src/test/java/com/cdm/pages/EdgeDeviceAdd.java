@@ -1,6 +1,7 @@
 package com.cdm.pages;
 
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -15,118 +16,127 @@ public class EdgeDeviceAdd extends CommonActions {
 		super(driver, logger);
 		PageFactory.initElements(driver, this);
 	}
-	
+
 	@FindBy(xpath = "//*[@id=\"togBtn\"]")
 	WebElement sliderOnCheckBox;
 
 	@FindBy(xpath = "//*[@id=\"togBtn\"]/..")
 	WebElement sliderOnCheckBoxLabel;
-	
-	@FindBy(name = "serialNo")
-	WebElement serialNumber;
-	
-	
-	@FindBy(xpath = "//input[@data-placeholder='Onboarding Key']")
-	WebElement onboardingKey;
-	
-	
-	@FindBy(xpath = "//input[@data-placeholder='Image Version']")
-	WebElement imageVersion;
 
-	
-	
+	@FindBy(name = "serialNo")
+	WebElement serialNumberAdd;
+
+	@FindBy(xpath = "//input[@formcontrolname='location']")
+	WebElement locationAdd;
+
+	@FindBy(xpath = "//input[@formcontrolname='description']")
+	WebElement descriptionAdd;
+
+	@FindBy(xpath = "//input[@data-placeholder='Onboarding Key']")
+	WebElement onboardingKeyAdd;
+
+	@FindBy(xpath = "//input[@data-placeholder='Image Version']")
+	WebElement imageVersionAdd;
+
 	@FindBy(xpath = "//input[@formcontrolname='appinstanceload']")
-	WebElement serverport;
-	
+	WebElement serverportAdd;
+
 	@FindBy(xpath = "//input[@formcontrolname='edgeuser']")
-	WebElement edgeUser;
-	
+	WebElement edgeUserAdd;
+
 	@FindBy(xpath = "//input[@formcontrolname='edgepassword']")
-	WebElement edgePassword;
-	
-	
-	
+	WebElement edgePasswordAdd;
 
 	@FindBy(xpath = "//tbody/tr[1]/td[7]/img[1]")
 	WebElement editEdgeDevice;
 
 	@FindBy(xpath = "(//input[@formcontrolname='devicename']/../../../../../span)[2]")
 	WebElement validationMessageEdgeId;
+	
+	@FindBy(xpath = "(//input[@formcontrolname='devicename']/../../../../../div)")
+	WebElement validationMessageEdgeId1;
 
+	@FindBy(xpath = "(//input[@formcontrolname='displayname']/../../../../../span)[1]")
+	WebElement validationMessageEdgeName1;
+	
 	@FindBy(xpath = "(//input[@formcontrolname='displayname']/../../../../../span)[1]")
 	WebElement validationMessageEdgeName;
 
 	@FindBy(css = ".tableCard h4")
 	WebElement AddListpageVerification;
 
-	@FindBy(css = ".addButton")
+	@FindBy(xpath = "//button[contains(text(),'Save')]")
 	WebElement saveAddDataBtn;
 
 	@FindBy(css = ".calButton")
 	WebElement cancelAddDataButton;
 
 	@FindBy(xpath = "//input[@data-placeholder='EDGE ID']")
-	WebElement identityedgeId;
+	WebElement identityedgeIdAdd;
 
 	@FindBy(xpath = "//input[@data-placeholder='EDGE Name']")
-	WebElement identityedgeName;
+	WebElement identityedgeNameAdd;
 
 	@FindBy(xpath = "//input[@data-placeholder='EDGE Name']")
 	WebElement editidentityedgeName;
 
 	@FindBy(xpath = "//mat-select[@formcontrolname='orgid']")
-	WebElement organization;
+	WebElement organizationAdd;
 
 	@FindBy(css = "mat-select[formcontrolname='controllerid'] span")
-	WebElement edgeGroupName;
+	WebElement edgeGroupNameAdd;
 
 	@FindBy(name = "assignedto")
-	WebElement assignedTo;
+	WebElement assignedToAdd;
 
-//	@FindBy(xpath="//input[@data-placeholder='Location']")
-//	WebElement location;
+	@FindBy(xpath = "//h4/span")
+	WebElement headingTitleAdd;
 
 	@FindBy(css = "mat-select[formcontrolname=format]  div.mat-select-arrow")
-	WebElement hardwareName;
+	WebElement hardwareNameAdd;
 
 	@FindBy(xpath = "//mat-select[@formcontrolname='appgroupid']")
 	WebElement applicationGroupSelect;
 
-	public void identityedgeIdInput(String value) {
-		identityedgeId.sendKeys(value);
+	public void identityedgeIdInputAdd(String value) {
+		identityedgeIdAdd.sendKeys(value);
 	}
 
-	public void identityedgeName(String value) {
-		identityedgeName.sendKeys(value);
-	}
-	
-	public void onBoardingKeyInput(String value) {
-		onboardingKey.sendKeys(value);
-	}
-	
-	public void serialNumberInput(String value) {
-		serialNumber.sendKeys(value);
-	}
-	
-	public void imageVersionInput(String value) {
-		imageVersion.sendKeys(value);
-	}
-	
-	public void serverPortInput(String value) {
-		serverport.sendKeys(value);
-	}
-	
-	public void organization(String value) throws InterruptedException {
-
-		SelectMatOption(organization, value);
+	public String identityedgeIdInputGet() {
+		return identityedgeIdAdd.getText();
 	}
 
-	public void edgeGroupName(String value) throws InterruptedException {
-		SelectMatOption(edgeGroupName, value);
+	public void identityedgeNameAdd(String value) {
+		identityedgeNameAdd.sendKeys(value);
 	}
 
-	public void assignedTo(String value) {
-		assignedTo.sendKeys(value);
+	public void onBoardingKeyInputAdd(String value) {
+		onboardingKeyAdd.sendKeys(value);
+	}
+
+	public void serialNumberInputAdd(String value) {
+		serialNumberAdd.sendKeys(value);
+	}
+
+	public void imageVersionInputAdd(String value) {
+		imageVersionAdd.sendKeys(value);
+	}
+
+	public void serverPortInputAdd(String value) {
+		serverportAdd.sendKeys(value);
+	}
+
+	public void organizationAdd(String value) throws InterruptedException {
+
+		SelectMatOption(organizationAdd, value);
+	}
+
+	public void edgeGroupNameAdd(String value) throws InterruptedException {
+		SelectMatOption(edgeGroupNameAdd, value);
+	}
+
+	public void assignedToAdd(String value) {
+		assignedToAdd.sendKeys(value);
 	}
 
 	public void applicationGroupSelect(String value) throws InterruptedException {
@@ -134,12 +144,12 @@ public class EdgeDeviceAdd extends CommonActions {
 	}
 
 	public void clearEnteredId() {
-		identityedgeId.clear();
+		identityedgeIdAdd.clear();
 	}
 
-	public void hardWareName(String value) throws InterruptedException {
+	public void hardWareNameAdd(String value) throws InterruptedException {
 
-		SelectMatOption(hardwareName, value);
+		SelectMatOption(hardwareNameAdd, value);
 	}
 
 	public String verifyDeviceAddBreadcrumb() {
@@ -151,13 +161,15 @@ public class EdgeDeviceAdd extends CommonActions {
 	public void saveAddData() {
 		saveAddDataBtn.click();
 	}
-	
-	public void edgeUserInput(String value) {
-		edgeUser.sendKeys(value);;
+
+	public void edgeUserInputAdd(String value) {
+		edgeUserAdd.sendKeys(value);
+
 	}
-	
-	public void edgeUserPassword(String value) {
-		edgePassword.sendKeys(value);;
+
+	public void edgeUserPasswordAdd(String value) {
+		edgePasswordAdd.sendKeys(value);
+
 	}
 
 	public void cancelData() {
@@ -167,6 +179,40 @@ public class EdgeDeviceAdd extends CommonActions {
 	public void scrollingvertical() {
 
 		scrollingvertical("div.pagefooter", "0", "500");
+	}
+	
+	public String verifyValidationMessageEdgeId1() {
+		AddListpageVerification.click();
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+
+		}
+
+		if (validationMessageEdgeId1 == null) {
+			return "";
+		}
+		String message = validationMessageEdgeId1.getText();
+
+		return message.trim();
+
+	}
+	
+	public String verifyValidationMessageEdgeName1() {
+		AddListpageVerification.click();
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+
+		}
+
+		if (validationMessageEdgeName1 == null) {
+			return "";
+		}
+		String message = validationMessageEdgeName1.getText();
+
+		return message.trim();
+
 	}
 
 	public String verifyValidationMessageEdgeId() {
@@ -205,22 +251,32 @@ public class EdgeDeviceAdd extends CommonActions {
 
 	public void editEdgeDeviceClick() {
 
-		
-		clickElement(editEdgeDevice,"Click on Edit icon of Edge Device");
-		
+		clickElement(editEdgeDevice, "Click on Edit icon of Edge Device");
+
 	}
 
 	public void setEditClearField() {
-		
-		
-		SetInput(editidentityedgeName,"","Entered text is clear");
 
-	
+		SetInput(editidentityedgeName, "", "Entered text is clear");
+
+	}
+
+	// Either checked or unchecked
+	public void moveSliderCondition(String m) {
+		moveSliderCondition(sliderOnCheckBox, sliderOnCheckBoxLabel, m);
+	}
+
+	public void locationAdd(String value) {
+		locationAdd.sendKeys(Keys.ENTER);
+		locationAdd.sendKeys(value);
+	}
+
+	public void descriptionAdd(String value) {
+		descriptionAdd.sendKeys(Keys.ENTER);
+		descriptionAdd.sendKeys(value);
 	}
 	
-	//Either checked or unchecked 
-		public void moveSliderCondition(String m) {
-			moveSliderCondition(sliderOnCheckBox,sliderOnCheckBoxLabel,m);
-		}
-
+	public void headingTitleAdd() {
+		headingTitleAdd.click();
+	}
 }
