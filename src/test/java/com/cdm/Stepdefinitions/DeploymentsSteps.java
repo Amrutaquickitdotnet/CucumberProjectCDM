@@ -61,7 +61,17 @@ public class DeploymentsSteps extends BaseTest {
 		 dmp.currentView();
 	}
 
-	
+	@Then("Click on deployment pagination it will display default records will display")
+	public void click_on_deployment_pagination_it_will_display_default_records_will_display() throws Exception {
+		Pagination edp = new Pagination(driver, logger);
+
+		String value = alldata.get(vTCName).get("Value1").toString();
+		edp.SelectPageMatOption(value);
+		int rowPerPage = Integer.parseInt(value);
+		Assert.assertTrue("Row count match for last page", edp.LastPageClickAndCount(rowPerPage));
+		
+		Assert.assertTrue("Row count match for last page", edp.nextPageClickAndCountOnLastPage(rowPerPage));
+	}
 	
 
 	}
