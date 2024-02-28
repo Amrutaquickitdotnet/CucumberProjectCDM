@@ -5,28 +5,43 @@ import org.junit.runner.RunWith;
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
-/**
- * @author Admin
- * 
- *
- */
 @RunWith(Cucumber.class)
 @CucumberOptions(
 
-		// features = "src/test/resources/Features/LoginApp.feature",
-		features = "src/test/resources/Features/EDGEDevices.feature",
-		//features = "src/test/resources/Features/EDGEGroups.feature",
-		//features = "src/test/resources/Features/Deployments.feature",
+		//features = "src/test/resources/Features/Client.feature",
 
+		//features = "src/test/resources/Features/Login.feature",
+		//features = "src/test/resources/Features/EDGEGroups.feature",
+		 features = "src/test/resources/Features/EDGEDevices.feature",
+
+		// features = "src/test/resources/Features/Deployments.feature",
+		// features = "src/test/resources/Features/Configurations.feature",
+		// features = "src/test/resources/Features/Licenses.feature",
 		// features = "src/test/resources/Features/AppGroups.feature",
 
-		glue = { "com.cdm.Stepdefinitions" },
+		//features = "src/test/resources/Features/Reports.feature",
 
-		plugin = { "pretty", "json:target/cucumber-reports/Cucumber4.json",
-				"junit:target/cucumber-reports/Cucumber4.xml", "html:target/cucumber-reports1.html", },
+		// features = "src/test/resources/Features/UsersSettings.feature",
 
-		// dryRun = true,
-		tags = "@Test")
+		// features = "src/test/resources/Features/About.feature",
+
+		// features = "src/test/resources/Features/certificates.feature",
+		// features = "src/test/resources/Features/Wells.feature",
+
+		// features = "src/test/resources/Features/hardware.feature",
+		// features = "src/test/resources/Features/Volumes.feature",
+		glue = { "com.cdm.Stepdefinations" },
+
+       plugin = { "pretty", "json:target/cucumber-reports/Cucumber4.json",
+			"junit:target/cucumber-reports/Cucumber4.xml", "html:target/cucumber-reports1.html", 
+			}
+
+		//dryRun = true
+		
+//tags = "@Test"
+	
+	)
+
 public class TestRunner {
 
 }

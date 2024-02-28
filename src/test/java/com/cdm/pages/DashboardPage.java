@@ -1,5 +1,7 @@
 package com.cdm.pages;
 
+import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -10,8 +12,7 @@ import com.cdm.common.CommonActions;
 
 public class DashboardPage extends CommonActions {
 	
-	
-private WebDriver driver;
+
 	
 	public DashboardPage(WebDriver driver,ExtentTest logger) //created WebDriver Constructor
 	{
@@ -29,6 +30,10 @@ private WebDriver driver;
 	@FindBy(xpath="//button[normalize-space()='Login']")
 	WebElement LoginBtn;
 	
+
+	@FindBy(xpath="//span[contains(text(),'Dashboard')]")
+	WebElement dashboardTitle;
+	
 	
 	public void enteruserid(String userid)
 	{
@@ -42,7 +47,10 @@ private WebDriver driver;
 	{
 		clickElement(LoginBtn,"Login button clicked");
 	}
-
+	public void verifyUserIsOnDashboard() {
+      
+        Assert.assertEquals("Dashboard", dashboardTitle.getText());
+    }
 	
 
 }

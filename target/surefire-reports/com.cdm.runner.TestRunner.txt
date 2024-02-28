@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.cdm.runner.TestRunner
+-------------------------------------------------------------------------------
+Tests run: 90, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3398 s -- in com.cdm.runner.TestRunner

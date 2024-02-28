@@ -1,6 +1,9 @@
 package com.cdm.pages;
 
-import java.time.Duration;
+
+
+import java.awt.AWTException;
+import java.io.File;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
@@ -8,10 +11,9 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.aventstack.extentreports.ExtentTest;
 import com.cdm.common.CommonActions;
@@ -22,13 +24,27 @@ public class EdgeGroupsPage extends CommonActions {
 
 	public EdgeGroupsPage(WebDriver driver, ExtentTest logger) {
 		super(driver, logger);
-
-		PageFactory.initElements(driver, this);
+			PageFactory.initElements(driver, this);
 	}
+	
+	
+
+	
+	@FindBy(xpath = "//span[contains(text(),'Cancel')]")
+	WebElement licenseCancelButton;;
+	
 
 	@FindBy(xpath = "//div[@class='tableCard']/h4")
 	WebElement deploymentHeadingTitle;
-
+	
+	
+	
+	
+	@FindBy(xpath = "(//input[@name='options'])[2]")
+	WebElement edgegroupstatusInactive;
+	
+	@FindBy(xpath = "//div/div/div[1]/div/div/div[2]/label/div/span[2]")
+	WebElement cloudhealthButtonOff;
 
 	@FindBy(css = ".tableCard h4")
 	WebElement AddListpageVerification;
@@ -45,14 +61,21 @@ public class EdgeGroupsPage extends CommonActions {
 
 	@FindBy(xpath = "//body/div[3]/div[2]/div[1]/mat-dialog-container[1]/app-edgegrouplicenseupload[1]/div[2]/button[2]")
 	WebElement licenseUploadButtonAfter;
+	
+	@FindBy(xpath = "//input[@formcontrolname='location']")
+	WebElement location;
 
+	@FindBy(xpath = "//input[@class='titleHeadingsub']")
+	WebElement headingtitleonboarding;
+	
+	@FindBy(xpath = "//textarea[@placeholder='Description']")
+	WebElement description;
+	
 	@FindBy(xpath = "//input[@formcontrolname='serialkeys']")
 	WebElement serialKey;
-	
+
 	@FindBy(xpath = "//span[contains(text(),'Alphanumerics of length Min = 2, Max = 64 are allo')]")
 	WebElement validationMessageGroupName;
-	
-	
 
 	@FindBy(xpath = "//span[contains(text(),'Upload')]")
 	WebElement uploadButton;
@@ -60,33 +83,39 @@ public class EdgeGroupsPage extends CommonActions {
 	@FindBy(xpath = "//button[@class='calButton']")
 	WebElement cancelButton;
 
-	@FindBy(xpath = "//body/div[3]/div[2]/div[1]/mat-dialog-container[1]/app-edgeconfigupload[1]/div[3]/button[2]")
+	@FindBy(xpath = "//app-edgeconfigupload/div[3]/button[2]")
 	WebElement saveButtonUpload;
 	
 	
-	@FindBy(css = ".addButton")
+	@FindBy(xpath = "/html/body/app-root/app-root/app-home/mat-sidenav-container/mat-sidenav/div/mat-nav-list/ul/li[2]/a/span")
+	WebElement EdgeGroupTab;
+
+	@FindBy(xpath = "//body/div[3]/div[2]/div[1]/mat-dialog-container[1]/app-edge-onboarding-upload[1]/div[3]/button[2]")
 	WebElement saveButtonfinalonboarding;
-	
+
 	@FindBy(xpath = "//input[@type='file']")
 	WebElement controllerConfigurationCertificateUpload;
-
-	@FindBy(xpath = "(//div[contains(text(),'Onboarding Certificate')]/..//img)")
-	WebElement onboardingCertificateIcon;
 	
-	@FindBy(css = "app-edge-onboarding-upload .text-right:nth-child(4) button:nth-of-type(2)")
+	@FindBy(xpath = "//input[@type='file']")
+	WebElement onboardingCertificateUpload;
+
+	@FindBy(xpath = "//mat-expansion-panel[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/img[1]")
+	WebElement onboardingCertificateIcon;
+
+	@FindBy(xpath = "//body/app-root[1]/app-root[1]/app-home[1]/mat-sidenav-container[1]/mat-sidenav-content[1]/div[2]/div[1]/app-add-edit-edgegroup[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/mat-nav-list[1]/mat-expansion-panel[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/img[1]")
 	WebElement saveButtononboardingCertificateIcon;
 	
-	
+	@FindBy(xpath = "//body/div[3]/div[2]/div[1]/mat-dialog-container[1]/app-edgeconfigupload[1]/div[3]/button[2]")
+	WebElement saveButtononEdgeConfiguration;
+
 	@FindBy(xpath = "//body/app-root[1]/app-root[1]/app-home[1]/mat-sidenav-container[1]/mat-sidenav-content[1]/div[2]/div[1]/app-add-edit-edgegroup[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/mat-nav-list[1]/mat-expansion-panel[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/img[1]")
 	WebElement registrationUploadButton;
 
-	@FindBy(xpath = "//*[@id='cdk-accordion-child-3']/div/div/div[1]/div/div[2]/img[3]")
+	@FindBy(xpath = "//mat-expansion-panel[5]/div/div/div/div[1]/div/div[2]/img[3]")
 	WebElement refreshButtonforLicence;
-	
-
 
 	@FindBy(xpath = "(//div[contains(text(),' License ')]/..//img)[2]")
-	//@FindBy(xpath = "((//div[@class='labelClass'])[3])/../div[2]/img[2]")
+	// @FindBy(xpath = "((//div[@class='labelClass'])[3])/../div[2]/img[2]")
 	WebElement licenceDownloadButton;
 
 	@FindBy(xpath = "(//div[contains(text(),' License ')]/..//img)[1]")
@@ -95,10 +124,10 @@ public class EdgeGroupsPage extends CommonActions {
 	@FindBy(css = "mat-select[formcontrolname='appgroupid'] span")
 	WebElement applicationGroupName;
 
-	@FindBy(css = ".cdk-overlay-container mat-tooltip-component div")
+	@FindBy(xpath = "/html/body/div[3]/div/div/mat-tooltip-component/div")
 	WebElement EditButtonToolTip;
 
-	@FindBy(css = ".cdk-overlay-container mat-tooltip-component div")
+	@FindBy(xpath = "//body/div[3]/div/div/mat-tooltip-component/div")
 	WebElement DeleteButtonToolTip;
 
 	@FindBy(css = ".cdk-overlay-container")
@@ -112,7 +141,6 @@ public class EdgeGroupsPage extends CommonActions {
 
 	@FindBy(xpath = "//tbody/tr[3]/td[6]/img[3]")
 	WebElement stopButton;
-
 
 	@FindBy(xpath = "//h2[contains(text(),'EDGE Groups')]")
 	WebElement headingGroupListTitle;
@@ -131,25 +159,23 @@ public class EdgeGroupsPage extends CommonActions {
 
 	@FindBy(xpath = "//body/div[3]/div[2]/div[1]/mat-dialog-container[1]/app-confirmationdelete[1]/div[1]/mat-dialog-actions[1]/button[1]")
 
-	WebElement confirmationMessage;
+	WebElement confirmationYesMessage;
 
 	@FindBy(xpath = "//body/div[3]/div[2]/div[1]/mat-dialog-container[1]/app-confirmationdelete[1]/div[1]/mat-dialog-actions[1]/button[2]")
 
 	WebElement confirmationNoMessage;
 
-	@FindBy(xpath = "//input[@name='displayname']")
-	WebElement groupNameThreeDotInput;
+	@FindBy(xpath = "//thead/tr[1]/th[1]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]")
+	WebElement groupNameThreeDot;
 
 	@FindBy(xpath = "//input[@type='number']")
 	WebElement serverNodes;
 
 	@FindBy(xpath = "//input[@name='displayname']")
 	WebElement groupNameInputSearch;
-	
-	
+
 	@FindBy(xpath = "//input[@formcontrolname='displayname']")
 	WebElement groupNameAdd;
-
 
 	@FindBy(xpath = "//input[@data-placeholder ='Minimum']")
 	WebElement alaramRaisedInputMin;
@@ -172,7 +198,7 @@ public class EdgeGroupsPage extends CommonActions {
 	@FindBy(xpath = "//input[@id='mat-input-4']")
 	WebElement deviceActiveInputMin;
 
-	@FindBy(xpath = "//input[@id='mat-input-5']")
+	@FindBy(xpath = "//input[@data-placeholder='Maximum']")
 	WebElement deviceActiveInputMax;
 
 	@FindBy(xpath = "//tbody/tr[1]/td[6]/img[2]")
@@ -187,14 +213,13 @@ public class EdgeGroupsPage extends CommonActions {
 	@FindBy(xpath = "//thead/tr[1]/th[4]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]")
 	WebElement deviceActiveThreeDot;
 
-	@FindBy(xpath = "//thead/tr[1]/th[5]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]")
-	WebElement statusColumnThreeDotchecked;
+	@FindBy(xpath = "//body/div[3]/div[2]/div[1]/div[1]/div[1]/button[1]/div[1]/label[1]/input[1]")
+	WebElement statusColumnActive;
 
-	@FindBy(xpath = "//thead/tr[1]/th[5]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]")
+	@FindBy(xpath = "//body/div[3]/div[2]/div[1]/div[1]/div[1]/button[1]/div[2]/label[1]/input[1]")
 	WebElement statusColumnThreeDotUnchecked;
 
-	@FindBy(xpath = "//thead/tr[1]/th[1]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]")
-	WebElement groupNameThreeDot;
+
 
 	@FindBy(xpath = "//thead/tr[1]/th[2]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]")
 	WebElement alaramRaisedThreeDot;
@@ -211,14 +236,10 @@ public class EdgeGroupsPage extends CommonActions {
 	@FindBy(xpath = "/html/body/app-root/app-root/app-home/mat-sidenav-container/mat-sidenav-content/div[2]/div/app-controller/div/div[1]/div/img[1]")
 	WebElement Refresh_btn;
 
-	
-
-
-
 	@FindBy(xpath = "/html/body/app-root/app-root/app-home/mat-sidenav-container/mat-sidenav-content/div[1]/div/div[1]/div/p/img")
 	WebElement Collapse_btn;
 
-	@FindBy(xpath = "//body/app-root[1]/app-root[1]/app-home[1]/mat-sidenav-container[1]/mat-sidenav-content[1]/div[2]/div[1]/app-controller[1]/div[1]/div[1]/div[1]/img[2]")
+	@FindBy(xpath = "//div[@class='tableCard']/div/div/img[2]")
 	WebElement Add_btn;
 
 	@FindBy(xpath = "//button[@class='calButton']")
@@ -227,12 +248,12 @@ public class EdgeGroupsPage extends CommonActions {
 	@FindBy(xpath = "//button[@class='addButton']")
 	WebElement Save_btn;
 
-	@FindBy(xpath = "/html/body/app-root/app-root/app-home/mat-sidenav-container/mat-sidenav-content/div[2]/div/app-controller/div/div[1]/div/img[5]")
+	@FindBy(xpath = "//body/app-root[1]/app-root[1]/app-home[1]/mat-sidenav-container[1]/mat-sidenav-content[1]/div[2]/div[1]/app-controller[1]/div[1]/div[1]/div[1]/img[3]")
 	WebElement Bulk_App_btn;
 
 	@FindBy(xpath = "//body/app-root[1]/app-root[1]/app-home[1]/mat-sidenav-container[1]/mat-sidenav-content[1]/div[2]/div[1]/app-controller[1]/div[1]/div[1]/div[1]/img[4]")
 	WebElement Bulk_Download_btn;
-	
+
 	@FindBy(xpath = "((//div[@class='labelClass'])[3])/../div[2]/img[2]")
 	WebElement LicenseDownloadButton;
 
@@ -252,15 +273,11 @@ public class EdgeGroupsPage extends CommonActions {
 	@FindBy(xpath = "//input[@name ='devicename']")
 	WebElement edgeDeployment;
 
-
-
 	@FindBy(xpath = "//input[@formcontrolname='displayname']")
 	WebElement edgeGroupNameInput;
 
 	@FindBy(xpath = "//input[@name='appname']")
 	WebElement appNameInput;
-
-	
 
 	// Health Section
 
@@ -284,19 +301,34 @@ public class EdgeGroupsPage extends CommonActions {
 
 	// addButton
 
-	@FindBy(xpath = "//button[contains (text(),'Save')]")
+	@FindBy(xpath = "//button[@class='addButton']")
 	WebElement saveButtonforEdgeGroup;
 
-	public void identitySection(String value) {
+	public void identitySectionGroupID(String value) {
 
 		// edgeGroupIDInput.sendKeys(Keys.ENTER);
 		edgeGroupIDInput.sendKeys(value);
 
 	}
+	
+	public void locationedgeGroup(String value) {
+
+		location.sendKeys(Keys.ENTER);
+		location.sendKeys(value);
+
+	}
+	
+	public void descriptionedgeGroup(String value) {
+
+		// edgeGroupIDInput.sendKeys(Keys.ENTER);
+		description.sendKeys(Keys.ENTER);
+		description.sendKeys(value);
+
+	}
 
 	public void edgenameInput(String value) {
 
-		// edgeGroupNameInput.sendKeys(Keys.ENTER);
+		edgeGroupNameInput.sendKeys(Keys.ENTER);
 		edgeGroupNameInput.sendKeys(value);
 	}
 
@@ -312,12 +344,12 @@ public class EdgeGroupsPage extends CommonActions {
 	}
 
 	public void serverHostAddress(String value) {
-
+		serverHostAddressInput.sendKeys(Keys.ENTER);
 		serverHostAddressInput.sendKeys(value);
 	}
 
 	public void serverPort(String value) {
-
+		serverPortInput.sendKeys(Keys.ENTER);
 		serverPortInput.sendKeys(value);
 	}
 
@@ -364,30 +396,30 @@ public class EdgeGroupsPage extends CommonActions {
 
 	}
 
-
 	public void headingEdgeGroupListClick() {
 		// clickElement(headingTitle, "Clicking on Title of heading");
+		try {
 		headingGroupListTitle.click();
+		}
+		catch(Exception ex) {}
 	}
 
 	public void statusColumnThreeDot() {
-		clickElement(statusColumnThreeDot, getScreenshot());
-		ElementExist(statusColumnThreeDot, getScreenshot());
+		statusColumnThreeDot.click();
 
 	}
 
 	public void groupNameInputSearch(String value) {
 
-		
 		groupNameInputSearch.sendKeys(Keys.ENTER);
 		groupNameInputSearch.sendKeys(value);
 
 	}
 
-	
 	public void checkbulkAppBtn() {
-		clickElement(Bulk_App_btn, getScreenshot());
-		ElementExist(Bulk_App_btn, getScreenshot());
+		Bulk_App_btn.click();
+//		clickElement(Bulk_App_btn, getScreenshot());
+//		ElementExist(Bulk_App_btn, getScreenshot());
 	}
 
 	public void checkrefreshbtn() {
@@ -397,7 +429,21 @@ public class EdgeGroupsPage extends CommonActions {
 
 	public void backDropShowing_Div_Click() {
 		if (backDropShowing != null) {
+			try {
 			backDropShowing.click();
+			}
+			catch(Exception ex){}
+		}
+	}
+	
+	public void backDropShowing_Div_Clickonboarding() {
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		js.executeScript("arguments[0].click();", backDropShowing);
+		if (backDropShowing != null) {
+			try {
+			backDropShowing.click();
+			}
+			catch(Exception ex){}
 		}
 	}
 
@@ -413,9 +459,8 @@ public class EdgeGroupsPage extends CommonActions {
 	}
 
 	public void checkAddbtn() {
-
-		clickElement(Add_btn, getScreenshot());
-		// ElementExist(Add_btn, getScreenshot());
+		Add_btn.click();
+		
 	}
 
 	public void setZoomLevel(int height, int width) {
@@ -431,7 +476,7 @@ public class EdgeGroupsPage extends CommonActions {
 	}
 
 	public void Edit_btn() {
-       
+
 		clickElement(Edit_btn, getScreenshot());
 
 	}
@@ -440,8 +485,8 @@ public class EdgeGroupsPage extends CommonActions {
 		clickElement(deleteEdgeGroupColumn, getScreenshot());
 	}
 
-	public void confirmationMessage() {
-		clickElement(confirmationMessage, getScreenshot());
+	public void confirmationYesMessage() {
+		clickElement(confirmationYesMessage, getScreenshot());
 
 	}
 
@@ -508,9 +553,9 @@ public class EdgeGroupsPage extends CommonActions {
 			String edittoolTipText = EditButtonToolTip.getText();
 
 			System.out.println("toolTipText-->" + edittoolTipText);
-			if(edittoolTipText.equals(expectedToolTip)) { 
-				System.out.println("Test Case Passed"); 
-				}
+			if (edittoolTipText.equals(expectedToolTip)) {
+				System.out.println("Test Case Passed");
+			}
 			return edittoolTipText;
 		}
 		return "";
@@ -568,6 +613,41 @@ public class EdgeGroupsPage extends CommonActions {
 		return removalofEneredText(edgeGroupNameInput);
 
 	}
+	
+	public String removalofEneredTextForLocation() {
+
+		return removalofEneredText(location);
+
+	}
+	
+	public String removalofEneredTextForDescription() {
+
+		return removalofEneredText(description);
+
+	}
+	
+	
+	public void moveslideronoff() {
+		Actions act = new Actions(driver);
+        act.moveToElement(cloudhealthButtonOff).build().perform();
+	}
+
+	public String removalofEneredTextForServerNodes() {
+
+		return removalofEneredText(serverNodes);
+
+	}
+	public String removalofEneredTextForServerHostAddress() {
+
+		return removalofEneredText(serverHostAddressInput);
+
+	}
+	
+	public String removalofEneredTextForServerPort() {
+
+		return removalofEneredText(serverPortInput);
+
+	}
 
 	public void edgeConfigurationDownloadBtn() {
 		edgeConfigurationDownloadBtn.click();
@@ -585,8 +665,24 @@ public class EdgeGroupsPage extends CommonActions {
 		registrationUploadButton.click();
 	}
 
-	public void controllerConfigurationCertificateUpload(String value) {
+	public void controllerConfigurationCertificateUpload(String value) throws AWTException {
+		backDropShowing_Div_Click();
 		controllerConfigurationCertificateUpload.sendKeys(value);
+//		Robot r = new Robot();
+//	      //pressing enter
+//	      r.keyPress(KeyEvent.VK_ENTER);
+//	      //releasing enter
+//	      r.keyRelease(KeyEvent.VK_ENTER);
+//	      //pressing ctrl+v
+//	      r.keyPress(KeyEvent.VK_CONTROL);
+//	      r.keyPress(KeyEvent.VK_V);
+//	      //releasing ctrl+v
+//	      r.keyRelease(KeyEvent.VK_CONTROL);
+//	      r.keyRelease(KeyEvent.VK_V);
+//	      //pressing enter
+//	      r.keyPress(KeyEvent.VK_ENTER);
+//	      //releasing enter
+//	      r.keyRelease(KeyEvent.VK_ENTER);
 	}
 
 	public void saveButtonUpload() {
@@ -642,7 +738,7 @@ public class EdgeGroupsPage extends CommonActions {
 	}
 
 	public void licenseUploadButtonAfter() {
-		
+
 		licenseUploadButtonAfter.click();
 	}
 
@@ -663,12 +759,12 @@ public class EdgeGroupsPage extends CommonActions {
 		return titleDeployment;
 
 	}
-	
+
 	public void groupNameAdd(String value) {
 		groupNameAdd.sendKeys(Keys.ENTER);
 		groupNameAdd.sendKeys(value);
 	}
-	
+
 	public void LicenseDownloadButton() {
 		LicenseDownloadButton.click();
 	}
@@ -677,13 +773,81 @@ public class EdgeGroupsPage extends CommonActions {
 		validationMessageGroupName.getText();
 		return validationMessageGroupName();
 	}
-	
+
 	public void saveButtononboardingCertificateIcon() {
 		saveButtononboardingCertificateIcon.click();
 	}
-	
+
 	public void saveButtonfinalonboarding() {
 		saveButtonfinalonboarding.click();
 	}
+
+	public void fileupload() {
+		Actions action = new Actions(driver);
+
+		action.moveToElement(Bulk_App_btn).click().build().perform();
+	}
+
+	public void statusColumnActive() {
+		statusColumnActive.click();
+	}
+	public String removalofEnteredTextForGroupName() {
+
+		return removalofEneredText(groupNameInputSearch);
+
+	}
 	
+	public String removalofEnteredTextForAlaramRaisedMin() {
+
+		return removalofEneredText(alaramRaisedInputMin);
+
+	}
+	
+	
+	public String removalofEnteredTextForAlaramRaisedMax() {
+
+		return removalofEneredText(alaramRaisedInputMax);
+
+	}
+	
+	public String removalofEnteredTextForDeviceConnectedMin() {
+
+		return removalofEneredText(deviceConnectedInputMin);
+
+	}
+	
+	public String removalofEnteredTextFordeviceConnectedInputMax() {
+
+		return removalofEneredText(deviceConnectedInputMax);
+
+	}
+	
+	public void cloudbuttonhealth() {
+		cloudhealthButtonOff.click();
+	}
+
+	public void clickEdgeGroups() {
+		
+		EdgeGroupTab.click();
+	}
+	public void edgegroupstatusInactive() {
+		edgegroupstatusInactive.click();
+	}
+	
+	public void saveButtononEdgeConfiguration() {
+		saveButtononEdgeConfiguration.click();
+	}
+	
+	public void licenseCancelButton() {
+		licenseCancelButton.click();
+	}
+	
+	public void headingtitleonboarding() {
+		headingtitleonboarding.click();
+	}
+	
+	public void onboardingCertificateUpload(String value) {
+	
+		onboardingCertificateUpload.sendKeys(value);
+	}
 }

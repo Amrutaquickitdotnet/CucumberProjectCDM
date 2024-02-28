@@ -16,7 +16,6 @@ public class AlertsPage extends CommonActions{
 		PageFactory.initElements(driver, this);
 	}
 
-	private WebDriver driver;
 	
 	@FindBy(xpath = "/html/body/app-root/app-root/app-home/mat-sidenav-container/mat-sidenav/div/mat-nav-list/ul/li[7]/a/span")
 	WebElement movetoalerttab;

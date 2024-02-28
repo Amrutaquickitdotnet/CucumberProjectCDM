@@ -1,0 +1,938 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="3,397.273" tests="90" skipped="0" failures="0" errors="0">
+<testcase classname="EDGE Devices" name="TC01_Verification of Browser Compatibility of EDGE Device module of the application" time="34.049">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+When user enters credentials and click on login button......................passed
+And Succesfull login should be happen.......................................passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC02_Verification of resizing the EDGE Device module as per different zoom levels" time="10.641">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+When user enters credentials and click on login button......................passed
+Then verify page with resize option the login page..........................passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC03_Verification of displaying the EDGE Device table details after clicking on EDGE Device module option from side menu bar by Super admin/Admin user" time="18.219">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+When user enters credentials and click on login button......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC04_Verification of displaying the Add button, Refresh, Application configuration,Bulk Upload &amp; Download button icons on top right side of EDGE Device List screen by Super admin/Admin user" time="18.705">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+When user enters credentials and click on login button......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+Then Verify all buttons are working.........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC05_Verification of Refreshing button functionality in the EDGE Device List screen by Super admin/Admin user" time="19.504">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+When user enters credentials and click on login button......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+Then After landing on EDGE Device List screen, and Click on Refresh button..passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC06_Verification of Add button functionality in the EDGE Device List screen by Super admin/Admin user" time="21.583">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+When user enters credentials and click on login button......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+Then After landing on EDGE Device List screen, Click on ADD New button......passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC07_Verification of Search button functionality in the EDGE Device List screen by Super admin/Admin user" time="18.673">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+When user enters credentials and click on login button......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+Then After landing on EDGE Device List screen, Click on Search bar after entering data.passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC08_Verification of Application Configuration button functionality in the EDGE Device List screen by Super admin/Admin user" time="18.223">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+When user enters credentials and click on login button......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+Then After landing on EDGE Device List screen Click on Configuration icon button.passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC09_Verification of Bulk download button functionality in the EDGE Device List screen by Super admin/Admin user" time="23.176">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+When user enters credentials and click on login button......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+Then After landing on EDGE Device List screen Click on Download icon button.passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC010_Verification of displaying the Edit screen in the EDGE Device module by Super admin/Admin user" time="34.682">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+When user enters credentials and click on login button......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+Then After landing on EDGE Device List screen scroll horizontal and Click on EDIT icon button.passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC012_Verification of Delete functionality in the EDGE Device List screen by Super admin/Admin user (If few devices are not linked with other module)" time="37.015">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+When user enters credentials and click on login button......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+Then Click on EDGE Group ID search icon i.e. three dots & enter Valid inputs into search text field.passed
+Then After landing on EDGE Device List screen scroll horizontal and Click on DELETE icon button.passed
+Then confirmation message appear on the Screen for deletion with option Yes or No.passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC013_Verification of tooltip functionality for Edit icon in Actions column of the EDGE Device List screen by Super admin/Admin user" time="28.962">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+When user enters credentials and click on login button......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+And scroll horizontal to see status column..................................passed
+Then After landing on EDGE Device List screen And Mousehover on EDIT icon button.passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC014_Verification of tooltip functionality for Delete icon in Actions column of the EDGE Device List screen by Super admin/Admin user" time="34.808">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+When user enters credentials and click on login button......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+And scroll horizontal to see status column..................................passed
+Then Click on Status Three Dot..............................................passed
+And Choose inactive mode from status column.................................passed
+Then After landing on EDGE Device List screen And Mousehover on DELETE icon button.passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC015_Verification of tooltip functionality for View Alert(s) icon in Actions column of the EDGE Device List screen by Super admin/Admin user" time="29.419">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+When user enters credentials and click on login button......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+And scroll horizontal to see status column..................................passed
+Then After landing on EDGE Device List screen and Mousehover on View ALERTS icon button.passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC016_Verification of reduction in the number of records in pagination section of EDGE details screen" time="31.897">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+When user enters credentials and click on login button......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+Then Click on pagination it will display default records will display.......passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC017_Verification of changing the items per page functionality in the EDGE Device List screen by Super admin/Admin user" time="34.637">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+And user enters credentials and click on login button.......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+Then Click on pagination it will display default records will display.......passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC018_Verification of displaying the items per page by default i.e. 25 per page in the EDGE Device List screen by Super admin/Admin user" time="26.871">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+And user enters credentials and click on login button.......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+Then Click on pagination it will display default records will display.......passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC019_Verification of displaying the total number of records with pagination icons in the EDGE Device List screen by Super admin/Admin user" time="24.79">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+And user enters credentials and click on login button.......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+And check pagination per page...............................................passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC020_Verification of displaying the First page (Full Backward arrow) button in the EDGE Device List screen by Super admin/Admin user" time="32.159">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+When user enters credentials and click on login button......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+Then Click on pagination to check functionality of Full Backward arrow Edgedevice.passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC021_Verification of displaying the Last page (Full Forward arrow) button in the EDGE Device List screen by Super admin/Admin user" time="36.859">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+And user enters credentials and click on login button.......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+Then Click on pagination to check functionality of Full forward arrow.......passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC022_Verification of displaying the Next page (Forward arrow button in the EDGE Device List screen by Super admin/Admin user" time="39.767">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+And user enters credentials and click on login button.......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+Then Click on pagination to check Next button(Forward arrow) functionality..passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC023_Verification of displaying the Previous page (Backward arrow button in the EDGE Device List screen by Super admin/Admin user" time="28.672">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+And user enters credentials and click on login button.......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+Then Click on pagination to check Previous Page button(Backward arrow) functionality EdgeDevice.passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC024_Verification of the search functionality for EDGE ID column in the EDGE Device List screen by Super admin/Admin user" time="24.612">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+When user enters credentials and click on login button......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+Then Click on EDGE Group ID search icon i.e. three dots & enter Valid inputs into search text field.passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC025_Verification of the search functionality for EDGE Group Name column (Valid Group Name) in the EDGE Device List screen by Super admin/Admin user" time="24.064">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+When user enters credentials and click on login button......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+Then Click on EDGE Group name search icon i.e. three dots & enter Valid inputs into search text field.passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC026_Verification of the search functionality for EDGE Group Name column (Invalid Group Name) in the EDGE Device List screen by Super admin/Admin user" time="29.732">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+When user enters credentials and click on login button......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+Then Click on EDGE Group name search icon i.e. three dots & enter Valid inputs into search text field.passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC027_Verification of the search functionality for EDGE Name column (Valid Name) in the EDGE Device List screen by Super admin/Admin user" time="33.179">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+When user enters credentials and click on login button......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+Then Click on EDGE Name search icon i.e. three dots & enter Valid inputs into search text field..passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC028_Verification of the search functionality for App Group column (Valid App Group) in the EDGE Device List screen by Super admin/Admin user" time="20.152">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+When user enters credentials and click on login button......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+And Click on APP Group name search icon.....................................passed
+Then enter value for App Group name.........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC029_Verification of the search functionality for Hardware Name (Valid HardWare Name) in the EDGE Device List screen by Super admin/Admin user" time="29.625">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+When user enters credentials and click on login button......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+And Click on HardWare Name Dots.............................................passed
+Then enter value for HardWare Name..........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC030_Verification of the search functionality for Health status column (Valid Health status entry) in the EDGE Device List screen by Super admin/Admin user" time="49.154">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+When user enters credentials and click on login button......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC031_Verification of the search functionality for Communication status column (Valid Communication status entry) in the EDGE Device List screen by Super admin/Admin user" time="18.612">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+When user enters credentials and click on login button......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC032_Verification of the change in colour of three dots for all columns in the EDGE Device List screen by Super admin/Admin user when search filter is applied" time="19.207">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+When user enters credentials and click on login button......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC033_Verification of the display of search bar and text for all columns in the EDGE Device List screen by Super admin/Admin user" time="36.359">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+When user enters credentials and click on login button......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+Then Enter valid inputs as per required from table details into search text field and enter backspace & click on enter.passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC034_Verification of the removal of search results and text for all columns in the EDGE Device screen by Super admin/Admin user" time="36.854">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+When user enters credentials and click on login button......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+Then Enter valid inputs as per required from table details into search text field and enter backspace & click on enter.passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC035_Verification of the search functionality for overall table in the EDGE Device screen by Super admin/Admin user" time="37.574">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+When user enters credentials and click on login button......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+Then Enter valid inputs as per required from table details into search text field and enter backspace & click on enter.passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC036_Verification of blank value rejections in available fields of Identity section in Add screen of EDGE Device module by Super admin/Admin user" time="41.271">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+When user enters credentials and click on login button......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+Then Click on ADD New button on the top right side & landed on EDGE>ADD Screen.passed
+Then without enter any values...............................................passed
+Then scroll down............................................................passed
+Then click on save..........................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC037_Verification of blank value rejections in available fields of Health section in Add screen of EDGE Device module by Super admin/Admin user" time="51.849">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+When user enters credentials and click on login button......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+And After landing on EDGE Device List screen................................passed
+And scroll horizontal to see status column..................................passed
+Then Click on ADD New button on the top right side & landed on EDGE>ADD Screen.passed
+Then without enter any values...............................................passed
+Then scroll down............................................................passed
+Then click on save..........................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC038_Verification of blank value rejections in available fields of Registration &amp; Licence sections in Add screen of EDGE Device module by Super admin/Admin user" time="42.057">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+When user enters credentials and click on login button......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+And After landing on EDGE Device List screen................................passed
+Then Click on ADD New button on the top right side & landed on EDGE>ADD Screen.passed
+Then without enter any values...............................................passed
+Then scroll down............................................................passed
+Then click on save..........................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC039_Verification of blank value rejections in available fields of Deployment section in Add screen of EDGE Device module by Super admin/Admin user" time="42.246">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+When user enters credentials and click on login button......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+And After landing on EDGE Device List screen................................passed
+Then Click on ADD New button on the top right side & landed on EDGE>ADD Screen.passed
+Then without enter any values...............................................passed
+Then scroll down............................................................passed
+Then click on save..........................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC040_Verification of redirection functionality for Cancel icon in Add screen of EDGE Device module by Super admin/Admin user" time="28.532">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+When user enters credentials and click on login button......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+And After landing on EDGE Device List screen................................passed
+Then Click on ADD New button icon on the top right side & landed on EDGE>ADD Screen.passed
+Then click on cancel button in EDGE>ADD screen..............................passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC041_Verification of the search functionality in the EDGE Device Add screen by Super admin/Admin user" time="24.024">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+When user enters credentials and click on login button......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+Then search for Edge ID enter the value for Edge ID and Clear Search........passed
+Then search for Edge Name enter the value for Edge Name and Clear Search....passed
+Then search for Edge Group Name enter the value for Edge Group Name and Clear Search.passed
+Then search for App Groups enter the value for App Groups and Clear Search..passed
+Then search for Hardware Name enter the value for HardWare Name and Clear Search.passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC043_Verification of the acceptance of Numeric values in EDGE ID Text field in the Identity section of User Add screen by Super admin/Admin user" time="29.842">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+When user enters credentials and click on login button......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+And After landing on EDGE Device List screen................................passed
+Then Click on ADD New button on the top right side & landed on EDGE>ADD Screen.passed
+Then Enter numeric values to check character strength into EDGE ID text fields.passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC044_Verification of the acceptance of Alphanumeric and special characters values in EDGE Name Text field in the Identity section of User Add screen by Super admin/Admin user" time="52.441">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+When user enters credentials and click on login button......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+And After landing on EDGE Device List screen................................passed
+Then Click on ADD New button on the top right side & landed on EDGE>ADD Screen.passed
+Then Enter numeric values to check character strength into EDGE NAME text fields.passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC045_Verification of breaching the Max character limit in EDGE ID Text field in the Identity section of User Add screen by Super admin/Admin user" time="29.354">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+When user enters credentials and click on login button......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+And After landing on EDGE Device List screen................................passed
+Then Click on ADD New button on the top right side & landed on EDGE>ADD Screen.passed
+And Enter numeric values to check character strength into EDGE ID text fields.passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC046_Verification of breaching the Max character limit in EDGE  Name Text field in the Identity section of User Add screen by Super admin/Admin user" time="25.566">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+When user enters credentials and click on login button......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+And After landing on EDGE Device List screen................................passed
+Then Click on ADD New button on the top right side & landed on EDGE>ADD Screen.passed
+Then Enter numeric values to check character strength into EDGE NAME text fields.passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC047_Verification of selection of the from organization drop down in the Identity section of User Add screen by Super admin/Admin user" time="33.024">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+When user enters credentials and click on login button......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+And After landing on EDGE Device List screen................................passed
+Then Click on ADD New button on the top right side & landed on EDGE>ADD Screen.passed
+Then select options from Organization drop down.............................passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC048_Verification of selection of the from EDGE Group Name drop down in the Identity section of User Add screen by Super admin/Admin user" time="22.753">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+When user enters credentials and click on login button......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+And After landing on EDGE Device List screen................................passed
+Then Click on ADD New button on the top right side & landed on EDGE>ADD Screen.passed
+And select options from EDGE Group Name drop down...........................passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC049_Verification of upload of onboarding cerificates in Registration section in Add screen of EDGE Device module by Super admin/Admin user" time="44.512">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+And user enters credentials and click on login button.......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+And After landing on EDGE Device List screen................................passed
+Then Click on EDGE ID search icon i.e. three dots & enter Valid inputs into search text field.passed
+Then After landing on EDGE Device List screen scroll horizontal and Click on EDIT icon button.passed
+Then Scroll down page go to the registration section of add screen and enter value for onboarding certificate.passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC050_Verification of download of onboarding cerificates in Registration section in Add screen of EDGE Device module by Super admin/Admin user" time="44.478">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+And user enters credentials and click on login button.......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+And After landing on EDGE Device List screen................................passed
+Then Click on EDGE ID search icon i.e. three dots & enter Valid inputs into search text field.passed
+Then After landing on EDGE Device List screen scroll horizontal and Click on EDIT icon button.passed
+Then Scroll down page go to the registration section of add screen and enter value for onboarding certificate.passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC051_Verification of upload of onboarding configuration file in Registration section in Add screen of EDGE Device module by Super admin/Admin user" time="44.727">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+And user enters credentials and click on login button.......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+And After landing on EDGE Device List screen................................passed
+Then Click on EDGE ID search icon i.e. three dots & enter Valid inputs into search text field.passed
+Then After landing on EDGE Device List screen scroll horizontal and Click on EDIT icon button.passed
+Then Scroll down page go to the registration section of add screen and enter value for onboarding certificate.passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC052_Verification of download of onboarding configuration file in Registration section in Add screen of EDGE Device module by Super admin/Admin user" time="45.173">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+And user enters credentials and click on login button.......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+And After landing on EDGE Device List screen................................passed
+Then Click on EDGE ID search icon i.e. three dots & enter Valid inputs into search text field.passed
+Then After landing on EDGE Device List screen scroll horizontal and Click on EDIT icon button.passed
+Then Scroll down page go to the registration section of add screen and enter value for onboarding certificate.passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC053_Verification of modify the value in available mandatory fields of Identity section in EDIT screen of EDGE Device module by Super admin/Admin user" time="36.992">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+And user enters credentials and click on login button.......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+And After landing on EDGE Device List screen................................passed
+Then Click on EDGE ID search icon i.e. three dots & enter Valid inputs into search text field.passed
+Then After landing on EDGE Device List screen scroll horizontal and Click on EDIT icon button.passed
+Then modify the value of mandatory field of Identity Section................passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC054_Verification of modify value in available optional text fields of Identity section in EDIT screen of EDGE Device module by Super admin/Admin user" time="36.397">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+And user enters credentials and click on login button.......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+And After landing on EDGE Device List screen................................passed
+Then Click on EDGE ID search icon i.e. three dots & enter Valid inputs into search text field.passed
+Then After landing on EDGE Device List screen scroll horizontal and Click on EDIT icon button.passed
+Then modify the value of optional field of Identity section.................passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC055_Verification of breaching the Max character limit in EDGE ID Text field in the Identity section of User EDIT Screen by Super admin/Admin user" time="57.085">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+And user enters credentials and click on login button.......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+And After landing on EDGE Device List screen................................passed
+Then Click on EDGE ID search icon i.e. three dots & enter Valid inputs into search text field.passed
+Then After landing on EDGE Device List screen scroll horizontal and Click on EDIT icon button.passed
+And Enter numeric values to check character strength into EDGE Name text fields of Edit Section.passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC056_Verification of breaching the Max character limit in EDGE NameText field in the Identity section of User EDIT Screen by Super admin/Admin user" time="54.719">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+And user enters credentials and click on login button.......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+And After landing on EDGE Device List screen................................passed
+Then Click on EDGE ID search icon i.e. three dots & enter Valid inputs into search text field.passed
+Then After landing on EDGE Device List screen scroll horizontal and Click on EDIT icon button.passed
+And Enter numeric values to check character strength into EDGE Name text fields of Edit Section.passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC057_Verification of Viewing of all the steppers &amp; select the application to deploy application in Individual EDGE Device module by Super admin/Admin user &amp; Operator users" time="28.104">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+And user enters credentials and click on login button.......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+And After landing on EDGE Device List screen................................passed
+Then Click on EDGE ID search icon i.e. three dots & enter Valid inputs into search text field.passed
+Then After landing on EDGE Device List screen scroll horizontal.............passed
+Then Click on Deploy apps button on the Actions column & landed on EDGE>Application Deployment screen.passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC058_Verification of multiple select of the Active Application for deploy of EDGE module by Super admin/Admin user and Operator users" time="55.021">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+And user enters credentials and click on login button.......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+And After landing on EDGE Device List screen................................passed
+Then Click on EDGE ID search icon i.e. three dots & enter Valid inputs into search text field.passed
+Then After landing on EDGE Device List screen scroll horizontal.............passed
+Then Click on Deploy apps button on the Actions column & landed on EDGE>Application Deployment screen.passed
+Then verify application functionality for single select.....................passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC059_Verification of Single select of the Active Application for deploy of EDGE module by Super admin/Admin user  &amp; Operator users" time="79.843">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+And user enters credentials and click on login button.......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+And After landing on EDGE Device List screen................................passed
+Then Click on EDGE ID search icon i.e. three dots & enter Valid inputs into search text field.passed
+Then After landing on EDGE Device List screen scroll horizontal.............passed
+Then Click on Deploy apps button on the Actions column & landed on EDGE>Application Deployment screen.passed
+Then verify application functionality for single select choice..............passed
+Then Verify deployment functionality........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC060_Verification of Viewing of all the steppers &amp; select the application configuration on EDGE Device Module by Super admin/Admin user &amp; Operator users" time="25.56">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+And user enters credentials and click on login button.......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+And After landing on EDGE Device List screen................................passed
+Then Click on EDGE ID search icon i.e. three dots & enter Valid inputs into search text field.passed
+Then After landing on EDGE Device List screen scroll horizontal.............passed
+When Click on configuration icon button from Action column..................passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC061_Verification of select the Active Application group for  EDGE Device App configuration by Super admin/Admin &amp; Operator users" time="40.228">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+And user enters credentials and click on login button.......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+And After landing on EDGE Device List screen................................passed
+Then Click on EDGE ID search icon i.e. three dots & enter Valid inputs into search text field.passed
+Then After landing on EDGE Device List screen scroll horizontal.............passed
+Then Click on configuration icon button from Action columnn.................passed
+Then verify application functionality for configuration.....................passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC062_Verification of select the Active Single EDGE in  EDGE Device App configuration by Super admin/Admin &amp; Operator users" time="41.594">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+And user enters credentials and click on login button.......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+Then Click on EDGE ID search icon i.e. three dots & enter Valid inputs into search text field.passed
+Then After landing on EDGE Device List screen scroll horizontal.............passed
+Then Click on deployment icon button from Action columnn....................passed
+Then verify Active Single Edge..............................................passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC063_Verification of select the Active multiple EDGE  for  EDGE Device App configuration by Super admin/Admin &amp; Operator users" time="49.342">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+And user enters credentials and click on login button.......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+Then Click on EDGE ID search icon i.e. three dots & enter Valid inputs into search text field.passed
+Then After landing on EDGE Device List screen scroll horizontal.............passed
+Then Click on deployment icon button from Action columnn....................passed
+Then verify Active Single Edge..............................................passed
+Then Check SelectAll checkbox from select column............................passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC064_Verification of select the Active Single Application in  EDGE Device App configuration by Super admin/Admin &amp; Operator users" time="52.78">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+And user enters credentials and click on login button.......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+Then Click on EDGE ID search icon i.e. three dots & enter Valid inputs into search text field.passed
+Then After landing on EDGE Device List screen scroll horizontal.............passed
+Then Click on deployment icon button from Action columnn....................passed
+Then verify Active Single Edge..............................................passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC65_Verification of user not select the undeployed Application in  EDGE Device App configuration by Super admin/Admin &amp; Operator users" time="18.254">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+And user enters credentials and click on login button.......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+And After landing on EDGE Device List screen................................passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC66_Verification of select the application configuration in  EDGE Device App configuration by Super admin/Admin &amp; Operator users" time="36.736">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+And user enters credentials and click on login button.......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+Then Click on EDGE ID search icon i.e. three dots & enter Valid inputs into search text field.passed
+Then After landing on EDGE Device List screen scroll horizontal.............passed
+Then Click on deployment icon button from Action columnn....................passed
+Then verify Active Single Edge..............................................passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC067_Verification of creation of new configuration in  EDGE Device App configuration by Super admin/Admin &amp; Operator users" time="39.586">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+And user enters credentials and click on login button.......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+And After landing on EDGE Device List screen................................passed
+Then Click on EDGE ID search icon i.e. three dots & enter Valid inputs into search text field.passed
+Then After landing on EDGE Device List screen scroll horizontal.............passed
+Then Click on configuration icon button from Action columnn.................passed
+Then verify application functionality for configuration.....................passed
+Then click on add icon to add configuration.................................passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC068_Verification of user cannot deploy the configuration without confirmation  in  EDGE Device App configuration by Super admin/Admin &amp; Operator users" time="67.31">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+And user enters credentials and click on login button.......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+And After landing on EDGE Device List screen................................passed
+Then Click on EDGE ID search icon i.e. three dots & enter Valid inputs into search text field.passed
+Then After landing on EDGE Device List screen scroll horizontal.............passed
+Then Click on Deploy apps button on the Actions column & landed on EDGE>Application Deployment screen.passed
+Then verify application functionality for single select.....................passed
+Then verify deploy button should be in inactive mode and become active when user click on Confirm button.passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC069_Verification of all deployed configuration are available in configuration list in  EDGE Device App configuration by Super admin/Admin &amp; Operator users" time="66.002">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+And user enters credentials and click on login button.......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+And After landing on EDGE Device List screen................................passed
+Then Click on EDGE ID search icon i.e. three dots & enter Valid inputs into search text field.passed
+Then After landing on EDGE Device List screen scroll horizontal.............passed
+Then Click on Deploy apps button on the Actions column & landed on EDGE>Application Deployment screen.passed
+Then verify application functionality for single select.....................passed
+Then Verify deployment functionality........................................passed
+Then Click on Configurations module from left navigation bar................passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC070_To verify that user is able to map well which is searched using Well Name" time="36.083">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+And user enters credentials and click on login button.......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+Then Click on EDGE ID search icon i.e. three dots & enter Valid inputs into search text field.passed
+Then After landing on EDGE Device List screen scroll horizontal and Click on EDIT icon button.passed
+Then Click on Well mapping tab module.......................................passed
+Then Click on the three dots of well and search for Well Name...............passed
+Then Enter the value for Well name..........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC071_To verify that user is able to map well which is searched using IP Address" time="36.182">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+And user enters credentials and click on login button.......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+Then Click on EDGE ID search icon i.e. three dots & enter Valid inputs into search text field.passed
+Then After landing on EDGE Device List screen scroll horizontal and Click on EDIT icon button.passed
+Then Click on Well mapping tab module.......................................passed
+Then Click on the three dots of IPAddress and search for IPAddress..........passed
+Then Enter the value for IPAddress..........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC072_To verify that user is able to map well which is searched using RTU Address" time="39.615">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+And user enters credentials and click on login button.......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+Then Click on EDGE ID search icon i.e. three dots & enter Valid inputs into search text field.passed
+Then After landing on EDGE Device List screen scroll horizontal and Click on EDIT icon button.passed
+Then Click on Well mapping tab module.......................................passed
+Then Click on the three dots of RTUAddress..................................passed
+Then Enter the value for RTUAddress.........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC073_To verify that user is able to map well which is searched using Device type" time="53.414">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+And user enters credentials and click on login button.......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+Then Click on EDGE ID search icon i.e. three dots & enter Valid inputs into search text field.passed
+Then After landing on EDGE Device List screen scroll horizontal and Click on EDIT icon button.passed
+Then Click on Well mapping tab module.......................................passed
+Then Click on the three dots of DeviceType..................................passed
+Then Enter the value for DeviceType.........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC074_To verify that user is able to map well by applying filter on the RTU Address" time="47.878">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+And user enters credentials and click on login button.......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+Then Click on EDGE ID search icon i.e. three dots & enter Valid inputs into search text field.passed
+Then After landing on EDGE Device List screen scroll horizontal and Click on EDIT icon button.passed
+Then Click on Well mapping tab module.......................................passed
+Then Click on the three dots of RTUAddress..................................passed
+Then Enter the value for RTUAddress.........................................passed
+Then Check the checkbox to well map.........................................passed
+Then Click on Save button For Well..........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC075_To verify that user is able to map well in 'Active' status by applying filter on the Status column" time="39.695">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+And user enters credentials and click on login button.......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+Then Click on EDGE ID search icon i.e. three dots & enter Valid inputs into search text field.passed
+Then After landing on EDGE Device List screen scroll horizontal and Click on EDIT icon button.passed
+Then Click on Well mapping tab module.......................................passed
+Then Click on Status Three Dot and Select the Active status Checkbox........passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC076_To verify that user is able to map well having 'Active' and 'Inactive' Status" time="44.632">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+And user enters credentials and click on login button.......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+Then Click on EDGE ID search icon i.e. three dots & enter Valid inputs into search text field.passed
+Then After landing on EDGE Device List screen scroll horizontal and Click on EDIT icon button.passed
+Then Click on Well mapping tab module.......................................passed
+Then Click on Status Three Dot and Select the Active status Checkbox........passed
+Then Click on Status Three Dot and Select the inActive status Checkbox......passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC077_To verify that user is able to map well having 'Inactive' Status" time="40.757">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+And user enters credentials and click on login button.......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+Then Click on EDGE ID search icon i.e. three dots & enter Valid inputs into search text field.passed
+Then After landing on EDGE Device List screen scroll horizontal and Click on EDIT icon button.passed
+Then Click on Well mapping tab module.......................................passed
+Then Click on Status Three Dot and Select InActive Status Checkbox..........passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC078_To verify that user is able to map multiple wells at a time" time="47.601">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+And user enters credentials and click on login button.......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+Then Click on EDGE ID search icon i.e. three dots & enter Valid inputs into search text field.passed
+Then After landing on EDGE Device List screen scroll horizontal and Click on EDIT icon button.passed
+Then Click on Well mapping tab module.......................................passed
+Then Click on the three dots of RTUAddress..................................passed
+Then Enter the value for RTUAddress.........................................passed
+Then Check the checkbox to well map.........................................passed
+Then Click on Save button For Well..........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC079_To verify that user is able to map multiple wells from each page at a time and observe that they appear at the top of the list once mapping is done" time="47.513">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+And user enters credentials and click on login button.......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+Then Click on EDGE ID search icon i.e. three dots & enter Valid inputs into search text field.passed
+Then After landing on EDGE Device List screen scroll horizontal and Click on EDIT icon button.passed
+Then Click on Well mapping tab module.......................................passed
+Then Click on the three dots of RTUAddress..................................passed
+Then Enter the value for RTUAddress.........................................passed
+Then Check the checkbox to well map.........................................passed
+Then Click on Save button For Well..........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC080_To verify that a newly created well appears in the Well Mapping list and the user is able to map it to the Edge Device" time="55.089">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+And user enters credentials and click on login button.......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+Then Click on Setting tab from left side bar and click on well tab from Navigation menu.passed
+Then Click on Add button to add new well....................................passed
+Then Enter the details for Well Name , Port Number , IP Address and choose the Device Type.passed
+Then Click on Save button To Save Well......................................passed
+Then Click on EDGE ID search icon i.e. three dots & enter Valid inputs into search text field to check well.passed
+Then After landing on EDGE Device List screen scroll horizontal and Click on EDIT icon button.passed
+Then Click on Well mapping tab module.......................................passed
+Then Click on the three dots of well and search for Well Name...............passed
+Then Enter the value for Well name to map setting from well module..........passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC081_Verification of Environmental variable Add inactive Functionality" time="62.985">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+And user enters credentials and click on login button.......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+And After landing on EDGE Device List screen................................passed
+Then Click on EDGE ID search icon i.e. three dots & enter Valid inputs into search text field.passed
+Then After landing on EDGE Device List screen scroll horizontal and Click on EDIT icon button.passed
+And Click on Deployments tab................................................passed
+And Click on Environment Variable...........................................passed
+And Click on Add new button.................................................passed
+And Enter details for Config Name and Config Value..........................passed
+And inactivate environmental variable.......................................passed
+Then Click on save button for environmental variable........................passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC082_Verification of Environmental variable Add Functionality" time="53.366">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+And user enters credentials and click on login button.......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+And After landing on EDGE Device List screen................................passed
+Then Click on EDGE ID search icon i.e. three dots & enter Valid inputs into search text field.passed
+Then After landing on EDGE Device List screen scroll horizontal and Click on EDIT icon button.passed
+Then Click on Deployments tab...............................................passed
+And Click on Environment Variable...........................................passed
+And Click on Add new button.................................................passed
+And Enter details for Config Name and Config Value..........................passed
+Then Click on save button for environmental variable........................passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC083_Verification of Environmental variable delete Functionality" time="44.862">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+And user enters credentials and click on login button.......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+And After landing on EDGE Device List screen................................passed
+Then Click on EDGE ID search icon i.e. three dots & enter Valid inputs into search text field.passed
+Then After landing on EDGE Device List screen scroll horizontal and Click on EDIT icon button.passed
+Then Click on Deployments tab...............................................passed
+And Click on Environment Variable...........................................passed
+And Click on search icon of configName Config value.........................passed
+And Click on Delete button..................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC084_Verification of Environmental variable search Functionality" time="42.488">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+And user enters credentials and click on login button.......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+And After landing on EDGE Device List screen................................passed
+Then Click on EDGE ID search icon i.e. three dots & enter Valid inputs into search text field.passed
+Then After landing on EDGE Device List screen scroll horizontal and Click on EDIT icon button.passed
+And Click on Deployments tab................................................passed
+And Click on Environment Variable...........................................passed
+And Click on search icon of configName Config value.........................passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC085_Viewing of Well Map Tab from Edge Device Search" time="89.181">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+And user enters credentials and click on login button.......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+And After landing on EDGE Device List screen................................passed
+Then Click on EDGE Id field search icon i.e. three dots & enter Valid inputs into search text field..passed
+Then After landing on EDGE Device List screen scroll horizontal and Click on EDIT icon button.passed
+And Click on Deployments tab................................................passed
+And Click on Environment Variable...........................................passed
+And Click on Add new button of Environmental variable.......................passed
+And Enter details for Config Name and Config Value..........................passed
+Then Click on save button for environmental variable........................passed
+And Click on Device Log Tab.................................................passed
+And Click on Configuration submodule........................................passed
+And Click on Well Mapping Tab...............................................passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC086_Verification of displaying the Bulk Upload button icon on top right side of EDGE Device List screen by Super admin/Admin user" time="24.679">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+When user enters credentials and click on login button......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+Then Click on bulk upload button for Edge Device............................passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC087_Verification of displaying the Bulk download button icon on top right side of EDGE Device List screen by Super admin/Admin user" time="18.26">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+When user enters credentials and click on login button......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+Then Click and Verify Bulk Download button is working.......................passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC088_Verification of displaying the Bulk Application Configuration button on top right side of EDGE Device List screen" time="19.799">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+When user enters credentials and click on login button......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+Then Click and Verify Bulk Application Configuration button is working......passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="T0C89_Verification of Application Configuration button functionality from Actions Column" time="30.119">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+When user enters credentials and click on login button......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+Then Click on EDGE Group ID search icon i.e. three dots & enter Valid inputs into search text field.passed
+Then After landing on EDGE Device List screen scroll horizontal.............passed
+Then After landing on EDGE Device List screen Click on Configuration icon from the column of edge List page.passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC042_Verification of entry of valid data for all the text fields (Mandatory &amp; Optional) in Add screen of EDGE Device module by Super admin/Admin user" time="37.439">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+When user enters credentials and click on login button......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+And After landing on EDGE Device List screen................................passed
+Then Click on ADD New button on the top right side & landed on EDGE>ADD Screen.passed
+And enter valid values for all text fields..................................passed
+Then click on save button to add Edge.......................................passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC081_Verification of Update functionality in the EDGE Device List screen by Super admin/Admin user" time="85.482">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+When user enters credentials and click on login button......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+And scroll horizontal to see status column..................................passed
+Then Click on EDGE Group ID search icon i.e. three dots & enter Valid inputs into search text field.passed
+Then After landing on EDGE Device List please scroll horizontal and Click on Edit icon button.passed
+Then update Edge Name, location, Description , Assigned To from Identity section.passed
+Then scroll down............................................................passed
+Then update the value of Serial Number, OnboardingKey, ImageVersion from the Registration accordion.passed
+Then update the value of Server Port from the deployment....................passed
+Then select the value for App Group from the deployment.....................passed
+Then Click on Save button to update edge....................................passed
+]]></system-out>
+</testcase>
+<testcase classname="EDGE Devices" name="TC011_Verification of Delete functionality in the EDGE Device List screen by Super admin/Admin user (If few devices are interlinked with other module)" time="48.423">
+<system-out><![CDATA[
+Given User launch application in chrome browser.............................passed
+When user enters credentials and click on login button......................passed
+Then Click on EDGE Device module from side menu bar.........................passed
+And scroll horizontal to see status column..................................passed
+Then Click on Status Three Dot..............................................passed
+And Choose inactive mode from status column.................................passed
+Then Click on EDGE Group ID search icon i.e. three dots & enter Valid inputs into search text field.passed
+Then After landing on EDGE Device List screen scroll horizontal and Click on DELETE icon button.passed
+Then confirmation message appear on the Screen for deletion with option Yes or No.passed
+]]></system-out>
+</testcase>
+</testsuite>
