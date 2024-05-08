@@ -115,7 +115,7 @@ public class EdgeGroupApplicationDeployment extends CommonActions {
 	WebElement checkboxApplicationEdgeDeviceConfig;
 	
 	
-	@FindBy(xpath = "(//div[@aria-expanded='true']//table)//tr//td)[1]//label")
+	@FindBy(xpath = "((//div[@aria-expanded='true']//table)//tr//td)[1]//label")
 	WebElement selectedCheckboxEdgeNameSacLabel;
 	
 	@FindBy(xpath = "(//div[@aria-expanded='true']//table)//tbody/tr[1]/td[1]/mat-checkbox[1]/label")
@@ -149,6 +149,13 @@ public class EdgeGroupApplicationDeployment extends CommonActions {
 	@FindBy(xpath = "//div[contains(text(),'App Name')]/../../..//mat-icon")
 
 	WebElement edgeappNameDot;
+	
+	
+
+	@FindBy(xpath = "//app-filter[@name='appname']/div/a/mat-icon")
+
+	WebElement appnameApplicationDeployment;
+	
 	
 	@FindBy(xpath = "/html/body/app-root/app-root/app-home/mat-sidenav-container/mat-sidenav-content/div[2]/div/app-edgegroup-config/div/div/mat-horizontal-stepper/div[2]/div[1]/form/div[2]/button")
 	WebElement NextButton1;
@@ -465,6 +472,10 @@ public class EdgeGroupApplicationDeployment extends CommonActions {
 	public void edgeAppNameInput(String value) {
 		edgeAppNameInput.sendKeys(Keys.ENTER);
 		edgeAppNameInput.sendKeys(value);
+	}
+	
+	public void appnameApplicationDeployment() {
+		appnameApplicationDeployment.click();
 	}
 		
 		

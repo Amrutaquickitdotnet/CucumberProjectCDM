@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.aventstack.extentreports.ExtentTest;
 import com.cdm.common.CommonActions;
@@ -20,15 +21,15 @@ public class AboutPage extends CommonActions {
 	}
 
 	
-	@FindBy(xpath = "//div[contains(text(),'Application Version: 1.0.107')]") // these all are locators
+	@FindBy(xpath = "//div[contains(text(),'ForeSite EDGE CDM Software Version')]/../div[2]") // these all are locators
 	WebElement versionText;
 	
+
 	
-	
-	@FindBy(xpath = "//a[contains(text(),'About')]") // these all are locators
+	@FindBy(xpath = "//a[@id='nav-repositories-tab'][contains(text(),'About')]") // these all are locators
 	WebElement AboutTab;
 	
-	@FindBy(tagName ="title")
+	@FindBy(xpath="//div[contains(text(),'ForeSite EDGE CDM Software Version')]")
 	WebElement aboutTitle;
 	
 	
@@ -36,13 +37,21 @@ public class AboutPage extends CommonActions {
 	public void aboutTab() {
 		AboutTab.click();
 	}
-	public void verifyTitle() {
-		aboutTitle.getText();
+	
+	public WebElement hasTitleElement() {
+		// TODO Auto-generated method stub
+		return aboutTitle;
+	}
+	public String verifyTitle() {
+		if(aboutTitle==null) {
+			return "";
+		}
 		
+		return aboutTitle.getText();
 	}
 	
-	public void versionText() {
-		versionText.getText();
+	public String versionText() {
+		return versionText.getText();
 	}
 	
 	public void verifyTitleColor(String expectedColor) {
@@ -66,5 +75,6 @@ public class AboutPage extends CommonActions {
 		Dimension d = new Dimension(width, height);
 		driver.manage().window().setSize(d);
 	}
+	
 }
 

@@ -27,7 +27,6 @@ public class EdgeGroupsPage extends CommonActions {
 			PageFactory.initElements(driver, this);
 	}
 	
-	
 
 	
 	@FindBy(xpath = "//span[contains(text(),'Cancel')]")
@@ -37,6 +36,8 @@ public class EdgeGroupsPage extends CommonActions {
 	@FindBy(xpath = "//div[@class='tableCard']/h4")
 	WebElement deploymentHeadingTitle;
 	
+	@FindBy(xpath = "//input[@formcontrolname='controllername']/../../../../../span")
+	WebElement edgeGroupIDinvalidValidationmessage;
 	
 	
 	
@@ -68,7 +69,7 @@ public class EdgeGroupsPage extends CommonActions {
 	@FindBy(xpath = "//input[@class='titleHeadingsub']")
 	WebElement headingtitleonboarding;
 	
-	@FindBy(xpath = "//textarea[@placeholder='Description']")
+	@FindBy(xpath = "//textarea[@formcontrolname='description']")
 	WebElement description;
 	
 	@FindBy(xpath = "//input[@formcontrolname='serialkeys']")
@@ -83,21 +84,18 @@ public class EdgeGroupsPage extends CommonActions {
 	@FindBy(xpath = "//button[@class='calButton']")
 	WebElement cancelButton;
 
-	@FindBy(xpath = "//app-edgeconfigupload/div[3]/button[2]")
-	WebElement saveButtonUpload;
 	
 	
-	@FindBy(xpath = "/html/body/app-root/app-root/app-home/mat-sidenav-container/mat-sidenav/div/mat-nav-list/ul/li[2]/a/span")
+	
+	@FindBy(xpath =  "//body/app-root[1]/app-root[1]/app-home[1]/mat-sidenav-container[1]/mat-sidenav[1]/div[1]/mat-nav-list[1]/ul[1]/li[2]/a[1]/img[1]")
 	WebElement EdgeGroupTab;
 
-	@FindBy(xpath = "//body/div[3]/div[2]/div[1]/mat-dialog-container[1]/app-edge-onboarding-upload[1]/div[3]/button[2]")
-	WebElement saveButtonfinalonboarding;
+	
 
 	@FindBy(xpath = "//input[@type='file']")
 	WebElement controllerConfigurationCertificateUpload;
 	
-	@FindBy(xpath = "//input[@type='file']")
-	WebElement onboardingCertificateUpload;
+	
 
 	@FindBy(xpath = "//mat-expansion-panel[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/img[1]")
 	WebElement onboardingCertificateIcon;
@@ -124,10 +122,10 @@ public class EdgeGroupsPage extends CommonActions {
 	@FindBy(css = "mat-select[formcontrolname='appgroupid'] span")
 	WebElement applicationGroupName;
 
-	@FindBy(xpath = "/html/body/div[3]/div/div/mat-tooltip-component/div")
+	@FindBy(xpath = "//body/div[3]/div[1]/div[1]/mat-tooltip-component[1]/div[1]")
 	WebElement EditButtonToolTip;
 
-	@FindBy(xpath = "//body/div[3]/div/div/mat-tooltip-component/div")
+	@FindBy(xpath = "//body/div[3]/div[1]/div[1]/mat-tooltip-component[1]/div[1]")
 	WebElement DeleteButtonToolTip;
 
 	@FindBy(css = ".cdk-overlay-container")
@@ -139,7 +137,7 @@ public class EdgeGroupsPage extends CommonActions {
 	@FindBy(css = ".cdk-overlay-container mat-tooltip-component div")
 	WebElement ConsoleButtonToolTip;
 
-	@FindBy(xpath = "//tbody/tr[3]/td[6]/img[3]")
+	@FindBy(xpath = "//tbody/tr[1]/td[6]/img[3]")
 	WebElement stopButton;
 
 	@FindBy(xpath = "//h2[contains(text(),'EDGE Groups')]")
@@ -148,7 +146,7 @@ public class EdgeGroupsPage extends CommonActions {
 	@FindBy(xpath = "//tbody/tr[1]/td[6]/img[3]")
 	WebElement stopIconEdgeGroup;
 
-	@FindBy(xpath = "//tbody/tr[1]/td[6]/mat-icon[1]")
+	@FindBy(xpath = "//tbody/tr[1]/td[6]/img[4]")
 	WebElement consoleIcon;
 
 	@FindBy(xpath = "//thead/tr[1]/th[4]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]")
@@ -301,12 +299,11 @@ public class EdgeGroupsPage extends CommonActions {
 
 	// addButton
 
-	@FindBy(xpath = "//button[@class='addButton']")
-	WebElement saveButtonforEdgeGroup;
+	
 
 	public void identitySectionGroupID(String value) {
 
-		// edgeGroupIDInput.sendKeys(Keys.ENTER);
+		edgeGroupIDInput.sendKeys(Keys.ENTER);
 		edgeGroupIDInput.sendKeys(value);
 
 	}
@@ -362,9 +359,7 @@ public class EdgeGroupsPage extends CommonActions {
 		SelectMatOption(applicationGroupName, value);
 	}
 
-	public void saveButtonforEdgeGroup() {
-		saveButtonforEdgeGroup.click();
-	}
+	
 
 	public void checkEdgeGrouptab() {
 
@@ -577,9 +572,11 @@ public class EdgeGroupsPage extends CommonActions {
 		return "";
 	}
 
-	public String get_Text_StopButtonToolTip() {
+	public String get_Text_StopButtonToolTip() throws InterruptedException {
 
 		mouseHover(stopButton);
+		
+		Thread.sleep(3000);
 
 		String stoptoolTipText = StopButtonToolTip.getText();
 
@@ -653,10 +650,7 @@ public class EdgeGroupsPage extends CommonActions {
 		edgeConfigurationDownloadBtn.click();
 	}
 
-	public void licenceDownloadButton() {
-		licenceDownloadButton.click();
-	}
-
+	
 	public void refreshButtonforLicence() {
 		refreshButtonforLicence.click();
 	}
@@ -685,13 +679,9 @@ public class EdgeGroupsPage extends CommonActions {
 //	      r.keyRelease(KeyEvent.VK_ENTER);
 	}
 
-	public void saveButtonUpload() {
-		saveButtonUpload.click();
-	}
+	
 
-	public void onboardingCertificateIcon() {
-		onboardingCertificateIcon.click();
-	}
+	
 
 	public String verifyValidationMessageEdgeId() {
 		AddListpageVerification.click();
@@ -751,7 +741,9 @@ public class EdgeGroupsPage extends CommonActions {
 	}
 
 	public void serverNodes(String value) {
+		serverNodes.sendKeys(Keys.ENTER);
 		serverNodes.sendKeys(value);
+		serverNodes.sendKeys(Keys.ENTER);
 	}
 
 	public String deploymentHeadingTitle() {
@@ -778,9 +770,6 @@ public class EdgeGroupsPage extends CommonActions {
 		saveButtononboardingCertificateIcon.click();
 	}
 
-	public void saveButtonfinalonboarding() {
-		saveButtonfinalonboarding.click();
-	}
 
 	public void fileupload() {
 		Actions action = new Actions(driver);
@@ -834,7 +823,9 @@ public class EdgeGroupsPage extends CommonActions {
 		edgegroupstatusInactive.click();
 	}
 	
-	public void saveButtononEdgeConfiguration() {
+	
+	
+	public void saveButtononEdgeGroupEdit() {
 		saveButtononEdgeConfiguration.click();
 	}
 	
@@ -846,8 +837,5 @@ public class EdgeGroupsPage extends CommonActions {
 		headingtitleonboarding.click();
 	}
 	
-	public void onboardingCertificateUpload(String value) {
-	
-		onboardingCertificateUpload.sendKeys(value);
-	}
+
 }

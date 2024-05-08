@@ -1,5 +1,6 @@
 package com.cdm.pages;
 
+import java.time.Duration;
 import java.util.Arrays;
 import java.util.List;
 
@@ -11,6 +12,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.aventstack.extentreports.ExtentTest;
 import com.cdm.common.CommonActions;
@@ -86,6 +89,9 @@ public class DeploymentsmodulePage extends CommonActions {
 	@FindBy(xpath = "//body/app-root[1]/app-root[1]/app-home[1]/mat-sidenav-container[1]/mat-sidenav-content[1]/div[2]/div[1]/app-deployement-app[1]/div[1]/div[1]/div[1]/img[3]")
 	WebElement currentViewButton;
 
+	@FindBy(xpath = "//body/app-root[1]/app-root[1]/app-home[1]/mat-sidenav-container[1]/mat-sidenav-content[1]/div[2]/div[1]/app-deployement-app[1]/div[1]/div[1]/div[1]/img[3]")
+	WebElement historyviewButton;
+	
 	@FindBy(xpath = "//input[@name='devicename']")
 	WebElement inputEdgeNameDeploy;
 
@@ -160,6 +166,11 @@ public class DeploymentsmodulePage extends CommonActions {
 
 	@FindBy(xpath = "//body[1]/div[3]/div[2]/div[1]/mat-dialog-container[1]/app-deploy-volume[1]/div[1]/div[2]/div[1]/div[1]/table[1]/thead[1]/tr[1]/th[4]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]")
 	WebElement createdDateVolumeDeployDetails;
+	
+	
+	
+	@FindBy(xpath = "//input[@value='RUNNING']")
+	WebElement runningstatus;
 
 	public void calenderIcon() {
 		calenderIcon.click();
@@ -193,6 +204,8 @@ public class DeploymentsmodulePage extends CommonActions {
 	}
 
 	public void deploymenttabclick() {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement element = wait.until(ExpectedConditions.visibilityOf(deployment_tab));
 		deployment_tab.click();
 	}
 
@@ -450,5 +463,21 @@ public class DeploymentsmodulePage extends CommonActions {
 			// TODO: handle exception
 		}
 
+	}
+	
+	public void runningStatusunchecked() {
+		if(runningstatus.getAttribute("checked") != null) // if Checked 
+			runningstatus.click(); 
+		
+	}
+	public void runningStatuschecked() {
+		if(!runningstatus.isSelected())
+			runningstatus.click();
+		
+	}
+
+	public void historyviewButton() {
+		historyviewButton.click();
+		
 	}
 }

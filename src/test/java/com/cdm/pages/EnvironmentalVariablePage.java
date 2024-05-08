@@ -20,7 +20,14 @@ public class EnvironmentalVariablePage extends CommonActions {
 		PageFactory.initElements(driver, this);
 	}
 	
+	@FindBy(xpath = "//input[@name='configname']")
+	WebElement searchconfignameInput;
 
+	@FindBy(xpath = "//input[@name='configvalue']")
+	WebElement searchconfigValueInput;
+
+	
+	
 	
 
 	@FindBy(css = ".cdk-overlay-backdrop-showing")
@@ -29,20 +36,20 @@ public class EnvironmentalVariablePage extends CommonActions {
 	@FindBy(xpath = "//h4/span")
 	WebElement headingTitle;
 
-	@FindBy(xpath = "//body/div[3]/div[2]/div[1]/mat-dialog-container[1]/app-confirmationdelete[1]/div[1]/mat-dialog-actions[1]/button[1]")
+	@FindBy(xpath = "//span[contains(text(),'Yes')]")
 	WebElement confirmationYesButton;
 
-	@FindBy(xpath = "//input[@name='configname']")
+	@FindBy(xpath = "//input[@formcontrolname='configname']")
 	WebElement confignameInput;
 
-	@FindBy(xpath = "//input[@name='configvalue']")
+	@FindBy(xpath = "//input[@formcontrolname='configvalue']")
 	WebElement configValueInput;
 
 	@FindBy(xpath = "//thead/tr[1]/th[1]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]")
-	WebElement configNameSearch;
+	WebElement configNameSearchThreeDot;
 
 	@FindBy(xpath = "//thead/tr[1]/th[2]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]")
-	WebElement configValueSearch;
+	WebElement configValueSearchThreeDot;
 
 	@FindBy(xpath = "//body/app-root[1]/app-root[1]/app-home[1]/mat-sidenav-container[1]/mat-sidenav-content[1]/div[2]/div[1]/app-device-add-edit-detail-page[1]/div[1]/div[1]/div[1]/div[1]/app-config[1]/div[1]/div[1]/div[2]/span[1]/img[2]")
 	WebElement bulkUpload;
@@ -53,7 +60,7 @@ public class EnvironmentalVariablePage extends CommonActions {
 	@FindBy(xpath = "//button[@class='mat-focus-indicator btnCancel mat-button mat-button-base']")
 	WebElement confirmationCancelButton;
 
-	@FindBy(xpath = "//a[contains(text(),'Environment variable')]")
+	@FindBy(xpath = "//ul[@class='nav']/li[3]")
 	WebElement environmentalVariableTab;
 
 	@FindBy(xpath = "//tbody/tr[1]/td[4]/img[1]")
@@ -192,21 +199,24 @@ public class EnvironmentalVariablePage extends CommonActions {
 		bulkDownload.click();
 	}
 
-	public void configNameSearch() {
-		clickElement(configNameSearch,"configNameSearch on page");
-		//configNameSearch.click();
+	public void configNameSearchThreeDot() {
+		
+		configNameSearchThreeDot.click();
 	}
 
-	public void configValue() {
+	public void configValueSearchThreeDot() {
 		
-		configValueSearch.click();
+		configValueSearchThreeDot.click();
 	}
 
 	public void configNameInput(String value) {
+		confignameInput.sendKeys(Keys.ENTER);
 		confignameInput.sendKeys(value);
+		
 	}
 
 	public void configValueInput(String value) {
+		configValueInput.sendKeys(Keys.ENTER);
 		configValueInput.sendKeys(value);
 	}
 
@@ -219,6 +229,18 @@ public class EnvironmentalVariablePage extends CommonActions {
 		if (backDropShowing != null) {
 			backDropShowing.click();
 		}
+	}
+
+	public void searchconfigNameValue(String value) {
+		
+		searchconfignameInput.sendKeys(Keys.ENTER);
+		searchconfignameInput.sendKeys(value);
+	}
+	
+public void searchconfigValue(String value) {
+		
+	searchconfigValueInput.sendKeys(Keys.ENTER);
+	searchconfigValueInput.sendKeys(value);
 	}
 
 }

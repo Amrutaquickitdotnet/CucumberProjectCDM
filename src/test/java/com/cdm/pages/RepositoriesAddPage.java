@@ -1,0 +1,217 @@
+package com.cdm.pages;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import com.aventstack.extentreports.ExtentTest;
+import com.cdm.common.CommonActions;
+
+public class RepositoriesAddPage extends CommonActions {
+
+	public RepositoriesAddPage(WebDriver driver, ExtentTest logger) {
+		super(driver, logger);
+		PageFactory.initElements(driver, this);
+
+	}
+	@FindBy(xpath = "//*[@id=\"togBtn\"]")
+	WebElement sliderOnCheckBox;
+	
+	@FindBy(xpath = "//*[@id=\"togBtn\"]/..")
+	WebElement sliderOnCheckBoxLabel;
+	
+	@FindBy(xpath = "//mat-expansion-panel-header/span[2]")
+	WebElement accordionexpandbutton;
+
+	@FindBy(xpath = "//input[@formcontrolname='repositoryname']/../../../../../span[2]")
+	WebElement validationMessageRepositoryName;
+
+	@FindBy(xpath = "//input[@formcontrolname='username']/../../../../../../div/span")
+	WebElement validationMessageUserName;
+
+	@FindBy(xpath = "//div[@class='slider round']")
+	WebElement toggleElement;
+
+	@FindBy(xpath = "//input[@formcontrolname='Password']/../../../../../../div/span")
+	WebElement validationMessageUserPassword;
+
+	@FindBy(xpath = "//input[@formcontrolname='url']/../../../../../span/span")
+	WebElement validationMessageRepositoryURL;
+
+	@FindBy(xpath = "//h3[@class='subTitle']")
+	WebElement AddListpageVerification;
+
+	@FindBy(xpath = "//button[@class='addButton']")
+	WebElement savebuttonrepository;
+
+	@FindBy(xpath = "//mat-select[@formcontrolname='datastorageindex']")
+	WebElement datastorageindexAdd;
+
+	@FindBy(xpath = "//input[@formcontrolname='repositoryname']")
+	WebElement repositorynameAdd;
+
+	@FindBy(xpath = "//input[@formcontrolname='url']")
+	WebElement repositoryURLAdd;
+
+	@FindBy(xpath = "//input[@formcontrolname='repositorypath']")
+	WebElement repositorypathAdd;
+
+	@FindBy(xpath = "//input[@formcontrolname='password']")
+	WebElement repositoryPasswordAdd;
+
+	@FindBy(xpath = "//input[@formcontrolname='username']")
+	WebElement repositoryUserNameAdd;
+
+	public void repositorynameAdd(String value) {
+		repositorynameAdd.sendKeys(Keys.ENTER);
+		repositorynameAdd.sendKeys(value);
+	}
+
+	public void repositoryURLAdd(String value) {
+		repositoryURLAdd.sendKeys(Keys.ENTER);
+		repositoryURLAdd.sendKeys(value);
+	}
+
+	public void repositorypathAdd(String value) {
+		repositorypathAdd.sendKeys(Keys.ENTER);
+		repositorypathAdd.sendKeys(value);
+	}
+
+	public void repositoryUserNameAdd(String value) {
+		repositoryUserNameAdd.sendKeys(Keys.ENTER);
+		repositoryUserNameAdd.sendKeys(value);
+	}
+
+	public void repositoryPasswordAdd(String value) {
+		repositoryPasswordAdd.sendKeys(Keys.ENTER);
+		repositoryPasswordAdd.sendKeys(value);
+	}
+
+	public void datastorageindexAdd(String value) throws InterruptedException {
+
+		SelectMatOption(datastorageindexAdd, value);
+	}
+
+	public void savebuttonrepository() {
+		savebuttonrepository.click();
+
+	}
+
+	public String verifyValidationMessageRepositoryName() {
+		AddListpageVerification.click();
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+
+		}
+
+		if (validationMessageRepositoryName == null) {
+			return "";
+		}
+		String message = validationMessageRepositoryName.getText();
+
+		return message.trim();
+
+	}
+
+	public String verifyValidationMessageRepositoryURL() {
+		AddListpageVerification.click();
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+
+		}
+
+		if (validationMessageRepositoryURL == null) {
+			return "";
+		}
+		String message = validationMessageRepositoryURL.getText();
+
+		return message.trim();
+	}
+
+	public String verifyValidationMessageUsername() {
+		AddListpageVerification.click();
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+
+		}
+
+		if (validationMessageUserName == null) {
+			return "";
+		}
+		String message = validationMessageUserName.getText();
+
+		return message.trim();
+	}
+
+	public void accordionexpandbutton() {
+
+		accordionexpandbutton.click();
+	}
+
+	public String verifyValidationMessagepassword() {
+		AddListpageVerification.click();
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+
+		}
+
+		if (validationMessageUserName == null) {
+			return "";
+		}
+		String message = validationMessageUserName.getText();
+
+		return message.trim();
+	}
+
+	public String toggleElementcolour() {
+
+		String actualColor = toggleElement.getCssValue("background-color");
+		return actualColor;
+	}
+	
+	public void moveSliderCondition(String m) {
+		moveSliderCondition(sliderOnCheckBox, sliderOnCheckBoxLabel, m);
+	}
+	
+
+	public String removalofEnteredTextForRepositoryName() {
+
+		return removalofEneredText(repositorynameAdd);
+
+	}
+	
+	public String removalofEnteredTextForURL() {
+
+		return removalofEneredText(repositoryURLAdd);
+
+	}
+	
+	public String removalofEnteredTextForRepositoryPath() {
+
+		return removalofEneredText(repositorypathAdd);
+
+	}
+
+	public String removalofEneredTextForUSername() {
+
+		return removalofEneredText(repositoryUserNameAdd);
+
+	}
+	
+	public String removalofEneredTextPassword() {
+
+		return removalofEneredText(repositoryPasswordAdd);
+
+	}
+
+}

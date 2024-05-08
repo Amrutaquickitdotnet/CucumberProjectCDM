@@ -20,7 +20,11 @@ public class UserSettingsEditPage extends CommonActions{
 	
 	
 	
-	
+	@FindBy(xpath = "//div[@class='slider round']")
+	WebElement sliderOnCheckBox;
+
+	@FindBy(xpath = "//label[@class='switch']")
+	WebElement sliderOnCheckBoxLabel;
 	
 	@FindBy(xpath = "//input[@formcontrolname='firstname']") 
 	WebElement firstNameInputEdit;
@@ -160,6 +164,10 @@ public class UserSettingsEditPage extends CommonActions{
 			@FindBy(xpath = "//div[contains(text(),'Numericals of length Min = 10 & Max = 16 character')]")
 			WebElement verifyValidationMessageContact;
 			
+			
+			@FindBy(xpath = "(//input[@formcontrolname='contact']/../../../../div/../../span)[1]")
+			WebElement verifyValidationMessageEditContact;
+			
 			@FindBy(xpath = "	//div[contains(text(),'Please enter a valid Phone Number !')]")
 			WebElement verifyValidationMessagedigitwithSpace;
 			
@@ -192,6 +200,15 @@ public class UserSettingsEditPage extends CommonActions{
 					return "";
 				}
 				String message = verifyValidationMessageContact.getText();
+
+				return message.trim();
+			}
+			
+			public String verifyValidationMessageEditContact() {
+				if (verifyValidationMessageEditContact == null) {
+					return "";
+				}
+				String message = verifyValidationMessageEditContact.getText();
 
 				return message.trim();
 			}
@@ -260,6 +277,10 @@ public class UserSettingsEditPage extends CommonActions{
 
 				return removalofEneredText(passwordInputEdit);
 
+			}
+			
+			public void moveSliderCondition(String m) {
+				moveSliderCondition(sliderOnCheckBox, sliderOnCheckBoxLabel, m);
 			}
 			
 			

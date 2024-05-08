@@ -16,8 +16,7 @@ public class ReportSteps extends BaseTest {
 		try {
 			Thread.sleep(4000);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			
 		}
 		report.reportsTab();
 	}
@@ -47,7 +46,7 @@ public class ReportSteps extends BaseTest {
 		ReportsPage report = new ReportsPage(driver, logger);
 		report.downloadButton();
 		
-		Assert.assertEquals("Mandatory field - required !","   Mandatory field - required ! ",report.verifyValidationMessageforReports());
+		Assert.assertEquals("Mandatory field - required !",report.verifyValidationMessageforReports());
 	}
 	
 	
@@ -62,7 +61,7 @@ public class ReportSteps extends BaseTest {
 	@Then("Select Audit Report from the Report Type dropdown.")
 	public void select_audit_report_from_the_report_type_dropdown() throws InterruptedException {
 		ReportsPage report = new ReportsPage(driver, logger);
-		report.reportTypeDropdown(alldata.get(vTCName).get("Value4").toString());
+		report.reportTypeDropdown(alldata.get(vTCName).get("ReportType").toString());
 	}
 
 	@Then("Select same date in the Start Date & End Date")
@@ -72,17 +71,17 @@ public class ReportSteps extends BaseTest {
 		Thread.sleep(2000);
 
 		CalenderPage cp = new CalenderPage(driver, logger);
-		String year = alldata.get(vTCName).get("Value1").toString();
-		String month = alldata.get(vTCName).get("Value2").toString();
-		String day = alldata.get(vTCName).get("Value3").toString();
+		String year = alldata.get(vTCName).get("ReportChooseStartYear").toString();
+		String month = alldata.get(vTCName).get("ReportChooseStartMonth").toString();
+		String day = alldata.get(vTCName).get("ReportChooseStartDay").toString();
 		cp.SelectDay(year, month, day);
 		Thread.sleep(4000);
 		
 		report.caliconEndDate();
 		Thread.sleep(2000);
-		String yearEndDate = alldata.get(vTCName).get("Value5").toString();
-		String monthEnd = alldata.get(vTCName).get("Value6").toString();
-		String dayEnd = alldata.get(vTCName).get("Value7").toString();
+		String yearEndDate = alldata.get(vTCName).get("ReportChooseEndYear").toString();
+		String monthEnd = alldata.get(vTCName).get("ReportChooseEndMonth").toString();
+		String dayEnd = alldata.get(vTCName).get("ReportChooseEndDay").toString();
 		cp.SelectDay(yearEndDate, monthEnd, dayEnd);
 		Thread.sleep(4000);
 		

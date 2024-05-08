@@ -1,4 +1,3 @@
-
 @SheetREPORTS
 Feature: REPORTS
 
@@ -6,7 +5,7 @@ Feature: REPORTS
 Scenario: TC01_Verification of  Browser Compatibility of Reports module of the application
 Given User launch application in chrome browser
 When user enters credentials and click on login button
-And Succesfull login should be happen
+Then user should be login successfully
 
 @Test
 Scenario: TC02_Verification of  resizing the Reports list tab as per different zoom levels
@@ -45,14 +44,14 @@ And Click on download button
 
 
 @Test
-Scenario: TC06_To verify error message when user does not select any value
+Scenario: TC06_To verify error message when user does not select the Report type dropwdown
 Given User launch application in chrome browser
 When user enters credentials and click on login button
 And Click on Report module from side menu bar
 Then Without selecting Audit Report, Start Date & End Date simply hit Download CTA and observe the error message
 
 @Test
-Scenario: TC07_To verify that an Admin user is not able to download the Audit report
+Scenario: TC07_To verify that the Report module is not available to an Admin user
 Given User launch application in chrome browser
 When user enters credentials and click on login button
 And Click on Report module from side menu bar
@@ -60,7 +59,7 @@ Then Select Audit Report from the Report Type dropdown.
 And Select same date in the Start Date & End Date
 
 @Test
-Scenario: TC08_To verify that an Admin user is not able to download the Audit report
+Scenario: TC08_To verify that the Report module is not available to an Operator user
 Given User launch application in chrome browser
 When user enters credentials and click on login button
 And Click on Report module from side menu bar

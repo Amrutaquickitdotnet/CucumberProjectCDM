@@ -28,6 +28,8 @@ public class LicensesPage extends CommonActions {
 		PageFactory.initElements(driver, this);
 	}
 	
+	@FindBy(xpath ="//body/app-root[1]/app-root[1]/app-home[1]/mat-sidenav-container[1]/mat-sidenav-content[1]/div[2]/div[1]/app-license[1]/div[1]/div[1]/div[1]/span[1]/img[5]")
+	WebElement licenseTrackerIcon;
 	
 	   @FindBy(xpath = "//thead/tr[1]/th[2]/div[1]/span[1]/div[1]/div[2]")
 		WebElement sortissuedate;
@@ -60,7 +62,7 @@ public class LicensesPage extends CommonActions {
 	@FindBy(xpath = "//thead/tr[1]/th[2]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]")
 	WebElement issueDateThreeDot;
 
-	@FindBy(xpath = "//thead/tr[1]/th[3]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]")
+	@FindBy(xpath = "//thead/tr[1]/th[5]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]")
 	WebElement expiryDateThreeDot;
 
 	@FindBy(xpath = "//thead/tr[1]/th[4]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]")
@@ -84,14 +86,15 @@ public class LicensesPage extends CommonActions {
 	@FindBy(xpath = "//input[@name='version']")
 	WebElement versionInput;
 	
-	
+	@FindBy(xpath="//body/app-root[1]/app-root[1]/app-home[1]/mat-sidenav-container[1]/mat-sidenav-content[1]/div[2]/div[1]/app-license[1]/div[1]/div[1]/div[1]/span[1]/img[2]")
+	WebElement bulkDownloadIcon;
 
-	@FindBy(xpath = "//span[contains(text(),'Upload')]")
+	@FindBy(xpath = "//mat-dialog-container[@id='mat-dialog-0']/app-licenseuploadimport/div[2]/button[2]")
 
 	WebElement uploadButton;
 
-	@FindBy(xpath = "//body/app-root[1]/app-root[1]/app-home[1]/mat-sidenav-container[1]/mat-sidenav-content[1]/div[2]/div[1]/app-license[1]/div[1]/div[1]/div[1]/span[1]/img[3]")
-	WebElement addButton;
+	@FindBy(xpath = "//body/app-root[1]/app-root[1]/app-home[1]/mat-sidenav-container[1]/mat-sidenav-content[1]/div[2]/div[1]/app-license[1]/div[1]/div[1]/div[1]/span[1]/img[2]")
+	WebElement uploadLicenseButton;
 
 	@FindBy(xpath = "//div[@id='toast-container']")
 	WebElement invalidLicenseValidationmessage;
@@ -154,7 +157,7 @@ public class LicensesPage extends CommonActions {
 	}
 
 	public void addButton() {
-		addButton.click();
+		uploadLicenseButton.click();
 	}
 
 	public void License_Tracker_btn() {
@@ -318,4 +321,15 @@ public class LicensesPage extends CommonActions {
 		versionThreeDot.click();
 	}
 	
+	public void uploadLicenseButton() {
+		uploadLicenseButton.click();
+	}
+	
+	public void licenseTrackerIcon() {
+		licenseTrackerIcon.click();
+	}
+	
+	public void bulkDownloadIcon() {
+		bulkDownloadIcon.click();
+	}
 }

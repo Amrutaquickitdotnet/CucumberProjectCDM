@@ -48,6 +48,11 @@ public class CommonActions {
 		}
 
 	}
+	
+	public void wait(WebElement ele, ExtentTest logger ) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.visibilityOf(ele));
+	}
 
 	public void SetInput(WebElement elm, String data, String msg) {
 		try {
@@ -183,6 +188,13 @@ public class CommonActions {
 		Actions actions = new Actions(driver);
 		actions.moveToElement(e).build().perform();
 	}
+	
+	public void mouseHoverVersion(WebElement e) {
+		Actions actions = new Actions(driver);
+          
+              actions.moveByOffset(-30, -30)
+               .perform();
+	}
 
 	public void mouseHoverClick(WebElement e) {
 
@@ -262,6 +274,19 @@ public class CommonActions {
 		}
 	}
 
+	public void scrollingup(String cssSelector, String startingPoint, String height) {
+
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript(
+				"document.querySelector('" + cssSelector + "').scrollTo(" + startingPoint + ", " + height + ")");
+		try {
+			Thread.sleep(8000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+
+			e.printStackTrace();
+		}
+	}
 	public void fetchDropDownElement(WebElement dropdownEle, String text) {
 		Select s = new Select(dropdownEle);
 		s.selectByVisibleText(text);
@@ -275,6 +300,7 @@ public class CommonActions {
 
 	public void SelectMatOption(WebElement ele, String text) throws InterruptedException {
 		ele.click();
+		
 		Thread.sleep(10);
 		String xpath = "//mat-option/span[contains(text(),'" + text + "')]";
 		WebElement optionToSelect = driver.findElement(By.xpath(xpath));

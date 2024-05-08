@@ -1,6 +1,11 @@
 package com.cdm.Stepdefinations;
 
+import java.time.Duration;
+
 import org.junit.Assert;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.cdm.pages.CalenderPage;
 import com.cdm.pages.ConfigurationsPage;
@@ -18,6 +23,7 @@ public class ConfigurationSteps extends BaseTest {
 	@Then("Click on refresh button for configuration")
 	public void click_on_refresh_button_for_configuration() {
 		ConfigurationsPage cp = new ConfigurationsPage(driver, logger);
+		
 		cp.refreshbutton();
 	}
 
@@ -44,44 +50,44 @@ public class ConfigurationSteps extends BaseTest {
 	public void click_on_config_name_search_icon_i_e_three_dots_enter_valid_inputs_into_search_text_field() {
 		ConfigurationsPage cp = new ConfigurationsPage(driver, logger);
 		cp.configNameThreeDot();
-		cp.sendValueSearchinputBoxForConfigName(alldata.get(vTCName).get("Value3").toString());
+		cp.sendValueSearchinputBoxForConfigName(alldata.get(vTCName).get("ConfigNameSearch").toString());
 	}
 
 	@Then("Click on TimeStampThreeDotSearch icon and enter the value in datepickercolumn and clear the field")
-	public void click_on_time_stamp_three_dot_search_icon_and_enter_the_value_in_datepickercolumn_and_clear_the_field() {
+	public void click_on_time_stamp_three_dot_search_icon_and_enter_the_value_in_datepickercolumn_and_clear_the_field() throws InterruptedException {
 		ConfigurationsPage cp = new ConfigurationsPage(driver, logger);
 		cp.timeStampThreeDot();
 
 		CalenderPage cal = new CalenderPage(driver, logger);
 		cp.calenderIcon();
-		String year = alldata.get(vTCName).get("Value1").toString();
-		String month = alldata.get(vTCName).get("Value2").toString();
-		String day = alldata.get(vTCName).get("Value3").toString();
-		String day2 = alldata.get(vTCName).get("Value4").toString();
+		String year = alldata.get(vTCName).get("ChooseYear").toString();
+		String month = alldata.get(vTCName).get("ChooseMonth").toString();
+		String day = alldata.get(vTCName).get("ChooseStartDate").toString();
+		String day2 = alldata.get(vTCName).get("ChooseEndDate").toString();
 		cal.SelectDDDashMMDashYYYDay(year, month, day);
 		cal.SelectDirectDDDashMMDashYYYDay(year, month, day2);
 
 		try {
-			Thread.sleep(30000);
+			Thread.sleep(3000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		cp.applybuttoncalender();
-
+         Thread.sleep(3000);
 	}
 
 	@Then("Click on LastUpdatedThreeDotSearch icon and enter the value in datepickercolumn")
 	public void click_on_last_updated_three_dot_search_icon_and_enter_the_value_in_datepickercolumn() {
 		ConfigurationsPage cp = new ConfigurationsPage(driver, logger);
-		cp.timeStampThreeDot();
+		cp.lastUpdatedThreeDot();
 
 		CalenderPage cal = new CalenderPage(driver, logger);
 		cp.calenderIcon();
-		String year = alldata.get(vTCName).get("Value1").toString();
-		String month = alldata.get(vTCName).get("Value2").toString();
-		String day = alldata.get(vTCName).get("Value3").toString();
-		String day2 = alldata.get(vTCName).get("Value4").toString();
+		String year = alldata.get(vTCName).get("ChooseYear").toString();
+		String month = alldata.get(vTCName).get("ChooseMonth").toString();
+		String day = alldata.get(vTCName).get("ChooseStartDate").toString();
+		String day2 = alldata.get(vTCName).get("ChooseEndDate").toString();
 		cal.SelectDDDashMMDashYYYDay(year, month, day);
 		cal.SelectDirectDDDashMMDashYYYDay(year, month, day2);
 
@@ -101,7 +107,7 @@ public class ConfigurationSteps extends BaseTest {
 		try {
 			cp.historyviewbuttonclick();
 		} catch (Exception e) {
-			// TODO: handle exception
+			e.printStackTrace();
 		}
 
 	}
@@ -111,15 +117,22 @@ public class ConfigurationSteps extends BaseTest {
 		ConfigurationsPage cp = new ConfigurationsPage(driver, logger);
 		Assert.assertEquals("Tooltip of refresh button", "Refresh", cp.get_Text_ToolTipRefreshConfig());
 	}
-
-	@Then("Click on EDGE Name search icon i.e. three dots & enter Valid inputs into search text field")
-	public void click_on_edge_name_search_icon_i_e_three_dots_enter_valid_inputs_into_search_text_field()
-			throws InterruptedException {
+	
+	@Then("search for Edge ID column with valid data")
+	public void search_for_edge_id_column_with_valid_data() throws InterruptedException {
 		ConfigurationsPage cp = new ConfigurationsPage(driver, logger);
-		cp.edgeNameThreeDotConfig();
+		cp.edgeIDThreeDotConfig();
 		Thread.sleep(3000);
-		cp.sendValueSearchinputBoxForEdgeName(alldata.get(vTCName).get("Value1").toString());
+		cp.sendValueSearchinputBoxForEdgeID(alldata.get(vTCName).get("EdgeIDSearch").toString());
+	}
 
+
+	@Then("search for Edge ID column with invalid data")
+	public void search_for_edge_id_column_with_invalid_data() throws InterruptedException {
+		ConfigurationsPage cp = new ConfigurationsPage(driver, logger);
+		cp.edgeIDThreeDotConfig();
+		Thread.sleep(3000);
+		cp.sendValueSearchinputBoxForEdgeID(alldata.get(vTCName).get("EdgeIDSearch").toString());
 	}
 
 	@Then("Click on App Name search icon i.e. three dots & enter Valid inputs into search text field")
@@ -128,7 +141,7 @@ public class ConfigurationSteps extends BaseTest {
 		ConfigurationsPage cp = new ConfigurationsPage(driver, logger);
 		cp.appNameConfigThreeDot();
 		Thread.sleep(3000);
-		cp.sendValueSearchinputBoxForAppName(alldata.get(vTCName).get("Value2").toString());
+		cp.sendValueSearchinputBoxForAppName(alldata.get(vTCName).get("AppNameSearch").toString());
 	}
 
 	@Then("Click on Config Name invalid search icon i.e. three dots & enter Valid inputs into search text field")
@@ -137,7 +150,7 @@ public class ConfigurationSteps extends BaseTest {
 		ConfigurationsPage cp = new ConfigurationsPage(driver, logger);
 		cp.configNameThreeDot();
 		Thread.sleep(3000);
-		cp.sendValueSearchinputBoxForConfigName(alldata.get(vTCName).get("Value4").toString());
+		cp.sendValueSearchinputBoxForConfigName(alldata.get(vTCName).get("ConfigNameSearch").toString());
 	}
 
 	@Then("Click on Response Name valid search icon i.e. three dots & enter Valid inputs into search text field")
@@ -146,17 +159,17 @@ public class ConfigurationSteps extends BaseTest {
 		ConfigurationsPage cp = new ConfigurationsPage(driver, logger);
 		cp.configNameThreeDot();
 		Thread.sleep(3000);
-		cp.sendValueSearchinputBoxForConfigName(alldata.get(vTCName).get("Value5").toString());
+		cp.sendValueSearchinputBoxForConfigName(alldata.get(vTCName).get("ConfigNameSearch").toString());
 	}
 
 	@Then("Enter valid inputs into search text field and enter backspace & click on enter")
 	public void enter_valid_inputs_into_search_text_field_and_enter_backspace_click_on_enter()
 			throws InterruptedException {
 		ConfigurationsPage cp = new ConfigurationsPage(driver, logger);
-		cp.edgeNameThreeDotConfig();
+		cp.edgeIDThreeDotConfig();
 		Thread.sleep(3000);
-		cp.sendValueSearchinputBoxForEdgeName(alldata.get(vTCName).get("Value1").toString());
-		cp.removalofEnteredTextForEdgeName();
+		cp.sendValueSearchinputBoxForEdgeID(alldata.get(vTCName).get("EdgeIDSearch").toString());
+		cp.removalofEnteredTextForEdgeID();
 	}
 
 	@Then("Enter valid inputs into search text field of app name and enter backspace & click on enter")
@@ -165,7 +178,7 @@ public class ConfigurationSteps extends BaseTest {
 		ConfigurationsPage cp = new ConfigurationsPage(driver, logger);
 		cp.appNameConfigThreeDot();
 		Thread.sleep(3000);
-		cp.sendValueSearchinputBoxForAppName(alldata.get(vTCName).get("Value2").toString());
+		cp.sendValueSearchinputBoxForAppName(alldata.get(vTCName).get("AppNameSearch").toString());
 		cp.removalofEnteredTextForAppName();
 	}
 
@@ -175,14 +188,14 @@ public class ConfigurationSteps extends BaseTest {
 		ConfigurationsPage cp = new ConfigurationsPage(driver, logger);
 		cp.configNameThreeDot();
 		Thread.sleep(3000);
-		cp.sendValueSearchinputBoxForConfigName(alldata.get(vTCName).get("Value3").toString());
+		cp.sendValueSearchinputBoxForConfigName(alldata.get(vTCName).get("ConfigNameSearch").toString());
 		cp.removalofEnteredTextForConfigName();
 	}
 
 	@Then("Click on History View Button")
 	public void click_on_history_view_button() throws InterruptedException {
 		ConfigurationsPage cp = new ConfigurationsPage(driver, logger);
-		cp.currentviewbuttonclick();
+		cp.historyviewbuttonclick();
 		Thread.sleep(4000);
 
 	}
@@ -208,9 +221,7 @@ public class ConfigurationSteps extends BaseTest {
 			throws InterruptedException {
 		ConfigurationsPage cp = new ConfigurationsPage(driver, logger);
 		cp.responseStatusThreeDot();
-		Thread.sleep(3000);
-		cp.sendValueSearchinputBoxForResponseStatus(alldata.get(vTCName).get("Value4").toString());
-		cp.removalofEnteredTextForResponseStatus();
+		
 	}
 
 }

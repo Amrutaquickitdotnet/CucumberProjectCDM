@@ -24,8 +24,37 @@ public class LicensesSteps extends BaseTest {
 
 	}
 
+	@Then("click on the license tracker icon")
+	public void click_on_the_license_tracker_icon() throws InterruptedException {
+		LicensesPage lp = new LicensesPage(driver, logger);
+		lp.licenseTrackerIcon();
+		Thread.sleep(5000);
+	}
+
+	@Then("Click on bulk download icon and verify the downloaded file content")
+	public void click_on_bulk_download_icon_and_verify_the_downloaded_file_content() {
+		LicensesPage lp = new LicensesPage(driver, logger);
+		lp.bulkDownloadIcon();
+	}
+
+	@Then("apply filter on host Id")
+	public void apply_filter_on_host_id() throws InterruptedException {
+		LicensesPage lp = new LicensesPage(driver, logger);
+		lp.hostIdThreeDot();
+		Thread.sleep(3000);
+		lp.hostidInput(alldata.get(vTCName).get("hostidsearch").toString());
+		Thread.sleep(3000);
+		lp.backDropShowing_Div_Click();
+	}
+
 	@Then("verify tooltip for the License Tracker")
 	public void verify_tooltip_for_the_license_tracker() {
+
+	}
+
+	@Then("Verification of  the refresh icon when License Date filter is applied")
+	public void verification_of_the_refresh_icon_when_license_date_filter_is_applied() {
+		LicensesPage lp = new LicensesPage(driver, logger);
 
 	}
 
@@ -43,6 +72,44 @@ public class LicensesSteps extends BaseTest {
 		lp.issueDateThreeDot();
 		Thread.sleep(2000);
 	}
+	
+	@Then("apply filter on issued date")
+	public void apply_filter_on_issued_date() {
+		LicensesPage lp = new LicensesPage(driver, logger);
+		lp.issueDateThreeDot();
+		
+	}
+	
+	@Then("apply filter on expiry date")
+	public void apply_filter_on_expiry_date() {
+		LicensesPage lp = new LicensesPage(driver, logger);
+		lp.expiryDateThreeDot();
+	}
+	@Then("enter the value for datepicker field for expiry date")
+	public void enter_the_value_for_datepicker_field_for_expiry_date() throws InterruptedException {
+		LicensesPage lp = new LicensesPage(driver, logger);
+		CalenderPage cal = new CalenderPage(driver, logger);
+		lp.calenderIcon();
+
+		Thread.sleep(5000);
+		String year = alldata.get(vTCName).get("expiryyear").toString();
+		String month = alldata.get(vTCName).get("expirymonth").toString();
+		String day = alldata.get(vTCName).get("expirystartdate").toString();
+		String day2 = alldata.get(vTCName).get("expiryenddate").toString();
+
+		cal.SelectDDDashMMDashYYYDay(year, month, day);
+
+		Thread.sleep(2000);
+		cal.SelectDirectDDDashMMDashYYYDay(year, month, day2);
+		Thread.sleep(2000);
+		lp.applyButtoncalender();
+		Thread.sleep(5000);
+		lp.backDropShowing_Div_Click();
+		Thread.sleep(2000);
+		lp.headingTitle();
+	}
+
+
 
 	@Then("enter the value for datepicker field")
 	public void enter_the_value_for_datepicker_field() throws InterruptedException {
@@ -51,10 +118,10 @@ public class LicensesSteps extends BaseTest {
 		lp.calenderIcon();
 
 		Thread.sleep(5000);
-		String year = alldata.get(vTCName).get("Value1").toString();
-		String month = alldata.get(vTCName).get("Value2").toString();
-		String day = alldata.get(vTCName).get("Value3").toString();
-		String day2 = alldata.get(vTCName).get("Value4").toString();
+		String year = alldata.get(vTCName).get("issuedyear").toString();
+		String month = alldata.get(vTCName).get("issuedmonth").toString();
+		String day = alldata.get(vTCName).get("issuedstartdate").toString();
+		String day2 = alldata.get(vTCName).get("issuedenddate").toString();
 
 		cal.SelectDDDashMMDashYYYDay(year, month, day);
 
@@ -97,45 +164,46 @@ public class LicensesSteps extends BaseTest {
 		lp.refreshButton();
 	}
 
-@Then("click on three dots for License Type")
-public void click_on_three_dots_for_license_type() {
-	LicensesPage lp = new LicensesPage(driver, logger);
-	lp.licenseTypeThreeDot();
-}
-@Then("enter the value for the License Type")
-public void enter_the_value_for_the_license_type() throws InterruptedException {
-	LicensesPage lp = new LicensesPage(driver, logger);
-	Thread.sleep(3000);
-	lp.licenseTypeInput(alldata.get(vTCName).get("Value1").toString());
-}
+	@Then("click on three dots for License Type")
+	public void click_on_three_dots_for_license_type() {
+		LicensesPage lp = new LicensesPage(driver, logger);
+		lp.licenseTypeThreeDot();
+	}
 
-@Then("click on three dots for Version")
-public void click_on_three_dots_for_version() {
-	LicensesPage lp = new LicensesPage(driver, logger);
-	lp.versionThreeDot();
-}
-@Then("enter the value for the Version")
-public void enter_the_value_for_the_version() {
-	LicensesPage lp = new LicensesPage(driver, logger);
-    lp.versionInput(alldata.get(vTCName).get("Value1").toString());	
-}
+	@Then("enter the value for the License Type")
+	public void enter_the_value_for_the_license_type() throws InterruptedException {
+		LicensesPage lp = new LicensesPage(driver, logger);
+		Thread.sleep(3000);
+		lp.licenseTypeInput(alldata.get(vTCName).get("Value1").toString());
+	}
+
+	@Then("click on three dots for Version")
+	public void click_on_three_dots_for_version() {
+		LicensesPage lp = new LicensesPage(driver, logger);
+		lp.versionThreeDot();
+	}
+
+	@Then("enter the value for the Version")
+	public void enter_the_value_for_the_version() {
+		LicensesPage lp = new LicensesPage(driver, logger);
+		lp.versionInput(alldata.get(vTCName).get("Value1").toString());
+	}
 
 	@Then("Verification of the refresh icon when more than one filter is applied")
 	public void verification_of_the_refresh_icon_when_more_than_one_filter_is_applied() throws InterruptedException {
 		LicensesPage lp = new LicensesPage(driver, logger);
-		
+
 		lp.hostIdThreeDot();
 		Thread.sleep(3000);
 		lp.hostidInput(alldata.get(vTCName).get("Value1").toString());
 		lp.backDropShowing_Div_Click();
-        Thread.sleep(3000);
-        lp.versionThreeDot();
-        lp.versionInput(alldata.get(vTCName).get("Value2").toString());
-        lp.backDropShowing_Div_Click();
+		Thread.sleep(3000);
+		lp.versionThreeDot();
+		lp.versionInput(alldata.get(vTCName).get("Value2").toString());
+		lp.backDropShowing_Div_Click();
 		Thread.sleep(2000);
 		lp.refreshButton();
 
-		
 	}
 
 	@Then("Verification of the refresh icon when License Type filter is applied")
@@ -147,7 +215,7 @@ public void enter_the_value_for_the_version() {
 
 	@Then("Verification of the refresh icon when Expiry Date filter is applied")
 	public void verification_of_the_refresh_icon_when_expiry_date_filter_is_applied() throws InterruptedException {
-		
+
 		LicensesPage lp = new LicensesPage(driver, logger);
 		lp.expiryDateThreeDot();
 		Thread.sleep(3000);
@@ -163,9 +231,9 @@ public void enter_the_value_for_the_version() {
 		cal.SelectDDDashMMDashYYYDay(year, month, day);
 
 		Thread.sleep(3000);
-		
+
 		cal.SelectDirectDDDashMMDashYYYDay(year, month, day2);
-		
+
 		Thread.sleep(3000);
 		lp.applyButtoncalender();
 		Thread.sleep(5000);
@@ -175,12 +243,16 @@ public void enter_the_value_for_the_version() {
 
 	}
 
-	
-
 	@Then("Click on Add license button")
 	public void click_on_add_license_button() {
 		LicensesPage lp = new LicensesPage(driver, logger);
 		lp.addButton();
+	}
+
+	@Then("Click on upload license button")
+	public void click_on_upload_license_button() {
+		LicensesPage lp = new LicensesPage(driver, logger);
+		lp.uploadLicenseButton();
 	}
 
 	@Then("upload license file and click on upload button")
@@ -192,7 +264,7 @@ public void enter_the_value_for_the_version() {
 			Robot rb = new Robot();
 
 			// copying File path to Clipboard
-			StringSelection str = new StringSelection(alldata.get(vTCName).get("Value1").toString());
+			StringSelection str = new StringSelection(alldata.get(vTCName).get("licenseuploadpath").toString());
 			Toolkit.getDefaultToolkit().getSystemClipboard().setContents(str, null);
 
 			rb.keyPress(KeyEvent.VK_CONTROL);
@@ -217,7 +289,7 @@ public void enter_the_value_for_the_version() {
 			Robot rb = new Robot();
 
 			// copying File path to Clipboard
-			StringSelection str = new StringSelection(alldata.get(vTCName).get("Value1").toString());
+			StringSelection str = new StringSelection(alldata.get(vTCName).get("licenseuploadpath").toString());
 			Toolkit.getDefaultToolkit().getSystemClipboard().setContents(str, null);
 
 			rb.keyPress(KeyEvent.VK_CONTROL);
@@ -250,7 +322,7 @@ public void enter_the_value_for_the_version() {
 	public void click_on_three_dots_of_host_id_and_enter_the_text_for_host_id() {
 		LicensesPage lp = new LicensesPage(driver, logger);
 		lp.hostIdThreeDot();
-		lp.hostidInput(alldata.get(vTCName).get("Value1").toString());
+		lp.hostidInput(alldata.get(vTCName).get("hostidsearch").toString());
 	}
 
 	@Then("Click on three dots of issued date for license")
@@ -269,7 +341,7 @@ public void enter_the_value_for_the_version() {
 			// TODO: handle exception
 		}
 
-		 lp.applyButtoncalender();
+		lp.applyButtoncalender();
 
 	}
 

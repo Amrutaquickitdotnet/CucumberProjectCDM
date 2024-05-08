@@ -23,9 +23,19 @@ public class UserSettingsPage extends CommonActions {
 		PageFactory.initElements(driver, this);
 
 	}
+	
+	
+	@FindBy(xpath = "//span[@class='far fa-eye-slash showpwd']")
+	WebElement eyeiconpassword;
 
+	@FindBy(css = ".cdk-overlay-container")
+	WebElement deleteButtonNameToolTip;
 
+	@FindBy(css = ".cdk-overlay-container")
+	WebElement editButtonNameToolTip;
 
+	@FindBy(xpath = "//div[@id='toast-container']")
+	WebElement sucessmessage;
 
 	@FindBy(xpath = "//table/tbody/tr[1]/td[6]/img[1]")
 	WebElement edituserbutton;
@@ -51,33 +61,41 @@ public class UserSettingsPage extends CommonActions {
 	@FindBy(xpath = "//thead/tr[1]/th[5]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]")
 	WebElement StatusDot;
 
+	
+	@FindBy(xpath ="//body/div[3]/div[2]/div[1]/div[1]/div[1]/button[1]/div[1]/label[1]/input[1]")
+	WebElement activestatusSelection;
+	
 	@FindBy(xpath = "//button[contains(text(),'Cancel')]")
 	WebElement cancelButton;
 
 	@FindBy(xpath = "//input[@data-placeholder='First Name']")
 	WebElement firstNameinputAdd;
 
-	@FindBy(xpath = "//input[@formcontrolnameame='lastname']")
+	@FindBy(xpath = "//input[@name='lastname']")
 	WebElement lastNameinput;
 
-	@FindBy(xpath = "//input[@formcontrolname='emailid']")
+	@FindBy(xpath = "//input[@name='emailid']")
 	WebElement emailidinput;
 
 	@FindBy(xpath = "//input[@name='rolename']")
 	WebElement roleNameinput;
 
-	@FindBy(xpath = "//body/div[3]/div[2]/div[1]/div[1]/div[1]/button[1]/div[2]/label[1]/input[1]")
-	WebElement statusinputinActive;
+
 
 	@FindBy(xpath = "//body/div[3]/div[2]/div[1]/div[1]/div[1]/button[1]/div[1]/label[1]/input[1]")
 	WebElement statusinputActive;
-
-	@FindBy(xpath = "//mat-nav-list/ul/li[10]/a")
+	
+	@FindBy(xpath = "//body/div[3]/div[2]/div[1]/div[1]/div[1]/button[1]/div[2]/label[1]/input[1]")
+	WebElement statusinputinActive; 
+	
+	
+	
+	@FindBy(xpath = "//span[contains(text(),'Settings')]")
 	WebElement Setting_tab;
 
 	@FindBy(xpath = "//ul[@class='nav']/li[2]")
 	WebElement Users_tab;
-	
+
 	@FindBy(xpath = "//ul[@class='nav']/li[4]")
 	WebElement Users_Role;
 
@@ -113,10 +131,10 @@ public class UserSettingsPage extends CommonActions {
 
 	@FindBy(xpath = "//input[@name='contact']")
 	WebElement phoneInput;
-	
-	
 
 	public void Setting_tab() {
+	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+	wait.until(ExpectedConditions.visibilityOf(Setting_tab));
 		Setting_tab.click();
 	}
 
@@ -241,7 +259,7 @@ public class UserSettingsPage extends CommonActions {
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
-		
+
 	}
 
 	public void cdkcontainer() {
@@ -251,26 +269,77 @@ public class UserSettingsPage extends CommonActions {
 	public void deleteButton() {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("document.querySelector(\"#matTable img.mat-tooltip-trigger.ml-2.ng-star-inserted\").click()");
-	        
-	
+
 	}
-	
+
 	public void deleteButtonUser() {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("document.querySelector(\"#matTable > tbody > tr > td.mat-cell.cdk-cell.table-data.cdk-column-Action.mat-column-Action.ng-star-inserted > img:nth-child(2)\").click()");
-	        
-	
+		js.executeScript(
+				"document.querySelector(\"#matTable > tbody > tr > td.mat-cell.cdk-cell.table-data.cdk-column-Action.mat-column-Action.ng-star-inserted > img:nth-child(2)\").click()");
+
+	}
+
+	public String get_Text_ToolTipDelete() {
+
+		mouseHover(deleteButton);
+
+		String deleteButtonDisplayNameText = deleteButtonNameToolTip.getText();
+
+		deleteButtonDisplayNameText.trim();
+
+		return deleteButtonDisplayNameText;
+	}
+
+	public String get_Text_ToolTipEdit() {
+
+		mouseHover(edituserbutton);
+
+		String editButtonNameDisplayNameText = editButtonNameToolTip.getText();
+
+		editButtonNameDisplayNameText.trim();
+
+		return editButtonNameDisplayNameText;
 	}
 
 	public void confirmationYesButton() {
-		 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		WebElement confirmationYesButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),'Yes')]")));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebElement confirmationYesButton = wait
+				.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),'Yes')]")));
 
-        // Perform a click action on the confirmation Yes button
-        confirmationYesButton.click();
-		
+		// Perform a click action on the confirmation Yes button
+		confirmationYesButton.click();
+
 	}
+
 	public void Users_Role() {
 		Users_Role.click();
 	}
+
+	public String sucessmessage() {
+
+		mouseHover(sucessmessage);
+
+		String sucessmessageText = sucessmessage.getText();
+
+		sucessmessageText.trim();
+
+		return sucessmessageText;
+
+	}
+	
+	public void activestatusSelection() {
+		activestatusSelection.click();
+	}
+
+	public void statusinputinActive() {
+		statusinputinActive.click();
+	}
+
+	public void eyeiconpassword() {
+		
+		eyeiconpassword.click();
+		
+	}
+	
+	
 }

@@ -17,7 +17,11 @@ public class EdgeDeviceAdd extends CommonActions {
 		super(driver, logger);
 		PageFactory.initElements(driver, this);
 	}
-
+	@FindBy(xpath ="(//input[@formcontrolname='displayname']/../../../../../span[1]/span)" )
+	WebElement validationMessageEdgeAdd;
+	
+	@FindBy(xpath ="//span[contains(text(),'Alphanumerics of length Min = 2, Max = 64 are allo')]" )
+	WebElement validationMessageoneEdgeAdd;
 	
 	@FindBy(xpath = "//input[@formcontrolname='location']")
 	WebElement edgeDeviceAdd;
@@ -59,13 +63,13 @@ public class EdgeDeviceAdd extends CommonActions {
 	@FindBy(xpath = "(//input[@formcontrolname='devicename']/../../../../../span)[2]")
 	WebElement validationMessageEdgeId;
 	
-	@FindBy(xpath = "(//input[@formcontrolname='devicename']/../../../../../div)")
+	@FindBy(xpath = "//input[@formcontrolname='devicename']/../../../../../../div/div")
 	WebElement validationMessageEdgeId1;
 
 	@FindBy(xpath = "(//input[@formcontrolname='displayname']/../../../../../span)[1]")
 	WebElement validationMessageEdgeName1;
 	
-	@FindBy(xpath = "(//input[@formcontrolname='displayname']/../../../../../span)[1]")
+	@FindBy(xpath = "//input[@formcontrolname='displayname']/../../../../../span")
 	WebElement validationMessageEdgeName;
 
 	@FindBy(css = ".tableCard h4")
@@ -80,11 +84,10 @@ public class EdgeDeviceAdd extends CommonActions {
 	@FindBy(xpath = "//input[@data-placeholder='EDGE ID']")
 	WebElement identityedgeIdAdd;
 
-	@FindBy(xpath = "//input[@data-placeholder='EDGE Name']")
+	@FindBy(xpath = "//input[@formcontrolname='displayname']")
 	WebElement identityedgeNameAdd;
 
-	@FindBy(xpath = "//input[@data-placeholder='EDGE Name']")
-	WebElement editidentityedgeName;
+	
 
 	@FindBy(xpath = "//mat-select[@formcontrolname='orgid']")
 	WebElement organizationAdd;
@@ -92,7 +95,7 @@ public class EdgeDeviceAdd extends CommonActions {
 	@FindBy(css = "mat-select[formcontrolname='controllerid'] span")
 	WebElement edgeGroupNameAdd;
 
-	@FindBy(name = "assignedto")
+	@FindBy(xpath = "//mat-select[@formcontrolname='assignedto']")
 	WebElement assignedToAdd;
 
 	@FindBy(xpath = "//h4/span")
@@ -105,6 +108,7 @@ public class EdgeDeviceAdd extends CommonActions {
 	WebElement applicationGroupSelect;
 
 	public void identityedgeIdInputAdd(String value) {
+		identityedgeIdAdd.sendKeys(Keys.ENTER);
 		identityedgeIdAdd.sendKeys(value);
 	}
 
@@ -113,6 +117,7 @@ public class EdgeDeviceAdd extends CommonActions {
 	}
 
 	public void identityedgeNameAdd(String value) {
+		identityedgeNameAdd.sendKeys(Keys.ENTER);
 		identityedgeNameAdd.sendKeys(value);
 	}
 
@@ -132,18 +137,23 @@ public class EdgeDeviceAdd extends CommonActions {
 		serverportAdd.sendKeys(value);
 	}
 
+	
+	
 	public void organizationAdd(String value) throws InterruptedException {
 
 		SelectMatOption(organizationAdd, value);
+	}
+	
+	public void assignedToAdd(String value) throws InterruptedException {
+
+		SelectMatOption(assignedToAdd, value);
 	}
 
 	public void edgeGroupNameAdd(String value) throws InterruptedException {
 		SelectMatOption(edgeGroupNameAdd, value);
 	}
 
-	public void assignedToAdd(String value) {
-		assignedToAdd.sendKeys(value);
-	}
+	
 
 	public void applicationGroupSelect(String value) throws InterruptedException {
 		SelectMatOption(applicationGroupSelect, value);
@@ -189,6 +199,11 @@ public class EdgeDeviceAdd extends CommonActions {
 	public void scrollingvertical() {
 
 		scrollingvertical("div.pagefooter", "0", "500");
+	}
+	
+	public void scrollingup() {
+
+		scrollingup("div.pagefooter", "800", "0");
 	}
 	
 	public String verifyValidationMessageEdgeId1() {
@@ -265,11 +280,7 @@ public class EdgeDeviceAdd extends CommonActions {
 
 	}
 
-	public void setEditClearField() {
-
-		SetInput(editidentityedgeName, "", "Entered text is clear");
-
-	}
+	
 
 	// Either checked or unchecked
 	public void moveSliderCondition(String m) {
@@ -286,13 +297,46 @@ public class EdgeDeviceAdd extends CommonActions {
 		descriptionAdd.sendKeys(value);
 	}
 	
-	public void headingTitleAdd() {
+	public void headingTitleAdd() throws InterruptedException {
 		headingTitleAdd.click();
+		Thread.sleep(2000);
 	}
 	
 	public void location(String value) {
 		locationAdd.sendKeys(value);
 	}	
 	
+	public String verifyValidationMessageEdgeNameAdd() {
+		AddListpageVerification.click();
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+
+		}
+
+		if (validationMessageEdgeAdd == null) {
+			return "";
+		}
+		String message = validationMessageEdgeAdd.getText();
+
+		return message.trim();
+
+	}
 	
+	public String verifyValidationMessageoneEdgeNameAdd() {
+		AddListpageVerification.click();
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+
+		}
+
+		if (validationMessageoneEdgeAdd == null) {
+			return "";
+		}
+		String message = validationMessageoneEdgeAdd.getText();
+
+		return message.trim();
+
+	}
 }

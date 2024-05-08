@@ -1,10 +1,12 @@
 package com.cdm.pages;
 
-import org.openqa.selenium.By;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -20,21 +22,35 @@ public class WellsPage extends CommonActions {
 		PageFactory.initElements(driver, this);
 	}
 
+	@FindBy(xpath = "//div[@id='toast-container']")
+	WebElement popupMessage;
+
 	@FindBy(css = ".cdk-overlay-backdrop-showing")
 	WebElement backDropShowing;
+
+	@FindBy(xpath = "//div[contains(text(),'Please Enter the File')]")
+	WebElement validationmessagenotuploadingfile;
 	
-	
-	
+	@FindBy(xpath = "//span[contains(text(),'Upload')]")
+	WebElement uploadButtonwell;
+
+	@FindBy(xpath = "//tbody/tr[1]/td[5]/span[1]")
+	WebElement statusVerify;
+
+	@FindBy(xpath = "//input[@formcontrolname='uploadfile']")
+	WebElement browsefile;
+
 	@FindBy(xpath = "//tbody/tr[1]/td[6]/img[1]")
 	WebElement wellEditButton;
-	
-	
+
 	@FindBy(xpath = "//input[@name='options']")
 	WebElement activeStatusCheck;
-	
 
 	@FindBy(xpath = "//button[contains(text(),'Cancel')]")
 	WebElement cancelButtonwell;
+
+	@FindBy(xpath = "//tbody/tr[1]/td[6]/img[2]")
+	WebElement deleteButton;
 
 	@FindBy(xpath = "//button[contains(text(),'Save')]")
 	WebElement saveButtonWell;
@@ -42,14 +58,26 @@ public class WellsPage extends CommonActions {
 	@FindBy(xpath = "//input[@name='wellname']")
 	WebElement inputWellName;
 
-	@FindBy(xpath = "//h2[contains(text(),'EDGE Devices')]")
-	WebElement headingTitle;
+	@FindBy(xpath = "//div[@aria-label='An error occurred. Please check downloaded error file']")
+	WebElement popupMessageinvalidFile;
+
+	@FindBy(xpath = "//body/div[3]/div[2]/div[1]/mat-dialog-container[1]/app-well-upload-file-list[1]/div[1]/div[1]/div[1]/a[1]/img[1]")
+	WebElement templateDownloadFile;
+
+	@FindBy(xpath = "//div[contains(text(),'Please Enter the File')]")
+	WebElement validationmessageFileUpload;
 
 	@FindBy(xpath = "//div[@class='tableCard']/div/div/img[1]")
 	WebElement refreshButton;
 
 	@FindBy(xpath = "//input[@name='ipaddress']")
 	WebElement inputIPAddress;
+
+	@FindBy(xpath = "//input[@name='ipaddress']")
+	WebElement inputIPAddressSearch;
+
+	@FindBy(xpath = "//body/div[3]/div[2]/div[1]/mat-dialog-container[1]/app-confirmationdelete[1]/div[1]/mat-dialog-actions[1]/button[2]")
+	WebElement ConfirmationNoButton;
 
 	@FindBy(xpath = "//input[@name='devicetype']")
 	WebElement inputdeviceType;
@@ -62,6 +90,9 @@ public class WellsPage extends CommonActions {
 
 	@FindBy(xpath = "//app-well-user[1]/div[1]/div[1]/div[1]/img[2]")
 	WebElement downloadButtonWell;
+
+	@FindBy(xpath = "//app-well-user[1]/div[1]/div[1]/div[1]/span/img[2]")
+	WebElement uploadwellbutton;
 
 	@FindBy(xpath = "//a[contains(text(),'Wells')]")
 	WebElement WellTab;
@@ -86,6 +117,9 @@ public class WellsPage extends CommonActions {
 
 	@FindBy(xpath = "//thead/tr[1]/th[5]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]")
 	WebElement statusThreeDot;
+
+	@FindBy(xpath = "//input[@id='csv']")
+	WebElement wellBulkUpload;
 
 	public void setZoomLevel(int width, int height) {
 		Dimension d = new Dimension(width, height);
@@ -116,15 +150,18 @@ public class WellsPage extends CommonActions {
 		WellTab.click();
 	}
 
-	public void serachWellName(String value) {
+	public void searchWellName(String value) {
 		inputWellName.sendKeys(Keys.ENTER);
 		inputWellName.sendKeys(value);
 
 	}
 
-	public void headingClick() {
-		// clickElement(headingTitle, "Clicking on Title of heading");
-		headingTitle.click();
+	public void mimimizewindow() {
+		driver.manage().window().minimize();
+	}
+
+	public void maximisewindow() {
+		driver.manage().window().maximize();
 	}
 
 	public void backDropShowing_Div_Click() {
@@ -133,13 +170,14 @@ public class WellsPage extends CommonActions {
 		}
 	}
 
-	public void serachipAddress(String value) {
+	public void searchipAddress(String value) {
 		inputIPAddress.sendKeys(Keys.ENTER);
 		inputIPAddress.sendKeys(value);
 
 	}
 
-	public void serachDeviceType(String value) {
+	public void searchDeviceType(String value) {
+
 		inputdeviceType.sendKeys(Keys.ENTER);
 		inputdeviceType.sendKeys(value);
 
@@ -152,6 +190,8 @@ public class WellsPage extends CommonActions {
 	}
 
 	public void clickrefreshbutton() {
+		Actions act = new Actions(driver);
+		act.moveToElement(refreshButton).build().perform();
 		refreshButton.click();
 	}
 
@@ -196,15 +236,125 @@ public class WellsPage extends CommonActions {
 
 		downloadButtonWell.click();
 	}
-	
+
+	public void browsefile(String value) {
+		browsefile.sendKeys(Keys.ENTER);
+		browsefile.sendKeys(value);
+	}
+
 	public void wellEditButton() {
 		wellEditButton.click();
 	}
-	
+
+	public void uploadwellbutton() {
+		uploadwellbutton.click();
+	}
+
 	public void activeStatusCheck() throws InterruptedException {
 		Thread.sleep(4000);
-			activeStatusCheck.click();
-		
-		
+		activeStatusCheck.click();
+
+	}
+
+	public void deleteButton() {
+		deleteButton.click();
+	}
+
+	public void ConfirmationNoButton() {
+		ConfirmationNoButton.click();
+	}
+
+	public String get_Textget_Text_PopupMessage() {
+
+		mouseHover(popupMessage);
+
+		try {
+			Thread.sleep(30);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		String popupMessageTipText = popupMessage.getText();
+
+		System.out.println("popupMessageText-->" + popupMessageTipText);
+
+		return popupMessageTipText;
+	}
+
+	public String get_Textget_Text_PopupMessageinvalid() throws InterruptedException {
+
+		mouseHover(popupMessageinvalidFile);
+
+		String popupMessageInvalidTipText = popupMessageinvalidFile.getText();
+
+		System.out.println("popupMessageText-->" + popupMessageInvalidTipText);
+
+		return popupMessageInvalidTipText;
+
+	}
+
+	public String get_Text_For_Status() {
+
+		mouseHover(statusVerify);
+
+		try {
+			Thread.sleep(30);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		String statusVerifyText = statusVerify.getText();
+
+		System.out.println("statusVerifyText-->" + statusVerifyText);
+
+		return statusVerifyText;
+	}
+
+	public boolean isVisiblepopupMessageWellAdd() {
+
+		return popupMessage != null && popupMessage.isDisplayed();
+	}
+
+	public void choosefilebutton() {
+		JavascriptExecutor executor = (JavascriptExecutor) driver;
+		executor.executeScript("arguments[0].click();", wellBulkUpload);
+
+	}
+
+	public void wellBulkUpload(String value) {
+
+		wellBulkUpload.sendKeys(Keys.ENTER);
+		wellBulkUpload.sendKeys(value);
+	}
+
+	public void uploadButtonwell() {
+		uploadButtonwell.click();
+
+	}
+
+	public void inputIPAddressSearch(String value) {
+		inputIPAddressSearch.sendKeys(Keys.ENTER);
+		inputIPAddressSearch.sendKeys(value);
+	}
+
+	public void validationmessageFileUpload() {
+		validationmessageFileUpload.getText();
+	}
+
+	public void templateDownloadFile() {
+		templateDownloadFile.click();
+	}
+	
+	public String validationmessagenotuploadingfile() {
+	
+		if (validationmessagenotuploadingfile == null) {
+			return "";
+		}
+		String message = validationmessagenotuploadingfile.getText();
+
+		return message.trim();
+
 	}
 }

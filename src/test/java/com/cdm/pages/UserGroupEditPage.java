@@ -36,6 +36,10 @@ public class UserGroupEditPage extends CommonActions {
 	@FindBy(xpath = "//input[@formcontrolname='groupname']")
 	WebElement usergroupnameedit;
 	
+	
+	@FindBy(xpath = "//button[contains(text(),'Cancel')]")
+	WebElement cancelbutton;
+	
 	public void usergroupEditicon() {
 		usergroupEditicon.click();
 	}
@@ -57,14 +61,17 @@ public class UserGroupEditPage extends CommonActions {
 	public void saveButtonAdd() throws InterruptedException {
 		Thread.sleep(3000);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		// js.executeScript("arguments[0].click();",saveAddDataBtn);
-		js.executeScript("document.querySelector(\".addButton\").click();", saveButtonAdd);
+		js.executeScript("document.querySelector(\".addButton\").click();");
+		Thread.sleep(2000);
 	}
 
 	public String removalofEnteredTextForUserGroups() {
 
 		return removalofEneredText(usergroupnameedit);
 
+	}
+	public void cancelbutton() {
+		cancelbutton.click();
 	}
 
 }

@@ -22,7 +22,7 @@ public class EdgeDeviceEdit extends CommonActions {
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(xpath = "(//input[@formcontrolname='displayname']/../../../../../span)[1]")
+	@FindBy(xpath = "//input[@formcontrolname='displayname']/../../../../../span[1]/span[1]")
 	WebElement validationMessageEdgeEdit;
 	
 	
@@ -86,7 +86,7 @@ public class EdgeDeviceEdit extends CommonActions {
 	WebElement validationMessageEdgeName;
 
 	@FindBy(css = ".tableCard h4")
-	WebElement AddListpageVerification;
+	WebElement EditListpageVerification;
 
 	@FindBy(css = ".addButton")
 	WebElement saveAddDataBtn;
@@ -113,6 +113,7 @@ public class EdgeDeviceEdit extends CommonActions {
 	WebElement applicationGroupSelectUpdate;
 
 	public void identityedgeIdInputUpdate(String value) {
+		identityedgeIdUpdate.sendKeys(Keys.ENTER);
 		identityedgeIdUpdate.sendKeys(value);
 	}
 
@@ -151,7 +152,7 @@ public class EdgeDeviceEdit extends CommonActions {
 	}
 
 	public String verifyDeviceAddBreadcrumb() {
-		String breadcrumb = AddListpageVerification.getText();
+		String breadcrumb = EditListpageVerification.getText();
 		return breadcrumb;
 
 	}
@@ -170,7 +171,7 @@ public class EdgeDeviceEdit extends CommonActions {
 	}
 
 	public String verifyValidationMessageEdgeId() {
-		AddListpageVerification.click();
+		EditListpageVerification.click();
 		try {
 			Thread.sleep(1000);
 		} catch (InterruptedException e) {
@@ -187,7 +188,7 @@ public class EdgeDeviceEdit extends CommonActions {
 	}
 
 	public String verifyValidationMessageEdgeName() {
-		AddListpageVerification.click();
+		EditListpageVerification.click();
 		try {
 			Thread.sleep(1000);
 		} catch (InterruptedException e) {
@@ -397,7 +398,7 @@ By autosuggestDropdown = By.xpath("//div[@role='listbox']/mat-option");
 	}
 
 	public String verifyValidationMessageEdgeNameEdit() {
-		AddListpageVerification.click();
+		EditListpageVerification.click();
 		try {
 			Thread.sleep(1000);
 		} catch (InterruptedException e) {
@@ -420,5 +421,9 @@ By autosuggestDropdown = By.xpath("//div[@role='listbox']/mat-option");
 	}
 public void configsubmodule() {
 	configsubmodule.click();
+}
+
+public void headingeditclick() {
+	EditListpageVerification.click();
 }
 }

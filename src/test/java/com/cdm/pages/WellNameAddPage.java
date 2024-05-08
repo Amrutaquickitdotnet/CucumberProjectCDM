@@ -2,6 +2,7 @@ package com.cdm.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -19,7 +20,15 @@ public class WellNameAddPage extends CommonActions {
 
 		PageFactory.initElements(driver, this);
 	}
+	
+	@FindBy(css = ".cdk-overlay-container")
+	WebElement activeUserToolTip;
 
+	@FindBy(xpath="//div[@class='slider round']")
+	WebElement sliderRound;
+	
+	
+	
 	@FindBy(xpath = "//*[@id= 'isActive']")
 	WebElement sliderOnCheckBox;
 
@@ -47,31 +56,34 @@ public class WellNameAddPage extends CommonActions {
 	@FindBy(xpath = "//button[contains(text(),'Cancel')]")
 	WebElement cancelButtonwell;
 
-	@FindBy(xpath = "//button[contains(text(),'Save')]")
+	@FindBy(xpath = "//button[@class='addButton')]")
 	WebElement saveButtonWell;
 
 	@FindBy(xpath = "//div[@class='tableCard']/div/div/span/img[1]")
 	WebElement addButtonWell;
 
-	@FindBy(xpath = "(//input[@formcontrolname='wellname']/../../../../div)")
+	@FindBy(xpath = "(//input[@formcontrolname='wellname']/../../../../../span[1]/span)")
 	WebElement validationMessgaeWellName;
 
-	@FindBy(xpath = "(//input[@formcontrolname='port']/../../../../div)")
+	@FindBy(xpath = "(//input[@formcontrolname='port']/../../../../../span[1]/span)")
 	WebElement validationMessgaePort;
 
-	@FindBy(xpath = "(//input[@formcontrolname='rtunumber']/../../../../div)")
+	@FindBy(xpath = "(//input[@formcontrolname='rtunumber']/../../../../../span[1]/span[1])")
 	WebElement validationMessgaeRTUAddress;
 
-	@FindBy(xpath = "(//input[@formcontrolname='password']/../../../../div)")
+	@FindBy(xpath = "(//input[@formcontrolname='password']/../../../../../span[1]/span)")
 	WebElement validationMessgaePassword;
 
-	@FindBy(xpath = "(//input[@formcontrolname='ipaddress']/../../../../div)")
+	@FindBy(xpath = "(//input[@formcontrolname='ipaddress']/../../../../../span[1]/span[1])")
 	WebElement validationMessgaeIPAddress;
+	
+	@FindBy(xpath = "(//input[@formcontrolname='ipaddress']/../../../../../span[1]/span[2])")
+	WebElement validationMessgaeIPAddress1;
 
 	@FindBy(xpath = "//mat-select[@formcontrolname='devicetype']")
 	WebElement deviceTypeAdd;
 
-	@FindBy(xpath = "(//mat-select[@formcontrolname='devicetype']/../../../../div)")
+	@FindBy(xpath = "(//mat-select[@formcontrolname='devicetype']/../../../../../span[1]/span)")
 	WebElement validationMessgaedeviceType;
 
 	public void backDropShowing_Div_Click() {
@@ -91,18 +103,13 @@ public class WellNameAddPage extends CommonActions {
 	}
 
 	public void saveButton() {
-		saveButtonWell.click();
+		JavascriptExecutor	js = (JavascriptExecutor)driver;
+		
+		js.executeScript("document.querySelector(\".addButton\").click()");
 
 	}
 
 	public String verifyValidationMessageWellName() throws InterruptedException {
-		Thread.sleep(3000);
-
-		try {
-			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-
-		}
 
 		if (validationMessgaeWellName == null) {
 			return "";
@@ -149,16 +156,21 @@ public class WellNameAddPage extends CommonActions {
 
 	public String verifyValidationMessageIPAddress() throws InterruptedException {
 
-		try {
-			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-
-		}
-
 		if (validationMessgaeIPAddress == null) {
 			return "";
 		}
 		String message = validationMessgaeIPAddress.getText();
+
+		return message.trim();
+
+	}
+	
+	public String verifyValidationMessageIPAddress1() throws InterruptedException {
+
+		if (validationMessgaeIPAddress1 == null) {
+			return "";
+		}
+		String message = validationMessgaeIPAddress1.getText();
 
 		return message.trim();
 
@@ -232,5 +244,14 @@ public class WellNameAddPage extends CommonActions {
 		moveSliderCondition(sliderOnCheckBox,sliderOnCheckBoxLabel,m);
 	}
 
+	public String get_Text_ToolTipActiveUser() {
 
+		mouseHover(sliderRound);
+
+		String activeUserToolTipText = sliderRound.getText();
+
+		activeUserToolTipText.trim();
+
+		return activeUserToolTipText;
+	}
 }

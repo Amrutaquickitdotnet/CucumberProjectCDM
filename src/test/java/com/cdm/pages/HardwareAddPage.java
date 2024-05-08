@@ -3,6 +3,7 @@ package com.cdm.pages;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -24,8 +25,39 @@ public class HardwareAddPage extends CommonActions {
 		PageFactory.initElements(driver, this);
 	}
 	
+	@FindBy(xpath =  "//div[@class='example-toolbar sticky']/div/div/div/p/img")
+	WebElement expandtoggle;
+	
+	@FindBy(xpath =  "//div[@class='example-toolbar sticky']/div/div/div/p/img")
+	WebElement collapseToggle;
+
+	@FindBy(xpath = "//mat-sidenav-container[1]/mat-sidenav-content[1]/div[1]/div[1]/div[2]/mat-icon[1]")
+	WebElement bellIcon;
+	
+	@FindBy(css = ".cdk-overlay-container")
+	WebElement HardWareDisplayNameToolTip;
 	
 	
+	@FindBy(xpath = "//mat-sidenav-container[1]/mat-sidenav-content[1]/div[1]/div[1]/div[2]/button[1]/span[1]/img[1]")
+	WebElement profileIcon;
+
+	@FindBy(css = ".cdk-overlay-container")
+	WebElement HardWareNameToolTip;
+
+	@FindBy(css = ".cdk-overlay-container")
+	WebElement HardWareDescriptionToolTip;
+
+	@FindBy(css = ".cdk-overlay-container")
+	WebElement HardWareMakeToolTip;
+
+	@FindBy(css = ".cdk-overlay-container")
+	WebElement HardWareProcessorToolTip;
+
+	@FindBy(css = ".cdk-overlay-container")
+	WebElement HardWareOSToolTip;
+
+	@FindBy(css = ".cdk-overlay-container")
+	WebElement HardWareModelToolTip;
 	@FindBy(xpath = "//tbody/tr[1]/td[8]/img[2]")
 	WebElement hardwareDelete;
 
@@ -37,10 +69,10 @@ public class HardwareAddPage extends CommonActions {
 
 	@FindBy(xpath = "//thead/tr[1]/th[1]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]")
 	WebElement hardwarethreedot;
-	
+
 	@FindBy(xpath = "//button[@class='addButton']")
 	WebElement hardwareSavebutton;
-	
+
 	@FindBy(xpath = "//input[@name='hardwarename']")
 	WebElement hardwarenamesearch;
 
@@ -110,7 +142,7 @@ public class HardwareAddPage extends CommonActions {
 		hardwareProcessor.sendKeys(Keys.ENTER);
 		hardwareProcessor.sendKeys(value);
 	}
-	
+
 	public void hardwareNameSearch(String value) {
 		hardwarenamesearch.sendKeys(Keys.ENTER);
 		hardwarenamesearch.sendKeys(value);
@@ -120,10 +152,11 @@ public class HardwareAddPage extends CommonActions {
 		Thread.sleep(3000);
 		hardware_tab.click();
 	}
-	
+
 	public void hardwarethreedot() {
 		hardwarethreedot.click();
 	}
+
 	public void backDropShowing_Div_Click() {
 		if (backDropShowing != null) {
 			backDropShowing.click();
@@ -132,23 +165,118 @@ public class HardwareAddPage extends CommonActions {
 
 	public void hardwareSavebutton() throws InterruptedException {
 		Thread.sleep(3000);
-		JavascriptExecutor	js = (JavascriptExecutor)driver;
+		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("document.querySelector(\".addButton\").click();");
 		Thread.sleep(6000);
 	}
-	
-	
-	
 
 	public void hardwareDelete() {
 		hardwareDelete.click();
 	}
-	public void confirmationYesButton() {
-		 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		WebElement confirmationYesButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),'Yes')]")));
 
-       // Perform a click action on the confirmation Yes button
-       confirmationYesButton.click();
+	public void confirmationYesButton() {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebElement confirmationYesButton = wait
+				.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),'Yes')]")));
+
+		// Perform a click action on the confirmation Yes button
+		confirmationYesButton.click();
+
+	}
+
+	public void setZoomLevel(int width, int height) {
+		Dimension d = new Dimension(width, height);
+		driver.manage().window().setSize(d);
+	}
+
+	public String get_Text_ToolTipHardwareDisplayName() {
+
+		mouseHover(hardwareDisplayName);
+
+		String HardWareDisplayNameText = HardWareDisplayNameToolTip.getText();
+
+		HardWareDisplayNameText.trim();
+
+		return HardWareDisplayNameText;
+	}
+
+	public String get_Text_ToolTipHardwareName() {
+		mouseHover(hardwareName);
+
+		String HardWareNameText = HardWareNameToolTip.getText();
+
+		HardWareNameText.trim();
+
+		return HardWareNameText;
+	}
+
+	public String get_Text_ToolTipHardwareDescription() {
+		mouseHover(hardwareDescription);
+
+		String HardWareDescriptionText = HardWareDescriptionToolTip.getText();
+
+		HardWareDescriptionText.trim();
+
+		return HardWareDescriptionText;
+	}
+
+	public String get_Text_ToolTipHardwareModel() {
+		mouseHover(hardwareModel);
+
+		String HardWareModelText = HardWareModelToolTip.getText();
+
+		HardWareModelText.trim();
+
+		return HardWareModelText;
+	}
+
+	public String get_Text_ToolTipHardwareOS() {
+		mouseHover(hardwareOS);
+
+		String HardWareOSText = HardWareOSToolTip.getText();
+
+		HardWareOSText.trim();
+
+		return HardWareOSText;
+	}
+
+	public String get_Text_ToolTipHardwareMake() {
+		mouseHover(hardwareMake);
+
+		String HardWareMakeText = HardWareMakeToolTip.getText();
+
+		HardWareMakeText.trim();
+
+		return HardWareMakeText;
 		
+	}
+
+	public String get_Text_ToolTipHardwareProcessor() {
+		mouseHover(hardwareProcessor);
+
+		String HardWareMakeText = HardWareMakeToolTip.getText();
+
+		HardWareMakeText.trim();
+
+		return HardWareMakeText;
+		
+	}
+
+	public void belliconClick() {
+		
+		bellIcon.click();
+	}
+
+	public void profileIconClick() {
+		profileIcon.click();
+		
+	}
+	
+	public void expandtoggle() {
+		expandtoggle.click();
+	}
+	
+	public void collapseToggle() {
+		collapseToggle.click();
 	}
 }

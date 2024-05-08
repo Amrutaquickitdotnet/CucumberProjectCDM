@@ -103,4 +103,11 @@ public class UserGroupsAddPage extends CommonActions {
 			backDropShowing.click();
 		}
 	}
+
+
+	public void confirmationNoButton() {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebElement confirmationNoButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),'No')]")));
+		confirmationNoButton.click();
+	}
 }

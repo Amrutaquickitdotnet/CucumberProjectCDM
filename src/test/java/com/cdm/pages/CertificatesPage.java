@@ -2,6 +2,8 @@ package com.cdm.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -21,26 +23,79 @@ public class CertificatesPage extends CommonActions {
 
 	@FindBy(xpath = "//mat-select[@role='combobox']")
 	WebElement dropdownmain;
-	
 
-	
-	
-	
-	
+	@FindBy(xpath = "//button[@class='addButton']")
+	WebElement downloadButton;
+
+	@FindBy(xpath = "//input[@formcontrolname='ip']")
+	WebElement IPInput;
+
+	@FindBy(xpath = "//input[@formcontrolname='cn']")
+	WebElement certificateName;
+
+	@FindBy(xpath = "//input[@formcontrolname='org']")
+	WebElement OrganizationField;
+
+	@FindBy(xpath = "//input[@formcontrolname='duration']")
+	WebElement duration;
+
+	@FindBy(xpath = "//input[@formcontrolname='group']")
+	WebElement GroupInput;
+
+	@FindBy(xpath = "//input[@formcontrolname='duration']")
+	WebElement validityDay;
+
 	@FindBy(xpath = "//a[contains(text(),'Certificates')]")
 	WebElement certificateTab;
-	
+
 	public void setZoomLevel(int width, int height) {
 		Dimension d = new Dimension(width, height);
 		driver.manage().window().setSize(d);
 	}
-	
+
 	public void certificateTabClick() {
 		certificateTab.click();
 	}
+
 	public void certificateType(String value) throws InterruptedException {
 
 		SelectMatOption(dropdownmain, value);
 	}
-}
 
+	public void IPinput(String value) {
+		IPInput.sendKeys(Keys.ENTER);
+		IPInput.sendKeys(value);
+	}
+
+	public void groupInput(String value) {
+		GroupInput.sendKeys(Keys.ENTER);
+		GroupInput.sendKeys(value);
+	}
+
+	public void validitydaysinput(String value) {
+		validityDay.sendKeys(Keys.ENTER);
+		validityDay.sendKeys(value);
+	}
+
+	public void downloadButton() throws InterruptedException {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("document.querySelector(\".addButton\").click();");
+		Thread.sleep(5000);
+	}
+
+	public void certificateName(String value) {
+		certificateName.sendKeys(Keys.ENTER);
+		certificateName.sendKeys(value);
+	}
+
+	public void OrganizationField(String value) {
+		OrganizationField.sendKeys(Keys.ENTER);
+		OrganizationField.sendKeys(value);
+	}
+
+	public void validitydaysinputOnboarding(String value) {
+		validityDay.sendKeys(Keys.ENTER);
+		validityDay.sendKeys(value);
+	}
+
+}

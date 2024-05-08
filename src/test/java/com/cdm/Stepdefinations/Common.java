@@ -51,14 +51,16 @@ public class Common extends BaseTest {
 	public void user_launch_application_in_chrome_browser() {
 
 		driver.get(prop.getProperty("AppUrl") + alldata.get(vTCName).get("Url"));
-
+		LoginPage lp = new LoginPage(driver, logger); // object creation()		
+		lp.loginbuttonHome(); 
 	}
 
 	@When("user enters credentials and click on login button")
-	public void user_enters_credentials_and_click_on_login_button() {
+	public void user_enters_credentials_and_click_on_login_button() throws InterruptedException {
 		LoginPage lp = new LoginPage(driver, logger); // object creation()
+		lp.clickLoginButton(); 
 		lp.login(alldata.get(vTCName).get("Userid"), alldata.get(vTCName).get("Password"));
-
+		
 	}
 
 	@When("Succesfull login should be happen")

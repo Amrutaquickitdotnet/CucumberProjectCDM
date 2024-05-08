@@ -35,7 +35,7 @@ public class EdgeGroupConfigurationPage extends CommonActions {
 
 	@FindBy(xpath = "(//div[@aria-expanded='true']//table)//tr[1]//td[1]//mat-checkbox//label")
 	WebElement checkboxAppNameSingleSelectLabel;
-	
+
 	@FindBy(xpath = "(//div[@aria-expanded='true']//table)//tr[2]//td[1]//mat-checkbox//label")
 	WebElement checkboxAppNameSingleSelectLabelTwo;
 
@@ -48,8 +48,7 @@ public class EdgeGroupConfigurationPage extends CommonActions {
 	@FindBy(xpath = "//div[contains(text(),'Version/Tag ')]/../../..//mat-icon")
 
 	WebElement edgeVersionDot;
-	
-	
+
 	@FindBy(xpath = "//div[contains(text(),'App Name')]/../../..//mat-icon")
 
 	WebElement edgeAppNameDot;
@@ -78,6 +77,9 @@ public class EdgeGroupConfigurationPage extends CommonActions {
 
 	@FindBy(xpath = "//input[@name='appname']")
 	WebElement appNameInput;
+
+	@FindBy(xpath = "//input[@name='appname']")
+	WebElement appNameConfigInput;
 
 	@FindBy(xpath = "//input[@name='tag']")
 	WebElement edgeVersionNameInput;
@@ -113,8 +115,14 @@ public class EdgeGroupConfigurationPage extends CommonActions {
 	@FindBy(xpath = "(//div[@aria-expanded='true']//table)//tbody/tr[1]/td[1]/mat-checkbox[1]/label/span[1]/input")
 	WebElement checkboxApplicationEdgeDeviceConfig;
 
+	@FindBy(xpath = "(//div[@aria-expanded='true']//table)//tbody/tr[2]/td[1]/mat-checkbox[1]/label/span[1]/input")
+	WebElement checkboxApplicationEdgeDeviceConfig1;
+
 	@FindBy(xpath = "(//div[@aria-expanded='true']//table)//tr//td)[1]//label")
 	WebElement selectedCheckboxEdgeNameSacLabel;
+
+	@FindBy(xpath = "//body[1]/app-root[1]/app-root[1]/app-home[1]/mat-sidenav-container[1]/mat-sidenav-content[1]/div[2]/div[1]/app-edgegroup-config[1]/div[1]/div[1]/mat-horizontal-stepper[1]/div[2]/div[4]/form[1]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[3]/td[1]/mat-checkbox[1]/label[1]")
+	WebElement selectedCheckboxEdgeNameSacLabel1;
 
 	@FindBy(xpath = "(//div[@aria-expanded='true']//table)//tbody/tr[1]/td[1]/mat-checkbox[1]/label")
 	WebElement selectedCheckboxapplicationselectcheckboxforEdgeDeviceconfigLabel;
@@ -152,7 +160,7 @@ public class EdgeGroupConfigurationPage extends CommonActions {
 	@FindBy(css = ".tableCard h4")
 	WebElement deployListpageVerification;
 
-	@FindBy(xpath = "//div[contains(text(),'App Name')]/../../..//mat-icon")
+	@FindBy(xpath = "(//div[contains(text(),'App Name')]/../../..//mat-icon)[4]")
 
 	WebElement appNameDot;
 
@@ -348,6 +356,24 @@ public class EdgeGroupConfigurationPage extends CommonActions {
 		}
 	}
 
+	public void selectedCheckboxapplicationselectcheckboxforEdgeDeviceconfiglabelTwo() {
+		try {
+			Thread.sleep(6000);
+
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+			wait.until(ExpectedConditions.elementToBeClickable(selectedCheckboxEdgeNameSacLabel1));
+
+			if (checkboxApplicationEdgeDeviceConfig1 != null) {
+				String checked = checkboxApplicationEdgeDeviceConfig1.getDomAttribute("checked");
+				if (checked != "checked") {
+					selectedCheckboxEdgeNameSacLabel1.click();
+				}
+			}
+		} catch (Exception e) {
+
+		}
+	}
+
 	public void checkboxApplicationConfiguration() {
 		try {
 
@@ -494,8 +520,26 @@ public class EdgeGroupConfigurationPage extends CommonActions {
 
 		}
 	}
-	
+
 	public void checkboxAppNameSingleSelectStepTwoNamedouble() {
+		try {
+
+			Thread.sleep(5000);
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+			wait.until(ExpectedConditions.elementToBeClickable(checkboxAppNameSingleSelectLabelTwo));
+
+			if (checkboxAppNameSingleSelect != null) {
+				String checked = checkboxAppNameSingleSelect.getDomAttribute("checked");
+				if (checked != "checked") {
+					checkboxAppNameSingleSelectLabelTwo.click();
+				}
+			}
+		} catch (Exception e) {
+
+		}
+	}
+	
+	public void checkboxAppNamemultiSelectStepTwoNamedouble() {
 		try {
 
 			Thread.sleep(5000);
@@ -518,9 +562,17 @@ public class EdgeGroupConfigurationPage extends CommonActions {
 		Thread.sleep(5000);
 		previousButtonApplicationonDeploymentButton.click();
 	}
-public void edgeAppNameDot() {
-	edgeAppNameDot.click();
-}
+
+	public void appNameConfigInput(String value) {
+		appNameConfigInput.sendKeys(Keys.ENTER);
+		appNameConfigInput.sendKeys(value);
+	}
+
+	public void edgeAppNameDot() throws InterruptedException {
+		edgeAppNameDot.click();
+		Thread.sleep(2000);
+	}
+
 	public void checkboxEdgeGroupNameStepOneName() {
 		try {
 

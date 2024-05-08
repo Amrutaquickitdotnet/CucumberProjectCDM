@@ -1,6 +1,7 @@
 package com.cdm.pages;
 
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -8,8 +9,10 @@ import org.openqa.selenium.WindowType;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.aventstack.extentreports.ExtentTest;
 import com.cdm.common.CommonActions;
@@ -23,31 +26,43 @@ public class LoginPage extends CommonActions {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath = "//input[@type='text']") // these all are locators
+	@FindBy(xpath = "//div[contains(text(),'Invalid User Name !')]")
+	WebElement invaliderrormessage;
+	
+	@FindBy(xpath="//label[contains(text(),'Username')]")
+	WebElement LoginTitle;
+	
+	@FindBy(xpath = "//input[@formcontrolname='username']") // these all are locators
 	WebElement username;
 
-	@FindBy(xpath = "//h2[contains(text(),'Login')]")
+	@FindBy(xpath = "//label[contains(text(),'Username')]")
 	WebElement loginheaderTitle;
 
-	@FindBy(xpath = "//input[@name='password']")
+	@FindBy(xpath = "//input[@formcontrolname='password']")
 	WebElement password;
 
 	@FindBy(xpath = "//button[normalize-space()='Login']")
 	WebElement LoginBtn;
 
-	@FindBy(xpath = "//*[contains(text(),'Please Enter the Valid User Name and Password')]")
+	@FindBy(xpath = "//div[contains(text(),'Invalid User Name !')]")
 	WebElement errmsg;
+	
+	@FindBy(xpath = "//body/div[2]/div[2]/div[1]/div[1]/div[1]/button[4]")
+	WebElement logOut;
 
-	@FindBy(xpath = "//*[text()='Password is required']")
-	WebElement errmsgpassword;
+//	@FindBy(xpath = "//*[text()='Password is required']")
+//	WebElement errmsgpassword;
 
-	@FindBy(xpath = "//*[text()='User Name is required']")
+	@FindBy(xpath = "//input[@formcontrolname='username']/../div/div")
 	WebElement errmsgusername;
+	
+	@FindBy(xpath = "//input[@formcontrolname='password']/../div/div")
+	WebElement errmsgpassword;
 
 	@FindBy(xpath = "//span[@class='far fa-eye-slash showpwd']")
 	WebElement showpasswordicon;
 
-	@FindBy(xpath = "//*[contains(text(),'default')]")
+	@FindBy(xpath = "//div[contains(text(),'Default')]")
 	WebElement dashboard;
 
 	@FindBy(xpath = "//body/app-root[1]/app-root[1]/app-home[1]/mat-sidenav-container[1]/mat-sidenav-content[1]/div[1]/div[1]/div[2]/button[1]/span[1]/img[1]")
@@ -56,24 +71,62 @@ public class LoginPage extends CommonActions {
 	@FindBy(xpath = "//span[contains(text(),'Super Admin')]")
 	WebElement SuperAdmin;
 
+	@FindBy(xpath = "//button[contains(text(),'Login')]")
+	WebElement loginbuttonHome;
+	
+	@FindBy(xpath ="//div[contains(text(),'Invalid User Name !')]")
+	WebElement invalidUserName;
+
 	public void initializeWebDriver(String browser) {
-		if (browser.equalsIgnoreCase("chrome")) {
-
-			driver = new ChromeDriver();
-		} else if (browser.equalsIgnoreCase("firefox")) {
-
-			FirefoxOptions options = new FirefoxOptions();
-			driver = new FirefoxDriver(options);
-		}
+		
+		 switch (browser.toLowerCase()) {
+         case "chrome":
+        	 driver = new ChromeDriver();
+             break;
+         case "firefox":
+        	 driver = new FirefoxDriver();
+             break;
+         case "safari":
+        	 driver = new SafariDriver();
+             break;
+         default:
+             throw new IllegalArgumentException("Invalid browser specified: " + browser);
+		 }
 		// You can add more browsers based on your requirements
 	}
+	
+	 public WebElement getUsernameField() {
+	        return username;
+	    }
 
+	 public WebElement hasTitleElement() {
+		
+			return LoginTitle;
+		}
+	
+	    public WebElement getPasswordField() {
+	        return password;
+	    }
+	
+	 public int getUsernameFieldLength() {
+		return username.getText().length();
+	     
+	    }
+
+	 public int getPasswordFieldLength() {
+	        return password.getAttribute("value").length();
+	    }
+	 
 	public void pressEnterKey() {
 		password.sendKeys(Keys.ENTER);
 	}
 
-	public void verifyTitle() {
-
+	public String verifyTitle() {
+		if(LoginTitle==null) {
+			return "";
+		}
+		
+		return LoginTitle.getText();
 	}
 
 	public void calculateLoginTime() {
@@ -85,6 +138,11 @@ public class LoginPage extends CommonActions {
 		System.out.println("Time taken to log in: " + loginTime + " milliseconds");
 
 	}
+	
+	public boolean isInputFieldVisible() {
+        return username.isDisplayed();
+    }
+    
 
 	public void enterCredentials(String uname, String pwd) {
 
@@ -105,20 +163,22 @@ public class LoginPage extends CommonActions {
 		SuperAdmin.click();
 	}
 
-	public void enteruserid(String userid) {
-		SetInput(username, userid, userid + " has been entered into username field");
+	public void enteruserid(String value) {
+		username.sendKeys(Keys.ENTER);
+		username.sendKeys(value);
 	}
 
-	public void enterpwd(String pwd) {
-		SetInput(password, pwd, pwd + " has been entered into password field");
+	public void enterpwd(String value) {
+		password.sendKeys(Keys.ENTER);
+		password.sendKeys(value);
 	}
 
 	public void clickshowpwd() {
-		clickElement(showpasswordicon, "Clicked on show password");
+		showpasswordicon.click();
 	}
 
 	public void clickLogin() {
-		clickElement(LoginBtn, "Login button clicked");
+		LoginBtn.click();
 	}
 
 	public void login(String uid, String pass) {
@@ -131,8 +191,11 @@ public class LoginPage extends CommonActions {
 
 	}
 
-	public void verifyErrorMsg() {
-		ElementExist(errmsg, "Error message validated successfully");
+	public String verifyErrorMsg() {
+		return errmsg.getText();
+	}
+	public String verifyErrorMsgforLogin() {
+		return invalidUserName.getText();
 	}
 
 	public void verifyDashboard() {
@@ -157,6 +220,10 @@ public class LoginPage extends CommonActions {
 		String actualFont = element.getCssValue("font-family");
 
 		Assert.assertEquals(expectedFont, actualFont);
+	}
+
+	public void browserBack() {
+		driver.navigate().back();
 	}
 
 	public void verifyTextColor(WebElement element, String expectedColor) {
@@ -184,4 +251,76 @@ public class LoginPage extends CommonActions {
 		getPasswordInput().sendKeys(password);
 
 	}
+
+	public void opennewTab() {
+		// Opens a new tab and switches to new tab
+		driver.switchTo().newWindow(WindowType.TAB);
+
+	}
+
+	public String get_validationmessageusername() {
+
+		wait(errmsgusername,logger);
+		if (errmsgusername == null) {
+			return "";
+		}
+		String message = errmsgusername.getText();
+
+		return message.trim();
+	}
+	
+	public String get_validationmessagepassword() {
+
+		wait(errmsgpassword,logger);
+		if (errmsgpassword == null) {
+			return "";
+		}
+		String message = errmsgpassword.getText();
+
+		return message.trim();
+	}
+	
+	public String get_invaliduserName() {
+
+		
+		if (invaliderrormessage == null) {
+			return "";
+		}
+		String message = invaliderrormessage.getText();
+
+		return message.trim();
+	}
+
+	public void loginbuttonHome() {
+		loginbuttonHome.click();
+
+	}
+	
+	public WebElement getLoginButton() {
+        return loginbuttonHome;
+    }
+
+	public void setUsernameFieldLength(String userId) {
+		username.sendKeys(userId);
+		
+	}
+	
+	public void logout() {
+		logOut.click();
+	}
+
+	public String getUsernameFieldValue() {
+		LoginPage lp = new LoginPage(driver, logger);          
+        WebElement usernameField = lp.getUsernameInput();
+        return usernameField.getAttribute("value");
+    }
+
+    // Method to get the value of the password field
+    public String getPasswordFieldValue() {
+    	
+    	LoginPage lp = new LoginPage(driver, logger);          
+        WebElement passwordField = lp.getPasswordInput();
+       
+        return passwordField.getAttribute("value");
+    }
 }

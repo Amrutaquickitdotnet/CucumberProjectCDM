@@ -1,22 +1,233 @@
 package com.cdm.Stepdefinations;
 
 import java.util.Iterator;
+
 import java.util.Set;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
 
 import com.cdm.pages.DashboardPage;
+import com.cdm.pages.LogOutPage;
 import com.cdm.pages.LoginPage;
+
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class LoginPageSteps extends BaseTest {
+
+	@When("In Login screen, Enter User name - Valid Username")
+	public void in_login_screen_enter_user_name_valid_username() throws InterruptedException {
+		LoginPage lp = new LoginPage(driver, logger);
+		lp.enteruserid(alldata.get(vTCName).get("Userid").toString());
+		Thread.sleep(4000);
+	}
+
+	
+	@Then("verify visibility duration to load page for Login")
+	public void verify_visibility_duration_to_load_page_for_login() {
+		LoginPage lp = new LoginPage(driver, logger);
+		lp.calculateLoginTime();
+        
+	}
+
+	@When("user clicks on Login button")
+	public void user_clicks_on_login_button() {
+		LoginPage lp = new LoginPage(driver, logger);
+		lp.loginbuttonHome();
+	}
+
+	@When("Enter password - Valid Password")
+	public void enter_password_valid_password() {
+		LoginPage lp = new LoginPage(driver, logger);
+		lp.enterpwd(alldata.get(vTCName).get("Password").toString());
+
+	}
+	
+	@Then("click on eye icon for the password")
+	public void click_on_eye_icon_for_the_password() {
+		LoginPage lp = new LoginPage(driver, logger);
+		lp.clickshowpwd();
+	}
+
+
+	@Then("Click on Login")
+	public void click_on_login() {
+		LoginPage lp = new LoginPage(driver, logger);
+		lp.clickLoginButton();
+	}
+	
+	@Then("the input field should be visible")
+	public void the_input_field_should_be_visible() {
+		LoginPage lp = new LoginPage(driver, logger);
+//		Can not automate visibility
+	}
+
+
+
+	@When("In Login screen, Do not enter Username - Blank")
+	public void in_login_screen_do_not_enter_username_blank() {
+		LoginPage lp = new LoginPage(driver, logger);
+	}
+
+	@When("Enter password - InValid Password")
+	public void enter_password_in_valid_password() {
+		LoginPage lp = new LoginPage(driver, logger);
+		lp.enterpwd(alldata.get(vTCName).get("Password").toString());
+	}
+
+	@When("Do not enter password - Blank")
+	public void do_not_enter_password_blank() {
+		LoginPage lp = new LoginPage(driver, logger);
+	}
+
+	@Then("verify validation message for username")
+	public void verify_validation_message_for_username() {
+		LoginPage lp = new LoginPage(driver, logger);
+		Assert.assertEquals("Validation message", "Username is required", lp.get_validationmessageusername());
+
+	}
+
+	@Then("verification message for password should come")
+	public void verification_message_for_password_should_come() {
+		LoginPage lp = new LoginPage(driver, logger);
+		Assert.assertEquals("Validation message", "Password is required", lp.get_validationmessagepassword());
+
+	}
+
+	@Then("Login button should be horizontally aligned")
+	public void login_button_should_be_horizontally_aligned() {
+		LoginPage lp = new LoginPage(driver, logger);
+		WebElement loginButton = lp.getLoginButton();
+		// Get the location of the login button
+		Point location = loginButton.getLocation();
+
+		// Assert that the X-coordinate of the login button is within an acceptable
+		// range
+		// Adjust the expected X-coordinate based on your application's design
+		float expectedXCoordinate = 705; // Example expected X-coordinate
+		int tolerance = 5; // Example tolerance for alignment
+		Assert.assertEquals(expectedXCoordinate, location.getX(), tolerance);
+	}
+
+	@Then("Login button should be vertically aligned")
+	public void login_button_should_be_vertically_aligned() {
+
+		LoginPage lp = new LoginPage(driver, logger);
+		WebElement loginButton = lp.getLoginButton();
+		// Get the location of the login button
+		Point location = loginButton.getLocation();
+//
+//		// Assert that the Y-coordinate of the login button is within an acceptable
+//		// range
+//		// Adjust the expected Y-coordinate based on your application's design
+//		int expectedYCoordinate = 235; // Example expected Y-coordinate
+//		int tolerance = 5; // Example tolerance for alignment
+//		Assert.assertEquals(expectedYCoordinate, location.getY(), tolerance);
+	}
+
+	@Then("Username and password fields are autofilled")
+	public void username_and_password_fields_are_autofilled() {
+		LoginPage lp = new LoginPage(driver, logger);
+		lp.getUsernameFieldLength();
+		String autofilledUsername = lp.getUsernameFieldValue();
+		String autofilledPassword = lp.getPasswordFieldValue();
+
+		// Assert that the fields are autofilled with the expected values
+		Assert.assertEquals("", autofilledUsername);
+		Assert.assertEquals("", autofilledPassword);
+	}
+
+	@Then("click on Login button without adding credentials")
+	public void click_on_login_button_without_adding_credentials() throws InterruptedException {
+		Thread.sleep(3000);
+		LoginPage lp = new LoginPage(driver, logger);
+		lp.clickLoginButton();
+
+	}
+
+	@Then("verify validation message")
+	public void verify_validation_message() {
+		LoginPage lp = new LoginPage(driver, logger);
+		Assert.assertEquals("Validation message", "Invalid User Name !", lp.get_invaliduserName());
+	}
+
+	@Then("enter invalid details inside username and fill right password entry and click on login button")
+	public void enter_invalid_details_inside_username_and_fill_right_password_entry_and_click_on_login_button() {
+		LoginPage lp = new LoginPage(driver, logger);
+		lp.enteruserid(alldata.get(vTCName).get("Userid"));
+		lp.enterpwd(alldata.get(vTCName).get("Password"));
+		lp.clickLoginButton();
+	}
+
+	@When("User presses TAB key on the username field")
+	public void user_presses_tab_key_on_the_username_field() {
+		LoginPage lp = new LoginPage(driver, logger);
+		lp.getUsernameField().sendKeys(Keys.TAB);
+		;
+
+	}
+
+	@Then("Focus should shift to the password field")
+	public void focus_should_shift_to_the_password_field() {
+		LoginPage lp = new LoginPage(driver, logger);
+		Assert.assertEquals("mat-input-1", driver.switchTo().activeElement().getAttribute("id"));
+	}
+
+	@Then("click on Log Out button")
+	public void click_on_log_out_button() throws InterruptedException {
+		LoginPage lp = new LoginPage(driver, logger);
+		lp.profileIcon();
+		Thread.sleep(3000);
+		lp.logout();
+	}
+
+	@When("I login with username {string} and password {string}")
+	public void i_login_with_username_and_password(String username, String password) {
+		LoginPage lp = new LoginPage(driver, logger);
+		lp.enteruserid(username);
+		lp.enterpwd(password);
+		lp.clickLoginButton();
+	}
+
+	@Then("logout from the application")
+	public void logout_from_the_application() throws InterruptedException {
+		LogOutPage lo = new LogOutPage(driver, logger);
+		lo.profileImage();
+		Thread.sleep(2000);
+		lo.logout();
+		Thread.sleep(4000);
+	}
+
+	@Then("I should be logged in")
+	public void i_should_be_logged_in() {
+		LoginPage lp = new LoginPage(driver, logger);
+		lp.clickLoginButton();
+	}
+
+	@Then("I open a new tab")
+	public void i_open_a_new_tab() throws InterruptedException {
+		LoginPage lp = new LoginPage(driver, logger);
+		lp.opennewTab();
+		Thread.sleep(5000);
+	}
+
+	@Then("I am on the login page")
+	public void i_am_on_the_login_page() throws InterruptedException {
+		LoginPage lp = new LoginPage(driver, logger);
+		lp.verifyDashboard();
+		Thread.sleep(4000);
+	}
 
 	@When("user enters valid credentials and click on login button")
 	public void user_enters_invalid_credentials_and_click_on_login_button() {
@@ -38,10 +249,23 @@ public class LoginPageSteps extends BaseTest {
 
 	}
 
+	@When("user dont enter the Username")
+	public void user_dont_enter_the_username() {
+		LoginPage lp = new LoginPage(driver, logger);
+		lp.enterCredentials(alldata.get(vTCName).get("Userid"), alldata.get(vTCName).get("Password"));
+	}
+
+	@When("user dont enter the password")
+	public void user_dont_enter_the_password() {
+		LoginPage lp = new LoginPage(driver, logger);
+		lp.enterCredentials(alldata.get(vTCName).get("Userid"), alldata.get(vTCName).get("Password"));
+	}
+
 	@Then("user should be login successfully")
-	public void user_should_be_login_successfully() {
+	public void user_should_be_login_successfully() throws InterruptedException {
 		System.out.println("I am in start of user_should_be_login_successfully");
 		LoginPage lp = new LoginPage(driver, logger);
+		Thread.sleep(4000);
 		lp.verifyDashboard();
 	}
 
@@ -71,9 +295,11 @@ public class LoginPageSteps extends BaseTest {
 	}
 
 	@Then("Verify Error message")
-	public void verify_error_message() {
+	public void verify_error_message() throws InterruptedException {
 		LoginPage lp = new LoginPage(driver, logger);
+		Thread.sleep(3000);
 		lp.verifyErrorMsg();
+		Thread.sleep(3000);
 	}
 
 	@When("user enters valid userid")
@@ -81,6 +307,30 @@ public class LoginPageSteps extends BaseTest {
 		LoginPage lp = new LoginPage(driver, logger);
 		lp.enteruserid(alldata.get(vTCName).get("Userid"));
 
+	}
+
+	@When("I enter an invalid username and password")
+	public void i_enter_an_invalid_username_and_password() {
+		LoginPage lp = new LoginPage(driver, logger);
+		lp.enteruserid(alldata.get(vTCName).get("Userid"));
+		lp.enterpwd(alldata.get(vTCName).get("Password"));
+	}
+
+	@When("I click the login button")
+	public void i_click_the_login_button() {
+		LoginPage lp = new LoginPage(driver, logger);
+		lp.clickLoginButton();
+	}
+
+	@Then("I should see an error message indicating invalid credentials")
+	public void i_should_see_an_error_message_indicating_invalid_credentials() {
+		LoginPage lp = new LoginPage(driver, logger);
+		String expectedMessageforusername = "Username is required";
+		String expectedMessageforpassword = "Password is required";
+		String bothinvalid = "Invalid User Name !";
+		String actualMessageforpassword = lp.verifyErrorMsg();
+		String bothcredentialInvalid = lp.verifyErrorMsgforLogin();
+		Assert.assertEquals(bothinvalid, bothcredentialInvalid);
 	}
 
 	@When("user enters valid password")
@@ -97,12 +347,18 @@ public class LoginPageSteps extends BaseTest {
 		Thread.sleep(2000);
 	}
 
-	@When("Click on login button")
+	@Then("Click on the hidden eye icon in Password field")
+	public void click_on_the_hidden_eye_icon_in_password_field() throws InterruptedException {
+		LoginPage lp = new LoginPage(driver, logger);
+		lp.clickshowpwd();
+		Thread.sleep(2000);
+	}
+
+	@Then("click on Login button")
 	public void click_on_login_button() throws InterruptedException {
 		LoginPage lp = new LoginPage(driver, logger);
 		lp.clickLogin();
 		Thread.sleep(5000);
-
 	}
 
 	@When("click on change password and update new password")
@@ -119,6 +375,17 @@ public class LoginPageSteps extends BaseTest {
 	public void user_launch_application_in_edge_browser() throws InterruptedException {
 
 		WebDriver d = new EdgeDriver();
+		d.get(prop.getProperty("AppUrl") + alldata.get(vTCName).get("Url"));
+		Thread.sleep(5000);
+		LoginPage lp = new LoginPage(d, logger);
+		lp.login(alldata.get(vTCName).get("Userid"), alldata.get(vTCName).get("Password"));
+
+	}
+
+	@Given("User launch application in firefox browser and perform login")
+	public void user_launch_application_in_firefox_browser() throws InterruptedException {
+
+		WebDriver d = new FirefoxDriver();
 		d.get(prop.getProperty("AppUrl") + alldata.get(vTCName).get("Url"));
 		Thread.sleep(5000);
 		LoginPage lp = new LoginPage(d, logger);
@@ -180,8 +447,8 @@ public class LoginPageSteps extends BaseTest {
 
 		WebElement pwd = lp.getUsernameInput();
 
-		lp.verifyFont(uname, "Roboto");
-		lp.verifyFont(pwd, "Roboto");
+		lp.verifyFont(uname, alldata.get(vTCName).get("Fontfamily"));
+		lp.verifyFont(pwd, alldata.get(vTCName).get("Fontfamily"));
 
 		lp.verifyTextColor(uname, "rgba(0, 0, 0, 1)");
 		lp.verifyTextColor(pwd, "rgba(0, 0, 0, 1)");
@@ -212,17 +479,36 @@ public class LoginPageSteps extends BaseTest {
 		lp.enterpwd(alldata.get(vTCName).get("Password"));
 		lp.clickLoginButton();
 	}
+	
+	@Then("keep the username field blank")
+	public void keep_the_username_field_blank() {
+		LoginPage lp = new LoginPage(driver, logger);
+		lp.enteruserid(alldata.get(vTCName).get("Userid"));
+	}
+	@Then("enter details under password")
+	public void enter_details_under_password() {
+		LoginPage lp = new LoginPage(driver, logger);
+		
+		lp.enterpwd(alldata.get(vTCName).get("Password"));
+		lp.clickLoginButton();
+	}
+
 
 	@When("click on back button and verify page")
 	public void click_on_back_button_and_verify_page() {
-		// Write code here that turns the phrase above into concrete actions
-		throw new io.cucumber.java.PendingException();
+		LoginPage lp = new LoginPage(driver, logger);
+		lp.browserBack();
 	}
 
 	@Then("verify login page")
 	public void verify_login_page() {
 		LoginPage lp = new LoginPage(driver, logger);
 		lp.verifyTitle();
+	}
+
+	@When("user enters alphanumeric value in userid")
+	public void user_enters_alphanumeric_value_in_userid() {
+
 	}
 
 	@When("another user logs in with valid credentials {string} and {string}")
@@ -243,6 +529,49 @@ public class LoginPageSteps extends BaseTest {
 	public void both_users_should_be_redirected_to_their_respective_dashboards() {
 		DashboardPage dp = new DashboardPage(driver, logger);
 		dp.verifyUserIsOnDashboard();
+	}
+
+	@When("I log in with valid credentials using different browser")
+	public void i_log_in_with_valid_credentials_using_different_browser() throws InterruptedException {
+		LoginPage lp = new LoginPage(driver, logger);
+		driver.get(prop.getProperty("AppUrl") + alldata.get(vTCName).get("Url"));
+		lp.loginbuttonHome();
+		lp.enteruserid(alldata.get(vTCName).get("Userid").toString());
+		lp.enterpwd(alldata.get(vTCName).get("Password").toString());
+		lp.clickLoginButton();
+		Thread.sleep(4000);
+	}
+
+	@When("I enter max characters in the username field")
+	public void i_enter_characters_in_the_username_field() {
+		LoginPage lp = new LoginPage(driver, logger);
+		lp.enteruserid(alldata.get(vTCName).get("Userid").toString());
+	}
+
+	@Then("I should see the username field accepts a maximum of max characters")
+	public void i_should_see_the_username_field_accepts_a_maximum_of_characters() {
+		LoginPage lp = new LoginPage(driver, logger);
+		String userId = alldata.get(vTCName).get("Userid").toString();
+		lp.setUsernameFieldLength(userId);
+		int actualCharacters = lp.getUsernameFieldLength();
+		Assert.assertEquals(actualCharacters != userId.length(),
+				"The username field allows more than " + userId.length() + " characters");
+	}
+
+	@When("I enter \\{string} characters in the password field")
+	public void i_enter_characters_in_the_password_field() {
+		LoginPage lp = new LoginPage(driver, logger);
+		lp.enterpwd(alldata.get(vTCName).get("Password").toString());
+	}
+
+	@Then("I should see the password field accepts a maximum of \\{int} characters")
+	public void i_should_see_the_password_field_accepts_a_maximum_of_characters(int maxCharacters) {
+
+		LoginPage lp = new LoginPage(driver, logger);
+		int actualCharacters = lp.getPasswordFieldLength();
+
+		Assert.assertEquals(actualCharacters <= maxCharacters,
+				"The password field allows more than " + maxCharacters + " characters");
 	}
 
 }

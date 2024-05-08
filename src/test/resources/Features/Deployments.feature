@@ -65,74 +65,76 @@ Feature: DEPLOYMENTS
 #Given User launch application in chrome browser
 #When user enters credentials and click on login button
 #Then Click on Deployments module from side menu bar
+#Then Click on the History View button
 #Then Click on pagination part it will display default records will display 
-#
-#
-#
+
 #@Test
 #Scenario: TC10_Verification of changing the items per page functionality in the Deployment List screen by Super admin/Admin user
 #Given User launch application in chrome browser
 #When user enters credentials and click on login button
 #Then Click on Deployments module from side menu bar
-#Then Click on pagination part it will display default records will display 
-#
-#@Test
-#Scenario: TC11_Verification of displaying the items per page by default i.e. 25 per page in the Deployment List screen by Super admin/Admin user
-#Given User launch application in chrome browser
-#When user enters credentials and click on login button
-#Then Click on Deployments module from side menu bar
-#Then Click on pagination part it will display default records will display 
-#
-#
-#
-#@Test
-#Scenario: TC12_Verification of displaying the total number of records with pagination icons in the Deployment List screen by Super admin/Admin user
-#Given User launch application in chrome browser
-#When user enters credentials and click on login button
-#Then Click on Deployments module from side menu bar
+#Then Click on the History View button
 #Then Click on pagination part it will display default records will display 
 
-#
-#@Test
-#Scenario: TC13_Verification of displaying the First page (Full Backward arrow) button in the Deployment List screen by Super admin/Admin user
-#Given User launch application in chrome browser
-#When user enters credentials and click on login button
-#Then Click on Deployments module from side menu bar
-#Then Click on pagination to check functionality of Full Backward arrow 
-#
-#
-#
-#@Test
-#Scenario: TC14_Verification of displaying the Last page (Full Forward arrow button in the Deployment List screen by Super admin/Admin user
-#Given User launch application in chrome browser
-#When user enters credentials and click on login button
-#Then Click on Deployments module from side menu bar
-#Then Click on pagination to check functionality of Full forward arrow
-#
-#
-#
-#@Test
-#Scenario: TC15_Verification of displaying the Next page (Forward arrow button in the Deployment List screen by Super admin/Admin user
-#Given User launch application in chrome browser
-#When user enters credentials and click on login button
-#Then Click on Deployments module from side menu bar
-#Then Click on pagination to check Next button(Forward arrow) functionality
-#
-#
-#
-#@Test
-#Scenario: TC16_Verification of displaying the Previous page (Backward arrow button in the Deployment List screen by Super admin/Admin user
-#Given User launch application in chrome browser
-#When user enters credentials and click on login button
-#Then Click on Deployments module from side menu bar
-#Then Click on pagination to check Previous Page button(Backward arrow) functionality
-#
-#
+@Test
+Scenario: TC11_Verification of displaying the items per page by default i.e. 25 per page in the Deployment List screen by Super admin/Admin user
+Given User launch application in chrome browser
+When user enters credentials and click on login button
+Then Click on Deployments module from side menu bar
+Then Click on the History View button
+Then Click on pagination part it will display default records will display 
+
+@Test
+Scenario: TC12_Verification of displaying the total number of records with pagination icons in the Deployment List screen by Super admin/Admin user
+Given User launch application in chrome browser
+When user enters credentials and click on login button
+Then Click on Deployments module from side menu bar
+Then Click on the History View button
+Then Click on pagination part it will display default records will display 
+
+
+@Test
+Scenario: TC13_Verification of displaying the First page (Full Backward arrow) button in the Deployment List screen by Super admin/Admin user
+Given User launch application in chrome browser
+When user enters credentials and click on login button
+Then Click on Deployments module from side menu bar
+Then Click on the History View button
+Then Click on pagination to check functionality of Full Backward arrow 
+
+
+
+@Test
+Scenario: TC14_Verification of displaying the Last page (Full Forward arrow button in the Deployment List screen by Super admin/Admin user
+Given User launch application in chrome browser
+When user enters credentials and click on login button
+Then Click on Deployments module from side menu bar
+Then Click on the History View button
+Then Click on pagination to check functionality of Full forward arrow
+
+
+@Test
+Scenario: TC15_Verification of displaying the Next page (Forward arrow button in the Deployment List screen by Super admin/Admin user
+Given User launch application in chrome browser
+When user enters credentials and click on login button
+Then Click on Deployments module from side menu bar
+Then Click on the History View button
+Then Click on pagination to check Next button(Forward arrow) functionality
+
+@Test
+Scenario: TC16_Verification of displaying the Previous page (Backward arrow button in the Deployment List screen by Super admin/Admin user
+Given User launch application in chrome browser
+When user enters credentials and click on login button
+Then Click on Deployments module from side menu bar
+Then Click on the History View button
+Then Click on pagination to check Previous Page button(Backward arrow) functionality
+
+
 #@Test
 #Scenario: TC17_Verification of the search functionality for Edge Name column (Valid Edge Name ) in the Deployment List screen by Super admin/Admin user
 #Given User launch application in chrome browser
 #When user enters credentials and click on login button
 #Then Click on Deployments module from side menu bar
+#Then Click on the History View button
 #Then Click on EDGE Name search icon of deployment page i.e. three dots & enter Valid inputs into search text field
 #
 #@Test
@@ -140,15 +142,17 @@ Feature: DEPLOYMENTS
 #Given User launch application in chrome browser
 #When user enters credentials and click on login button
 #Then Click on Deployments module from side menu bar
+#Then Click on the History View button
 #Then Click on EDGE Name search icon i.e. three dots & enter invalid inputs into search text field
 #
 #
-#@Test
-#Scenario: TC19_Verification of the search functionality for App Name column (Valid App Name) in the Deployment List screen by Super admin/Admin user
-#Given User launch application in chrome browser
-#When user enters credentials and click on login button
-#Then Click on Deployments module from side menu bar
-#Then Click on App Name search icon i.e. three dots & enter Valid inputs into search text field of App Name
+@Test
+Scenario: TC19_Verification of the search functionality for App Name column (Valid App Name) in the Deployment List screen by Super admin/Admin user
+Given User launch application in chrome browser
+When user enters credentials and click on login button
+Then Click on Deployments module from side menu bar
+Then Click on the History View button
+Then Click on App Name search icon i.e. three dots & enter Valid inputs into search text field of App Name
 #
 #
 #@Test
@@ -156,6 +160,7 @@ Feature: DEPLOYMENTS
 #Given User launch application in chrome browser
 #When user enters credentials and click on login button
 #Then Click on Deployments module from side menu bar
+#Then Click on the History View button
 #Then Click on App Name search icon i.e. three dots & enter invalid inputs into search text field
 #
 #
@@ -165,7 +170,8 @@ Feature: DEPLOYMENTS
 #Given User launch application in chrome browser
 #When user enters credentials and click on login button
 #Then Click on Deployments module from side menu bar
-#Then Click on Status Name search icon i.e. three dots & enter Valid inputs into search text field
+#Then Click on the History View button
+#Then Click on Status Name search icon i.e. three dots & select status
 #
 #
 #@Test
@@ -173,6 +179,7 @@ Feature: DEPLOYMENTS
 #Given User launch application in chrome browser
 #When user enters credentials and click on login button
 #Then Click on Deployments module from side menu bar
+#Then Click on the History View button
 #Then Click on Error search icon i.e. three dots & enter Valid inputs into search text field
 #
 #
@@ -182,6 +189,8 @@ Feature: DEPLOYMENTS
 #Given User launch application in chrome browser
 #When user enters credentials and click on login button
 #Then Click on Deployments module from side menu bar
+#Then Click on the History View button
+#Then scroll horizontal 
 #Then Click on Running Version search icon i.e. three dots & enter Valid inputs into search text field
 #
 #
@@ -190,6 +199,8 @@ Feature: DEPLOYMENTS
 #Given User launch application in chrome browser
 #When user enters credentials and click on login button
 #Then Click on Deployments module from side menu bar
+#Then Click on the History View button
+#Then scroll horizontal 
 #Then Click on Expected Version invalid search icon i.e. three dots & enter Valid inputs into search text field
 #
 #
@@ -198,6 +209,8 @@ Feature: DEPLOYMENTS
 #Given User launch application in chrome browser
 #When user enters credentials and click on login button
 #Then Click on Deployments module from side menu bar
+#Then Click on the History View button
+#Then scroll horizontal 
 #Then Click on deploymentDateThreeDot icon and enter the value in datepickercolumn
 #
 #@Test
@@ -205,6 +218,8 @@ Feature: DEPLOYMENTS
 #Given User launch application in chrome browser
 #When user enters credentials and click on login button
 #Then Click on Deployments module from side menu bar
+#Then Click on the History View button
+#Then scroll horizontal 
 #Then Click on lastupdatedThreeDot icon and enter the value in datepickercolumn
 #
 #
@@ -213,6 +228,7 @@ Feature: DEPLOYMENTS
 #Given User launch application in chrome browser
 #When user enters credentials and click on login button
 #Then Click on Deployments module from side menu bar
+#Then Click on the History View button
 #Then Enter valid inputs into search text field of Edge name and enter backspace & click on enter
 #
 #@Test
@@ -220,6 +236,7 @@ Feature: DEPLOYMENTS
 #Given User launch application in chrome browser
 #When user enters credentials and click on login button
 #Then Click on Deployments module from side menu bar
+#Then Click on the History View button
 #Then Enter valid inputs into search text field of app name of deployment and enter backspace & click on enter
 #
 #
@@ -230,6 +247,7 @@ Feature: DEPLOYMENTS
 #Given User launch application in chrome browser
 #When user enters credentials and click on login button
 #Then Click on Deployments module from side menu bar
+#Then Click on the History View button
 #Then Enter valid inputs into search text field of status name of deployment and enter backspace & click on enter
 #
 #
@@ -239,6 +257,7 @@ Feature: DEPLOYMENTS
 #Given User launch application in chrome browser
 #When user enters credentials and click on login button
 #Then Click on Deployments module from side menu bar
+#Then Click on the History View button
 #Then Enter valid inputs into search text field of error of deployment and enter backspace & click on enter
 #
 #
@@ -247,30 +266,34 @@ Feature: DEPLOYMENTS
 #Given User launch application in chrome browser
 #When user enters credentials and click on login button
 #Then Click on Deployments module from side menu bar
+#Then Click on the History View button
+#Then scroll horizontal 
 #Then Enter valid inputs into search text field of running version of deployment and enter backspace & click on enter
 #
-#
-#
-@Test
-Scenario: TC35_Verification of the Error column and verify link Show More screen by Super admin/Admin user
-Given User launch application in chrome browser
-When user enters credentials and click on login button
-Then Click on Deployments module from side menu bar
-Then click on the link show more from the Error column
-
 #@Test
-#Scenario: TC36_Verification of info button  Actions column
+#Scenario: TC35_Verification of the Error column and verify link Show More screen by Super admin/Admin user
 #Given User launch application in chrome browser
 #When user enters credentials and click on login button
 #Then Click on Deployments module from side menu bar
+#Then Click on the History View button
+#Then click on the link show more from the Error column
+#
+#@Test
+#Scenario: TC36_Verification of view deployed Volume Details icon
+#Given User launch application in chrome browser
+#When user enters credentials and click on login button
+#Then Click on Deployments module from side menu bar
+#Then Click on the History View button
 #Then scroll horizontal 
-#Then click on the info icon
+#Then click on the view deployed Volume Details icon
 #
 #@Test
 #Scenario: TC37_Verification of the search functionality for Volume Name by Super admin/Admin user
 #Given User launch application in chrome browser
 #When user enters credentials and click on login button
 #Then Click on Deployments module from side menu bar
+#Then Click on the History View button
+#Then Click on App Name search icon i.e. three dots & enter invalid inputs into search text field
 #Then scroll horizontal and click on the info icon
 #Then Enter valid inputs into search text field of volume name  of volumename details page and enter backspace & click on enter
 #
@@ -280,6 +303,8 @@ Then click on the link show more from the Error column
 #Given User launch application in chrome browser
 #When user enters credentials and click on login button
 #Then Click on Deployments module from side menu bar
+#Then Click on the History View button
+#Then Click on App Name search icon i.e. three dots & enter invalid inputs into search text field
 #Then scroll horizontal and click on the info icon
 #Then Enter valid inputs into search text field of volume name of status column deployment and enter backspace & click on enter
 #
@@ -288,6 +313,8 @@ Then click on the link show more from the Error column
 #Given User launch application in chrome browser
 #When user enters credentials and click on login button
 #Then Click on Deployments module from side menu bar
+#Then Click on the History View button
+#Then Click on App Name search icon i.e. three dots & enter invalid inputs into search text field
 #Then scroll horizontal and click on the info icon
 #Then Enter valid inputs into search text field of volume name of error column deployment and enter backspace & click on enter
 #
@@ -296,6 +323,8 @@ Then click on the link show more from the Error column
 #Given User launch application in chrome browser
 #When user enters credentials and click on login button
 #Then Click on Deployments module from side menu bar
+#Then Click on the History View button
+#Then Click on App Name search icon i.e. three dots & enter invalid inputs into search text field
 #Then scroll horizontal and click on the info icon
 #Then Click on createdDateThreeDot icon and enter the value in datepickercolumn
 #
@@ -305,43 +334,72 @@ Then click on the link show more from the Error column
 #Given User launch application in chrome browser
 #When user enters credentials and click on login button
 #Then Click on Deployments module from side menu bar
-#Then scroll horizontal and click on the info icon
+#Then Click on the History View button
+#Then Click on EDGE Name search icon of deployment page i.e. three dots & enter Valid inputs into search text field
+#Then scroll horizontal 
+#Then click on the view deployed Volume Details icon
 #Then Enter valid inputs into search text field of Volume name and enter backspace & click on enter
 #
 #
-#@Test
-#Scenario: TC43_Verification of the removal of search results and text for Status columns in the Deployment screen by Super admin/Admin user
-#Given User launch application in chrome browser
-#When user enters credentials and click on login button
-#Then Click on Deployments module from side menu bar
-#Then scroll horizontal and click on the info icon
-#Then Enter valid inputs into search text field of status  and enter backspace & click on enter
-#
+@Test
+Scenario: TC43_Verification of the removal of search results and text for Status columns in the Deployment screen by Super admin/Admin user
+Given User launch application in chrome browser
+When user enters credentials and click on login button
+Then Click on Deployments module from side menu bar
+Then Click on the History View button
+Then Click on EDGE Name search icon of deployment page i.e. three dots & enter Valid inputs into search text field
+Then scroll horizontal 
+Then click on the view deployed Volume Details icon
+Then Enter valid inputs into search text field of status  and enter backspace & click on enter
+
 #@Test
 #Scenario: TC44_Verification of the removal of search results and text for Error details page columns in the Deployment screen by Super admin/Admin user
 #Given User launch application in chrome browser
 #When user enters credentials and click on login button
 #Then Click on Deployments module from side menu bar
-#Then Enter valid inputs into search text field of app name of deployment
-#Then scroll horizontal and click on the info icon
+#Then Click on the History View button
+#Then Click on EDGE Name search icon of deployment page i.e. three dots & enter Valid inputs into search text field
+#Then scroll horizontal 
+#Then click on the view deployed Volume Details icon
 #Then Enter valid inputs into search text field of error details list page  and enter backspace & click on enter
 #
+#@Test
+#Scenario: TC45_Verification of the removal of search results and select Date and clear date from  Created Date columns in the Deployment screen by Super admin/Admin user
+#Given User launch application in chrome browser
+#When user enters credentials and click on login button
+#Then Click on Deployments module from side menu bar
+#
+#
+#@Test
+#Scenario: TC46_Verification of the removal of search results and select Date and clear date from  Deployment Date columns in the Deployment screen by Super admin/Admin user
+#Given User launch application in chrome browser
+#When user enters credentials and click on login button
+#Then Click on Deployments module from side menu bar
+#
+#
+#@Test
+#Scenario: TC47_Verification of the removal of search results and select Date and clear date from  Last Updated Date columns in the Deployment screen by Super admin/Admin user
+#Given User launch application in chrome browser
+#When user enters credentials and click on login button
+#Then Click on Deployments module from side menu bar
 #
 #@Test
 #Scenario: TC48_Verification of reduction in the number of records in pagination section of Deployment details screen
 #Given User launch application in chrome browser
 #When user enters credentials and click on login button
 #Then Click on Deployments module from side menu bar
+#Then Click on the History View button
 #Then Click on deployment pagination it will display records will display
 #
 #
 #
-#@Test
-#Scenario: TC49_Verification of changing the items per page functionality in the Deployment List screen by Super admin/Admin user
-#Given User launch application in chrome browser
-#When user enters credentials and click on login button
-#Then Click on Deployments module from side menu bar
-#Then Click on deployment pagination it will display records will display
+@Test
+Scenario: TC49_Verification of changing the items per page functionality in the Deployment List screen by Super admin/Admin user
+Given User launch application in chrome browser
+When user enters credentials and click on login button
+Then Click on Deployments module from side menu bar
+Then Click on the History View button
+Then Click on deployment pagination it will display records will display
 #
 #
 #
@@ -350,6 +408,7 @@ Then click on the link show more from the Error column
 #Given User launch application in chrome browser
 #When user enters credentials and click on login button
 #Then Click on Deployments module from side menu bar
+#Then Click on the History View button
 #Then Click on deployment pagination it will display records will display
 #
 #
@@ -359,15 +418,17 @@ Then click on the link show more from the Error column
 #Given User launch application in chrome browser
 #When user enters credentials and click on login button
 #Then Click on Deployments module from side menu bar
+#Then Click on the History View button
 #Then Click on deployment pagination it will display records will display
 #
 #
-#@Test
-#Scenario: TC52_Verification of displaying the First page (Full Backward arrow) button in the Deployment List screen by Super admin/Admin user
-#Given User launch application in chrome browser
-#When user enters credentials and click on login button
-#Then Click on Deployments module from side menu bar
-#Then Click on pagination to check functionality of Full Backward arrow
+@Test
+Scenario: TC52_Verification of displaying the First page (Full Backward arrow) button in the Deployment List screen by Super admin/Admin user
+Given User launch application in chrome browser
+When user enters credentials and click on login button
+Then Click on Deployments module from side menu bar
+Then Click on the History View button
+Then Click on pagination to check functionality of Full Backward arrow
 #
 #
 #@Test
@@ -375,6 +436,7 @@ Then click on the link show more from the Error column
 #Given User launch application in chrome browser
 #When user enters credentials and click on login button
 #Then Click on Deployments module from side menu bar
+#Then Click on the History View button
 #Then Click on deployment pagination it will display records will display
 #
 #
@@ -384,6 +446,7 @@ Then click on the link show more from the Error column
 #Given User launch application in chrome browser
 #When user enters credentials and click on login button
 #Then Click on Deployments module from side menu bar
+#Then Click on the History View button
 #Then Click on deployment pagination it will display records will display
 #
 #
@@ -393,15 +456,18 @@ Then click on the link show more from the Error column
 #Given User launch application in chrome browser
 #When user enters credentials and click on login button
 #Then Click on Deployments module from side menu bar
+#Then Click on the History View button
 #Then Click on deployment pagination it will display records will display
-#
 #
 #@Test
 #Scenario: TC56_Verification of close button on the Deployed Volume Details Page
 #Given User launch application in chrome browser
 #When user enters credentials and click on login button
 #Then Click on Deployments module from side menu bar
-#Then scroll horizontal and click on the info icon
+#Then Click on the History View button
+#Then Click on EDGE Name search icon of deployment page i.e. three dots & enter Valid inputs into search text field
+#Then scroll horizontal 
+#Then click on the view deployed Volume Details icon
 #Then Click on close button
 #
 #
@@ -410,6 +476,9 @@ Then click on the link show more from the Error column
 #Given User launch application in chrome browser
 #When user enters credentials and click on login button
 #Then Click on Deployments module from side menu bar
-#Then scroll horizontal and click on the info icon
+#Then Click on the History View button
+#Then Click on EDGE Name search icon of deployment page i.e. three dots & enter Valid inputs into search text field
+#Then scroll horizontal 
+#Then click on the view deployed Volume Details icon
 #Then verify progress bar
 #

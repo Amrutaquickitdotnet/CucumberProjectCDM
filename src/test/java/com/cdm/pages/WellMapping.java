@@ -5,6 +5,7 @@ import java.time.Duration;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -44,6 +45,11 @@ WebElement StatusInActiveCheck;
 	@FindBy(xpath = "//div[contains(text(),'IP Address')]/../../..//mat-icon")
 
 	WebElement IPAddressThreeDot;
+	
+	
+	@FindBy(xpath = "//div[@class='toast-top-right toast-container']")
+
+	WebElement alertpopupforWell;
 
 	@FindBy(xpath = "//div[contains(text(),'Device Type')]/../../..//mat-icon")
 
@@ -64,8 +70,12 @@ WebElement StatusInActiveCheck;
 	@FindBy(xpath = "(//tbody/tr[1]/td[1]/mat-checkbox[1])[1]//label")
 	WebElement selectedCheckboxforWellLabel;
 
-	@FindBy(xpath = "//span[@class='titleHeadingsub']")
+	@FindBy(xpath = "//body/app-root[1]/app-root[1]/app-home[1]/mat-sidenav-container[1]/mat-sidenav-content[1]/div[2]/div[1]/app-device-add-edit-detail-page[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-well-link-edge-device[1]/div[1]/div[1]/h4[1]")
 	WebElement headingTitle;
+
+	
+	@FindBy(xpath = "//h4")
+	WebElement headingTitleWell;
 
 	@FindBy(xpath = "//input[@name='ipaddress']")
 	WebElement IPAddressInputSearch;
@@ -153,9 +163,14 @@ WebElement StatusInActiveCheck;
 
 	public void headingClick() {
 		headingTitle.click();
-
 	}
 
+	public void headingbarclick() {
+	
+		Actions action = new Actions(driver);
+
+		action.moveToElement(headingTitle).click().perform();
+	}
 	public void wellMappingSearchInput(String value) {
 		wellMappingSearchInput.sendKeys(value);
 		wellMappingSearchInput.sendKeys(Keys.ENTER);
@@ -220,8 +235,9 @@ WebElement StatusInActiveCheck;
 	
 	
 	
-	public void StatusInActiveCheck() {
+	public void StatusInActiveCheck() throws InterruptedException {
 		StatusInActiveCheck.click();
+		Thread.sleep(2000);
 	}
 	public void checkboxWell() {
 
@@ -242,6 +258,13 @@ WebElement StatusInActiveCheck;
 
 		}
 		
+	}
+
+	public void alertpopupforwell() {
+		alertpopupforWell.getText();
+	}
+	public void headingTitleWell() {
+		headingTitleWell.click();
 	}
 
 }

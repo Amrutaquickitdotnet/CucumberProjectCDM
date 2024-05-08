@@ -2,6 +2,7 @@ package com.cdm.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -55,6 +56,10 @@ public class WellNameEditPage extends CommonActions {
 
 	@FindBy(xpath = "(//input[@formcontrolname='port']/../../../../div)")
 	WebElement validationMessgaePort;
+	
+	
+	@FindBy(xpath = "//div[@class='row']/div[3]/div/mat-form-field[1]/../span")
+	WebElement validationMessgaePortEdit;
 
 	@FindBy(xpath = "(//input[@formcontrolname='rtunumber']/../../../../div)")
 	WebElement validationMessgaeRTUAddress;
@@ -76,35 +81,44 @@ public class WellNameEditPage extends CommonActions {
 			backDropShowing.click();
 		}
 	}
+	
+	
+	
+	public String removalofEnteredTextForwellname() {
 
-	public void setEditClearField() {
+		return removalofEneredText(wellnameinputEdit);
 
-		wellnameinputEdit.clear();
+	}
+	
+
+	public String removalofEnteredTextForRTUAddress() {
+
+		return removalofEneredText(RTUAddressinputEdit);
+
+	}
+	public String removalofEnteredTextForPortNumber() {
+
+		return removalofEneredText(portNumberinputEdit);
+
+	}
+	public String removalofEnteredTextForPassword() {
+
+		return removalofEneredText(passwordinputEdit);
+
 	}
 	
 	
-	public void setEditClearFieldforRTU() {
-
-		RTUAddressinputEdit.clear();
-	}
-
 	
-	public void setEditClearFieldforPassword() {
-
-		passwordinputEdit.clear();
-	}
 	
-	public void setEditClearFieldforPortNumber() {
-
-		portNumberinputEdit.clear();
-	}
 	public void cancelButtonwell() {
 		cancelButtonwell.click();
 
 	}
 
 	public void saveButton() {
-		saveButtonWell.click();
+JavascriptExecutor	js = (JavascriptExecutor)driver;
+		
+		js.executeScript("document.querySelector(\".addButton\").click()");
 
 	}
 
@@ -138,6 +152,25 @@ public class WellNameEditPage extends CommonActions {
 			return "";
 		}
 		String message = validationMessgaePort.getText();
+
+		return message.trim();
+
+	}
+	
+	
+	
+	public String verifyValidationMessagePortEdit() throws InterruptedException {
+
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+
+		}
+
+		if (validationMessgaePortEdit == null) {
+			return "";
+		}
+		String message = validationMessgaePortEdit.getText();
 
 		return message.trim();
 

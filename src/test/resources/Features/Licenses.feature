@@ -29,7 +29,7 @@ Feature: LICENSES
 #When user enters credentials and click on login button
 #Then Click on Licenses module from side menu bar
 #Then Verification of  the refresh icon when Host Id filter is applied
-
+#
 #@Test
 #Scenario: TC05_Verification of  the refresh icon when Issued Date filter is applied
 #Given User launch application in chrome browser
@@ -38,7 +38,7 @@ Feature: LICENSES
 #Then Click on Three dots on Issue Date Filter 
 #Then enter the value for datepicker field
 #Then Verification of  the refresh icon when Issued Date filter iss applied
-
+#
 #@Test
 #Scenario: TC06_Verification of the refresh icon when Expiry Date filter is applied
 #Given User launch application in chrome browser
@@ -66,15 +66,15 @@ Feature: LICENSES
 #When user enters credentials and click on login button
 #Then Click on Licenses module from side menu bar
 #Then Verification of the refresh icon when more than one filter is applied
-
+#
 #@Test
 #Scenario: TC10_Verification of the Add License functionality
 #Given User launch application in chrome browser
 #When user enters credentials and click on login button
 #Then Click on Licenses module from side menu bar
-#Then Click on Add license button 
+#Then Click on upload license button 
 #Then upload license file and click on upload button
-
+#
 #@Test
 #Scenario: TC11_Verification of the error messgae in the Add License functionality
 #Given User launch application in chrome browser
@@ -92,23 +92,69 @@ Feature: LICENSES
 #Then click on upload button to verify validation message
 #
 #
+#
+#@Test
+#Scenario: TC13_Verify the status of an expired License as 'Inactive' in the License Table
+#Given User launch application in chrome browser
+#When user enters credentials and click on login button
+#Then Click on Licenses module from side menu bar
+#Then Click on status three dot and choose status as inactive 
+#
+
+#@Test
+#Scenario: TC14_Verification of the License list Bulk download functionality and verify the downloaded file content
+#Given User launch application in chrome browser
+#When user enters credentials and click on login button
+#Then Click on Licenses module from side menu bar
+#Then click on the license tracker icon
+#Then Click on bulk download icon and verify the downloaded file content
+
+#@Test
+#Scenario: TC15_Verification of the Bulk download functionality with FIlter applied on Host Id
+#Given User launch application in chrome browser
+#When user enters credentials and click on login button
+#Then Click on Licenses module from side menu bar
+#Then click on the license tracker icon
+#Then apply filter on host Id
+#Then Click on bulk download icon and verify the downloaded file content
+
+#@Test
+#Scenario: TC16_Verification of the Bulk download functionality with FIlter applied on Issued Date
+#Given User launch application in chrome browser
+#When user enters credentials and click on login button
+#Then Click on Licenses module from side menu bar
+#Then apply filter on issued date
+#Then enter the value for datepicker field
+#Then Click on bulk download icon on license table page 
+
+
+@Test
+Scenario: TC17_Verification of the Bulk download functionality with FIlter applied on Expiry Date
+Given User launch application in chrome browser
+When user enters credentials and click on login button
+Then Click on Licenses module from side menu bar
+Then click on the license tracker icon
+Then apply filter on expiry date
+Then enter the value for datepicker field for expiry date
+Then Click on bulk download icon and verify the downloaded file content
+#
 #@Test
 #Scenario: TC20_To Search all licenses  using Host Id
 #Given User launch application in chrome browser
 #When user enters credentials and click on login button
 #Then Click on Licenses module from side menu bar
 #Then Click on three dots of host Id and enter the text for host id  
-
-
-
+#
+#
+#
 #@Test
 #Scenario: TC21_To Search all licenses using Issued Date
 #Given User launch application in chrome browser
 #When user enters credentials and click on login button
 #Then Click on Licenses module from side menu bar
 #Then Click on three dots of issued date for license
-
-
+#
+#
 #@Test
 #Scenario: TC22_To Search all licenses  using Expiry Date filter
 #Given User launch application in chrome browser
@@ -123,17 +169,17 @@ Feature: LICENSES
 #Then Click on Licenses module from side menu bar
 #Then click on three dots for License Type
 #Then enter the value for the License Type
-
-
-@Test
-Scenario: TC24_To Search all licenses using Version Filter
-Given User launch application in chrome browser
-When user enters credentials and click on login button
-Then Click on Licenses module from side menu bar
-Then click on three dots for Version
-Then enter the value for the Version
-
-
+#
+#
+#@Test
+#Scenario: TC24_To Search all licenses using Version Filter
+#Given User launch application in chrome browser
+#When user enters credentials and click on login button
+#Then Click on Licenses module from side menu bar
+#Then click on three dots for Version
+#Then enter the value for the Version
+#
+#
 #@Test
 #Scenario: TC25_To verify the License tracker tool tip
 #Given User launch application in chrome browser
@@ -148,8 +194,8 @@ Then enter the value for the Version
 #When user enters credentials and click on login button
 #Then Click on Licenses module from side menu bar
 #Then verify sorting alphabetically in ascending as well as descending order and then refresh the License Tracker
-
-
+#
+#
 #@Test
 #Scenario: TC32_To track  all licenses having Sent status and observe that they have a revoke icon enabled & then refresh the License Tracker.
 #Given User launch application in chrome browser

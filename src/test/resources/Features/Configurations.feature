@@ -1,6 +1,6 @@
 @SheetCONFIGURATIONS
 Feature: CONFIGURATIONS
-
+#
 #@Test
 #Scenario: TC01_Verification of Browser Compatibility of Configurations module of the application
 #Given User launch application in chrome browser
@@ -43,23 +43,22 @@ Feature: CONFIGURATIONS
 #Then Click on history view button for configuration
 #
 #
-#@Test
-#Scenario: TC07_Verification of tooltip functionality for Refresh button of the Configurations List screen by Super admin/Admin user
-#Given User launch application in chrome browser
-#When user enters credentials and click on login button
-#Then Click on Configurations module from side menu bar
-#Then verify tooltip for the refresh button
-#
-#
-#
 @Test
-Scenario: TC08_Verification of tooltip functionality for View Response body button of the Configurations List screen by Super admin/Admin user
+Scenario: TC07_Verification of tooltip functionality for Refresh button of the Configurations List screen by Super admin/Admin user
 Given User launch application in chrome browser
 When user enters credentials and click on login button
 Then Click on Configurations module from side menu bar
-Then Scroll horizontal
-Then verify tooltip for the View Response body button
+Then verify tooltip for the refresh button
 
+
+#@Test
+#Scenario: TC08_Verification of tooltip functionality for View Response body button of the Configurations List screen by Super admin/Admin user
+#Given User launch application in chrome browser
+#When user enters credentials and click on login button
+#Then Click on Configurations module from side menu bar
+#Then Scroll horizontal
+#Then verify tooltip for the View Response body button
+#
 #@Test
 #Scenario: TC09_Verification of changing the items per page functionality in the Configurations List screen by Super admin/Admin user
 #Given User launch application in chrome browser
@@ -84,13 +83,6 @@ Then verify tooltip for the View Response body button
 #Then Click on History View Button
 #Then Click on pagination it will display default records will display 
 #
-#@Test
-#Scenario: TC12_Verification of displaying the First page (Full Backward arrow) button in the Configurations List screen by Super admin/Admin user
-#Given User launch application in chrome browser
-#When user enters credentials and click on login button
-#Then Click on Configurations module from side menu bar
-#Then Click on History View Button
-#Then Click on pagination it will display default records will display 
 #
 #
 #@Test
@@ -99,7 +91,7 @@ Then verify tooltip for the View Response body button
 #When user enters credentials and click on login button
 #Then Click on Configurations module from side menu bar
 #Then Click on History View Button
-#Then Click on pagination it will display default records will display 
+#Then check full backward functionality is working
 #
 #
 #@Test
@@ -108,7 +100,7 @@ Then verify tooltip for the View Response body button
 #When user enters credentials and click on login button
 #Then Click on Configurations module from side menu bar
 #Then Click on History View Button
-#Then Click on pagination it will display default records will display 
+#Then After pagination all default records will display in Last page.
 #
 #
 #@Test
@@ -117,7 +109,7 @@ Then verify tooltip for the View Response body button
 #When user enters credentials and click on login button
 #Then Click on Configurations module from side menu bar
 #Then Click on History View Button
-#Then Click on pagination it will display default records will display 
+#Then After pagination all default records will display in Next page.
 #
 #
 #@Test
@@ -126,7 +118,7 @@ Then verify tooltip for the View Response body button
 #When user enters credentials and click on login button
 #Then Click on Configurations module from side menu bar
 #Then Click on History View Button
-#Then Click on pagination it will display default records will display 
+#Then After pagination all default records will display in Previous page.
 #
 #
 #@Test
@@ -137,18 +129,23 @@ Then verify tooltip for the View Response body button
 #Then verify tooltip for the refresh button
 #
 #@Test
-#Scenario: TC17_Verification of the search functionality for Edge Name column (Valid Edge Name ) in the Configurations List screen by Super admin/Admin user
+#Scenario: TC17_Verification of the search functionality for Edge ID column (Valid Edge ID ) in the Configurations List screen by Super admin/Admin user
 #Given User launch application in chrome browser
 #When user enters credentials and click on login button
 #Then Click on Configurations module from side menu bar
-#Then Click on EDGE Name search icon i.e. three dots & enter Valid inputs into search text field
+#Then Click on History View Button
+#Then search for Edge ID column with valid data
+#
+#
 #
 #@Test
-#Scenario: TC18_Verification of the search functionality for Edge Name column (Invalid Edge Name) in the Configurations List screen by Super admin/Admin user
+#Scenario: TC18_Verification of the search functionality for Edge ID column (Invalid Edge ID) in the Configurations List screen by Super admin/Admin user
 #Given User launch application in chrome browser
 #When user enters credentials and click on login button
 #Then Click on Configurations module from side menu bar
-#Then Click on EDGE Name search icon i.e. three dots & enter Valid inputs into search text field
+#Then Click on History View Button
+#Then search for Edge ID column with invalid data
+#
 #
 #
 #@Test
@@ -193,7 +190,7 @@ Then verify tooltip for the View Response body button
 #
 #
 #@Test
-#Scenario: TC24_Verification of the removal of search results and text for all Edge Name Column in the Configurations screen by Super admin/Admin user
+#Scenario: TC24_Verification of the removal of search results and text for all Edge ID Column in the Configurations screen by Super admin/Admin user
 #Given User launch application in chrome browser
 #When user enters credentials and click on login button
 #Then Click on Configurations module from side menu bar
@@ -219,8 +216,8 @@ Then verify tooltip for the View Response body button
 #Given User launch application in chrome browser
 #When user enters credentials and click on login button
 #Then Click on Configurations module from side menu bar
-#Then Enter valid inputs into search text field of response status name and enter backspace & click on enter
-#
+
+
 #@Test
 #Scenario: TC28_Verification of the removal of search results and text for timestamp columns in the Configurations screen by Super admin/Admin user
 #Given User launch application in chrome browser
@@ -238,14 +235,14 @@ Then verify tooltip for the View Response body button
 #
 #
 #@Test
-#Scenario: TC30_Verification of Entered text for Last Updated columns in the Configurations screen by Super admin/Admin user
+#Scenario: TC30_Verification of Selecting a valid range of dates for Last Updated columns in the Configurations screen by Super admin/Admin user
 #Given User launch application in chrome browser
 #When user enters credentials and click on login button
 #Then Click on Configurations module from side menu bar
 #Then Click on LastUpdatedThreeDotSearch icon and enter the value in datepickercolumn
 #
 #@Test
-#Scenario: TC31_Verification of Entered text for timeStamp columns in the Configurations screen by Super admin/Admin user
+#Scenario: TC31_Verification of Selecting a valid range of dates timeStamp columns in the Configurations screen by Super admin/Admin user
 #Given User launch application in chrome browser
 #When user enters credentials and click on login button
 #Then Click on Configurations module from side menu bar

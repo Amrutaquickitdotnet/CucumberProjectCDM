@@ -1,10 +1,14 @@
 package com.cdm.pages;
 
+import java.time.Duration;
+
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.aventstack.extentreports.ExtentTest;
 import com.cdm.common.CommonActions;
@@ -28,11 +32,11 @@ public class ConfigurationsPage extends CommonActions {
 	@FindBy(xpath = "//tbody/tr[1]/td[7]/img[1]")
 	WebElement downloadbutton;
 
-	@FindBy(xpath = "//tbody/tr[1]/td[7]/i[1]")
+	@FindBy(xpath = "//tbody/tr[1]/td[7]/img[1]")
 	WebElement viewResponseBodyIcon;
 
-	@FindBy(xpath = "//input[@placeholder=' EDGE Name ']")
-	WebElement inputEdgeName;
+	@FindBy(xpath = "//input[@name='devicename']")
+	WebElement inputEdgeId;
 
 	@FindBy(xpath = "//input[@placeholder='  App Name ']")
 	WebElement inputAppName;
@@ -40,13 +44,12 @@ public class ConfigurationsPage extends CommonActions {
 	@FindBy(xpath = "//input[@placeholder='Config Name ']")
 	WebElement inputConfigName;
 
-	@FindBy(xpath = "//input[@data-placeholder='Minimum']")
-	WebElement inputResponseStatusMin;
+	@FindBy(xpath = "//input[@name='status']")
+	WebElement inputResponseStatus;
 
-	@FindBy(xpath = "//input[@data-placeholder='Maximum']")
-	WebElement inputResponseStatusMax;
 
-	@FindBy(css = ".cdk-overlay-container mat-tooltip-component div")
+
+	@FindBy(css = ".cdk-overlay-container")
 	WebElement refreshConfigButtonToolTip;
 
 	@FindBy(xpath =  "/html/body/div[3]/div/div/mat-tooltip-component/div")
@@ -56,7 +59,7 @@ public class ConfigurationsPage extends CommonActions {
 	WebElement appNameConfigThreeDot;
 
 	@FindBy(xpath = "//thead/tr[1]/th[1]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]")
-	WebElement edgeNameThreeDotConfig;
+	WebElement edgeIDThreeDotConfig;
 
 	@FindBy(xpath = "//thead/tr[1]/th[3]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]")
 	WebElement configNameThreeDot;
@@ -73,7 +76,7 @@ public class ConfigurationsPage extends CommonActions {
 	@FindBy(xpath = "//span[contains(text(),'Configurations')]")
 	WebElement configTabmain;
 
-	@FindBy(xpath = "//div[@class='text-right']/img[1]")
+	@FindBy(xpath = "//body/app-root[1]/app-root[1]/app-home[1]/mat-sidenav-container[1]/mat-sidenav-content[1]/div[2]/div[1]/app-configuration-app[1]/div[1]/div[1]/div[1]/img[2]")
 	WebElement currentviewbuttonclick;
 
 	@FindBy(xpath = "/html/body/app-root/app-root/app-home/mat-sidenav-container/mat-sidenav-content/div[2]/div/app-configuration-app/div/div[2]/div[1]/div/div/table/tbody/tr/td[7]/div")
@@ -91,7 +94,7 @@ public class ConfigurationsPage extends CommonActions {
 	@FindBy(xpath = "/html/body/app-root/app-root/app-home/mat-sidenav-container/mat-sidenav/div/mat-nav-list/ul/li[5]/a/span")
 	WebElement config_tab;
 
-	@FindBy(xpath = "//div[@class='text-right']/img[1]")
+	@FindBy(xpath = "//body/app-root[1]/app-root[1]/app-home[1]/mat-sidenav-container[1]/mat-sidenav-content[1]/div[2]/div[1]/app-configuration-app[1]/div[1]/div[1]/div[1]/img[1]")
 	WebElement refreshBtn;
 
 	@FindBy(xpath = "//body/app-root[1]/app-root[1]/app-home[1]/mat-sidenav-container[1]/mat-sidenav-content[1]/div[2]/div[1]/app-device-add-edit-detail-page[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-config-deploy-history[1]/div[1]/div[1]/div[1]/img[2]")
@@ -107,13 +110,15 @@ public class ConfigurationsPage extends CommonActions {
 	}
 
 	public void refreshbutton() {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement element = wait.until(ExpectedConditions.visibilityOf(refreshBtn));
 		refreshBtn.click();
 
 	}
 
-	public String removalofEnteredTextForEdgeName() {
+	public String removalofEnteredTextForEdgeID() {
 
-		return removalofEneredText(inputEdgeName);
+		return removalofEneredText(inputEdgeId);
 
 	}
 
@@ -131,16 +136,18 @@ public class ConfigurationsPage extends CommonActions {
 
 	public String removalofEnteredTextForResponseStatus() {
 
-		return removalofEneredText(inputResponseStatusMax);
+		return removalofEneredText(inputResponseStatus);
 
 	}
 
 	public void configTabmain() {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement element = wait.until(ExpectedConditions.visibilityOf(configTabmain));
 		configTabmain.click();
 	}
 
 	public String get_Text_ToolTipRefreshConfig() throws InterruptedException {
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 		mouseHover(refreshBtn);
 		try {
 			Thread.sleep(3000);
@@ -178,15 +185,15 @@ public class ConfigurationsPage extends CommonActions {
 	}
 
 	public void historyviewbuttonclick() {
-		doubleClick(currentView);
+		currentviewbuttonclick.click();
 	}
 
 	public void appNameConfigThreeDot() {
 		appNameConfigThreeDot.click();
 	}
 
-	public void edgeNameThreeDotConfig() {
-		edgeNameThreeDotConfig.click();
+	public void edgeIDThreeDotConfig() {
+		edgeIDThreeDotConfig.click();
 	}
 
 	public void configNameThreeDot() {
@@ -205,9 +212,9 @@ public class ConfigurationsPage extends CommonActions {
 		lastUpdatedThreeDot.click();
 	}
 
-	public void sendValueSearchinputBoxForEdgeName(String value) {
-		inputEdgeName.sendKeys(Keys.ENTER);
-		inputEdgeName.sendKeys(value);
+	public void sendValueSearchinputBoxForEdgeID(String value) {
+		inputEdgeId.sendKeys(Keys.ENTER);
+		inputEdgeId.sendKeys(value);
 
 	}
 
@@ -224,8 +231,9 @@ public class ConfigurationsPage extends CommonActions {
 	}
 
 	public void sendValueSearchinputBoxForResponseStatus(String value) {
-		inputResponseStatusMin.sendKeys(Keys.ENTER);
-		inputResponseStatusMax.sendKeys(value);
+		inputResponseStatus.sendKeys(Keys.ENTER);
+		inputResponseStatus.sendKeys(value);
+		
 
 	}
 

@@ -18,125 +18,147 @@ public class VolumesEditPage extends CommonActions {
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(xpath = "//tbody/tr[1]/td[8]/img[1]")
-	WebElement hardwareEditButton;
+	@FindBy(css = ".cdk-overlay-backdrop-showing")
+	WebElement backDropShowing;
 	
 
 	@FindBy(xpath = "//button[@class='addButton']")
-	WebElement saveEditHardware;
+	WebElement saveEditVolume;
 	
 	
-	@FindBy(xpath = "//input[@formcontrolname='hardwarename']")
-	WebElement hardwareNameEdit;
+	@FindBy(xpath = "//input[@formcontrolname= 'volumename']")
+	WebElement volumenameEdit;
 
-	@FindBy(xpath = "//input[@formcontrolname='displayname']")
-	WebElement hardwareDisplayNameEdit;
+	@FindBy(xpath = "//input[@formcontrolname='repositorylink']")
+	WebElement repositorylinkEdit;
 
-	@FindBy(xpath = "//input[@formcontrolname='description']")
-	WebElement hardwareDescriptionEdit;
+	@FindBy(xpath = "//input[@formcontrolname='licensetype']")
+	WebElement licensetypeEdit;
 
-	@FindBy(xpath = "//input[@formcontrolname='model']")
-	WebElement hardwareModelEdit;
+	@FindBy(xpath = "//input[@formcontrolname='shakey']")
+	WebElement shakeyEdit;
 
-	@FindBy(xpath = "//input[@formcontrolname='os']")
-	WebElement hardwareOSEdit;
+	@FindBy(xpath = "//input[@formcontrolname='mountdirectory']")
+	WebElement mountdirectoryEdit;
 
-	@FindBy(xpath = "//input[@formcontrolname='make']")
-	WebElement hardwareMakeEdit;
+	@FindBy(xpath = "//input[@formcontrolname='tag']")
+	WebElement tagEdit;
 
-	@FindBy(xpath = "//input[@formcontrolname='processor']")
-	WebElement hardwareProcessorEdit;
+	@FindBy(xpath = "//input[@formcontrolname='architecture']")
+	WebElement architectureEdit;
 
-	@FindBy(xpath = "//button[contains(text(),'Save')]")
-	WebElement saveAddDataBtn;
-
+	@FindBy(xpath = "//input[@formcontrolname='maxsize']")
+	WebElement maxsize;
 	
 	@FindBy(xpath = "//input[@name='hardwarename']")
 	WebElement hardwarenamesearch;
 	
-	public void hardwareEditButton() {
-		hardwareEditButton.click();
-
+	@FindBy(xpath = "//mat-select[@formcontrolname='repositoryid']")
+	WebElement repositoryNameEdit;
+	
+	@FindBy(xpath = "//mat-select[@formcontrolname='type']")
+	WebElement typeEdit;
+	
+	public void repositoryNameEdit(String value) throws InterruptedException {
+		SelectMatOption(repositoryNameEdit, value);
+	}
+	public void backDropShowing_Div_Click() {
+		if (backDropShowing != null) {
+			backDropShowing.click();
+		}
 	}
 
-	public void hardwareNameEdit(String value) {
-		hardwareNameEdit.sendKeys(Keys.ENTER);
-		hardwareNameEdit.sendKeys(value);
+	
+	
+	public void typeEdit(String value) throws InterruptedException {
+		SelectMatOption(typeEdit, value);
 	}
 
-	public void hardwareDisplayNameEdit(String value) {
-		hardwareDisplayNameEdit.sendKeys(Keys.ENTER);
-		hardwareDisplayNameEdit.sendKeys(value);
+	public void volumenameEdit(String value) {
+		volumenameEdit.sendKeys(Keys.ENTER);
+		volumenameEdit.sendKeys(value);
 	}
 
-	public void hardwareDescriptionEdit(String value) {
-		hardwareDescriptionEdit.sendKeys(Keys.ENTER);
-		hardwareDescriptionEdit.sendKeys(value);
+	public void architectureEdit(String value) {
+		architectureEdit.sendKeys(Keys.ENTER);
+		architectureEdit.sendKeys(value);
 	}
 
-	public void hardwareModelEdit(String value) {
-		hardwareModelEdit.sendKeys(Keys.ENTER);
-		hardwareModelEdit.sendKeys(value);
+	public void licensetypeEdit(String value) {
+		licensetypeEdit.sendKeys(Keys.ENTER);
+		licensetypeEdit.sendKeys(value);
 	}
 
-	public void hardwareOSEdit(String value) {
-		hardwareOSEdit.sendKeys(Keys.ENTER);
-		hardwareOSEdit.sendKeys(value);
+	public void repositorylinkEdit(String value) {
+		repositorylinkEdit.sendKeys(Keys.ENTER);
+		repositorylinkEdit.sendKeys(value);
 	}
 
-	public void hardwareMakeEdit(String value) {
-		hardwareMakeEdit.sendKeys(Keys.ENTER);
-		hardwareMakeEdit.sendKeys(value);
+	public void tagEdit(String value) {
+		tagEdit.sendKeys(Keys.ENTER);
+		tagEdit.sendKeys(value);
 	}
 
-	public void hardwareProcessorEdit(String value) {
-		hardwareProcessorEdit.sendKeys(Keys.ENTER);
-		hardwareProcessorEdit.sendKeys(value);
+	public void mountdirectoryEdit(String value) {
+		mountdirectoryEdit.sendKeys(Keys.ENTER);
+		mountdirectoryEdit.sendKeys(value);
+	}
+
+	public void maxsizeEdit(String value) {
+		maxsize.sendKeys(Keys.ENTER);
+		maxsize.sendKeys(value);
 	}
 	
-	public void hardwareNameSearch(String value) {
-		hardwarenamesearch.sendKeys(Keys.ENTER);
-		hardwarenamesearch.sendKeys(value);
+	public void shakeyEdit(String value) {
+		shakeyEdit.sendKeys(Keys.ENTER);
+		shakeyEdit.sendKeys(value);
 	}
-	public String removalofEnteredTextForhardwareDescriptionEdit() {
+	public String removalofEnteredTextForVolumeName() {
 
-		return removalofEneredText(hardwareDescriptionEdit);
-
-	}
-	public String removalofEnteredTextForhardwareDisplayNameEdit() {
-
-		return removalofEneredText(hardwareDisplayNameEdit);
+		return removalofEneredText(volumenameEdit);
 
 	}
-	public String removalofEnteredTextForhardwareMakeEdit() {
+	public String removalofEnteredTextForMountDirectory() {
 
-		return removalofEneredText(hardwareMakeEdit);
-
-	}
-	public String removalofEnteredTextForhardwareModelEdit() {
-
-		return removalofEneredText(hardwareModelEdit);
+		return removalofEneredText(mountdirectoryEdit);
 
 	}
-	public String removalofEnteredTextForhardwareOSEdit() {
+	public String removalofEnteredTextForRepositoryLink() {
 
-		return removalofEneredText(hardwareOSEdit);
-
-	}
-	public String removalofEnteredTextForhardwareProcessorEdit() {
-
-		return removalofEneredText(hardwareProcessorEdit);
+		return removalofEneredText(repositorylinkEdit);
 
 	}
-	public String removalofEnteredTextForhardwareNameEdit() {
+	public String removalofEnteredTextForlicensetypeEdit() {
 
-		return removalofEneredText(hardwareNameEdit);
+		return removalofEneredText(licensetypeEdit);
+
+	}
+	public String removalofEnteredTextFortagEdit() {
+
+		return removalofEneredText(tagEdit);
+
+	}
+	public String removalofEnteredTextForarchitectureEdit() {
+
+		return removalofEneredText(architectureEdit);
+
+	}
+	public String removalofEnteredTextFormaxsizeEdit() {
+
+		return removalofEneredText(maxsize);
 
 		
 	}
 	
-	public void saveEditHardware() throws InterruptedException {
-		saveEditHardware.click();
+	public String removalofEnteredTextForShaKey() {
+
+		return removalofEneredText(shakeyEdit);
+
+		
+	}
+	
+	public void saveEditVolume() throws InterruptedException {
+		saveEditVolume.click();
 		Thread.sleep(4000);
 	}
 

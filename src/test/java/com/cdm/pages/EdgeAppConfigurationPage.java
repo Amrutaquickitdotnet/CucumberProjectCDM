@@ -25,6 +25,8 @@ public class EdgeAppConfigurationPage extends CommonActions {
 
 	WebElement edgeIDDot;
 	
+	@FindBy(xpath = "//span[contains(text(),'Save')]")
+	WebElement saveButton;
 	
 	@FindBy(xpath = "//body[1]/app-root[1]/app-root[1]/app-home[1]/mat-sidenav-container[1]/mat-sidenav-content[1]/div[2]/div[1]/app-edge-appli-config[1]/div[1]/div[1]/mat-horizontal-stepper[1]/div[2]/div[2]/form[1]/div[1]/div[1]/div[1]/div[1]/table[1]/thead[1]/tr[1]/th[2]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]")
 
@@ -99,9 +101,26 @@ public class EdgeAppConfigurationPage extends CommonActions {
 	@FindBy(xpath = "//div[contains(text(),'App Group Name ')]/../../..//mat-icon")
 	WebElement appGroupNameDot;
 
+	@FindBy(xpath = "//input[@formcontrolname='name']")
+	WebElement nameconfiguration;
+	
+	@FindBy(xpath = "//body/app-root[1]/app-root[1]/app-home[1]/mat-sidenav-container[1]/mat-sidenav-content[1]/div[2]/div[1]/app-edge-appli-config[1]/div[1]/div[1]/mat-horizontal-stepper[1]/div[2]/div[4]/form[1]/div[1]/img[1]")
+	WebElement addconfigurationicon;
+
+
+	@FindBy(xpath = "//input[@formcontrolname = 'proxy_app']")
+	WebElement proxyAppinput;
+	
+	
+
 	@FindBy(xpath = "//div[contains(text(),'  EDGE ')]/../../..//mat-icon")
 	WebElement edgeDot;
+	
 
+	@FindBy(xpath = "//mat-select[@formcontrolname='type']")
+	WebElement configurationFileType;
+	
+	
 	@FindBy(xpath = "//div[contains(text(),' EDGE Group Name ')]/../../..//mat-icon")
 	WebElement deployementEdgeGroupNameDot;
 
@@ -342,7 +361,20 @@ public class EdgeAppConfigurationPage extends CommonActions {
 	public void edgeVersionNameInput(String value) {
 		edgeVersionNameInput.sendKeys(value);
 	}
+	
+	public void confignameinput(String value) {
+		//nameconfiguration.sendKeys(Keys.ENTER);
+		nameconfiguration.sendKeys(value);
+	}
 
+	public void proxyAppinput(String value) {
+		//proxyAppinput.sendKeys(Keys.ENTER);
+		proxyAppinput.sendKeys(value);
+	}
+
+	public void saveButton() {
+		saveButton.click();
+	}
 	public void applicationDeploymentGroupNameSearch(String value) {
 		applicationDeploymentGroupNameSearch.sendKeys(Keys.ENTER);
 		applicationDeploymentGroupNameSearch.sendKeys(value);
@@ -369,4 +401,14 @@ public class EdgeAppConfigurationPage extends CommonActions {
 	public void headingConfigurationBulk() {
 		headingConfigurationBulk.click();
 	}
+
+	public void addconfigurationicon() {
+		
+		addconfigurationicon.click();
+	}
+	public void configurationFileType(String value) throws InterruptedException {
+
+		SelectMatOption(configurationFileType, value);
+	}
+	
 }
