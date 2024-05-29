@@ -1,0 +1,223 @@
+package com.cdm.pages;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import com.aventstack.extentreports.ExtentTest;
+import com.cdm.common.CommonActions;
+
+public class RepositoriesPage extends CommonActions {
+
+	public RepositoriesPage(WebDriver driver, ExtentTest logger) {
+		super(driver, logger);
+		PageFactory.initElements(driver, this);
+
+	}
+	
+	@FindBy(css = ".cdk-overlay-container")
+	WebElement repositoryEditToolTip;
+	
+	@FindBy(xpath = "//div[@class='slider round']")
+	WebElement toggleElement;
+	
+	
+	
+	@FindBy(css = ".cdk-overlay-container")
+	WebElement repositoryAddToolTip;
+	
+	@FindBy(xpath = "//button[@class='calButton mr-3']")
+	WebElement cancelRepository;
+	
+	@FindBy(xpath = "//button[@class='addButton']")
+	WebElement savebuttonrepository;
+	
+	
+	@FindBy(css = ".cdk-overlay-container")
+	WebElement repositoryDeleteToolTip;
+	
+	@FindBy(xpath= "//tbody/tr[1]/td[5]/img[1]")
+	WebElement editbuttonRepository;
+
+	@FindBy(xpath = "/html/body/app-root/app-root/app-home/mat-sidenav-container/mat-sidenav/div/mat-nav-list/ul/li[9]/a/span[contains(text(),'Settings')]")
+	WebElement Setting_tab;
+
+	@FindBy(xpath = "//a[contains(text(),'Repositories')]")
+	WebElement repositories_tab;
+
+	@FindBy(xpath = "//body/div[3]/div[2]/div[1]/mat-dialog-container[1]/app-confirmationdelete[1]/div[1]/mat-dialog-actions[1]/button[1]")
+	WebElement confirmationYesButton;
+
+	@FindBy(xpath = "//body/div[3]/div[2]/div[1]/mat-dialog-container[1]/app-confirmationdelete[1]/div[1]/mat-dialog-actions[1]/button[2]")
+	WebElement confirmationNoButton;
+
+	@FindBy(xpath = "//tbody/tr[1]/td[5]/img[2]")
+	WebElement deleteButton;
+
+	@FindBy(xpath = "//thead/tr[1]/th[1]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]")
+	WebElement repositoriesName;
+
+	@FindBy(xpath = "//thead/tr[1]/th[2]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]")
+	WebElement dataStorageIndex;
+
+	@FindBy(xpath = "//thead/tr[1]/th[3]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]")
+	WebElement username;
+
+	@FindBy(xpath = "//thead/tr[1]/th[4]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]")
+	WebElement status;
+
+	@FindBy(xpath = "//div[@class='tableCard']/div/div/span/img[1]")
+	WebElement addButtonRepository;
+
+	@FindBy(xpath = "//input[@name= 'repositoryname']")
+	WebElement repositoryNameInput;
+
+	@FindBy(xpath = "//input[@name='datastoragetype']")
+	WebElement datastoragetype;
+
+	@FindBy(xpath = "//input[@name='username']")
+	WebElement usernameInput;
+
+	@FindBy(css = ".cdk-overlay-backdrop-showing")
+	WebElement backDropShowing;
+
+	public void Setting_tab() {
+		wait(Setting_tab,logger);
+		Setting_tab.click();
+	}
+
+	public void setZoomLevel(int width, int height) {
+		Dimension d = new Dimension(width, height);
+		driver.manage().window().setSize(d);
+	}
+
+	public void addButton() {
+		wait(addButtonRepository,logger);
+		clickElement(addButtonRepository, "");
+		//addButtonRepository.click();
+
+	}
+
+	public void backDropShowing_Div_Click() {
+		if (backDropShowing != null) {
+			clickElement(backDropShowing, "");
+			//backDropShowing.click();
+		}
+	}
+
+	public void repositories_tab() {
+		wait(repositories_tab,logger);
+		clickElement(repositories_tab, "");
+		//repositories_tab.click();
+	}
+
+	public void repositoriesNameThreeDot() {
+		//repositoriesName.click();
+		clickElement(repositoriesName, "");
+	}
+
+	public void repositoryNameInput(String value) {
+		repositoryNameInput.sendKeys(Keys.ENTER);
+		repositoryNameInput.sendKeys(value);
+	}
+
+	public void dataStorageIndex(String value) {
+		datastoragetype.sendKeys(Keys.ENTER);
+		datastoragetype.sendKeys(value);
+	}
+
+	public void usernameInput(String value) {
+		usernameInput.sendKeys(Keys.ENTER);
+		usernameInput.sendKeys(value);
+
+	}
+
+	
+
+	public void dataStorageIndexThreeDot() {
+		clickElement(dataStorageIndex, "");
+		//dataStorageIndex.click();
+	}
+
+	public void usernameThreeDot() {
+		clickElement(username, "");
+		//username.click();
+	}
+
+	public void deleteButton() {
+		clickElement(deleteButton, "");
+		//deleteButton.click();
+
+	}
+
+	public void confirmationYesButton() {
+		clickElement(confirmationYesButton, "");
+		//confirmationYesButton.click();
+
+	}
+
+	public void confirmationNoButton() {
+		clickElement(confirmationNoButton, "");
+		//confirmationNoButton.click();
+	}
+
+	public void editbuttonRepository() {
+		clickElement(editbuttonRepository, "");
+		
+		//editbuttonRepository.click();
+	}
+	
+	public String get_Text_ToolTipEditRepository() {
+
+		mouseHover(editbuttonRepository);
+
+		String repositoryEditButton = repositoryEditToolTip.getText();
+
+		repositoryEditButton.trim();
+
+		return repositoryEditButton;
+	}
+	
+	public String get_Text_ToolTipDeleteRepository() {
+
+		mouseHover(deleteButton);
+
+		String repositoryDeleteButton = repositoryDeleteToolTip.getText();
+
+		repositoryDeleteButton.trim();
+
+		return repositoryDeleteButton;
+	}
+	
+	public String get_Text_ToolTipAddButtonRepository() {
+
+		mouseHover(addButtonRepository);
+
+		String repositoryAddButton = repositoryAddToolTip.getText();
+
+		repositoryAddButton.trim();
+
+		return repositoryAddButton;
+	}
+
+	public void savebuttonrepository() {
+		savebuttonrepository.click();
+		
+	}
+
+	public void cancelRepository() {
+		
+		clickElement(cancelRepository, "");
+		//cancelRepository.click();
+	}
+	
+
+	
+	
+}

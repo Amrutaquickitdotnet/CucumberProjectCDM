@@ -1,0 +1,93 @@
+package com.cdm.Stepdefinations;
+
+import java.awt.AWTException;
+
+import org.junit.Assert;
+
+import com.cdm.pages.AlertsPage;
+import com.cdm.pages.CalenderPage;
+import com.cdm.pages.AlertsPage;
+import com.cdm.pages.Pagination;
+
+import io.cucumber.java.en.Then;
+
+public class AlertsSteps extends BaseTest {
+
+	@Then("verify page with resize option for the Alert page")
+	public void verify_page_with_resize_option_for_the_alert_page() {
+	   AlertsPage alerts = new AlertsPage(driver, logger);
+	   alerts.setZoomLevel(800, 600);
+		
+	} 
+		
+	
+
+	@Then("Click on Alerts module from side menu bar")
+	public void click_on_alerts_module_from_side_menu_bar() {
+		AlertsPage alerts = new AlertsPage(driver, logger);
+		alerts.movetoalerttab();
+	}
+
+	@Then("click on bulk download button of alerts")
+	public void click_on_bulk_download_button_of_alerts() {
+		AlertsPage alerts = new AlertsPage(driver, logger);
+		alerts.bulkDownloadButton();
+	}
+	@Then("Click on the Refresh button for alerts")
+	public void click_on_the_refresh_button_for_alerts() throws InterruptedException {
+		AlertsPage alerts = new AlertsPage(driver, logger);
+		alerts.refresh_Button();
+		Thread.sleep(4000);
+	}
+	
+
+@Then("click on three dots of AssignedTo field and enter the value for AssignedTo Field")
+public void click_on_three_dots_of_assigned_to_field_and_enter_the_value_for_assigned_to_field() throws InterruptedException {
+	AlertsPage alerts = new AlertsPage(driver, logger);
+	alerts.assignedToThreeDot();
+	alerts.assignedToInput(alldata.get(vTCName).get("Value1"));
+	Thread.sleep(5000);
+}
+
+@Then("click on three dots of Priority Level field and enter the value for Priority Level Field")
+public void click_on_three_dots_of_priority_level_field_and_enter_the_value_for_priority_level_field() {
+	AlertsPage alerts = new AlertsPage(driver, logger);
+	alerts.priorityThreeDot();
+	alerts.priorityInputLow();
+}
+@Then("Click on Alert ID search icon of alert page i.e. three dots & enter Valid inputs into search text field")
+public void click_on_alert_id_search_icon_of_alert_page_i_e_three_dots_enter_valid_inputs_into_search_text_field() throws InterruptedException {
+	AlertsPage alerts = new AlertsPage(driver, logger);
+	alerts.alertIDThreeDot();
+	
+	alerts.alertIDInput(alldata.get(vTCName).get("Value2"));
+	alerts.backDropShowing_Div_Click();
+	Thread.sleep(5000);
+}
+
+@Then("Click on Alert ID search icon of alert page i.e. three dots & enter inValid inputs into search text field")
+public void click_on_alert_id_search_icon_of_alert_page_i_e_three_dots_enter_in_valid_inputs_into_search_text_field() throws InterruptedException {
+	AlertsPage alerts = new AlertsPage(driver, logger);
+	alerts.alertIDThreeDot();
+	
+	alerts.alertIDInput(alldata.get(vTCName).get("Value2"));
+	alerts.backDropShowing_Div_Click();
+	Thread.sleep(5000);
+}
+
+@Then("Click on Alert Category search icon of alert page i.e. three dots & enter Valid inputs into search text field")
+public void click_on_alert_category_search_icon_of_alert_page_i_e_three_dots_enter_valid_inputs_into_search_text_field() {
+	AlertsPage alerts = new AlertsPage(driver, logger);
+	alerts.alertCategoryThreeDot();
+	
+	
+}
+
+@Then("Click on Summary search icon i.e. three dots & enter valid inputs into search text field")
+public void click_on_summary_search_icon_i_e_three_dots_enter_valid_inputs_into_search_text_field() {
+	AlertsPage alerts = new AlertsPage(driver, logger);
+	alerts.summaryThreeDot();
+	alerts.alertSummary(alldata.get(vTCName).get("Value3"));
+}
+	}
+

@@ -10,10 +10,16 @@ import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 
+import org.apache.commons.mail.DefaultAuthenticator;
+import org.apache.commons.mail.EmailAttachment;
+import org.apache.commons.mail.EmailException;
+import org.apache.commons.mail.MultiPartEmail;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -23,7 +29,7 @@ import com.codoid.products.fillo.Connection;
 import com.codoid.products.fillo.Fillo;
 import com.codoid.products.fillo.Recordset;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+
 
 public class BaseTest {
 	
@@ -63,18 +69,26 @@ public static String tagName="";
 		String chromeDriverpath=	prop.getProperty("BrowserPath");
 		System.out.println("I am in launchApp" + chromeDriverpath);
 		
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--remote-allow-origins=*");
+		//options.addArguments("--disable notifications");
+		options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"}); 
+		options.addArguments("start-maximized");
+	
+		
+		
 		System.setProperty("webdriver.chrome.drive", chromeDriverpath);
-		 driver = new ChromeDriver();
-		 System.out.println("I am in launchApp");
+		 driver = new ChromeDriver(options);
+		 
 		}
 		else if(prop.getProperty("Browser").equals("firefox"))
 		{
-		WebDriverManager.firefoxdriver().setup();
+		
 		 driver = new FirefoxDriver();
 		}
 		else if(prop.getProperty("Browser").equals("edge"))
 		{
-		WebDriverManager.edgedriver().setup();
+	
 		 driver = new EdgeDriver();
 		}
 		
@@ -116,7 +130,16 @@ public static String tagName="";
 
 		for(int i=0;i<clms.size();i++)
 		{			
-			rowdata.put(clms.get(i), recordset.getField(clms.get(i)));
+			String value=recordset.getField(clms.get(i));
+			if(value!=null && value.startsWith("'")) {
+				if(value.length()>1) {
+					value=value.substring(1).trim();
+				}
+				else {
+					value="";
+				}
+			}
+			rowdata.put(clms.get(i), value);
 		}
 		alldata.put(TCName, rowdata);
 		}
@@ -142,15 +165,43 @@ public static String tagName="";
     	// Create an object of Extent Reports
 		extent = new ExtentReports();  
 		extent.attachReporter(htmlReporter);
-		extent.setSystemInfo("Host Name", "Automation Test Hub");
+		extent.setSystemInfo("Host Name", "BirlaSoft");
 		    	extent.setSystemInfo("Environment", "Test");
-		extent.setSystemInfo("User Name", "Rajesh U");
-		htmlReporter.config().setDocumentTitle("Title of the Report Comes here "); 
+		extent.setSystemInfo("User Name", "Devendaram");
+		htmlReporter.config().setDocumentTitle("Foresite Centeralized Device Management"); 
 		            // Name of the report
-		htmlReporter.config().setReportName("Name of the Report Comes here "); 
+		htmlReporter.config().setReportName("Foresite Centeralized Device Management"); 
 		            // Dark Theme
-		htmlReporter.config().setTheme(Theme.DARK); 
+		htmlReporter.config().setTheme(Theme.STANDARD); 
+		htmlReporter.config().setTimeStampFormat("MMM dd, yyyy HH:mm:ss a");
 		
+	}
+	
+	public void email() throws Exception {
+		Date d = new Date();
+		DateFormat ft = new SimpleDateFormat("ddMMyyyyhhmmss");
+		String fileName = ft.format(d);
+		EmailAttachment attachment = new EmailAttachment();
+
+        attachment.setPath(System.getProperty("user.dir") + "/src/test/java/com/cdm/reports/ExtentReport"+fileName+".html");
+
+        attachment.setDisposition(EmailAttachment.ATTACHMENT);
+        attachment.setDescription(" Test Execution Report");
+        attachment.setName("Report.html");
+
+        // Create the email message
+        MultiPartEmail email = new MultiPartEmail();
+        email.setHostName("smtp.gmail.com");
+        email.setSSLOnConnect(true);
+        email.setSmtpPort(465);
+        email.setAuthenticator(new DefaultAuthenticator("your email", "authentication_code"));
+        email.addTo("toemail", "Test");
+        email.setFrom("from email", "Me");
+        email.setSubject("Automation Test Execution Report");
+        email.setMsg("Automation Test Execution Report");
+        email.attach(attachment);
+
+        email.send();
 	}
 	
 	

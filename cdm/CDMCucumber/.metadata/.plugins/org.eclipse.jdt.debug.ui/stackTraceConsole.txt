@@ -1,8 +1,8 @@
-io.cucumber.junit.UndefinedStepException: The step 'Click on the Current View button' is undefined.
+io.cucumber.junit.UndefinedStepException: The step 'to check the text varbaige for all the tool tips' is undefined.
 You can implement this step using the snippet(s) below:
 
-@Then("Click on the Current View button")
-public void click_on_the_current_view_button() {
+@Then("to check the text varbaige for all the tool tips")
+public void to_check_the_text_varbaige_for_all_the_tool_tips() {
     // Write code here that turns the phrase above into concrete actions
     throw new io.cucumber.java.PendingException();
 }

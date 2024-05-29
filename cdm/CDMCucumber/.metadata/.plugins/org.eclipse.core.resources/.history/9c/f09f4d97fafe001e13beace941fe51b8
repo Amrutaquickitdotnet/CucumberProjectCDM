@@ -1,0 +1,199 @@
+package com.cdm.Stepdefinations;
+
+import com.cdm.pages.VolumesAddPage;
+import com.cdm.pages.VolumesEditPage;
+import com.cdm.pages.VolumesListPage;
+
+import io.cucumber.java.en.Then;
+
+public class VolumesSteps extends BaseTest {
+
+	@Then("Click on volumes tab from right panel of the screen")
+	public void click_on_volumes_tab_from_right_panel_of_the_screen() throws InterruptedException {
+		VolumesListPage vlp = new VolumesListPage(driver, logger);
+		vlp.volume_tab();
+	}
+
+	@Then("verify add button on volumes list page")
+	public void verify_add_button_on_volumes_list_page() {
+		VolumesAddPage vap = new VolumesAddPage(driver, logger);
+		vap.volumeAddPlusicon();
+	}
+	
+	
+	@Then("click on profile icons from the top of the module")
+	public void click_on_profile_icons_from_the_top_of_the_module() {
+		VolumesAddPage vap = new VolumesAddPage(driver, logger);
+		vap.profileicon();
+		
+	}
+	
+	@Then("click on three dots of volume name and click on Edit button")
+	public void click_on_three_dots_of_volume_name_and_click_on_edit_button() {
+		VolumesAddPage vap = new VolumesAddPage(driver, logger);
+		
+		vap.volumeNameThreeDot();
+		
+		vap.volumeName(alldata.get(vTCName).get("VolumeNameSearch").toString());
+		
+		vap.editbutton();
+	}
+	@Then("update the value for volume page")
+	public void update_the_value_for_volume_page() throws InterruptedException {
+	    VolumesEditPage vep = new VolumesEditPage(driver, logger);
+	    vep.removalofEnteredTextForVolumeName();
+	    vep.volumenameNameEdit(alldata.get(vTCName).get("VolumeNameEdit"));
+	    
+	    
+	    vep.repositoryNameEdit(alldata.get(vTCName).get("RepositoryLinkEdit"));
+	    
+	    vep.typeEdit(alldata.get(vTCName).get("TypeEdit"));
+	    
+	    
+	    vep.removalofEnteredTextForRepositoryLink();
+	    vep.repositorylinkEdit(alldata.get(vTCName).get("RepositoryLinkEdit"));
+	    
+	    vep.removalofEnteredTextForlicensetypeEdit();
+	    vep.licensetypeEdit(alldata.get(vTCName).get("LicenseTypeEdit"));
+	    
+	    vep.removalofEnteredTextForMountDirectory();
+	    vep.mountdirectoryEdit(alldata.get(vTCName).get("MountDirectoryEdit"));
+	   
+	    
+	    vep.removalofEnteredTextFortagEdit();
+	    vep.tagEdit(alldata.get(vTCName).get("VersionTagEdit"));
+	    
+	    vep.removalofEnteredTextForarchitectureEdit();
+	    vep.architectureEdit(alldata.get(vTCName).get("ArchitectureEdit"));
+	    
+	    vep.removalofEnteredTextFormaxsizeEdit();
+	    vep.maxsizeEdit(alldata.get(vTCName).get("MaxSizeEdit"));
+	    
+	    
+	    
+	    
+	}
+
+
+
+	@Then("fill all mandatory and optional field for Add volume")
+	public void fill_all_mandatory_and_optional_field_for_add_volume() throws InterruptedException {
+		VolumesAddPage vap = new VolumesAddPage(driver, logger);
+		vap.volumeName(alldata.get(vTCName).get("VolumeNameAdd").toString());
+		vap.volumeRepositoryNameAdd(alldata.get(vTCName).get("RepositoryNameAdd").toString());
+		vap.volumeRepositoryTypeAdd(alldata.get(vTCName).get("TypeAdd").toString());
+		vap.volumerepositorylinkAdd(alldata.get(vTCName).get("RepositoryLinkAdd").toString());
+		vap.volumeLicenseTypeAdd(alldata.get(vTCName).get("LicenseTypeAdd").toString());
+		vap.volumemountdirectoryAdd(alldata.get(vTCName).get("MountDirectoryAdd").toString());
+		vap.volumetagAdd(alldata.get(vTCName).get("VersionTagAdd").toString());
+		vap.volumearchitectureAdd(alldata.get(vTCName).get("ArchitectureAdd").toString());
+		vap.volumemaxsizeAdd(alldata.get(vTCName).get("MaxSizeAdd").toString());
+		vap.volumeSHAKeyAdd(alldata.get(vTCName).get("SHAKeyAdd").toString());
+
+	}
+
+	@Then("verify tooltip for License Type text field")
+	public void verify_tooltip_for_license_type_text_field() {
+		VolumesAddPage vap = new VolumesAddPage(driver, logger);
+		vap.get_Text_ToolTipType();
+	}
+
+	@Then("verify tooltip for type dropdown")
+	public void verify_tooltip_for_type_dropdown() throws InterruptedException {
+		VolumesAddPage vap = new VolumesAddPage(driver, logger);
+		vap.get_Text_ToolTipType();
+		Thread.sleep(2000);
+	}
+
+	@Then("verify tooltip for mount directory")
+	public void verify_tooltip_for_mount_directory() {
+		VolumesAddPage vap = new VolumesAddPage(driver, logger);
+		vap.get_Text_ToolTipmountDirectory();
+	}
+
+	@Then("verify tooltip for architecture text field")
+	public void verify_tooltip_for_architecture_text_field() {
+		VolumesAddPage vap = new VolumesAddPage(driver, logger);
+		vap.get_Text_ToolTiparchitecture();
+
+	}
+
+	@Then("verify tooltip for version")
+	public void verify_tooltip_for_version() {
+		VolumesAddPage vap = new VolumesAddPage(driver, logger);
+		vap.get_Text_ToolTipversion();
+	}
+
+	@Then("verify tooltip for max size")
+	public void verify_tooltip_for_max_size() {
+		VolumesAddPage vap = new VolumesAddPage(driver, logger);
+		vap.get_Text_ToolTipmaxSize();
+	}
+
+	@Then("verify tooltip for Repository Link text field")
+	public void verify_tooltip_for_repository_link_text_field() {
+		VolumesAddPage vap = new VolumesAddPage(driver, logger);
+		vap.get_Text_ToolTiprepositoryLink();
+	}
+
+	@Then("verify tooltip for English\\(US)")
+	public void verify_tooltip_for_english_us() {
+		VolumesAddPage vap = new VolumesAddPage(driver, logger);
+		vap.get_Text_ToolTipEnglishLogo();
+	}
+
+	@Then("verify tooltip for Repository Name for repository")
+	public void verify_tooltip_for_repository_name_for_repository() {
+		VolumesAddPage vap = new VolumesAddPage(driver, logger);
+		vap.get_Text_ToolTipRepositoryName();
+	}
+
+	@Then("click on the refresh button at the top right corner of the page")
+	public void clik_on_the_refresh_button_at_the_top_right_corner_of_the_page() {
+		VolumesListPage vlp = new VolumesListPage(driver, logger);
+		vlp.refreshbutton();
+	}
+	@Then("click on bell icons from the top of the module")
+	public void click_on_bell_icons_from_the_top_of_the_module() {
+		VolumesAddPage vap = new VolumesAddPage(driver, logger);
+		vap.belliconclick();
+	}
+
+
+@Then("verify tooltip for profile icon")
+public void verify_tooltip_for_profile_icon() {
+	VolumesAddPage vap = new VolumesAddPage(driver, logger);
+	vap.get_Text_ToolTipprofile();
+}
+
+	
+	@Then("verify tooltip for Bell icon")
+	public void verify_tooltip_for_bell_icon() {
+		VolumesAddPage vap = new VolumesAddPage(driver, logger);
+		vap.get_Text_ToolTipbellicon();
+	}
+
+
+
+	@Then("verify tooltip for volume name for repository")
+	public void verify_tooltip_for_volumn_name_for_repository() {
+		VolumesAddPage vap = new VolumesAddPage(driver, logger);
+		vap.get_Text_ToolTipVolumeName();
+	}
+
+	@Then("click on save button to save volume")
+	public void click_on_save_button_to_save_volume() throws InterruptedException {
+		VolumesAddPage vap = new VolumesAddPage(driver, logger);
+		vap.volumeSavebutton();
+		Thread.sleep(5000);
+	}
+
+	@Then("click on three dots of volumne name and enter the value for volume name search")
+	public void click_on_three_dots_of_volumne_name_and_enter_the_value_for_volume_name_search() {
+		VolumesListPage vlp = new VolumesListPage(driver, logger);
+		vlp.VolumeNameThreeDot();
+		vlp.inputvolumename(alldata.get(vTCName).get("VolumeNameSearch").toString());
+
+	}
+
+}

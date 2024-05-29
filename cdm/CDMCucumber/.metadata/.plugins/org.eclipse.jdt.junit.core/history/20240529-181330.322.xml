@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRunner" project="CDMProject" tests="3" started="3" failures="0" errors="1" ignored="0">
+  <testsuite name="com.cdm.runner.TestRunner" time="72.325">
+    <testsuite name="CONFIGURATIONS" time="72.325">
+      <testcase name="TC74_Verification of tool tip text visibilty for Close button in Deployed volume details in Current view screen" classname="CONFIGURATIONS" time="39.849"/>
+      <testcase name="TC79_Verification of ascending order sorting functionality for the table list" classname="CONFIGURATIONS" time="16.494"/>
+      <testcase name="TC80_Verification of descending order sorting functionality for the table list" classname="CONFIGURATIONS" time="15.982">
+        <error>io.cucumber.junit.UndefinedStepException: The step 'to check descending order sorting functionality for the table list' is undefined.
+You can implement this step using the snippet(s) below:
+
+@Then("to check descending order sorting functionality for the table list")
+public void to_check_descending_order_sorting_functionality_for_the_table_list() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+&#13;
+&#13;
+</error>
+      </testcase>
+    </testsuite>
+  </testsuite>
+</testrun>

@@ -1,0 +1,6 @@
+#Sat May 04 18:15:20 IST 2024
+__DEFAULT__=false
+expression=//mat-nav-list[@role\='navigation']/ul/li[10]/a
+org.eclipse.help.ui.localSearch.master=true
+org.eclipse.sdk.Eclipse.master=true
+org.eclipse.sdk.Google.master=true

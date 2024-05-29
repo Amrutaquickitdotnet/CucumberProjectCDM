@@ -1,37 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="deployment_tab"/>
+		<item key="selection" value="tooltip"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
-			<item value="deployment_tab"/>
-			<item value="deployment"/>
-			<item value="deploymenttabclick() {"/>
-			<item value="deploymenttabclick"/>
-			<item value="zoom"/>
-			<item value="current"/>
-			<item value="refres"/>
-			<item value="refresh"/>
-			<item value="bulk"/>
-			<item value="dashboard"/>
-			<item value="Deployments module from side menu bar"/>
-			<item value="Click on Deployments module from side menu bar"/>
-			<item value="thead"/>
-			<item value="checkboxConfigName"/>
-			<item value="tbody"/>
+			<item value="tooltip"/>
+			<item value="tooltip app"/>
+			<item value="app"/>
+			<item value="tooltip App"/>
+			<item value="view"/>
+			<item value="Assert"/>
+			<item value="Click on save button"/>
+			<item value="verify max word limit in App Group Display Name Text Field in the edit screen"/>
+			<item value=" verify max word limit in App Group Display Name Text Field in the edit screen"/>
+			<item value="click on Save button."/>
+			<item value="Mand"/>
+			<item value="manda"/>
+			<item value="mandatory"/>
+			<item value="Under Identity Section enter details for App Group Name and AppGroupDisplayName"/>
+			<item value="toast"/>
 		</list>
 		<list key="replacehistory">
-			<item value="horizontal"/>
-			<item value="horizontalal"/>
+			<item value="Verification"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="1086"/>
-		<item key="DIALOG_Y_ORIGIN" value="407"/>
+		<item key="DIALOG_X_ORIGIN" value="158"/>
+		<item key="DIALOG_Y_ORIGIN" value="153"/>
 		<item key="DIALOG_WIDTH" value="511"/>
 		<item key="DIALOG_HEIGHT" value="523"/>
 		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-18|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>

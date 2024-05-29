@@ -1,0 +1,87 @@
+package com.cdm.pages;
+
+import java.util.Arrays;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import com.aventstack.extentreports.ExtentTest;
+import com.cdm.common.CommonActions;
+
+public class AlertsAcknowledgePage extends CommonActions {
+
+	public AlertsAcknowledgePage(WebDriver driver, ExtentTest logger) {
+		super(driver, logger);
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
+	}
+
+	@FindBy(css = ".cdk-overlay-backdrop-showing")
+	WebElement backDropShowing;
+
+	@FindBy(xpath = "//input[@name='assignedto']")
+	WebElement AssignedTo;
+
+	@FindBy(xpath = "//button[contains(text(),'Acknowledge')]")
+	WebElement AcknowledgeButton;
+	
+	
+	@FindBy(xpath = "//button[contains(text(),'Complete')]")
+	WebElement completeButton;
+	
+	@FindBy(xpath = "//mat-sidenav-content/div[2]/div/app-alertlistpage/div/div[2]/div/img")
+	WebElement addRemarksforAcknowledgement;
+	
+	@FindBy(xpath = "//textarea[@formcontrolname='remark']")
+	WebElement remarkInput;
+	
+
+	@FindBy(xpath = "//button[contains(text(),'Submit')]")
+	WebElement submitbuttonforRemark;
+	
+	public void remarkInput(String value) {
+		remarkInput.sendKeys(Keys.ENTER);
+		remarkInput.sendKeys(value);
+	}
+
+	
+	public void AssignedTo(String value) {
+		AssignedTo.sendKeys(Keys.ENTER);
+		AssignedTo.sendKeys(value);
+	}
+
+	public void AcknowledgeButton() throws InterruptedException {
+		Thread.sleep(3000);
+		AcknowledgeButton.click();
+		JavascriptExecutor	js = (JavascriptExecutor)driver;
+		js.executeScript("arguments[0].click();",AcknowledgeButton);
+	
+		Thread.sleep(3000);
+	}
+	public void completeButton() throws InterruptedException {
+		
+		//completeButton.click();
+		
+		clickElement(completeButton, "");
+	
+		Thread.sleep(3000);
+	}
+	
+	
+	public void addRemarksforAcknowledgement() {
+		//addRemarksforAcknowledgement.click();
+		clickElement(addRemarksforAcknowledgement, "");
+	}
+	public void submitbuttonforRemark() {
+		//submitbuttonforRemark.click();
+		clickElement(submitbuttonforRemark, "");
+	}
+
+}

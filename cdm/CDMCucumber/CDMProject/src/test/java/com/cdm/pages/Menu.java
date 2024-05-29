@@ -10,7 +10,7 @@ import com.cdm.common.CommonActions;
 
 public class Menu extends CommonActions {
 
-private WebDriver driver;
+
 	
 	public Menu(WebDriver driver,ExtentTest logger) //created WebDriver Constructor
 	{

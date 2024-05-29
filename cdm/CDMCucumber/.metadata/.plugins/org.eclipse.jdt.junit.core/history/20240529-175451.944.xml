@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRunner" project="CDMProject" tests="16" started="16" failures="1" errors="3" ignored="0">
+  <testsuite name="com.cdm.runner.TestRunner" time="362.266">
+    <testsuite name="CONFIGURATIONS" time="362.266">
+      <testcase name="TC65_Verification of tool tip text visibility for APP Name" classname="CONFIGURATIONS" time="30.637"/>
+      <testcase name="TC66_Verification of tool tip text visibility for Config Name" classname="CONFIGURATIONS" time="22.266"/>
+      <testcase name="TC67_Verification of tool tip text visibility for Response Status" classname="CONFIGURATIONS" time="26.552"/>
+      <testcase name="TC68_Verification of tool tip text visibility for Time Stamp" classname="CONFIGURATIONS" time="20.559"/>
+      <testcase name="TC69_Verification of tool tip text visibility for Last Updated" classname="CONFIGURATIONS" time="20.393"/>
+      <testcase name="TC70_Verification of tool tip text visibilty for view response body details button in Actions column" classname="CONFIGURATIONS" time="28.354">
+        <failure>
+          <expected>The status of the response (HTTP Response Code)</expected>
+          <actual>View Response Body</actual>
+          org.junit.ComparisonFailure: Tooltip of response body  expected:&lt;[The status of the response (HTTP Response Code)]&gt; but was:&lt;[View Response Body]&gt;&#13;
+	at org.junit.Assert.assertEquals(Assert.java:117)&#13;
+	at com.cdm.Stepdefinations.ConfigurationSteps.verify_tooltip_for_view_response_body(ConfigurationSteps.java:247)&#13;
+	at ✽.verify tooltip for view response body(file:///E:/Devendra/cdm/CDMCucumber/CDMProject/src/test/resources/Features/ConfigurationsNew.feature:559)&#13;
+&#13;
+
+        </failure>
+      </testcase>
+      <testcase name="TC71_Verification of tool tip text visibilty for download button in Actions column" classname="CONFIGURATIONS" time="20.17"/>
+      <testcase name="TC72_Verification of tool tip text visibilty for send configuration button in Actions column" classname="CONFIGURATIONS" time="20.806">
+        <skipped>org.junit.AssumptionViolatedException: No send configuration buttn found&#13;
+	at org.junit.Assume.assumeTrue(Assume.java:68)&#13;
+	at com.cdm.Stepdefinations.ConfigurationSteps.verify_tooltip_for_send_configuration_button(ConfigurationSteps.java:67)&#13;
+	at ✽.verify tooltip for send configuration button(file:///E:/Devendra/cdm/CDMCucumber/CDMProject/src/test/resources/Features/ConfigurationsNew.feature:577)&#13;
+&#13;
+</skipped>
+      </testcase>
+      <testcase name="TC73_Verification of tool tip text visibilty for Actions" classname="CONFIGURATIONS" time="21.025"/>
+      <testcase name="TC74_Verification of tool tip text visibilty for Close button in Deployed volume details in Current view screen" classname="CONFIGURATIONS" time="21.21">
+        <error>io.cucumber.junit.UndefinedStepException: The step 'click on view response body icon from actions column' and 1 other step(s) are undefined.
+You can implement these steps using the snippet(s) below:
+
+@Then("click on view response body icon from actions column")
+public void click_on_view_response_body_icon_from_actions_column() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("verify tooltip for close button")
+public void verify_tooltip_for_close_button() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+&#13;
+&#13;
+</error>
+      </testcase>
+      <testcase name="TC75_Verification of alignment for maximize &amp; minimize the screen" classname="CONFIGURATIONS" time="25.882"/>
+      <testcase name="TC76_Verification to check the text varbaige for all the tool tips" classname="CONFIGURATIONS" time="15.789"/>
+      <testcase name="TC77_Verification to check the visualisation look of the table list" classname="CONFIGURATIONS" time="16.474"/>
+      <testcase name="TC78_Verification to check the column width uniformity" classname="CONFIGURATIONS" time="16.414"/>
+      <testcase name="TC79_Verification of ascending order sorting functionality for the table list" classname="CONFIGURATIONS" time="16.873">
+        <error>io.cucumber.junit.UndefinedStepException: The step 'to check ascending order sorting functionality for the table list' is undefined.
+You can implement this step using the snippet(s) below:
+
+@Then("to check ascending order sorting functionality for the table list")
+public void to_check_ascending_order_sorting_functionality_for_the_table_list() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+&#13;
+&#13;
+</error>
+      </testcase>
+      <testcase name="TC80_Verification of descending order sorting functionality for the table list" classname="CONFIGURATIONS" time="38.858">
+        <error>io.cucumber.junit.UndefinedStepException: The step 'to check ascending order sorting functionality for the table list' is undefined.
+You can implement this step using the snippet(s) below:
+
+@Then("to check ascending order sorting functionality for the table list")
+public void to_check_ascending_order_sorting_functionality_for_the_table_list() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+&#13;
+&#13;
+</error>
+      </testcase>
+    </testsuite>
+  </testsuite>
+</testrun>

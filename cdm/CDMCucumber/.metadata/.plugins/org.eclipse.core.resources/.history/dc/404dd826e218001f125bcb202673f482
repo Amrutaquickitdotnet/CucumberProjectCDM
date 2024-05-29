@@ -1,0 +1,97 @@
+package com.cdm.Stepdefinations;
+
+
+import com.cdm.pages.NotificationsPage;
+
+import com.cdm.pages.UserGroupMappingPage;
+
+import io.cucumber.java.en.Then;
+
+public class NotificationsSteps extends BaseTest {
+
+	@Then("verify page with resize option page for notifications")
+	public void verify_page_with_resize_option_page_for_notifications() throws InterruptedException {
+		NotificationsPage notify = new NotificationsPage(driver, logger);
+		notify.setZoomLevel(800, 600);
+		Thread.sleep(4000);
+	}
+	@Then("check visibility of License Expiry")
+	public void check_visibility_of_license_expiry() {
+	   
+	}
+	@Then("Verify that the emails are not triggered to the User group when the CDM App is in Constraint environment")
+	public void verify_that_the_emails_are_not_triggered_to_the_user_group_when_the_cdm_app_is_in_constraint_environment() {
+	    
+	}
+	@Then("observed that emails are not trigger to the User group which is not added to the App Deployment Notification Group")
+	public void observed_that_emails_are_not_trigger_to_the_user_group_which_is_not_added_to_the_app_deployment_notification_group() {
+	   
+	}
+	@Then("Verify that the emails are not triggered to the User group which is not added to the License Expiry notification")
+	public void verify_that_the_emails_are_not_triggered_to_the_user_group_which_is_not_added_to_the_license_expiry_notification() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+
+
+	
+	
+	
+	@Then("Click on notifications tab from right panel of the screen")
+	public void click_on_notifications_tab_from_right_panel_of_the_screen() throws InterruptedException {
+		NotificationsPage notify = new NotificationsPage(driver, logger);
+		notify.Notification_tab();
+		Thread.sleep(4000);
+	}
+
+	@Then("apply filter on Notification name")
+	public void apply_filter_on_notification_name() throws InterruptedException {
+		NotificationsPage notify = new NotificationsPage(driver, logger);
+		notify.notificationnameThreeDot();
+		Thread.sleep(5000);
+		notify.notificationnamesearchinput(alldata.get(vTCName).get("NotificationNameSearch").toString());
+		Thread.sleep(4000);
+	}
+
+	@Then("click on icon add user group mapping")
+	public void click_on_icon_add_user_group_mapping() throws InterruptedException {
+		NotificationsPage notify = new NotificationsPage(driver, logger);
+		notify.addUserGroupMapping();
+		Thread.sleep(4000);
+	}
+
+	@Then("click on three dots for username and enter the search value")
+	public void click_on_three_dots_for_username_and_enter_the_search_value() throws InterruptedException {
+		UserGroupMappingPage ugmp = new UserGroupMappingPage(driver, logger);
+		ugmp.UserGroupNameThreeDot();
+		Thread.sleep(4000);
+		ugmp.UserGroupNameInput(alldata.get(vTCName).get("UserGroupNameSearch").toString());
+		Thread.sleep(4000);
+	}
+
+	@Then("select the checkbox to map user group name")
+	public void select_the_checkbox_to_map_user_group_name() throws InterruptedException {
+		UserGroupMappingPage ugmp = new UserGroupMappingPage(driver, logger);
+		ugmp.checkboxforUserGroupNameLicenseExpiry();
+		Thread.sleep(4000);
+		
+	}
+	@Then("select the checkbox to map user group name for app deployment")
+	public void select_the_checkbox_to_map_user_group_name_for_app_deployment() throws InterruptedException {
+		UserGroupMappingPage ugmp = new UserGroupMappingPage(driver, logger);
+		ugmp.checkboxforUserGroupNameDeployment();
+		Thread.sleep(4000);
+	}
+
+
+	@Then("click on Save button")
+	public void click_on_save_button() throws InterruptedException {
+		UserGroupMappingPage ugmp = new UserGroupMappingPage(driver, logger);
+		ugmp.saveButton();
+		Thread.sleep(5000);
+		//ugmp.cancelbutton();
+	}
+	
+
+}

@@ -1,0 +1,157 @@
+@SheetAppGroups
+Feature: APPGROUPS
+#
+#@Test
+#Scenario: TC01_Verification of Browser Compatibility of APP Group Listing Screen of the application
+#Given User launch application in chrome browser
+#When user enters credentials and click on login button
+#And Succesfull login should be happen
+#
+#
+#@Test
+#Scenario: TC02_Verification of resizing the User screen as per different zoom levels
+#Given User launch application in chrome browser
+#When user enters credentials and click on login button
+#Then verify page with resize option with App groups page
+
+
+#@Test
+#Scenario: TC03_Verify if user click on ADD button Functionality as a super admin
+#Given User launch application in chrome browser
+#When user enters credentials and click on login button
+#And click on App Groups tab
+#Then click on Add button
+#
+#@Test
+#Scenario: TC04_Verify if User without entered any values in all the text fields and click on save button
+#Given User launch application in chrome browser
+#When user enters credentials and click on login button
+#And Click on App Groups tab
+#Then click on Add button
+#Then Do not Fill all information on Add page and hit save button
+#
+#
+#@Test
+#Scenario: TC05_Verify if User click on Cancel button in APP Group add screen
+#Given User launch application in chrome browser
+#When user enters credentials and click on login button
+#And Click on App Groups tab
+#Then click on Add button
+#Then click on cancel button
+#
+#
+#@Test
+#Scenario: TC06_Verify user fill all the mandatory valid datails and click on save button in ADD screen
+#Given User launch application in chrome browser
+#When user enters credentials and click on login button
+#And Click on App Groups tab
+#When Click on the Add icon at the right side of the page
+#Then Under Identity Section enter details for App Group Name and AppGroupDisplayName
+#And click on Save button.
+#
+#
+#@Test
+#Scenario: TC07_Verify if user will click the add button, page responding or not. 
+#Given User launch application in chrome browser
+#When user enters credentials and click on login button
+#And Click on App Groups tab
+#When Click on the Add icon at the right side of the page
+#
+#@Test
+#Scenario: TC08_Verify if user Searching result should be display when u have enter the search
+#Given User launch application in chrome browser
+#When user enters credentials and click on login button
+#And Click on App Groups tab
+#Then Click on three dots for App Group Name and App Group Display name
+#Then user should search for App Group Name and App Group Display name
+#
+@Test
+Scenario: TC09_Verification of Expand button functionality in the APP Group >ADD screen by Super admin/Admin user 
+Given User launch application in chrome browser
+When user enters credentials and click on login button
+And Click on App Groups tab
+Then click on expand button from navigation menu
+
+@Test
+Scenario: TC10_Verification of Collapse button functionality in the User screen by Super admin/Admin user 
+Given User launch application in chrome browser
+When user enters credentials and click on login button
+And Click on App Groups tab
+Then click on collapse button from navigation menu
+Then click on expand button from navigation menu
+#
+#@Test
+#Scenario: TC11_Verification of the acceptance of alphabet values in First Name Text field in the Identity section of User Add screen by Super admin/Admin user 
+#Given User launch application in chrome browser
+#When user enters credentials and click on login button
+#And Click on App Groups tab
+#Then Click on Add button
+#
+#@Test
+#Scenario: TC12_Verification of the acceptance of alphabet values in Last Name Text field in the Identity section of User Add screen by Super admin/Admin user 
+#Given User launch application in chrome browser
+#When user enters credentials and click on login button
+#And Click on App Groups tab
+
+#
+#@Test
+#Scenario: TC13_Verification of breaching the Max word limit in First Name Text field in the Identity section of User Add screen by Super admin/Admin user
+#Given User launch application in chrome browser
+#When user enters credentials and click on login button
+#And Click on App Groups tab
+
+#
+#@Test
+#Scenario: TC14_Verification of breaching the Max word limit in Last Name Text field in the Identity section of User Add screen by Super admin/Admin use
+#Given User launch application in chrome browser
+#When user enters credentials and click on login button
+#And Click on App Groups tab
+
+#
+#@Test
+#Scenario: TC15_Verification of the acceptance of valid number in Contact Number field in the Identity section of User Add screen by Super admin/Admin user 
+#Given User launch application in chrome browser
+#When user enters credentials and click on login button
+#And Click on App Groups tab
+
+#
+#@Test
+#Scenario: TC16_Verification of the rejection of invalid number in Contact Number field in the Identity section of User Add screen by Super admin/Admin user
+#Given User launch application in chrome browser
+#When user enters credentials and click on login button
+#And Click on App Groups tab
+
+#
+#@Test
+#Scenario: TC17_Verification of the rejection of blanks and spaced number in Contact Number field in the Identity section of User Add screen by Super admin/Admin user 
+#Given User launch application in chrome browser
+#When user enters credentials and click on login button
+#And Click on App Groups tab
+
+#
+#@Test
+#Scenario: TC18_Verification of copy pasting numeric digits in Contact Number field in the Identity section of User Add screen by Super admin/Admin user
+#Given User launch application in chrome browser
+#When user enters credentials and click on login button
+#And Click on App Groups tab
+
+#
+#@Test
+#Scenario: TC19_Verify Refresh button functionality
+#Given User launch application in chrome browser
+#When user enters credentials and click on login button
+#And Click on App Groups tab
+#When Click on the Delete Icon at the right side of the page
+#Then Under Identity Section enter details for App Group Name and AppGroupDisplayName
+#And click on Save button.
+#
+#
+#
+#
+#@Test
+#Scenario: TC09_Verify checkboxes for status Active / Inactive
+#Given User launch application in chrome browser
+#When user enters credentials and click on login button
+#And Click on App Groups tab
+#When Click on the Status Icon at the right side of the page
+#Then Under Status column select Active checkbox from the List 

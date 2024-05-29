@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRunner" project="CDMProject" tests="2" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="com.cdm.runner.TestRunner" incomplete="true">
+    <testsuite name="CONFIGURATIONS" incomplete="true">
+      <testcase name="TC79_Verification of ascending order sorting functionality for the table list" classname="CONFIGURATIONS" time="143.263"/>
+      <testcase name="TC80_Verification of descending order sorting functionality for the table list" classname="CONFIGURATIONS" incomplete="true"/>
+    </testsuite>
+  </testsuite>
+</testrun>

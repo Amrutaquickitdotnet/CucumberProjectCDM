@@ -1,0 +1,2218 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset='utf-8' /> 
+	<meta name='description' content='' />
+	<meta name='robots' content='noodp, noydir' />
+	<meta name='viewport' content='width=device-width, initial-scale=1' />
+	<meta id="timeStampFormat" name="timeStampFormat" content='MMM dd, yyyy HH:mm:ss a'/>
+	
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css' />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+	<link href='https://cdn.rawgit.com/extent-framework/extent-github-cdn/39026ad/v3html/css/extent.css' type='text/css' rel='stylesheet' />
+	
+	<title>Foresite Centeralized Device Management</title>
+
+	<style type='text/css'>
+		/* json-tree */
+		.jstBracket,.jstComma,.jstValue{white-space:pre-wrap}.jstValue{font-size:10px;font-weight:400;font-family:"Lucida Console",Monaco,monospace}.jstProperty{color:#666;word-wrap:break-word}.jstBool{color:#2525CC}.jstNum{color:#D036D0}.jstNull{color:gray}.jstStr{color:#2DB669}.jstFold:after{content:' -';cursor:pointer}.jstExpand{white-space:normal}.jstExpand:after{content:' +';cursor:pointer}.jstFolded{white-space:normal!important}.jstHiddenBlock{display:none}
+	</style>
+	
+	<script type="text/javascript">
+		/*! json-tree - v0.2.2 - 2017-09-25, MIT LICENSE */
+		var JSONTree=function(){var n={"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#x27;","/":"&#x2F;"},t=0,r=0;this.create=function(n,t){return r+=1,N(u(n,0,!1),{class:"jstValue"})};var e=function(t){return t.replace(/[&<>'"]/g,function(t){return n[t]})},s=function(){return r+"_"+t++},u=function(n,t,r){if(null===n)return f(r?t:0);switch(typeof n){case"boolean":return l(n,r?t:0);case"number":return i(n,r?t:0);case"string":return o(n,r?t:0);default:return n instanceof Array?a(n,t,r):c(n,t,r)}},c=function(n,t,r){var e=s(),u=Object.keys(n).map(function(r){return j(r,n[r],t+1,!0)}).join(m()),c=[g("{",r?t:0,e),N(u,{id:e}),p("}",t)].join("\n");return N(c,{})},a=function(n,t,r){var e=s(),c=n.map(function(n){return u(n,t+1,!0)}).join(m());return[g("[",r?t:0,e),N(c,{id:e}),p("]",t)].join("\n")},o=function(n,t){var r=e(JSON.stringify(n));return N(v(r,t),{class:"jstStr"})},i=function(n,t){return N(v(n,t),{class:"jstNum"})},l=function(n,t){return N(v(n,t),{class:"jstBool"})},f=function(n){return N(v("null",n),{class:"jstNull"})},j=function(n,t,r){var s=v(e(JSON.stringify(n))+": ",r),c=N(u(t,r,!1),{});return N(s+c,{class:"jstProperty"})},m=function(){return N(",\n",{class:"jstComma"})},N=function(n,t){return d("span",t,n)},d=function(n,t,r){return"<"+n+Object.keys(t).map(function(n){return" "+n+'="'+t[n]+'"'}).join("")+">"+r+"</"+n+">"},g=function(n,t,r){return N(v(n,t),{class:"jstBracket"})+N("",{class:"jstFold",onclick:"JSONTree.toggle('"+r+"')"})};this.toggle=function(n){var t=document.getElementById(n),r=t.parentNode,e=t.previousElementSibling;""===t.className?(t.className="jstHiddenBlock",r.className="jstFolded",e.className="jstExpand"):(t.className="",r.className="",e.className="jstFold")};var p=function(n,t){return N(v(n,t),{})},v=function(n,t){return Array(2*t+1).join(" ")+n};return this}();
+	</script>
+</head>
+	<body class='extent standard default hide-overflow '>
+		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
+			<span><i class='material-icons'>desktop_windows</i></span>
+		</div>
+<nav>
+	<div class="nav-wrapper">
+		<a href="#!" class="brand-logo black"><img src="https://cdn.rawgit.com/extent-framework/extent-github-cdn/d74480e/commons/img/logo.png"></a>
+		<!-- slideout menu -->
+		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
+						<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></a></li>
+		</ul>
+		<!-- report name -->
+		<span class='report-name'>Foresite Centeralized Device Management</span>
+		<!-- report headline -->
+		<span class='report-headline'></span>
+		<!-- nav-right -->
+		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
+			<a href='#!'>
+			<span class='label blue darken-3 suite-start-time'>May 27, 2024 14:41:48 PM</span>
+			</a>
+		</ul>
+	</div>
+</nav>		<!-- container -->
+		<div class='container'>
+<div id='test-view' class='view'>
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- test toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
+				<i class='material-icons'>warning</i> Status
+				</a>
+				<ul id='tests-toggle' class='dropdown-content'>
+										<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+					<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
+					<li class='divider'></li>
+					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
+				</ul>
+			</div>
+			<!-- test toggle -->
+			<!-- category toggle -->
+			<!-- category toggle -->
+			<!-- clear filters -->
+			<div class='chip transparent hide'>
+				<a class='' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
+				<i class='material-icons'>close</i> Clear
+				</a>
+			</div>
+			<!-- clear filters -->
+			<!-- enable dashboard -->
+			<div id='toggle-test-view-charts' class='chip transparent'>
+				<a class='pink-text' id='enable-dashboard' alt='Enable Dashboard' title='Enable Dashboard'>
+				<i class='material-icons'>track_changes</i> Dashboard
+				</a>
+			</div>
+			<!-- enable dashboard -->
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+				<i class='material-icons'>search</i> Search
+				</a>
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+<div id='test-view-charts' class='subview-full'>
+    <div id='charts-row' class='row nm-v nm-h'>
+        <div class='col s12 m12 l12 np-h'>
+            <div class='card-panel nm-v'>
+                <div class='left panel-name'>Tests</div>
+                <div class='chart-box' style="max-height:94px;">
+                    <canvas id='parent-analysis' width='90' height='70'></canvas>
+                </div>
+                <div class='block text-small'>
+                    <span class='tooltipped' data-position='top' data-tooltip='84.615%'><span class='strong'>22</span> test(s) passed</span>
+                </div>
+                <div class='block text-small'>
+                    <span class='strong tooltipped' data-position='top' data-tooltip='15.385%'>4</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="timeline-chart" class="row nm-v nm-h">
+        <div class="col s12 m12 l12 np-h">
+            <div class="card-panel">
+                <div class='left panel-name'>Timeline (seconds)</div>
+                <div class="chart-box" style="width:98%;max-height:145px;">
+                    <canvas id="timeline" height="120"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>	<div class='subview-left left'>
+		<div class='view-summary'>
+			<ul id='test-collection' class='test-collection'>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='1'>
+					<div class='test-heading'>
+						<span class='test-name'>TC01_Verification of  Browser Compatibility of Reports module of the application</span>
+						<span class='test-time'>May 27, 2024 14:41:50 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 27, 2024 14:41:50 PM</span>
+	<span class='label end-time'>May 27, 2024 14:41:50 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:41:54 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024153.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:41:56 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024155.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:41:56 PM</td>
+				<td class='step-details'>
+						Password@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024156.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:41:56 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024156.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:42:00 PM</td>
+				<td class='step-details'>
+						Dashboard page displayed successfully<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024200.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='2'>
+					<div class='test-heading'>
+						<span class='test-name'>TC02_Verification of  resizing the Reports list tab as per different zoom levels</span>
+						<span class='test-time'>May 27, 2024 14:42:01 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 27, 2024 14:42:01 PM</span>
+	<span class='label end-time'>May 27, 2024 14:42:01 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:42:05 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024205.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:42:08 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024208.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:42:08 PM</td>
+				<td class='step-details'>
+						Password@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024208.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:42:08 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024208.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='3'>
+					<div class='test-heading'>
+						<span class='test-name'>TC03_Browser fragmentation verification</span>
+						<span class='test-time'>May 27, 2024 14:42:09 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 27, 2024 14:42:09 PM</span>
+	<span class='label end-time'>May 27, 2024 14:42:09 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:42:13 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024213.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:42:16 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024216.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:42:16 PM</td>
+				<td class='step-details'>
+						Password@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024216.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:42:16 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024216.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='4'>
+					<div class='test-heading'>
+						<span class='test-name'>TC04_To verify that the user is able to successfully download any date's  Report.</span>
+						<span class='test-time'>May 27, 2024 14:42:17 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 27, 2024 14:42:17 PM</span>
+	<span class='label end-time'>May 27, 2024 14:42:17 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:42:21 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024221.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:42:24 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024224.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:42:24 PM</td>
+				<td class='step-details'>
+						Password@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024224.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:42:24 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024224.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:42:28 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024228.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:42:34 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024233.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:42:48 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024248.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:43:07 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024307.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='5'>
+					<div class='test-heading'>
+						<span class='test-name'>TC05_To verify that the user is able to successfully download report from a date range</span>
+						<span class='test-time'>May 27, 2024 14:43:12 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 27, 2024 14:43:12 PM</span>
+	<span class='label end-time'>May 27, 2024 14:43:12 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:43:16 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024316.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:43:19 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024319.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:43:19 PM</td>
+				<td class='step-details'>
+						Password@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024319.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:43:19 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024319.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:43:23 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024323.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:43:28 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024328.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:43:43 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024343.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:44:02 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024402.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='6'>
+					<div class='test-heading'>
+						<span class='test-name'>TC06_To verify error message when user does not select the Report type dropwdown</span>
+						<span class='test-time'>May 27, 2024 14:44:07 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 27, 2024 14:44:07 PM</span>
+	<span class='label end-time'>May 27, 2024 14:44:07 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:44:10 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024410.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:44:13 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024413.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:44:13 PM</td>
+				<td class='step-details'>
+						Password@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024413.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:44:13 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024413.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:44:17 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024417.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:44:17 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024417.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:44:18 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024418.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='7'>
+					<div class='test-heading'>
+						<span class='test-name'>TC07_To verify that the Report module is not available to an Admin user</span>
+						<span class='test-time'>May 27, 2024 14:44:20 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 27, 2024 14:44:20 PM</span>
+	<span class='label end-time'>May 27, 2024 14:44:20 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:44:23 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024423.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:44:25 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024425.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:44:26 PM</td>
+				<td class='step-details'>
+						Password@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024426.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:44:26 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024426.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:44:30 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024430.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:44:35 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024435.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:44:50 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024450.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='8'>
+					<div class='test-heading'>
+						<span class='test-name'>TC08_To verify that the Report module is not available to an Operator user</span>
+						<span class='test-time'>May 27, 2024 14:45:06 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 27, 2024 14:45:06 PM</span>
+	<span class='label end-time'>May 27, 2024 14:45:06 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:45:09 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024509.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:45:12 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024511.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:45:12 PM</td>
+				<td class='step-details'>
+						Password@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024512.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:45:12 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024512.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:45:16 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024516.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:45:21 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024521.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:45:36 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024536.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='9'>
+					<div class='test-heading'>
+						<span class='test-name'>TC09_Verification of error message verbaige for without entering details in Reports</span>
+						<span class='test-time'>May 27, 2024 14:45:52 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 27, 2024 14:45:52 PM</span>
+	<span class='label end-time'>May 27, 2024 14:45:52 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:46:06 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024606.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:46:09 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024609.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:46:09 PM</td>
+				<td class='step-details'>
+						Password@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024609.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:46:09 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024609.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:46:13 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024613.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:46:14 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024613.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:46:14 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024614.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='10'>
+					<div class='test-heading'>
+						<span class='test-name'>TC10_Verification of error message verbaige for entering invalid details</span>
+						<span class='test-time'>May 27, 2024 14:46:16 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 27, 2024 14:46:16 PM</span>
+	<span class='label end-time'>May 27, 2024 14:46:16 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:46:19 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024619.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:46:21 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024621.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:46:22 PM</td>
+				<td class='step-details'>
+						Password@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024622.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:46:22 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024622.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:46:26 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024626.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:46:26 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024626.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:46:26 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024626.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='11'>
+					<div class='test-heading'>
+						<span class='test-name'>TC12_Verification of standarize text format below error message for text fields</span>
+						<span class='test-time'>May 27, 2024 14:46:28 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 27, 2024 14:46:28 PM</span>
+	<span class='label end-time'>May 27, 2024 14:46:28 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:46:33 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024633.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:46:35 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024635.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:46:36 PM</td>
+				<td class='step-details'>
+						Password@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024636.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:46:36 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024636.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:46:40 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024640.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:46:40 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024640.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:46:40 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024640.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='12'>
+					<div class='test-heading'>
+						<span class='test-name'>TC13_Verification of check drop down option in Report type</span>
+						<span class='test-time'>May 27, 2024 14:46:42 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 27, 2024 14:46:42 PM</span>
+	<span class='label end-time'>May 27, 2024 14:46:42 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:46:46 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024646.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:46:48 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024648.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:46:48 PM</td>
+				<td class='step-details'>
+						Password@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024648.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:46:48 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024648.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:46:52 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024652.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='13'>
+					<div class='test-heading'>
+						<span class='test-name'>TC14_Verification of switching between inputs fields using TAB</span>
+						<span class='test-time'>May 27, 2024 14:46:58 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 27, 2024 14:46:58 PM</span>
+	<span class='label end-time'>May 27, 2024 14:46:58 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:47:02 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024702.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:47:04 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024704.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:47:04 PM</td>
+				<td class='step-details'>
+						Password@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024704.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:47:05 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024705.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:47:09 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024708.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='14'>
+					<div class='test-heading'>
+						<span class='test-name'>TC15_Verification of visibilty duration to load the page</span>
+						<span class='test-time'>May 27, 2024 14:47:10 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 27, 2024 14:47:10 PM</span>
+	<span class='label end-time'>May 27, 2024 14:47:10 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:47:13 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024713.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:47:15 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024715.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:47:16 PM</td>
+				<td class='step-details'>
+						Password@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024716.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:47:16 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024716.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:47:20 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024719.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='15'>
+					<div class='test-heading'>
+						<span class='test-name'>TC16_Verification of visibilty the calender pop up in Start Date field</span>
+						<span class='test-time'>May 27, 2024 14:47:21 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 27, 2024 14:47:21 PM</span>
+	<span class='label end-time'>May 27, 2024 14:47:21 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:47:44 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024744.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:47:47 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024747.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:47:47 PM</td>
+				<td class='step-details'>
+						Password@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024747.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:47:47 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024747.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:47:51 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024751.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:47:56 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024756.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>2:48:16 PM</td>
+				<td class='step-details'>
+						Step failed due to element click intercepted: Element <button mat-icon-button="" type="button" class="mat-focus-indicator mat-icon-button mat-button-base" aria-haspopup="dialog" aria-label="Open calendar" tabindex="0">...</button> is not clickable at point (744, 193). Other element would receive the click: <div class="cdk-overlay-backdrop mat-overlay-transparent-backdrop mat-datepicker-0-backdrop cdk-overlay-backdrop-showing"></div>
+  (Session info: chrome-headless-shell=125.0.6422.77)
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [251f828052b0cc6397b2e069115435cc, clickElement {id=f.71A487A8DBAF01511B59CEFAE5792B96.d.DDFE04B1F5547176C43B98337292C8A5.e.99}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome-headless-shell, browserVersion: 125.0.6422.77, chrome: {chromedriverVersion: 125.0.6422.78 (14db42ec38ad..., userDataDir: C:\Users\Admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60284}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60284/devtoo..., se:cdpVersion: 125.0.6422.77, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome-headless-shell on windows (251f828052b0cc6397b2e069115435cc)] -> xpath: (//mat-datepicker-toggle)[2]//button]
+Session ID: 251f828052b0cc6397b2e069115435cc<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024816.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='16'>
+					<div class='test-heading'>
+						<span class='test-name'>TC17_Verification of visibilty the calender pop up in End Date field</span>
+						<span class='test-time'>May 27, 2024 14:48:28 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 27, 2024 14:48:28 PM</span>
+	<span class='label end-time'>May 27, 2024 14:48:28 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:48:32 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024832.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:48:34 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024834.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:48:34 PM</td>
+				<td class='step-details'>
+						Password@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024834.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:48:34 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024834.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:48:38 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024838.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:48:43 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024843.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>2:49:04 PM</td>
+				<td class='step-details'>
+						Step failed due to element click intercepted: Element <button mat-icon-button="" type="button" class="mat-focus-indicator mat-icon-button mat-button-base" aria-haspopup="dialog" aria-label="Open calendar" tabindex="0">...</button> is not clickable at point (744, 193). Other element would receive the click: <div class="cdk-overlay-backdrop mat-overlay-transparent-backdrop mat-datepicker-0-backdrop cdk-overlay-backdrop-showing"></div>
+  (Session info: chrome-headless-shell=125.0.6422.77)
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [92ed4c3aca3574ed3f1b32739402c756, clickElement {id=f.2AADC79C3DB09E78BD7440BF8D783D42.d.A99D5FDB3C9048D0B90C4533FE162BE8.e.64}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome-headless-shell, browserVersion: 125.0.6422.77, chrome: {chromedriverVersion: 125.0.6422.78 (14db42ec38ad..., userDataDir: C:\Users\Admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60305}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60305/devtoo..., se:cdpVersion: 125.0.6422.77, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome-headless-shell on windows (92ed4c3aca3574ed3f1b32739402c756)] -> xpath: (//mat-datepicker-toggle)[2]//button]
+Session ID: 92ed4c3aca3574ed3f1b32739402c756<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024903.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='17'>
+					<div class='test-heading'>
+						<span class='test-name'>TC18_Verification to select date range from the calender pop up in Start Date field</span>
+						<span class='test-time'>May 27, 2024 14:49:16 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 27, 2024 14:49:16 PM</span>
+	<span class='label end-time'>May 27, 2024 14:49:16 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:49:19 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024919.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:49:21 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024921.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:49:22 PM</td>
+				<td class='step-details'>
+						Password@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024922.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:49:22 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024922.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:49:26 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024926.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:49:31 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024931.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>2:49:51 PM</td>
+				<td class='step-details'>
+						Step failed due to element click intercepted: Element <button mat-icon-button="" type="button" class="mat-focus-indicator mat-icon-button mat-button-base" aria-haspopup="dialog" aria-label="Open calendar" tabindex="0">...</button> is not clickable at point (744, 193). Other element would receive the click: <div class="cdk-overlay-backdrop mat-overlay-transparent-backdrop mat-datepicker-0-backdrop cdk-overlay-backdrop-showing"></div>
+  (Session info: chrome-headless-shell=125.0.6422.77)
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [1a48bc3d45823fd3298aa6e9083bf1ef, clickElement {id=f.3FC70B856506B36A6705F2359BEB5C8B.d.C442297F68306922AF084D97504E0B93.e.64}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome-headless-shell, browserVersion: 125.0.6422.77, chrome: {chromedriverVersion: 125.0.6422.78 (14db42ec38ad..., userDataDir: C:\Users\Admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60333}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60333/devtoo..., se:cdpVersion: 125.0.6422.77, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome-headless-shell on windows (1a48bc3d45823fd3298aa6e9083bf1ef)] -> xpath: (//mat-datepicker-toggle)[2]//button]
+Session ID: 1a48bc3d45823fd3298aa6e9083bf1ef<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024024951.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='18'>
+					<div class='test-heading'>
+						<span class='test-name'>TC19_Verification to select date range from the calender pop up in End Date field</span>
+						<span class='test-time'>May 27, 2024 14:50:03 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 27, 2024 14:50:03 PM</span>
+	<span class='label end-time'>May 27, 2024 14:50:03 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:50:07 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024025007.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:50:10 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024025010.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:50:10 PM</td>
+				<td class='step-details'>
+						Password@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024025010.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:50:10 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024025010.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:50:14 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024025014.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:50:20 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024025020.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>2:50:40 PM</td>
+				<td class='step-details'>
+						Step failed due to element click intercepted: Element <button mat-icon-button="" type="button" class="mat-focus-indicator mat-icon-button mat-button-base" aria-haspopup="dialog" aria-label="Open calendar" tabindex="0">...</button> is not clickable at point (744, 193). Other element would receive the click: <div class="cdk-overlay-backdrop mat-overlay-transparent-backdrop mat-datepicker-0-backdrop cdk-overlay-backdrop-showing"></div>
+  (Session info: chrome-headless-shell=125.0.6422.77)
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [3b80d0b5eb99c6c6da979565d4e20029, clickElement {id=f.92E0AD4FA9CB72A2134BDC904DE5B84B.d.79767A95CC024EEDE2C64722D7575D05.e.62}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome-headless-shell, browserVersion: 125.0.6422.77, chrome: {chromedriverVersion: 125.0.6422.78 (14db42ec38ad..., userDataDir: C:\Users\Admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60356}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60356/devtoo..., se:cdpVersion: 125.0.6422.77, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome-headless-shell on windows (3b80d0b5eb99c6c6da979565d4e20029)] -> xpath: (//mat-datepicker-toggle)[2]//button]
+Session ID: 3b80d0b5eb99c6c6da979565d4e20029<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024025040.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='19'>
+					<div class='test-heading'>
+						<span class='test-name'>TC20_Verification of alignment for all the input text fields</span>
+						<span class='test-time'>May 27, 2024 14:50:52 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 27, 2024 14:50:52 PM</span>
+	<span class='label end-time'>May 27, 2024 14:50:52 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:51:06 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024025106.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:51:09 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024025109.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:51:09 PM</td>
+				<td class='step-details'>
+						Password@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024025109.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:51:09 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024025109.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:51:13 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024025113.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='20'>
+					<div class='test-heading'>
+						<span class='test-name'>TC21_Verification of alignment for the download button</span>
+						<span class='test-time'>May 27, 2024 14:51:14 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 27, 2024 14:51:14 PM</span>
+	<span class='label end-time'>May 27, 2024 14:51:14 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:51:18 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024025118.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:51:21 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024025121.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:51:21 PM</td>
+				<td class='step-details'>
+						Password@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024025121.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:51:21 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024025121.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:51:25 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024025125.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='21'>
+					<div class='test-heading'>
+						<span class='test-name'>TC22_Verification to check the labels of input text fields</span>
+						<span class='test-time'>May 27, 2024 14:51:26 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 27, 2024 14:51:26 PM</span>
+	<span class='label end-time'>May 27, 2024 14:51:26 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:51:30 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024025129.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:51:32 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024025132.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:51:32 PM</td>
+				<td class='step-details'>
+						Password@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024025132.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:51:32 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024025132.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:51:36 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024025136.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='22'>
+					<div class='test-heading'>
+						<span class='test-name'>TC23_Verification to check the visualisation look of the Calender pop up</span>
+						<span class='test-time'>May 27, 2024 14:51:37 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 27, 2024 14:51:37 PM</span>
+	<span class='label end-time'>May 27, 2024 14:51:37 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:51:40 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024025140.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:51:42 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024025142.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:51:43 PM</td>
+				<td class='step-details'>
+						Password@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024025142.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:51:43 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024025143.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:51:47 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024025147.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='23'>
+					<div class='test-heading'>
+						<span class='test-name'>TC24_Verification of alignment for maximize & minimize the screen</span>
+						<span class='test-time'>May 27, 2024 14:51:48 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 27, 2024 14:51:48 PM</span>
+	<span class='label end-time'>May 27, 2024 14:51:48 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:51:51 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024025151.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:51:54 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024025154.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:51:54 PM</td>
+				<td class='step-details'>
+						Password@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024025154.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:51:54 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024025154.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:51:58 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024025158.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='24'>
+					<div class='test-heading'>
+						<span class='test-name'>TC25_Verification of pagination i.e. items per page</span>
+						<span class='test-time'>May 27, 2024 14:51:59 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 27, 2024 14:51:59 PM</span>
+	<span class='label end-time'>May 27, 2024 14:51:59 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:52:03 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024025203.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:52:05 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024025205.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:52:05 PM</td>
+				<td class='step-details'>
+						Password@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024025205.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:52:06 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024025205.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:52:09 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024025209.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='25'>
+					<div class='test-heading'>
+						<span class='test-name'>TC26_Verification of tool tip text visibilty for Start Date text field</span>
+						<span class='test-time'>May 27, 2024 14:52:10 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 27, 2024 14:52:10 PM</span>
+	<span class='label end-time'>May 27, 2024 14:52:10 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:52:14 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024025214.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:52:16 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024025216.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:52:16 PM</td>
+				<td class='step-details'>
+						Password@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024025216.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:52:17 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024025217.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:52:21 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024025221.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='26'>
+					<div class='test-heading'>
+						<span class='test-name'>TC27_Verification of tool tip text visibilty for End Date</span>
+						<span class='test-time'>May 27, 2024 14:52:22 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 27, 2024 14:52:22 PM</span>
+	<span class='label end-time'>May 27, 2024 14:52:22 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:52:25 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024025225.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:52:27 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024025227.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:52:28 PM</td>
+				<td class='step-details'>
+						Password@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024025227.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:52:28 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024025228.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:52:32 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/27052024025232.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- subview left -->
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<div id='step-filters' class="right sr-filters">
+				<a class="btn-floating waves-effect waves-light green" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></a>
+				<a class="btn-floating waves-effect waves-light red" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></a>
+				<a class="btn-floating waves-effect waves-light red darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></a>
+				<a class="btn-floating waves-effect waves-light pink text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></a>
+				<a class="btn-floating waves-effect waves-light orange" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></a>
+				<a class="btn-floating waves-effect waves-light teal" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></a>
+				<a class="btn-floating waves-effect waves-light grey" status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></a>
+			</div>
+			<h5 class='test-name'></h5>
+		</div>
+	</div>
+	<!-- subview right -->
+</div>
+<!-- test view --><!-- category view --><!-- exception view --><div id='dashboard-view' class='view hide'>
+	<div class='card-panel transparent np-v'>
+		<h5>Dashboard</h5>
+
+		<div class='row'>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Tests
+					<div class='panel-lead'>26</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Steps
+					<div class='panel-lead'>0</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Start
+					<div class='panel-lead'>May 27, 2024 14:41:48 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+			 		End
+			 		<div class='panel-lead'>May 27, 2024 14:52:32 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Time Taken
+					<div class='panel-lead'>0h 10m 43s+726ms</div>
+				</div>
+			</div>
+			<div class='col s4'>
+				<div class='card-panel dashboard-environment'>
+					<span class='right label cyan white-text'>Environment</span><p>&nbsp;</p>
+					
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>Value</th>
+						</tr>
+							<tr>
+								<td>Host Name</td>
+								<td>BirlaSoft</td>
+							</tr>
+							<tr>
+								<td>Environment</td>
+								<td>Test</td>
+							</tr>
+							<tr>
+								<td>User Name</td>
+								<td>Devendaram</td>
+							</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- dashboard view -->
+<!-- testrunner-logs view -->		</div>
+		<!-- container -->
+		<script>
+			var statusGroup = {
+                parentCount: 26,
+				passParent: 22,
+				failParent: 4,
+				fatalParent: 0,
+				errorParent: 0,
+				warningParent: 0,
+				skipParent: 0,
+				exceptionsParent: 4,
+				childCount: 0,
+				passChild: 0,
+				failChild: 0,
+				fatalChild: 0,
+				errorChild: 0,
+				warningChild: 0,
+				skipChild: 0,
+				infoChild: 0,
+				debugChild: 0,
+				exceptionsChild: 0,
+				grandChildCount: 0,
+				passGrandChild: 0,
+				failGrandChild: 0,
+				fatalGrandChild: 0,
+				errorGrandChild: 0,
+				warningGrandChild: 0,
+				skipGrandChild: 0,
+				infoGrandChild: 0,
+				debugGrandChild: 0,
+				exceptionsGrandChild: 0,
+			};
+		</script>
+		<script>
+			var timeline = {
+			        "TC01_Verification of  Browser Compatibility of Reports module of the application":0,"TC02_Verification of  resizing the Reports list tab as per different zoom levels":0,"TC03_Browser fragmentation verification":0,"TC04_To verify that the user is able to successfully download any date's  Report.":0,"TC05_To verify that the user is able to successfully download report from a date range":0,"TC06_To verify error message when user does not select the Report type dropwdown":0,"TC07_To verify that the Report module is not available to an Admin user":0,"TC08_To verify that the Report module is not available to an Operator user":0,"TC09_Verification of error message verbaige for without entering details in Reports":0,"TC10_Verification of error message verbaige for entering invalid details":0,"TC12_Verification of standarize text format below error message for text fields":0,"TC13_Verification of check drop down option in Report type":0,"TC14_Verification of switching between inputs fields using TAB":0,"TC15_Verification of visibilty duration to load the page":0,"TC16_Verification of visibilty the calender pop up in Start Date field":0,"TC17_Verification of visibilty the calender pop up in End Date field":0,"TC18_Verification to select date range from the calender pop up in Start Date field":0,"TC19_Verification to select date range from the calender pop up in End Date field":0,"TC20_Verification of alignment for all the input text fields":0,"TC21_Verification of alignment for the download button":0,"TC22_Verification to check the labels of input text fields":0,"TC23_Verification to check the visualisation look of the Calender pop up":0,"TC24_Verification of alignment for maximize & minimize the screen":0,"TC25_Verification of pagination i.e. items per page":0,"TC26_Verification of tool tip text visibilty for Start Date text field":0,"TC27_Verification of tool tip text visibilty for End Date":0
+			};
+		</script>
+		<script src='https://cdn.rawgit.com/extent-framework/extent-github-cdn/c23457b/v3html/js/extent.js' type='text/javascript'></script>
+		<script type='text/javascript'>
+		</script>
+	</body>
+</html>

@@ -7,20 +7,58 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		//features = "src/test/resources/Features/",  
-		//features = "src/test/resources/Features/LoginApp.feature",
-	    glue = {"com.cdm.Stepdefinitions"},
-	    features = "src/test/resources/Features/EDGEDevices.feature",
-		//glue = {"com.cdm.Stepdefinitions.EDGEDevices"},
-				//glue = {"helpers","com.cdm.Stepdefinitions/loginSteps.java"},
 
-		 plugin = {
-				"pretty", "json:target/cucumber-reports/Cucumber4.json",
-				"junit:target/cucumber-reports/Cucumber4.xml",
-				"html:target/cucumber-reports1.html"},  
-		//dryRun = true,                              
-		tags = "@Test"               
-		)
+		// features = "src/test/resources/Features/Login.feature",
+
+		// features = "src/test/resources/Features/GenearlTab.feature",
+
+		// features = "src/test/resources/Features/Dashboard.feature",
+	//	features = "src/test/resources/Features/EDGEGroupsNew.feature",
+
+		//features = "src/test/resources/Features/EDGEDevicesNew.feature",
+
+		// features = "src/test/resources/Features/Deployments.feature",
+
+		features = "src/test/resources/Features/ConfigurationsNew.feature",
+
+		// features = "src/test/resources/Features/Licenses.feature",
+
+		//features = "src/test/resources/Features/AppGroupsNew.feature",
+
+		// features = "src/test/resources/Features/Reports.feature",
+
+		// features = "src/test/resources/Features/UsersSettingsNew.feature",
+
+		// features = "src/test/resources/Features/UserGroups.feature",
+
+		// features = "src/test/resources/Features/UserRoles.feature",
+
+		// features = "src/test/resources/Features/Notifications.feature",
+
+		// features = "src/test/resources/Features/hardware.feature",
+
+		// features = "src/test/resources/Features/Volumes.feature",
+
+		// features = "src/test/resources/Features/Repositories.feature",
+
+		// features = "src/test/resources/Features/Apps.feature",
+
+	//	features = "src/test/resources/Features/Wells.feature",
+
+		// features = "src/test/resources/Features/certificates.feature",
+
+		// features = "src/test/resources/Features/About.feature",
+
+		glue = { "com.cdm.Stepdefinations" },
+
+		plugin = { "pretty", "json:target/cucumber-reports/Cucumber4.json",
+				"junit:target/cucumber-reports/Cucumber4.xml", "html:target/cucumber-reports1.html",
+				"html:target/SparkReport/Spark.html"
+
+		}
+
+)
+
 public class TestRunner {
 
 }

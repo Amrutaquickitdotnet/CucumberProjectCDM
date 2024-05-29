@@ -1,0 +1,3928 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset='utf-8' /> 
+	<meta name='description' content='' />
+	<meta name='robots' content='noodp, noydir' />
+	<meta name='viewport' content='width=device-width, initial-scale=1' />
+	<meta id="timeStampFormat" name="timeStampFormat" content='MMM dd, yyyy HH:mm:ss a'/>
+	
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css' />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+	<link href='https://cdn.rawgit.com/extent-framework/extent-github-cdn/39026ad/v3html/css/extent.css' type='text/css' rel='stylesheet' />
+	
+	<title>Foresite Centeralized Device Management</title>
+
+	<style type='text/css'>
+		/* json-tree */
+		.jstBracket,.jstComma,.jstValue{white-space:pre-wrap}.jstValue{font-size:10px;font-weight:400;font-family:"Lucida Console",Monaco,monospace}.jstProperty{color:#666;word-wrap:break-word}.jstBool{color:#2525CC}.jstNum{color:#D036D0}.jstNull{color:gray}.jstStr{color:#2DB669}.jstFold:after{content:' -';cursor:pointer}.jstExpand{white-space:normal}.jstExpand:after{content:' +';cursor:pointer}.jstFolded{white-space:normal!important}.jstHiddenBlock{display:none}
+	</style>
+	
+	<script type="text/javascript">
+		/*! json-tree - v0.2.2 - 2017-09-25, MIT LICENSE */
+		var JSONTree=function(){var n={"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#x27;","/":"&#x2F;"},t=0,r=0;this.create=function(n,t){return r+=1,N(u(n,0,!1),{class:"jstValue"})};var e=function(t){return t.replace(/[&<>'"]/g,function(t){return n[t]})},s=function(){return r+"_"+t++},u=function(n,t,r){if(null===n)return f(r?t:0);switch(typeof n){case"boolean":return l(n,r?t:0);case"number":return i(n,r?t:0);case"string":return o(n,r?t:0);default:return n instanceof Array?a(n,t,r):c(n,t,r)}},c=function(n,t,r){var e=s(),u=Object.keys(n).map(function(r){return j(r,n[r],t+1,!0)}).join(m()),c=[g("{",r?t:0,e),N(u,{id:e}),p("}",t)].join("\n");return N(c,{})},a=function(n,t,r){var e=s(),c=n.map(function(n){return u(n,t+1,!0)}).join(m());return[g("[",r?t:0,e),N(c,{id:e}),p("]",t)].join("\n")},o=function(n,t){var r=e(JSON.stringify(n));return N(v(r,t),{class:"jstStr"})},i=function(n,t){return N(v(n,t),{class:"jstNum"})},l=function(n,t){return N(v(n,t),{class:"jstBool"})},f=function(n){return N(v("null",n),{class:"jstNull"})},j=function(n,t,r){var s=v(e(JSON.stringify(n))+": ",r),c=N(u(t,r,!1),{});return N(s+c,{class:"jstProperty"})},m=function(){return N(",\n",{class:"jstComma"})},N=function(n,t){return d("span",t,n)},d=function(n,t,r){return"<"+n+Object.keys(t).map(function(n){return" "+n+'="'+t[n]+'"'}).join("")+">"+r+"</"+n+">"},g=function(n,t,r){return N(v(n,t),{class:"jstBracket"})+N("",{class:"jstFold",onclick:"JSONTree.toggle('"+r+"')"})};this.toggle=function(n){var t=document.getElementById(n),r=t.parentNode,e=t.previousElementSibling;""===t.className?(t.className="jstHiddenBlock",r.className="jstFolded",e.className="jstExpand"):(t.className="",r.className="",e.className="jstFold")};var p=function(n,t){return N(v(n,t),{})},v=function(n,t){return Array(2*t+1).join(" ")+n};return this}();
+	</script>
+</head>
+	<body class='extent standard default hide-overflow '>
+		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
+			<span><i class='material-icons'>desktop_windows</i></span>
+		</div>
+<nav>
+	<div class="nav-wrapper">
+		<a href="#!" class="brand-logo black"><img src="https://cdn.rawgit.com/extent-framework/extent-github-cdn/d74480e/commons/img/logo.png"></a>
+		<!-- slideout menu -->
+		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
+						<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></a></li>
+		</ul>
+		<!-- report name -->
+		<span class='report-name'>Foresite Centeralized Device Management</span>
+		<!-- report headline -->
+		<span class='report-headline'></span>
+		<!-- nav-right -->
+		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
+			<a href='#!'>
+			<span class='label blue darken-3 suite-start-time'>May 28, 2024 19:42:11 PM</span>
+			</a>
+		</ul>
+	</div>
+</nav>		<!-- container -->
+		<div class='container'>
+<div id='test-view' class='view'>
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- test toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
+				<i class='material-icons'>warning</i> Status
+				</a>
+				<ul id='tests-toggle' class='dropdown-content'>
+										<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+					<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
+					<li class='divider'></li>
+					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
+				</ul>
+			</div>
+			<!-- test toggle -->
+			<!-- category toggle -->
+			<!-- category toggle -->
+			<!-- clear filters -->
+			<div class='chip transparent hide'>
+				<a class='' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
+				<i class='material-icons'>close</i> Clear
+				</a>
+			</div>
+			<!-- clear filters -->
+			<!-- enable dashboard -->
+			<div id='toggle-test-view-charts' class='chip transparent'>
+				<a class='pink-text' id='enable-dashboard' alt='Enable Dashboard' title='Enable Dashboard'>
+				<i class='material-icons'>track_changes</i> Dashboard
+				</a>
+			</div>
+			<!-- enable dashboard -->
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+				<i class='material-icons'>search</i> Search
+				</a>
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+<div id='test-view-charts' class='subview-full'>
+    <div id='charts-row' class='row nm-v nm-h'>
+        <div class='col s12 m12 l12 np-h'>
+            <div class='card-panel nm-v'>
+                <div class='left panel-name'>Tests</div>
+                <div class='chart-box' style="max-height:94px;">
+                    <canvas id='parent-analysis' width='90' height='70'></canvas>
+                </div>
+                <div class='block text-small'>
+                    <span class='tooltipped' data-position='top' data-tooltip='20.69%'><span class='strong'>12</span> test(s) passed</span>
+                </div>
+                <div class='block text-small'>
+                    <span class='strong tooltipped' data-position='top' data-tooltip='79.31%'>46</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="timeline-chart" class="row nm-v nm-h">
+        <div class="col s12 m12 l12 np-h">
+            <div class="card-panel">
+                <div class='left panel-name'>Timeline (seconds)</div>
+                <div class="chart-box" style="width:98%;max-height:145px;">
+                    <canvas id="timeline" height="120"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>	<div class='subview-left left'>
+		<div class='view-summary'>
+			<ul id='test-collection' class='test-collection'>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='1'>
+					<div class='test-heading'>
+						<span class='test-name'>TC03_Verification of displaying the Configurations table details after clicking on Configurations module option from side menu bar by Super admin/Admin user</span>
+						<span class='test-time'>May 28, 2024 19:42:15 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 28, 2024 19:42:15 PM</span>
+	<span class='label end-time'>May 28, 2024 19:42:15 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>7:42:22 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024074222.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>7:42:25 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024074225.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>7:42:26 PM</td>
+				<td class='step-details'>
+						Chittu@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024074226.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>7:42:26 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024074226.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='2'>
+					<div class='test-heading'>
+						<span class='test-name'>TC04_Verification of Refreshing button functionality in the Configurations List screen by Super admin/Admin user</span>
+						<span class='test-time'>May 28, 2024 19:44:35 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 28, 2024 19:44:35 PM</span>
+	<span class='label end-time'>May 28, 2024 19:44:35 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>7:44:43 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024074442.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>7:44:46 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024074446.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>7:44:47 PM</td>
+				<td class='step-details'>
+						Chittu@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024074447.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>7:44:48 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024074448.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>7:47:02 PM</td>
+				<td class='step-details'>
+						Step failed due to Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //span[contains(text(),'Configurations')]' (tried for 20 second(s) with 500 milliseconds interval)<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024074701.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='3'>
+					<div class='test-heading'>
+						<span class='test-name'>TC05_Verification of current view functionality in the Configurations List screen by Super admin/Admin user</span>
+						<span class='test-time'>May 28, 2024 19:47:19 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 28, 2024 19:47:19 PM</span>
+	<span class='label end-time'>May 28, 2024 19:47:19 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>7:47:26 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024074726.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>7:47:29 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024074729.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>7:47:30 PM</td>
+				<td class='step-details'>
+						Chittu@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024074729.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>7:47:30 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024074730.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='4'>
+					<div class='test-heading'>
+						<span class='test-name'>TC06_Verification of history view functionality in the Configurations List screen by Super admin/Admin user</span>
+						<span class='test-time'>May 28, 2024 19:49:13 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 28, 2024 19:49:13 PM</span>
+	<span class='label end-time'>May 28, 2024 19:49:13 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>7:49:19 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024074919.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>7:49:23 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024074923.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>7:49:23 PM</td>
+				<td class='step-details'>
+						Chittu@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024074923.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>7:49:24 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024074923.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>7:51:37 PM</td>
+				<td class='step-details'>
+						Step failed due to Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //span[contains(text(),'Configurations')]' (tried for 20 second(s) with 500 milliseconds interval)<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024075137.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='5'>
+					<div class='test-heading'>
+						<span class='test-name'>TC07_Verification of tooltip functionality for Refresh button of the Configurations List screen by Super admin/Admin user</span>
+						<span class='test-time'>May 28, 2024 19:51:45 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 28, 2024 19:51:45 PM</span>
+	<span class='label end-time'>May 28, 2024 19:51:45 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>7:51:56 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024075156.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>7:52:00 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024075200.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>7:52:00 PM</td>
+				<td class='step-details'>
+						Chittu@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024075200.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>7:52:01 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024075200.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='6'>
+					<div class='test-heading'>
+						<span class='test-name'>TC08_Verification of tooltip functionality for View Response body button of the Configurations List screen by Super admin/Admin user</span>
+						<span class='test-time'>May 28, 2024 19:54:03 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 28, 2024 19:54:03 PM</span>
+	<span class='label end-time'>May 28, 2024 19:54:03 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>7:54:10 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024075409.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>7:54:13 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024075413.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>7:54:14 PM</td>
+				<td class='step-details'>
+						Chittu@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024075413.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>7:54:14 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024075414.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>7:56:28 PM</td>
+				<td class='step-details'>
+						Step failed due to Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //span[contains(text(),'Configurations')]' (tried for 20 second(s) with 500 milliseconds interval)<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024075628.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='7'>
+					<div class='test-heading'>
+						<span class='test-name'>TC09_Verification of changing the items per page functionality in the Configurations List screen by Super admin/Admin user</span>
+						<span class='test-time'>May 28, 2024 19:56:30 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 28, 2024 19:56:30 PM</span>
+	<span class='label end-time'>May 28, 2024 19:56:30 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>7:56:36 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024075636.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>7:56:39 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024075639.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>7:56:40 PM</td>
+				<td class='step-details'>
+						Chittu@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024075640.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>7:56:40 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024075640.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>7:58:54 PM</td>
+				<td class='step-details'>
+						Step failed due to Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //span[contains(text(),'Configurations')]' (tried for 20 second(s) with 500 milliseconds interval)<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024075854.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='8'>
+					<div class='test-heading'>
+						<span class='test-name'>TC10_Verification of displaying the items per page by default i.e. 25 per page in the Configurations List screen by Super admin/Admin user</span>
+						<span class='test-time'>May 28, 2024 19:59:00 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 28, 2024 19:59:00 PM</span>
+	<span class='label end-time'>May 28, 2024 19:59:00 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>7:59:07 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024075907.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>7:59:10 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024075910.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>7:59:11 PM</td>
+				<td class='step-details'>
+						Chittu@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024075910.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>7:59:11 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024075911.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='9'>
+					<div class='test-heading'>
+						<span class='test-name'>TC11_Verification of displaying the total number of records with pagination icons in the Configurations List screen by Super admin/Admin user</span>
+						<span class='test-time'>May 28, 2024 21:04:57 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 28, 2024 21:04:57 PM</span>
+	<span class='label end-time'>May 28, 2024 21:04:57 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='10'>
+					<div class='test-heading'>
+						<span class='test-name'>TC12_Verification of displaying the First page (Full Backward arrow) button in the Configurations List screen by Super admin/Admin user</span>
+						<span class='test-time'>May 28, 2024 21:05:26 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 28, 2024 21:05:26 PM</span>
+	<span class='label end-time'>May 28, 2024 21:05:26 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:05:35 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024090535.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:05:38 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024090538.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:05:39 PM</td>
+				<td class='step-details'>
+						Chittu@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024090539.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:05:40 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024090539.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>9:07:54 PM</td>
+				<td class='step-details'>
+						Step failed due to Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //span[contains(text(),'Configurations')]' (tried for 20 second(s) with 500 milliseconds interval)<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024090754.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='11'>
+					<div class='test-heading'>
+						<span class='test-name'>TC13_Verification of displaying the Last page (Full Forward arrow button in the Configurations List screen by Super admin/Admin user</span>
+						<span class='test-time'>May 28, 2024 21:08:02 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 28, 2024 21:08:02 PM</span>
+	<span class='label end-time'>May 28, 2024 21:08:02 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:08:10 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024090809.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:08:13 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024090813.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:08:14 PM</td>
+				<td class='step-details'>
+						Chittu@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024090814.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:08:15 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024090814.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>9:10:29 PM</td>
+				<td class='step-details'>
+						Step failed due to Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //span[contains(text(),'Configurations')]' (tried for 20 second(s) with 500 milliseconds interval)<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024091029.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='12'>
+					<div class='test-heading'>
+						<span class='test-name'>TC14_Verification of displaying the Next page (Forward arrow button in the Configurations List screen by Super admin/Admin user</span>
+						<span class='test-time'>May 28, 2024 21:10:37 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 28, 2024 21:10:37 PM</span>
+	<span class='label end-time'>May 28, 2024 21:10:37 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:10:45 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024091044.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:10:48 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024091048.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:10:49 PM</td>
+				<td class='step-details'>
+						Chittu@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024091048.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:10:49 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024091049.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>9:13:04 PM</td>
+				<td class='step-details'>
+						Step failed due to Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //span[contains(text(),'Configurations')]' (tried for 20 second(s) with 500 milliseconds interval)<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024091303.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='13'>
+					<div class='test-heading'>
+						<span class='test-name'>TC15_Verification of displaying the Previous page (Backward arrow button in the Configurations List screen by Super admin/Admin user</span>
+						<span class='test-time'>May 28, 2024 21:13:11 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 28, 2024 21:13:11 PM</span>
+	<span class='label end-time'>May 28, 2024 21:13:11 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:13:19 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024091318.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:13:22 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024091322.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:13:23 PM</td>
+				<td class='step-details'>
+						Chittu@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024091322.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:13:23 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024091323.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>9:15:38 PM</td>
+				<td class='step-details'>
+						Step failed due to Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //span[contains(text(),'Configurations')]' (tried for 20 second(s) with 500 milliseconds interval)<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024091537.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='14'>
+					<div class='test-heading'>
+						<span class='test-name'>TC16_Verification of tooltip functionality for Current View Button of the Configurations List screen by Super admin/Admin user</span>
+						<span class='test-time'>May 28, 2024 21:15:46 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 28, 2024 21:15:46 PM</span>
+	<span class='label end-time'>May 28, 2024 21:15:46 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:15:54 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024091554.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:15:58 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024091557.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:15:58 PM</td>
+				<td class='step-details'>
+						Chittu@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024091558.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:15:59 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024091558.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>9:18:13 PM</td>
+				<td class='step-details'>
+						Step failed due to Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //span[contains(text(),'Configurations')]' (tried for 20 second(s) with 500 milliseconds interval)<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024091813.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='15'>
+					<div class='test-heading'>
+						<span class='test-name'>TC17_Verification of the search functionality for Edge ID column (Valid Edge ID ) in the Configurations List screen by Super admin/Admin user</span>
+						<span class='test-time'>May 28, 2024 21:18:25 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 28, 2024 21:18:25 PM</span>
+	<span class='label end-time'>May 28, 2024 21:18:25 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:18:33 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024091833.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:18:36 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024091835.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:18:37 PM</td>
+				<td class='step-details'>
+						Chittu@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024091836.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:18:37 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024091837.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>9:20:52 PM</td>
+				<td class='step-details'>
+						Step failed due to Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //span[contains(text(),'Configurations')]' (tried for 20 second(s) with 500 milliseconds interval)<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024092051.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='16'>
+					<div class='test-heading'>
+						<span class='test-name'>TC18_Verification of the search functionality for Edge ID column (Invalid Edge ID) in the Configurations List screen by Super admin/Admin user</span>
+						<span class='test-time'>May 28, 2024 21:20:59 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 28, 2024 21:20:59 PM</span>
+	<span class='label end-time'>May 28, 2024 21:20:59 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:21:06 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024092106.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:21:10 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024092110.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:21:11 PM</td>
+				<td class='step-details'>
+						Chittu@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024092111.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:21:11 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024092111.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>9:23:26 PM</td>
+				<td class='step-details'>
+						Step failed due to Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //span[contains(text(),'Configurations')]' (tried for 20 second(s) with 500 milliseconds interval)<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024092325.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='17'>
+					<div class='test-heading'>
+						<span class='test-name'>TC19_Verification of the search functionality for App Name column (Valid App Name) in the Configurations List screen by Super admin/Admin user</span>
+						<span class='test-time'>May 28, 2024 21:23:33 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 28, 2024 21:23:33 PM</span>
+	<span class='label end-time'>May 28, 2024 21:23:33 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:23:41 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024092341.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:23:45 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024092345.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:23:46 PM</td>
+				<td class='step-details'>
+						Chittu@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024092345.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:23:46 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024092346.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>9:26:00 PM</td>
+				<td class='step-details'>
+						Step failed due to Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //span[contains(text(),'Configurations')]' (tried for 20 second(s) with 500 milliseconds interval)<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024092600.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='18'>
+					<div class='test-heading'>
+						<span class='test-name'>TC20_Verification of the search functionality for App Name column (InValid App Name) in the Configurations List screen by Super admin/Admin user</span>
+						<span class='test-time'>May 28, 2024 21:26:08 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 28, 2024 21:26:08 PM</span>
+	<span class='label end-time'>May 28, 2024 21:26:08 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:26:15 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024092615.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:26:19 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024092619.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:26:20 PM</td>
+				<td class='step-details'>
+						Chittu@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024092619.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:26:20 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024092620.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>9:28:34 PM</td>
+				<td class='step-details'>
+						Step failed due to Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //span[contains(text(),'Configurations')]' (tried for 20 second(s) with 500 milliseconds interval)<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024092834.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='19'>
+					<div class='test-heading'>
+						<span class='test-name'>TC21_Verification of the search functionality for Config Name (Valid Config Name) in the Configurations List screen by Super admin/Admin user</span>
+						<span class='test-time'>May 28, 2024 21:28:42 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 28, 2024 21:28:42 PM</span>
+	<span class='label end-time'>May 28, 2024 21:28:42 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:28:51 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024092851.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:28:55 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024092855.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:28:56 PM</td>
+				<td class='step-details'>
+						Chittu@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024092855.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:28:56 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024092856.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='20'>
+					<div class='test-heading'>
+						<span class='test-name'>TC22_Verification of the search functionality for Config Name (InValid Config Name) in the Configurations List screen by Super admin/Admin user</span>
+						<span class='test-time'>May 28, 2024 21:30:52 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 28, 2024 21:30:52 PM</span>
+	<span class='label end-time'>May 28, 2024 21:30:52 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:31:00 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024093059.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>9:33:15 PM</td>
+				<td class='step-details'>
+						Step failed due to Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //input[@formcontrolname='username']' (tried for 20 second(s) with 500 milliseconds interval)<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024093314.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>9:35:30 PM</td>
+				<td class='step-details'>
+						Step failed due to Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //input[@formcontrolname='password']' (tried for 20 second(s) with 500 milliseconds interval)<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024093529.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>9:37:45 PM</td>
+				<td class='step-details'>
+						Step failed due to Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //button/span' (tried for 20 second(s) with 500 milliseconds interval)<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024093744.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>9:40:00 PM</td>
+				<td class='step-details'>
+						Step failed due to Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //span[contains(text(),'Configurations')]' (tried for 20 second(s) with 500 milliseconds interval)<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024093959.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='21'>
+					<div class='test-heading'>
+						<span class='test-name'>TC23_Verification of the search functionality for Response Status  in the Configurations List screen by Super admin/Admin user</span>
+						<span class='test-time'>May 28, 2024 21:40:07 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 28, 2024 21:40:07 PM</span>
+	<span class='label end-time'>May 28, 2024 21:40:07 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:40:15 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024094015.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:40:19 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024094019.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:40:19 PM</td>
+				<td class='step-details'>
+						Chittu@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024094019.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:40:20 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024094020.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>9:42:34 PM</td>
+				<td class='step-details'>
+						Step failed due to Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //span[contains(text(),'Configurations')]' (tried for 20 second(s) with 500 milliseconds interval)<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024094234.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='22'>
+					<div class='test-heading'>
+						<span class='test-name'>TC24_Verification of the removal of search results and text for all Edge ID Column in the Configurations screen by Super admin/Admin user</span>
+						<span class='test-time'>May 28, 2024 21:42:41 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 28, 2024 21:42:41 PM</span>
+	<span class='label end-time'>May 28, 2024 21:42:41 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:42:48 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024094248.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:42:53 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024094252.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:42:53 PM</td>
+				<td class='step-details'>
+						Chittu@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024094253.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:42:54 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024094254.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>9:45:08 PM</td>
+				<td class='step-details'>
+						Step failed due to Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //span[contains(text(),'Configurations')]' (tried for 20 second(s) with 500 milliseconds interval)<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024094508.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='23'>
+					<div class='test-heading'>
+						<span class='test-name'>TC25_Verification of the removal of search results and text for App Name columns in the Configurations screen by Super admin/Admin user</span>
+						<span class='test-time'>May 28, 2024 21:45:16 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 28, 2024 21:45:16 PM</span>
+	<span class='label end-time'>May 28, 2024 21:45:16 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:45:24 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024094524.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:45:28 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024094527.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:45:28 PM</td>
+				<td class='step-details'>
+						Chittu@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024094528.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:45:29 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024094529.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>9:47:44 PM</td>
+				<td class='step-details'>
+						Step failed due to Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //span[contains(text(),'Configurations')]' (tried for 20 second(s) with 500 milliseconds interval)<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024094743.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='24'>
+					<div class='test-heading'>
+						<span class='test-name'>TC26_Verification of the removal of search results and text for Config Name in the Configurations screen by Super admin/Admin user</span>
+						<span class='test-time'>May 28, 2024 21:47:52 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 28, 2024 21:47:52 PM</span>
+	<span class='label end-time'>May 28, 2024 21:47:52 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:48:00 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024094800.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:48:04 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024094804.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:48:05 PM</td>
+				<td class='step-details'>
+						Chittu@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024094805.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:48:06 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024094805.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>9:50:20 PM</td>
+				<td class='step-details'>
+						Step failed due to Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //span[contains(text(),'Configurations')]' (tried for 20 second(s) with 500 milliseconds interval)<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024095020.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='25'>
+					<div class='test-heading'>
+						<span class='test-name'>TC27_Verification of the removal of search results and text for Response Status columns in the Configurations screen by Super admin/Admin user</span>
+						<span class='test-time'>May 28, 2024 21:50:28 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 28, 2024 21:50:28 PM</span>
+	<span class='label end-time'>May 28, 2024 21:50:28 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:50:37 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024095036.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:50:40 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024095039.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:50:40 PM</td>
+				<td class='step-details'>
+						Chittu@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024095040.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:50:41 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024095041.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>9:52:55 PM</td>
+				<td class='step-details'>
+						Step failed due to Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //span[contains(text(),'Configurations')]' (tried for 20 second(s) with 500 milliseconds interval)<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024095255.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='26'>
+					<div class='test-heading'>
+						<span class='test-name'>TC28_Verification of the removal of search results and text for timestamp columns in the Configurations screen by Super admin/Admin user</span>
+						<span class='test-time'>May 28, 2024 21:52:57 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 28, 2024 21:52:57 PM</span>
+	<span class='label end-time'>May 28, 2024 21:52:57 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:53:05 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024095304.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:53:08 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024095308.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:53:09 PM</td>
+				<td class='step-details'>
+						Chittu@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024095308.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:53:09 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024095309.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>9:55:23 PM</td>
+				<td class='step-details'>
+						Step failed due to Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //span[contains(text(),'Configurations')]' (tried for 20 second(s) with 500 milliseconds interval)<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024095523.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='27'>
+					<div class='test-heading'>
+						<span class='test-name'>TC29_Verification of send Configuration functionality</span>
+						<span class='test-time'>May 28, 2024 21:55:31 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 28, 2024 21:55:31 PM</span>
+	<span class='label end-time'>May 28, 2024 21:55:31 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='28'>
+					<div class='test-heading'>
+						<span class='test-name'>TC30_Verification of Selecting a valid range of dates for Last Updated columns in the Configurations screen by Super admin/Admin user</span>
+						<span class='test-time'>May 28, 2024 21:57:17 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 28, 2024 21:57:17 PM</span>
+	<span class='label end-time'>May 28, 2024 21:57:17 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:57:24 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024095724.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:57:28 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024095728.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:57:28 PM</td>
+				<td class='step-details'>
+						Chittu@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024095728.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:57:29 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024095729.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>9:59:43 PM</td>
+				<td class='step-details'>
+						Step failed due to Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //span[contains(text(),'Configurations')]' (tried for 20 second(s) with 500 milliseconds interval)<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024095943.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='29'>
+					<div class='test-heading'>
+						<span class='test-name'>TC31_Verification of Selecting a valid range of dates timeStamp columns in the Configurations screen by Super admin/Admin user</span>
+						<span class='test-time'>May 28, 2024 21:59:51 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 28, 2024 21:59:51 PM</span>
+	<span class='label end-time'>May 28, 2024 21:59:51 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:00:00 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024095959.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:00:03 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024100003.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:00:03 PM</td>
+				<td class='step-details'>
+						Chittu@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024100003.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:00:04 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024100004.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>10:02:18 PM</td>
+				<td class='step-details'>
+						Step failed due to Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //span[contains(text(),'Configurations')]' (tried for 20 second(s) with 500 milliseconds interval)<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024100218.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='30'>
+					<div class='test-heading'>
+						<span class='test-name'>TC32_Verification of View Response body icon from action column</span>
+						<span class='test-time'>May 28, 2024 22:02:26 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 28, 2024 22:02:26 PM</span>
+	<span class='label end-time'>May 28, 2024 22:02:26 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:02:34 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024100234.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:02:38 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024100237.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:02:39 PM</td>
+				<td class='step-details'>
+						Chittu@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024100238.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:02:39 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024100239.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>10:04:53 PM</td>
+				<td class='step-details'>
+						Step failed due to Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //span[contains(text(),'Configurations')]' (tried for 20 second(s) with 500 milliseconds interval)<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024100453.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='31'>
+					<div class='test-heading'>
+						<span class='test-name'>TC33_Verification of download button from the action column</span>
+						<span class='test-time'>May 28, 2024 22:04:56 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 28, 2024 22:04:56 PM</span>
+	<span class='label end-time'>May 28, 2024 22:04:56 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:05:04 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024100504.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:05:08 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024100508.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:05:09 PM</td>
+				<td class='step-details'>
+						Chittu@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024100509.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:05:10 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024100509.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>10:07:24 PM</td>
+				<td class='step-details'>
+						Step failed due to Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //span[contains(text(),'Configurations')]' (tried for 20 second(s) with 500 milliseconds interval)<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024100723.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='32'>
+					<div class='test-heading'>
+						<span class='test-name'>TC35_Verification of check filter icon availability for EDGE ID</span>
+						<span class='test-time'>May 28, 2024 22:07:27 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 28, 2024 22:07:27 PM</span>
+	<span class='label end-time'>May 28, 2024 22:07:27 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:07:34 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024100734.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:07:39 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024100738.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:07:39 PM</td>
+				<td class='step-details'>
+						Chittu@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024100739.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:07:40 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024100740.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>10:09:55 PM</td>
+				<td class='step-details'>
+						Step failed due to Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //span[contains(text(),'Configurations')]' (tried for 20 second(s) with 500 milliseconds interval)<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024100954.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='33'>
+					<div class='test-heading'>
+						<span class='test-name'>TC36_Verification of check filter icon availability for APP Name</span>
+						<span class='test-time'>May 28, 2024 22:10:02 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 28, 2024 22:10:02 PM</span>
+	<span class='label end-time'>May 28, 2024 22:10:02 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:10:11 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024101010.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:10:14 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024101013.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:10:15 PM</td>
+				<td class='step-details'>
+						Chittu@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024101014.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:10:16 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024101016.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>10:12:30 PM</td>
+				<td class='step-details'>
+						Step failed due to Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //span[contains(text(),'Configurations')]' (tried for 20 second(s) with 500 milliseconds interval)<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024101230.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='34'>
+					<div class='test-heading'>
+						<span class='test-name'>TC37_Verification of check filter icon availability for Config Name</span>
+						<span class='test-time'>May 28, 2024 22:12:38 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 28, 2024 22:12:38 PM</span>
+	<span class='label end-time'>May 28, 2024 22:12:38 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:12:49 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024101245.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:12:50 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024101249.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:12:50 PM</td>
+				<td class='step-details'>
+						Chittu@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024101250.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:12:51 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024101251.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>10:15:05 PM</td>
+				<td class='step-details'>
+						Step failed due to Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //span[contains(text(),'Configurations')]' (tried for 20 second(s) with 500 milliseconds interval)<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024101505.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='35'>
+					<div class='test-heading'>
+						<span class='test-name'>TC38_Verification of check filter icon availability for Response Status</span>
+						<span class='test-time'>May 28, 2024 22:15:12 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 28, 2024 22:15:12 PM</span>
+	<span class='label end-time'>May 28, 2024 22:15:12 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:15:20 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024101520.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:15:24 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024101523.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:15:24 PM</td>
+				<td class='step-details'>
+						Chittu@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024101524.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:15:25 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024101525.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>10:17:39 PM</td>
+				<td class='step-details'>
+						Step failed due to Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //span[contains(text(),'Configurations')]' (tried for 20 second(s) with 500 milliseconds interval)<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024101739.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='36'>
+					<div class='test-heading'>
+						<span class='test-name'>TC39_Verification of check filter icon availability for Time stamp</span>
+						<span class='test-time'>May 28, 2024 22:17:46 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 28, 2024 22:17:46 PM</span>
+	<span class='label end-time'>May 28, 2024 22:17:46 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:17:53 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024101753.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:17:57 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024101757.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:17:58 PM</td>
+				<td class='step-details'>
+						Chittu@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024101757.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:17:58 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024101758.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>10:20:12 PM</td>
+				<td class='step-details'>
+						Step failed due to Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //span[contains(text(),'Configurations')]' (tried for 20 second(s) with 500 milliseconds interval)<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024102012.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='37'>
+					<div class='test-heading'>
+						<span class='test-name'>TC40_Verification of check filter icon availability for Last Updated</span>
+						<span class='test-time'>May 28, 2024 22:20:19 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 28, 2024 22:20:19 PM</span>
+	<span class='label end-time'>May 28, 2024 22:20:19 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:20:28 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024102027.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:20:32 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024102032.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:20:33 PM</td>
+				<td class='step-details'>
+						Chittu@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024102032.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:20:33 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024102033.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>10:22:47 PM</td>
+				<td class='step-details'>
+						Step failed due to Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //span[contains(text(),'Configurations')]' (tried for 20 second(s) with 500 milliseconds interval)<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024102247.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='38'>
+					<div class='test-heading'>
+						<span class='test-name'>TC42_Verification of visualization of icons in action column</span>
+						<span class='test-time'>May 28, 2024 22:22:55 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 28, 2024 22:22:55 PM</span>
+	<span class='label end-time'>May 28, 2024 22:22:55 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:23:02 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024102301.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:23:06 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024102306.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:23:07 PM</td>
+				<td class='step-details'>
+						Chittu@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024102306.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:23:07 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024102307.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>10:25:22 PM</td>
+				<td class='step-details'>
+						Step failed due to Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //span[contains(text(),'Configurations')]' (tried for 20 second(s) with 500 milliseconds interval)<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024102522.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='39'>
+					<div class='test-heading'>
+						<span class='test-name'>TC43_Verification of loading properly in slow network</span>
+						<span class='test-time'>May 28, 2024 22:25:40 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 28, 2024 22:25:40 PM</span>
+	<span class='label end-time'>May 28, 2024 22:25:40 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:25:49 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024102549.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:25:53 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024102553.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:25:54 PM</td>
+				<td class='step-details'>
+						Chittu@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024102553.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:25:54 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024102554.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='40'>
+					<div class='test-heading'>
+						<span class='test-name'>TC44_Verification of the accessible the page by using mobile network</span>
+						<span class='test-time'>May 28, 2024 22:27:38 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 28, 2024 22:27:38 PM</span>
+	<span class='label end-time'>May 28, 2024 22:27:38 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:27:45 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024102745.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:27:49 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024102749.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:27:50 PM</td>
+				<td class='step-details'>
+						Chittu@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024102750.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:27:51 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024102750.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>10:30:05 PM</td>
+				<td class='step-details'>
+						Step failed due to Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //span[contains(text(),'Configurations')]' (tried for 20 second(s) with 500 milliseconds interval)<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024103005.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='41'>
+					<div class='test-heading'>
+						<span class='test-name'>TC44_Verification of the accessible the page by using mobile network</span>
+						<span class='test-time'>May 28, 2024 22:30:07 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 28, 2024 22:30:07 PM</span>
+	<span class='label end-time'>May 28, 2024 22:30:07 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:30:15 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024103014.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:30:17 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024103017.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:30:18 PM</td>
+				<td class='step-details'>
+						Chittu@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024103018.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:30:19 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024103018.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>10:32:32 PM</td>
+				<td class='step-details'>
+						Step failed due to Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //span[contains(text(),'Configurations')]' (tried for 20 second(s) with 500 milliseconds interval)<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024103232.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='42'>
+					<div class='test-heading'>
+						<span class='test-name'>TC45_Verification of the accessible the screen by using wi-fi network</span>
+						<span class='test-time'>May 28, 2024 22:32:34 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 28, 2024 22:32:34 PM</span>
+	<span class='label end-time'>May 28, 2024 22:32:34 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:32:42 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024103242.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:32:46 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024103245.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:32:46 PM</td>
+				<td class='step-details'>
+						Chittu@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024103246.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:32:47 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024103246.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>10:35:01 PM</td>
+				<td class='step-details'>
+						Step failed due to Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //span[contains(text(),'Configurations')]' (tried for 20 second(s) with 500 milliseconds interval)<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024103501.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='43'>
+					<div class='test-heading'>
+						<span class='test-name'>TC46_Verification of without login into browser, copy & paste the url</span>
+						<span class='test-time'>May 28, 2024 22:35:03 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 28, 2024 22:35:03 PM</span>
+	<span class='label end-time'>May 28, 2024 22:35:03 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:35:10 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024103510.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:35:14 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024103514.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:35:14 PM</td>
+				<td class='step-details'>
+						Chittu@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024103514.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:35:15 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024103515.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>10:37:29 PM</td>
+				<td class='step-details'>
+						Step failed due to Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //span[contains(text(),'Configurations')]' (tried for 20 second(s) with 500 milliseconds interval)<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024103729.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='44'>
+					<div class='test-heading'>
+						<span class='test-name'>TC47_Verification to check the alignment of Refresh & History View buttons on the top right side</span>
+						<span class='test-time'>May 28, 2024 22:37:31 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 28, 2024 22:37:31 PM</span>
+	<span class='label end-time'>May 28, 2024 22:37:31 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:37:39 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024103738.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:37:42 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024103742.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:37:43 PM</td>
+				<td class='step-details'>
+						Chittu@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024103742.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:37:43 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024103743.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>10:39:58 PM</td>
+				<td class='step-details'>
+						Step failed due to Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //span[contains(text(),'Configurations')]' (tried for 20 second(s) with 500 milliseconds interval)<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024103957.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='45'>
+					<div class='test-heading'>
+						<span class='test-name'>TC48_Verification of check filter icon visibility for EDGE ID</span>
+						<span class='test-time'>May 28, 2024 22:40:01 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 28, 2024 22:40:01 PM</span>
+	<span class='label end-time'>May 28, 2024 22:40:01 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:40:09 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024104009.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>10:42:24 PM</td>
+				<td class='step-details'>
+						Step failed due to Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //input[@formcontrolname='username']' (tried for 20 second(s) with 500 milliseconds interval)<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024104223.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>10:44:40 PM</td>
+				<td class='step-details'>
+						Step failed due to Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //input[@formcontrolname='password']' (tried for 20 second(s) with 500 milliseconds interval)<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024104438.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>10:46:56 PM</td>
+				<td class='step-details'>
+						Step failed due to Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //button/span' (tried for 20 second(s) with 500 milliseconds interval)<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024104654.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>10:49:11 PM</td>
+				<td class='step-details'>
+						Step failed due to Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //span[contains(text(),'Configurations')]' (tried for 20 second(s) with 500 milliseconds interval)<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024104909.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='46'>
+					<div class='test-heading'>
+						<span class='test-name'>TC49_Verification of check filter icon visibility for APP Name</span>
+						<span class='test-time'>May 28, 2024 22:49:19 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 28, 2024 22:49:19 PM</span>
+	<span class='label end-time'>May 28, 2024 22:49:19 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:49:27 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024104926.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:49:31 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024104931.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:49:32 PM</td>
+				<td class='step-details'>
+						Chittu@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024104932.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:49:33 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024104933.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>10:51:48 PM</td>
+				<td class='step-details'>
+						Step failed due to Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //span[contains(text(),'Configurations')]' (tried for 20 second(s) with 500 milliseconds interval)<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024105147.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='47'>
+					<div class='test-heading'>
+						<span class='test-name'>TC50_Verification of check filter icon visibility for Config Name</span>
+						<span class='test-time'>May 28, 2024 22:51:55 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 28, 2024 22:51:55 PM</span>
+	<span class='label end-time'>May 28, 2024 22:51:55 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:52:02 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024105202.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:52:06 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024105206.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:52:06 PM</td>
+				<td class='step-details'>
+						Chittu@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024105206.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:52:07 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024105207.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>10:54:21 PM</td>
+				<td class='step-details'>
+						Step failed due to Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //span[contains(text(),'Configurations')]' (tried for 20 second(s) with 500 milliseconds interval)<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024105421.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='48'>
+					<div class='test-heading'>
+						<span class='test-name'>TC51_Verification of check filter icon visibility for Response Status</span>
+						<span class='test-time'>May 28, 2024 22:54:29 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 28, 2024 22:54:29 PM</span>
+	<span class='label end-time'>May 28, 2024 22:54:29 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>10:54:37 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024105436.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>10:56:52 PM</td>
+				<td class='step-details'>
+						Step failed due to Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //input[@formcontrolname='username']' (tried for 20 second(s) with 500 milliseconds interval)<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024105651.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>10:59:07 PM</td>
+				<td class='step-details'>
+						Step failed due to Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //input[@formcontrolname='password']' (tried for 20 second(s) with 500 milliseconds interval)<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024105906.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>11:01:22 PM</td>
+				<td class='step-details'>
+						Step failed due to Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //button/span' (tried for 20 second(s) with 500 milliseconds interval)<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024110121.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>11:03:37 PM</td>
+				<td class='step-details'>
+						Step failed due to Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //span[contains(text(),'Configurations')]' (tried for 20 second(s) with 500 milliseconds interval)<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024110336.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='49'>
+					<div class='test-heading'>
+						<span class='test-name'>TC52_Verification of check filter icon visibility for Time stamp</span>
+						<span class='test-time'>May 28, 2024 23:03:45 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 28, 2024 23:03:45 PM</span>
+	<span class='label end-time'>May 28, 2024 23:03:45 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:03:53 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024110352.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:03:56 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024110356.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:03:57 PM</td>
+				<td class='step-details'>
+						Chittu@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024110357.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:03:58 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024110357.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>11:06:12 PM</td>
+				<td class='step-details'>
+						Step failed due to Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //span[contains(text(),'Configurations')]' (tried for 20 second(s) with 500 milliseconds interval)<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024110612.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='50'>
+					<div class='test-heading'>
+						<span class='test-name'>TC53_Verification of check filter icon visibility for Last Updated</span>
+						<span class='test-time'>May 28, 2024 23:06:20 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 28, 2024 23:06:20 PM</span>
+	<span class='label end-time'>May 28, 2024 23:06:20 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:06:30 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024110626.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:06:31 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024110631.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:06:32 PM</td>
+				<td class='step-details'>
+						Chittu@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024110631.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:06:32 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024110632.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>11:08:47 PM</td>
+				<td class='step-details'>
+						Step failed due to Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //span[contains(text(),'Configurations')]' (tried for 20 second(s) with 500 milliseconds interval)<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024110846.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='51'>
+					<div class='test-heading'>
+						<span class='test-name'>TC54_Verification of check filter icon accessibility for EDGE ID</span>
+						<span class='test-time'>May 28, 2024 23:08:56 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 28, 2024 23:08:56 PM</span>
+	<span class='label end-time'>May 28, 2024 23:08:56 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:09:04 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024110903.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:09:07 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024110907.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:09:08 PM</td>
+				<td class='step-details'>
+						Chittu@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024110908.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:09:09 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024110908.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>11:11:23 PM</td>
+				<td class='step-details'>
+						Step failed due to Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //span[contains(text(),'Configurations')]' (tried for 20 second(s) with 500 milliseconds interval)<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024111123.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='52'>
+					<div class='test-heading'>
+						<span class='test-name'>TC55_Verification of check filter icon accessbility for APP Name</span>
+						<span class='test-time'>May 28, 2024 23:11:32 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 28, 2024 23:11:32 PM</span>
+	<span class='label end-time'>May 28, 2024 23:11:32 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:11:43 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024111139.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:11:44 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024111143.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:11:45 PM</td>
+				<td class='step-details'>
+						Chittu@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024111144.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:11:46 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024111145.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>11:14:00 PM</td>
+				<td class='step-details'>
+						Step failed due to Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //span[contains(text(),'Configurations')]' (tried for 20 second(s) with 500 milliseconds interval)<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024111400.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='53'>
+					<div class='test-heading'>
+						<span class='test-name'>TC56_Verification of check filter icon accessibility for Config Name</span>
+						<span class='test-time'>May 28, 2024 23:14:09 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 28, 2024 23:14:09 PM</span>
+	<span class='label end-time'>May 28, 2024 23:14:09 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:14:17 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024111417.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:14:21 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024111421.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:14:22 PM</td>
+				<td class='step-details'>
+						Chittu@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024111422.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:14:23 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024111422.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>11:16:37 PM</td>
+				<td class='step-details'>
+						Step failed due to Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //span[contains(text(),'Configurations')]' (tried for 20 second(s) with 500 milliseconds interval)<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024111637.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='54'>
+					<div class='test-heading'>
+						<span class='test-name'>TC57_Verification of check filter icon accessibilty for Response Status</span>
+						<span class='test-time'>May 28, 2024 23:16:44 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 28, 2024 23:16:44 PM</span>
+	<span class='label end-time'>May 28, 2024 23:16:44 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:16:53 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024111652.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='55'>
+					<div class='test-heading'>
+						<span class='test-name'>TC58_Verification of check filter icon accessibility for Time stamp</span>
+						<span class='test-time'>May 28, 2024 23:31:28 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 28, 2024 23:31:28 PM</span>
+	<span class='label end-time'>May 28, 2024 23:31:28 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:31:35 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024113135.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:31:39 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024113138.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:31:39 PM</td>
+				<td class='step-details'>
+						Chittu@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024113139.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:31:40 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024113139.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='56'>
+					<div class='test-heading'>
+						<span class='test-name'>TC59_Verification of check filter icon accessibility f for Last Updated</span>
+						<span class='test-time'>May 28, 2024 23:32:07 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 28, 2024 23:32:07 PM</span>
+	<span class='label end-time'>May 28, 2024 23:32:07 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:32:27 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024113227.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:32:30 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024113230.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:32:30 PM</td>
+				<td class='step-details'>
+						Chittu@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024113230.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:32:30 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024113230.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='57'>
+					<div class='test-heading'>
+						<span class='test-name'>TC60_Verification to check the column width & size resolution</span>
+						<span class='test-time'>May 28, 2024 23:32:56 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 28, 2024 23:32:56 PM</span>
+	<span class='label end-time'>May 28, 2024 23:32:56 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:33:04 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024113304.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:33:08 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024113307.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:33:08 PM</td>
+				<td class='step-details'>
+						Chittu@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024113308.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:33:09 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024113308.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>11:35:23 PM</td>
+				<td class='step-details'>
+						Step failed due to Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //span[contains(text(),'Configurations')]' (tried for 20 second(s) with 500 milliseconds interval)<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024113522.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='58'>
+					<div class='test-heading'>
+						<span class='test-name'>TC61_Verification of pagination i.e. items per page</span>
+						<span class='test-time'>May 28, 2024 23:35:24 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 28, 2024 23:35:24 PM</span>
+	<span class='label end-time'>May 28, 2024 23:35:24 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:35:30 PM</td>
+				<td class='step-details'>
+						<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024113530.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:35:33 PM</td>
+				<td class='step-details'>
+						devendar.malothu@birlasoft.com has been entered into username field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024113533.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:35:33 PM</td>
+				<td class='step-details'>
+						Chittu@123 has been entered into password field<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024113533.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:35:33 PM</td>
+				<td class='step-details'>
+						Login button clicked<span class='label end-time'><a href=E:\Devendra\cdm\CDMCucumber\CDMProject/src/test/java/com/cdm/reports/screenshot/28052024113533.png>Screenshot</a></span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- subview left -->
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<div id='step-filters' class="right sr-filters">
+				<a class="btn-floating waves-effect waves-light green" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></a>
+				<a class="btn-floating waves-effect waves-light red" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></a>
+				<a class="btn-floating waves-effect waves-light red darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></a>
+				<a class="btn-floating waves-effect waves-light pink text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></a>
+				<a class="btn-floating waves-effect waves-light orange" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></a>
+				<a class="btn-floating waves-effect waves-light teal" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></a>
+				<a class="btn-floating waves-effect waves-light grey" status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></a>
+			</div>
+			<h5 class='test-name'></h5>
+		</div>
+	</div>
+	<!-- subview right -->
+</div>
+<!-- test view --><!-- category view --><!-- exception view --><div id='dashboard-view' class='view hide'>
+	<div class='card-panel transparent np-v'>
+		<h5>Dashboard</h5>
+
+		<div class='row'>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Tests
+					<div class='panel-lead'>58</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Steps
+					<div class='panel-lead'>0</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Start
+					<div class='panel-lead'>May 28, 2024 19:42:11 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+			 		End
+			 		<div class='panel-lead'>May 28, 2024 23:37:15 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Time Taken
+					<div class='panel-lead'>3h 55m 3s+646ms</div>
+				</div>
+			</div>
+			<div class='col s4'>
+				<div class='card-panel dashboard-environment'>
+					<span class='right label cyan white-text'>Environment</span><p>&nbsp;</p>
+					
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>Value</th>
+						</tr>
+							<tr>
+								<td>Host Name</td>
+								<td>BirlaSoft</td>
+							</tr>
+							<tr>
+								<td>Environment</td>
+								<td>Test</td>
+							</tr>
+							<tr>
+								<td>User Name</td>
+								<td>Devendaram</td>
+							</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- dashboard view -->
+<!-- testrunner-logs view -->		</div>
+		<!-- container -->
+		<script>
+			var statusGroup = {
+                parentCount: 58,
+				passParent: 12,
+				failParent: 46,
+				fatalParent: 0,
+				errorParent: 0,
+				warningParent: 0,
+				skipParent: 0,
+				exceptionsParent: 46,
+				childCount: 0,
+				passChild: 0,
+				failChild: 0,
+				fatalChild: 0,
+				errorChild: 0,
+				warningChild: 0,
+				skipChild: 0,
+				infoChild: 0,
+				debugChild: 0,
+				exceptionsChild: 0,
+				grandChildCount: 0,
+				passGrandChild: 0,
+				failGrandChild: 0,
+				fatalGrandChild: 0,
+				errorGrandChild: 0,
+				warningGrandChild: 0,
+				skipGrandChild: 0,
+				infoGrandChild: 0,
+				debugGrandChild: 0,
+				exceptionsGrandChild: 0,
+			};
+		</script>
+		<script>
+			var timeline = {
+			        "TC03_Verification of displaying the Configurations table details after clicking on Configurations module option from side menu bar by Super admin/Admin user":0,"TC04_Verification of Refreshing button functionality in the Configurations List screen by Super admin/Admin user":0,"TC05_Verification of current view functionality in the Configurations List screen by Super admin/Admin user":0,"TC06_Verification of history view functionality in the Configurations List screen by Super admin/Admin user":0,"TC07_Verification of tooltip functionality for Refresh button of the Configurations List screen by Super admin/Admin user":0,"TC08_Verification of tooltip functionality for View Response body button of the Configurations List screen by Super admin/Admin user":0,"TC09_Verification of changing the items per page functionality in the Configurations List screen by Super admin/Admin user":0,"TC10_Verification of displaying the items per page by default i.e. 25 per page in the Configurations List screen by Super admin/Admin user":0,"TC11_Verification of displaying the total number of records with pagination icons in the Configurations List screen by Super admin/Admin user":0,"TC12_Verification of displaying the First page (Full Backward arrow) button in the Configurations List screen by Super admin/Admin user":0,"TC13_Verification of displaying the Last page (Full Forward arrow button in the Configurations List screen by Super admin/Admin user":0,"TC14_Verification of displaying the Next page (Forward arrow button in the Configurations List screen by Super admin/Admin user":0,"TC15_Verification of displaying the Previous page (Backward arrow button in the Configurations List screen by Super admin/Admin user":0,"TC16_Verification of tooltip functionality for Current View Button of the Configurations List screen by Super admin/Admin user":0,"TC17_Verification of the search functionality for Edge ID column (Valid Edge ID ) in the Configurations List screen by Super admin/Admin user":0,"TC18_Verification of the search functionality for Edge ID column (Invalid Edge ID) in the Configurations List screen by Super admin/Admin user":0,"TC19_Verification of the search functionality for App Name column (Valid App Name) in the Configurations List screen by Super admin/Admin user":0,"TC20_Verification of the search functionality for App Name column (InValid App Name) in the Configurations List screen by Super admin/Admin user":0,"TC21_Verification of the search functionality for Config Name (Valid Config Name) in the Configurations List screen by Super admin/Admin user":0,"TC22_Verification of the search functionality for Config Name (InValid Config Name) in the Configurations List screen by Super admin/Admin user":0,"TC23_Verification of the search functionality for Response Status  in the Configurations List screen by Super admin/Admin user":0,"TC24_Verification of the removal of search results and text for all Edge ID Column in the Configurations screen by Super admin/Admin user":0,"TC25_Verification of the removal of search results and text for App Name columns in the Configurations screen by Super admin/Admin user":0,"TC26_Verification of the removal of search results and text for Config Name in the Configurations screen by Super admin/Admin user":0,"TC27_Verification of the removal of search results and text for Response Status columns in the Configurations screen by Super admin/Admin user":0,"TC28_Verification of the removal of search results and text for timestamp columns in the Configurations screen by Super admin/Admin user":0,"TC29_Verification of send Configuration functionality":0,"TC30_Verification of Selecting a valid range of dates for Last Updated columns in the Configurations screen by Super admin/Admin user":0,"TC31_Verification of Selecting a valid range of dates timeStamp columns in the Configurations screen by Super admin/Admin user":0,"TC32_Verification of View Response body icon from action column":0,"TC33_Verification of download button from the action column":0,"TC35_Verification of check filter icon availability for EDGE ID":0,"TC36_Verification of check filter icon availability for APP Name":0,"TC37_Verification of check filter icon availability for Config Name":0,"TC38_Verification of check filter icon availability for Response Status":0,"TC39_Verification of check filter icon availability for Time stamp":0,"TC40_Verification of check filter icon availability for Last Updated":0,"TC42_Verification of visualization of icons in action column":0,"TC43_Verification of loading properly in slow network":0,"TC44_Verification of the accessible the page by using mobile network":0,"TC44_Verification of the accessible the page by using mobile network":0,"TC45_Verification of the accessible the screen by using wi-fi network":0,"TC46_Verification of without login into browser, copy & paste the url":0,"TC47_Verification to check the alignment of Refresh & History View buttons on the top right side":0,"TC48_Verification of check filter icon visibility for EDGE ID":0,"TC49_Verification of check filter icon visibility for APP Name":0,"TC50_Verification of check filter icon visibility for Config Name":0,"TC51_Verification of check filter icon visibility for Response Status":0,"TC52_Verification of check filter icon visibility for Time stamp":0,"TC53_Verification of check filter icon visibility for Last Updated":0,"TC54_Verification of check filter icon accessibility for EDGE ID":0,"TC55_Verification of check filter icon accessbility for APP Name":0,"TC56_Verification of check filter icon accessibility for Config Name":0,"TC57_Verification of check filter icon accessibilty for Response Status":0,"TC58_Verification of check filter icon accessibility for Time stamp":0,"TC59_Verification of check filter icon accessibility f for Last Updated":0,"TC60_Verification to check the column width & size resolution":0,"TC61_Verification of pagination i.e. items per page":0
+			};
+		</script>
+		<script src='https://cdn.rawgit.com/extent-framework/extent-github-cdn/c23457b/v3html/js/extent.js' type='text/javascript'></script>
+		<script type='text/javascript'>
+		</script>
+	</body>
+</html>

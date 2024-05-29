@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRunner" project="CDMProject" tests="3" started="3" failures="1" errors="1" ignored="0">
+  <testsuite name="com.cdm.runner.TestRunner" time="60.053">
+    <testsuite name="CONFIGURATIONS" time="60.053">
+      <testcase name="TC74_Verification of tool tip text visibilty for Close button in Deployed volume details in Current view screen" classname="CONFIGURATIONS" time="27.147">
+        <failure>
+          <expected>Close</expected>
+          <actual>Configuration Response Body
+No Data
+Close</actual>
+          org.junit.ComparisonFailure: Tooltip for Close button expected:&lt;C[]lose&gt; but was:&lt;C[onfiguration Response Body
+No Data
+C]lose&gt;&#13;
+	at org.junit.Assert.assertEquals(Assert.java:117)&#13;
+	at com.cdm.Stepdefinations.ConfigurationSteps.verify_tooltip_for_close_button(ConfigurationSteps.java:69)&#13;
+	at ✽.verify tooltip for close button(file:///E:/Devendra/cdm/CDMCucumber/CDMProject/src/test/resources/Features/ConfigurationsNew.feature:595)&#13;
+&#13;
+
+        </failure>
+      </testcase>
+      <testcase name="TC79_Verification of ascending order sorting functionality for the table list" classname="CONFIGURATIONS" time="16.074"/>
+      <testcase name="TC80_Verification of descending order sorting functionality for the table list" classname="CONFIGURATIONS" time="16.829">
+        <error>io.cucumber.junit.UndefinedStepException: The step 'to check descending order sorting functionality for the table list' is undefined.
+You can implement this step using the snippet(s) below:
+
+@Then("to check descending order sorting functionality for the table list")
+public void to_check_descending_order_sorting_functionality_for_the_table_list() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+&#13;
+&#13;
+</error>
+      </testcase>
+    </testsuite>
+  </testsuite>
+</testrun>

@@ -1,0 +1,388 @@
+package com.cdm.pages;
+
+import java.util.Arrays;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import com.aventstack.extentreports.ExtentTest;
+import com.cdm.common.CommonActions;
+
+public class AlertsPage extends CommonActions {
+
+	public AlertsPage(WebDriver driver, ExtentTest logger) {
+		super(driver, logger);
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
+	}
+	@FindBy(xpath = "//tbody/tr[1]/td[11]/img[1]")
+	WebElement editicon;
+
+	@FindBy(xpath = "//body/div[3]/div[2]/div[1]/div[1]/div[1]/button[1]/div[1]/label[1]/input[1]")
+	WebElement alertCategoryserverconnectivityissue;
+
+	@FindBy(xpath = "//body/div[3]/div[2]/div[1]/div[1]/div[1]/button[1]/div[2]/label[1]/input[1]")
+	WebElement Deviceconnectivityissue;
+
+	@FindBy(xpath = "//body/div[3]/div[2]/div[1]/div[1]/div[1]/button[1]/div[3]/label[1]/input[1]")
+	WebElement networkconnectivityissue;
+
+	@FindBy(xpath = "//body/div[3]/div[2]/div[1]/div[1]/div[1]/button[1]/div[4]/label[1]/input[1]")
+	WebElement storagespaceexceeded;
+
+	@FindBy(xpath = "//body/div[3]/div[2]/div[1]/div[1]/div[1]/button[1]/div[5]/label[1]/input[1]")
+	WebElement licensecertificateExpired;
+
+	@FindBy(xpath = "//body/div[3]/div[2]/div[1]/div[1]/div[1]/button[1]/div[6]/label[1]/input[1]")
+	WebElement EdgeDeviceHardwareDown;
+
+	@FindBy(xpath = "//body/div[3]/div[2]/div[1]/div[1]/div[1]/button[1]/div[7]/label[1]/input[1]")
+	WebElement configurationFileUnavailable;
+
+	@FindBy(xpath = "//body/div[3]/div[2]/div[1]/div[1]/div[1]/button[1]/div[8]/label[1]/input[1]")
+
+	WebElement DatabaseConnectivityIssue;
+
+	@FindBy(xpath = "//body/div[3]/div[2]/div[1]/div[1]/div[1]/button[1]/div[9]/label[1]/input[1]")
+
+	WebElement containerissue;
+
+	@FindBy(xpath = "//body/div[3]/div[2]/div[1]/div[1]/div[1]/button[1]/div[10]/label[1]/input[1]")
+
+	WebElement applicationissue;
+
+	@FindBy(xpath = "//span[contains(text(),'Alerts')]")
+	WebElement movetoalerttab;
+
+	@FindBy(className = "titleHeading")
+	WebElement Alert_Heading;
+
+	@FindBy(xpath = "//span[contains(text(),' Apply ')]")
+	public WebElement applybuttoncalender;
+
+	@FindBy(xpath = "//button[@aria-label ='Choose month and year']")
+	public WebElement arrowforyearandmonth;
+
+	@FindBy(xpath = "//body[1]/div[3]/div[2]/div[1]/mat-dialog-container[1]/app-deploy-volume[1]/div[1]/div[2]/div[1]/div[1]/table[1]/thead[1]/tr[1]/th[2]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]")
+	WebElement volumeDetailsStatusThreeDot;
+
+	@FindBy(xpath = "//mat-dialog-container[@id='mat-dialog-2']")
+	WebElement dialogue2;
+
+	@FindBy(css = ".cdk-overlay-backdrop-showing")
+	WebElement backDropShowing;
+
+	@FindBy(xpath = "//thead/tr[1]/th[1]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]")
+	WebElement alertIDThreeDot;
+
+	@FindBy(xpath = "//thead/tr[1]/th[4]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]")
+	WebElement edgenamethreeDot;
+
+	@FindBy(xpath = "//thead/tr[1]/th[9]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]")
+	WebElement statusThreeDotAlert;
+
+	@FindBy(xpath = "//thead/tr[1]/th[8]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]")
+	WebElement expectedClosureDateThreeDot;
+
+	@FindBy(xpath = "//div[@class='tableCard']/div/div/img[1]")
+	WebElement refresh_Button;
+
+	@FindBy(xpath = "//body/app-root[1]/app-root[1]/app-home[1]/mat-sidenav-container[1]/mat-sidenav-content[1]/div[2]/div[1]/app-alertpage[1]/div[1]/div[1]/div[1]/img[2]")
+	WebElement bulkDownloadButton;
+
+	@FindBy(xpath = "//thead/tr[1]/th[6]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]")
+	WebElement assignedToThreeDot;
+
+	@FindBy(xpath = "//input[@name='firstname']")
+	WebElement assignedToInput;
+
+	@FindBy(xpath = "//input[@name='firstname']")
+	WebElement alertCategoryInput;
+
+	@FindBy(xpath = "//input[@name='summary']")
+	WebElement alertSummary;
+
+	@FindBy(xpath = "//thead/tr[1]/th[9]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]")
+	WebElement statusThreeDot;
+
+	@FindBy(xpath = "//thead/tr[1]/th[3]/div[1]/a[1]/mat-icon[1]")
+	WebElement errorThreeDot;
+
+	@FindBy(xpath = "//thead/tr[1]/th[2]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]")
+	WebElement alertCategoryThreeDot;
+
+	@FindBy(xpath = "//h3[contains(text(),'Deployed Volume Details')]")
+	WebElement titleheadingvolumeDetailsPage;
+
+	@FindBy(xpath = "(//input[@name='options'])[1]")
+	WebElement statusOpen;
+
+	@FindBy(xpath ="(//input[@name='options'])[2]")
+	WebElement statusInProgress;
+
+	@FindBy(xpath = "(//input[@name='options'])[3]")
+	WebElement statusClosed;
+
+	@FindBy(xpath = "//thead/tr[1]/th[7]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]")
+	WebElement priorityThreeDot;
+
+	@FindBy(xpath = "//thead/tr[1]/th[3]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]")
+	WebElement summaryThreeDot;
+
+	@FindBy(xpath = "//thead/tr[1]/th[5]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]")
+	WebElement raisedOnThreeDot;
+
+	@FindBy(xpath = "//thead/tr[1]/th[10]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]")
+	WebElement actualClosureDateThreeDot;
+
+	@FindBy(xpath = "(//input[@name='options'])[1]")
+	WebElement priorityInputLow;
+
+	@FindBy(xpath = "(//input[@name='options'])[2]")
+	WebElement priorityInputMedium;
+
+	@FindBy(xpath = "(//input[@name='options'])[3]")
+	WebElement priorityInputHigh;
+
+	@FindBy(xpath = "//input[@name='id']")
+	WebElement alertIdInput;
+
+	@FindBy(xpath = "//input[@name='devicename']")
+	WebElement edgenameInput;
+
+	@FindBy(xpath = "//button[@aria-label='Open calendar']")
+	WebElement calenderIcon;
+
+	public void calenderIcon() {
+		//calenderIcon.click();
+		clickElement(calenderIcon, "");
+	}
+
+	public void arrowforyearandmonth() {
+		//arrowforyearandmonth.click();
+		clickElement(arrowforyearandmonth, "");
+		try {
+			Thread.sleep(200);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	public void refresh_Button() {
+		//refresh_Button.click();
+		clickElement(refresh_Button, "");
+		
+	}
+
+	public void bulkDownloadButton() {
+		bulkDownloadButton.click();
+	}
+
+	public void setZoomLevel(int width, int height) {
+		Dimension d = new Dimension(width, height);
+		driver.manage().window().setSize(d);
+	}
+
+	public void statusThreeDotAlert() {
+		statusThreeDotAlert.click();
+	}
+
+	public void priorityThreeDot() {
+		priorityThreeDot.click();
+	}
+
+	public void priorityInputLow() {
+		priorityInputLow.click();
+	}
+
+	public void priorityInputMedium() {
+		priorityInputMedium.click();
+	}
+
+	public void priorityInputHigh() {
+		priorityInputHigh.click();
+	}
+
+	public void alertSummary(String value) {
+		alertSummary.sendKeys(Keys.ENTER);
+
+		alertSummary.sendKeys(value);
+	}
+
+	public String removalofEnteredTextForEdgeName() {
+
+		return removalofEneredText(edgenameInput);
+
+	}
+
+	public String removalofEnteredTextForAlertID() {
+
+		return removalofEneredText(alertIdInput);
+
+	}
+
+	public String removalofEnteredTextForSummary() {
+
+		return removalofEneredText(alertSummary);
+
+	}
+
+	public String removalofEnteredTextForAssignedTo() {
+
+		return removalofEneredText(assignedToInput);
+
+	}
+
+	public void backDropShowing_Div_Click() {
+		if (backDropShowing != null) {
+			backDropShowing.click();
+		}
+	}
+
+	public void summaryThreeDot() {
+
+		summaryThreeDot.click();
+	}
+
+	public void titleheadingvolumeDetailsPage() {
+		titleheadingvolumeDetailsPage.click();
+	}
+
+	public void applybuttoncalender() {
+		applybuttoncalender.click();
+	}
+
+	public void movetoalerttab() {
+		movetoalerttab.click();
+	}
+
+	public void assignedToThreeDot() {
+		assignedToThreeDot.click();
+
+	}
+
+	public void alertIDThreeDot() {
+		alertIDThreeDot.click();
+
+	}
+
+	public void alertCategoryThreeDot() {
+		alertCategoryThreeDot.click();
+	}
+
+	public void alertIDInput(String value) {
+		alertIdInput.sendKeys(Keys.ENTER);
+		alertIdInput.sendKeys(value);
+		alertIdInput.sendKeys(Keys.ENTER);
+	}
+
+	public void edgenamethreeDot() {
+		edgenamethreeDot.click();
+
+	}
+
+	public void edgenameInput(String value) {
+		edgenameInput.sendKeys(Keys.ENTER);
+		edgenameInput.sendKeys(value);
+		edgenameInput.sendKeys(Keys.ENTER);
+
+	}
+
+	public void assignedToInput(String value) {
+		assignedToInput.sendKeys(Keys.ENTER);
+		assignedToInput.sendKeys(value);
+		assignedToInput.sendKeys(Keys.ENTER);
+	}
+
+	public void raisedOnThreeDot() {
+		raisedOnThreeDot.click();
+	}
+
+	public void expectedClosureDateThreeDot() {
+		expectedClosureDateThreeDot.click();
+
+	}
+
+	public void actualClosureDateThreeDot() {
+
+		actualClosureDateThreeDot.click();
+	}
+
+	public void alertCategoryserverconnectivityissue() {
+
+		alertCategoryserverconnectivityissue.click();
+	}
+
+	public void Deviceconnectivityissue() {
+
+		Deviceconnectivityissue.click();
+	}
+
+	public void networkconnectivityissue() {
+
+		networkconnectivityissue.click();
+	}
+
+	public void storagespaceexceeded() {
+
+		storagespaceexceeded.click();
+	}
+
+	public void licensecertificateExpired() {
+
+		licensecertificateExpired.click();
+	}
+
+	public void EdgeDeviceHardwareDown() {
+
+		EdgeDeviceHardwareDown.click();
+	}
+
+	public void configurationFileUnavailable() {
+
+		configurationFileUnavailable.click();
+	}
+
+	public void DatabaseConnectivityIssue() {
+
+		DatabaseConnectivityIssue.click();
+	}
+
+	public void containerissue() {
+
+		containerissue.click();
+	}
+
+	public void applicationissue() {
+
+		applicationissue.click();
+	}
+
+	public void statusOpen() {
+
+		statusOpen.click();
+	}
+
+	public void statusInProgress() {
+
+		statusInProgress.click();
+	}
+
+	public void statusClosed() {
+
+		statusClosed.click();
+	}
+
+	public void editiconclick() {
+		
+		editicon.click();
+	}
+
+}

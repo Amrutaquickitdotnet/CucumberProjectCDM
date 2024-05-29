@@ -1,0 +1,75 @@
+package com.cdm.Stepdefinations;
+
+
+import com.cdm.pages.NotificationsPage;
+
+import com.cdm.pages.UserGroupMappingPage;
+
+import io.cucumber.java.en.Then;
+
+public class NotificationsSteps extends BaseTest {
+
+	@Then("verify page with resize option page for notifications")
+	public void verify_page_with_resize_option_page_for_notifications() throws InterruptedException {
+		NotificationsPage notify = new NotificationsPage(driver, logger);
+		notify.setZoomLevel(800, 600);
+		Thread.sleep(4000);
+	}
+
+	@Then("Click on notifications tab from right panel of the screen")
+	public void click_on_notifications_tab_from_right_panel_of_the_screen() throws InterruptedException {
+		NotificationsPage notify = new NotificationsPage(driver, logger);
+		notify.Notification_tab();
+		Thread.sleep(4000);
+	}
+
+	@Then("apply filter on Notification name")
+	public void apply_filter_on_notification_name() throws InterruptedException {
+		NotificationsPage notify = new NotificationsPage(driver, logger);
+		notify.notificationnameThreeDot();
+		Thread.sleep(5000);
+		notify.notificationnamesearchinput(alldata.get(vTCName).get("NotificationNameSearch").toString());
+		Thread.sleep(4000);
+	}
+
+	@Then("click on icon add user group mapping")
+	public void click_on_icon_add_user_group_mapping() throws InterruptedException {
+		NotificationsPage notify = new NotificationsPage(driver, logger);
+		notify.addUserGroupMapping();
+		Thread.sleep(4000);
+	}
+
+	@Then("click on three dots for username and enter the search value")
+	public void click_on_three_dots_for_username_and_enter_the_search_value() throws InterruptedException {
+		UserGroupMappingPage ugmp = new UserGroupMappingPage(driver, logger);
+		ugmp.UserGroupNameThreeDot();
+		Thread.sleep(4000);
+		ugmp.UserGroupNameInput(alldata.get(vTCName).get("UserGroupNameSearch").toString());
+		Thread.sleep(4000);
+	}
+
+	@Then("select the checkbox to map user group name")
+	public void select_the_checkbox_to_map_user_group_name() throws InterruptedException {
+		UserGroupMappingPage ugmp = new UserGroupMappingPage(driver, logger);
+		ugmp.checkboxforUserGroupNameLicenseExpiry();
+		Thread.sleep(4000);
+		
+	}
+	@Then("select the checkbox to map user group name for app deployment")
+	public void select_the_checkbox_to_map_user_group_name_for_app_deployment() throws InterruptedException {
+		UserGroupMappingPage ugmp = new UserGroupMappingPage(driver, logger);
+		ugmp.checkboxforUserGroupNameDeployment();
+		Thread.sleep(4000);
+	}
+
+
+	@Then("click on Save button")
+	public void click_on_save_button() throws InterruptedException {
+		UserGroupMappingPage ugmp = new UserGroupMappingPage(driver, logger);
+		ugmp.saveButton();
+		Thread.sleep(5000);
+		//ugmp.cancelbutton();
+	}
+	
+
+}
