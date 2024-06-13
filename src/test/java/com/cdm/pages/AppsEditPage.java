@@ -16,7 +16,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.aventstack.extentreports.ExtentTest;
 import com.cdm.common.CommonActions;
 
-import io.cucumber.java.en.Then;
+
 
 public class AppsEditPage extends CommonActions {
 
@@ -110,43 +110,75 @@ public void cancelapp() {
 	cancel.click();
 }
 	public void applicationName(String value) {
-		applicationName.sendKeys(Keys.ENTER);
-		applicationName.sendKeys(value);
+		
+		SetInputENterKey(applicationName,"");
+		SetInput(applicationName, value, value);
+		
+//		applicationName.sendKeys(Keys.ENTER);
+//		applicationName.sendKeys(value);
 	}
 	
 	public void applicationDisplayName(String value) {
-		appDisplayName.sendKeys(Keys.ENTER);
-		appDisplayName.sendKeys(value);
+		SetInputENterKey(appDisplayName,"");
+		SetInput(appDisplayName, value, value);
+//		
+//		appDisplayName.sendKeys(Keys.ENTER);
+//		appDisplayName.sendKeys(value);
 	}
 	
 	public void repositoryLink(String value) {
-		repositoryLink.sendKeys(Keys.ENTER);
-		repositoryLink.sendKeys(value);
+		
+		SetInputENterKey(repositoryLink,"");
+		SetInput(repositoryLink, value, value);
+		
+		
+//		repositoryLink.sendKeys(Keys.ENTER);
+//		repositoryLink.sendKeys(value);
 	}
 
 	public void licenseType(String value) {
-		licenseType.sendKeys(Keys.ENTER);
-		licenseType.sendKeys(value);
+		
+		SetInputENterKey(licenseType,"");
+		SetInput(licenseType, value, value);
+		
+		
+//		licenseType.sendKeys(Keys.ENTER);
+//		licenseType.sendKeys(value);
 	}
 
 	public void configMaster(String value) {
-		config_master.sendKeys(Keys.ENTER);
-		config_master.sendKeys(value);
+		SetInputENterKey(config_master,"");
+		SetInput(config_master, value, value);
+		
+//		
+//		config_master.sendKeys(Keys.ENTER);
+//		config_master.sendKeys(value);
 	}
 	
 	public void version(String value) {
-		Versiontag.sendKeys(Keys.ENTER);
-		Versiontag.sendKeys(value);
+		
+		SetInputENterKey(Versiontag,"");
+		SetInput(Versiontag, value, value);
+		
+		
+//		Versiontag.sendKeys(Keys.ENTER);
+//		Versiontag.sendKeys(value);
 	}
 	
 	public void architecture(String value) {
-		architecture.sendKeys(Keys.ENTER);
-		architecture.sendKeys(value);
+//		architecture.sendKeys(Keys.ENTER);
+//		architecture.sendKeys(value);
+		
+		SetInputENterKey(architecture,"");
+		SetInput(architecture, value, value);
 	}
 	
 	public void rootVolume(String value) {
-		rootVolume.sendKeys(Keys.ENTER);
-		rootVolume.sendKeys(value);
+//		rootVolume.sendKeys(Keys.ENTER);
+//		rootVolume.sendKeys(value);
+		
+		SetInputENterKey(rootVolume,"");
+		SetInput(rootVolume, value, value);
 	}
 
 
@@ -154,6 +186,7 @@ public void cancelapp() {
 	
 	public void backDropShowing_Div_Click() {
 		if (backDropShowing != null) {
+			//clickElement(backDropShowing, "");
 			backDropShowing.click();
 		}
 	}

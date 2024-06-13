@@ -1,7 +1,6 @@
 package com.cdm.pages;
 
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -33,12 +32,15 @@ public class UserRoleAddPage extends CommonActions {
 	WebElement savebtnrole;
 	
 	public void adduserGroup(String value) {
-		addUserGroupButtonplussign.click();
+		clickElement(addUserGroupButtonplussign, "");
+		//addUserGroupButtonplussign.click();
 	}
 	
 	public void addinputusergroup(String value) {
-		addUserGroupinput.sendKeys(Keys.ENTER);
-		addUserGroupinput.sendKeys(value);
+		SetInputENterKey(addUserGroupinput,"");
+		SetInput(addUserGroupinput, value, value);
+//		addUserGroupinput.sendKeys(Keys.ENTER);
+//		addUserGroupinput.sendKeys(value);
 	}
 	@FindBy(xpath = "//mat-form-field[1]/div[1]/div[1]/div[3]/input")
 	WebElement inputUserRole;
@@ -47,13 +49,16 @@ public class UserRoleAddPage extends CommonActions {
 
 	
 	public void inputaddrole(String value) {
-		inputUserRole.sendKeys(Keys.ENTER);
-		//((JavascriptExecutor) driver).executeScript("arguments[0].value = arguments[1]", value, inputUserRole);
-		inputUserRole.sendKeys(value);
+		SetInputENterKey(inputUserRole,"");
+		SetInput(inputUserRole, value, value);
+//		inputUserRole.sendKeys(Keys.ENTER);
+//		//((JavascriptExecutor) driver).executeScript("arguments[0].value = arguments[1]", value, inputUserRole);
+//		inputUserRole.sendKeys(value);
 	}
 	
 	public void saveuserrole() {
-		savebtnrole.click();
+		clickElement(savebtnrole, "");
+		//savebtnrole.click();
 		
 	}
 }

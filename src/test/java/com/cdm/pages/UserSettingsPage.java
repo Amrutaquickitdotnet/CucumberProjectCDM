@@ -1,5 +1,6 @@
 package com.cdm.pages;
 
+import java.net.URISyntaxException;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
@@ -90,7 +91,7 @@ public class UserSettingsPage extends CommonActions {
 	
 	
 	
-	@FindBy(xpath = "//span[contains(text(),'Settings')]")
+	@FindBy(xpath ="///span[@innertext=' Settings ']")
 	WebElement Setting_tab;
 
 	@FindBy(xpath = "//ul[@class='nav']/li[2]")
@@ -133,13 +134,32 @@ public class UserSettingsPage extends CommonActions {
 	WebElement phoneInput;
 
 	public void Setting_tab() {
-	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-	wait.until(ExpectedConditions.visibilityOf(Setting_tab));
-		Setting_tab.click();
+		
+			
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			waitElementToVsible("//mat-nav-list//img");
+			appendFragmentWithOutPath("/#/home/setting");
+			waitElementToVsible("//mat-nav-list//img");
+		} catch (Exception e) {
+			System.out.println("Error in setting Path");
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		//clickElement(Setting_tab, "");
+		
+		
+	
 	}
 
 	public void Users_tab() {
-		Users_tab.click();
+		clickElement(Users_tab, "");
+		//Users_tab.click();
 	}
 
 	public boolean isVisibleRefresh() {
@@ -175,87 +195,117 @@ public class UserSettingsPage extends CommonActions {
 	WebElement cdkcontainer;
 
 	public void FirstNameDot() {
-		FirstNameDot.click();
+		clickElement(FirstNameDot,"");
+
+		//FirstNameDot.click();
 	}
 
 	public void LastNameDot() {
-		LastNameDot.click();
+
+		clickElement(LastNameDot,"");
+
+		//LastNameDot.click();
 	}
 
 	public void EmailDot() {
-		EmailDot.click();
+		clickElement(EmailDot,"");
+		//EmailDot.click();
 	}
 
 	public void RoleNameDot() {
-		RoleNameDot.click();
+		clickElement(RoleNameDot,"");
+		//RoleNameDot.click();
 	}
 
 	public void status() {
-		StatusDot.click();
+		clickElement(StatusDot,"");
+		//StatusDot.click();
 	}
 
 	public void firstNameinput(String value) {
-
-		firstNameInput.sendKeys(Keys.ENTER);
-		firstNameInput.sendKeys(value);
+		SetInputENterKey(firstNameInput,"");
+		SetInput(firstNameInput, value, value);
+//		firstNameInput.sendKeys(Keys.ENTER);
+//		firstNameInput.sendKeys(value);
 	}
 
 	public void firstNameinputSearch() {
-
-		firstNameInput.sendKeys(Keys.ENTER);
+		SetInputENterKey(firstNameInput,"");
+		
+		//firstNameInput.sendKeys(Keys.ENTER);
 
 	}
 
 	public void lastNameinput(String value) {
-
-		lastNameinput.sendKeys(Keys.ENTER);
-		lastNameinput.sendKeys(value);
+		SetInputENterKey(lastNameinput,"");
+		SetInput(lastNameinput, value, value);
+		
+//		lastNameinput.sendKeys(Keys.ENTER);
+//		lastNameinput.sendKeys(value);
 	}
 
 	public void emailidinput(String value) {
-		emailidinput.sendKeys(Keys.ENTER);
-		emailidinput.sendKeys(value);
+		SetInputENterKey(emailidinput,"");
+		SetInput(emailidinput, value, value);
+		
+//		emailidinput.sendKeys(Keys.ENTER);
+//		emailidinput.sendKeys(value);
 	}
 
 	public void phoneInput(String value) {
-		phoneInput.sendKeys(Keys.ENTER);
-		phoneInput.sendKeys(value);
+		SetInputENterKey(phoneInput,"");
+		SetInput(phoneInput, value, value);
+		
+//		phoneInput.sendKeys(Keys.ENTER);
+//		phoneInput.sendKeys(value);
 	}
 
 	public void password(String value) {
-		password.sendKeys(Keys.ENTER);
-		password.sendKeys(value);
+		SetInputENterKey(password,"");
+		SetInput(password, value, value);
+		
+//		password.sendKeys(Keys.ENTER);
+//		password.sendKeys(value);
 	}
 
 	public void roleNameinput(String value) {
-		roleNameinput.sendKeys(Keys.ENTER);
-		roleNameinput.sendKeys(value);
+		SetInputENterKey(roleNameinput,"");
+		SetInput(roleNameinput, value, value);
+		
+//		roleNameinput.sendKeys(Keys.ENTER);
+//		roleNameinput.sendKeys(value);
 	}
 
 	public void addButton() {
-		addButton.click();
+		clickElement(addButton, "");
+		//addButton.click();
 	}
 
 	public void BulkUpload_btn() {
-		BulkUpload_btn.click();
+		clickElement(BulkUpload_btn,"");
+		//BulkUpload_btn.click();
 	}
 
 	public void Download_btn() {
-		Download_btn.click();
+		clickElement(Download_btn,"");
+		//Download_btn.click();
 	}
 
 	public void saveButton() {
-		saveButton.click();
+		clickElement(saveButton,"");
+		//saveButton.click();
 	}
 
 	public void cancelButton() {
-		cancelButton.click();
+		clickElement(cancelButton,"");
+		//cancelButton.click();
 	}
 
 	public void edituserbutton() throws InterruptedException {
 		Thread.sleep(3000);
 		try {
-			edituserbutton.click();
+			clickElement(edituserbutton, "");
+			//edituserbutton.click();
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
@@ -263,7 +313,8 @@ public class UserSettingsPage extends CommonActions {
 	}
 
 	public void cdkcontainer() {
-		cdkcontainer.click();
+		clickElement(cdkcontainer, "");
+		//cdkcontainer.click();
 	}
 
 	public void deleteButton() {
@@ -307,12 +358,14 @@ public class UserSettingsPage extends CommonActions {
 				.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),'Yes')]")));
 
 		// Perform a click action on the confirmation Yes button
-		confirmationYesButton.click();
+		clickElement(confirmationYesButton, "");
+		//confirmationYesButton.click();
 
 	}
 
 	public void Users_Role() {
-		Users_Role.click();
+		clickElement(Users_Role, "");
+		//Users_Role.click();
 	}
 
 	public String sucessmessage() {
@@ -328,16 +381,18 @@ public class UserSettingsPage extends CommonActions {
 	}
 	
 	public void activestatusSelection() {
-		activestatusSelection.click();
+		clickElement(activestatusSelection, "");
+		//activestatusSelection.click();
 	}
 
 	public void statusinputinActive() {
-		statusinputinActive.click();
+		clickElement(statusinputinActive, "");
+		//statusinputinActive.click();
 	}
 
 	public void eyeiconpassword() {
-		
-		eyeiconpassword.click();
+		clickElement(eyeiconpassword, "");
+		//eyeiconpassword.click();
 		
 	}
 	

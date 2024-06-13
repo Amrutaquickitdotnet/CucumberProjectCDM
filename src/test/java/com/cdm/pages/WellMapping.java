@@ -21,16 +21,12 @@ public class WellMapping extends CommonActions {
 		PageFactory.initElements(driver, this);
 
 	}
-	
 
+	@FindBy(xpath = "(//input[@name='options'])[1]")
+	WebElement StatusActiveCheck;
 
-
-@FindBy(xpath = "(//input[@name='options'])[1]")
-WebElement StatusActiveCheck;
-	
-	
-@FindBy(xpath = "(//input[@name='options'])[2]")
-WebElement StatusInActiveCheck;
+	@FindBy(xpath = "(//input[@name='options'])[2]")
+	WebElement StatusInActiveCheck;
 
 	@FindBy(xpath = "(//tbody/tr[1]/td[1]/mat-checkbox[1])[1]//input")
 	WebElement selectedCheckboxWell;
@@ -45,56 +41,48 @@ WebElement StatusInActiveCheck;
 	@FindBy(xpath = "//div[contains(text(),'IP Address')]/../../..//mat-icon")
 
 	WebElement IPAddressThreeDot;
-	
-	
+
 	@FindBy(xpath = "//div[@class='toast-top-right toast-container']")
 
 	WebElement alertpopupforWell;
 
-	@FindBy(xpath = "//div[contains(text(),'Device Type')]/../../..//mat-icon")
+	@FindBy(xpath = "//th//div[contains(text(),'Device Type')]/../../..//mat-icon")
 
 	WebElement deviceTypeThreeDot;
 
-	@FindBy(xpath = "//div[contains(text(),'RTU Address')]/../../..//mat-icon")
-
+	@FindBy(xpath = "(//th//div[contains(text(),'RTU Address')])[1]/../../..//mat-icon")
 	WebElement RTUAddressThreeDot;
 
-	@FindBy(xpath = "//div[contains(text(),'Status')]/../../..//mat-icon")
+	@FindBy(xpath = "//th//div[contains(text(),'Status')]/../../..//mat-icon")
 
 	WebElement StatusThreeDot;
 
-	@FindBy(xpath = "//ul[@class='nav']/li[6]")
+	
+	@FindBy(xpath = "//a[contains(text(),'Well Mapping')]")
 
 	WebElement wellmappingtab;
 
 	@FindBy(xpath = "(//tbody/tr[1]/td[1]/mat-checkbox[1])[1]//label")
 	WebElement selectedCheckboxforWellLabel;
 
-	@FindBy(xpath = "//body/app-root[1]/app-root[1]/app-home[1]/mat-sidenav-container[1]/mat-sidenav-content[1]/div[2]/div[1]/app-device-add-edit-detail-page[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-well-link-edge-device[1]/div[1]/div[1]/h4[1]")
+	@FindBy(xpath = "//h4")
 	WebElement headingTitle;
 
-	
 	@FindBy(xpath = "//h4")
 	WebElement headingTitleWell;
 
 	@FindBy(xpath = "//input[@name='ipaddress']")
 	WebElement IPAddressInputSearch;
-	
-	
+
 	@FindBy(xpath = "//input[@name='devicetype']")
 	WebElement deviceTypeSearchInput;
-	
-	
+
 	@FindBy(xpath = "//input[@name='wellname']")
 	WebElement wellMappingSearchInput;
-	
-	
+
 	@FindBy(xpath = "//input[@name='rtunumber']")
 	WebElement RTUAddressSearchInput;
-	
-	
-	
-	
+
 	@FindBy(xpath = "//body/app-root[1]/app-root[1]/app-home[1]/mat-sidenav-container[1]/mat-sidenav-content[1]/div[2]/div[1]/app-device-add-edit-detail-page[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-well-link-edge-device[1]/div[1]/div[4]/button[1]")
 	WebElement saveButton;
 	// *[@id="nav-user-tab"]
@@ -118,66 +106,74 @@ WebElement StatusInActiveCheck;
 	WebElement backDropShowing;
 
 	public void wellnameThreeDot() {
-
-		wellnameThreeDot.click();
+		clickElement(wellnameThreeDot, "");
+		// wellnameThreeDot.click();
 	}
 
 	public void IPAddressThreeDot() {
-		IPAddressThreeDot.click();
+		clickElement(IPAddressThreeDot, "");
+		// IPAddressThreeDot.click();
 
 	}
 
-	
-	
-	
 	public void RTUAddressSearchInput(String value) {
-		RTUAddressSearchInput.sendKeys(Keys.ENTER);
-		RTUAddressSearchInput.sendKeys(value);
-		
+		SetInputENterKey(RTUAddressSearchInput, value);
+		SetInput(RTUAddressSearchInput, value, value);
+//		RTUAddressSearchInput.sendKeys(Keys.ENTER);
+//		RTUAddressSearchInput.sendKeys(value);
 
 	}
 
 	public void deviceTypeThreeDot() {
-		deviceTypeThreeDot.click();
+		clickElement(deviceTypeThreeDot, "");
+		// deviceTypeThreeDot.click();
 
 	}
 
 	public void RTUAddressThreeDot() {
-		RTUAddressThreeDot.click();
+		clickElement(RTUAddressThreeDot, "");
+		// RTUAddressThreeDot.click();
 
 	}
 
 	public void StatusThreeDot() {
-		StatusThreeDot.click();
+
+		clickElement(StatusThreeDot, "");
+		// StatusThreeDot.click();
 
 	}
 
 	public void wellmappingClick() {
-
-		wellMappingIcon.click();
+		clickElement(wellMappingIcon, "");
+		// wellMappingIcon.click();
 	}
 
 	public void wellMappingSearchDot() {
-		wellMappingSearchDot.click();
+		clickElement(wellMappingSearchDot, "");
+		// wellMappingSearchDot.click();
 	}
 
 	public void headingClick() {
-		headingTitle.click();
+		clickElement(headingTitle, "");
+		// headingTitle.click();
 	}
 
 	public void headingbarclick() {
-	
+
 		Actions action = new Actions(driver);
 
 		action.moveToElement(headingTitle).click().perform();
 	}
+
 	public void wellMappingSearchInput(String value) {
+
 		wellMappingSearchInput.sendKeys(value);
 		wellMappingSearchInput.sendKeys(Keys.ENTER);
 	}
 
 	public void backDropShowing_Div_Click() {
 		if (backDropShowing != null) {
+			//clickElement(backDropShowing, "");
 			backDropShowing.click();
 		}
 	}
@@ -191,7 +187,8 @@ WebElement StatusInActiveCheck;
 			if (selectedCheckboxforWell != null) {
 				String checked = selectedCheckboxforWell.getDomAttribute("checked");
 				if (checked != "checked") {
-					selectedCheckboxforWellLabel.click();
+					clickElement(selectedCheckboxforWellLabel, "");
+					// selectedCheckboxforWellLabel.click();
 				}
 			}
 		} catch (Exception e) {
@@ -201,55 +198,60 @@ WebElement StatusInActiveCheck;
 	}
 
 	public void saveWellData() {
-		saveWellData.click();
+		clickElement(saveWellData, "");
+		// saveWellData.click();
 	}
 
 	public void wellmappingtab() {
-		wellmappingtab.click();
+		clickElement(wellmappingtab, "");
+		// wellmappingtab.click();
 	}
-	
-	public void IPAddressInputSearch(String value) 
-	{
-		
-		IPAddressInputSearch.sendKeys(Keys.ENTER);
-		IPAddressInputSearch.sendKeys(value);
+
+	public void IPAddressInputSearch(String value) {
+		SetInputENterKey(IPAddressInputSearch, "");
+		SetInput(IPAddressInputSearch, value, value);
+//		IPAddressInputSearch.sendKeys(Keys.ENTER);
+//		IPAddressInputSearch.sendKeys(value);
 	}
-	
-	
-	public void deviceTypeSearchInput(String value) throws InterruptedException 
-	{
-		
-		deviceTypeSearchInput.sendKeys(Keys.ENTER);
-		deviceTypeSearchInput.sendKeys(value);
-		deviceTypeSearchInput.sendKeys(Keys.ENTER);
-		Thread.sleep(3000);
+
+	public void deviceTypeSearchInput(String value) throws InterruptedException {
+		SetInputENterKey(deviceTypeSearchInput, "");
+		SetInput(deviceTypeSearchInput, value, value);
+
+//		deviceTypeSearchInput.sendKeys(Keys.ENTER);
+//		deviceTypeSearchInput.sendKeys(value);
+//		deviceTypeSearchInput.sendKeys(Keys.ENTER);
+		// Thread.sleep(3000);
 	}
-	
+
 	public void saveData() {
-		saveButton.click();
+		clickElement(saveButton, "");
+		// saveButton.click();
 	}
-	
+
 	public void StatusActiveCheck() {
-		StatusActiveCheck.click();
+		clickElement(StatusActiveCheck, "");
+		// StatusActiveCheck.click();
 	}
-	
-	
-	
+
 	public void StatusInActiveCheck() throws InterruptedException {
-		StatusInActiveCheck.click();
+		clickElement(StatusInActiveCheck, "");
+		// StatusInActiveCheck.click();
 		Thread.sleep(2000);
 	}
+
 	public void checkboxWell() {
 
 		try {
 			Thread.sleep(2000);
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(8));
 			wait.until(ExpectedConditions.elementToBeClickable(selectedCheckboxforWellLabel));
-                   Thread.sleep(4000);
+			Thread.sleep(4000);
 			if (selectedCheckboxforWell != null) {
 				String checked = selectedCheckboxforWell.getDomAttribute("checked");
 				if (checked != "checked") {
-					selectedCheckboxforWellLabel.click();
+					clickElement(selectedCheckboxforWellLabel, "");
+					// selectedCheckboxforWellLabel.click();
 
 				}
 			}
@@ -257,14 +259,17 @@ WebElement StatusInActiveCheck;
 		} catch (Exception e) {
 
 		}
-		
+
 	}
 
 	public void alertpopupforwell() {
-		alertpopupforWell.getText();
+		clickElement(alertpopupforWell, "");
+		// alertpopupforWell.getText();
 	}
+
 	public void headingTitleWell() {
-		headingTitleWell.click();
+		clickElement(headingTitleWell, "");
+
 	}
 
 }

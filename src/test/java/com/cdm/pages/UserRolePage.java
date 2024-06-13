@@ -18,15 +18,30 @@ public class UserRolePage extends CommonActions {
 		PageFactory.initElements(driver, this);
 
 	}
+	
+	
 
 	@FindBy(xpath = "//input[@name='rolename']")
 	WebElement searchRoleName;
+	
+	@FindBy(xpath = "//body/app-root[1]/app-root[1]/app-home[1]/mat-sidenav-container[1]/mat-sidenav-content[1]/div[1]/div[1]/div[2]/img[1]")
+	WebElement networkstatusclick;
+	
+	@FindBy(xpath = "//input[@formcontrolname='rolename']")
+	WebElement updateSearchRoleName;
+	
+	
+	
+	@FindBy(xpath = "//mat-icon[contains(text(),'more_vert')]")
+	WebElement searchRoleNameThreeDot;
+	
 
-	@FindBy(xpath = "//tbody/tr[1]/td[2]/span[1]/img[2]")
+	@FindBy(xpath = "//tbody/tr[2]/td[2]/span[1]/img[2]")
 	WebElement editRoleButton;
 
 	public void backDropShowing_Div_Click() {
 		if (backDropShowing != null) {
+			//clickElement(backDropShowing, "");
 			backDropShowing.click();
 		}
 	}
@@ -35,30 +50,42 @@ public class UserRolePage extends CommonActions {
 	WebElement backDropShowing;
 
 	@FindBy(xpath = "//input[@name='rolename']")
-	WebElement sendserchRoleName;
+	WebElement sendsearchRoleName;
 
 	@FindBy(xpath = "//div[@class='tableCard']/div/div/img[2]")
 	WebElement addbuttonuserRole;
 
 	public void addbuttonuserRole() {
-		addbuttonuserRole.click();
+		clickElement(addbuttonuserRole, "");
+		//addbuttonuserRole.click();
 	}
 
 	public void searchRoleName() {
-		searchRoleName.click();
+		clickElement(searchRoleName, "");
+		//searchRoleName.click();
 	}
 
 	public void sendsearchRoleName(String value) throws InterruptedException {
-//		  sendserchRoleName.sendKeys(Keys.ENTER);
-//			((JavascriptExecutor) driver).executeScript("arguments[0].value = arguments[1]", value, searchRoleName);
-		Thread.sleep(5000);
-		sendserchRoleName.sendKeys(Keys.ENTER);
-		sendserchRoleName.sendKeys(value);
+       
+		SetInputENterKey(sendsearchRoleName,"");
+		SetInput(sendsearchRoleName, value, value);
+
+	}
+	
+	public void editRoleButton() {
+		
+		clickElement(editRoleButton, "");
+		//editRoleButton.click();
 	}
 
-	public void editRoleButton() throws InterruptedException {
-		Thread.sleep(7000);
-		editRoleButton.click();
+	public void searchRoleNameThreeDot() {
+		clickElement(searchRoleNameThreeDot, "");
+		
+	}
+
+	public void networkstatusclick() {
+		clickElement(networkstatusclick, "");
+		
 	}
 
 }

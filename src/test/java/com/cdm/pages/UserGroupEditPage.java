@@ -41,25 +41,33 @@ public class UserGroupEditPage extends CommonActions {
 	WebElement cancelbutton;
 	
 	public void usergroupEditicon() {
-		usergroupEditicon.click();
+		clickElement(usergroupEditicon,"");
+		//usergroupEditicon.click();
 	}
 	
 	public void UserGroupDot() {
-		UserGroupDot.click();
+		clickElement(UserGroupDot,"");
+		//UserGroupDot.click();
 	}
 	public void usergroupinputsearch(String value) {
-		usergroupinputsearch.sendKeys(Keys.ENTER);
-		usergroupinputsearch.sendKeys(value);
+		SetInputENterKey(usergroupinputsearch,"");
+		SetInput(usergroupinputsearch, value, value);
+		
+//		usergroupinputsearch.sendKeys(Keys.ENTER);
+//		usergroupinputsearch.sendKeys(value);
 
 	}
 	
 	public void usergroupnameedit(String value) {
-		usergroupnameedit.sendKeys(Keys.ENTER);
-		usergroupnameedit.sendKeys(value);
+		SetInputENterKey(usergroupnameedit,"");
+		SetInput(usergroupnameedit, value, value);
+//		
+//		usergroupnameedit.sendKeys(Keys.ENTER);
+//		usergroupnameedit.sendKeys(value);
 	}
 
 	public void saveButtonAdd() throws InterruptedException {
-		Thread.sleep(3000);
+		
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("document.querySelector(\".addButton\").click();");
 		Thread.sleep(2000);
@@ -71,7 +79,9 @@ public class UserGroupEditPage extends CommonActions {
 
 	}
 	public void cancelbutton() {
-		cancelbutton.click();
+		clickElement(cancelbutton,"");
+		//cancelbutton.click();
 	}
 
 }
+

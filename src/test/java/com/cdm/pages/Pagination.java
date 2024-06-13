@@ -156,9 +156,10 @@ public class Pagination extends CommonActions {
 
 	public void SelectPageMatOption(String value) {
 		try {
+			System.out.println("Value is " + value);
 			SelectMatOption(paginationRecordDropdown, value);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 	}

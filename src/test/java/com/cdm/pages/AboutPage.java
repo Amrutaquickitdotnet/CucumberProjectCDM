@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.WebDriverWait;
+
 
 import com.aventstack.extentreports.ExtentTest;
 import com.cdm.common.CommonActions;
@@ -35,7 +35,9 @@ public class AboutPage extends CommonActions {
 	
 	
 	public void aboutTab() {
-		AboutTab.click();
+		wait(AboutTab,logger);
+		clickElement(AboutTab, "");
+		//AboutTab.click();
 	}
 	
 	public WebElement hasTitleElement() {
@@ -47,11 +49,14 @@ public class AboutPage extends CommonActions {
 			return "";
 		}
 		
-		return aboutTitle.getText();
+		//return aboutTitle.getText();
+		
+		return getText(aboutTitle);
 	}
 	
 	public String versionText() {
-		return versionText.getText();
+	//	return versionText.getText();
+		return getText(versionText);
 	}
 	
 	public void verifyTitleColor(String expectedColor) {

@@ -155,54 +155,57 @@ public class EdgeDeploymentsPage extends CommonActions {
 
 	public void clickEditButton() {
 
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		EditButton.click();
+		clickElement(EditButton, "");
+		//EditButton.click();
 	}
 
 	public void EdgeNameDeploymentInput(String value) {
 
+		//clickElement(backDropTransparent_Div_Click(), "");
 		backDropTransparent_Div_Click();
+		SetInputENterKey(EdgeNameDeploymentInput, value);
+		SetInput(EdgeNameDeploymentInput, value, value);
 		
-		EdgeNameDeploymentInput.sendKeys(Keys.ENTER);
-		EdgeNameDeploymentInput.sendKeys(value);
+//		EdgeNameDeploymentInput.sendKeys(Keys.ENTER);
+//		EdgeNameDeploymentInput.sendKeys(value);
 
 	}
 
 	public void deploymenticonColumnClick() {
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		deploymenticonColumn.click();
+		clickElement(deploymenticonColumn, "");
+	//	deploymenticonColumn.click();
 	}
 
 	public void deploymentStatusNamethreedots() {
 		backDropShowing_Div_Click();
-		deploymentStatusNamethreedots.click();
+		clickElement(deploymentStatusNamethreedots, "");
+		//deploymentStatusNamethreedots.click();
 	}
 
 	public void deploymentStatusInput(String value) {
-		deploymentStatusInput.sendKeys(value);
-
-		deploymentStatusInput.sendKeys(Keys.ENTER);
+		
+		SetInputENterKey(deploymentStatusInput, value);
+		SetInput(deploymentStatusInput, value, value);
+//		
+//		deploymentStatusInput.sendKeys(value);
+//
+//		deploymentStatusInput.sendKeys(Keys.ENTER);
 	}
 
 	public void headingClick() {
-		headingTitle.click();
+		clickElement(headingTitle, "");
+		//headingTitle.click();
 
 	}
 
 	public void edgeAppNameSearchvalidate(String value) {
-		edgeAppNameSearch.click();
+		clickElement(edgeAppNameSearch, "");
+		//edgeAppNameSearch.click();
+		
+		SetInputENterKey(EdgeAppNameDeploymentInput, value);
+		SetInput(EdgeAppNameDeploymentInput, value, value);
 
-		EdgeAppNameDeploymentInput.sendKeys(value);
+		//EdgeAppNameDeploymentInput.sendKeys(value);
 
 	}
 
@@ -224,16 +227,13 @@ public class EdgeDeploymentsPage extends CommonActions {
 
 	public void deploymenticonColumnsection() {
 
-		try {
-			Thread.sleep(3000);
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
-		deploymenticonColumnsection.click();
+		clickElement(deploymenticonColumnsection, "");
+		//deploymenticonColumnsection.click();
 	}
 
 	public void applicationdeploymentCheckboxAll() {
-		applicationdeploymentCheckboxAll.click();
+		clickElement(applicationdeploymentCheckboxAll, "");
+		//applicationdeploymentCheckboxAll.click();
 	}
 
 	public void setZoomLevel(int width, int height) {
@@ -242,14 +242,19 @@ public class EdgeDeploymentsPage extends CommonActions {
 	}
 	
 	public void edgeNameSearchDot() {
-		edgeNameSearchDot.click();
+		clickElement(edgeNameSearchDot, "");
+		//edgeNameSearchDot.click();
 	}
 	public void edgeNameInput(String value) {
-		edgeNameInput.sendKeys(Keys.ENTER);
-		edgeNameInput.sendKeys(value);
+		SetInputENterKey(edgeNameInput, value);
+		SetInput(edgeNameInput, value, value);
+		
+//		edgeNameInput.sendKeys(Keys.ENTER);
+//		edgeNameInput.sendKeys(value);
 	}
 	
 	public void deploymenttoggle() {
-		deploymenttoggle.click();
+		clickElement(deploymenttoggle, "");
+		//deploymenttoggle.click();
 	}
 }

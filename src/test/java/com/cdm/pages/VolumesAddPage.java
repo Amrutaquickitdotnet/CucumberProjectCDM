@@ -174,7 +174,9 @@ public class VolumesAddPage extends CommonActions {
 	}
 
 	public void volumeName(String value) {
-		volumeNameAdd.sendKeys(Keys.ENTER);
+	
+		wait(volumeNameAdd,logger);
+		//volumeNameAdd.sendKeys(Keys.ENTER);
 		volumeNameAdd.sendKeys(value);
 	}
 
@@ -195,37 +197,56 @@ public class VolumesAddPage extends CommonActions {
 
 	public void volumeRepositoryNameAdd(String value) throws InterruptedException {
 
+		wait(volumeRepositoryName,logger);
 		SelectMatOption(volumeRepositoryName, value);
 	}
 
 	public void volumeRepositoryTypeAdd(String value) throws InterruptedException {
 
+		wait(volumeRepositoryType,logger);
 		SelectMatOption(volumeRepositoryType, value);
 	}
 
 	public void volumemountdirectoryAdd(String value) {
-		volumemountdirectoryAdd.sendKeys(Keys.ENTER);
-		volumemountdirectoryAdd.sendKeys(value);
+		SetInputENterKey(volumemountdirectoryAdd,"");
+		SetInput(volumemountdirectoryAdd, value, value);
+		//volumemountdirectoryAdd.sendKeys(Keys.ENTER);
+//		volumemountdirectoryAdd.sendKeys(value);
 	}
 
 	public void volumeSHAKeyAdd(String value) {
-		volumeSHAKeyAdd.sendKeys(Keys.ENTER);
-		volumeSHAKeyAdd.sendKeys(value);
+		
+		SetInputENterKey(volumeSHAKeyAdd,"");
+		SetInput(volumeSHAKeyAdd, value, value);
+		
+//		volumeSHAKeyAdd.sendKeys(Keys.ENTER);
+//		volumeSHAKeyAdd.sendKeys(value);
 	}
 
 	public void volumetagAdd(String value) {
-		volumetagAdd.sendKeys(Keys.ENTER);
-		volumetagAdd.sendKeys(value);
+		SetInputENterKey(volumetagAdd,"");
+		SetInput(volumetagAdd, value, value);
+		
+//		volumetagAdd.sendKeys(Keys.ENTER);
+//		volumetagAdd.sendKeys(value);
 	}
 
 	public void volumearchitectureAdd(String value) {
-		volumearchitectureAdd.sendKeys(Keys.ENTER);
-		volumearchitectureAdd.sendKeys(value);
+		
+		SetInputENterKey(volumetagAdd,"");
+		SetInput(volumetagAdd, value, value);
+		
+		
+//		volumearchitectureAdd.sendKeys(Keys.ENTER);
+//		volumearchitectureAdd.sendKeys(value);
 	}
 
 	public void volumemaxsizeAdd(String value) {
-		volumemaxsizeAdd.sendKeys(Keys.ENTER);
-		volumemaxsizeAdd.sendKeys(value);
+		SetInputENterKey(volumetagAdd,"");
+		SetInput(volumetagAdd, value, value);
+		
+//		volumemaxsizeAdd.sendKeys(Keys.ENTER);
+//		volumemaxsizeAdd.sendKeys(value);
 	}
 
 	public void volumeSavebutton() throws InterruptedException {
@@ -237,7 +258,8 @@ public class VolumesAddPage extends CommonActions {
 
 	public void backDropShowing_Div_Click() {
 		if (backDropShowing != null) {
-			backDropShowing.click();
+			clickElement(backDropShowing, "");
+			//backDropShowing.click();
 		}
 	}
 
@@ -363,23 +385,28 @@ public class VolumesAddPage extends CommonActions {
 	}
 
 	public void belliconclick() {
-		bellicon.click();
+		clickElement(bellicon, "");
+		//bellicon.click();
 	}
 
 	public void profileicon() {
-		profileicon.click();
+		clickElement(bellicon, "");
+		//profileicon.click();
 	}
 
 	public void volumeNameThreeDot() {
-		volumeNameThreeDot.click();
+		clickElement(volumeNameThreeDot, "");
+		//volumeNameThreeDot.click();
 	}
 
 	public void editbutton() {
-		editbutton.click();
+		clickElement(editbutton, "");
+		//editbutton.click();
 	}
 
 	public void cancelButton() {
-		cancelButton.click();
+		clickElement(cancelButton, "");
+		//cancelButton.click();
 	}
 
 	public void verifyToggleColor(String expectedColor) {
@@ -392,7 +419,8 @@ public class VolumesAddPage extends CommonActions {
     }
 
 	public void headingTitleAdd() {
-		headingTitleAdd.click();
+		clickElement(headingTitleAdd, "");
+		//headingTitleAdd.click();
 	}
 
 	public String verifyValidationMessageVolumeName() {
@@ -401,7 +429,7 @@ public class VolumesAddPage extends CommonActions {
 		}
 		String message = validationMessageverifyValidationMessageVolumeName.getText();
 
-		return message.trim();
+		return message;
 	}
 	
 	
@@ -416,10 +444,11 @@ public class VolumesAddPage extends CommonActions {
 	
 
 	public String verifyValidationMessageSHAkey() {
-		if (validationMessageverifyValidationMessageVolumeName == null) {
+		if (validationMessageverifyValidationMessageshakey == null) {
 			return "";
 		}
-		String message = validationMessageverifyValidationMessageVolumeName.getText();
+		
+		String message = validationMessageverifyValidationMessageshakey.getText();
 
 		return message.trim();
 	}
@@ -428,6 +457,7 @@ public class VolumesAddPage extends CommonActions {
 		if (validationMessageverifyValidationMessagearchitecture == null) {
 			return "";
 		}
+		wait(validationMessageverifyValidationMessagearchitecture,logger);
 		String message = validationMessageverifyValidationMessagearchitecture.getText();
 
 		return message.trim();

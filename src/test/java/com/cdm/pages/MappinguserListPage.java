@@ -68,48 +68,67 @@ public class MappinguserListPage extends CommonActions {
 		js.executeScript("document.querySelector(\".addButton\").click();");
 	}
 	public void cancelbuttonmap() throws InterruptedException {
-		cancelbuttonmap.click();
-		Thread.sleep(2000);
+		clickElement(cancelbuttonmap, "");
+		//cancelbuttonmap.click();
+		
 	}
 
 	public void firstnameSearch(String value) {
-		firstname.sendKeys(Keys.ENTER);
-		firstname.sendKeys(value);
+		SetInputENterKey(firstname,"");
+		SetInput(firstname, value, value);
+		
+//		firstname.sendKeys(Keys.ENTER);
+//		firstname.sendKeys(value);
 	}
 	
 	public void lastnameSearch(String value) {
-		lastname.sendKeys(Keys.ENTER);
-		lastname.sendKeys(value);
+		SetInputENterKey(lastname,"");
+		SetInput(lastname, value, value);
+		
+//		lastname.sendKeys(Keys.ENTER);
+//		lastname.sendKeys(value);
 	}
 	
 	public void RoleNameSearch(String value) {
-		RoleName.sendKeys(Keys.ENTER);
-		RoleName.sendKeys(value);
+		SetInputENterKey(RoleName,"");
+		SetInput(RoleName, value, value);
+		
+		
+//		RoleName.sendKeys(Keys.ENTER);
+//		RoleName.sendKeys(value);
 	}
 	
 	public void emailIdSearch(String value) {
-		emailId.sendKeys(Keys.ENTER);
-		emailId.sendKeys(value);
+		SetInputENterKey(emailId,"");
+		SetInput(emailId, value, value);
+		
+//		emailId.sendKeys(Keys.ENTER);
+//		emailId.sendKeys(value);
 	}
 	
 	public void firstnameThreeDot() {
-		firstnameThreeDot.click();
+		clickElement(firstnameThreeDot, "");
+		//firstnameThreeDot.click();
 	}
 	
 	public void lastNameThreeDot() {
-		lastNameThreeDot.click();
+		clickElement(lastNameThreeDot, "");
+		//lastNameThreeDot.click();
 	}
 	public void emailIDThreeDot() {
-		emailIDThreeDot.click();
+		clickElement(emailIDThreeDot, "");
+		//emailIDThreeDot.click();
 	}
 	
 	public void roleNameThreeDot() {
-		roleNameThreeDot.click();
+		clickElement(roleNameThreeDot, "");
+		//roleNameThreeDot.click();
 	}
 	
 	public void backDropShowing_Div_Click() {
 		if (backDropShowing != null) {
-			backDropShowing.click();
+			clickElement(backDropShowing, "");
+			//backDropShowing.click();
 		}
 	}
 	
@@ -137,6 +156,8 @@ public class MappinguserListPage extends CommonActions {
 		}
 	}
 	public void headingtitle() {
+		
+		clickElement(headingtitle, "");
 		headingtitle.click();
 		
 	}

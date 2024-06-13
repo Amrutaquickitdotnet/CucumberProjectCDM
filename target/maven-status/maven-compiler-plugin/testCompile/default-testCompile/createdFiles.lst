@@ -25,6 +25,7 @@ com\cdm\pages\UserRoleAddPage.class
 com\cdm\pages\EdgeDevicesPage.class
 com\cdm\pages\EdgeGroupEditPage.class
 com\cdm\Stepdefinations\ConfigurationSteps.class
+com\cdm\Stepdefinations\GeneralSteps.class
 com\cdm\pages\LoginPage.class
 com\cdm\pages\Pagination.class
 com\cdm\pages\RepositoriesPage.class
@@ -53,9 +54,11 @@ com\cdm\Stepdefinations\EdgeGroupSteps.class
 com\cdm\Stepdefinations\AppGroupsSteps.class
 com\cdm\Stepdefinations\AppsSteps.class
 com\cdm\Stepdefinations\UserSettingsSteps.class
+com\cdm\Stepdefinations\DashboardSteps.class
 com\cdm\pages\NotificationsPage.class
 com\cdm\pages\UserGroupEditPage.class
 com\cdm\pages\VolumesEditPage.class
+com\cdm\pages\GeneralPage.class
 com\cdm\pages\DeploymentsmodulePage.class
 com\cdm\Stepdefinations\BaseTest.class
 com\cdm\pages\DeviceLogs.class

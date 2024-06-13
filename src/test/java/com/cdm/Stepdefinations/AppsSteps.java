@@ -20,14 +20,13 @@ public class AppsSteps extends BaseTest {
 		AppsPage ap = new AppsPage(driver, logger);
 		ap.setZoomLevel(800, 600);
 	}
-	
+
 	@Then("verify tooltip for License Type from update Screen")
 	public void verify_tooltip_for_license_type_from_update_screen() {
 		AppsEditPage aep = new AppsEditPage(driver, logger);
 		Assert.assertEquals("Tooltip of License Type", "Type of License supported by Application",
 				aep.get_Text_ToolTiplicenseTypeToolTip());
 	}
-
 
 	@Then("serach for application name , architecture, Version")
 	public void serach_for_application_name_architecture_version() {
@@ -106,7 +105,7 @@ public class AppsSteps extends BaseTest {
 	public void verify_tooltip_for_version_from_update_screen() throws InterruptedException {
 		AppsEditPage aep = new AppsEditPage(driver, logger);
 		Assert.assertEquals("Tooltip of version", "Version number of the Application", aep.get_Text_ToolTiptag());
-		Thread.sleep(4000);
+
 	}
 
 	@Then("verify tooltip for Config Master from update Screen")
@@ -117,8 +116,6 @@ public class AppsSteps extends BaseTest {
 				aep.get_Text_ToolTipconfigMaster());
 	}
 
-	
-
 	@Then("click on three dots on application list and enter the value for search and click on Edit button")
 	public void click_on_three_dots_on_application_list_and_enter_the_value_for_search_and_click_on_edit_button()
 			throws InterruptedException {
@@ -126,10 +123,9 @@ public class AppsSteps extends BaseTest {
 		ap.applicationthreedot();
 		ap.applicationName(alldata.get(vTCName).get("ApplicationSearch"));
 		ap.backDropShowing_Div_Click();
-		Thread.sleep(4000);
+
 		ap.editButtonConfig();
-		Thread.sleep(4000);
-		
+
 	}
 
 	@Then("edit all the field listed on the update page")
@@ -176,7 +172,6 @@ public class AppsSteps extends BaseTest {
 	public void click_on_inactive_button_to_deactivate_application() throws InterruptedException {
 		AppsPage ap = new AppsPage(driver, logger);
 		ap.inactivecrossbar();
-		Thread.sleep(4000);
 		ap.confirmationYesButton();
 	}
 

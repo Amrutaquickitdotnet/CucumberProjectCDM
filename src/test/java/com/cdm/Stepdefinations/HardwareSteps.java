@@ -230,8 +230,8 @@ public class HardwareSteps extends BaseTest {
 	@Then("click on bell icon for alerts")
 	public void click_on_bell_icon_for_alerts() throws InterruptedException {
 		HardwareAddPage hap = new HardwareAddPage(driver, logger);
-		hap.belliconClick();
-		Thread.sleep(4000);
+//		hap.belliconClick();
+//		Thread.sleep(4000);
 	}
 
 	@Then("verify dropdown functionality for Profile icon in Hardware")

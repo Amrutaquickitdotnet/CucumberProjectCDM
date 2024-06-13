@@ -16,7 +16,7 @@ public class UserSettingsSteps extends BaseTest {
 
 		UserSettingsPage usp = new UserSettingsPage(driver, logger);
 		usp.Setting_tab();
-		Thread.sleep(5000);
+		
 
 	}
 
@@ -24,9 +24,9 @@ public class UserSettingsSteps extends BaseTest {
 	public void click_on_users_tab_from_right_panel_of_the_screen() throws Exception {
 
 		UserSettingsPage usp = new UserSettingsPage(driver, logger);
-		Thread.sleep(3000);
+		
 		usp.Users_tab();
-		Thread.sleep(3000);
+		
 	}
 
 	@Then("verify of displaying the Add button,Bulk upload & Download button icons on top right side of Users List screen by Super Admin\\/Admin user")
@@ -51,15 +51,15 @@ public class UserSettingsSteps extends BaseTest {
 
 		UserSettingsPage usp = new UserSettingsPage(driver, logger);
 
-		Thread.sleep(3000);
+		
 		usp.LastNameDot();
 		usp.lastNameinput(alldata.get(vTCName).get("LastNameSearch").toString());
 		usp.backDropShowing_Div_Click();
-		Thread.sleep(3000);
+		
 		usp.EmailDot();
 		usp.emailidinput(alldata.get(vTCName).get("EmailIdSearch").toString());
 		usp.backDropShowing_Div_Click();
-		Thread.sleep(3000);
+		
 		usp.RoleNameDot();
 		usp.roleNameinput(alldata.get(vTCName).get("RoleNameSearch").toString());
 
@@ -69,14 +69,14 @@ public class UserSettingsSteps extends BaseTest {
 	public void choose_the_role_from_dropdown_rolename() throws InterruptedException {
 		UserSettingsAddPage usp = new UserSettingsAddPage(driver, logger);
 		usp.roleNameAdd(alldata.get(vTCName).get("RoleNameAdd").toString().trim());
-		Thread.sleep(4000);
+		
 	}
 
 	@Then("choose the role from dropdown rolename for edit screen")
 	public void choose_the_role_from_dropdown_rolename_for_edit_screen() throws InterruptedException {
 		UserSettingsEditPage usep = new UserSettingsEditPage(driver, logger);
-		usep.roleNameEdit(alldata.get(vTCName).get("RoleNameEdit").toString().trim());
-		Thread.sleep(4000);
+		usep.roleNameEdit(alldata.get(vTCName).get("RoleNameEdit").toString());
+		
 	}
 
 	@Then("enter the text in the Email Id field")
@@ -99,9 +99,9 @@ public class UserSettingsSteps extends BaseTest {
 
 		UserSettingsPage usp = new UserSettingsPage(driver, logger);
 		usp.Users_tab();
-		Thread.sleep(3000);
+		
 		usp.addButton();
-		Thread.sleep(3000);
+		
 	}
 
 	@Then("verify status toggle button")
@@ -110,7 +110,7 @@ public class UserSettingsSteps extends BaseTest {
 		UserSettingsAddPage usap = new UserSettingsAddPage(driver, logger);
 		usap.moveSliderCondition("unchecked");
 
-		Thread.sleep(3000);
+		
 		
 	}
 
@@ -119,9 +119,9 @@ public class UserSettingsSteps extends BaseTest {
 		UserSettingsEditPage usep = new UserSettingsEditPage(driver, logger);
 		usep.moveSliderCondition("unchecked");
 
-		Thread.sleep(3000);
+		
 		usep.moveSliderCondition("checked");
-		Thread.sleep(3000);
+		
 		usep.moveSliderCondition("unchecked");
 		
 	}
@@ -149,7 +149,7 @@ public class UserSettingsSteps extends BaseTest {
 		UserSettingsPage usp = new UserSettingsPage(driver, logger);
 		usp.Setting_tab();
 		usp.Users_tab();
-		Thread.sleep(3000);
+		
 		usp.addButton();
 		Thread.sleep(2000);
 		usp.cancelButton();
@@ -211,7 +211,7 @@ public class UserSettingsSteps extends BaseTest {
 		usap.roleNameAdd(alldata.get(vTCName).get("RoleNameAdd").toString());
 
 		usap.saveButtonAdd();
-		Thread.sleep(5000);
+		
 	}
 
 	@Then("Verify validation message for password")
@@ -221,13 +221,13 @@ public class UserSettingsSteps extends BaseTest {
 		Assert.assertEquals("Mandatory field - required !", usap.verifyValidationMessagepasswordnotentered());
 	}
 
-	@Then("Verification of the acceptance of alphabet values in First Name Text field in User Add screen by Super Admin\\/Admin user")
-	public void verification_of_the_acceptance_of_alphabet_values_in_first_name_text_field_in_user_add_screen_by_super_admin_admin_user()
+	@Then("Verification of the acceptance of alphabet values in First Name Text field in User Add screen")
+	public void verification_of_the_acceptance_of_alphabet_values_in_first_name_text_field_in_user_add_screen()
 			throws Exception {
 
 		UserSettingsAddPage usap = new UserSettingsAddPage(driver, logger);
-		usap.firstNameinputAdd(alldata.get(vTCName).get("Value1").toString());
-		usap.verified_str(alldata.get(vTCName).get("Value1").toString());
+		usap.firstNameinputAdd(alldata.get(vTCName).get("FirstNameAdd").toString());
+	
 
 	}
 
@@ -283,8 +283,8 @@ public class UserSettingsSteps extends BaseTest {
 	@Then("Verification of the acceptance of alphabet values in Last Name Text field of User Add screen by Super Admin\\/Admin user")
 	public void verification_of_the_acceptance_of_alphabet_values_in_last_name_text_field_of_user_add_screen_by_super_admin_admin_user() {
 		UserSettingsAddPage usap = new UserSettingsAddPage(driver, logger);
-		usap.lastNameinputAdd(alldata.get(vTCName).get("Value2").toString());
-		usap.verified_str(alldata.get(vTCName).get("Value2").toString());
+		usap.lastNameinputAdd(alldata.get(vTCName).get("LastNameAdd").toString());
+		
 	}
 
 	@Then("Verification of breaching the Max word limit in First Name Text field  of User Add screen by Super Admin\\/Admin user")
@@ -294,7 +294,7 @@ public class UserSettingsSteps extends BaseTest {
 
 		usap.firstNameinputAdd(alldata.get(vTCName).get("FirstNameAdd").toString());
 		usap.headingTitleAdd();
-		Thread.sleep(4000);
+		
 
 		Assert.assertEquals("Alphabets of length Min = 2, Max = 32 are allowed !",
 				usap.verifyValidationMessageFirstNameUser());
@@ -306,9 +306,9 @@ public class UserSettingsSteps extends BaseTest {
 			throws InterruptedException {
 		UserSettingsAddPage usap = new UserSettingsAddPage(driver, logger);
 
-		usap.phoneNumberInputAdd(alldata.get(vTCName).get("Value3").toString());
+		usap.phoneNumberInputAdd(alldata.get(vTCName).get("PhoneNumberAdd").toString());
 		usap.headingTitleAdd();
-		Thread.sleep(4000);
+		
 
 	}
 
@@ -317,10 +317,10 @@ public class UserSettingsSteps extends BaseTest {
 			throws InterruptedException {
 		UserSettingsAddPage usap = new UserSettingsAddPage(driver, logger);
 
-		usap.phoneNumberInputAdd(alldata.get(vTCName).get("Value3").toString());
+		usap.phoneNumberInputAdd(alldata.get(vTCName).get("PhoneNumberAdd").toString());
 		// usap.headingTitleAdd();
 		//// usap.saveButtonAdd();
-		Thread.sleep(4000);
+		
 		Assert.assertEquals("Numericals of length Min = 10 & Max = 16 characters are allowed !",
 				usap.verifyValidationMessageContactInvalid());
 
@@ -343,7 +343,7 @@ public class UserSettingsSteps extends BaseTest {
 			throws InterruptedException {
 		UserSettingsAddPage usap = new UserSettingsAddPage(driver, logger);
 		usap.saveButtonAdd();
-		Assert.assertEquals("Mandatory field - required !", usap.verifyValidationMessageContact());
+		Assert.assertEquals("Mandatory field - required !", usap.verifyValidationMessageContactmandatoryfield());
 	}
 
 	@When("I enter a valid email address")
@@ -378,7 +378,7 @@ public class UserSettingsSteps extends BaseTest {
 
 		usap.lastNameinputAdd(alldata.get(vTCName).get("LastNameAdd").toString());
 		usap.headingTitleAdd();
-		Thread.sleep(4000);
+		
 
 		usap.removalofEnteredTextForLastName();
 		Assert.assertEquals("Mandatory field - required !", usap.verifyValidationMessageLastNameUser());
@@ -395,7 +395,7 @@ public class UserSettingsSteps extends BaseTest {
 	public void verification_of_copy_pasting_numeric_digits_in_contact_number_field_of_user_add_screen_by_super_admin_admin_user() {
 		UserSettingsAddPage usap = new UserSettingsAddPage(driver, logger);
 
-		String contactNumberValue = alldata.get(vTCName).get("Value3").toString();
+		String contactNumberValue = alldata.get(vTCName).get("PhoneNumberAdd").toString();
 		usap.phoneNumberInputAdd(contactNumberValue);
 		// Get the entered value from the Contact Number field
 		String enteredValue = usap.getAttributeContact();
@@ -414,9 +414,9 @@ public class UserSettingsSteps extends BaseTest {
 			throws InterruptedException {
 		UserSettingsAddPage usap = new UserSettingsAddPage(driver, logger);
 
-		usap.phoneNumberInputAdd(alldata.get(vTCName).get("Value3").toString());
+		usap.phoneNumberInputAdd(alldata.get(vTCName).get("PhoneNumberAdd").toString());
 
-		Thread.sleep(4000);
+		
 		Assert.assertEquals("Please enter a valid Phone Number !", usap.verifyValidationMessagedigitwithSpace());
 	}
 
@@ -425,9 +425,9 @@ public class UserSettingsSteps extends BaseTest {
 			Integer int1) throws InterruptedException {
 		UserSettingsAddPage usap = new UserSettingsAddPage(driver, logger);
 
-		usap.phoneNumberInputAdd(alldata.get(vTCName).get("Value3").toString());
+		usap.phoneNumberInputAdd(alldata.get(vTCName).get("PhoneNumberAdd").toString());
 
-		Thread.sleep(4000);
+		
 		Assert.assertEquals("Please enter a valid Phone Number !", usap.verifyValidationMessagedigitwithZeros());
 	}
 
@@ -436,9 +436,9 @@ public class UserSettingsSteps extends BaseTest {
 			throws InterruptedException {
 		UserSettingsAddPage usap = new UserSettingsAddPage(driver, logger);
 
-		usap.firstNameinputAdd(alldata.get(vTCName).get("Value1").toString());
+		usap.firstNameinputAdd(alldata.get(vTCName).get("FirstNameAdd").toString());
 		usap.headingTitleAdd();
-		Thread.sleep(4000);
+		
 		try {
 			Assert.assertEquals("  Alphabets of length Min = 2, Max = 32 are allowed ! ",
 					usap.verifyValidationMessageFirstNameUser());
@@ -453,9 +453,9 @@ public class UserSettingsSteps extends BaseTest {
 			throws InterruptedException {
 		UserSettingsAddPage usap = new UserSettingsAddPage(driver, logger);
 
-		usap.lastNameinputAdd(alldata.get(vTCName).get("Value2").toString());
+		usap.lastNameinputAdd(alldata.get(vTCName).get("LastNameAdd").toString());
 		usap.headingTitleAdd();
-		Thread.sleep(4000);
+		
 		try {
 			Assert.assertEquals("  Alphabets of length Min = 2, Max = 32 are allowed ! ",
 					usap.verifyValidationMessageLastNameUser());
@@ -470,13 +470,13 @@ public class UserSettingsSteps extends BaseTest {
 
 		UserSettingsEditPage usep = new UserSettingsEditPage(driver, logger);
 
-		Thread.sleep(3000);
+		
 
 		usep.removalofEnteredTextForPhoneNoEdit();
 
 		usep.phoneNumberInputEdit(alldata.get(vTCName).get("PhoneNumberEdit").toString());
 
-		Thread.sleep(4000);
+		
 		try {
 			Assert.assertEquals("Numericals of length Min = 10 & Max = 16 characters are allowed !",
 					usep.verifyValidationMessageContactInvalid());
@@ -491,7 +491,7 @@ public class UserSettingsSteps extends BaseTest {
 
 		usep.lastNameinputEdit(alldata.get(vTCName).get("LastNameEdit").toString());
 		usep.headingTitleEdit();
-		Thread.sleep(4000);
+		
 		try {
 			Assert.assertEquals("Alphabets of length Min = 1, Max = 32 are allowed !",
 					usep.verifyValidationMessageLastNameUser());
@@ -528,9 +528,9 @@ public class UserSettingsSteps extends BaseTest {
 
 		use.removalofEnteredTextForPassword();
 		use.passwordInputEdit(alldata.get(vTCName).get("PasswordEdit"));
-		Thread.sleep(3000);
+		
 		use.saveButtonEdit();
-		Thread.sleep(3000);
+		
 
 	}
 
@@ -566,14 +566,14 @@ public class UserSettingsSteps extends BaseTest {
 		usp.firstNameinput(alldata.get(vTCName).get("FirstNameSearch"));
 		usp.backDropShowing_Div_Click();
 
-		Thread.sleep(3000);
+		
 	}
 
 	@Then("verify delete tooltip")
 	public void verify_delete_tooltip() throws InterruptedException {
 		UserSettingsPage usp = new UserSettingsPage(driver, logger);
 		Assert.assertEquals("Tooltip of delete button for user ", "Delete", usp.get_Text_ToolTipDelete());
-		Thread.sleep(4000);
+		
 	}
 
 	@When("I edit a valid email address")
@@ -582,21 +582,21 @@ public class UserSettingsSteps extends BaseTest {
 		Thread.sleep(2000);
 		usep.removalofEnteredTextForEmailId();
 		usep.emailidinputEdit(alldata.get(vTCName).get("EmailIDEdit").toString());
-		Thread.sleep(4000);
+		
 	}
 
 	@Then("verify Edit tooltip")
 	public void verify_edit_tooltip() throws InterruptedException {
 		UserSettingsPage usp = new UserSettingsPage(driver, logger);
 		Assert.assertEquals("Tooltip of Edit button for user ", "Edit", usp.get_Text_ToolTipEdit());
-		Thread.sleep(4000);
+		
 	}
 
 	@Then("Enter details for user add page without choosing User Role")
 	public void enter_details_for_user_add_page_without_choosing_user_role() throws InterruptedException {
 		UserSettingsAddPage usap = new UserSettingsAddPage(driver, logger);
 		usap.firstNameinputAdd(alldata.get(vTCName).get("FirstNameAdd").toString());
-		Thread.sleep(6000);
+		
 
 		usap.lastNameinputAdd(alldata.get(vTCName).get("LastNameAdd").toString());
 
@@ -623,7 +623,7 @@ public class UserSettingsSteps extends BaseTest {
 	public void try_to_select_value_from_organization_dropdown() throws InterruptedException {
 		UserSettingsAddPage usap = new UserSettingsAddPage(driver, logger);
 		usap.organizationAdd(alldata.get(vTCName).get("OrganizationAdd").toString());
-		Thread.sleep(5000);
+		
 	}
 
 	@Then("verify validation message for RoleName")
@@ -632,7 +632,7 @@ public class UserSettingsSteps extends BaseTest {
 		UserSettingsAddPage usap = new UserSettingsAddPage(driver, logger);
 		usap.roleNameAdd(alldata.get(vTCName).get("RoleNameEdit").toString());
 		usap.saveButtonAdd();
-		Thread.sleep(3000);
+		
 		usap.verifyvalidationmessageforroleName();
 	}
 
@@ -721,7 +721,7 @@ public class UserSettingsSteps extends BaseTest {
 	@Then("click on edit icon from actions column")
 	public void click_on_edit_icon_from_actions_column() throws InterruptedException {
 		UserSettingsPage usp = new UserSettingsPage(driver, logger);
-		Thread.sleep(3000);
+		
 		try {
 			usp.edituserbutton();
 		} catch (Exception e) {

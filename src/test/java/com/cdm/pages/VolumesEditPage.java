@@ -64,6 +64,7 @@ public class VolumesEditPage extends CommonActions {
 	}
 	public void backDropShowing_Div_Click() {
 		if (backDropShowing != null) {
+			clickElement(backDropShowing, "");
 			backDropShowing.click();
 		}
 	}
@@ -75,43 +76,67 @@ public class VolumesEditPage extends CommonActions {
 	}
 
 	public void volumenameEdit(String value) {
-		volumenameEdit.sendKeys(Keys.ENTER);
-		volumenameEdit.sendKeys(value);
+		SetInputENterKey(volumenameEdit,"");
+		SetInput(volumenameEdit, value, value);
+//		volumenameEdit.sendKeys(Keys.ENTER);
+//		volumenameEdit.sendKeys(value);
 	}
 
 	public void architectureEdit(String value) {
-		architectureEdit.sendKeys(Keys.ENTER);
-		architectureEdit.sendKeys(value);
+		SetInputENterKey(architectureEdit,"");
+		SetInput(architectureEdit, value, value);
+		
+//		architectureEdit.sendKeys(Keys.ENTER);
+//		architectureEdit.sendKeys(value);
 	}
 
 	public void licensetypeEdit(String value) {
-		licensetypeEdit.sendKeys(Keys.ENTER);
-		licensetypeEdit.sendKeys(value);
+		SetInputENterKey(licensetypeEdit,"");
+		SetInput(licensetypeEdit, value, value);
+		
+		
+//		licensetypeEdit.sendKeys(Keys.ENTER);
+//		licensetypeEdit.sendKeys(value);
 	}
 
 	public void repositorylinkEdit(String value) {
-		repositorylinkEdit.sendKeys(Keys.ENTER);
-		repositorylinkEdit.sendKeys(value);
+		SetInputENterKey(repositorylinkEdit,"");
+		SetInput(repositorylinkEdit, value, value);
+		
+//		repositorylinkEdit.sendKeys(Keys.ENTER);
+//		repositorylinkEdit.sendKeys(value);
 	}
 
 	public void tagEdit(String value) {
-		tagEdit.sendKeys(Keys.ENTER);
-		tagEdit.sendKeys(value);
+		SetInputENterKey(tagEdit,"");
+		SetInput(tagEdit, value, value);
+//		
+//		tagEdit.sendKeys(Keys.ENTER);
+//		tagEdit.sendKeys(value);
 	}
 
 	public void mountdirectoryEdit(String value) {
-		mountdirectoryEdit.sendKeys(Keys.ENTER);
-		mountdirectoryEdit.sendKeys(value);
+		SetInputENterKey(mountdirectoryEdit,"");
+		SetInput(mountdirectoryEdit, value, value);
+//		
+//		mountdirectoryEdit.sendKeys(Keys.ENTER);
+//		mountdirectoryEdit.sendKeys(value);
 	}
 
 	public void maxsizeEdit(String value) {
-		maxsize.sendKeys(Keys.ENTER);
-		maxsize.sendKeys(value);
+		SetInputENterKey(maxsize,"");
+		SetInput(maxsize, value, value);
+		
+//		maxsize.sendKeys(Keys.ENTER);
+//		maxsize.sendKeys(value);
 	}
 	
 	public void shakeyEdit(String value) {
-		shakeyEdit.sendKeys(Keys.ENTER);
-		shakeyEdit.sendKeys(value);
+		SetInputENterKey(shakeyEdit,"");
+		SetInput(shakeyEdit, value, value);
+//		
+//		shakeyEdit.sendKeys(Keys.ENTER);
+//		shakeyEdit.sendKeys(value);
 	}
 	public String removalofEnteredTextForVolumeName() {
 
@@ -158,7 +183,9 @@ public class VolumesEditPage extends CommonActions {
 	}
 	
 	public void saveEditVolume() throws InterruptedException {
-		saveEditVolume.click();
+		wait(saveEditVolume,logger);
+		clickElement(saveEditVolume, "");
+		//saveEditVolume.click();
 		Thread.sleep(4000);
 	}
 

@@ -23,6 +23,13 @@ public class UserGroupsPage extends CommonActions {
 		PageFactory.initElements(driver, this);
 
 	}
+	@FindBy(xpath = "//body/app-root[1]/app-root[1]/app-home[1]/mat-sidenav-container[1]/mat-sidenav-content[1]/div[1]/div[1]/div[2]/img[1]")
+	WebElement networkStatus;
+	
+	@FindBy(css= ".cdk-overlay-container")
+	WebElement outerlayerclick;
+	
+	
 	@FindBy(xpath = "//h4")
 	WebElement headingtitle;
 
@@ -35,8 +42,11 @@ public class UserGroupsPage extends CommonActions {
 	@FindBy(xpath = "//body/div[3]/div[2]/div[1]/div[1]/div[1]/button[1]/div[1]/label[1]/input[1]")
 	WebElement activeStatus;
 	
-	@FindBy(xpath = "//body/div[3]/div[2]/div[1]/div[1]/div[1]/button[1]/div[2]/label[1]")
+	@FindBy(xpath = "//body/div[3]/div[2]/div[1]/div[1]/div[1]/button[1]/div[2]/label[1]/input[1]")
 	WebElement inactiveStatus;
+	
+	@FindBy(xpath = "//body/app-root[1]/app-root[1]/app-home[1]/mat-sidenav-container[1]/mat-sidenav-content[1]/div[2]/div[1]/app-setting[1]/div[1]/div[1]/div[1]/div[1]/app-user-group[1]/div[1]/div[1]/div[1]/img[1]")
+	WebElement refreshIcon;
 	
 	@FindBy(xpath="//thead/tr[1]/th[6]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]")
 	WebElement statusColumn;
@@ -65,31 +75,44 @@ public class UserGroupsPage extends CommonActions {
 	WebElement searchUserGroup;
 
 	public void inputUserGroup(String value) {
-		inputUserGroup.sendKeys(Keys.ENTER);
-		// ((JavascriptExecutor) driver).executeScript("arguments[0].value =
-		// arguments[1]", value, inputUserRole);
-		inputUserGroup.sendKeys(value);
+		SetInputENterKey(inputUserGroup,"");
+		SetInput(inputUserGroup, value, value);
+//		inputUserGroup.sendKeys(Keys.ENTER);
+//		// ((JavascriptExecutor) driver).executeScript("arguments[0].value =
+//		// arguments[1]", value, inputUserRole);
+//		inputUserGroup.sendKeys(value);
 	}
 	
 	
 	public void searchUserGroup(String value) {
-		searchUserGroup.sendKeys(Keys.ENTER);
-		searchUserGroup.sendKeys(value);
-		searchUserGroup.sendKeys(Keys.ENTER);
+		SetInputENterKey(searchUserGroup,"");
+		SetInput(searchUserGroup, value, value);
+//		searchUserGroup.sendKeys(Keys.ENTER);
+//		searchUserGroup.sendKeys(value);
+//		searchUserGroup.sendKeys(Keys.ENTER);
 	}
 
 	
 
 	public void addbuttonicon() {
-		addbuttonicon.click();
+		clickElement(addbuttonicon, "");
+		//addbuttonicon.click();
 	}
 
 	public void UserGroupstab() {
-		UserGroupstab.click();
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	        WebElement element = wait.until(ExpectedConditions.visibilityOf(UserGroupstab));
+	        element.click();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
 	}
 
 	public void usergroupThreeDot() {
-		usergroupThreeDot.click();
+		clickElement(usergroupThreeDot, "");
+		//usergroupThreeDot.click();
 	}
 	
 	public void deletebuttonicon() {
@@ -101,43 +124,73 @@ public class UserGroupsPage extends CommonActions {
 			WebElement confirmationYesButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),'Yes')]")));
 
 	        // Perform a click action on the confirmation Yes button
-	        confirmationYesButton.click();
+			clickElement(confirmationYesButton, "");
+	        //confirmationYesButton.click();
 		
 	}
 	
 	public void backDropShowing_Div_Click() {
 		if (backDropShowing != null) {
-			backDropShowing.click();
+			clickElement(backDropShowing, "");
+			//backDropShowing.click();
 		}
 	}
 
 
 	public void addusericon() {
-		
-		addusericon.click();
+		wait(addusericon,logger);
+		clickElement(addusericon, "");
+		//addusericon.click();
 	}
 
 
 	public void inactiveStatus() {
-		
-		inactiveStatus.click();
+		wait(inactiveStatus,logger);
+		clickElement(inactiveStatus, "");
+		//inactiveStatus.click();
 	}
 	
 	public void statusColumn() {
-		statusColumn.click();
+		wait(statusColumn,logger);
+		clickElement(statusColumn, "");
+		//statusColumn.click();
 	}
 
 
 	public void activeStatus() {
-	activeStatus.click();
+		wait(activeStatus,logger);
+		clickElement(activeStatus, "");
+	//activeStatus.click();
 		
 	}
 	public void headingtitle() {
-		headingtitle.click();
+		clickElement(headingtitle, "");
+		//headingtitle.click();
 		
 	}
 	public void managemappingicon() {
-		managemappingicon.click();
+		
+		clickElement(managemappingicon, "");
+		//managemappingicon.click();
+	}
+
+
+	public void refreshicon() {
+		
+		clickElement(refreshIcon, "");
+		
+	}
+	
+	public void networkstatus() {
+		clickElement(networkStatus, "");
+	}
+
+
+	public void outerlayerclick() {
+		
+		
+		clickElement(outerlayerclick, "");
+		
 	}
 
 }

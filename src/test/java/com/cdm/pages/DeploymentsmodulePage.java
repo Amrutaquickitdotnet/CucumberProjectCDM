@@ -24,11 +24,81 @@ public class DeploymentsmodulePage extends CommonActions {
 	{
 		super(driver, logger);
 
-		
-		
 		PageFactory.initElements(driver, this);
 	}
-	
+
+	@FindBy(css = ".cdk-overlay-container")
+	WebElement edgeIDToolTip;
+
+	@FindBy(css = ".cdk-overlay-container")
+	WebElement appNameToolTip;
+
+	@FindBy(css = ".cdk-overlay-container")
+	WebElement statusToolTip;
+
+	@FindBy(css = ".cdk-overlay-container")
+	WebElement errorToolTip;
+
+	@FindBy(css = ".cdk-overlay-container")
+	WebElement runningVersionToolTip;
+
+	@FindBy(css = ".cdk-overlay-container")
+	WebElement deploymentDateToolTip;
+
+	@FindBy(css = ".cdk-overlay-container")
+	WebElement expectedVersionToolTip;
+
+	@FindBy(css = ".cdk-overlay-container")
+	WebElement lastUpdatedToolTip;
+
+	@FindBy(css = ".cdk-overlay-container")
+	WebElement infoToolTip;
+
+	@FindBy(css = ".cdk-overlay-container")
+	WebElement deleteTip;
+
+	@FindBy(xpath = "/html/body/div[3]/div[3]/div/mat-tooltip-component/div")
+	WebElement closeTip;
+
+	@FindBy(xpath = "//tbody/tr[1]/td[9]/span[1]/img[1]")
+	public WebElement deletebutton;
+
+	@FindBy(xpath = "//div[contains(text(),'EDGE ID')]")
+	public WebElement edgeIdLabel;
+
+	@FindBy(xpath = "//div[contains(text(),'App Name')]")
+	public WebElement appNameLabel;
+
+	@FindBy(xpath = "//div[contains(text(),'Status')]")
+	public WebElement statusLabel;
+
+	@FindBy(xpath = "//div[contains(text(),'Error')]")
+	public WebElement errorLabel;
+
+	@FindBy(xpath = "//div[contains(text(),'Running Version')]")
+	public WebElement runningVersionLabel;
+
+	@FindBy(xpath = "//div[contains(text(),'Expected Version')]")
+	public WebElement expectedVersionLabel;
+
+	@FindBy(xpath = "//div[contains(text(),'Deployment Date')]")
+	public WebElement deploymentDateLabel;
+
+	@FindBy(xpath = "//div[contains(text(),'Last Updated')]")
+	public WebElement LastUpdatedLabel;
+
+	@FindBy(xpath = "//app-filter[@name='devicename']/div/a/mat-icon[contains(text(),'more_vert')]")
+	public WebElement edgeIdThreeDot;
+
+	@FindBy(xpath = "//app-filter[@name='appname']/div/a/mat-icon[contains(text(),'more_vert')]")
+	public WebElement appNameThreeDot;
+
+	@FindBy(xpath = "//app-filter[@name='status']/div/a/mat-icon[contains(text(),'more_vert')]")
+	public WebElement statusThreeDots;
+
+	@FindBy(xpath = "//app-filter[@name='errortrace']/div/a/mat-icon[contains(text(),'more_vert')]")
+	public WebElement errorThreeDots;
+
 	@FindBy(xpath = "//span[contains(text(),' Apply ')]")
 	public WebElement applybuttoncalender;
 
@@ -91,11 +161,11 @@ public class DeploymentsmodulePage extends CommonActions {
 
 	@FindBy(xpath = "//body/app-root[1]/app-root[1]/app-home[1]/mat-sidenav-container[1]/mat-sidenav-content[1]/div[2]/div[1]/app-deployement-app[1]/div[1]/div[1]/div[1]/img[3]")
 	WebElement historyviewButton;
-	
+
 	@FindBy(xpath = "//input[@name='devicename']")
 	WebElement inputEdgeNameDeploy;
 
-	@FindBy(xpath = "//h3/../div/i")
+	@FindBy(xpath = "//mat-dialog-container[@id='mat-dialog-0']/app-deploy-volume/div/div[1]/div/i")
 	WebElement closevolume;
 
 	@FindBy(xpath = "//input[@name='volumename']")
@@ -119,10 +189,13 @@ public class DeploymentsmodulePage extends CommonActions {
 	@FindBy(xpath = "//h3[contains(text(),'Deployed Volume Details')]")
 	WebElement titleheadingvolumeDetailsPage;
 
+	@FindBy(xpath = "//h3[@class='titleHeading']")
+	WebElement titleheadingDeployment;
+
 	@FindBy(xpath = "//input[@name='status']")
 	WebElement statusDeploy;
 
-	@FindBy(xpath = "//body[1]/div[3]/div[2]/div[1]/mat-dialog-container[1]/app-deploy-volume[1]/div[1]/div[2]/div[1]/div[1]/table[1]/thead[1]/tr[1]/th[1]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]")
+	@FindBy(xpath = "(//div[@id='matTable']/table/thead/tr/th/div/app-filter/div/a/mat-icon)[9]")
 	WebElement volumeNamePopUpThreeDot;
 
 	@FindBy(xpath = "//input[@name='//body[1]/div[3]/div[2]/div[1]/mat-dialog-container[1]/app-deploy-volume[1]/div[1]/div[2]/div[1]/div[1]/table[1]/thead[1]/tr[1]/th[4]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]']")
@@ -166,36 +239,36 @@ public class DeploymentsmodulePage extends CommonActions {
 
 	@FindBy(xpath = "//body[1]/div[3]/div[2]/div[1]/mat-dialog-container[1]/app-deploy-volume[1]/div[1]/div[2]/div[1]/div[1]/table[1]/thead[1]/tr[1]/th[4]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]")
 	WebElement createdDateVolumeDeployDetails;
-	
-	
-	
+
 	@FindBy(xpath = "//input[@value='RUNNING']")
 	WebElement runningstatus;
 
 	public void calenderIcon() {
-		calenderIcon.click();
+		clickElement(calenderIcon, "");
+		// calenderIcon.click();
 	}
 
 	public void arrowforyearandmonth() {
-		arrowforyearandmonth.click();
-		try {
-			Thread.sleep(200);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		clickElement(arrowforyearandmonth, "");
+		// arrowforyearandmonth.click();
+
 	}
 
 	public void refresh_Button() {
-		refresh_Button.click();
+		clickElement(refresh_Button, "");
+		// refresh_Button.click();
 	}
 
 	public void bulkDownloadButton() {
-		bulkDownloadButton.click();
+		clickElement(bulkDownloadButton, "");
+
+		// bulkDownloadButton.click();
 	}
 
 	public void currentView() {
-		currentViewButton.click();
+		clickElement(currentViewButton, "");
+//		
+//		currentViewButton.click();
 	}
 
 	public void setZoomLevel(int width, int height) {
@@ -204,52 +277,58 @@ public class DeploymentsmodulePage extends CommonActions {
 	}
 
 	public void deploymenttabclick() {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        WebElement element = wait.until(ExpectedConditions.visibilityOf(deployment_tab));
-		deployment_tab.click();
+		clickElement(deployment_tab, "");
+
 	}
 
 	public void edgeNameThreeDotDeploy() {
-		edgeNameThreeDotDeploy.click();
+		clickElement(edgeNameThreeDotDeploy, "");
+		// edgeNameThreeDotDeploy.click();
 	}
 
 	public void appNameDeployThreeDot() {
-		appNameDeployThreeDot.click();
+		clickElement(appNameDeployThreeDot, "");
+		// appNameDeployThreeDot.click();
 	}
 
 	public void statusThreeDotDeploy() {
-		statusThreeDotDeploy.click();
+		clickElement(statusThreeDotDeploy, "");
+		// statusThreeDotDeploy.click();
 	}
 
 	public void errorThreeDotDeploy() {
-		errorThreeDotDeploy.click();
+		clickElement(errorThreeDotDeploy, "");
+		// errorThreeDotDeploy.click();
 	}
 
-	public void downloadStatus() {
-		try {
-			Thread.sleep(5000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+	public String downloadStatus() {
+		if (downloadstatus == null) {
+			return "";
 		}
-		System.out.println(downloadstatus.getText());
+
+		return getText(downloadstatus);
 
 	}
 
 	public void RunningVersionThreeDotDeploy() {
-		RunningVersionThreeDotDeploy.click();
+		clickElement(RunningVersionThreeDotDeploy, "");
+		// RunningVersionThreeDotDeploy.click();
 	}
 
 	public void expectedVersionThreeDotDeploy() {
-		expectedVersionThreeDotDeploy.click();
+		clickElement(expectedVersionThreeDotDeploy, "");
+		// expectedVersionThreeDotDeploy.click();
 	}
 
 	public void deploymentDateThreeDotDeploy() {
-		deploymentDateThreeDotDeploy.click();
+		clickElement(deploymentDateThreeDotDeploy, "");
+		// deploymentDateThreeDotDeploy.click();
 	}
 
 	public void lastUpdatedThreeDotDeploy() {
-		lastUpdatedThreeDotDeploy.click();
+		wait(lastUpdatedThreeDotDeploy, logger);
+		clickElement(lastUpdatedThreeDotDeploy, "");
+		// lastUpdatedThreeDotDeploy.click();
 	}
 
 	public void inputEdgeNameDeploy(String value) {
@@ -258,38 +337,62 @@ public class DeploymentsmodulePage extends CommonActions {
 	}
 
 	public void inputAppNameDeploy(String value) {
-		inputAppNameDeploy.sendKeys(Keys.ENTER);
-		inputAppNameDeploy.sendKeys(value);
+
+		SetInputENterKey(inputAppNameDeploy, "");
+		SetInput(inputAppNameDeploy, value, value);
+
+//		inputAppNameDeploy.sendKeys(Keys.ENTER);
+//		inputAppNameDeploy.sendKeys(value);
 	}
 
 	public void inputStatusDeploy(String value) {
-		inputStatusDeploy.sendKeys(Keys.ENTER);
-		inputStatusDeploy.sendKeys(value);
+
+		SetInputENterKey(inputStatusDeploy, "");
+		SetInput(inputStatusDeploy, value, value);
+
+//		inputStatusDeploy.sendKeys(Keys.ENTER);
+//		inputStatusDeploy.sendKeys(value);
 	}
 
 	public void inputErrorDeploy(String value) {
-		inputErrorDeploy.sendKeys(Keys.ENTER);
-		inputErrorDeploy.sendKeys(value);
+
+		SetInputENterKey(inputErrorDeploy, "");
+		SetInput(inputErrorDeploy, value, value);
+
+//		inputErrorDeploy.sendKeys(Keys.ENTER);
+//		inputErrorDeploy.sendKeys(value);
 	}
 
 	public void inputRunningVersion(String value) {
-		inputRunningVersion.sendKeys(Keys.ENTER);
-		inputRunningVersion.sendKeys(value);
+		SetInputENterKey(inputRunningVersion, "");
+		SetInput(inputRunningVersion, value, value);
+
+//		inputRunningVersion.sendKeys(Keys.ENTER);
+//		inputRunningVersion.sendKeys(value);
 	}
 
 	public void inputExpectedVersion(String value) {
-		inputExpectedVersion.sendKeys(Keys.ENTER);
-		inputExpectedVersion.sendKeys(value);
+		SetInputENterKey(inputExpectedVersion, "");
+		SetInput(inputExpectedVersion, value, value);
+
+//		inputExpectedVersion.sendKeys(Keys.ENTER);
+//		inputExpectedVersion.sendKeys(value);
 	}
 
 	public void inputVolumeNameDeploy(String value) {
-		inputVolumeNameDeploy.sendKeys(Keys.ENTER);
-		inputVolumeNameDeploy.sendKeys(value);
+		SetInputENterKey(inputVolumeNameDeploy, "");
+		SetInput(inputVolumeNameDeploy, value, value);
+
+		// inputVolumeNameDeploy.sendKeys(value);
 	}
 
 	public void inputVolumeStatusDetailsDeploy(String value) {
-		inputStatusVolumeDetailsDeploy.sendKeys(Keys.ENTER);
-		inputStatusVolumeDetailsDeploy.sendKeys(value);
+
+		SetInputENterKey(inputStatusVolumeDetailsDeploy, "");
+		SetInput(inputStatusVolumeDetailsDeploy, value, value);
+
+//		inputStatusVolumeDetailsDeploy.sendKeys(Keys.ENTER);
+//		inputStatusVolumeDetailsDeploy.sendKeys(value);
 	}
 
 	public String removalofEnteredTextForEdgeName() {
@@ -371,31 +474,44 @@ public class DeploymentsmodulePage extends CommonActions {
 	}
 
 	public void showMoreLink() {
-		showMoreLink.click();
+		clickElement(showMoreLink, "");
+		// showMoreLink.click();
 	}
 
 	public void infoicon() {
-		infoicon.click();
+		try {
+			wait(infoicon, logger);
+			clickElement(infoicon, "");
+			// infoicon.click();
+		} catch (Exception e) {
+
+		}
+
 	}
 
 	public void volumeNamePopUpThreeDot() {
-		volumeNamePopUpThreeDot.click();
+
+		wait(volumeNamePopUpThreeDot, logger);
+		clickElement(volumeNamePopUpThreeDot, "");
 
 	}
 
 	public void backDropShowing_Div_Click() {
 		if (backDropShowing != null) {
+			// clickElement(backDropShowing, "");
 			backDropShowing.click();
 		}
 	}
 
 	public void volumeDetailsStatusThreeDot() {
 
-		volumeDetailsStatusThreeDot.click();
+		clickElement(volumeDetailsStatusThreeDot, "");
+
 	}
 
 	public void titleheadingvolumeDetailsPage() {
-		titleheadingvolumeDetailsPage.click();
+		clickElement(titleheadingvolumeDetailsPage, "");
+		// titleheadingvolumeDetailsPage.click();
 	}
 
 	public void inputVolumeNameDetailsPageDeploy(String value) {
@@ -404,80 +520,248 @@ public class DeploymentsmodulePage extends CommonActions {
 	}
 
 	public void inputErrorDetailsPageDeploy(String value) {
-		inputErrorDetailsPageDeploy.sendKeys(Keys.ENTER);
-		inputErrorDetailsPageDeploy.sendKeys(value);
+
+		SetInputENterKey(inputErrorDetailsPageDeploy, "");
+		SetInput(inputErrorDetailsPageDeploy, value, value);
+
+//		inputErrorDetailsPageDeploy.sendKeys(Keys.ENTER);
+//		inputErrorDetailsPageDeploy.sendKeys(value);
 	}
 
 	public void inputCreatedDate(String value) {
-		inputErrorDetailsPageDeploy.sendKeys(Keys.ENTER);
-		inputErrorDetailsPageDeploy.sendKeys(value);
+		SetInputENterKey(inputErrorDetailsPageDeploy, "");
+		SetInput(inputErrorDetailsPageDeploy, value, value);
+
+//		inputErrorDetailsPageDeploy.sendKeys(Keys.ENTER);
+//		inputErrorDetailsPageDeploy.sendKeys(value);
 	}
 
 	public void DeployedVolumeDetailserrorThreeDot() {
-		DeployedVolumeDetailserrorThreeDot.click();
+		clickElement(DeployedVolumeDetailserrorThreeDot, "");
+		// DeployedVolumeDetailserrorThreeDot.click();
 	}
 
 	public void createdDateVolumeDeployDetailsThreeDot() {
-		createdDateVolumeDeployDetails.click();
+		clickElement(createdDateVolumeDeployDetails, "");
+//		createdDateVolumeDeployDetails.click();
 	}
 
 	public void volumepageRecord() {
 		List<String> records = Arrays.asList("Record 1", "Record 2", "Record 3", "Record 4");
 
-		// Assuming you want to display 5 records per page
+// Assuming you want to display 5 records per page
 		int recordsPerPage = 4;
 
-		// Calculate the number of pages required
+// Calculate the number of pages required
 		int totalPages = (records.size() + recordsPerPage - 1) / recordsPerPage;
 
 		for (int page = 1; page <= totalPages; page++) {
-			// Navigate to the desired page
-			// You need to implement this part according to your specific webpage
-			// For example:
-			// driver.findElement(By.xpath("//button[contains(text(),'Next')]")).click();
+// Navigate to the desired page
+// You need to implement this part according to your specific webpage
+// For example:
+// driver.findElement(By.xpath("//button[contains(text(),'Next')]")).click();
 
-			// Extract records for the current page
+// Extract records for the current page
 			int startIndex = (page - 1) * recordsPerPage;
 			int endIndex = Math.min(page * recordsPerPage, records.size());
 			List<String> currentPageRecords = records.subList(startIndex, endIndex);
 
-			// Process the records on the current page
+// Process the records on the current page
 			for (String record : currentPageRecords) {
 				System.out.println(record);
 			}
 		}
 
 	}
+
 	public void applybuttoncalender() {
-		applybuttoncalender.click();
+		clickElement(applybuttoncalender, "");
+		// applybuttoncalender.click();
 	}
+
 	public List<WebElement> tableData() {
 		tableData.findElements(By.tagName("td"));
 		return null;
 	}
 
 	public void closevolume() {
-		try {
-			closevolume.click();
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
+		clickElement(closevolume, "");
+		// closevolume.click();
 
 	}
-	
+
 	public void runningStatusunchecked() {
-		if(runningstatus.getAttribute("checked") != null) // if Checked 
-			runningstatus.click(); 
-		
+		if (runningstatus.getAttribute("checked") != null) // if Checked
+			clickElement(runningstatus, "");
+		// runningstatus.click();
+
 	}
+
 	public void runningStatuschecked() {
-		if(!runningstatus.isSelected())
-			runningstatus.click();
-		
+		if (!runningstatus.isSelected())
+			clickElement(runningstatus, "");
+		// runningstatus.click();
+
 	}
 
 	public void historyviewButton() {
-		historyviewButton.click();
-		
+		clickElement(historyviewButton, "");
+		// historyviewButton.click();
+
+	}
+
+	public void edgeIdThreeDot() {
+		clickElement(edgeIdThreeDot, "");
+		// edgeIdThreeDot.click();
+	}
+
+	public void appNameThreeDot() {
+		clickElement(appNameThreeDot, "");
+		// appNameThreeDot.click();
+	}
+
+	public void statusThreeDots() {
+		clickElement(statusThreeDots, "");
+		// statusThreeDots.click();
+	}
+
+	public void errorThreeDots() {
+		clickElement(errorThreeDots, "");
+		// errorThreeDots.click();
+	}
+
+	public String get_Text_ToolTipforEdgeID() {
+		mouseHover(edgeIdLabel);
+
+		String edgeIDToolTipText = edgeIDToolTip.getText();
+
+		edgeIDToolTipText.trim();
+
+		return edgeIDToolTipText;
+
+	}
+
+	public String get_Text_ToolTipforAppName() {
+		mouseHover(appNameLabel);
+
+		String appNameToolTipText = appNameToolTip.getText();
+
+		appNameToolTipText.trim();
+
+		return appNameToolTipText;
+
+	}
+
+	public String get_Text_ToolTipforStatus() {
+		mouseHover(statusLabel);
+
+		String statusToolTipText = statusToolTip.getText();
+
+		statusToolTipText.trim();
+
+		return statusToolTipText;
+
+	}
+
+	public String get_Text_ToolTipforError() {
+		mouseHover(errorLabel);
+
+		String errorToolTipText = errorToolTip.getText();
+
+		errorToolTipText.trim();
+
+		return errorToolTipText;
+
+	}
+
+	public String get_Text_ToolTipforRunningVersion() {
+		mouseHover(runningVersionLabel);
+
+		String runningVersionToolTipText = runningVersionToolTip.getText();
+
+		runningVersionToolTipText.trim();
+
+		return runningVersionToolTipText;
+
+	}
+
+	public String get_Text_ToolTipforDeploymentDate() {
+		mouseHover(deploymentDateLabel);
+
+		String deploymentDateToolTipText = deploymentDateToolTip.getText();
+
+		deploymentDateToolTipText.trim();
+
+		return deploymentDateToolTipText;
+
+	}
+
+	public String get_Text_ToolTipforExpectedVersion() {
+		mouseHover(expectedVersionLabel);
+
+		String expectedVersionToolTipText = expectedVersionToolTip.getText();
+
+		expectedVersionToolTipText.trim();
+
+		return expectedVersionToolTipText;
+
+	}
+
+	public String get_Text_ToolTipforLastUpdatedVersion() {
+		mouseHover(LastUpdatedLabel);
+
+		String lastUpdatedToolTipText = lastUpdatedToolTip.getText();
+
+		lastUpdatedToolTipText.trim();
+
+		return lastUpdatedToolTipText;
+
+	}
+
+	public String get_Text_ToolTipforViewDeployedVolume() {
+		mouseHover(infoicon);
+
+		String infoToolTipText = infoToolTip.getText();
+
+		infoToolTipText.trim();
+
+		return infoToolTipText;
+
+	}
+
+	public String get_Text_ToolTipforDelete() {
+		mouseHover(deletebutton);
+
+		String deleteToolTipText = deleteTip.getText();
+
+		deleteToolTipText.trim();
+
+		return deleteToolTipText;
+
+	}
+
+	public String get_Text_ToolTipClose() {
+
+		mouseHover(closevolume);
+		wait(closeTip, logger);
+
+		String closeToolTipIconText = closeTip.getText();
+
+		closeToolTipIconText.trim();
+
+		return closeToolTipIconText;
+	}
+
+	public void clickingonheading() {
+		clickElement(titleheadingDeployment, "");
+	}
+
+	public void minimizeBrowser() {
+		driver.manage().window().minimize();
+	}
+
+	public void maximizeBrowser() {
+		driver.manage().window().maximize();
+
 	}
 }

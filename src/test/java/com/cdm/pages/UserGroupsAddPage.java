@@ -27,6 +27,9 @@ public class UserGroupsAddPage extends CommonActions {
 	@FindBy(css = ".cdk-overlay-backdrop-showing")
 	WebElement backDropShowing;
 	
+	@FindBy(xpath = "//body/app-root[1]/app-root[1]/app-home[1]/mat-sidenav-container[1]/mat-sidenav-content[1]/div[1]/div[1]/div[2]/img[1]")
+	WebElement networkStatus;
+	
 	@FindBy(xpath = "//a[contains(text(),'User Groups')]")
 	WebElement UserGroupstab;
 
@@ -53,36 +56,40 @@ public class UserGroupsAddPage extends CommonActions {
 	WebElement searchUserGroup;
 
 	public void inputUserGroup(String value) {
-		inputUserGroup.sendKeys(Keys.ENTER);
-		// ((JavascriptExecutor) driver).executeScript("arguments[0].value =
-		// arguments[1]", value, inputUserRole);
-		inputUserGroup.sendKeys(value);
+		
+		SetInputENterKey(inputUserGroup, "");
+		SetInput(inputUserGroup, value, value);
+		
+	
 	}
 	
 	
 	public void searchUserGroup(String value) {
-		searchUserGroup.sendKeys(Keys.ENTER);
-		// ((JavascriptExecutor) driver).executeScript("arguments[0].value =
-		// arguments[1]", value, inputUserRole);
-		searchUserGroup.sendKeys(value);
-		searchUserGroup.sendKeys(Keys.ENTER);
+		SetInputENterKey(searchUserGroup, "");
+		SetInput(searchUserGroup, value, value);
+	
 	}
 
 	public void saveusergroups() {
-		savebtnusergroups.click();
+		clickElement(savebtnusergroups, "");
+//		savebtnusergroups.click();
 
 	}
 
 	public void addbuttonicon() {
-		addbuttonicon.click();
+		clickElement(addbuttonicon, "");
+		
 	}
 
 	public void UserGroupstab() {
-		UserGroupstab.click();
+		
+			clickElement(UserGroupstab, "");
+		
 	}
 
 	public void usergroupThreeDot() {
-		usergroupThreeDot.click();
+		clickElement(usergroupThreeDot, "");
+	
 	}
 	
 	public void deletebuttonicon() {
@@ -92,14 +99,15 @@ public class UserGroupsAddPage extends CommonActions {
 	public void confirmationYesButton() {
 		 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 			WebElement confirmationYesButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),'Yes')]")));
-
+			clickElement(confirmationYesButton, "");
 	        // Perform a click action on the confirmation Yes button
-	        confirmationYesButton.click();
+	        //confirmationYesButton.click();
 		
 	}
 	
 	public void backDropShowing_Div_Click() {
 		if (backDropShowing != null) {
+		
 			backDropShowing.click();
 		}
 	}
@@ -108,6 +116,20 @@ public class UserGroupsAddPage extends CommonActions {
 	public void confirmationNoButton() {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		WebElement confirmationNoButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),'No')]")));
-		confirmationNoButton.click();
+		clickElement(confirmationNoButton, "");
+		//confirmationNoButton.click();
+	}
+
+
+	public void networkstatus() {
+		clickElement(networkStatus, "");
+	}
+	@FindBy(css= ".cdk-overlay-container")
+	WebElement outerlayerclick;
+	
+
+	public void outerlayerclick() {
+		clickElement(outerlayerclick, "");
+		
 	}
 }

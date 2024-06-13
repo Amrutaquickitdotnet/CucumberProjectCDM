@@ -1,9 +1,7 @@
 package com.cdm.pages;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -20,21 +18,19 @@ public class WellNameAddPage extends CommonActions {
 
 		PageFactory.initElements(driver, this);
 	}
-	
+
 	@FindBy(css = ".cdk-overlay-container")
 	WebElement activeUserToolTip;
 
-	@FindBy(xpath="//div[@class='slider round']")
+	@FindBy(xpath = "//div[@class='slider round']")
 	WebElement sliderRound;
-	
-	
-	
+
 	@FindBy(xpath = "//*[@id= 'isActive']")
 	WebElement sliderOnCheckBox;
 
 	@FindBy(xpath = "//*[@id='isActive']/..")
 	WebElement sliderOnCheckBoxLabel;
-	
+
 	@FindBy(xpath = "//input[@formcontrolname ='wellname']")
 	WebElement wellnameinputAdd;
 
@@ -76,7 +72,7 @@ public class WellNameAddPage extends CommonActions {
 
 	@FindBy(xpath = "(//input[@formcontrolname='ipaddress']/../../../../../span[1]/span[1])")
 	WebElement validationMessgaeIPAddress;
-	
+
 	@FindBy(xpath = "(//input[@formcontrolname='ipaddress']/../../../../../span[1]/span[2])")
 	WebElement validationMessgaeIPAddress1;
 
@@ -88,24 +84,28 @@ public class WellNameAddPage extends CommonActions {
 
 	public void backDropShowing_Div_Click() {
 		if (backDropShowing != null) {
+			// clickElement(backDropShowing,"");
 			backDropShowing.click();
 		}
 	}
 
 	public void addbutton() throws InterruptedException {
-		Thread.sleep(3000);
-		addButtonWell.click();
+		clickElement(addButtonWell, "");
+//		addButtonWell.click();
 	}
 
 	public void cancelButtonwell() {
-		cancelButtonwell.click();
+		clickElement(cancelButtonwell, "");
+//		cancelButtonwell.click();
 
 	}
 
 	public void saveButton() {
-		JavascriptExecutor	js = (JavascriptExecutor)driver;
+//		JavascriptExecutor js = (JavascriptExecutor) driver;
+//
+//		js.executeScript("document.querySelector(\".addButton\").click()");
 		
-		js.executeScript("document.querySelector(\".addButton\").click()");
+		clickElement(saveButtonWell, "");
 
 	}
 
@@ -164,7 +164,7 @@ public class WellNameAddPage extends CommonActions {
 		return message.trim();
 
 	}
-	
+
 	public String verifyValidationMessageIPAddress1() throws InterruptedException {
 
 		if (validationMessgaeIPAddress1 == null) {
@@ -211,37 +211,52 @@ public class WellNameAddPage extends CommonActions {
 	}
 
 	public void wellnameinputAdd(String value) {
-		wellnameinputAdd.sendKeys(Keys.ENTER);
-		wellnameinputAdd.sendKeys(value);
+		SetInputENterKey(wellnameinputAdd, "");
+		SetInput(wellnameinputAdd, value, value);
+
+//		wellnameinputAdd.sendKeys(Keys.ENTER);
+//		wellnameinputAdd.sendKeys(value);
 	}
 
 	public void portnumberinputAdd(String value) {
-		portNumberinputAdd.sendKeys(Keys.ENTER);
-		portNumberinputAdd.sendKeys(value);
+		SetInputENterKey(portNumberinputAdd, "");
+		SetInput(portNumberinputAdd, value, value);
+
+//		portNumberinputAdd.sendKeys(Keys.ENTER);
+//		portNumberinputAdd.sendKeys(value);
 	}
 
 	public void RTUAddressinputAdd(String value) {
-		RTUAddressinputAdd.sendKeys(Keys.ENTER);
-		RTUAddressinputAdd.sendKeys(value);
+		SetInputENterKey(RTUAddressinputAdd, "");
+		SetInput(RTUAddressinputAdd, value, value);
+
+//		RTUAddressinputAdd.sendKeys(Keys.ENTER);
+//		RTUAddressinputAdd.sendKeys(value);
 	}
 
 	public void passwordinputAdd(String value) {
-		passwordinputAdd.sendKeys(Keys.ENTER);
-		passwordinputAdd.sendKeys(value);
+		SetInputENterKey(passwordinputAdd, "");
+		SetInput(passwordinputAdd, value, value);
+//		
+//		passwordinputAdd.sendKeys(Keys.ENTER);
+//		passwordinputAdd.sendKeys(value);
 	}
 
 	public void IPAddressinputAdd(String value) {
-		IPAddressinputAdd.sendKeys(Keys.ENTER);
-		IPAddressinputAdd.sendKeys(value);
+		SetInputENterKey(IPAddressinputAdd, "");
+		SetInput(IPAddressinputAdd, value, value);
+
+//		IPAddressinputAdd.sendKeys(Keys.ENTER);
+//		IPAddressinputAdd.sendKeys(value);
 	}
 
 	public void deviceTypeDropdownAdd(String value) throws InterruptedException {
-
+		wait(deviceTypeAdd, logger);
 		SelectMatOption(deviceTypeAdd, value);
 	}
-	
+
 	public void moveSliderCondition(String m) {
-		moveSliderCondition(sliderOnCheckBox,sliderOnCheckBoxLabel,m);
+		moveSliderCondition(sliderOnCheckBox, sliderOnCheckBoxLabel, m);
 	}
 
 	public String get_Text_ToolTipActiveUser() {

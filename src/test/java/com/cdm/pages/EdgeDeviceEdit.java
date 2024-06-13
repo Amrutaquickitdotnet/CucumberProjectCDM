@@ -21,11 +21,10 @@ public class EdgeDeviceEdit extends CommonActions {
 		super(driver, logger);
 		PageFactory.initElements(driver, this);
 	}
-	
+
 	@FindBy(xpath = "//input[@formcontrolname='displayname']/../../../../../span[1]/span[1]")
 	WebElement validationMessageEdgeEdit;
-	
-	
+
 	@FindBy(xpath = "//a[contains(text(),'Configuration')]")
 	WebElement configsubmodule;
 
@@ -113,20 +112,22 @@ public class EdgeDeviceEdit extends CommonActions {
 	WebElement applicationGroupSelectUpdate;
 
 	public void identityedgeIdInputUpdate(String value) {
-		identityedgeIdUpdate.sendKeys(Keys.ENTER);
-		identityedgeIdUpdate.sendKeys(value);
+		SetInputENterKey(identityedgeIdUpdate, "");
+		SetInput(identityedgeIdUpdate, value, value);
+//		
+//		identityedgeIdUpdate.sendKeys(Keys.ENTER);
+//		identityedgeIdUpdate.sendKeys(value);
 	}
 
 	public void edgeAssignedToUpdate(String value) throws InterruptedException {
 
-		edgeAssignedToUpdate.sendKeys(value);
-		Thread.sleep(6000);
-		edgeAssignedToUpdate.click();
+		SetInputENterKey(edgeAssignedToUpdate, "");
+		SetInput(edgeAssignedToUpdate, value, value);
 		
-		
-		
-		
-		
+//		edgeAssignedToUpdate.sendKeys(value);
+//		
+//		edgeAssignedToUpdate.click();
+
 	}
 
 	public void edgeGroupName(String value) throws InterruptedException {
@@ -134,8 +135,11 @@ public class EdgeDeviceEdit extends CommonActions {
 	}
 
 	public void assignedTo(String value) {
-		assignedToUpdate.sendKeys(Keys.ENTER);
-		assignedToUpdate.sendKeys(value);
+//		assignedToUpdate.sendKeys(Keys.ENTER);
+//		assignedToUpdate.sendKeys(value);
+
+		SetInputENterKey(assignedToUpdate, "");
+		SetInput(assignedToUpdate, value, value);
 	}
 
 	public void applicationGroupSelectUpdate(String value) throws InterruptedException {
@@ -143,6 +147,7 @@ public class EdgeDeviceEdit extends CommonActions {
 	}
 
 	public void clearEnteredName() {
+
 		identityedgeNameUpdate.clear();
 	}
 
@@ -158,11 +163,14 @@ public class EdgeDeviceEdit extends CommonActions {
 	}
 
 	public void saveAddData() {
-		saveAddDataBtn.click();
+		clickElement(saveAddDataBtn, "");
+		// saveAddDataBtn.click();
 	}
 
 	public void cancelData() {
-		cancelAddDataButton.click();
+
+		clickElement(cancelAddDataButton, "");
+		// cancelAddDataButton.click();
 	}
 
 	public void scrollingvertical() {
@@ -171,13 +179,9 @@ public class EdgeDeviceEdit extends CommonActions {
 	}
 
 	public String verifyValidationMessageEdgeId() {
-		EditListpageVerification.click();
-		try {
-			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-
-		}
-
+		clickElement(EditListpageVerification,"");
+		//EditListpageVerification.click();
+		
 		if (validationMessageEdgeId == null) {
 			return "";
 		}
@@ -188,12 +192,13 @@ public class EdgeDeviceEdit extends CommonActions {
 	}
 
 	public String verifyValidationMessageEdgeName() {
-		EditListpageVerification.click();
-		try {
-			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-
-		}
+		clickElement(EditListpageVerification,"");
+		//EditListpageVerification.click();
+//		try {
+//			Thread.sleep(1000);
+//		} catch (InterruptedException e) {
+//
+//		}
 
 		if (validationMessageEdgeName == null) {
 			return "";
@@ -205,8 +210,8 @@ public class EdgeDeviceEdit extends CommonActions {
 	}
 
 	public void editEdgeDeviceClick() {
-
-		editEdgeDevice.click();
+		clickElement(editEdgeDevice, "");
+		// editEdgeDevice.click();
 	}
 
 	public void setEditClearField() {
@@ -215,7 +220,8 @@ public class EdgeDeviceEdit extends CommonActions {
 	}
 
 	public void identityedgeNameUpdate(String value) {
-		edgeNameInputUpdate.sendKeys(value);
+		// edgeNameInputUpdate.sendKeys(value);
+		SetInput(edgeNameInputUpdate, value, value);
 	}
 
 	public void organizationUpdate(String value) throws InterruptedException {
@@ -227,92 +233,126 @@ public class EdgeDeviceEdit extends CommonActions {
 
 		SelectMatOption(hardWareNameInputUpdate, value);
 	}
-	
+
 	public void performAutosuggestion(String partialText, String value) {
-       
 
-        // Enter partial text
-        assignedtoUpdate.sendKeys(value);
-WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
-        // Wait for autosuggestion dropdown to appear
-By autosuggestDropdown = By.xpath("//div[@role='listbox']/mat-option");
-        wait.until(ExpectedConditions.visibilityOfElementLocated(autosuggestDropdown));
+		assignedtoUpdate.sendKeys(value);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
+		// Wait for autosuggestion dropdown to appear
+		By autosuggestDropdown = By.xpath("//div[@role='listbox']/mat-option");
+		wait.until(ExpectedConditions.visibilityOfElementLocated(autosuggestDropdown));
 
-        // Select the desired suggestion
-        selectAutosuggestion(partialText,value);
-    }
-	
+		// Select the desired suggestion
+		selectAutosuggestion(partialText, value);
+	}
+
 	public void selectAutosuggestion(String partialText, String value) {
-        // Locate the autosuggestion dropdown
-        By autosuggestDropdown = By.xpath("//div[@role='listbox']/mat-option");
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
-        WebElement dropdown = wait.until(ExpectedConditions.visibilityOfElementLocated(autosuggestDropdown));
+		// Locate the autosuggestion dropdown
+		By autosuggestDropdown = By.xpath("//div[@role='listbox']/mat-option");
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
+		WebElement dropdown = wait.until(ExpectedConditions.visibilityOfElementLocated(autosuggestDropdown));
 
-        // Locate all suggestion elements
-        List<WebElement> suggestions = dropdown.findElements(By.xpath("//mat-option/span[contains(text(),'" + value + "')]"));
+		// Locate all suggestion elements
+		List<WebElement> suggestions = dropdown
+				.findElements(By.xpath("//mat-option/span[contains(text(),'" + value + "')]"));
 
-        // Iterate through suggestions and click on the one that matches the partial text
-        for (WebElement suggestion : suggestions) {
-            if (suggestion.getText().contains(partialText)) {
-                suggestion.click();
-                break;
-            }
-        }
-    }
+		// Iterate through suggestions and click on the one that matches the partial
+		// text
+		for (WebElement suggestion : suggestions) {
+			if (suggestion.getText().contains(partialText)) {
+				clickElement(suggestion, "");
 
+				break;
+			}
+		}
+	}
 
 	public void edgeGroupNameUpdate(String value) throws InterruptedException {
 		SelectMatOption(edgeGroupNameUpdate, value);
 	}
 
 	public void identityedgeName(String value) {
-		identityedgeNameUpdate.sendKeys(value);
+		SetInputENterKey(identityedgeNameUpdate, "");
+		SetInput(identityedgeNameUpdate, value, value);
+
+		// identityedgeNameUpdate.sendKeys(value);
 	}
 
 	public void onBoardingKeyInput(String value) {
-		onboardingKeyUpdate.sendKeys(Keys.ENTER);
-		onboardingKeyUpdate.sendKeys(value);
+		SetInputENterKey(onboardingKeyUpdate, "");
+		SetInput(onboardingKeyUpdate, value, value);
+
+//		onboardingKeyUpdate.sendKeys(Keys.ENTER);
+//		onboardingKeyUpdate.sendKeys(value);
 	}
 
 	public void serialNumberInput(String value) {
-		serialNumberUpdate.sendKeys(Keys.ENTER);
-		serialNumberUpdate.sendKeys(value);
+		SetInputENterKey(serialNumberUpdate, "");
+		SetInput(serialNumberUpdate, value, value);
+//		serialNumberUpdate.sendKeys(Keys.ENTER);
+//		serialNumberUpdate.sendKeys(value);
 	}
 
 	public void imageVersionInput(String value) {
-		imageVersionUpdate.sendKeys(Keys.ENTER);
-		imageVersionUpdate.sendKeys(value);
+
+		SetInputENterKey(imageVersionUpdate, "");
+		SetInput(imageVersionUpdate, value, value);
+
+//		imageVersionUpdate.sendKeys(Keys.ENTER);
+//		imageVersionUpdate.sendKeys(value);
 	}
 
 	public void ongoingBoardUpdate(String value) {
-		onboardingKeyUpdate.sendKeys(Keys.ENTER);
-		onboardingKeyUpdate.sendKeys(value);
+		SetInputENterKey(onboardingKeyUpdate, "");
+		SetInput(onboardingKeyUpdate, value, value);
+
+//		onboardingKeyUpdate.sendKeys(Keys.ENTER);
+//		onboardingKeyUpdate.sendKeys(value);
 	}
 
 	public void serialNumberUpdate(String value) {
-		serialNumberUpdate.sendKeys(Keys.ENTER);
-		serialNumberUpdate.sendKeys(value);
+		SetInputENterKey(serialNumberUpdate, "");
+		SetInput(serialNumberUpdate, value, value);
+
+//		serialNumberUpdate.sendKeys(Keys.ENTER);
+//		serialNumberUpdate.sendKeys(value);
 	}
 
 	public void imageVersionUpdate(String value) {
-		imageVersionUpdate.sendKeys(Keys.ENTER);
-		imageVersionUpdate.sendKeys(value);
+
+		SetInputENterKey(imageVersionUpdate, "");
+		SetInput(imageVersionUpdate, value, value);
+
+//		imageVersionUpdate.sendKeys(Keys.ENTER);
+//		imageVersionUpdate.sendKeys(value);
 	}
 
 	public void serverPortUpdate(String value) {
-		serverportUpdate.sendKeys(Keys.ENTER);
-		serverportUpdate.sendKeys(value);
+
+		SetInputENterKey(serverportUpdate, "");
+		SetInput(serverportUpdate, value, value);
+
+//		serverportUpdate.sendKeys(Keys.ENTER);
+//		serverportUpdate.sendKeys(value);
 	}
 
 	public void edgeUserNameUpdate(String value) {
-		edgeUserUpdate.sendKeys(Keys.ENTER);
-		edgeUserUpdate.sendKeys(value);
-		
+		SetInputENterKey(edgeUserUpdate, "");
+		SetInput(edgeUserUpdate, value, value);
+
+//		edgeUserUpdate.sendKeys(Keys.ENTER);
+//		edgeUserUpdate.sendKeys(value);
+
 	}
 
 	public void edgePasswordUpdate(String value) {
-		edgePasswordUpdate.sendKeys(Keys.ENTER);
-		edgePasswordUpdate.sendKeys(value);
+
+		SetInputENterKey(edgePasswordUpdate, "");
+		SetInput(edgePasswordUpdate, value, value);
+
+//		
+//		edgePasswordUpdate.sendKeys(Keys.ENTER);
+//		edgePasswordUpdate.sendKeys(value);
 	}
 
 	public void applicationGroupUpdate(String value) throws InterruptedException {
@@ -320,7 +360,10 @@ By autosuggestDropdown = By.xpath("//div[@role='listbox']/mat-option");
 	}
 
 	public void serverPortInput(String value) {
-		serverportUpdate.sendKeys(value);
+		SetInputENterKey(serverportUpdate, "");
+		SetInput(serverportUpdate, value, value);
+
+		// serverportUpdate.sendKeys(value);
 	}
 
 	public String removalofEnteredTextForEdgeName() {
@@ -328,13 +371,13 @@ By autosuggestDropdown = By.xpath("//div[@role='listbox']/mat-option");
 		return removalofEneredText(edgeNameInputUpdate);
 
 	}
-	
+
 	public String removalofEnteredTextForhardware() {
 
 		return removalofEneredText(hardWareNameInputUpdate);
 
 	}
-	
+
 	public String removalofEnteredTextForGroupName() {
 
 		return removalofEneredText(edgeAppgroupsInputUpdate);
@@ -347,30 +390,33 @@ By autosuggestDropdown = By.xpath("//div[@role='listbox']/mat-option");
 
 	}
 
-	
 	public String removalofEnteredTextForAssignedTo() {
 
 		return removalofEneredText(assignedtoUpdate);
 
 	}
+
 	public String removalofEneredTextForLocation() {
 
 		return removalofEneredText(locationUpdate);
 
 	}
+
 	public String removalofEnteredTextForOnboardingKey() {
 		return removalofEneredText(onboardingKeyUpdate);
 	}
+
 	public String removalofEnteredTextForSerialNo() {
 		return removalofEneredText(serialNumberUpdate);
 	}
+
 	public String removalofEnteredTextForAssignedToImageVersion() {
 		return removalofEneredText(imageVersionUpdate);
 	}
+
 	public String removalofEnteredTextForServerport() {
 		return removalofEneredText(serverportUpdate);
 	}
-	
 
 	public String removalofEneredTextForDescription() {
 
@@ -379,26 +425,40 @@ By autosuggestDropdown = By.xpath("//div[@role='listbox']/mat-option");
 	}
 
 	public void updatesaveAddDataBtn() {
-		saveAddDataBtn.click();
+		clickElement(saveAddDataBtn, "");
+		// saveAddDataBtn.click();
 	}
 
 	public void assignedtoUpdate(String value) {
-		assignedtoUpdate.sendKeys(Keys.ENTER);
-		assignedtoUpdate.sendKeys(value);
+		SetInputENterKey(assignedtoUpdate, "");
+		SetInput(assignedtoUpdate, value, value);
+
+//		assignedtoUpdate.sendKeys(Keys.ENTER);
+//		assignedtoUpdate.sendKeys(value);
 	}
 
 	public void locationUpdate(String value) {
-		locationUpdate.sendKeys(Keys.ENTER);
-		locationUpdate.sendKeys(value);
+
+		SetInputENterKey(locationUpdate, "");
+		SetInput(locationUpdate, value, value);
+
+//		
+//		locationUpdate.sendKeys(Keys.ENTER);
+//		locationUpdate.sendKeys(value);
 	}
 
 	public void descriptionUpdate(String value) {
-		descriptionUpdate.sendKeys(Keys.ENTER);
-		descriptionUpdate.sendKeys(value);
+		SetInputENterKey(descriptionUpdate, "");
+		SetInput(descriptionUpdate, value, value);
+
+//		descriptionUpdate.sendKeys(Keys.ENTER);
+//		descriptionUpdate.sendKeys(value);
 	}
 
 	public String verifyValidationMessageEdgeNameEdit() {
 		EditListpageVerification.click();
+		
+		clickElement(EditListpageVerification, "");
 		try {
 			Thread.sleep(1000);
 		} catch (InterruptedException e) {
@@ -413,17 +473,25 @@ By autosuggestDropdown = By.xpath("//div[@role='listbox']/mat-option");
 		return message.trim();
 
 	}
-	
-	public void identityedgeNameEdit(String value) throws InterruptedException {
-		Thread.sleep(3000);
-		identityedgeNameEdit.sendKeys(Keys.ENTER);
-		identityedgeNameEdit.sendKeys(value);
-	}
-public void configsubmodule() {
-	configsubmodule.click();
-}
 
-public void headingeditclick() {
-	EditListpageVerification.click();
-}
+	public void identityedgeNameEdit(String value) throws InterruptedException {
+		
+
+		SetInputENterKey(identityedgeNameEdit, "");
+		SetInput(identityedgeNameEdit, value, value);
+
+//		
+//		identityedgeNameEdit.sendKeys(Keys.ENTER);
+//		identityedgeNameEdit.sendKeys(value);
+	}
+
+	public void configsubmodule() {
+		clickElement(configsubmodule, "");
+		// configsubmodule.click();
+	}
+
+	public void headingeditclick() {
+		clickElement(EditListpageVerification, "");
+		//EditListpageVerification.click();
+	}
 }

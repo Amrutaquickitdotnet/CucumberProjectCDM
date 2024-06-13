@@ -1,6 +1,5 @@
 package com.cdm.pages;
 
-
 import java.io.IOException;
 
 import org.openqa.selenium.Keys;
@@ -19,16 +18,12 @@ public class EnvironmentalVariablePage extends CommonActions {
 		super(driver, logger);
 		PageFactory.initElements(driver, this);
 	}
-	
+
 	@FindBy(xpath = "//input[@name='configname']")
 	WebElement searchconfignameInput;
 
 	@FindBy(xpath = "//input[@name='configvalue']")
 	WebElement searchconfigValueInput;
-
-	
-	
-	
 
 	@FindBy(css = ".cdk-overlay-backdrop-showing")
 	WebElement backDropShowing;
@@ -89,10 +84,9 @@ public class EnvironmentalVariablePage extends CommonActions {
 
 	@FindBy(xpath = "//button[contains(text(),'Save')]")
 	WebElement saveButton;
-	
+
 	@FindBy(css = ".addButton")
 	WebElement saveButtonEnvironmental;
-	
 
 	@FindBy(xpath = "//input[@formcontrolname='uploadfile']")
 	WebElement chooseFile;
@@ -104,8 +98,8 @@ public class EnvironmentalVariablePage extends CommonActions {
 	WebElement uploadedFile;
 
 	public void saveDataConfig() {
-
-		saveButton.click();
+		clickElement(saveButton, "");
+		// saveButton.click();
 	}
 
 	public void uploadConfig(String value) throws IOException {
@@ -115,8 +109,8 @@ public class EnvironmentalVariablePage extends CommonActions {
 	}
 
 	public void clickOnUploadButton() {
-
-		uploadconfigbutton.click();
+		clickElement(uploadconfigbutton, "");
+		// uploadconfigbutton.click();
 	}
 
 	public void moveSlideroffCondition() {
@@ -125,26 +119,35 @@ public class EnvironmentalVariablePage extends CommonActions {
 	}
 
 	public void environmentalVariableTab() {
-		environmentalVariableTab.click();
+		clickElement(environmentalVariableTab, "");
+		// environmentalVariableTab.click();
 	}
 
-	//Either checked or unchecked 
+	// Either checked or unchecked
 	public void moveSliderCondition(String m) {
-		moveSliderCondition(sliderOnCheckBox,sliderOnCheckBoxLabel,m);
+		moveSliderCondition(sliderOnCheckBox, sliderOnCheckBoxLabel, m);
 	}
 
 	public void environmentalVariableAddButton() {
-		environmentalVariableAddButton.click();
+		clickElement(environmentalVariableAddButton, "");
+		// environmentalVariableAddButton.click();
 	}
 
 	public void environmentalConfigName(String value) {
-		ConfigName.sendKeys(Keys.ENTER);
-		ConfigName.sendKeys(value);
+		SetInputENterKey(ConfigName, "");
+		SetInput(ConfigName, value, value);
+
+//		ConfigName.sendKeys(Keys.ENTER);
+//		ConfigName.sendKeys(value);
 	}
 
 	public void environmentalConfigValue(String value) {
-		ConfigValue.sendKeys(Keys.ENTER);
-		ConfigValue.sendKeys(value);
+
+		SetInputENterKey(ConfigValue, "");
+		SetInput(ConfigValue, value, value);
+
+//		ConfigValue.sendKeys(Keys.ENTER);
+//		ConfigValue.sendKeys(value);
 	}
 
 	public void clickEditButton() {
@@ -160,23 +163,23 @@ public class EnvironmentalVariablePage extends CommonActions {
 	}
 
 	public void deleteButtonConfigClick() {
-
-		deleteButtonConfig.click();
+		clickElement(deleteButtonConfig, "");
+//		deleteButtonConfig.click();
 	}
 
 	public void confirmationYesDeleteButton() {
-
-		confirmationYesButton.click();
+		clickElement(confirmationYesButton, "");
+		// confirmationYesButton.click();
 	}
 
 	public void confirmationCancelDeleteButton() {
-
-		confirmationCancelButton.click();
+		clickElement(confirmationCancelButton, "");
+		// confirmationCancelButton.click();
 	}
 
 	public void clickEditevButton() {
-
-		EditButton.click();
+		clickElement(EditButton, "");
+		// EditButton.click();
 	}
 
 	public void clickInputField() {
@@ -190,57 +193,68 @@ public class EnvironmentalVariablePage extends CommonActions {
 	}
 
 	public void bulkUploadButton() {
-
-		bulkUpload.click();
+		clickElement(bulkUpload, "");
+		// bulkUpload.click();
 	}
 
 	public void bulkDownloadButton() {
-
-		bulkDownload.click();
+		clickElement(bulkDownload, "");
+		// bulkDownload.click();
 	}
 
 	public void configNameSearchThreeDot() {
-		
-		configNameSearchThreeDot.click();
+		clickElement(configNameSearchThreeDot, "");
+		// configNameSearchThreeDot.click();
 	}
 
 	public void configValueSearchThreeDot() {
-		
-		configValueSearchThreeDot.click();
+		clickElement(configValueSearchThreeDot, "");
+		// configValueSearchThreeDot.click();
 	}
 
 	public void configNameInput(String value) {
-		confignameInput.sendKeys(Keys.ENTER);
-		confignameInput.sendKeys(value);
-		
+		SetInputENterKey(confignameInput, "");
+		SetInput(confignameInput, value, value);
+
+//		confignameInput.sendKeys(Keys.ENTER);
+//		confignameInput.sendKeys(value);
+
 	}
 
 	public void configValueInput(String value) {
-		configValueInput.sendKeys(Keys.ENTER);
-		configValueInput.sendKeys(value);
+		SetInputENterKey(configValueInput, "");
+		SetInput(configValueInput, value, value);
+
+//		configValueInput.sendKeys(Keys.ENTER);
+//		configValueInput.sendKeys(value);
 	}
 
 	public void headingClick() {
-
-		headingTitle.click();
+		clickElement(headingTitle, "");
+		// headingTitle.click();
 	}
 
 	public void backDropShowing_Div_Click() {
 		if (backDropShowing != null) {
+			//clickElement(backDropShowing,"");
 			backDropShowing.click();
 		}
 	}
 
 	public void searchconfigNameValue(String value) {
-		
-		searchconfignameInput.sendKeys(Keys.ENTER);
-		searchconfignameInput.sendKeys(value);
+		SetInputENterKey(searchconfignameInput, "");
+		SetInput(searchconfignameInput, value, value);
+
+//		searchconfignameInput.sendKeys(Keys.ENTER);
+//		searchconfignameInput.sendKeys(value);
 	}
-	
-public void searchconfigValue(String value) {
-		
-	searchconfigValueInput.sendKeys(Keys.ENTER);
-	searchconfigValueInput.sendKeys(value);
+
+	public void searchconfigValue(String value) {
+		SetInputENterKey(searchconfigValueInput, "");
+		SetInput(searchconfigValueInput, value, value);
+
+//	searchconfigValueInput.sendKeys(Keys.ENTER);
+//	searchconfigValueInput.sendKeys(value);
 	}
 
 }

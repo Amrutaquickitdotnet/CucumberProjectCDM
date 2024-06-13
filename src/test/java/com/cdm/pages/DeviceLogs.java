@@ -56,28 +56,34 @@ public class DeviceLogs extends CommonActions {
 	WebElement summaryInput;
 
 	public void deviceName() {
-		deviceName.click();
+		clickElement(deviceName, "");
+		//deviceName.click();
 	}
 
 	public void logType() {
-		logType.click();
+		clickElement(logType, "");
+		//logType.click();
 	}
 
 	public void priorityName() {
-		priorityName.click();
+		clickElement(priorityName, "");
+		//priorityName.click();
 	}
 
 	public void summary() {
-		summary.click();
+		clickElement(summary, "");
+		//summary.click();
 	}
 	
 	
 	public void deviceLogTab() {
-		deviceLogTab.click();
+		clickElement(deviceLogTab, "");
+		//deviceLogTab.click();
 	}
 
 	public void timeStamps() {
-		timeStamps.click();
+		clickElement(timeStamps, "");
+		//timeStamps.click();
 	}
 
 }

@@ -29,15 +29,17 @@ public class UserRoleEditPage extends CommonActions {
 	WebElement roleNameinputEdit;
 
 	public void roleNameinputEdit(String value) {
-		roleNameinputEdit.sendKeys(Keys.ENTER);
-		roleNameinputEdit.sendKeys(value);
+		SetInputENterKey(roleNameinputEdit,"");
+		SetInput(roleNameinputEdit, value, value);
+//		roleNameinputEdit.sendKeys(Keys.ENTER);
+//		roleNameinputEdit.sendKeys(value);
 
 	}
 
 	public void saveButtonAdd() throws InterruptedException {
-		Thread.sleep(3000);
+		
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		// js.executeScript("arguments[0].click();",saveAddDataBtn);
+		
 		js.executeScript("document.querySelector(\".addButton\").click();", saveButtonAdd);
 	}
 

@@ -21,6 +21,12 @@ public class ReportsPage extends CommonActions {
 
 		PageFactory.initElements(driver, this);
 	}
+	
+	@FindBy(css = ".cdk-overlay-container")
+	WebElement startToolTip;
+	
+	@FindBy(xpath = "/html/body/div[3]/div/div/mat-tooltip-component/div")
+	WebElement endToolTip;
 
 	@FindBy(xpath = "//img[@src='/assets/img/orangewifi.png']")
 	WebElement networkOrange;
@@ -40,7 +46,7 @@ public class ReportsPage extends CommonActions {
 	@FindBy(xpath = "(//mat-datepicker-toggle)[2]//button")
 	WebElement endDatecalenderIcon;
 
-	@FindBy(xpath = "//span[contains(text(),'Reports')]")
+	@FindBy(xpath = "//span[contains(.,'Reports')]")
 	WebElement reportsTab;
 
 	@FindBy(css = ".cdk-overlay-backdrop-showing")
@@ -49,6 +55,9 @@ public class ReportsPage extends CommonActions {
 	@FindBy(xpath = "//input[@formcontrolname='startdate']")
 	WebElement startDate;
 
+	@FindBy(xpath = "//input[@formcontrolname='enddate']")
+	WebElement endDate;
+	
 	@FindBy(xpath = "//button[@aria-label ='Choose month and year']")
 	public WebElement arrowforyearandmonth;
 
@@ -66,7 +75,8 @@ public class ReportsPage extends CommonActions {
 	WebElement validationmessage;
 
 	public String verifyValidationMessageforReports() {
-		validationmessage.click();
+		clickElement(validationmessage,"");
+		//validationmessage.click();
 		try {
 			Thread.sleep(1000);
 		} catch (InterruptedException e) {
@@ -84,12 +94,25 @@ public class ReportsPage extends CommonActions {
 	
 	
 	public void reportsTab() {
-		reportsTab.click();
+		try {
+			wait(reportsTab,logger);
+			clickElement(reportsTab, "");
+			//reportsTab.click();	
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
 	}
 
 	public void reportTypeDropdown(String value) throws InterruptedException {
 		Thread.sleep(5000);
-		SelectMatOption(reportTypeSelect, value);
+		try {
+			wait(reportTypeSelect,logger);
+			SelectMatOption(reportTypeSelect, value);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
 	}
 
 	public void backDropShowing_Div_Click() {
@@ -99,15 +122,18 @@ public class ReportsPage extends CommonActions {
 	}
 
 	public void calicon() {
-		calenderIcon.click();
+		clickElement(calenderIcon, "");
+		//calenderIcon.click();
 	}
 
 	public void caliconEndDate() {
-		endDatecalenderIcon.click();
+		clickElement(endDatecalenderIcon, "");
+		//endDatecalenderIcon.click();
 	}
 
 	public void arrowforyearandmonth() {
-		arrowforyearandmonth.click();
+		clickElement(arrowforyearandmonth, "");
+		//arrowforyearandmonth.click();
 		try {
 			Thread.sleep(200);
 		} catch (InterruptedException e) {
@@ -120,20 +146,23 @@ public class ReportsPage extends CommonActions {
 
 		String str = "//button[@aria-label='" + value + "']";
 		WebElement ele = driver.findElement(By.xpath(str));
-		ele.click();
+		//ele.click();
+		clickElement(ele, "");
 	}
 
 	public void yearselection(String value) {
 		String str = "//button[@aria-label='" + "2024" + "']";
 		WebElement ele = driver.findElement(By.xpath(str));
 		ele.click();
+		clickElement(ele, "");
 
 	}
 
 	public void dayselection(String value) {
 		String str = "//button[@aria-label='" + value + "']";
 		WebElement ele = driver.findElement(By.xpath(str));
-		ele.click();
+		//ele.click();
+		clickElement(ele, "");
 	}
 
 	public void minimiseWindow() {
@@ -141,7 +170,8 @@ public class ReportsPage extends CommonActions {
 	}
 
 	public void downloadButton() {
-		downloadButton.click();
+		clickElement(downloadButton, "");
+		//downloadButton.click();
 	}
 
 	public void maximiseWindow() {
@@ -154,10 +184,36 @@ public class ReportsPage extends CommonActions {
 
 	}
 	public void networkGreen() {
-		networkGreen.click();
+		clickElement(networkGreen, "");
+		//networkGreen.click();
 	}
 	
 	public void networkOrange() {
-		networkOrange.click();
+		clickElement(networkOrange, "");
+		//networkOrange.click();
+	}
+	
+	public String get_Text_ToolTipforStartDate() {
+		mouseHover(startDate);
+
+		String startDateToolTipText = startToolTip.getText();
+
+		startDateToolTipText.trim();
+
+		return startDateToolTipText;
+		
+	}
+	
+	
+	public String get_Text_ToolTipforEndDate() {
+		
+		mouseHover(endDate);
+
+		String endDateToolTipText = endToolTip.getText();
+
+		endDateToolTipText.trim();
+
+		return endDateToolTipText;
+		
 	}
 }

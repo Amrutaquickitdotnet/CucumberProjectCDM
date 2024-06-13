@@ -34,23 +34,34 @@ public class UserRolePermission extends CommonActions {
 	WebElement addpermissionicon;
 
 	public void addpermissionicon() {
-
-		addpermissionicon.click();
+		clickElement(addpermissionicon,"");
+		//addpermissionicon.click();
 	}
 	
 	public void addpermissioncolumn() {
-		addpermissioncolumn.click();
+		clickElement(addpermissioncolumn,"");
+		//addpermissioncolumn.click();
 	}
 	public void backDropShowing_Div_Click() {
 		if (backDropShowing != null) {
-			backDropShowing.click();
+			clickElement(backDropShowing,"");
+			//backDropShowing.click();
 		}
 	}
 	
-
+	public void networkstatusclick() {
+		clickElement(networkstatusclick, "");
+		
+	}
+	@FindBy(xpath = "//body/app-root[1]/app-root[1]/app-home[1]/mat-sidenav-container[1]/mat-sidenav-content[1]/div[1]/div[1]/div[2]/img[1]")
+	WebElement networkstatusclick;
 	
 	public void permissionInput(String value) {
-		permissionInput.sendKeys(Keys.ENTER);
-		permissionInput.sendKeys(value);
+		SetInputENterKey(permissionInput,"");
+
+		SetInput(permissionInput, value, value);
+		
+//		permissionInput.sendKeys(Keys.ENTER);
+//		permissionInput.sendKeys(value);
 	}
 }

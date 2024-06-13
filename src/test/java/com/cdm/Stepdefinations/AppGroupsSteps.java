@@ -7,6 +7,8 @@ import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 
 import org.junit.Assert;
+import org.junit.Assume;
+import org.openqa.selenium.Keys;
 
 import com.cdm.pages.AppGroupsEditPage;
 import com.cdm.pages.AppGroupsPage;
@@ -22,59 +24,20 @@ public class AppGroupsSteps extends BaseTest {
 		agp.setZoomLevel(800, 600);
 
 	}
-	
-	@Then("Verification of error message verbaige for entering invalid details for APP Group Name Text field in ADD New screen")
-	public void verification_of_error_message_verbaige_for_entering_invalid_details_for_app_group_name_text_field_in_add_new_screen() {
-		AppGroupsPage agp = new AppGroupsPage(driver, logger);
-	}
-	
 
-	@Then("Verification of error message verbaige for entering invalid details for APP Group Display Name Text field in ADD New screen")
-	public void verification_of_error_message_verbaige_for_entering_invalid_details_for_app_group_display_name_text_field_in_add_new_screen() {
+	@Then("verify switching between input field using TAB")
+	public void verify_switching_between_input_field_using_tab() {
 		AppGroupsPage agp = new AppGroupsPage(driver, logger);
+		agp.switchingtab();
+
 	}
 
-	@Then("Verification of loading properly in slow network")
-	public void verification_of_loading_properly_in_slow_network() {
-		
+	@Then("verify  alignment of ADD New,Refresh,bulk upload & bulk download buttons top right side")
+	public void verify_alignment_of_add_new_refresh_bulk_upload_bulk_download_buttons_top_right_side() {
 		AppGroupsPage agp = new AppGroupsPage(driver, logger);
-	}
-
-	@Then("Verification of visibilty duration to load the page")
-	public void verification_of_visibilty_duration_to_load_the_page() {
-		
-		AppGroupsPage agp = new AppGroupsPage(driver, logger);
-	}
-
-	@Then("Verification of check filter icon availability for APP Group Name")
-	public void verification_of_check_filter_icon_availability_for_app_group_name() {
-		
-		AppGroupsPage agp = new AppGroupsPage(driver, logger);
-	}
-
-	@Then("Verification of check filter icon availability for Status")
-	public void verification_of_check_filter_icon_availability_for_status() {
-		
-		AppGroupsPage agp = new AppGroupsPage(driver, logger);
-	}
-
-	@Then("Verification of check filter icon visibility for APP Group Name")
-	public void verification_of_check_filter_icon_visibility_for_app_group_name() {
-		
-		AppGroupsPage agp = new AppGroupsPage(driver, logger);
-	}
-
-	@Then("Verification of switching between inputs fields using TAB")
-	public void verification_of_switching_between_inputs_fields_using_tab() {
-		
-		AppGroupsPage agp = new AppGroupsPage(driver, logger);
-	}
-
-
-
-	@Then("Verification of check filter icon availability for APP Group Display Name")
-	public void verification_of_check_filter_icon_availability_for_app_group_display_name() {
-		AppGroupsPage agp = new AppGroupsPage(driver, logger);
+		Assume.assumeTrue(
+				"We can not automate alignment of ADD new Refresh bulk download and bulk download button, because alignment can be differ on differnt device",
+				false);
 	}
 
 	@When("Click on App Groups tab")
@@ -83,34 +46,97 @@ public class AppGroupsSteps extends BaseTest {
 		agp.movetoAppGroup();
 	}
 
-	@Then("Verification of standarize text format for success message in toast")
-	public void verification_of_standarize_text_format_for_success_message_in_toast() {
-		AppGroupsPage agp = new AppGroupsPage(driver, logger);
-		
-	}
-
-	@Then("Verification of standarize text format below error message for APP Group Name text field")
-	public void verification_of_standarize_text_format_below_error_message_for_app_group_name_text_field() {
-		AppGroupsPage agp = new AppGroupsPage(driver, logger);
-		
-	}
-
-	@Then("Verification of standarize text format below error message for APP Group Display Name text field")
-	public void verification_of_standarize_text_format_below_error_message_for_app_group_display_name_text_field() {
-		AppGroupsPage agp = new AppGroupsPage(driver, logger);
-		
-	}
-
-	@Then("Verification of the rejection of blanks and spaced number in Contact Number field in the Identity section of User Add screen by Super admin\\/Admin user")
-	public void verification_of_the_rejection_of_blanks_and_spaced_number_in_contact_number_field_in_the_identity_section_of_user_add_screen_by_super_admin_admin_user() {
-		AppGroupsPage agp = new AppGroupsPage(driver, logger);
-		
-	}
-
 	@Then("click on Add button")
 	public void click_on_add_button() {
 		AppGroupsPage agp = new AppGroupsPage(driver, logger);
-		
+		agp.addButtonAppGroup();
+	}
+
+	@Then("verify max word limit in App Group Name Text Field in the edit screen")
+	public void verify_max_word_limit_in_app_group_name_text_field_in_the_edit_screen() {
+		AppGroupsPage agp = new AppGroupsPage(driver, logger);
+
+	}
+
+	@Then("verify application should load properly in slow network")
+	public void verify_application_should_load_properly_in_slow_network() {
+		AppGroupsPage agp = new AppGroupsPage(driver, logger);
+		Assume.assumeTrue("slow network condifition can not be automate becuase it is depends on the bandwidth", false);
+	}
+
+	@Then("verify page is accessible by using wi-fi network")
+	public void verify_page_is_accessible_by_using_wi_fi_network() {
+
+		AppGroupsPage agp = new AppGroupsPage(driver, logger);
+		Assume.assumeTrue("slow network condifition can not be automate becuase it is depends on the bandwidth", false);
+	}
+
+	@Then("verify page without login into browser, copy & paste the url")
+	public void verify_page_without_login_into_browser_copy_paste_the_url() {
+
+	}
+
+	@Then("check filter icon visibility for APP Group Name")
+	public void check_filter_icon_visibility_for_app_group_name() {
+		AppGroupsPage agp = new AppGroupsPage(driver, logger);
+		agp.appNameThreeDot();
+
+	}
+
+	@Then("check filter icon visibility for Status column")
+	public void check_filter_icon_visibility_for_status_column() {
+		AppGroupsPage agp = new AppGroupsPage(driver, logger);
+		agp.statusThreeDot();
+	}
+
+	@Then("verify page accessbility the filter icon for APP Group Display Name")
+	public void verify_page_accessbility_the_filter_icon_for_app_group_display_name() {
+		AppGroupsPage agp = new AppGroupsPage(driver, logger);
+		agp.appDisplayNameThreeDot();
+	}
+
+	@Then("verify pagination last page and first page")
+	public void verify_pagination_last_page_and_first_page() {
+		Assume.assumeTrue("Pagination not available", false);
+	}
+
+	@Then("verify pagination")
+	public void verify_pagination() {
+		AppGroupsPage agp = new AppGroupsPage(driver, logger);
+		Assume.assumeTrue("Pagination not available", false);
+	}
+
+	@Then("verify labels of input text fields")
+	public void verify_labels_of_input_text_fields() {
+		AppGroupsPage agp = new AppGroupsPage(driver, logger);
+		agp.appNameThreeDot();
+		agp.appNameSearch(alldata.get(vTCName).get("AppGroupName").toString());
+		agp.backDropShowing_Div_Click();
+	}
+
+	@Then("check the column width & size resolution")
+	public void check_the_column_width_size_resolution() {
+		AppGroupsPage agp = new AppGroupsPage(driver, logger);
+		Assume.assumeTrue("For every device size differ can not automate", false);
+
+	}
+
+	@Then("verify pagination with forward and backward arrow")
+	public void verify_pagination_with_forward_and_backward_arrow() {
+		AppGroupsPage agp = new AppGroupsPage(driver, logger);
+		Assume.assumeTrue("Pagination not available", false);
+	}
+
+	@Then("verify to check the column width & size resolution")
+	public void verify_to_check_the_column_width_size_resolution() {
+		AppGroupsPage agp = new AppGroupsPage(driver, logger);
+		Assume.assumeTrue("can not check column width and size resolution . For every device size differ", false);
+	}
+
+	@Then("check filter icon visibility for APP Group Display Name")
+	public void check_filter_icon_visibility_for_app_group_display_name() {
+		AppGroupsPage agp = new AppGroupsPage(driver, logger);
+		agp.appDisplayNameThreeDot();
 	}
 
 	@Then("click on cancel button")
@@ -122,9 +148,9 @@ public class AppGroupsSteps extends BaseTest {
 	@Then("Do not Fill all information on Add page and hit save button")
 	public void do_not_fill_all_information_on_add_page_and_hit_save_button() throws InterruptedException {
 		AppGroupsPage agp = new AppGroupsPage(driver, logger);
-		Thread.sleep(4000);
+
 		agp.saveButton();
-		Thread.sleep(4000);
+
 	}
 
 	@When("Click on the three dots of App Group Name")
@@ -146,19 +172,6 @@ public class AppGroupsSteps extends BaseTest {
 		AppGroupsPage agp = new AppGroupsPage(driver, logger);
 		agp.movetoAppGroup();
 	}
-
-@Then("Verification of descending order sorting functionality for the table list")
-public void verification_of_descending_order_sorting_functionality_for_the_table_list() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-
-@Then("Verification to check the labels of input text fields")
-public void verification_to_check_the_labels_of_input_text_fields() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-
 
 	@Then("enter text in the field of App Group Display Name")
 	public void enter_text_in_the_field_of_app_group_display_name() {
@@ -195,14 +208,24 @@ public void verification_to_check_the_labels_of_input_text_fields() {
 		agp.statusThreeDot();
 	}
 
+	@Then("enter invalid details for App Group Name")
+	public void enter_invalid_details_for_app_group_name() {
+		AppGroupsPage agp = new AppGroupsPage(driver, logger);
+		agp.saveButton();
+	}
+
+	@Then("verify max word limit in App Group Display Name Text Field in the edit screen")
+	public void verify_max_word_limit_in_app_group_display_name_text_field_in_the_edit_screen() {
+		AppGroupsPage agp = new AppGroupsPage(driver, logger);
+		agp.saveButton();
+	}
+
 	@Then("user should search for App Group Name and App Group Display name")
 	public void user_should_search_for_app_group_name_and_app_group_display_name() throws InterruptedException {
 		AppGroupsPage agp = new AppGroupsPage(driver, logger);
 		agp.appNameThreeDot();
 		agp.appNameSearch(alldata.get(vTCName).get("AppGroupName").toString());
 		agp.backDropShowing_Div_Click();
-
-		Thread.sleep(4000);
 
 		agp.appDisplayNameThreeDot();
 		agp.appGroupNameSearch(alldata.get(vTCName).get("AppGroupDisplayName").toString());
@@ -218,9 +241,9 @@ public void verification_to_check_the_labels_of_input_text_fields() {
 	public void click_on_bulk_upload_functionality() throws InterruptedException, AWTException {
 		AppGroupsPage agp = new AppGroupsPage(driver, logger);
 		agp.bulkUploadButton();
-		Thread.sleep(3000);
+
 		agp.uploadfile();
-		Thread.sleep(3000);
+
 		StringSelection ss = new StringSelection(alldata.get(vTCName).get("FileUploadPath").toString());
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
 
@@ -237,9 +260,9 @@ public void verification_to_check_the_labels_of_input_text_fields() {
 		robot.delay(90);
 		robot.keyRelease(KeyEvent.VK_ENTER);
 		agp.uploadFileTask(alldata.get(vTCName).get("FileUploadPath").toString());
-		Thread.sleep(3000);
+
 		agp.bulkUploadButtonSucess();
-		Thread.sleep(3000);
+
 	}
 
 	@Then("verify tooltip for Edit button")
@@ -257,26 +280,18 @@ public void verification_to_check_the_labels_of_input_text_fields() {
 	@Then("verify tooltip for Add Application button")
 	public void verify_tooltip_for_add_application_button() {
 		AppGroupsPage agp = new AppGroupsPage(driver, logger);
-		Assert.assertEquals("Tooltip of Add application Button", "Add Applications",
-				agp.get_Text_ToolTipforAddApplications());
+		Assert.assertEquals("Tooltip of Add application Button", "Add New", agp.get_Text_ToolTipforAddApplications());
 	}
 
 	@Then("click on three dots on App Group name and enter the value for AppName")
 	public void click_on_three_dots_on_app_group_name_and_enter_the_value_for_app_name() throws InterruptedException {
 		AppGroupsPage agp = new AppGroupsPage(driver, logger);
 		agp.appNameThreeDot();
-		Thread.sleep(4000);
+
 		agp.appNameSearch(alldata.get(vTCName).get("AppGroupName").toString());
 		agp.backDropShowing_Div_Click();
 		Thread.sleep(7000);
 	}
-	@Then("Verification of check filter icon visibility for APP Group Display Name")
-	public void verification_of_check_filter_icon_visibility_for_app_group_display_name() {
-		AppGroupsPage agp = new AppGroupsPage(driver, logger);
-	}
-	
-	
-
 
 	@Then("remove the existing value for AppGroupName and change with new value")
 	public void remove_the_existing_value_for_app_group_name_and_change_with_new_value() {
@@ -296,7 +311,7 @@ public void verification_to_check_the_labels_of_input_text_fields() {
 	public void click_on_save_button_to_save_app_groups() throws InterruptedException {
 		AppGroupsEditPage agep = new AppGroupsEditPage(driver, logger);
 		agep.saveButton();
-		Thread.sleep(5000);
+
 	}
 
 	@Then("Click on Edit button to edit app groups")
@@ -309,23 +324,16 @@ public void verification_to_check_the_labels_of_input_text_fields() {
 	public void click_on_delete_button_to_delete_app_groups() throws InterruptedException {
 		AppGroupsPage agp = new AppGroupsPage(driver, logger);
 		agp.deleteButton();
-		Thread.sleep(4000);
 		agp.confirmationYesDeleteButton();
-		Thread.sleep(5000);
-	}
-	
-	@Then("Verification of alignment of i.e. ADD New,Refresh,bulk upload & bulk download buttons top right side")
-	public void verification_of_alignment_of_i_e_add_new_refresh_bulk_upload_bulk_download_buttons_top_right_side() {
-		AppGroupsEditPage agep = new AppGroupsEditPage(driver, logger);
-	}
 
+	}
 
 	@Then("Under Status column select Active checkbox from the List")
 	public void under_status_column_select_active_checkbox_from_the_list() throws InterruptedException {
 		AppGroupsPage agp = new AppGroupsPage(driver, logger);
 
 		agp.statusinActiveCheckbox();
-		Thread.sleep(4000);
+
 	}
 
 }

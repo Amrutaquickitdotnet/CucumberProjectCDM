@@ -31,6 +31,13 @@ public class RepositoriesAddPage extends CommonActions {
 
 	@FindBy(xpath = "//input[@formcontrolname='repositoryname']/../../../../../span[2]")
 	WebElement validationMessageRepositoryName;
+	
+	@FindBy(xpath = "//input[@formcontrolname='url']/../../../../../span[1]")
+	WebElement validationMessageURLWithout;
+	
+	@FindBy(xpath = "//body/app-root[1]/app-root[1]/app-home[1]/mat-sidenav-container[1]/mat-sidenav-content[1]/div[2]/div[1]/app-repositorydetails[1]/div[1]/mat-nav-list[1]/mat-expansion-panel[1]/div[1]/div[1]/form[1]/div[2]/div[3]/div[1]/div[1]/span[1]")
+	WebElement validationMessageDataStorageWithout;
+	
 
 	@FindBy(xpath = "//input[@formcontrolname='username']/../../../../../../div/span")
 	WebElement validationMessageUserName;
@@ -69,28 +76,43 @@ public class RepositoriesAddPage extends CommonActions {
 	WebElement repositoryUserNameAdd;
 
 	public void repositorynameAdd(String value) {
-		repositorynameAdd.sendKeys(Keys.ENTER);
-		repositorynameAdd.sendKeys(value);
+		SetInputENterKey(repositorynameAdd,"");
+		SetInput(repositorynameAdd, value, value);
+		
+//		repositorynameAdd.sendKeys(Keys.ENTER);
+//		repositorynameAdd.sendKeys(value);
 	}
 
 	public void repositoryURLAdd(String value) {
-		repositoryURLAdd.sendKeys(Keys.ENTER);
-		repositoryURLAdd.sendKeys(value);
+		SetInputENterKey(repositoryURLAdd,"");
+		SetInput(repositoryURLAdd, value, value);
+		
+//		repositoryURLAdd.sendKeys(Keys.ENTER);
+//		repositoryURLAdd.sendKeys(value);
 	}
 
 	public void repositorypathAdd(String value) {
-		repositorypathAdd.sendKeys(Keys.ENTER);
-		repositorypathAdd.sendKeys(value);
+		SetInputENterKey(repositorypathAdd,"");
+		SetInput(repositorypathAdd, value, value);
+		
+//		repositorypathAdd.sendKeys(Keys.ENTER);
+//		repositorypathAdd.sendKeys(value);
 	}
 
 	public void repositoryUserNameAdd(String value) {
-		repositoryUserNameAdd.sendKeys(Keys.ENTER);
-		repositoryUserNameAdd.sendKeys(value);
+		SetInputENterKey(repositoryUserNameAdd,"");
+		SetInput(repositoryUserNameAdd, value, value);
+//		
+//		repositoryUserNameAdd.sendKeys(Keys.ENTER);
+//		repositoryUserNameAdd.sendKeys(value);
 	}
 
 	public void repositoryPasswordAdd(String value) {
-		repositoryPasswordAdd.sendKeys(Keys.ENTER);
-		repositoryPasswordAdd.sendKeys(value);
+		SetInputENterKey(repositoryPasswordAdd,"");
+		SetInput(repositoryPasswordAdd, value, value);
+		
+//		repositoryPasswordAdd.sendKeys(Keys.ENTER);
+//		repositoryPasswordAdd.sendKeys(value);
 	}
 
 	public void datastorageindexAdd(String value) throws InterruptedException {
@@ -99,12 +121,14 @@ public class RepositoriesAddPage extends CommonActions {
 	}
 
 	public void savebuttonrepository() {
-		savebuttonrepository.click();
+		clickElement(savebuttonrepository, "");
+		//savebuttonrepository.click();
 
 	}
 
 	public String verifyValidationMessageRepositoryName() {
-		AddListpageVerification.click();
+		clickElement(AddListpageVerification, "");
+		
 		try {
 			Thread.sleep(1000);
 		} catch (InterruptedException e) {
@@ -137,7 +161,9 @@ public class RepositoriesAddPage extends CommonActions {
 	}
 
 	public String verifyValidationMessageUsername() {
-		AddListpageVerification.click();
+		
+		clickElement(AddListpageVerification,"");
+		//AddListpageVerification.click();
 		try {
 			Thread.sleep(1000);
 		} catch (InterruptedException e) {
@@ -158,7 +184,8 @@ public class RepositoriesAddPage extends CommonActions {
 	}
 
 	public String verifyValidationMessagepassword() {
-		AddListpageVerification.click();
+		clickElement(AddListpageVerification,"");
+		//AddListpageVerification.click();
 		try {
 			Thread.sleep(1000);
 		} catch (InterruptedException e) {
@@ -173,6 +200,37 @@ public class RepositoriesAddPage extends CommonActions {
 		return message.trim();
 	}
 
+	
+	public String verifyValidationMessagewithoutURL() {
+		clickElement(AddListpageVerification,"");
+		//AddListpageVerification.click();
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+
+		}
+
+		if (validationMessageURLWithout == null) {
+			return "";
+		}
+		String message = validationMessageURLWithout.getText();
+
+		return message.trim();
+	}
+	
+	public String verifyValidationMessageDataStorageIndex() {
+		
+
+		if (validationMessageDataStorageWithout == null) {
+			return "";
+		}
+		String message = validationMessageDataStorageWithout.getText();
+
+		return message.trim();
+	}
+	
+	
+	
 	public String toggleElementcolour() {
 
 		String actualColor = toggleElement.getCssValue("background-color");

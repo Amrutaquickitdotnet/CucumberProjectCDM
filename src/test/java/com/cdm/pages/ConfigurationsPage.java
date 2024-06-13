@@ -19,10 +19,84 @@ public class ConfigurationsPage extends CommonActions {
 		super(driver, logger);
 		PageFactory.initElements(driver, this);
 	}
+	
+	
+	
+	@FindBy(xpath = "//thead/tr[1]/th[1]/div[1]/span[1]/div[1]/div[2]/div[2]/div[3]")
+	public WebElement edgeIdSortDescend;
+	
+	@FindBy(xpath = "//div[contains(text(),'EDGE ID')]")
+	public WebElement edgeIDTool;
+	
 
+	@FindBy(xpath = "//div[contains(text(),'App Name')]")
+	public WebElement appTool;
+	
+
+	@FindBy(xpath = "//div[contains(text(),'Config Name')]")
+	public WebElement configTool;
+	
+	
+	@FindBy(xpath = "//div[contains(text(),'Response Status')]")
+	public WebElement responseStatusTool;
+	
+	
+	@FindBy(xpath = "//div[contains(text(),'Timestamp')]")
+	public WebElement timeStampTool;
+	
+	
+
+	@FindBy(xpath = "//div[contains(text(),'Last Updated')]")
+	public WebElement lastUpdatedTool;
+	
+	@FindBy(xpath = "//th[contains(text(),'Actions')]")
+	public WebElement actionTool;
+	
+	
+	@FindBy(xpath = "//tbody/tr[1]/td[7]/img[2]")
+	public WebElement downloadTool;
+	
+	@FindBy(xpath = "//tbody/tr[1]/td[7]/img[1]")
+	public WebElement viewResponseTool;
+	
+	
+	@FindBy(xpath = "//app-config-response-body/div[1]/div[1]/div[1]/div[1]/i[1]")
+	public WebElement closeTool;
+	
+	@FindBy(xpath = "/html/body/div[3]/div[3]/div/mat-tooltip-component/div")
+	WebElement closeToolTip;
+	
 	@FindBy(xpath = "//span[contains(text(),' Apply ')]")
 	public WebElement applybuttoncalender;
 
+	@FindBy(css = ".cdk-overlay-container")
+	WebElement appNameConfigThreeDotToolTip;
+
+	@FindBy(css = ".cdk-overlay-container")
+	WebElement edgeIDThreeDotConfigTextToolTip;
+
+	@FindBy(css = ".cdk-overlay-container")
+	WebElement configNameThreeDotToolTip;
+	
+	
+	@FindBy(css = ".cdk-overlay-container")
+	WebElement responseStatusToolTip;
+	
+	@FindBy(css = ".cdk-overlay-container")
+	WebElement timeStampToolTip;
+	
+	@FindBy(css = ".cdk-overlay-container")
+	WebElement lastUpdatedToolTip;
+	
+	@FindBy(css = ".cdk-overlay-container")
+	WebElement downloadToolTip;
+	
+	@FindBy(css = ".cdk-overlay-container")
+	WebElement viewResponseToolTip;
+	
+	@FindBy(css = ".cdk-overlay-container")
+	WebElement actionsToolTip;
+	
 	@FindBy(xpath = "//button[@aria-label ='Choose month and year']")
 	public WebElement arrowforyearandmonth;
 
@@ -47,12 +121,10 @@ public class ConfigurationsPage extends CommonActions {
 	@FindBy(xpath = "//input[@name='status']")
 	WebElement inputResponseStatus;
 
-
-
 	@FindBy(css = ".cdk-overlay-container")
 	WebElement refreshConfigButtonToolTip;
 
-	@FindBy(xpath =  "/html/body/div[3]/div/div/mat-tooltip-component/div")
+	@FindBy(xpath = "/html/body/div[3]/div/div/mat-tooltip-component/div")
 	WebElement viewResponseBodyToolTip;
 
 	@FindBy(xpath = "//thead/tr[1]/th[2]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]")
@@ -105,14 +177,13 @@ public class ConfigurationsPage extends CommonActions {
 	}
 
 	public void responseBodyIcon() {
-
-		responseBodyIcon.click();
+		clickElement(responseBodyIcon, "");
+		//responseBodyIcon.click();
 	}
 
 	public void refreshbutton() {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        WebElement element = wait.until(ExpectedConditions.visibilityOf(refreshBtn));
-		refreshBtn.click();
+		clickElement(refreshBtn, "");
+//		refreshBtn.click();
 
 	}
 
@@ -141,9 +212,45 @@ public class ConfigurationsPage extends CommonActions {
 	}
 
 	public void configTabmain() {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        WebElement element = wait.until(ExpectedConditions.visibilityOf(configTabmain));
-		configTabmain.click();
+
+		clickElement(configTabmain, "");
+		// configTabmain.click();
+	}
+
+	public String get_Text_ToolTipEdgeID() throws InterruptedException {
+		Thread.sleep(4000);
+		mouseHover(edgeIDTool);
+
+		String edgeIDThreeDotConfigText = edgeIDThreeDotConfigTextToolTip.getText();
+
+		System.out.println("toolTipText-->" + edgeIDThreeDotConfigText);
+
+		return edgeIDThreeDotConfigText;
+
+	}
+
+	public String get_Text_ToolTipAppName() throws InterruptedException {
+
+		mouseHover(appTool);
+
+		String appNameConfigThreeDotText = appNameConfigThreeDotToolTip.getText();
+
+		System.out.println("toolTipText-->" + appNameConfigThreeDotText);
+
+		return appNameConfigThreeDotText;
+
+	}
+
+	public String get_Text_ToolTipConfig() throws InterruptedException {
+
+		mouseHover(configTool);
+
+		String configNameThreeDotText = configNameThreeDotToolTip.getText();
+
+		System.out.println("toolTipText-->" + configNameThreeDotText);
+
+		return configNameThreeDotText;
+
 	}
 
 	public String get_Text_ToolTipRefreshConfig() throws InterruptedException {
@@ -181,85 +288,177 @@ public class ConfigurationsPage extends CommonActions {
 	}
 
 	public void currentviewbuttonclick() {
-		currentviewbuttonclick.click();
+		clickElement(currentviewbuttonclick,"");
+		//currentviewbuttonclick.click();
 	}
 
 	public void historyviewbuttonclick() {
-		currentviewbuttonclick.click();
+		clickElement(currentviewbuttonclick,"");
+		//currentviewbuttonclick.click();
 	}
 
 	public void appNameConfigThreeDot() {
-		appNameConfigThreeDot.click();
+		clickElement(appNameConfigThreeDot,"");
+		//appNameConfigThreeDot.click();
 	}
 
 	public void edgeIDThreeDotConfig() {
-		edgeIDThreeDotConfig.click();
+		clickElement(edgeIDThreeDotConfig,"");
+		//edgeIDThreeDotConfig.click();
 	}
 
 	public void configNameThreeDot() {
-		configNameThreeDot.click();
+		clickElement(configNameThreeDot,"");
+		//configNameThreeDot.click();
 	}
 
 	public void responseStatusThreeDot() {
-		responseStatusThreeDot.click();
+		clickElement(responseStatusThreeDot,"");
+		
+		
+//		responseStatusThreeDot.click();
 	}
 
 	public void timeStampThreeDot() {
-		timeStampThreeDot.click();
+		clickElement(timeStampThreeDot,"");
+		
+//		timeStampThreeDot.click();
 	}
 
 	public void lastUpdatedThreeDot() {
-		lastUpdatedThreeDot.click();
+		clickElement(lastUpdatedThreeDot,"");
+		
+//		lastUpdatedThreeDot.click();
 	}
 
 	public void sendValueSearchinputBoxForEdgeID(String value) {
-		inputEdgeId.sendKeys(Keys.ENTER);
-		inputEdgeId.sendKeys(value);
+		SetInputENterKey(inputEdgeId,"");
+		SetInput(inputEdgeId, value, value);
+		
+//		inputEdgeId.sendKeys(Keys.ENTER);
+//		inputEdgeId.sendKeys(value);
 
 	}
 
 	public void sendValueSearchinputBoxForAppName(String value) {
-		inputAppName.sendKeys(Keys.ENTER);
-		inputAppName.sendKeys(value);
+		SetInputENterKey(inputAppName,"");
+		SetInput(inputAppName, value, value);
+		
+//		inputAppName.sendKeys(Keys.ENTER);
+//		inputAppName.sendKeys(value);
 
 	}
 
 	public void sendValueSearchinputBoxForConfigName(String value) {
-		inputConfigName.sendKeys(Keys.ENTER);
-		inputConfigName.sendKeys(value);
+		SetInputENterKey(inputConfigName,"");
+		SetInput(inputConfigName, value, value);
+//		
+//		inputConfigName.sendKeys(Keys.ENTER);
+//		inputConfigName.sendKeys(value);
 
 	}
 
 	public void sendValueSearchinputBoxForResponseStatus(String value) {
-		inputResponseStatus.sendKeys(Keys.ENTER);
-		inputResponseStatus.sendKeys(value);
+		SetInputENterKey(inputResponseStatus,"");
+		SetInput(inputResponseStatus, value, value);
 		
+//		inputResponseStatus.sendKeys(Keys.ENTER);
+//		inputResponseStatus.sendKeys(value);
 
 	}
 
 	public void viewResponseBodyIcon() {
-		viewResponseBodyIcon.click();
+		clickElement(viewResponseBodyIcon,"");
+		
+//		viewResponseBodyIcon.click();
 	}
 
 	public void downloadAction() {
-		downloadbutton.click();
+		clickElement(downloadbutton,"");
+//		downloadbutton.click();
 	}
 
 	public void calenderIcon() {
-		calenderIcon.click();
+		clickElement(calenderIcon,"");
+//		calenderIcon.click();
 	}
 
 	public void arrowforyearandmonth() {
-		arrowforyearandmonth.click();
-		try {
-			Thread.sleep(200);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		clickElement(arrowforyearandmonth,"");
+//		arrowforyearandmonth.click();
+
 	}
 
 	public void applybuttoncalender() {
-		applybuttoncalender.click();
+		clickElement(applybuttoncalender,"");
+//		applybuttoncalender.click();
+	}
+
+	public void minimizewindow() {
+
+		driver.manage().window().minimize();
+
+	}
+
+	public void maximizewindow() {
+		driver.manage().window().maximize();
+
+	}
+
+	public String get_Text_TooltipResponseStatus() {
+		mouseHover(responseStatusTool);
+
+		String appNameConfigThreeDotText = appNameConfigThreeDotToolTip.getText();
+
+		System.out.println("toolTipText-->" + appNameConfigThreeDotText);
+
+		return appNameConfigThreeDotText;
+	}
+
+	public String get_Text_TooltipTimeStamp() {
+		mouseHover(timeStampTool);
+
+		String appNameConfigThreeDotText = appNameConfigThreeDotToolTip.getText();
+
+		System.out.println("toolTipText-->" + appNameConfigThreeDotText);
+
+		return appNameConfigThreeDotText;
+	}
+
+	public String get_Text_TooltipDownloadButton() {
+		mouseHover(downloadTool);
+
+		String downloadToolText = downloadToolTip.getText();
+
+		System.out.println("toolTipText-->" + downloadToolText);
+
+		return downloadToolText;
+	}
+
+	public String get_Text_TooltipActions() {
+		mouseHover(actionTool);
+
+		String downloadToolText = actionsToolTip.getText();
+
+		System.out.println("toolTipText-->" + downloadToolText);
+
+		return downloadToolText;
+	}
+
+	public String get_Text_TooltipCloseButton() {
+		
+		mouseHover(closeTool);
+
+		String closeToolTipText = closeToolTip.getText();
+
+		System.out.println("toolTipText-->" + closeToolTipText);
+
+		return closeToolTipText;
+		
+	}
+
+	public void edgeIDSortDecending() {
+		clickElement(edgeIdSortDescend, "");
+		
 	}
 }

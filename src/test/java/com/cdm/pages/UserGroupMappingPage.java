@@ -44,6 +44,8 @@ public class UserGroupMappingPage extends CommonActions {
 	@FindBy(xpath= "//ul[@class='nav']/li[2]")
 	WebElement edgeGroupsTabforgroup;
 	
+	@FindBy(xpath= "//h4")
+	WebElement headingclick;
 	
 	@FindBy(xpath= "//ul[@class='nav']/li[3]")
 	WebElement edgeDeviceTabforgroup;
@@ -73,12 +75,16 @@ public class UserGroupMappingPage extends CommonActions {
 	WebElement checkboxforselection;
 
 	public void UserGroupNameThreeDot() {
-		UserGroupNameThreeDot.click();
+		clickElement(UserGroupNameThreeDot,"");
+		//UserGroupNameThreeDot.click();
 	}
 
 	public void UserGroupNameInput(String value) {
-		UserGroupNameInput.sendKeys(Keys.ENTER);
-		UserGroupNameInput.sendKeys(value);
+		SetInputENterKey(UserGroupNameInput,"");
+		SetInput(UserGroupNameInput, value, value);
+		
+//		UserGroupNameInput.sendKeys(Keys.ENTER);
+//		UserGroupNameInput.sendKeys(value);
 	}
 
 	public void checkboxforUserGroupNameLicenseExpiry() {
@@ -121,26 +127,32 @@ public class UserGroupMappingPage extends CommonActions {
 	}
 
 	public void cancelbutton() {
-		cancelButton.click();
+		clickElement(cancelButton, "");
+		//cancelButton.click();
 	}
 	
 	public void edgeDeviceTabforgroup() {
-		edgeDeviceTabforgroup.click();
+		clickElement(edgeDeviceTabforgroup, "");
+		//edgeDeviceTabforgroup.click();
 	}
 	
 	
 	public void edgenamethreedotgroup() {
-		edgenamethreedotgroup.click();
+		clickElement(edgenamethreedotgroup, "");
+		//edgenamethreedotgroup.click();
 	}
 	public void backDropShowing_Div_Click() {
 		if (backDropShowing != null) {
-			backDropShowing.click();
+			clickElement(backDropShowing, "");
+			//backDropShowing.click();
 		}
 	}
 	
 	public void edgenamesearchmap(String value) {
-		edgenamesearchmap.sendKeys(Keys.ENTER);
-		edgenamesearchmap.sendKeys(value);
+		SetInputENterKey(edgenamesearchmap,"");
+		SetInput(edgenamesearchmap, value, value);
+//		edgenamesearchmap.sendKeys(Keys.ENTER);
+//		edgenamesearchmap.sendKeys(value);
 	}
 	
 	
@@ -158,12 +170,22 @@ public class UserGroupMappingPage extends CommonActions {
 		}
 	}
 	public void edgeGroupsTabforgroup() {
-		edgeGroupsTabforgroup.click();
+		clickElement(edgeGroupsTabforgroup, "");
+		//edgeGroupsTabforgroup.click();
 	}
 	
 	public void groupnamesearchmap(String value) {
-		groupnamesearchmap.sendKeys(Keys.ENTER);
-		groupnamesearchmap.sendKeys(value);
+		SetInputENterKey(groupnamesearchmap,"");
+		SetInput(groupnamesearchmap, value, value);
+		
+//		groupnamesearchmap.sendKeys(Keys.ENTER);
+//		groupnamesearchmap.sendKeys(value);
+	}
+
+	public void headingclickElement() {
+		
+		clickElement(headingclick, "");
+		
 	}
 	
 

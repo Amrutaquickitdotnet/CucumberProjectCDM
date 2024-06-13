@@ -1,14 +1,10 @@
 package com.cdm.pages;
 
-import java.time.Duration;
 
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.aventstack.extentreports.ExtentTest;
 import com.cdm.common.CommonActions;
@@ -49,33 +45,49 @@ public class SettingsWellPage extends CommonActions {
 
 	public void deviceTypeSelectAdd(String value) throws InterruptedException {
 
+		wait(deviceTypeSelectAdd,logger);
 		SelectMatOption(deviceTypeSelectAdd, value);
 	}
 	
 	
 	
 	public void clickWellNavigationTab() {
-		wellnavigationTab.click();
+		clickElement(wellnavigationTab, "");
+		//wellnavigationTab.click();
 	}
 
 	public void addWell() {
-		AddButtonforWell.click();
+		clickElement(AddButtonforWell, "");
+		//AddButtonforWell.click();
 	}
 	
 	public void inputWellName(String value) {
-		inputWellName.sendKeys(Keys.ENTER);
-		inputWellName.sendKeys(value);
+		SetInputENterKey(inputWellName,"");
+		SetInput(inputWellName, value, value);
+		
+//		inputWellName.sendKeys(Keys.ENTER);
+//		inputWellName.sendKeys(value);
 	}
 	public void inputPortNumber(String value) {
-		inputPortNumber.sendKeys(Keys.ENTER);
-		inputPortNumber.sendKeys(value);
+		
+		SetInputENterKey(inputPortNumber,"");
+		SetInput(inputPortNumber, value, value);
+		
+		
+//		inputPortNumber.sendKeys(Keys.ENTER);
+//		inputPortNumber.sendKeys(value);
 	}
 	
 	public void inputIPAddress(String value) {
-		inputIPAddress.sendKeys(Keys.ENTER);
-		inputIPAddress.sendKeys(value);
+
+		SetInputENterKey(inputIPAddress,"");
+		SetInput(inputIPAddress, value, value);
+		
+//		inputIPAddress.sendKeys(Keys.ENTER);
+//		inputIPAddress.sendKeys(value);
 	}
 	public void savebuttonforSettingwell() {
-		savebuttonforSettingwell.click();
+		clickElement(savebuttonforSettingwell, "");
+		//savebuttonforSettingwell.click();
 	}
 }

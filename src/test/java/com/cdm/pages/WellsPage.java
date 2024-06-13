@@ -1,6 +1,6 @@
 package com.cdm.pages;
 
-import org.openqa.selenium.Alert;
+
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -127,32 +127,42 @@ public class WellsPage extends CommonActions {
 	}
 
 	public void wellNameThreeDot() {
-		wellNameThreeDot.click();
+		clickElement(wellNameThreeDot, "");
+		//wellNameThreeDot.click();
 	}
 
 	public void deviceTypeThreeDot() {
-		deviceTypeThreeDot.click();
+		clickElement(deviceTypeThreeDot, "");
+		//deviceTypeThreeDot.click();
 	}
 
 	public void RTUAddressThreeDot() {
-		RTUAddressThreeDot.click();
+		clickElement(RTUAddressThreeDot, "");
+		//RTUAddressThreeDot.click();
 	}
 
 	public void statusThreeDot() {
-		statusThreeDot.click();
+		clickElement(statusThreeDot, "");
+		//statusThreeDot.click();
 	}
 
 	public void ipAddressThreeDot() {
-		IPAddressThreeDot.click();
+		clickElement(IPAddressThreeDot, "");
+		//IPAddressThreeDot.click();
 	}
 
 	public void wellTab() {
-		WellTab.click();
+		clickElement(WellTab, "");
+		//WellTab.click();
 	}
 
 	public void searchWellName(String value) {
-		inputWellName.sendKeys(Keys.ENTER);
-		inputWellName.sendKeys(value);
+		
+		SetInputENterKey(inputWellName,"");
+		SetInput(inputWellName, value, value);
+		
+//		inputWellName.sendKeys(Keys.ENTER);
+//		inputWellName.sendKeys(value);
 
 	}
 
@@ -166,51 +176,64 @@ public class WellsPage extends CommonActions {
 
 	public void backDropShowing_Div_Click() {
 		if (backDropShowing != null) {
+			
 			backDropShowing.click();
 		}
 	}
 
 	public void searchipAddress(String value) {
-		inputIPAddress.sendKeys(Keys.ENTER);
-		inputIPAddress.sendKeys(value);
+		SetInputENterKey(inputIPAddress,"");
+		SetInput(inputIPAddress, value, value);
+		
+//		inputIPAddress.sendKeys(Keys.ENTER);
+//		inputIPAddress.sendKeys(value);
 
 	}
 
 	public void searchDeviceType(String value) {
-
-		inputdeviceType.sendKeys(Keys.ENTER);
-		inputdeviceType.sendKeys(value);
+		SetInputENterKey(inputdeviceType,"");
+		SetInput(inputdeviceType, value, value);
+//
+//		inputdeviceType.sendKeys(Keys.ENTER);
+//		inputdeviceType.sendKeys(value);
 
 	}
 
 	public void searchRTUAddress(String value) {
-		inputRTUAddress.sendKeys(Keys.ENTER);
-		inputRTUAddress.sendKeys(value);
+		SetInputENterKey(inputRTUAddress,"");
+		SetInput(inputRTUAddress, value, value);
+//		
+//		inputRTUAddress.sendKeys(Keys.ENTER);
+//		inputRTUAddress.sendKeys(value);
 
 	}
 
 	public void clickrefreshbutton() {
 		Actions act = new Actions(driver);
 		act.moveToElement(refreshButton).build().perform();
-		refreshButton.click();
+		clickElement(refreshButton, "");
+		//refreshButton.click();
 	}
 
 	public void inputStatusInActive() {
-		inputStatusInActive.click();
+		clickElement(inputStatusInActive, "");
+		//inputStatusInActive.click();
 	}
 
 	public void addbutton() throws InterruptedException {
-		Thread.sleep(3000);
-		addButtonWell.click();
+		clickElement(addButtonWell, "");
+		//addButtonWell.click();
 	}
 
 	public void cancelButtonwell() {
-		cancelButtonwell.click();
+		clickElement(cancelButtonwell, "");
+		//cancelButtonwell.click();
 
 	}
 
 	public void saveButton() {
-		saveButtonWell.click();
+		clickElement(saveButtonWell, "");
+		//saveButtonWell.click();
 
 	}
 
@@ -233,8 +256,9 @@ public class WellsPage extends CommonActions {
 	}
 
 	public void downloadButtonWell() {
+		clickElement(downloadButtonWell, "");
 
-		downloadButtonWell.click();
+		//downloadButtonWell.click();
 	}
 
 	public void browsefile(String value) {
@@ -243,25 +267,30 @@ public class WellsPage extends CommonActions {
 	}
 
 	public void wellEditButton() {
-		wellEditButton.click();
+		clickElement(wellEditButton, "");
+		//wellEditButton.click();
 	}
 
 	public void uploadwellbutton() {
-		uploadwellbutton.click();
+		clickElement(uploadwellbutton, "");
+		//uploadwellbutton.click();
 	}
 
 	public void activeStatusCheck() throws InterruptedException {
-		Thread.sleep(4000);
-		activeStatusCheck.click();
+		
+		clickElement(activeStatusCheck, "");
+		//activeStatusCheck.click();
 
 	}
 
 	public void deleteButton() {
-		deleteButton.click();
+		clickElement(activeStatusCheck, "");
+		//deleteButton.click();
 	}
 
 	public void ConfirmationNoButton() {
-		ConfirmationNoButton.click();
+		clickElement(ConfirmationNoButton, "");
+		//ConfirmationNoButton.click();
 	}
 
 	public String get_Textget_Text_PopupMessage() {
@@ -324,27 +353,42 @@ public class WellsPage extends CommonActions {
 	}
 
 	public void wellBulkUpload(String value) {
-
-		wellBulkUpload.sendKeys(Keys.ENTER);
-		wellBulkUpload.sendKeys(value);
+		SetInputENterKey(wellBulkUpload,"");
+//		SetInput(wellBulkUpload, value, value);
+//		
+//		
+//		wellBulkUpload.sendKeys(Keys.ENTER);
+//		wellBulkUpload.sendKeys(value);
 	}
 
 	public void uploadButtonwell() {
-		uploadButtonwell.click();
+		wait(uploadButtonwell,logger);
+		clickElement(uploadButtonwell, "");
+		//uploadButtonwell.click();
 
 	}
 
 	public void inputIPAddressSearch(String value) {
-		inputIPAddressSearch.sendKeys(Keys.ENTER);
-		inputIPAddressSearch.sendKeys(value);
+		SetInputENterKey(inputIPAddressSearch,"");
+		SetInput(inputIPAddressSearch, value, value);
+		
+//		inputIPAddressSearch.sendKeys(Keys.ENTER);
+//		inputIPAddressSearch.sendKeys(value);
 	}
 
-	public void validationmessageFileUpload() {
-		validationmessageFileUpload.getText();
+	public String validationmessageFileUpload() {
+		if(validationmessageFileUpload==null) {
+			return "";
+		}
+		
+		return getText(validationmessageFileUpload);
+		
 	}
 
 	public void templateDownloadFile() {
-		templateDownloadFile.click();
+	SetInputENterKey(templateDownloadFile,"");
+		//SetInput(templateDownloadFile, value, value);
+		//templateDownloadFile.click();
 	}
 	
 	public String validationmessagenotuploadingfile() {

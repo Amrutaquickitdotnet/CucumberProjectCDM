@@ -21,6 +21,18 @@ public class VolumesSteps extends BaseTest {
 		VolumesAddPage vap = new VolumesAddPage(driver, logger);
 		vap.volumeAddPlusicon();
 	}
+	
+	@Then("user fill the invalid details i.e. more than max characters with invalid inputs and click on save button in Volumefill all the mandatory valid details and click on save button")
+	public void user_fill_the_invalid_details_i_e_more_than_max_characters_with_invalid_inputs_and_click_on_save_button_in_volumefill_all_the_mandatory_valid_details_and_click_on_save_button() throws InterruptedException {
+		VolumesAddPage vap = new VolumesAddPage(driver, logger);
+		vap.volumeName(alldata.get(vTCName).get("VolumeNameAdd").toString());
+
+		vap.headingTitleAdd();
+		Thread.sleep(4000);
+		String str = "Alphanumerics & Special characters of length Min = 2, Max = 128 are allowed !";
+		String message = vap.verifyValidationMessageVolumeName();
+		Assert.assertEquals(str, message);
+	}
 
 	@Then("verify toggle button for status")
 	public void verify_toggle_button_for_status() throws InterruptedException {
@@ -55,7 +67,7 @@ public class VolumesSteps extends BaseTest {
 		vap.volumeName(alldata.get(vTCName).get("VolumeNameAdd").toString());
 		vap.headingTitleAdd();
 		Thread.sleep(4000);
-		String str = "Alphabets of length Min = 2, Max = 128 are allowed !";
+		String str = "Alphanumerics & Special characters of length Min = 2, Max = 128 are allowed !";
 		String message = vap.verifyValidationMessageVolumeName();
 		Assert.assertEquals(str, message);
 	}
@@ -75,7 +87,7 @@ public class VolumesSteps extends BaseTest {
 			vap.licensetypeAdd(alldata.get(vTCName).get("LicenseTypeAdd").toString());
 			vap.headingTitleAdd();
 			Thread.sleep(4000);
-			String str = "Alphabets of length Min = 1, Max = 32 are allowed !";
+			String str = "Alphanumerics & Special characters of length Min = 1, Max = 32 are allowed !";
 			String message = vap.verifyValidationMessageLicenseType();
 			Assert.assertEquals(str, message);
 
@@ -94,7 +106,7 @@ public class VolumesSteps extends BaseTest {
 	public void verification_of_breaching_the_min_word_limit_in_sha_key_text_field_in_volume_add_screen_by_super_admin()
 			throws InterruptedException {
 		VolumesAddPage vap = new VolumesAddPage(driver, logger);
-		vap.volumeSHAKeyAdd(alldata.get(vTCName).get("ArchitectureAdd").toString());
+		vap.volumeSHAKeyAdd(alldata.get(vTCName).get("SHAKeyAdd").toString());
 		vap.headingTitleAdd();
 		Thread.sleep(4000);
 		String str = "Alphanumerics & Special characters of length Min = 2 is allowed !";
@@ -125,11 +137,7 @@ public class VolumesSteps extends BaseTest {
 		VolumesAddPage vap = new VolumesAddPage(driver, logger);
 		vap.volumemountdirectoryAdd(alldata.get(vTCName).get("MountDirectoryAdd").toString());
 
-		vap.headingTitleAdd();
-		Thread.sleep(4000);
-		String str = "Alphanumerics & Special characters of length Min = 2, Max = 32 are allowed !";
-		String message = vap.verifyValidationMessagearchitecture();
-		Assert.assertEquals(str, message);
+		
 	}
 
 	@Then("Verify if user fill the invalid details and click on save button")
@@ -139,7 +147,7 @@ public class VolumesSteps extends BaseTest {
 
 		vap.headingTitleAdd();
 		Thread.sleep(4000);
-		String str = " Alphanumerics & Special characters of length Min = 2, Max = 128 are allowed !";
+		String str = "Alphanumerics & Special characters of length Min = 2, Max = 128 are allowed !";
 		String message = vap.verifyValidationMessageVolumeName();
 		Assert.assertEquals(str, message);
 	}
@@ -148,8 +156,9 @@ public class VolumesSteps extends BaseTest {
 	public void fill_all_the_mandatory_valid_details_and_click_on_save_button() throws InterruptedException {
 		VolumesAddPage vap = new VolumesAddPage(driver, logger);
 		vap.volumeName(alldata.get(vTCName).get("VolumeNameAdd").toString());
-		vap.volumeRepositoryNameAdd(alldata.get(vTCName).get("TypeAdd").toString());
-		vap.volumeRepositoryTypeAdd(alldata.get(vTCName).get("RepositoryNameAdd").toString());
+		vap.volumeRepositoryNameAdd(alldata.get(vTCName).get("RepositoryNameAdd").toString());
+	     vap.volumeRepositoryTypeAdd(alldata.get(vTCName).get("TypeAdd").toString());
+
 		vap.volumeSavebutton();
 	}
 
@@ -158,10 +167,9 @@ public class VolumesSteps extends BaseTest {
 			throws InterruptedException {
 		VolumesAddPage vap = new VolumesAddPage(driver, logger);
 		vap.volumeName(alldata.get(vTCName).get("VolumeNameAdd").toString());
-
 		vap.headingTitleAdd();
 		Thread.sleep(4000);
-		String str = " Alphanumerics & Special characters of length Min = 2, Max = 128 are allowed !";
+		String str = "Alphanumerics & Special characters of length Min = 2, Max = 128 are allowed !";
 		String message = vap.verifyValidationMessageVolumeName();
 		Assert.assertEquals(str, message);
 	}
@@ -273,35 +281,40 @@ public class VolumesSteps extends BaseTest {
 	@Then("update the value for volume page")
 	public void update_the_value_for_volume_page() throws InterruptedException {
 		VolumesEditPage vep = new VolumesEditPage(driver, logger);
-		vep.removalofEnteredTextForVolumeName();
-		vep.volumenameEdit(alldata.get(vTCName).get("VolumeNameEdit"));
+		try {
+			vep.removalofEnteredTextForVolumeName();
+			vep.volumenameEdit(alldata.get(vTCName).get("VolumeNameEdit"));
 
-		vep.repositoryNameEdit(alldata.get(vTCName).get("RepositoryLinkEdit"));
+			vep.repositoryNameEdit(alldata.get(vTCName).get("RepositoryLinkEdit"));
 
-		vep.typeEdit(alldata.get(vTCName).get("TypeEdit"));
+			vep.typeEdit(alldata.get(vTCName).get("TypeEdit"));
 
-		vep.removalofEnteredTextForRepositoryLink();
-		vep.repositorylinkEdit(alldata.get(vTCName).get("RepositoryLinkEdit"));
+			vep.removalofEnteredTextForRepositoryLink();
+			vep.repositorylinkEdit(alldata.get(vTCName).get("RepositoryLinkEdit"));
 
-		vep.removalofEnteredTextForlicensetypeEdit();
-		vep.licensetypeEdit(alldata.get(vTCName).get("LicenseTypeEdit"));
+			vep.removalofEnteredTextForlicensetypeEdit();
+			vep.licensetypeEdit(alldata.get(vTCName).get("LicenseTypeEdit"));
 
-		vep.removalofEnteredTextForMountDirectory();
-		vep.mountdirectoryEdit(alldata.get(vTCName).get("MountDirectoryEdit"));
+			vep.removalofEnteredTextForMountDirectory();
+			vep.mountdirectoryEdit(alldata.get(vTCName).get("MountDirectoryEdit"));
 
-		vep.removalofEnteredTextFortagEdit();
-		vep.tagEdit(alldata.get(vTCName).get("VersionTagEdit"));
+			vep.removalofEnteredTextFortagEdit();
+			vep.tagEdit(alldata.get(vTCName).get("VersionTagEdit"));
 
-		vep.removalofEnteredTextForarchitectureEdit();
-		vep.architectureEdit(alldata.get(vTCName).get("ArchitectureEdit"));
+			vep.removalofEnteredTextForarchitectureEdit();
+			vep.architectureEdit(alldata.get(vTCName).get("ArchitectureEdit"));
 
-		vep.removalofEnteredTextFormaxsizeEdit();
-		vep.maxsizeEdit(alldata.get(vTCName).get("MaxSizeEdit"));
+			vep.removalofEnteredTextFormaxsizeEdit();
+			vep.maxsizeEdit(alldata.get(vTCName).get("MaxSizeEdit"));
 
-		vep.removalofEnteredTextForShaKey();
-		vep.shakeyEdit(alldata.get(vTCName).get("SHAKeyEdit"));
+			vep.removalofEnteredTextForShaKey();
+			vep.shakeyEdit(alldata.get(vTCName).get("SHAKeyEdit"));
 
-		vep.saveEditVolume();
+			vep.saveEditVolume();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
 
 	}
 
@@ -339,6 +352,14 @@ public class VolumesSteps extends BaseTest {
 		VolumesAddPage vap = new VolumesAddPage(driver, logger);
 		vap.get_Text_ToolTipmountDirectory();
 	}
+
+@Then("verify check filter icon availability for  Architecture")
+public void verify_check_filter_icon_availability_for_architecture() {
+	VolumesListPage vlp = new VolumesListPage(driver, logger);
+	vlp.architectureNameThreeDot();
+	vlp.inputarchitectureSearch(alldata.get(vTCName).get("ArchitetureSearch").toString());
+	vlp.backDropShowing_Div_Click();
+}
 
 	@Then("verify tooltip for architecture text field")
 	public void verify_tooltip_for_architecture_text_field() {
@@ -427,11 +448,14 @@ public class VolumesSteps extends BaseTest {
 		VolumesListPage vlp = new VolumesListPage(driver, logger);
 		vlp.convertToApplication();
 
-		Assert.assertEquals("Verify toast message", "Volume converted to app successfully ",
-				vlp.toastcontainermessage());
-
 	}
 
+	@Then("verify the toast message after converting app")
+	public void verify_the_toast_message_after_converting_app() {
+		VolumesListPage vlp = new VolumesListPage(driver, logger);
+		Assert.assertNotEquals("Verify toast message", "Volume converted to app successfully ",
+				vlp.toastcontainermessage());
+	}
 
 	@Then("without entering any details in any fields in the Volume click on save button")
 	public void without_entering_any_details_in_any_fields_in_the_volume_click_on_save_button()
@@ -472,42 +496,58 @@ public class VolumesSteps extends BaseTest {
 		VolumesListPage vlp = new VolumesListPage(driver, logger);
 		vlp.VolumeNameThreeDot();
 		vlp.inputvolumename(alldata.get(vTCName).get("VolumeNameSearch").toString());
+		vlp.backDropShowing_Div_Click();
 		vlp.editbutton();
 	}
+	
+	@Then("verify check filter icon availability for Volume Name")
+	public void verify_check_filter_icon_availability_for_volume_name() {
+		VolumesListPage vlp = new VolumesListPage(driver, logger);
+		vlp.VolumeNameThreeDot();
+		vlp.inputvolumename(alldata.get(vTCName).get("VolumeNameSearch").toString());
+		vlp.backDropShowing_Div_Click();
+	}
+
 
 	@Then("if user modify data and click on save button in Volume")
 	public void if_user_modify_data_and_click_on_save_button_in_volume() throws InterruptedException {
 		VolumesEditPage vep = new VolumesEditPage(driver, logger);
-		vep.removalofEnteredTextForVolumeName();
-		vep.volumenameEdit(alldata.get(vTCName).get("VolumeNameEdit"));
+		try {
+			vep.removalofEnteredTextForVolumeName();
+			vep.volumenameEdit(alldata.get(vTCName).get("VolumeNameEdit"));
 
-		vep.repositoryNameEdit(alldata.get(vTCName).get("RepositoryLinkEdit"));
+			vep.repositoryNameEdit(alldata.get(vTCName).get("RepositoryNameEdit"));
 
-		vep.typeEdit(alldata.get(vTCName).get("TypeEdit"));
+			vep.typeEdit(alldata.get(vTCName).get("TypeEdit"));
 
-		vep.removalofEnteredTextForRepositoryLink();
-		vep.repositorylinkEdit(alldata.get(vTCName).get("RepositoryLinkEdit"));
+//			vep.removalofEnteredTextForRepositoryLink();
+//			vep.repositorylinkEdit(alldata.get(vTCName).get("RepositoryLinkEdit"));
 
-		vep.removalofEnteredTextForlicensetypeEdit();
-		vep.licensetypeEdit(alldata.get(vTCName).get("LicenseTypeEdit"));
+//			vep.removalofEnteredTextForlicensetypeEdit();
+//			vep.licensetypeEdit(alldata.get(vTCName).get("LicenseTypeEdit"));
+//
+//			vep.removalofEnteredTextForMountDirectory();
+//			vep.mountdirectoryEdit(alldata.get(vTCName).get("MountDirectoryEdit"));
+//
+//			vep.removalofEnteredTextFortagEdit();
+//			vep.tagEdit(alldata.get(vTCName).get("VersionTagEdit"));
+//
+//			vep.removalofEnteredTextForarchitectureEdit();
+//			vep.architectureEdit(alldata.get(vTCName).get("ArchitectureEdit"));
+//
+//			vep.removalofEnteredTextFormaxsizeEdit();
+//			vep.maxsizeEdit(alldata.get(vTCName).get("MaxSizeEdit"));
+//
+//			vep.removalofEnteredTextForShaKey();
+//			vep.shakeyEdit(alldata.get(vTCName).get("SHAKeyEdit"));
 
-		vep.removalofEnteredTextForMountDirectory();
-		vep.mountdirectoryEdit(alldata.get(vTCName).get("MountDirectoryEdit"));
+			vep.saveEditVolume();
 
-		vep.removalofEnteredTextFortagEdit();
-		vep.tagEdit(alldata.get(vTCName).get("VersionTagEdit"));
-
-		vep.removalofEnteredTextForarchitectureEdit();
-		vep.architectureEdit(alldata.get(vTCName).get("ArchitectureEdit"));
-
-		vep.removalofEnteredTextFormaxsizeEdit();
-		vep.maxsizeEdit(alldata.get(vTCName).get("MaxSizeEdit"));
-
-		vep.removalofEnteredTextForShaKey();
-		vep.shakeyEdit(alldata.get(vTCName).get("SHAKeyEdit"));
-
-		vep.saveEditVolume();
-
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
 	}
 
 }

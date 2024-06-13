@@ -18,7 +18,6 @@ public class UserSettingsAddPage extends CommonActions {
 		PageFactory.initElements(driver, this);
 
 	}
-	
 
 	@FindBy(xpath = "//div[@class='slider round']")
 	WebElement sliderOnCheckBox;
@@ -32,14 +31,13 @@ public class UserSettingsAddPage extends CommonActions {
 
 	@FindBy(xpath = "(//input[@formcontrolname='password']/../../../../div/../../span)[1]")
 	WebElement verifyValidationMessagepassnotnotentered;
-	
+
 	@FindBy(xpath = "//span[@class='far fa-eye-slash showpwd']")
 	WebElement passwordeyeicon;
-	
-	
+
 	@FindBy(xpath = "//div[@class='form-group']/div[1]")
 	WebElement verifyValidationMessagepassword;
-	
+
 	@FindBy(xpath = "//input[@formcontrolname='firstname']")
 	WebElement firstNameInputAdd;
 
@@ -75,64 +73,81 @@ public class UserSettingsAddPage extends CommonActions {
 	WebElement headingTitleAdd;
 
 	public void headingTitleAdd() {
-		headingTitleAdd.click();
+		clickElement(headingTitleAdd, "");
+		// headingTitleAdd.click();
 	}
 
 	public void refreshButton() {
+		clickElement(refreshButton, "");
 		refreshButton.click();
 	}
 
 	public void firstNameinputAdd(String value) {
+		SetInputENterKey(firstNameInputAdd,"");
 
-		firstNameInputAdd.sendKeys(Keys.ENTER);
-		firstNameInputAdd.sendKeys(value);
+		SetInput(firstNameInputAdd, value, value);
+//		firstNameInputAdd.sendKeys(Keys.ENTER);
+//		firstNameInputAdd.sendKeys(value);
 	}
 
 	public void lastNameinputAdd(String value) {
+		SetInputENterKey(lastNameInputAdd,"");
 
-		lastNameInputAdd.sendKeys(Keys.ENTER);
-		lastNameInputAdd.sendKeys(value);
+		SetInput(lastNameInputAdd, value, value);
+//		lastNameInputAdd.sendKeys(Keys.ENTER);
+//		lastNameInputAdd.sendKeys(value);
 	}
 
 	public void phoneNumberInputAdd(String value) {
-		phoneNumberInputAdd.sendKeys(Keys.ENTER);
-		phoneNumberInputAdd.sendKeys(value);
+		SetInputENterKey(phoneNumberInputAdd,"");
+
+		SetInput(phoneNumberInputAdd, value, value);
+//		
+//		phoneNumberInputAdd.sendKeys(Keys.ENTER);
+//		phoneNumberInputAdd.sendKeys(value);
 	}
 
 	public void emailidinputAdd(String value) {
-		emailidInputAdd.sendKeys(Keys.ENTER);
-		emailidInputAdd.sendKeys(value);
+		SetInputENterKey(emailidInputAdd,"");
+
+		SetInput(emailidInputAdd, value, value);
+//		emailidInputAdd.sendKeys(Keys.ENTER);
+//		emailidInputAdd.sendKeys(value);
 	}
 
-	
-
-	
 	public void passwordInputAddControl(String value) {
+		
 		passwordInputAdd.sendKeys(Keys.CONTROL + "a");
-		passwordInputAdd.sendKeys(value);
+		
+
+		SetInput(passwordInputAdd, value, value);
+		//passwordInputAdd.sendKeys(value);
 	}
-	
-	
+
 	public String passwordInputattribute() {
 		return passwordInputAdd.getAttribute("value");
-		
+
 	}
-	
+
 	public void passwordInputAddPaste(String value) {
 		passwordInputAdd.sendKeys(Keys.CONTROL + "v");
 		passwordInputAdd.sendKeys(value);
+		
+		SetInput(passwordInputAdd, value, value);
 	}
-	
+
 	public void passwordInputAddBackspace(String value) {
-		passwordInputAdd.sendKeys(Keys.BACK_SPACE); 
-		passwordInputAdd.sendKeys(value);
+		passwordInputAdd.sendKeys(Keys.BACK_SPACE);
+		//passwordInputAdd.sendKeys(value);
+		SetInput(passwordInputAdd, value, value);
 	}
-	
+
 	public void passwordInputAdd(String value) {
 		passwordInputAdd.sendKeys(Keys.ENTER);
-		passwordInputAdd.sendKeys(value);
+		//passwordInputAdd.sendKeys(value);
+		SetInput(passwordInputAdd, value, value);
 	}
-	
+
 	public void roleNameinputAdd(String value) throws InterruptedException {
 
 		SelectMatOption(roleNameAdd, value);
@@ -161,6 +176,7 @@ public class UserSettingsAddPage extends CommonActions {
 	}
 
 	public void cancelButtonAdd() {
+		clickElement(cancelButtonAdd, "");
 		cancelButtonAdd.click();
 	}
 
@@ -192,8 +208,11 @@ public class UserSettingsAddPage extends CommonActions {
 	@FindBy(xpath = "(//input[@formcontrolname='lastname']/../../../../div/../../span)[1]")
 	WebElement verifyValidationMessageLastNameUser;
 
-	@FindBy(xpath = "(//input[@formcontrolname='contact']/../../../../../span)[1]")
+	@FindBy(xpath = "//input[@formcontrolname='contact']/../../../../../div")
 	WebElement verifyValidationMessageContact;
+
+	@FindBy(xpath = "//input[@formcontrolname='contact']/../../../../../span")
+	WebElement verifyValidationMessageContactmandatoryfield;
 
 	@FindBy(xpath = "//div[contains(text(),'Please enter a valid Phone Number !')]")
 	WebElement verifyValidationMessagedigitwithSpace;
@@ -211,6 +230,7 @@ public class UserSettingsAddPage extends CommonActions {
 	}
 
 	public void pressTabKeyOnEmailInput() {
+	
 		emailidInputAdd.sendKeys(Keys.TAB);
 	}
 
@@ -284,8 +304,7 @@ public class UserSettingsAddPage extends CommonActions {
 		return message.trim();
 
 	}
-	
-	
+
 	public String verifyValidationMessagepassword() {
 		if (verifyValidationMessagepassword == null) {
 			return "";
@@ -296,17 +315,26 @@ public class UserSettingsAddPage extends CommonActions {
 
 	}
 
+	public String verifyValidationMessageContactmandatoryfield() {
+		if (verifyValidationMessageContactmandatoryfield == null) {
+			return "";
+		}
+		String message = verifyValidationMessageContactmandatoryfield.getText();
+
+		return message.trim();
+
+	}
+
 	public void passwordeyeicon() throws InterruptedException {
-		
-		passwordeyeicon.click();
-		Thread.sleep(2000);
+		clickElement(passwordeyeicon, "");
+		// passwordeyeicon.click();
+
 	}
 
 	public void verifyvalidationmessageforroleName() {
-	
-		
+
 	}
-	
+
 	public void moveSliderCondition(String m) {
 		moveSliderCondition(sliderOnCheckBox, sliderOnCheckBoxLabel, m);
 	}

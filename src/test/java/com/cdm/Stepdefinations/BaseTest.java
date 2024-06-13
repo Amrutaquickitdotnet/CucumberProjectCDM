@@ -17,7 +17,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -53,38 +55,81 @@ public class BaseTest {
 
 	public void launchApp() {
 		String browserName = null;
-		if(alldata.get(vTCName).get("BrowserName") !=null) {
-			browserName=alldata.get(vTCName).get("BrowserName").toString();
+		if (alldata.get(vTCName).get("BrowserName") != null) {
+			browserName = alldata.get(vTCName).get("BrowserName").toString();
 		}
 		if (browserName == null || browserName.isEmpty()) {
 			browserName = prop.getProperty("Browser");
 		}
-		browserName=browserName.toLowerCase().trim();
-		if (browserName.equals("chrome")) {
-			// WebDriverManager.chromedriver().setup();
-			String chromeDriverpath = prop.getProperty("BrowserPath");
-			System.out.println("I am in launchApp" + chromeDriverpath);
+		browserName = browserName.toLowerCase().trim();
+		for (int i = 0; i < 10; i++) {
+			if (browserName.equals("chrome")) {
+				// WebDriverManager.chromedriver().setup();
+				String chromeDriverpath = prop.getProperty("BrowserPath");
+				System.out.println("I am in launchApp" + chromeDriverpath);
 
-			ChromeOptions options = new ChromeOptions();
-			options.addArguments("--remote-allow-origins=*");
-			// options.addArguments("--disable notifications");
-			options.setExperimentalOption("excludeSwitches", new String[] { "enable-automation" });
-			options.addArguments("start-maximized");
+				ChromeOptions options = new ChromeOptions();
+//				options.addArguments("--window-size=1920,1080");
+//				options.addArguments("--disable-extensions");
+//				options.addArguments("--proxy-server='direct://'");
+//				options.addArguments("--proxy-bypass-list=*");
+//				options.addArguments("--start-maximized");
+//			
+//				options.addArguments("--disable-dev-shm-usage");
+//				options.addArguments("--no-sandbox");
+//				options.addArguments("--ignore-certificate-errors");
+//				options.addArguments("--remote-allow-origins=*");
+//				// options.addArguments("--disable notifications");
+//				options.addArguments("--headless");
+//				options.addArguments("--disable-gpu");
+				options.setExperimentalOption("excludeSwitches", new String[] { "enable-automation" });
+//				options.addArguments("start-maximized");
+//				options.setExperimentalOption("credentials_enable_service", false);
+//				options.setExperimentalOption("profile.password_manager_enabled", false);
+			    options.addArguments("--incognito");
 
-			System.setProperty("webdriver.chrome.drive", chromeDriverpath);
-			driver = new ChromeDriver(options);
+				System.setProperty("webdriver.chrome.drive", chromeDriverpath);
+				try {
+					driver = new ChromeDriver(options);
+				} catch (Exception ex) {
+					
+					ex.printStackTrace();
+					try {
+						Thread.sleep(1000);
+						continue;
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+						
+					}
+				}
 
-		} else if (browserName.equals("firefox")) {
+			} else if (browserName.equals("firefox")) {
 
-			driver = new FirefoxDriver();
-		} else if (browserName.equals("edge")) {
+				driver = new FirefoxDriver();
+			} else if (browserName.equals("edge")) {
 
-			driver = new EdgeDriver();
+				driver = new EdgeDriver();
+
+			}
+
+			driver.manage().window().maximize();
+			//int time = Integer.parseInt(prop.getProperty("ImplicitWait"));
+			//driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(time));
+			return;
 		}
+		
+		
+		if(driver ==null) {
+			EdgeOptions edgeOptions = new EdgeOptions();
+	        edgeOptions.addArguments("headless");
+	        edgeOptions.addArguments("disable-gpu");  // Optional: Disable GPU for better performance
 
-		driver.manage().window().maximize();
-		int time = Integer.parseInt(prop.getProperty("ImplicitWait"));
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(time));
+			driver = new EdgeDriver(edgeOptions);
+			driver.manage().window().maximize();
+			//int time = Integer.parseInt(prop.getProperty("ImplicitWait"));
+			//driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(time));
+		}
 
 	}
 

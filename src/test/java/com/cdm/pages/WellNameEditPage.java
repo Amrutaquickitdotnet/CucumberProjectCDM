@@ -1,9 +1,8 @@
 package com.cdm.pages;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.Dimension;
+
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -20,9 +19,10 @@ public class WellNameEditPage extends CommonActions {
 
 		PageFactory.initElements(driver, this);
 	}
+
 	@FindBy(xpath = "//*[@id= 'isActive']")
 	WebElement sliderOnCheckBox;
-	
+
 	@FindBy(xpath = "//*[@id='isActive']/..")
 	WebElement sliderOnCheckBoxLabel;
 
@@ -50,14 +50,12 @@ public class WellNameEditPage extends CommonActions {
 	@FindBy(xpath = "//button[contains(text(),'Save')]")
 	WebElement saveButtonWell;
 
-	
 	@FindBy(xpath = "(//input[@formcontrolname='wellname']/../../../../div)")
 	WebElement validationMessgaeWellName;
 
 	@FindBy(xpath = "(//input[@formcontrolname='port']/../../../../div)")
 	WebElement validationMessgaePort;
-	
-	
+
 	@FindBy(xpath = "//div[@class='row']/div[3]/div/mat-form-field[1]/../span")
 	WebElement validationMessgaePortEdit;
 
@@ -81,43 +79,40 @@ public class WellNameEditPage extends CommonActions {
 			backDropShowing.click();
 		}
 	}
-	
-	
-	
+
 	public String removalofEnteredTextForwellname() {
 
 		return removalofEneredText(wellnameinputEdit);
 
 	}
-	
 
 	public String removalofEnteredTextForRTUAddress() {
 
 		return removalofEneredText(RTUAddressinputEdit);
 
 	}
+
 	public String removalofEnteredTextForPortNumber() {
 
 		return removalofEneredText(portNumberinputEdit);
 
 	}
+
 	public String removalofEnteredTextForPassword() {
 
 		return removalofEneredText(passwordinputEdit);
 
 	}
-	
-	
-	
-	
+
 	public void cancelButtonwell() {
-		cancelButtonwell.click();
+		clickElement(cancelButtonwell, "");
+		// cancelButtonwell.click();
 
 	}
 
 	public void saveButton() {
-JavascriptExecutor	js = (JavascriptExecutor)driver;
-		
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+
 		js.executeScript("document.querySelector(\".addButton\").click()");
 
 	}
@@ -156,9 +151,7 @@ JavascriptExecutor	js = (JavascriptExecutor)driver;
 		return message.trim();
 
 	}
-	
-	
-	
+
 	public String verifyValidationMessagePortEdit() throws InterruptedException {
 
 		try {
@@ -245,39 +238,54 @@ JavascriptExecutor	js = (JavascriptExecutor)driver;
 	}
 
 	public void wellnameinputEdit(String value) {
-		wellnameinputEdit.sendKeys(Keys.ENTER);
-		wellnameinputEdit.sendKeys(value);
+		SetInputENterKey(wellnameinputEdit, "");
+		SetInput(wellnameinputEdit, value, value);
+
+//		wellnameinputEdit.sendKeys(Keys.ENTER);
+//		wellnameinputEdit.sendKeys(value);
 	}
 
 	public void portnumberinputEdit(String value) {
-		portNumberinputEdit.sendKeys(Keys.ENTER);
-		portNumberinputEdit.sendKeys(value);
+
+		SetInputENterKey(portNumberinputEdit, "");
+		SetInput(portNumberinputEdit, value, value);
+
+//		portNumberinputEdit.sendKeys(Keys.ENTER);
+//		portNumberinputEdit.sendKeys(value);
 	}
 
 	public void RTUAddressinputEdit(String value) {
-		RTUAddressinputEdit.sendKeys(Keys.ENTER);
-		RTUAddressinputEdit.sendKeys(value);
+		SetInputENterKey(RTUAddressinputEdit, "");
+		SetInput(RTUAddressinputEdit, value, value);
+
+//		RTUAddressinputEdit.sendKeys(Keys.ENTER);
+//		RTUAddressinputEdit.sendKeys(value);
 	}
 
 	public void passwordinputEdit(String value) {
-		passwordinputEdit.sendKeys(Keys.ENTER);
-		passwordinputEdit.sendKeys(value);
+		SetInputENterKey(passwordinputEdit, "");
+		SetInput(passwordinputEdit, value, value);
+
+//		passwordinputEdit.sendKeys(Keys.ENTER);
+//		passwordinputEdit.sendKeys(value);
 	}
 
 	public void IPAddressinputEdit(String value) {
-		IPAddressinputEdit.sendKeys(Keys.ENTER);
-		IPAddressinputEdit.sendKeys(value);
+		SetInputENterKey(IPAddressinputEdit, "");
+		SetInput(IPAddressinputEdit, value, value);
+
+//		IPAddressinputEdit.sendKeys(Keys.ENTER);
+//		IPAddressinputEdit.sendKeys(value);
 	}
 
 	public void deviceTypeDropdownEdit(String value) throws InterruptedException {
-         Thread.sleep(4000);
+		Thread.sleep(4000);
 		SelectMatOption(deviceTypeEdit, value);
 	}
-	
-	public void moveSliderCondition(String m) {
-		
-		moveSliderCondition(sliderOnCheckBox,sliderOnCheckBoxLabel,m);
-	}
 
+	public void moveSliderCondition(String m) {
+
+		moveSliderCondition(sliderOnCheckBox, sliderOnCheckBoxLabel, m);
+	}
 
 }

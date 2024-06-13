@@ -24,11 +24,10 @@ public class HardwarePage extends CommonActions {
 		super(driver, logger);
 		PageFactory.initElements(driver, this);
 	}
-	
+
 	@FindBy(xpath = "//div[@class='tableCard']/div/div/img")
 	WebElement refreshlist;
 
-	
 	@FindBy(xpath = "//tbody/tr[1]/td[8]/img[2]")
 	WebElement hardwareDelete;
 
@@ -40,25 +39,25 @@ public class HardwarePage extends CommonActions {
 
 	@FindBy(xpath = "//thead/tr[1]/th[1]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]")
 	WebElement hardwarethreedot;
-	
+
 	@FindBy(xpath = "//thead/tr[1]/th[2]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]")
 	WebElement hardwareDisplayNamethreedot;
-	
+
 	@FindBy(xpath = "//thead/tr[1]/th[3]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]")
 	WebElement hardwareMakethreedot;
-	
+
 	@FindBy(xpath = "//thead/tr[1]/th[4]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]")
 	WebElement hardwareModelthreedot;
-	
+
 	@FindBy(xpath = "//thead/tr[1]/th[5]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]")
 	WebElement hardwareProcessorthreedot;
-	
+
 	@FindBy(xpath = "//thead/tr[1]/th[6]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]")
 	WebElement hardwareosthreedot;
-	
+
 	@FindBy(xpath = "//button[@class='addButton']")
 	WebElement hardwareSavebutton;
-	
+
 	@FindBy(xpath = "//input[@name='hardwarename']")
 	WebElement hardwarenamesearch;
 
@@ -90,116 +89,166 @@ public class HardwarePage extends CommonActions {
 	WebElement saveAddDataBtn;
 
 	public void hardwareAddPlusicon() {
-		hardwareAddPlusicon.click();
+		clickElement(hardwareAddPlusicon, "");
+		// hardwareAddPlusicon.click();
 
 	}
 
 	public void hardwareName(String value) {
-		hardwareName.sendKeys(Keys.ENTER);
-		hardwareName.sendKeys(value);
+		SetInputENterKey(hardwareName, "");
+		SetInput(hardwareName, value, value);
+
+//		hardwareName.sendKeys(Keys.ENTER);
+//		hardwareName.sendKeys(value);
 	}
 
 	public void hardwareDisplayName(String value) {
-		hardwareDisplayName.sendKeys(Keys.ENTER);
-		hardwareDisplayName.sendKeys(value);
+
+		SetInputENterKey(hardwareDisplayName, "");
+		SetInput(hardwareDisplayName, value, value);
+
+//		
+//		hardwareDisplayName.sendKeys(Keys.ENTER);
+//		hardwareDisplayName.sendKeys(value);
 	}
 
 	public void hardwareDescription(String value) {
-		hardwareDescription.sendKeys(Keys.ENTER);
-		hardwareDescription.sendKeys(value);
+		SetInputENterKey(hardwareDescription, "");
+		SetInput(hardwareDescription, value, value);
+
+//		
+//		hardwareDescription.sendKeys(Keys.ENTER);
+//		hardwareDescription.sendKeys(value);
 	}
 
 	public void hardwareModel(String value) {
-		hardwareModel.sendKeys(Keys.ENTER);
-		hardwareModel.sendKeys(value);
+		SetInputENterKey(hardwareModel, "");
+		SetInput(hardwareModel, value, value);
+//		
+//		hardwareModel.sendKeys(Keys.ENTER);
+//		hardwareModel.sendKeys(value);
 	}
 
 	public void hardwareOS(String value) {
-		hardwareOS.sendKeys(Keys.ENTER);
-		hardwareOS.sendKeys(value);
+
+		SetInputENterKey(hardwareOS, "");
+		SetInput(hardwareOS, value, value);
+//		
+//		hardwareOS.sendKeys(Keys.ENTER);
+//		hardwareOS.sendKeys(value);
 	}
 
 	public void hardwareMake(String value) {
-		hardwareMake.sendKeys(Keys.ENTER);
-		hardwareMake.sendKeys(value);
+		SetInputENterKey(hardwareMake, "");
+		SetInput(hardwareMake, value, value);
+
+//		
+//		hardwareMake.sendKeys(Keys.ENTER);
+//		hardwareMake.sendKeys(value);
 	}
 
 	public void hardwareProcessor(String value) {
-		hardwareProcessor.sendKeys(Keys.ENTER);
-		hardwareProcessor.sendKeys(value);
+		SetInputENterKey(hardwareProcessor, "");
+		SetInput(hardwareProcessor, value, value);
+//		
+//		hardwareProcessor.sendKeys(Keys.ENTER);
+//		hardwareProcessor.sendKeys(value);
 	}
-	
+
 	public void hardwareNameSearch(String value) {
-		hardwarenamesearch.sendKeys(Keys.ENTER);
-		hardwarenamesearch.sendKeys(value);
+		SetInputENterKey(hardwarenamesearch, "");
+		SetInput(hardwarenamesearch, value, value);
+
+//		hardwarenamesearch.sendKeys(Keys.ENTER);
+//		hardwarenamesearch.sendKeys(value);
 	}
 
 	public void hardware_tab() throws InterruptedException {
-		Thread.sleep(3000);
-		hardware_tab.click();
+		clickElement(hardware_tab, "");
+		// hardware_tab.click();
 	}
-	
+
 	public void hardwarethreedot() {
-		hardwarethreedot.click();
+		clickElement(hardwarethreedot, "");
+		// hardwarethreedot.click();
 	}
+
 	public void hardwareDisplayNamethreedot() {
-		hardwareDisplayName.click();
+		clickElement(hardwareDisplayName, "");
+		// hardwareDisplayName.click();
 	}
+
 	public void hardwareMakethreedot() {
-		hardwareMakethreedot.click();
+		clickElement(hardwareMakethreedot, "");
+
+		// hardwareMakethreedot.click();
 	}
+
 	public void hardwareProcessorthreedot() {
-		hardwareProcessorthreedot.click();
+		clickElement(hardwareProcessorthreedot, "");
+
+		// hardwareProcessorthreedot.click();
 	}
+
 	public void hardwareosthreedot() {
-		hardwareosthreedot.click();
+		clickElement(hardwareosthreedot, "");
+		// hardwareosthreedot.click();
 	}
-	
+
 	public void hardwareModelthreedot() {
-		hardwareModelthreedot.click();
+		clickElement(hardwareModelthreedot, "");
+		// hardwareModelthreedot.click();
 	}
+
 	public void backDropShowing_Div_Click() {
 		if (backDropShowing != null) {
-			backDropShowing.click();
+			clickElement(backDropShowing, "");
+			// backDropShowing.click();
 		}
 	}
 
 	public void hardwareSavebutton() throws InterruptedException {
 		Thread.sleep(3000);
-		JavascriptExecutor	js = (JavascriptExecutor)driver;
+		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("document.querySelector(\".addButton\").click();");
 		Thread.sleep(6000);
 	}
-	
-	
-	
 
 	public void hardwareDelete() {
-		hardwareDelete.click();
+		clickElement(hardwareDelete, "");
+		// hardwareDelete.click();
 	}
-	public void confirmationYesButton() {
-		 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		WebElement confirmationYesButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),'Yes')]")));
 
-       // Perform a click action on the confirmation Yes button
-       confirmationYesButton.click();
-		
+	public void confirmationYesButton() {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebElement confirmationYesButton = wait
+				.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),'Yes')]")));
+
+		// Perform a click action on the confirmation Yes button
+
+		clickElement(confirmationYesButton, "");
+		// confirmationYesButton.click();
+
 	}
-	
+
 	public void setZoomLevel(int width, int height) {
 		Dimension d = new Dimension(width, height);
 		driver.manage().window().setSize(d);
 	}
+
 	public void refreshlist() {
-		refreshlist.click();
+		clickElement(refreshlist, "");
+		// refreshlist.click();
 	}
 
 	public void confirmationNoButton() {
-		 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-			WebElement confirmationNoButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),'No')]")));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebElement confirmationNoButton = wait
+				.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),'No')]")));
 
-	       // Perform a click action on the confirmation Yes button
-	      
-		confirmationNoButton.click();
+		// Perform a click action on the confirmation Yes button
+		clickElement(confirmationNoButton, "");
+
+		// confirmationNoButton.click();
 	}
 }

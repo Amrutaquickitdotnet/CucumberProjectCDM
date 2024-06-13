@@ -1,6 +1,6 @@
 package com.cdm.pages;
 
-import org.openqa.selenium.JavascriptExecutor;
+
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -38,22 +38,35 @@ public class VolumesListPage extends CommonActions {
 
 	@FindBy(xpath = "//thead/tr[1]/th[1]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]")
 	WebElement VolumeNameThreeDot;
+	
+	@FindBy(xpath = "//thead/tr[1]/th[2]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]")
+	WebElement architectureThreeDot;
 
 	@FindBy(xpath = "//input[@name = 'volumename']")
-	WebElement inputvolumename;
+	WebElement inputvolumenameSearch;
+	
+	@FindBy(xpath = "//input[@name = 'architecture']")
+	WebElement inputarchitectureSearch;
 	
 	
 	public void convertToApplication() {
-		convertToApplication.click();
+		clickElement(convertToApplication, "");
+		//convertToApplication.click();
 	}
 	
 	public void volume_tab() throws InterruptedException {
-		Thread.sleep(3000);
-		volume_tab.click();
+		clickElement(volume_tab, "");
+		//volume_tab.click();
 	}
 
 	public void VolumeNameThreeDot() {
-		VolumeNameThreeDot.click();
+		clickElement(convertToApplication, "");
+		//VolumeNameThreeDot.click();
+	}
+	
+	public void  architectureNameThreeDot() {
+		clickElement(architectureThreeDot, "");
+		//VolumeNameThreeDot.click();
 	}
 
 	public void backDropShowing_Div_Click() {
@@ -63,17 +76,32 @@ public class VolumesListPage extends CommonActions {
 	}
 
 	public void inputvolumename(String value ) {
-		inputvolumename.sendKeys(Keys.ENTER);
-		inputvolumename.sendKeys(value);
+
+		SetInputENterKey(inputvolumenameSearch, value);
+		SetInput(inputvolumenameSearch, value, value);
+		
+//		inputvolumenameSearch.sendKeys(Keys.ENTER);
+//		inputvolumenameSearch.sendKeys(value);
 	}
 
-	public void refreshbutton() {
+	public void inputarchitectureSearch(String value ) {
+
+		SetInputENterKey(inputarchitectureSearch, value);
+		SetInput(inputarchitectureSearch, value, value);
 		
-		refreshbutton.click();
+//		inputvolumenameSearch.sendKeys(Keys.ENTER);
+//		inputvolumenameSearch.sendKeys(value);
+	}
+	
+	
+	public void refreshbutton() {
+		clickElement(refreshbutton, "");
+	//	refreshbutton.click();
 	}
 	
 	public String toastcontainermessage() {
 
+		wait(toastcontainer,logger);
 		String toastcontaineralert = toastcontainer.getAttribute("innerHTML");
 
 		System.out.println("InnerHTML of the element (get_attribute): " + toastcontainer.getAttribute("value"));
@@ -84,7 +112,8 @@ public class VolumesListPage extends CommonActions {
 	}
 	
 	public void editbutton() {
-		editbutton.click();
+		clickElement(editbutton, "");
+		//editbutton.click();
 	}
 
 }

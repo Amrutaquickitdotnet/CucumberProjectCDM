@@ -1,9 +1,6 @@
 package com.cdm.pages;
 
-import java.util.List;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -21,8 +18,6 @@ public class AppGroupsEditPage extends CommonActions {
 
 	}
 	
-	
-
 	@FindBy(xpath = "//input[@formcontrolname='appgroupname']")
 	WebElement appGroupNameEdit;
 	
@@ -34,13 +29,20 @@ public class AppGroupsEditPage extends CommonActions {
 	WebElement saveButton;
 	
 	public void appGroupNameEdit(String value) {
-		appGroupNameEdit.sendKeys(Keys.ENTER);
-		appGroupNameEdit.sendKeys(value);
+		///appGroupNameEdit.sendKeys(Keys.ENTER);
+		//appGroupNameEdit.sendKeys(value);
+		
+		SetInputENterKey(appGroupNameEdit, value);
+		SetInput(appGroupNameEdit, value, value);
 	}
 	
 	public void appGroupDisplayNameEdit(String value) {
-		appGroupDisplayNameEdit.sendKeys(Keys.ENTER);
-		appGroupDisplayNameEdit.sendKeys(value);
+
+		SetInputENterKey(appGroupDisplayNameEdit, value);
+		SetInput(appGroupDisplayNameEdit, value, value);
+//		
+//		appGroupDisplayNameEdit.sendKeys(Keys.ENTER);
+//		appGroupDisplayNameEdit.sendKeys(value);
 	}
 
 	public String removalofEnteredTextForappGroupName() {
@@ -59,7 +61,8 @@ public class AppGroupsEditPage extends CommonActions {
 
 
 	public void saveButton() {
-		saveButton.click();
+		clickElement(saveButton, "");
+//		saveButton.click();
 	}
 
 	

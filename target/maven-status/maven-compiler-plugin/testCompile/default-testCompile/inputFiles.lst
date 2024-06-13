@@ -20,6 +20,7 @@ E:\Devendra\cdm\CDMCucumber\CDMProject\src\test\java\com\cdm\pages\AppGroupsPage
 E:\Devendra\cdm\CDMCucumber\CDMProject\src\test\java\com\cdm\Stepdefinations\RepositoriesSteps.java
 E:\Devendra\cdm\CDMCucumber\CDMProject\src\test\java\com\cdm\pages\ReportsPage.java
 E:\Devendra\cdm\CDMCucumber\CDMProject\src\test\java\com\cdm\pages\VolumesAddPage.java
+E:\Devendra\cdm\CDMCucumber\CDMProject\src\test\java\com\cdm\Stepdefinations\DashboardSteps.java
 E:\Devendra\cdm\CDMCucumber\CDMProject\src\test\java\com\cdm\Stepdefinations\EdgeGroupSteps.java
 E:\Devendra\cdm\CDMCucumber\CDMProject\src\test\java\com\cdm\pages\DeploymentsmodulePage.java
 E:\Devendra\cdm\CDMCucumber\CDMProject\src\test\java\com\cdm\Stepdefinations\ConfigurationSteps.java
@@ -75,7 +76,9 @@ E:\Devendra\cdm\CDMCucumber\CDMProject\src\test\java\com\cdm\pages\VolumesListPa
 E:\Devendra\cdm\CDMCucumber\CDMProject\src\test\java\com\cdm\Stepdefinations\CertificateSteps.java
 E:\Devendra\cdm\CDMCucumber\CDMProject\src\test\java\com\cdm\pages\EdgeGroupAddPage.java
 E:\Devendra\cdm\CDMCucumber\CDMProject\src\test\java\com\cdm\pages\LicensesPage.java
+E:\Devendra\cdm\CDMCucumber\CDMProject\src\test\java\com\cdm\pages\GeneralPage.java
 E:\Devendra\cdm\CDMCucumber\CDMProject\src\test\java\com\cdm\Stepdefinations\LoginPageSteps.java
+E:\Devendra\cdm\CDMCucumber\CDMProject\src\test\java\com\cdm\Stepdefinations\GeneralSteps.java
 E:\Devendra\cdm\CDMCucumber\CDMProject\src\test\java\com\cdm\pages\VolumesEditPage.java
 E:\Devendra\cdm\CDMCucumber\CDMProject\src\test\java\com\cdm\Stepdefinations\EDGEDevicesSteps.java
 E:\Devendra\cdm\CDMCucumber\CDMProject\src\test\java\com\cdm\pages\EdgeGroupsPage.java

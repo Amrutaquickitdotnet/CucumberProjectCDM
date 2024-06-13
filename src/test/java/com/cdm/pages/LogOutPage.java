@@ -34,7 +34,8 @@ public class LogOutPage extends CommonActions {
 	public void profileImage() {
 		Actions act = new Actions(driver);
 		act.moveToElement(profileImage).build().perform();
-		profileImage.click();
+		clickElement(profileImage, "");
+		//profileImage.click();
 	}
 	
 	
@@ -42,7 +43,8 @@ public class LogOutPage extends CommonActions {
 		
 		Actions act = new Actions(driver);
 		act.moveToElement(Logout).build().perform();
-		Logout.click();
+		clickElement(Logout, "");
+		//Logout.click();
 	}
 
 }

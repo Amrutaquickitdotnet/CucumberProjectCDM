@@ -1,5 +1,7 @@
 package com.cdm.pages;
 
+import java.util.Date;
+
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -28,10 +30,14 @@ public class LoginPage extends CommonActions {
 
 	@FindBy(xpath = "//div[contains(text(),'Invalid User Name !')]")
 	WebElement invaliderrormessage;
+
 	
-	@FindBy(xpath="//label[contains(text(),'Username')]")
+
+	
+
+	@FindBy(xpath = "//label[contains(text(),'Username')]")
 	WebElement LoginTitle;
-	
+
 	@FindBy(xpath = "//input[@formcontrolname='username']") // these all are locators
 	WebElement username;
 
@@ -41,12 +47,15 @@ public class LoginPage extends CommonActions {
 	@FindBy(xpath = "//input[@formcontrolname='password']")
 	WebElement password;
 
-	@FindBy(xpath = "//button[normalize-space()='Login']")
+	@FindBy(xpath = "//button/span")
 	WebElement LoginBtn;
 
 	@FindBy(xpath = "//div[contains(text(),'Invalid User Name !')]")
 	WebElement errmsg;
-	
+
+	@FindBy(xpath = "//div[contains(text(),'Invalid User Name !')]")
+	WebElement errmsgpwd;
+
 	@FindBy(xpath = "//body/div[2]/div[2]/div[1]/div[1]/div[1]/button[4]")
 	WebElement logOut;
 
@@ -55,7 +64,7 @@ public class LoginPage extends CommonActions {
 
 	@FindBy(xpath = "//input[@formcontrolname='username']/../div/div")
 	WebElement errmsgusername;
-	
+
 	@FindBy(xpath = "//input[@formcontrolname='password']/../div/div")
 	WebElement errmsgpassword;
 
@@ -71,61 +80,62 @@ public class LoginPage extends CommonActions {
 	@FindBy(xpath = "//span[contains(text(),'Super Admin')]")
 	WebElement SuperAdmin;
 
-	@FindBy(xpath = "//button[contains(text(),'Login')]")
-	WebElement loginbuttonHome;
 	
-	@FindBy(xpath ="//div[contains(text(),'Invalid User Name !')]")
+
+	@FindBy(xpath = "//div[contains(text(),'Invalid User Name !')]")
 	WebElement invalidUserName;
 
 	public void initializeWebDriver(String browser) {
-		
-		 switch (browser.toLowerCase()) {
-         case "chrome":
-        	 driver = new ChromeDriver();
-             break;
-         case "firefox":
-        	 driver = new FirefoxDriver();
-             break;
-         case "safari":
-        	 driver = new SafariDriver();
-             break;
-         default:
-             throw new IllegalArgumentException("Invalid browser specified: " + browser);
-		 }
+
+		switch (browser.toLowerCase()) {
+		case "chrome":
+			driver = new ChromeDriver();
+			break;
+		case "firefox":
+			driver = new FirefoxDriver();
+			break;
+		case "safari":
+			driver = new SafariDriver();
+			break;
+		default:
+			throw new IllegalArgumentException("Invalid browser specified: " + browser);
+		}
 		// You can add more browsers based on your requirements
 	}
-	
-	 public WebElement getUsernameField() {
-	        return username;
-	    }
 
-	 public WebElement hasTitleElement() {
-		
-			return LoginTitle;
-		}
-	
-	    public WebElement getPasswordField() {
-	        return password;
-	    }
-	
-	 public int getUsernameFieldLength() {
+	public WebElement getUsernameField() {
+		return username;
+	}
+
+	public WebElement hasTitleElement() {
+
+		return LoginTitle;
+	}
+
+	public WebElement getPasswordField() {
+		return password;
+	}
+
+	public int getUsernameFieldLength() {
 		return username.getText().length();
-	     
-	    }
 
-	 public int getPasswordFieldLength() {
-	        return password.getAttribute("value").length();
-	    }
-	 
+	}
+
+	public int getPasswordFieldLength() {
+		return password.getAttribute("value").length();
+	}
+
 	public void pressEnterKey() {
-		password.sendKeys(Keys.ENTER);
+		SetInputENterKey(password,"");
+		
+		//password.sendKeys(Keys.ENTER);
 	}
 
 	public String verifyTitle() {
-		if(LoginTitle==null) {
+		if (LoginTitle == null) {
 			return "";
 		}
-		
+
 		return LoginTitle.getText();
 	}
 
@@ -138,11 +148,10 @@ public class LoginPage extends CommonActions {
 		System.out.println("Time taken to log in: " + loginTime + " milliseconds");
 
 	}
-	
+
 	public boolean isInputFieldVisible() {
-        return username.isDisplayed();
-    }
-    
+		return username.isDisplayed();
+	}
 
 	public void enterCredentials(String uname, String pwd) {
 
@@ -152,39 +161,48 @@ public class LoginPage extends CommonActions {
 
 	public void clickLoginButton() {
 
-		LoginBtn.click();
+		clickElement(LoginBtn, "");
+		// LoginBtn.click();
 	}
 
 	public void profileIcon() {
-		profileIcon.click();
+		clickElement(profileIcon, "");
+		// profileIcon.click();
 	}
 
 	public void SuperAdmin() {
-		SuperAdmin.click();
+		clickElement(SuperAdmin, "");
+		// SuperAdmin.click();
 	}
 
 	public void enteruserid(String value) {
-		username.sendKeys(Keys.ENTER);
-		username.sendKeys(value);
+//		username.sendKeys(Keys.ENTER);
+//		username.sendKeys(value);
+		
+		SetInputENterKey(username,"");
+		SetInput(username, value, value);
 	}
 
 	public void enterpwd(String value) {
-		password.sendKeys(Keys.ENTER);
-		password.sendKeys(value);
+		
+		SetInputENterKey(password,"");
+		SetInput(password, value, value);
+//		password.sendKeys(Keys.ENTER);
+//		password.sendKeys(value);
 	}
 
 	public void clickshowpwd() {
-		showpasswordicon.click();
+		clickElement(showpasswordicon, "");
+		//showpasswordicon.click();
 	}
 
 	public void clickLogin() {
-		LoginBtn.click();
+		clickElement(LoginBtn, "");
+		// LoginBtn.click();
 	}
 
 	public void login(String uid, String pass) {
-		System.out.println("Login started");
-		System.out.println(uid);
-		System.out.println(pass);
+		
 		SetInput(username, uid, uid + " has been entered into username field");
 		SetInput(password, pass, pass + " has been entered into password field");
 		clickElement(LoginBtn, "Login button clicked");
@@ -194,6 +212,7 @@ public class LoginPage extends CommonActions {
 	public String verifyErrorMsg() {
 		return errmsg.getText();
 	}
+
 	public String verifyErrorMsgforLogin() {
 		return invalidUserName.getText();
 	}
@@ -249,6 +268,7 @@ public class LoginPage extends CommonActions {
 	public void enterCredentialsLogin(String username, String password) {
 		getUsernameInput().sendKeys(username);
 		getPasswordInput().sendKeys(password);
+	
 
 	}
 
@@ -260,7 +280,7 @@ public class LoginPage extends CommonActions {
 
 	public String get_validationmessageusername() {
 
-		wait(errmsgusername,logger);
+		wait(errmsgusername, logger);
 		if (errmsgusername == null) {
 			return "";
 		}
@@ -268,10 +288,10 @@ public class LoginPage extends CommonActions {
 
 		return message.trim();
 	}
-	
+
 	public String get_validationmessagepassword() {
 
-		wait(errmsgpassword,logger);
+		wait(errmsgpassword, logger);
 		if (errmsgpassword == null) {
 			return "";
 		}
@@ -279,10 +299,9 @@ public class LoginPage extends CommonActions {
 
 		return message.trim();
 	}
-	
+
 	public String get_invaliduserName() {
 
-		
 		if (invaliderrormessage == null) {
 			return "";
 		}
@@ -291,36 +310,34 @@ public class LoginPage extends CommonActions {
 		return message.trim();
 	}
 
-	public void loginbuttonHome() {
-		loginbuttonHome.click();
-
-	}
 	
-	public WebElement getLoginButton() {
-        return loginbuttonHome;
-    }
-
 	public void setUsernameFieldLength(String userId) {
 		username.sendKeys(userId);
-		
+
 	}
-	
+
 	public void logout() {
-		logOut.click();
+		clickElement(logOut, "");
+		// logOut.click();
 	}
 
 	public String getUsernameFieldValue() {
-		LoginPage lp = new LoginPage(driver, logger);          
-        WebElement usernameField = lp.getUsernameInput();
-        return usernameField.getAttribute("value");
-    }
+		LoginPage lp = new LoginPage(driver, logger);
+		WebElement usernameField = lp.getUsernameInput();
+		return usernameField.getAttribute("value");
+	}
 
-    // Method to get the value of the password field
-    public String getPasswordFieldValue() {
-    	
-    	LoginPage lp = new LoginPage(driver, logger);          
-        WebElement passwordField = lp.getPasswordInput();
-       
-        return passwordField.getAttribute("value");
-    }
+	// Method to get the value of the password field
+	public String getPasswordFieldValue() {
+
+		LoginPage lp = new LoginPage(driver, logger);
+		WebElement passwordField = lp.getPasswordInput();
+
+		return passwordField.getAttribute("value");
+	}
+
+	
+
+	
+	
 }

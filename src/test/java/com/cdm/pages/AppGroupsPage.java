@@ -1,6 +1,5 @@
 package com.cdm.pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -8,8 +7,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.aventstack.extentreports.ExtentTest;
 import com.cdm.common.CommonActions;
@@ -21,81 +18,68 @@ public class AppGroupsPage extends CommonActions {
 		PageFactory.initElements(driver, this);
 
 	}
-	
-	
-	
-	
+
 	@FindBy(xpath = "(//input[@name= 'options'])[1]")
 
 	WebElement statusActiveCheckbox;
-	
+
 	@FindBy(css = ".cdk-overlay-container")
 	WebElement EditToolTip;
 
 	@FindBy(css = ".cdk-overlay-container")
 	WebElement DeleteToolTip;
-	
+
 	@FindBy(css = ".cdk-overlay-container")
 	WebElement addApplicationToolTip;
-	
+
 	@FindBy(xpath = "//input[@id='csv']")
 	WebElement uploadfile;
-	
+
 	@FindBy(xpath = "(//input[@name= 'options'])[2]")
 
 	WebElement statusinActiveCheckbox;
-	
 
 	@FindBy(xpath = "//app-filter[@name ='isActive']")
 	WebElement statusThreeDot;
 
 	@FindBy(xpath = "//thead/tr[1]/th[2]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]")
 	WebElement appDisplayNameThreeDot;
-	
+
 	@FindBy(xpath = "//thead/tr[1]/th[1]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]")
 	WebElement appNameThreeDot;
-	
+
 	@FindBy(xpath = "//div[@class='tableCard']/div/div/img[4]")
 	WebElement bulkdownloadButton;
-	
-	
-	
+
 	@FindBy(xpath = "//input[@name='appgroupname']")
 	WebElement appNameSearch;
-	
-	
+
 	@FindBy(xpath = "//input[@name='displayname']")
 	WebElement appGroupNameSearch;
-	
-	
+
 	@FindBy(xpath = "//div[@class='tableCard']/div/div/img[3]")
 	WebElement bulkUploadButton;
-	
-	
+
 	@FindBy(xpath = "//span[contains(text(),'Upload')]")
 	WebElement bulkUploadButtonSucess;
 
 	@FindBy(xpath = "//tbody/tr[1]/td[4]/img[2]")
 	WebElement deleteIcon;
-	
+
 	@FindBy(xpath = "//body/div[3]/div[2]/div[1]/mat-dialog-container[1]/app-confirmationdelete[1]/div[1]/mat-dialog-actions[1]/button[1]")
 	WebElement confirmationYesButton;
-	
-	
-	@FindBy(xpath = "//tbody/tr[1]/td[4]/i[1]")
+
+	@FindBy(xpath = "//body/app-root[1]/app-root[1]/app-home[1]/mat-sidenav-container[1]/mat-sidenav-content[1]/div[2]/div[1]/app-appgroup[1]/div[1]/div[1]/div[1]/img[2]")
 	WebElement addApplicationButton;
-	
+
 	@FindBy(xpath = "//button[contains(text(),'Cancel')]")
 	WebElement cancelButton;
-
-	
 
 	@FindBy(css = ".cdk-overlay-backdrop-showing")
 	WebElement backDropShowing;
 
 	@FindBy(xpath = "//input[@formcontrolname='appgroupname']")
 	WebElement appGroupNameInput;
-
 
 	@FindBy(xpath = "//input[@formcontrolname='displayname']")
 	WebElement appGroupDisplayNameEnterData;
@@ -111,32 +95,38 @@ public class AppGroupsPage extends CommonActions {
 
 	@FindBy(xpath = "//mat-sidenav-container/mat-sidenav/div/mat-nav-list/ul/li[7]/a/span")
 	WebElement moveAppGroup;
-	
-	//tbody/tr[1]/td[4]/img[1]
+
+	// tbody/tr[1]/td[4]/img[1]
 	@FindBy(xpath = "//tbody/tr[1]/td[4]/img[1]")
 	WebElement editButton;
-	
+
 	@FindBy(xpath = "//tbody/tr[1]/td[4]/img[2]")
 	WebElement deleteButton;
 
 	public void movetoAppGroup() {
-		moveAppGroup.click();
+		wait(moveAppGroup, logger);
+		clickElement(moveAppGroup, "");
+		// moveAppGroup.click();
 	}
 
 	public void checktitle(String exp) {
 		verifyTitle(exp);
 	}
 
-	
-
 	public void appGroupNameInput(String value) {
-		appGroupNameInput.sendKeys(Keys.ENTER);
-		appGroupNameInput.sendKeys(value);
+//		appGroupNameInput.sendKeys(Keys.ENTER);
+//		appGroupNameInput.sendKeys(value);
+		
+		SetInputENterKey(appGroupNameInput,"");
+		SetInput(appGroupNameInput, value, value);
 	}
 
 	public void appGroupDisplayNameInput(String value) {
-		appGroupDisplayNameInput.sendKeys(Keys.ENTER);
-		appGroupDisplayNameInput.sendKeys(value);
+//		appGroupDisplayNameInput.sendKeys(Keys.ENTER);
+//		appGroupDisplayNameInput.sendKeys(value);
+		
+		SetInputENterKey(appGroupDisplayNameInput,"");
+		SetInput(appGroupDisplayNameInput, value, value);
 	}
 
 	public void backDropShowing_Div_Click() {
@@ -146,74 +136,84 @@ public class AppGroupsPage extends CommonActions {
 	}
 
 	public void addButtonAppGroup() {
-		addButtonAppGroup.click();
+		clickElement(addButtonAppGroup,"");
+		//addButtonAppGroup.click();
 	}
-
-	
 
 	public void appGroupDisplayNameEnterData(String value) {
-		appGroupDisplayNameEnterData.sendKeys(Keys.ENTER);
-		appGroupDisplayNameEnterData.sendKeys(value);
+//		appGroupDisplayNameEnterData.sendKeys(Keys.ENTER);
+//		appGroupDisplayNameEnterData.sendKeys(value);
+		
+		SetInputENterKey(appGroupDisplayNameEnterData,"");
+		SetInput(appGroupDisplayNameEnterData, value, value);
 	}
 
-
-
 	public void saveButton() {
-		JavascriptExecutor	js = (JavascriptExecutor)driver;
+		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("document.querySelector(\".addButton\").click();");
-		}
-	
+	}
 
 	public void deleteButton() {
-		deleteIcon.click();
+
+		// deleteIcon.click();
 	}
 
 	public void editButton() {
-		editButton.click();
+		clickElement(editButton, "");
+		// editButton.click();
 	}
 
 	public void statusThreeDot() {
-		statusThreeDot.click();
+		clickElement(statusThreeDot, "");
+		// statusThreeDot.click();
 	}
-	
-	public void statusActiveCheckbox() {
-		statusActiveCheckbox.click();
-	}
-	
-	public void statusinActiveCheckbox() {
-		statusinActiveCheckbox.click();
-	}
-	
 
-	
-		
+	public void statusActiveCheckbox() {
+		clickElement(statusActiveCheckbox, "");
+		// statusActiveCheckbox.click();
+	}
+
+	public void statusinActiveCheckbox() {
+		clickElement(statusinActiveCheckbox, "");
+		// statusinActiveCheckbox.click();
+	}
+
 	public void setZoomLevel(int width, int height) {
 		Dimension d = new Dimension(width, height);
 		driver.manage().window().setSize(d);
 	}
 
 	public void cancelButton() {
-		cancelButton.click();
-		
+		clickElement(cancelButton, "");
+		// cancelButton.click();
+
 	}
+
 	public void appNameThreeDot() {
-		appNameThreeDot.click();
+		clickElement(appNameThreeDot, "");
+		// appNameThreeDot.click();
 	}
+
 	public void appDisplayNameThreeDot() {
-		appDisplayNameThreeDot.click();
+		clickElement(appDisplayNameThreeDot, "");
+		// appDisplayNameThreeDot.click();
 	}
 
 	public void bulkdownloadButton() {
-		bulkdownloadButton.click();
-		
+		clickElement(bulkdownloadButton, "");
+		// bulkdownloadButton.click();
+
 	}
+
 	public void bulkUploadButtonSucess() {
-		bulkUploadButtonSucess.click();
-	
-		
+		clickElement(bulkUploadButtonSucess, "");
+		// bulkUploadButtonSucess.click();
+
 	}
+
 	public void bulkUploadButton() {
-	bulkUploadButton.click();
+		clickElement(bulkUploadButton, "");
+		bulkUploadButton.click();
 	}
 
 	public String get_Text_ToolTipforEditButton() {
@@ -224,10 +224,9 @@ public class AppGroupsPage extends CommonActions {
 		EditToolTipText.trim();
 
 		return EditToolTipText;
-		
+
 	}
-	
-	
+
 	public String get_Text_ToolTipforDeleteButton() {
 		mouseHover(deleteButton);
 
@@ -236,10 +235,11 @@ public class AppGroupsPage extends CommonActions {
 		DeleteToolTipText.trim();
 
 		return DeleteToolTipText;
-		
+
 	}
-	
+
 	public String get_Text_ToolTipforAddApplications() {
+		wait(addApplicationButton, logger);
 		mouseHover(addApplicationButton);
 
 		String addApplicationToolTipText = addApplicationToolTip.getText();
@@ -247,36 +247,52 @@ public class AppGroupsPage extends CommonActions {
 		addApplicationToolTipText.trim();
 
 		return addApplicationToolTipText;
-		
+
 	}
-	
+
 	public void uploadFileTask(String filePath) throws InterruptedException {
-       uploadfile.sendKeys(filePath);
-       Thread.sleep(4000);
-    }
-	public void uploadfile () throws InterruptedException {
-		JavascriptExecutor	js = (JavascriptExecutor)driver;
-		
+		uploadfile.sendKeys(filePath);
+		Thread.sleep(4000);
+	}
+
+	public void uploadfile() throws InterruptedException {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+
 		js.executeScript("document.querySelector('#csv').click();");
 	}
+
 	public void uploadfile(String value) {
-		uploadfile.sendKeys(Keys.ENTER);
-		uploadfile.sendKeys(value);
+//		uploadfile.sendKeys(Keys.ENTER);
+//		uploadfile.sendKeys(value);
+		
+		SetInputENterKey(uploadfile,"");
+		SetInput(uploadfile, value, value);
 	}
+
 	public void confirmationYesDeleteButton() {
 
-		confirmationYesButton.click();
+		clickElement(confirmationYesButton, "");
+		//confirmationYesButton.click();
 	}
-	
+
 	public void appNameSearch(String value) {
-		appNameSearch.sendKeys(Keys.ENTER);
-		appNameSearch.sendKeys(value);
+//		appNameSearch.sendKeys(Keys.ENTER);
+//		appNameSearch.sendKeys(value);
+		SetInputENterKey(appNameSearch,"");
+		SetInput(appNameSearch, value, value);
 	}
-	
-	
+
 	public void appGroupNameSearch(String value) {
-		appGroupNameSearch.sendKeys(Keys.ENTER);
-		appGroupNameSearch.sendKeys(value);
+//		appGroupNameSearch.sendKeys(Keys.ENTER);
+//		appGroupNameSearch.sendKeys(value);
+		
+		SetInputENterKey(appGroupNameSearch,"");
+		SetInput(appGroupNameSearch, value, value);
 	}
-	
+
+	public void switchingtab() {
+		appGroupNameInput.sendKeys(Keys.TAB);
+		
 	}
+
+}

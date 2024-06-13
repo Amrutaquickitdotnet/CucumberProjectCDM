@@ -1,10 +1,6 @@
 package com.cdm.pages;
 
-import java.util.Arrays;
-import java.util.List;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -47,8 +43,10 @@ public class AlertsAcknowledgePage extends CommonActions {
 	WebElement submitbuttonforRemark;
 	
 	public void remarkInput(String value) {
-		remarkInput.sendKeys(Keys.ENTER);
-		remarkInput.sendKeys(value);
+//		remarkInput.sendKeys(Keys.ENTER);
+//		remarkInput.sendKeys(value);
+		SetInputENterKey(remarkInput, value);
+		SetInput(remarkInput, value, value);
 	}
 
 	
@@ -67,17 +65,21 @@ public class AlertsAcknowledgePage extends CommonActions {
 	}
 	public void completeButton() throws InterruptedException {
 		
-		completeButton.click();
+		//completeButton.click();
+		
+		clickElement(completeButton, "");
 	
 		Thread.sleep(3000);
 	}
 	
 	
 	public void addRemarksforAcknowledgement() {
-		addRemarksforAcknowledgement.click();
+		//addRemarksforAcknowledgement.click();
+		clickElement(addRemarksforAcknowledgement, "");
 	}
 	public void submitbuttonforRemark() {
-		submitbuttonforRemark.click();
+		//submitbuttonforRemark.click();
+		clickElement(submitbuttonforRemark, "");
 	}
 
 }

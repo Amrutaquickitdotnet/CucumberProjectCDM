@@ -1,6 +1,7 @@
 package com.cdm.pages;
 
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -18,8 +19,16 @@ public class NotificationsPage extends CommonActions {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath = "//ul[@class='nav']/li[5]")
-	WebElement Notification_tab;
+	
+	
+	
+
+	@FindBy(xpath = "//td[contains(text(),'License Expiry')]")
+	WebElement licenseVisibility;
+
+	
+	@FindBy(xpath = "//a[contains(text(),'Notifications')]")
+	WebElement Notificationtab;
 
 	@FindBy(xpath = "//thead/tr[1]/th[1]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]")
 	WebElement notificationnameThreeDot;
@@ -42,27 +51,44 @@ public class NotificationsPage extends CommonActions {
 	}
 
 	public void Notification_tab() {
-		Notification_tab.click();
+	
+		wait(Notificationtab,logger);
+		clickElement(Notificationtab, "");
+		
 	}
-
 	public void notificationnameThreeDot() {
-		notificationnameThreeDot.click();
+		clickElement(notificationnameThreeDot, "");
+		//notificationnameThreeDot.click();
 
 	}
 
 	public void notificationnamesearchinput(String value) {
-
-		notificationnamesearchinput.sendKeys(Keys.ENTER);
-		notificationnamesearchinput.sendKeys(value);
+		SetInputENterKey(notificationnamesearchinput,"");
+		SetInput(notificationnamesearchinput, value, value);
+		
+//		notificationnamesearchinput.sendKeys(Keys.ENTER);
+//		notificationnamesearchinput.sendKeys(value);
 	}
 
 	public void backDropShowing_Div_Click() {
 		if (backDropShowing != null) {
-			backDropShowing.click();
+			clickElement(backDropShowing, "");
+			//backDropShowing.click();
 		}
 	}
 
 	public void addUserGroupMapping() {
-		addUserGroupMapping.click();
+		clickElement(addUserGroupMapping, "");
+		//addUserGroupMapping.click();
+	}
+
+	public void licenseExpiryVisibility() {
+		if (licenseVisibility.isDisplayed()){
+            System.out.println("Element is visible!");
+        } else {
+            System.out.println("Element is not visible!");
+        }
+		
+		
 	}
 }

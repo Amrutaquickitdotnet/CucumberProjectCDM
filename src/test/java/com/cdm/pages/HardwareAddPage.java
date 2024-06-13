@@ -104,57 +104,80 @@ public class HardwareAddPage extends CommonActions {
 	WebElement saveAddDataBtn;
 
 	public void hardwareAddPlusicon() {
-		hardwareAddPlusicon.click();
+		clickElement(hardwareAddPlusicon, "");
+		//hardwareAddPlusicon.click();
 
 	}
 
 	public void hardwareName(String value) {
-		hardwareName.sendKeys(Keys.ENTER);
-		hardwareName.sendKeys(value);
+		SetInputENterKey(hardwareName,"");
+		SetInput(hardwareName, value, value);
+//		hardwareName.sendKeys(Keys.ENTER);
+//		hardwareName.sendKeys(value);
 	}
 
 	public void hardwareDisplayName(String value) {
-		hardwareDisplayName.sendKeys(Keys.ENTER);
-		hardwareDisplayName.sendKeys(value);
+		SetInputENterKey(hardwareDisplayName,"");
+		SetInput(hardwareDisplayName, value, value);
+//		hardwareDisplayName.sendKeys(Keys.ENTER);
+//		hardwareDisplayName.sendKeys(value);
 	}
 
 	public void hardwareDescription(String value) {
-		hardwareDescription.sendKeys(Keys.ENTER);
-		hardwareDescription.sendKeys(value);
+		SetInputENterKey(hardwareDescription,"");
+		SetInput(hardwareDescription, value, value);
+//		
+//		hardwareDescription.sendKeys(Keys.ENTER);
+//		hardwareDescription.sendKeys(value);
 	}
 
 	public void hardwareModel(String value) {
-		hardwareModel.sendKeys(Keys.ENTER);
-		hardwareModel.sendKeys(value);
+		SetInputENterKey(hardwareModel,"");
+		SetInput(hardwareModel, value, value);
+//		hardwareModel.sendKeys(Keys.ENTER);
+//		hardwareModel.sendKeys(value);
 	}
 
 	public void hardwareOS(String value) {
-		hardwareOS.sendKeys(Keys.ENTER);
-		hardwareOS.sendKeys(value);
+		SetInputENterKey(hardwareOS,"");
+		SetInput(hardwareOS, value, value);
+//		hardwareOS.sendKeys(Keys.ENTER);
+//		hardwareOS.sendKeys(value);
 	}
 
 	public void hardwareMake(String value) {
-		hardwareMake.sendKeys(Keys.ENTER);
-		hardwareMake.sendKeys(value);
+		
+		SetInputENterKey(hardwareMake,"");
+		SetInput(hardwareMake, value, value);
+//		
+//		hardwareMake.sendKeys(Keys.ENTER);
+//		hardwareMake.sendKeys(value);
 	}
 
 	public void hardwareProcessor(String value) {
-		hardwareProcessor.sendKeys(Keys.ENTER);
-		hardwareProcessor.sendKeys(value);
+		SetInputENterKey(hardwareProcessor,"");
+		SetInput(hardwareProcessor, value, value);
+		
+//		hardwareProcessor.sendKeys(Keys.ENTER);
+//		hardwareProcessor.sendKeys(value);
 	}
 
 	public void hardwareNameSearch(String value) {
-		hardwarenamesearch.sendKeys(Keys.ENTER);
-		hardwarenamesearch.sendKeys(value);
+		SetInputENterKey(hardwarenamesearch,"");
+		SetInput(hardwarenamesearch, value, value);
+		
+//		hardwarenamesearch.sendKeys(Keys.ENTER);
+//		hardwarenamesearch.sendKeys(value);
 	}
 
 	public void hardware_tab() throws InterruptedException {
-		Thread.sleep(3000);
-		hardware_tab.click();
+	clickElement(hardware_tab, "");
+		//hardware_tab.click();
 	}
 
 	public void hardwarethreedot() {
-		hardwarethreedot.click();
+		clickElement(hardwarethreedot, "");
+		//hardwarethreedot.click();
 	}
 
 	public void backDropShowing_Div_Click() {
@@ -167,11 +190,12 @@ public class HardwareAddPage extends CommonActions {
 		Thread.sleep(3000);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("document.querySelector(\".addButton\").click();");
-		Thread.sleep(6000);
+		
 	}
 
 	public void hardwareDelete() {
-		hardwareDelete.click();
+		clickElement(hardwareDelete, "");
+		//hardwareDelete.click();
 	}
 
 	public void confirmationYesButton() {
@@ -179,8 +203,10 @@ public class HardwareAddPage extends CommonActions {
 		WebElement confirmationYesButton = wait
 				.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),'Yes')]")));
 
+		clickElement(confirmationYesButton, "");
+		
 		// Perform a click action on the confirmation Yes button
-		confirmationYesButton.click();
+		//confirmationYesButton.click();
 
 	}
 
@@ -263,20 +289,23 @@ public class HardwareAddPage extends CommonActions {
 	}
 
 	public void belliconClick() {
-		
-		bellIcon.click();
+		clickElement(bellIcon, "");
+		//bellIcon.click();
 	}
 
 	public void profileIconClick() {
-		profileIcon.click();
+		clickElement(profileIcon, "");
+		//profileIcon.click();
 		
 	}
 	
 	public void expandtoggle() {
-		expandtoggle.click();
+		clickElement(expandtoggle, "");
+		//expandtoggle.click();
 	}
 	
 	public void collapseToggle() {
-		collapseToggle.click();
+		clickElement(collapseToggle, "");
+		//collapseToggle.click();
 	}
 }

@@ -1,12 +1,14 @@
 package com.cdm.Stepdefinations;
 
 import java.util.Collection;
+import java.util.Date;
 import java.util.Iterator;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 
+import com.cdm.pages.HomePage;
 import com.cdm.pages.LoginPage;
 
 import io.cucumber.java.After;
@@ -38,11 +40,9 @@ public class Common extends BaseTest {
 
 	@After
 	public void savereport() {
-		// T=
-
-		// logger.addScreenCaptureFromBase64String(tagName);
+		
 		extent.flush();
-		driver.close();
+		//driver.close();
 		driver.quit();
 		driver=null;
 	}
@@ -51,14 +51,16 @@ public class Common extends BaseTest {
 	public void user_launch_application_in_chrome_browser() {
 
 		driver.get(prop.getProperty("AppUrl") + alldata.get(vTCName).get("Url"));
-		LoginPage lp = new LoginPage(driver, logger); // object creation()		
-		lp.loginbuttonHome(); 
+		HomePage home = new HomePage(driver, logger); // object creation()		
+//		home.loginbuttonHomeFun(); 
+		
 	}
 
 	@When("user enters credentials and click on login button")
+	
 	public void user_enters_credentials_and_click_on_login_button() throws InterruptedException {
 		LoginPage lp = new LoginPage(driver, logger); // object creation()
-		lp.clickLoginButton(); 
+		
 		lp.login(alldata.get(vTCName).get("Userid"), alldata.get(vTCName).get("Password"));
 		
 	}

@@ -2,7 +2,6 @@ package com.cdm.pages;
 
 
 
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -55,48 +54,76 @@ public class HardwareEditPage extends CommonActions {
 	WebElement hardwarenamesearch;
 	
 	public void hardwareEditButton() {
-		hardwareEditButton.click();
+		clickElement(hardwareEditButton, "");
+		//hardwareEditButton.click();
 
 	}
 
 	public void hardwareNameEdit(String value) {
-		hardwareNameEdit.sendKeys(Keys.ENTER);
-		hardwareNameEdit.sendKeys(value);
+		SetInputENterKey(hardwareNameEdit,"");
+		SetInput(hardwareNameEdit, value, value);
+		
+		
+//		hardwareNameEdit.sendKeys(Keys.ENTER);
+//		hardwareNameEdit.sendKeys(value);
 	}
 
 	public void hardwareDisplayNameEdit(String value) {
-		hardwareDisplayNameEdit.sendKeys(Keys.ENTER);
-		hardwareDisplayNameEdit.sendKeys(value);
+		
+		SetInputENterKey(hardwareDisplayNameEdit,"");
+		SetInput(hardwareDisplayNameEdit, value, value);
+		
+//		hardwareDisplayNameEdit.sendKeys(Keys.ENTER);
+//		hardwareDisplayNameEdit.sendKeys(value);
 	}
 
 	public void hardwareDescriptionEdit(String value) {
-		hardwareDescriptionEdit.sendKeys(Keys.ENTER);
-		hardwareDescriptionEdit.sendKeys(value);
+		SetInputENterKey(hardwareDescriptionEdit,"");
+		SetInput(hardwareDescriptionEdit, value, value);
+//		hardwareDescriptionEdit.sendKeys(Keys.ENTER);
+//		hardwareDescriptionEdit.sendKeys(value);
 	}
 
 	public void hardwareModelEdit(String value) {
-		hardwareModelEdit.sendKeys(Keys.ENTER);
-		hardwareModelEdit.sendKeys(value);
+		
+		SetInputENterKey(hardwareModelEdit,"");
+		SetInput(hardwareModelEdit, value, value);
+		
+		
+//		hardwareModelEdit.sendKeys(Keys.ENTER);
+//		hardwareModelEdit.sendKeys(value);
 	}
 
 	public void hardwareOSEdit(String value) {
-		hardwareOSEdit.sendKeys(Keys.ENTER);
-		hardwareOSEdit.sendKeys(value);
+		SetInputENterKey(hardwareOSEdit,"");
+		SetInput(hardwareOSEdit, value, value);
+		
+//		hardwareOSEdit.sendKeys(Keys.ENTER);
+//		hardwareOSEdit.sendKeys(value);
 	}
 
 	public void hardwareMakeEdit(String value) {
-		hardwareMakeEdit.sendKeys(Keys.ENTER);
-		hardwareMakeEdit.sendKeys(value);
+		SetInputENterKey(hardwareMakeEdit,"");
+		SetInput(hardwareMakeEdit, value, value);
+		
+//		hardwareMakeEdit.sendKeys(Keys.ENTER);
+//		hardwareMakeEdit.sendKeys(value);
 	}
 
 	public void hardwareProcessorEdit(String value) {
-		hardwareProcessorEdit.sendKeys(Keys.ENTER);
-		hardwareProcessorEdit.sendKeys(value);
+		SetInputENterKey(hardwareProcessorEdit,"");
+		SetInput(hardwareProcessorEdit, value, value);
+//		
+//		hardwareProcessorEdit.sendKeys(Keys.ENTER);
+//		hardwareProcessorEdit.sendKeys(value);
 	}
 	
 	public void hardwareNameSearch(String value) {
-		hardwarenamesearch.sendKeys(Keys.ENTER);
-		hardwarenamesearch.sendKeys(value);
+		SetInputENterKey(hardwarenamesearch,"");
+		SetInput(hardwarenamesearch, value, value);
+//		
+//		hardwarenamesearch.sendKeys(Keys.ENTER);
+//		hardwarenamesearch.sendKeys(value);
 	}
 	public String removalofEnteredTextForhardwareDescriptionEdit() {
 
@@ -136,8 +163,9 @@ public class HardwareEditPage extends CommonActions {
 	}
 	
 	public void saveEditHardware() throws InterruptedException {
+		clickElement(saveEditHardware, "");
 		saveEditHardware.click();
-		Thread.sleep(4000);
+		
 	}
 
 }

@@ -84,7 +84,7 @@ public class AppsPage extends CommonActions {
 	WebElement viewVolumeDetails;
 	
 
-	@FindBy(xpath = "//tbody/tr[1]/td[5]/div[1]/img[2]")
+	@FindBy(xpath = "//tbody/tr[1]/td[5]/img[2]")
 	WebElement editButtonConfig;
 
 	
@@ -104,59 +104,79 @@ public class AppsPage extends CommonActions {
 	
 
 	public void applicationName(String value) {
-		applicationName.sendKeys(Keys.ENTER);
-		applicationName.sendKeys(value);
+//		applicationName.sendKeys(Keys.ENTER);
+//		applicationName.sendKeys(value);
+		
+		SetInputENterKey(applicationName, value);
+		SetInput(applicationName, value, value);
 	}
 
 	public void architecture(String value) {
-		architecture.sendKeys(Keys.ENTER);
-		architecture.sendKeys(value);
+		
+		SetInputENterKey(architecture, value);
+		SetInput(architecture, value, value);
+		
+//		architecture.sendKeys(Keys.ENTER);
+//		architecture.sendKeys(value);
 	}
 
 	public void versionTag(String value) {
-		versionTag.sendKeys(Keys.ENTER);
-		versionTag.sendKeys(value);
+		
+		SetInputENterKey(versionTag, value);
+		SetInput(versionTag, value, value);
+		
+//		versionTag.sendKeys(Keys.ENTER);
+//		versionTag.sendKeys(value);
 	}
 
 	
 
 	public void Apps_tab() throws InterruptedException {
-		Thread.sleep(3000);
-		App_tab.click();
+		
+		clickElement(App_tab,"");
+		//App_tab.click();
 	}
 	
 	public void applicationthreedot() {
-		applicationthreedot.click();
+		clickElement(applicationthreedot,"");
+		//applicationthreedot.click();
 	}
 	public void architecturethreedot() {
-		architecturethreedot.click();
+		clickElement(architecturethreedot,"");
+		//architecturethreedot.click();
 	}
 	public void versionThreeDot() {
-		versionThreeDot.click();
+		clickElement(versionThreeDot,"");
+		//versionThreeDot.click();
 	}
 	
 	public void backDropShowing_Div_Click() {
 		if (backDropShowing != null) {
-			backDropShowing.click();
+			clickElement(backDropShowing,"");
+			//backDropShowing.click();
 		}
 	}
 
 
 
 	public void inactivecrossbar() {
-		inActiveIcon.click();
+		clickElement(inActiveIcon,"");
+		//inActiveIcon.click();
 	}
 	
 	public void viewVolumeDetails() {
-		viewVolumeDetails.click();
+		clickElement(viewVolumeDetails,"");
+		//viewVolumeDetails.click();
 	}
 	public void confirmationYesButton() {
 		 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		WebElement confirmationYesButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),'Yes')]")));
 		WebElement confirmationNoButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),'No')]")));
        // Perform a click action on the confirmation Yes button
-      // confirmationYesButton.click();
-       confirmationNoButton.click();
+		//clickElement(confirmationYesButton, "");
+      // .click();
+		clickElement(confirmationNoButton, "");
+      // confirmationNoButton.click();
 		
 	}
 	
@@ -165,7 +185,8 @@ public class AppsPage extends CommonActions {
 		driver.manage().window().setSize(d);
 	}
 	public void refreshlist() {
-		refreshlist.click();
+		clickElement(refreshlist, "");
+		//refreshlist.click();
 	}
 
 	public String get_Text_ToolTipStatus() {
@@ -179,7 +200,9 @@ public class AppsPage extends CommonActions {
 	}
 	
 	public void editButtonConfig() {
-		editButtonConfig.click();
+		wait(editButtonConfig,logger);
+		clickElement(editButtonConfig, "");
+		//editButtonConfig.click();
 	}
 
 	
