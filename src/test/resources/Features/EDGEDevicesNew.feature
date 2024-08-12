@@ -1,5 +1,5 @@
-#@SheetEDGEDEVICESNEW
-#Feature: EDGE Devices
+@SheetEDGEDEVICESNEW
+Feature: EDGE Devices
 #
 #@Test
 #Scenario: TC01_Verification of Browser Compatibility of EDGE Device module of the application
@@ -570,16 +570,16 @@
 #When Click on configuration icon button from Action column
 #
 #
-#@Test
-#Scenario: TC061_Verification of select the Active Application group for  EDGE Device App configuration by Super admin/Admin & Operator users
-#Given User launch application in chrome browser
-#Then click on login button on home page
-#And user enters credentials and click on login button
-#Then Click on EDGE Device module from side menu bar
-#Then Click on EDGE ID search icon i.e. three dots & enter Valid inputs into search text field
-#Then After landing on EDGE Device List screen scroll horizontal
-#Then Click on configuration icon button from Action columnn
-#Then verify application functionality for configuration
+@Test
+Scenario: TC061_Verification of select the Active Application group for  EDGE Device App configuration by Super admin/Admin & Operator users
+Given User launch application in chrome browser
+Then click on login button on home page
+And user enters credentials and click on login button
+Then Click on EDGE Device module from side menu bar
+Then Click on EDGE ID search icon i.e. three dots & enter Valid inputs into search text field
+Then After landing on EDGE Device List screen scroll horizontal
+Then Click on configuration icon button from Action columnn
+Then verify application functionality for configuration
 #
 #
 #@Test
@@ -625,18 +625,18 @@
 #Then Click on EDGE Device module from side menu bar
 #And After landing on EDGE Device List screen
 #
-#@Test
-#Scenario: TC66_Verification of select the application configuration in  EDGE Device App configuration by Super admin/Admin & Operator users
-#Given User launch application in chrome browser
-#Then click on login button on home page
-#And user enters credentials and click on login button
-#Then Click on EDGE Device module from side menu bar
-#And After landing on EDGE Device List screen
-#Then Click on EDGE ID search icon i.e. three dots & enter Valid inputs into search text field
-#Then After landing on EDGE Device List screen scroll horizontal
-#Then Click on configuration icon button from Action columnn
-#Then verify application functionality for configuration
-#Then click on add icon to add configuration
+@Test
+Scenario: TC66_Verification of select the application configuration in  EDGE Device App configuration by Super admin/Admin & Operator users
+Given User launch application in chrome browser
+Then click on login button on home page
+And user enters credentials and click on login button
+Then Click on EDGE Device module from side menu bar
+And After landing on EDGE Device List screen
+Then Click on EDGE ID search icon i.e. three dots & enter Valid inputs into search text field
+Then After landing on EDGE Device List screen scroll horizontal
+Then Click on configuration icon button from Action columnn
+Then verify application functionality for configuration
+Then click on add icon to add configuration
 #
 #
 #@Test

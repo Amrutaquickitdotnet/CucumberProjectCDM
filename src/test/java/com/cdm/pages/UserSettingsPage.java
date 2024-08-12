@@ -24,8 +24,7 @@ public class UserSettingsPage extends CommonActions {
 		PageFactory.initElements(driver, this);
 
 	}
-	
-	
+
 	@FindBy(xpath = "//span[@class='far fa-eye-slash showpwd']")
 	WebElement eyeiconpassword;
 
@@ -62,10 +61,9 @@ public class UserSettingsPage extends CommonActions {
 	@FindBy(xpath = "//thead/tr[1]/th[5]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]")
 	WebElement StatusDot;
 
-	
-	@FindBy(xpath ="//body/div[3]/div[2]/div[1]/div[1]/div[1]/button[1]/div[1]/label[1]/input[1]")
+	@FindBy(xpath = "//body/div[3]/div[2]/div[1]/div[1]/div[1]/button[1]/div[1]/label[1]/input[1]")
 	WebElement activestatusSelection;
-	
+
 	@FindBy(xpath = "//button[contains(text(),'Cancel')]")
 	WebElement cancelButton;
 
@@ -81,17 +79,13 @@ public class UserSettingsPage extends CommonActions {
 	@FindBy(xpath = "//input[@name='rolename']")
 	WebElement roleNameinput;
 
-
-
 	@FindBy(xpath = "//body/div[3]/div[2]/div[1]/div[1]/div[1]/button[1]/div[1]/label[1]/input[1]")
 	WebElement statusinputActive;
-	
+
 	@FindBy(xpath = "//body/div[3]/div[2]/div[1]/div[1]/div[1]/button[1]/div[2]/label[1]/input[1]")
-	WebElement statusinputinActive; 
-	
-	
-	
-	@FindBy(xpath ="///span[@innertext=' Settings ']")
+	WebElement statusinputinActive;
+
+	@FindBy(xpath = "///span[@innertext=' Settings ']")
 	WebElement Setting_tab;
 
 	@FindBy(xpath = "//ul[@class='nav']/li[2]")
@@ -134,8 +128,7 @@ public class UserSettingsPage extends CommonActions {
 	WebElement phoneInput;
 
 	public void Setting_tab() {
-		
-			
+
 		try {
 			Thread.sleep(1000);
 		} catch (InterruptedException e) {
@@ -143,23 +136,21 @@ public class UserSettingsPage extends CommonActions {
 			e.printStackTrace();
 		}
 		try {
-			waitElementToVsible("//mat-nav-list//img");
+			waitElementToVisible("//mat-nav-list//img");
 			appendFragmentWithOutPath("/#/home/setting");
-			waitElementToVsible("//mat-nav-list//img");
+			waitElementToVisible("//mat-nav-list//img");
 		} catch (Exception e) {
 			System.out.println("Error in setting Path");
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		//clickElement(Setting_tab, "");
-		
-		
-	
+		// clickElement(Setting_tab, "");
+
 	}
 
 	public void Users_tab() {
 		clickElement(Users_tab, "");
-		//Users_tab.click();
+		// Users_tab.click();
 	}
 
 	public boolean isVisibleRefresh() {
@@ -195,117 +186,117 @@ public class UserSettingsPage extends CommonActions {
 	WebElement cdkcontainer;
 
 	public void FirstNameDot() {
-		clickElement(FirstNameDot,"");
+		clickElement(FirstNameDot, "");
 
-		//FirstNameDot.click();
+		// FirstNameDot.click();
 	}
 
 	public void LastNameDot() {
 
-		clickElement(LastNameDot,"");
+		clickElement(LastNameDot, "");
 
-		//LastNameDot.click();
+		// LastNameDot.click();
 	}
 
 	public void EmailDot() {
-		clickElement(EmailDot,"");
-		//EmailDot.click();
+		clickElement(EmailDot, "");
+		// EmailDot.click();
 	}
 
 	public void RoleNameDot() {
-		clickElement(RoleNameDot,"");
-		//RoleNameDot.click();
+		clickElement(RoleNameDot, "");
+		// RoleNameDot.click();
 	}
 
 	public void status() {
-		clickElement(StatusDot,"");
-		//StatusDot.click();
+		clickElement(StatusDot, "");
+		// StatusDot.click();
 	}
 
 	public void firstNameinput(String value) {
-		SetInputENterKey(firstNameInput,"");
+		SetInputENterKey(firstNameInput, "");
 		SetInput(firstNameInput, value, value);
 //		firstNameInput.sendKeys(Keys.ENTER);
 //		firstNameInput.sendKeys(value);
 	}
 
 	public void firstNameinputSearch() {
-		SetInputENterKey(firstNameInput,"");
-		
-		//firstNameInput.sendKeys(Keys.ENTER);
+		SetInputENterKey(firstNameInput, "");
+
+		// firstNameInput.sendKeys(Keys.ENTER);
 
 	}
 
 	public void lastNameinput(String value) {
-		SetInputENterKey(lastNameinput,"");
+		SetInputENterKey(lastNameinput, "");
 		SetInput(lastNameinput, value, value);
-		
+
 //		lastNameinput.sendKeys(Keys.ENTER);
 //		lastNameinput.sendKeys(value);
 	}
 
 	public void emailidinput(String value) {
-		SetInputENterKey(emailidinput,"");
+		SetInputENterKey(emailidinput, "");
 		SetInput(emailidinput, value, value);
-		
+
 //		emailidinput.sendKeys(Keys.ENTER);
 //		emailidinput.sendKeys(value);
 	}
 
 	public void phoneInput(String value) {
-		SetInputENterKey(phoneInput,"");
+		SetInputENterKey(phoneInput, "");
 		SetInput(phoneInput, value, value);
-		
+
 //		phoneInput.sendKeys(Keys.ENTER);
 //		phoneInput.sendKeys(value);
 	}
 
 	public void password(String value) {
-		SetInputENterKey(password,"");
+		SetInputENterKey(password, "");
 		SetInput(password, value, value);
-		
+
 //		password.sendKeys(Keys.ENTER);
 //		password.sendKeys(value);
 	}
 
 	public void roleNameinput(String value) {
-		SetInputENterKey(roleNameinput,"");
+		SetInputENterKey(roleNameinput, "");
 		SetInput(roleNameinput, value, value);
-		
+
 //		roleNameinput.sendKeys(Keys.ENTER);
 //		roleNameinput.sendKeys(value);
 	}
 
 	public void addButton() {
 		clickElement(addButton, "");
-		//addButton.click();
+		// addButton.click();
 	}
 
 	public void BulkUpload_btn() {
-		clickElement(BulkUpload_btn,"");
-		//BulkUpload_btn.click();
+		clickElement(BulkUpload_btn, "");
+		// BulkUpload_btn.click();
 	}
 
 	public void Download_btn() {
-		clickElement(Download_btn,"");
-		//Download_btn.click();
+		clickElement(Download_btn, "");
+		// Download_btn.click();
 	}
 
 	public void saveButton() {
-		clickElement(saveButton,"");
-		//saveButton.click();
+		clickElement(saveButton, "");
+		// saveButton.click();
 	}
 
 	public void cancelButton() {
-		clickElement(cancelButton,"");
-		//cancelButton.click();
+		clickElement(cancelButton, "");
+		// cancelButton.click();
 	}
 
 	public void edituserbutton() throws InterruptedException {
 		Thread.sleep(3000);
 		try {
 			clickElement(edituserbutton, "");
-			//edituserbutton.click();
+			// edituserbutton.click();
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
@@ -314,7 +305,7 @@ public class UserSettingsPage extends CommonActions {
 
 	public void cdkcontainer() {
 		clickElement(cdkcontainer, "");
-		//cdkcontainer.click();
+		// cdkcontainer.click();
 	}
 
 	public void deleteButton() {
@@ -359,13 +350,13 @@ public class UserSettingsPage extends CommonActions {
 
 		// Perform a click action on the confirmation Yes button
 		clickElement(confirmationYesButton, "");
-		//confirmationYesButton.click();
+		// confirmationYesButton.click();
 
 	}
 
 	public void Users_Role() {
 		clickElement(Users_Role, "");
-		//Users_Role.click();
+		// Users_Role.click();
 	}
 
 	public String sucessmessage() {
@@ -379,22 +370,94 @@ public class UserSettingsPage extends CommonActions {
 		return sucessmessageText;
 
 	}
-	
+
 	public void activestatusSelection() {
 		clickElement(activestatusSelection, "");
-		//activestatusSelection.click();
+		// activestatusSelection.click();
 	}
 
 	public void statusinputinActive() {
 		clickElement(statusinputinActive, "");
-		//statusinputinActive.click();
+		// statusinputinActive.click();
 	}
 
 	public void eyeiconpassword() {
 		clickElement(eyeiconpassword, "");
-		//eyeiconpassword.click();
-		
+		// eyeiconpassword.click();
+
 	}
-	
-	
+
+	@FindBy(xpath = "//thead/tr[1]/th[1]/div[1]/span[1]/div[1]/div[1]")
+	WebElement FirstNameLabel;
+
+	@FindBy(css = ".cdk-overlay-container")
+	WebElement firstNameToolTip;
+
+	@FindBy(xpath = "//thead/tr[1]/th[2]/div[1]/span[1]/div[1]/div[1]")
+	WebElement LastNameLabel;
+
+	@FindBy(css = ".cdk-overlay-container")
+	WebElement LastNameToolTip;
+
+	public String get_Text_ToolTipFirstName() {
+		mouseHover(FirstNameLabel);
+
+		String firstNameToolTipText = firstNameToolTip.getText();
+
+		System.out.println("toolTipText-->" + firstNameToolTipText);
+
+		return firstNameToolTipText;
+	}
+
+	public String get_Text_ToolTipLastName() {
+		mouseHover(LastNameLabel);
+
+		String LastNameToolTipText = LastNameToolTip.getText();
+
+		System.out.println("toolTipText-->" + LastNameToolTipText);
+
+		return LastNameToolTipText;
+	}
+
+	@FindBy(xpath = "//thead/tr[1]/th[3]/div[1]/span[1]/div[1]/div[1]")
+	WebElement EmailIDLabel;
+
+	@FindBy(css = ".cdk-overlay-container")
+	WebElement EmailIDToolTip;
+
+	public String get_Text_ToolTipEmailID() {
+		mouseHover(EmailIDLabel);
+
+		String EmailIDToolTipText = EmailIDToolTip.getText();
+
+		System.out.println("toolTipText-->" + EmailIDToolTipText);
+
+		return EmailIDToolTipText;
+	}
+
+	@FindBy(xpath = "//thead/tr[1]/th[4]/div[1]/span[1]/div[1]/div[1]")
+	WebElement roleNameLabel;
+
+	@FindBy(css = ".cdk-overlay-container")
+	WebElement roleNameToolTip;
+
+	public String get_Text_ToolTipRoleName() {
+		mouseHover(roleNameLabel);
+
+		String roleNameToolTipText = roleNameToolTip.getText();
+
+		System.out.println("toolTipText-->" + roleNameToolTipText);
+
+		return roleNameToolTipText;
+	}
+
+	@FindBy(xpath = "//thead/tr[1]/th[1]/div[1]/span[1]/div[1]/div[2]/div[2]/div[3]")
+
+	WebElement firstnameAscending;
+
+	public void firstnameAscending() {
+		clickElement(firstnameAscending, "");
+
+	}
+
 }

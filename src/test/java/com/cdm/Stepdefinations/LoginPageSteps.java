@@ -171,6 +171,7 @@ public class LoginPageSteps extends BaseTest {
 	public void click_on_login_button_without_adding_credentials() throws InterruptedException {
 		Thread.sleep(3000);
 		LoginPage lp = new LoginPage(driver, logger);
+		lp.checkboxClickTermsandConditions();
 		lp.clickLoginButton();
 
 	}
@@ -400,6 +401,7 @@ public class LoginPageSteps extends BaseTest {
 	@Then("click on Login button")
 	public void click_on_login_button() throws InterruptedException {
 		LoginPage lp = new LoginPage(driver, logger);
+		lp.checkboxClickTermsandConditions();
 		lp.clickLogin();
 		Thread.sleep(5000);
 	}
@@ -538,6 +540,7 @@ public class LoginPageSteps extends BaseTest {
 		LoginPage lp = new LoginPage(driver, logger);
 
 		lp.enterpwd(alldata.get(vTCName).get("Password"));
+		lp.checkboxClickTermsandConditions();
 		lp.clickLoginButton();
 	}
 

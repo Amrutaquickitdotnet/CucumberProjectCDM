@@ -550,7 +550,7 @@ Feature: VOLUMES
 #
 #Then Click on button convert volume to application 
 #
-#Then verify the toast message after converting app
+#
 #
 #
 #
@@ -1349,36 +1349,844 @@ Feature: VOLUMES
 #
 #
 #
+#
+#
+#@Test
+#Scenario: TC65_Verification of error message verbaige for without entering details in Add New Screen
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then click on edit button
+#Then click on save button
+#
+#@Test
+#Scenario: TC66_Verification of error message verbaige for entering invalid details for Volume Name Text field in Add New screen
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then click on edit button
+#Then click on save button
+#
+#@Test
+#Scenario: TC67_Verification of error message verbaige for entering invalid details for Repository Name Text field from Drop down in Add New screen
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then click on edit button
+#Then click on save button
+#
+#@Test
+#Scenario: TC68_Verification of error message verbaige for entering invalid details for Type from drop down Text field in Add New screen
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then click on edit button
+#Then click on save button
+#
+#
+#@Test
+#Scenario: TC69_Verification of error message verbaige for entering invalid details for Repository Link Text field in Add New screen
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then click on edit button
+#Then click on save button
+#
+#@Test
+#Scenario: TC70_Verification of standarize text format for success message in toaster
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then click on edit button
+#Then click on save button
+#
+#@Test
+#Scenario: TC71_Verification of standarize text format for error message in toaster
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then click on edit button
+#Then click on save button
+#
+#
+#@Test
+#Scenario: TC72_Verification of standarize text format for error message below Volume Name text field
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then click on edit button
+#Then click on save button
+#
+#@Test
+#Scenario: TC73_Verification of standarize text format for error message below Repository Link from drop down text field
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then click on edit button
+#Then click on save button
+#
+#@Test
+#Scenario: TC74_Verification of standarize text format for error message below Type from drop down text field
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then click on edit button
+#Then click on save button
+#
+#
+#@Test
+#Scenario: TC75_Verification of check filter icon availability for Volume Name
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then click on edit button
+#Then click on save button
+#
+#
+#
+#
+#@Test
+#
+#Scenario: TC76_Verification of check filter icon availability for Architecture
+#
+#Given User launch application in chrome browser
+#
+#Then click on login button on home page
+#
+#When user enters credentials and click on login button
+#
+#Then Click on Settings module from side menu bar
+#
+#Then Click on volumes tab from right panel of the screen
+#
+#Then verify check filter icon availability for  Architecture
+#
+#@Test
+#Scenario: TC77_Verification of check filter icon availability for Version/Tag
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then check filter icon visibility for Version/Tag
+#
+#
+#@Test
+#Scenario: TC78_Verification of check filter icon availability for Status
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then check filter icon visibility for Status
+#
+#@Test
+#Scenario: TC79_Verfication of switching between inputs fields using TAB
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then check switching between inputs fields using TAB
+#
+#@Test
+#Scenario: TC80_Verfication of visibilty duration to load the page
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then check visibilty duration to load the page
+#
+#@Test
+#Scenario: TC81_Verfication of visibilty the input field format
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then check visibilty the input field format for volume page
+#
+#@Test
+#Scenario: TC82_Verfication of alignment of ("+" i.e. Add New,Refresh buttons)on the top right side
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#
+#
+#
+#@Test
+#Scenario: TC83_Verfication of visualization of icons in action column
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then check  visualization of icons in action column
+#
+#@Test
+#Scenario: TC84_Verfication of loading properly in slow network
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then check page is loading properly in slow network
+#
+#
+#@Test
+#Scenario: TC85_Verification of the accessible the page by using mobile network
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then check  accessible the page by using mobile network
+#
+#@Test
+#Scenario: TC86_Verification of the accessible the screen by using wi-fi network
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then check page accessible the screen by using wi-fi network
+#
+#@Test
+#Scenario: TC87_Verification of without login into browser, copy & paste the url
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then check page without login into browser, copy & paste the url
+#
+#@Test
+#Scenario: TC88_Verification of check filter icon visibility for Volume Name 
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then check filter icon visibility for volume name
+#
+#
+#@Test
+#Scenario: TC89_Verification of check filter icon visibility for Architecture
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then check filter icon visibility for Architecture
+#
+#
+#@Test
+#Scenario: TC90_Verification of check filter icon visibility for Version/Tag
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then check filter icon visibility for Version/Tag
+#
+#
+#@Test
+#Scenario: TC91_Verification of check filter icon visibility for Status
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then check filter icon visibility for Status
+#
+#@Test
+#Scenario: TC92_Verfication of visibilty duration to load the page
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#
+#
+#@Test
+#Scenario: TC93_Verfication of visibilty the input field format
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then check filter icon visibility for volume name
+#
+#
+#
+#
+#@Test
+#Scenario: TC94_Verification of accessbility the filter icon for Volume Name
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then check filter icon visibility for volume name
+#
+#
+#@Test
+#Scenario: TC95_Verification of accessbility the filter icon for Architecture
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then check filter icon visibility for Architecture
+#
+#
+#@Test
+#Scenario: TC96_Verification of accessbility the filter icon for Version/tag
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then check filter icon visibility for Version/Tag
+#
+#
+#@Test
+#Scenario: TC97_Verification of accessbility the filter icon for Status
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then check filter icon visibility for Status
+#
+#
+#@Test
+#Scenario: TC98_Verification to check the coloumn width & size resolution
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#
+#@Test
+#Scenario: TC99_Verfication of pagination i.e. items per page
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then Click on pagination it will display default records will display
+#
+#@Test
+#Scenario: TC100_Verfication of pagination last page & first page using backward & forward arrow button
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then After pagination all default records will display in Last page.
+#
+#
+#@Test
+#Scenario: TC101_Verfication of pagination next page by using backward & forward arrow button
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then After pagination all default records will display in Last page.
+#
+#@Test
+#Scenario: TC102_Verification of tool tip text visibilty for Volume Name
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then check the tool tip text visibilty for Architecture
+#
+#
+#@Test
+#Scenario: TC103_Verification of tool tip text visibilty for Architecture
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then check the tool tip text visibilty for Architecture
+#
+#
+#@Test
+#Scenario: TC104_Verification of tool tip text visibilty for Version/Tag
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then click on edit button
+#Then check the tool tip text visibilty for Version/Tag
+#
+#@Test
+#Scenario: TC105_Verification of tool tip text visibilty for Status
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then check the tool tip text visibilty for Status
+#
+#@Test
+#Scenario: TC106_Verification of tool tip text visibilty for EDIT button in Actions column
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then check tool tip text visibilty for EDIT button in Actions column
+#
+#@Test
+#Scenario: TC107_Verification of tool tip text visibilty for Convert to application functionality button in Actions column
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then check tool tip text visibilty for Convert to application functionality button in Actions column for volumes
+#
+#
+#@Test
+#Scenario: TC108_Verification to check the tool tip text visibilty for Volume Name Input text field in ADD Screen
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then click on Add button
+#Then check the tool tip text visibilty for Volume Name Input text field in ADD Screen
+#
+#
+#
+#
+#@Test
+#Scenario: TC109_Verification to check the tool tip text visibilty for Repository Name from drop down Input text field in ADD Screen
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then click on edit button
+#Then check the tool tip text visibilty for Repository Name from drop down Input text field in ADD Screen
+#
+#
+#@Test
+#Scenario: TC110_Verification to check the tool tip text visibilty for Repository Link  Input text field in ADD Screen
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then click on edit button
+#Then check the tool tip text visibilty for Repository Link  Input text field in ADD Screen
+#
+#@Test
+#Scenario: TC111_Verification to check the tool tip text visibilty for Type from drop down Input text field in ADD Screen
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then click on edit button
+#Then check the tool tip text visibilty for Type from drop down Input text field in ADD Screen
+#
+#@Test
+#Scenario: TC112_Verification to check the tool tip text visibilty for License type Input text field in ADD Screen
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then click on edit button
+#Then check the tool tip text visibilty for License type Input text field in ADD Screen
+#
+#@Test
+#Scenario: TC113_Verification to check the tool tip text visibilty for Mount Directory Input text field in ADD Screen
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then click on edit button
+#Then check the tool tip text visibilty for Mount Directory Input text field in ADD Screen
+#
+#
+#@Test
+#Scenario: TC114_Verification to check the tool tip text visibilty for Version/Tag Input text field Add  Screen
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then click on edit button
+#Then check tool tip text visibilty for Version/Tag Input text field Add  Screen
+#
+#@Test
+#Scenario: TC115_Verification to check the tool tip text visibilty for Architecture Input text field in Add Screen
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then click on edit button
+#Then check the tool tip text visibilty for Architecture Input text field in Add Screen
+#
+#@Test
+#Scenario: TC116_Verification to check the tool tip text visibilty for Repository Path Input text field in Add Screen
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then click on edit button
+#Then check the tool tip text visibilty for Repository Path Input text field in Add Screen
+#
+#@Test
+#Scenario: TC117_Verification to check the tool tip text visibilty for Max Size Input text field in Add Screen
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then click on edit button
+#Then check tool tip text visibilty for Max Size Input text field in Add Screen
+#
+#
+#@Test
+#Scenario: TC118_Verification to check the tool tip text visibilty for SHA key Input text field in ADD Screen
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then click on edit button
+#Then to check the tool tip text visibilty for SHA key Input text field in ADD Screen
+#
+#@Test
+#Scenario: TC119_Verification of standarize text format for error message below Version/Tag from drop down text field
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then click on edit button
+#Then to check the tool tip text visibilty for SHA key Input text field in ADD Screen
+#@Test
+#Scenario: TC120_Verification of alignment for maximize & minimize the screen
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then check alignment for maximise and minimise the screen
+#
+#
+#@Test
+#Scenario: TC121_Verfication to check the text varbaige for all the input labels text field
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then click on edit button
+#Then click on save button
+#
+#
+#@Test
+#Scenario: TC122_Verfication to check the content for all the error messages
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then click on edit button
+#Then click on save button
+#
+#@Test
+#Scenario: TC123_Verification to check the input text field format
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then click on edit button
+#Then click on save button
+#
+#@Test
+#Scenario: TC124_Verification to check the visualisation look of the table list
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then click on edit button
+#Then click on save button
+#
+#@Test
+#Scenario: TC125_Verification to check the coloumn width uniformity
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then click on edit button
+#Then click on save button
+#
+#
+#@Test
+#Scenario: TC126_Verfication to check the text varbaige for all the input labels text field
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then click on edit button
+#Then click on save button
+#
+#@Test
+#Scenario: TC127_Verfication to check the content for all the error messages
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then click on edit button
+#Then click on save button
+#
+#@Test
+#Scenario: TC128_Verification to check the input text field format
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then click on edit button
+#Then click on save button
+#
+#
+#
+#
+#@Test
+#Scenario: TC129_Verification to check the visualisation look of the table list
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then to check  the visualisation look of the table list
+#
+#@Test
+#Scenario: TC130_Verification to check the coloumn width uniformity
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then to check the coloumn width uniformity
+#
+#
+#@Test
+#Scenario: TC131_Verfication of alignment for all the input text fields in ADD New Screen
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then to check alignment for all the input text fields in ADD New Screen
+#
+#
+#@Test
+#Scenario: TC132_Verfication of alignment for all the input text fields in EDIT Screen
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then check the tool tip text visibilty for Volume Name Input text field in ADD Screen
+#
+#
+#@Test
+#Scenario: TC133_Verification of standarize text format for error message below for all the text fields
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then check the tool tip text visibilty for Volume Name Input text field in ADD Screen
+#
+#
+#@Test
+#Scenario: TC134_Verification to check the labels of input text fields
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then to check the labels of input text fields
+#@Test
+#Scenario: TC135_Verification of ascending order sorting functionality for the table list
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then to check ascending order sorting functionality for the table list
+#
+#
+#@Test
+#Scenario: TC136_Verification of descending order sorting functionality for the table list
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then to check ascending order sorting functionality for the table list
+#
+#@Test
+#Scenario: TC137_Verification to check the tool tip text visibilty for Volume Name Input text field in ADD Screen
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then click on edit button
+#Then to check the tool tip text visibilty for Volume Name Input text field in ADD Screen
+#
+#@Test
+#Scenario: TC138_Verification to check the tool tip text visibilty for Repository Name from drop down Input text field in Edit Screen
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then click on edit button
+#Then to check the tool tip text visibilty for Repository Name from drop down Input text field in Edit Screen
+#
+#@Test
+#Scenario: TC139_Verification to check the tool tip text visibilty for Repository Link  Input text field in Edit Screen
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then click on edit button
+#Then to check the tool tip text visibilty for Repository Link  Input text field in Edit Screen
+#
+#
+#@Test
+#Scenario: TC140_Verification to check the tool tip text visibilty for Type from drop down Input text field in edit Screen
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then click on edit button
+#Then to check the tool tip text visibilty for Type from drop down Input text field in edit Screen
+#
+#
+#@Test
+#Scenario: TC141_Verification to check the tool tip text visibilty for License type Input text field in ADD Screen
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then click on edit button
+#Then to check the tool tip text visibilty for License type Input text field in ADD Screen
+#
 @Test
-
-Scenario: TC75_Verification of check filter icon availability for Volume Name
-
+Scenario: TC142_Verification to check the tool tip text visibilty for Mount Directory Input text field in Edit Screen
 Given User launch application in chrome browser
-
 Then click on login button on home page
-
 When user enters credentials and click on login button
-
 Then Click on Settings module from side menu bar
-
 Then Click on volumes tab from right panel of the screen
-
-Then verify check filter icon availability for Volume Name
-
-
-
-@Test
-
-Scenario: TC76_Verification of check filter icon availability for Architecture
-
-Given User launch application in chrome browser
-
-Then click on login button on home page
-
-When user enters credentials and click on login button
-
-Then Click on Settings module from side menu bar
-
-Then Click on volumes tab from right panel of the screen
-
-Then verify check filter icon availability for  Architecture
+Then click on edit button
+Then to check the tool tip text visibilty for Mount Directory Input text field in Edit Screen
+#
+#@Test
+#Scenario: TC143_Verification to check the tool tip text visibilty for Version/Tag Input text field Edit Screen
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then click on edit button
+#Then to check the tool tip text visibilty for Version/Tag Input text field Edit Screen
+#
+#
+#
+#@Test
+#Scenario: TC144_Verification to check the tool tip text visibilty for Architecture Input text field in Edit Screen
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then click on edit button
+#Then to check the tool tip text visibilty for Architecture Input text field in Edit Screen
+#
+#@Test
+#Scenario: TC145_Verification to check the tool tip text visibilty for Repository Path Input text field in Edit Screen
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then click on edit button
+#Then to check the tool tip text visibilty for Repository Path Input text field in Edit Screen
+#
+#
+#@Test
+#Scenario: TC146_Verification to check the tool tip text visibilty for Max Size Input text field in Edit Screen
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then click on edit button
+#Then to check the tool tip text visibilty for Max Size Input text field in Edit Screen
+#
+#
+#@Test
+#Scenario: TC147_Verification to check the tool tip text visibilty for SHA key Input text field in edit Screen
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Settings module from side menu bar
+#Then Click on volumes tab from right panel of the screen
+#Then click on edit button
+#Then to check the tool tip text visibilty for SHA key Input text field in edit Screen

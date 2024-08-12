@@ -27,7 +27,7 @@ public class VolumesListPage extends CommonActions {
 	@FindBy(xpath = "//ul[@class='nav']/li[7]")
 	WebElement volume_tab;
 	
-	@FindBy(xpath = "//tbody/tr[25]/td[5]/img[2]")
+	@FindBy(xpath = "//tbody/tr[1]/td[5]/img[2]")
 	WebElement convertToApplication;
 	
 	@FindBy(xpath = "//body/app-root[1]/app-root[1]/app-home[1]/mat-sidenav-container[1]/mat-sidenav-content[1]/div[2]/div[1]/app-setting[1]/div[1]/div[1]/div[1]/div[1]/app-volume[1]/div[1]/div[1]/div[1]/div[1]/div[1]/img[1]")
@@ -60,7 +60,7 @@ public class VolumesListPage extends CommonActions {
 	}
 
 	public void VolumeNameThreeDot() {
-		clickElement(convertToApplication, "");
+		clickElement(VolumeNameThreeDot, "");
 		//VolumeNameThreeDot.click();
 	}
 	
@@ -115,5 +115,57 @@ public class VolumesListPage extends CommonActions {
 		clickElement(editbutton, "");
 		//editbutton.click();
 	}
+	@FindBy(xpath = "//thead/tr[1]/th[2]/div[1]/span[1]/div[1]/div[1]")
+	WebElement architectureVolume;
+	
+	@FindBy(css = ".cdk-overlay-container")
+	WebElement architectureToolTip;
+	public String get_Text_ToolTiparchitecture() {
+		mouseHover(architectureVolume);
 
-}
+		String architectureToolTipText = architectureToolTip.getText();
+
+		architectureToolTipText.trim();
+
+		return architectureToolTipText;
+	}
+
+	@FindBy(xpath = "//thead/tr[1]/th[3]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]")
+	WebElement tagThreedot;
+	
+	@FindBy(xpath = "//thead/tr[1]/th[4]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]")
+	WebElement statusThreeDot;
+	public void tagThreeDot() {
+		
+		clickElement(tagThreedot, "");
+		
+	}
+
+	public void statusThreeDot() {
+		// TODO Auto-generated method stub
+		clickElement(statusThreeDot, "");
+		
+	}
+	@FindBy(css = ".cdk-overlay-container")
+	WebElement editbuttonToolTip;
+	
+	public String get_Text_ToolTipEditButton() {
+		mouseHover(editbutton);
+
+		String editbuttonToolTipText = editbuttonToolTip.getText();
+
+		editbuttonToolTipText.trim();
+
+		return editbuttonToolTipText;
+	}
+
+	
+		@FindBy(css= ".cdk-overlay-container")
+		WebElement outerlayerclick;
+		public void outerlayerclick() {
+			clickElement(outerlayerclick, "");
+			
+		}
+		
+	}
+

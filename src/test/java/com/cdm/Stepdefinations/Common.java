@@ -1,7 +1,6 @@
 package com.cdm.Stepdefinations;
 
 import java.util.Collection;
-import java.util.Date;
 import java.util.Iterator;
 
 import org.openqa.selenium.By;
@@ -40,7 +39,7 @@ public class Common extends BaseTest {
 
 	@After
 	public void savereport() {
-		
+
 		extent.flush();
 		//driver.close();
 		driver.quit();
@@ -51,18 +50,23 @@ public class Common extends BaseTest {
 	public void user_launch_application_in_chrome_browser() {
 
 		driver.get(prop.getProperty("AppUrl") + alldata.get(vTCName).get("Url"));
-		HomePage home = new HomePage(driver, logger); // object creation()		
-//		home.loginbuttonHomeFun(); 
-		
+		HomePage home = new HomePage(driver, logger); // object creation()
+//		home.loginbuttonHomeFun();
+
 	}
 
 	@When("user enters credentials and click on login button")
-	
+
 	public void user_enters_credentials_and_click_on_login_button() throws InterruptedException {
 		LoginPage lp = new LoginPage(driver, logger); // object creation()
-		
+
 		lp.login(alldata.get(vTCName).get("Userid"), alldata.get(vTCName).get("Password"));
-		
+
+		lp.checkboxClickTermsandConditions();
+
+		lp.clickLogin();
+
+
 	}
 
 	@When("Succesfull login should be happen")

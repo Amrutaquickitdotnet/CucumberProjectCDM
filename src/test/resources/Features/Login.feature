@@ -1,6 +1,6 @@
-@SheetLogin
-Feature: LOGIN
-
+#@SheetLogin
+#Feature: LOGIN
+#
 #@Test
 #Scenario: TC01_Verification of Browser Compatibility of Login page of the application
 #Given User launch application in chrome browser
@@ -93,7 +93,7 @@ Feature: LOGIN
 #Scenario: TC13_Verification of the time taken to log in with a valid username and password
 #Given User launch application in chrome browser  
 #Then click on login button on home page 
-#When user enters valid credentials and click on login button
+#And user enters credentials and click on login button
 #Then the user should be redirected to the dashboard and login time should be measured
 #
 #@Test
@@ -103,12 +103,12 @@ Feature: LOGIN
 #And check for cancel button
 #
 #
-@Test
-Scenario: TC15_Verification of compliance to the Login page standards in terms of font, text color and color coding
-Given User launch application in chrome browser
-Then click on login button on home page
-Then click on Login button without adding credentials
-Then the user should verify compliance with login page standards
+#@Test
+#Scenario: TC15_Verification of compliance to the Login page standards in terms of font, text color and color coding
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#Then click on Login button without adding credentials
+#Then the user should verify compliance with login page standards
 #
 #@Test
 #Scenario: TC16_Verification of the failed re-entry by pressing ‘Back button’ on the browser
@@ -126,15 +126,12 @@ Then the user should verify compliance with login page standards
 #Then the user should be redirected to the login page due to session timeout
 #
 #
-@Test
-Scenario: TC18_Verification of logging in functionality with different valid credentials in the same browser simultaneously
-Given User launch application in chrome browser
-Then click on login button on home page
-When user enters credentials and click on login button
-Then Click on Profile icon on the top of the Right side.& click on Log out from drop down
-
-
-
+#@Test
+#Scenario: TC18_Verification of logging in functionality with different valid credentials in the same browser simultaneously
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Profile icon on the top of the Right side.& click on Log out from drop down
 #
 #@Test
 #Scenario: TC19_Verification of the limit on the number of characters entered in each field (Username and Password) of the login page
@@ -142,9 +139,6 @@ Then Click on Profile icon on the top of the Right side.& click on Log out from 
 #Then click on login button on home page
 #When I enter max characters in the username field
 #Then I should see the username field accepts a maximum of max characters
-#
-#
-#
 #
 #
 #@Test
@@ -157,8 +151,7 @@ Then Click on Profile icon on the top of the Right side.& click on Log out from 
 #Scenario: TC21_Verification of acceptance of special characters, alphabets, numeric digits, case sensitivity, maximum length, minimum length in password field for Superadmin/Admin Users
 #Given User launch application in chrome browser
 #Then click on login button on home page
-#When I enter an invalid username and password
-#Then click on Login button
+#And user enters credentials and click on login button
 #
 #
 #@Test
@@ -215,8 +208,8 @@ Then Click on Profile icon on the top of the Right side.& click on Log out from 
 #Scenario: TC28_Verification of alignment for Reset password button
 #Given User launch application in chrome browser
 #Then verify reset password functioanlity
-
-
+#
+#
 #@Test
 #Scenario: TC29_Verification of alignment for Login with auth app button
 #Given User launch application in chrome browser
@@ -266,9 +259,7 @@ Then Click on Profile icon on the top of the Right side.& click on Log out from 
 #Scenario: TC35_Verification of check the log out functionality
 #Given User launch application in chrome browser
 #Then click on login button on home page
-#When user enters valid userid
-#And user enters valid password
-#Then click on Login button
+#And user enters credentials and click on login button
 #Then click on Log Out button
 #
 #
@@ -276,9 +267,7 @@ Then Click on Profile icon on the top of the Right side.& click on Log out from 
 #Scenario: TC36_Verification of log into the app by using new credentials
 #Given User launch application in chrome browser
 #Then click on login button on home page
-#When user enters valid userid
-#And user enters valid password
-#Then click on Login button
+#And user enters credentials and click on login button
 #
 #
 #@Test
@@ -286,13 +275,13 @@ Then Click on Profile icon on the top of the Right side.& click on Log out from 
 #Given User launch application in chrome browser
 #Then click on login button on home page
 #Then verify switching between input fields using TAB
-
-
+#
+#
 #@Test
 #Scenario: TC38_Verification of restore the password with invalid user name
 #Given User launch application in chrome browser
 #Then verify restore the password with invalid user name
-
+#
 #
 #@Test
 #Scenario: TC39_Verification of restore the password with empty required fields
@@ -305,18 +294,15 @@ Then Click on Profile icon on the top of the Right side.& click on Log out from 
 #Scenario: TC40_Verification of login to the application using old password
 #Given User launch application in chrome browser
 #Then click on login button on home page
-#When user enters valid userid
-#And user enters valid password
-#Then click on Login button
+#And user enters credentials and click on login button
+#
 #
 #
 #@Test
 #Scenario: TC41_Verification of visibilty duration to load the application
 #Given User launch application in chrome browser
 #Then click on login button on home page
-#When user enters valid userid
-#And user enters valid password
-#Then click on Login button
+#And user enters credentials and click on login button
 #Then verify visibility duration to load page for Login
 #
 #
@@ -324,8 +310,6 @@ Then Click on Profile icon on the top of the Right side.& click on Log out from 
 #Scenario: TC42_Verification of visibilty the input field format
 #Given User launch application in chrome browser
 #Then click on login button on home page
-#When user enters valid userid
-#And user enters valid password
 #Then the input field should be visible
 #
 #@Test

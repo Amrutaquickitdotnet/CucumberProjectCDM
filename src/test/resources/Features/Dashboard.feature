@@ -4,8 +4,8 @@ Feature: DASHBOARD
 @Test
 Scenario: TC01_Verification of Default Dashboard functionality in the Dashboard screen by Super admin/Admin User
 Given User launch application in chrome browser
-When user enters credentials and click on login button
 Then click on login button on home page
+When user enters credentials and click on login button
 And Succesfull login should be happen 
 
 @Test

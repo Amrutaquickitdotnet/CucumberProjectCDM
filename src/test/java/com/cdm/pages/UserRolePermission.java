@@ -1,6 +1,5 @@
 package com.cdm.pages;
 
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -63,5 +62,13 @@ public class UserRolePermission extends CommonActions {
 		
 //		permissionInput.sendKeys(Keys.ENTER);
 //		permissionInput.sendKeys(value);
+	}
+
+	@FindBy(css= ".cdk-overlay-container")
+	WebElement outerlayerclick;
+		
+		public void outerlayerclick() {
+			clickElement(outerlayerclick, "");
+		
 	}
 }

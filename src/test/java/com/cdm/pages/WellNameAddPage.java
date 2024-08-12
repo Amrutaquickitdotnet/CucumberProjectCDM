@@ -18,6 +18,12 @@ public class WellNameAddPage extends CommonActions {
 
 		PageFactory.initElements(driver, this);
 	}
+	@FindBy(css= ".cdk-overlay-container")
+	WebElement outerlayerclick;
+	public void outerlayerclick() {
+		clickElement(outerlayerclick, "");
+		
+	}
 
 	@FindBy(css = ".cdk-overlay-container")
 	WebElement activeUserToolTip;
@@ -58,7 +64,7 @@ public class WellNameAddPage extends CommonActions {
 	@FindBy(xpath = "//div[@class='tableCard']/div/div/span/img[1]")
 	WebElement addButtonWell;
 
-	@FindBy(xpath = "(//input[@formcontrolname='wellname']/../../../../../span[1]/span)")
+	@FindBy(xpath = "//input[@formcontrolname='wellname']/../../../../../span[1]/span")
 	WebElement validationMessgaeWellName;
 
 	@FindBy(xpath = "(//input[@formcontrolname='port']/../../../../../span[1]/span)")

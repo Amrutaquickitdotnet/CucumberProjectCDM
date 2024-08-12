@@ -187,6 +187,12 @@ public class UserGroupMappingPage extends CommonActions {
 		clickElement(headingclick, "");
 		
 	}
+	@FindBy(css= ".cdk-overlay-container")
+	WebElement outerlayerclick;
+	public void outerlayerclick() {
+		clickElement(outerlayerclick, "");
+		
+	}
 	
 
 }

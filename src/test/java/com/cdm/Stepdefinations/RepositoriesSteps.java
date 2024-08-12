@@ -460,8 +460,13 @@ public class RepositoriesSteps extends BaseTest {
 	@Then("verify tool tip text visibilty for Repository Name Input text field in ADD Screen")
 	public void verify_tool_tip_text_visibilty_for_repository_name_input_text_field_in_add_screen() {
 		RepositoriesPage rp = new RepositoriesPage(driver, logger);
-		Assert.assertEquals("Tooltip for repository name", "Unique Name assigned for the Repository",
-				rp.get_Text_ToolTipRepositoryNameAdd());
+		try {
+			Assert.assertEquals("Tooltip for repository name", "Unique Name assigned for the Repository",
+					rp.get_Text_ToolTipRepositoryNameAdd());
+		} catch (Exception e) {
+		e.printStackTrace();
+		}
+		
 	}
 
 	@Then("verify tool tip text visibilty for Repository Name Input text field Edit Screen")

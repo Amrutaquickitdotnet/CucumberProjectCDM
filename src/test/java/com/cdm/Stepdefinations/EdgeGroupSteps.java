@@ -7,7 +7,6 @@ import java.awt.event.KeyEvent;
 
 import org.junit.Assert;
 import org.junit.Assume;
-import org.openqa.selenium.InvalidArgumentException;
 import org.openqa.selenium.JavascriptExecutor;
 
 import com.cdm.pages.EdgeGroupAddPage;
@@ -811,10 +810,10 @@ public class EdgeGroupSteps extends BaseTest {
 		EdgeGroupAddPage egap = new EdgeGroupAddPage(driver, logger);
 		Assert.assertEquals("Tooltip of App Groups", "Application Group to which the EDGE Group is assigned",
 				egap.get_Text_ToolTipAppGroup());
-	
+
 		Assert.assertEquals("Tooltip of server Host Address", "Host address : URL/IP address of EDGE Group Cluster",
 				egap.get_Text_ToolTipserverHostAddress());
-	
+
 	}
 
 	@Then("Verification of descending order sorting functionality for the table list")
@@ -889,7 +888,7 @@ public class EdgeGroupSteps extends BaseTest {
 		EdgeGroupEditPage egep = new EdgeGroupEditPage(driver, logger);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("document.querySelector(\".addButton\").click()");
-//		
+//
 //		egep.saveButtononEdgeEdit();
 
 	}
@@ -1086,7 +1085,7 @@ public class EdgeGroupSteps extends BaseTest {
 		egad.edgeGroupNameConfigDot();
 
 		egad.applicationDeploymentGroupNameSearch(alldata.get(vTCName).get("BulkAppEdgeGroupNameSearch").toString());
-		// egad.backDropShowing_Div_Click();
+		egad.backDropShowing_Div_Click();
 
 		egad.headingConfigurationTitleClick();
 
@@ -1151,14 +1150,14 @@ public class EdgeGroupSteps extends BaseTest {
 	public void verify_for_app_name_functionality() throws InterruptedException {
 		EdgeGroupConfigurationPage egcp = new EdgeGroupConfigurationPage(driver, logger);
 //		egcp.appNameDot();
-//		
+//
 //
 //		egcp.appNameInput(alldata.get(vTCName).get("Value4").toString());
 //
 //		egcp.backDropShowing_Div_Click();
 //
 //		egcp.checkboxEdgeNameStepFour();
-//		
+//
 		egcp.NextButtonStep4();
 	}
 
@@ -1185,7 +1184,7 @@ public class EdgeGroupSteps extends BaseTest {
 
 //		egcp.NextButtonStep4();
 //		egcp.selectedCheckboxapplicationselectcheckboxforEdgeDeviceconfig();
-//		
+//
 //		egcp.selectedCheckboxapplicationselectcheckboxforEdgeDeviceconfiglabelTwo();
 	}
 

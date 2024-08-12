@@ -21,7 +21,7 @@ public class AboutPage extends CommonActions {
 	}
 
 	
-	@FindBy(xpath = "//div[contains(text(),'ForeSite EDGE CDM Software Version')]/../div[2]") // these all are locators
+	@FindBy(xpath = "//*[@id= 'nav-repositories']/app-about/div[2]") // these all are locators
 	WebElement versionText;
 	
 

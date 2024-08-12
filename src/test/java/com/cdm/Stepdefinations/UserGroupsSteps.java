@@ -173,7 +173,8 @@ public class UserGroupsSteps extends BaseTest {
 		ugmp.edgenamethreedotgroup();
 		
 		ugmp.edgenamesearchmap(alldata.get(vTCName).get("EdgeNameSearch").toString());
-		ugmp.backDropShowing_Div_Click();
+		//ugmp.backDropShowing_Div_Click();
+		ugmp.outerlayerclick();
 		
 		ugmp.headingclickElement();
 	}

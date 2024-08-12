@@ -41,19 +41,19 @@ Feature: LICENSES
 #
 #
 #
-@Test
-
-Scenario: TC04_Verification of the refresh icon when Host Id filter is applied
-
-Given User launch application in chrome browser
-
-Then click on login button on home page
-
-When user enters credentials and click on login button
-
-Then Click on Licenses module from side menu bar
-
-Then Verification of  the refresh icon when Host Id filter is applied
+#@Test
+#
+#Scenario: TC04_Verification of the refresh icon when Host Id filter is applied
+#
+#Given User launch application in chrome browser
+#
+#Then click on login button on home page
+#
+#When user enters credentials and click on login button
+#
+#Then Click on Licenses module from side menu bar
+#
+#Then Verification of  the refresh icon when Host Id filter is applied
 #
 #
 #
@@ -288,21 +288,21 @@ Then Verification of  the refresh icon when Host Id filter is applied
 #
 #
 #
-@Test
-
-Scenario: TC18_Verification of the Bulk download functionality with FIlter applied on License type
-
-Given User launch application in chrome browser
-
-Then click on login button on home page
-
-When user enters credentials and click on login button
-
-Then Click on Licenses module from side menu bar
-
-Then apply filter on License Type
-
-Then Click on bulk download icon on license table page 
+#@Test
+#
+#Scenario: TC18_Verification of the Bulk download functionality with FIlter applied on License type
+#
+#Given User launch application in chrome browser
+#
+#Then click on login button on home page
+#
+#When user enters credentials and click on login button
+#
+#Then Click on Licenses module from side menu bar
+#
+#Then apply filter on License Type
+#
+#Then Click on bulk download icon on license table page 
 #
 #
 #
@@ -444,8 +444,8 @@ Then Click on bulk download icon on license table page
 #Then Click on Licenses module from side menu bar
 #
 #Then verify sorting alphabetically in ascending as well as descending order and then refresh the License Tracker
-
-
+#
+#
 #@Test
 #Scenario: TC27_To track  all licenses using Edge Name and then sort it alphabetically in ascending as well as descending order.
 #
@@ -577,7 +577,7 @@ Then Click on bulk download icon on license table page
 #Then click on login button on home page
 #When user enters credentials and click on login button
 #Then Click on Licenses module from side menu bar
-
+#
 #@Test
 #Scenario: TC37_To track  all licenses having 'Inactive' status and then refresh the License Tracker.
 #Given User launch application in chrome browser
@@ -801,81 +801,81 @@ Then Click on bulk download icon on license table page
 #
 #
 #
-@Test
-
-Scenario: TC64_Pagination_Verification when items per page value is set to 5
-
-Given User launch application in chrome browser
-
-Then click on login button on home page
-
-When user enters credentials and click on login button
-
-Then Click on Licenses module from side menu bar
-
-Then Click on pagination it will display default records will display
-
-
-
-
-
-@Test
-
-Scenario: TC65_Pagination_Verification when items per page value is set to 10
-
-Given User launch application in chrome browser
-
-Then click on login button on home page
-
-When user enters credentials and click on login button
-
-Then Click on Licenses module from side menu bar
-
-Then Click on pagination it will display default records will display
-
-
-
-@Test
-
-Scenario: TC66_Pagination_Verification with the default items per page value i.e 25
-
-Given User launch application in chrome browser
-
-Then click on login button on home page
-
-When user enters credentials and click on login button
-
-Then Click on Licenses module from side menu bar
-Then click on license tracker
-
-Then Click on pagination it will display default records will display
-
-
-@Test
-
-Scenario: TC67_Pagination_Verification when items per page value is set to 100
-
-Given User launch application in chrome browser
-
-Then click on login button on home page
-
-When user enters credentials and click on login button
-
-Then Click on Licenses module from side menu bar
-
-Then click on license tracker
-
-Then Click on pagination it will display default records will display
-
-
-@Test
-
-Scenario: TC68_Verification of check filter icon availability for Host ID
-Given User launch application in chrome browser
-Then click on login button on home page
-When user enters credentials and click on login button
-Then Click on Licenses module from side menu bar
-Then Verification of  the refresh icon when Host Id filter is applied
+#@Test
+#
+#Scenario: TC64_Pagination_Verification when items per page value is set to 5
+#
+#Given User launch application in chrome browser
+#
+#Then click on login button on home page
+#
+#When user enters credentials and click on login button
+#
+#Then Click on Licenses module from side menu bar
+#
+#Then Click on pagination it will display default records will display
+#
+#
+#
+#
+#
+#@Test
+#
+#Scenario: TC65_Pagination_Verification when items per page value is set to 10
+#
+#Given User launch application in chrome browser
+#
+#Then click on login button on home page
+#
+#When user enters credentials and click on login button
+#
+#Then Click on Licenses module from side menu bar
+#
+#Then Click on pagination it will display default records will display
+#
+#
+#
+#@Test
+#
+#Scenario: TC66_Pagination_Verification with the default items per page value i.e 25
+#
+#Given User launch application in chrome browser
+#
+#Then click on login button on home page
+#
+#When user enters credentials and click on login button
+#
+#Then Click on Licenses module from side menu bar
+#Then click on license tracker
+#
+#Then Click on pagination it will display default records will display
+#
+#
+#@Test
+#
+#Scenario: TC67_Pagination_Verification when items per page value is set to 100
+#
+#Given User launch application in chrome browser
+#
+#Then click on login button on home page
+#
+#When user enters credentials and click on login button
+#
+#Then Click on Licenses module from side menu bar
+#
+#Then click on license tracker
+#
+#Then Click on pagination it will display default records will display
+#
+#
+#@Test
+#
+#Scenario: TC68_Verification of check filter icon availability for Host ID
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
+#Then Click on Licenses module from side menu bar
+#Then Verification of  the refresh icon when Host Id filter is applied
 #
 #@Test
 #
@@ -1058,33 +1058,33 @@ Then Verification of  the refresh icon when Host Id filter is applied
 #When user enters credentials and click on login button
 #Then Click on Licenses module from side menu bar
 #Then verify to check the coloumn width & size resolution
+#
+#
+@Test
+Scenario: TC87_Verification of pagination i.e. items per page
+Given User launch application in chrome browser
+Then click on login button on home page
+When user enters credentials and click on login button
+Then Click on Licenses module from side menu bar
+Then Click on pagination part it will display default records will display
 
-#
-#@Test
-#Scenario: TC87_Verification of pagination i.e. items per page
-#Given User launch application in chrome browser
-#Then click on login button on home page
-#When user enters credentials and click on login button
-#Then Click on Licenses module from side menu bar
-#Then Click on pagination part it will display default records will display
-#
-#@Test
-#Scenario: TC88_Verification of pagination last page & first page using backward & forward arrow button
-#Given User launch application in chrome browser
-#Then click on login button on home page
-#When user enters credentials and click on login button
-#Then Click on Licenses module from side menu bar
-#Then Click on pagination part it will display default records will display
-#
-#
-#@Test
-#Scenario: TC89_Verification of pagination last page & first page using backward & forward arrow button
-#Given User launch application in chrome browser
-#Then click on login button on home page
-#When user enters credentials and click on login button
-#Then Click on Licenses module from side menu bar
-#Then Click on pagination part it will display default records will display
-#
+@Test
+Scenario: TC88_Verification of pagination last page & first page using backward & forward arrow button
+Given User launch application in chrome browser
+Then click on login button on home page
+When user enters credentials and click on login button
+Then Click on Licenses module from side menu bar
+Then Click on pagination part it will display default records will display
+
+
+@Test
+Scenario: TC89_Verification of pagination last page & first page using backward & forward arrow button
+Given User launch application in chrome browser
+Then click on login button on home page
+When user enters credentials and click on login button
+Then Click on Licenses module from side menu bar
+Then Click on pagination part it will display default records will display
+
 #@Test
 #Scenario: TC90_Verification of tool tip text visibilty for Host ID
 #Given User launch application in chrome browser
@@ -1230,15 +1230,15 @@ Then Verification of  the refresh icon when Host Id filter is applied
 #Then Click on Licenses module from side menu bar
 #Then verify alignment for maximize & minimize the screen
 #
-#@Test
-#Scenario: TC107_Verification of tool tip text visibilty for Host ID in License Tracker Screen
-#Given User launch application in chrome browser
-#Then click on login button on home page
-#When user enters credentials and click on login button
-#Then Click on Licenses module from side menu bar
-#Then click on license tracker
-#Then verify tool tip text visibilty for Host ID
-#
+@Test
+Scenario: TC107_Verification of tool tip text visibilty for Host ID in License Tracker Screen
+Given User launch application in chrome browser
+Then click on login button on home page
+When user enters credentials and click on login button
+Then Click on Licenses module from side menu bar
+Then click on license tracker
+Then verify tool tip text visibilty for Host ID
+
 #
 #@Test
 #Scenario: TC108_Verification of tool tip text visibilty for EDGE Name in License Tracker Screen
@@ -1375,4 +1375,4 @@ Then click on three dots of Host ID and enter the value for the host id
 Then Click on License deployment button 
 Then select edge device
 Then click on Next button
-#
+

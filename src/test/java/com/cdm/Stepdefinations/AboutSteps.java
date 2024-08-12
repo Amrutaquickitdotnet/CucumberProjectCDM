@@ -65,11 +65,12 @@ public class AboutSteps extends BaseTest {
 
 	@Then("verify version on about page")
 	public void verify_version_on_about_page() throws InterruptedException {
+		Thread.sleep(3000);
 		AboutPage about = new AboutPage(driver, logger);
+			
+		String result = about.versionText().trim();
 
-		String result = about.versionText();
-
-		Assert.assertEquals(result, alldata.get(vTCName).get("ApplicationVersion").toString());
+		Assert.assertEquals(result, alldata.get(vTCName).get("ApplicationVersion").toString().trim());
 	}
 
 }

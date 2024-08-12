@@ -49,7 +49,7 @@ public class CommonActions {
 
 	}
 	
-	public void waitElementToVsible(String xpath) {
+	public void waitElementToVisible(String xpath) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60)); // Maximum wait time of 30 seconds
         wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath(xpath)));
     }
@@ -91,7 +91,7 @@ public class CommonActions {
         		System.out.println(currentUrl);
         		break;
         	}else {
-        		System.out.println(currentUrl + "  not mateched with " + finalUri.toString());
+        		System.out.println(currentUrl + "  not matched with " + finalUri.toString());
         	}
     	}
         

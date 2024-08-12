@@ -462,5 +462,32 @@ public class VolumesAddPage extends CommonActions {
 
 		return message.trim();
 	}
+
+	public String get_Text_ToolTipSHAKey() {
+		mouseHover(volumeSHAKeyAdd);
+
+		String volumeSHAKeyToolTipText = SHAKeyToolTip.getText();
+
+		volumeSHAKeyToolTipText.trim();
+
+		return volumeSHAKeyToolTipText;
+	}
+
+	public void minimizeWindow() {
+		driver.manage().window().minimize();
+		
+		
+	}
+
+	public void maximisewindow() {
+		driver.manage().window().maximize();
+		
+	}
+	@FindBy(css= ".cdk-overlay-container")
+	WebElement outerlayerclick;
+	public void outerlayerclick() {
+		// TODO Auto-generated method stub
+		clickElement(outerlayerclick, "");
+	}
 	
 }

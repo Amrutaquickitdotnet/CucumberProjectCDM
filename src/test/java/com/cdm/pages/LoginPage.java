@@ -1,20 +1,16 @@
 package com.cdm.pages;
 
-import java.util.Date;
-
 import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.WindowType;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.aventstack.extentreports.ExtentTest;
 import com.cdm.common.CommonActions;
@@ -33,8 +29,14 @@ public class LoginPage extends CommonActions {
 
 	
 
-	
+	@FindBy(xpath="//mat-checkbox/label[@for='mat-checkbox-1-input']/span[1]")
 
+	WebElement checkboxTermsandConditions;
+	
+	@FindBy(xpath="//body/app-root[1]/app-root[1]/app-auth[1]/app-login[1]/div[1]/div[1]/form[1]/mat-card[1]/div[1]/mat-card-content[1]/div[3]/mat-checkbox[1]/label[1]/span[1]/input")
+
+	WebElement checkboxTermsandConditionsLabel;
+	
 	@FindBy(xpath = "//label[contains(text(),'Username')]")
 	WebElement LoginTitle;
 
@@ -47,7 +49,7 @@ public class LoginPage extends CommonActions {
 	@FindBy(xpath = "//input[@formcontrolname='password']")
 	WebElement password;
 
-	@FindBy(xpath = "//button/span")
+	@FindBy(xpath = "//body/app-root[1]/app-root[1]/app-auth[1]/app-login[1]/div[1]/div[1]/form[1]/mat-card[1]/mat-card-actions[1]/div[1]/button[1]")
 	WebElement LoginBtn;
 
 	@FindBy(xpath = "//div[contains(text(),'Invalid User Name !')]")
@@ -71,7 +73,7 @@ public class LoginPage extends CommonActions {
 	@FindBy(xpath = "//span[@class='far fa-eye-slash showpwd']")
 	WebElement showpasswordicon;
 
-	@FindBy(xpath = "//div[contains(text(),'Default')]")
+	@FindBy(xpath = "//div[contains(text(),'DEPLOYMENT REPORT')]")
 	WebElement dashboard;
 
 	@FindBy(xpath = "//body/app-root[1]/app-root[1]/app-home[1]/mat-sidenav-container[1]/mat-sidenav-content[1]/div[1]/div[1]/div[2]/button[1]/span[1]/img[1]")
@@ -205,7 +207,7 @@ public class LoginPage extends CommonActions {
 		
 		SetInput(username, uid, uid + " has been entered into username field");
 		SetInput(password, pass, pass + " has been entered into password field");
-		clickElement(LoginBtn, "Login button clicked");
+		//clickElement(LoginBtn, "Login button clicked");
 
 	}
 
@@ -336,7 +338,11 @@ public class LoginPage extends CommonActions {
 		return passwordField.getAttribute("value");
 	}
 
+	public void checkboxClickTermsandConditions() {
 	
+		clickElement(checkboxTermsandConditions,"clicking on terms and condition checkbox");
+		
+	}
 
 	
 	
