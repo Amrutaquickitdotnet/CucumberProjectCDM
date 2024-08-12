@@ -503,9 +503,11 @@ public class DeploymentsSteps extends BaseTest {
 		Pagination p = new Pagination(driver, logger);
 		String value = alldata.get(vTCName).get("ItemPerPage").toString();
 		p.SelectPageMatOption(value);
-		
+		Thread.sleep(5000);
 		int rowPerPage = Integer.parseInt(value);
-		
+		Thread.sleep(4000);
+
+		Thread.sleep(7000);
 // Assert.assertTrue("Row count match for next page",
 // p.nextPageClickAndCountOnLastPage(rowPerPage));
 	}

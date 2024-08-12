@@ -28,17 +28,15 @@ public class ConfigurationSteps extends BaseTest {
 		ConfigurationsPage cp = new ConfigurationsPage(driver, logger);
 		cp.edgeIDSortDecending();
 	}
-
+	
 	@Then("to check descending order sorting functionality for the table list")
 	public void to_check_descending_order_sorting_functionality_for_the_table_list() {
 		ConfigurationsPage cp = new ConfigurationsPage(driver, logger);
 		cp.edgeIDSortDecending();
 	}
 
-	@Then("verify visibility duration to load page for configuration")
-	public void verify_visibility_duration_to_load_page_for_configuration() {
-		ConfigurationsPage cp = new ConfigurationsPage(driver, logger);
-	}
+
+
 
 	@Then("verify tooltip for Response Status")
 	public void verify_tooltip_for_response_status() {
@@ -177,9 +175,14 @@ public class ConfigurationSteps extends BaseTest {
 		cal.SelectDDDashMMDashYYYDay(year, month, day);
 		cal.SelectDirectDDDashMMDashYYYDay(year, month, day2);
 
-		
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		cp.applybuttoncalender();
-
+		Thread.sleep(3000);
 	}
 
 	@Then("Click on LastUpdatedThreeDotSearch icon and enter the value in datepickercolumn")
@@ -196,6 +199,12 @@ public class ConfigurationSteps extends BaseTest {
 		cal.SelectDDDashMMDashYYYDay(year, month, day);
 		cal.SelectDirectDDDashMMDashYYYDay(year, month, day2);
 
+		try {
+			Thread.sleep(30000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		cp.applybuttoncalender();
 
 	}
@@ -221,7 +230,7 @@ public class ConfigurationSteps extends BaseTest {
 	public void search_for_edge_id_column_with_valid_data() throws InterruptedException {
 		ConfigurationsPage cp = new ConfigurationsPage(driver, logger);
 		cp.edgeIDThreeDotConfig();
-
+		Thread.sleep(3000);
 		cp.sendValueSearchinputBoxForEdgeID(alldata.get(vTCName).get("EdgeIDSearch").toString());
 	}
 
@@ -229,7 +238,7 @@ public class ConfigurationSteps extends BaseTest {
 	public void search_for_edge_id_column_with_invalid_data() throws InterruptedException {
 		ConfigurationsPage cp = new ConfigurationsPage(driver, logger);
 		cp.edgeIDThreeDotConfig();
-
+		Thread.sleep(3000);
 		cp.sendValueSearchinputBoxForEdgeID(alldata.get(vTCName).get("EdgeIDSearch").toString());
 	}
 
@@ -238,7 +247,7 @@ public class ConfigurationSteps extends BaseTest {
 			throws InterruptedException {
 		ConfigurationsPage cp = new ConfigurationsPage(driver, logger);
 		cp.appNameConfigThreeDot();
-
+		Thread.sleep(3000);
 		cp.sendValueSearchinputBoxForAppName(alldata.get(vTCName).get("AppNameSearch").toString());
 	}
 
@@ -247,7 +256,7 @@ public class ConfigurationSteps extends BaseTest {
 			throws InterruptedException {
 		ConfigurationsPage cp = new ConfigurationsPage(driver, logger);
 		cp.configNameThreeDot();
-
+		Thread.sleep(3000);
 		cp.sendValueSearchinputBoxForConfigName(alldata.get(vTCName).get("ConfigNameSearch").toString());
 	}
 
@@ -261,7 +270,8 @@ public class ConfigurationSteps extends BaseTest {
 	@Then("verify tooltip for view response body")
 	public void verify_tooltip_for_view_response_body() throws InterruptedException {
 		ConfigurationsPage cp = new ConfigurationsPage(driver, logger);
-		Assert.assertEquals("Tooltip of response body ", "View Response Body", cp.get_Text_ToolTipViewResponseBody());
+		Assert.assertEquals("Tooltip of response body ", "The status of the response (HTTP Response Code)",
+				cp.get_Text_ToolTipViewResponseBody());
 	}
 
 	@Then("Click on Response Name valid search icon i.e. three dots & enter Valid inputs into search text field")
@@ -269,7 +279,7 @@ public class ConfigurationSteps extends BaseTest {
 			throws InterruptedException {
 		ConfigurationsPage cp = new ConfigurationsPage(driver, logger);
 		cp.configNameThreeDot();
-
+		Thread.sleep(3000);
 		cp.sendValueSearchinputBoxForConfigName(alldata.get(vTCName).get("ConfigNameSearch").toString());
 	}
 
@@ -284,7 +294,7 @@ public class ConfigurationSteps extends BaseTest {
 			throws InterruptedException {
 		ConfigurationsPage cp = new ConfigurationsPage(driver, logger);
 		cp.edgeIDThreeDotConfig();
-
+		Thread.sleep(3000);
 		cp.sendValueSearchinputBoxForEdgeID(alldata.get(vTCName).get("EdgeIDSearch").toString());
 		cp.removalofEnteredTextForEdgeID();
 	}
@@ -294,7 +304,7 @@ public class ConfigurationSteps extends BaseTest {
 			throws InterruptedException {
 		ConfigurationsPage cp = new ConfigurationsPage(driver, logger);
 		cp.appNameConfigThreeDot();
-
+		Thread.sleep(3000);
 		cp.sendValueSearchinputBoxForAppName(alldata.get(vTCName).get("AppNameSearch").toString());
 		cp.removalofEnteredTextForAppName();
 	}
@@ -304,7 +314,7 @@ public class ConfigurationSteps extends BaseTest {
 			throws InterruptedException {
 		ConfigurationsPage cp = new ConfigurationsPage(driver, logger);
 		cp.configNameThreeDot();
-
+		Thread.sleep(3000);
 		cp.sendValueSearchinputBoxForConfigName(alldata.get(vTCName).get("ConfigNameSearch").toString());
 		cp.removalofEnteredTextForConfigName();
 	}
@@ -313,6 +323,7 @@ public class ConfigurationSteps extends BaseTest {
 	public void click_on_history_view_button() throws InterruptedException {
 		ConfigurationsPage cp = new ConfigurationsPage(driver, logger);
 		cp.historyviewbuttonclick();
+		Thread.sleep(4000);
 
 	}
 
@@ -326,7 +337,9 @@ public class ConfigurationSteps extends BaseTest {
 	@Then("Scroll horizontal and Click on download button from Action column")
 	public void click_on_download_button_from_action_column() throws InterruptedException {
 		ConfigurationsPage cp = new ConfigurationsPage(driver, logger);
+
 		cp.scrollingElementRightBar("div.example-container", "900");
+		Thread.sleep(4000);
 		cp.downloadAction();
 	}
 

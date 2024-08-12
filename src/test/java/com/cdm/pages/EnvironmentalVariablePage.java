@@ -236,8 +236,8 @@ public class EnvironmentalVariablePage extends CommonActions {
 
 	public void backDropShowing_Div_Click() {
 		if (backDropShowing != null) {
-			//clickElement(backDropShowing,"");
-			backDropShowing.click();
+			clickElement(backDropShowing,"");
+			//backDropShowing.click();
 		}
 	}
 

@@ -27,18 +27,19 @@ public class WellsSteps extends BaseTest {
 	@Then("Click on Wells tab from right panel of the screen")
 	public void click_on_wells_tab_from_right_panel_of_the_screen() throws InterruptedException {
 		WellsPage wells = new WellsPage(driver, logger);
+		Thread.sleep(4000);
 		wells.wellTab();
-		
+		Thread.sleep(4000);
 	}
 
 	@Then("apply filter on well name and hit enter button")
 	public void apply_filter_on_well_name_and_hit_enter_button() throws InterruptedException {
 		WellsPage wells = new WellsPage(driver, logger);
 		wells.wellNameThreeDot();
+		Thread.sleep(4000);
 		wells.searchWellName(alldata.get(vTCName).get("searchWellName").toString());
-		//wells.backDropShowing_Div_Click();
-		wells.outerlayerclick();
-		
+		wells.backDropShowing_Div_Click();
+		Thread.sleep(4000);
 
 	}
 
@@ -46,10 +47,11 @@ public class WellsSteps extends BaseTest {
 	public void apply_filter_on_ip_address() throws InterruptedException {
 		WellsPage wells = new WellsPage(driver, logger);
 		wells.ipAddressThreeDot();
-		
+		Thread.sleep(4000);
 		wells.inputIPAddressSearch(alldata.get(vTCName).get("searchipAddress").toString());
-//		wells.backDropShowing_Div_Click();
-		wells.outerlayerclick();
+		wells.backDropShowing_Div_Click();
+		Thread.sleep(4000);
+
 	}
 
 	@Then("click on refresh button")
@@ -57,56 +59,58 @@ public class WellsSteps extends BaseTest {
 		WellsPage wells = new WellsPage(driver, logger);
 		
 		wells.clickrefreshbutton();
-		
+		Thread.sleep(4000);
 	}
 
 	@Then("Click on Three Dots for Device Type")
 	public void click_on_three_dots_for_device_type() throws InterruptedException {
 		WellsPage wells = new WellsPage(driver, logger);
 		wells.deviceTypeThreeDot();
-		
+		Thread.sleep(4000);
 
 	}
 
 	@Then("apply filter on Device Type")
 	public void apply_filter_on_device_type() throws InterruptedException {
 		WellsPage wells = new WellsPage(driver, logger);
-		
+		Thread.sleep(4000);
 		wells.searchDeviceType(alldata.get(vTCName).get("searchDeviceType").toString().trim());
-		wells.outerlayerclick();
-		
+		wells.backDropShowing_Div_Click();
+		Thread.sleep(5000);
 	}
 
 	@Then("Click on Three Dots for RTU Address")
 	public void click_on_three_dots_for_rtu_address() throws InterruptedException {
 		WellsPage wells = new WellsPage(driver, logger);
 		wells.RTUAddressThreeDot();
-		
+		Thread.sleep(4000);
 	}
 
 	@Then("apply filter on RTU Address")
 	public void apply_filter_on_rtu_address() throws InterruptedException {
 		WellsPage wells = new WellsPage(driver, logger);
-		
+		Thread.sleep(4000);
 		wells.searchRTUAddress(alldata.get(vTCName).get("searchRTUAddress").toString());
-		wells.outerlayerclick();
-		
+		wells.backDropShowing_Div_Click();
+		Thread.sleep(4000);
 	}
 
 	@Then("Click on Three Dots for Status")
 	public void click_on_three_dots_for_status() throws InterruptedException {
 		WellsPage wells = new WellsPage(driver, logger);
 		wells.statusThreeDot();
-		
+		Thread.sleep(4000);
+
+		Thread.sleep(4000);
 	}
 
 	@Then("select Status inActive")
 	public void select_status_in_active() throws InterruptedException {
 		WellsPage wells = new WellsPage(driver, logger);
 		wells.inputStatusInActive();
-		
-		wells.outerlayerclick();
-		
+		Thread.sleep(4000);
+        wells.backDropShowing_Div_Click();
+		Thread.sleep(4000);
 	}
 
 	@Then("Click on Add new icon")
@@ -118,14 +122,14 @@ public class WellsSteps extends BaseTest {
 	@Then("Click on cancel button from wells add page")
 	public void click_on_cancel_button_from_wells_add_page() throws InterruptedException {
 		WellsPage wells = new WellsPage(driver, logger);
-		
+		Thread.sleep(5000);
 		wells.cancelButtonwell();
 	}
 
 	@Then("Minimise the screen and observe the UI carefully")
 	public void minimise_the_screen_and_observe_the_ui_carefully() throws InterruptedException {
 		WellsPage wells = new WellsPage(driver, logger);
-		
+		Thread.sleep(5000);
 		wells.mimimizewindow();
 
 	}
@@ -135,28 +139,22 @@ public class WellsSteps extends BaseTest {
 		WellsPage wells = new WellsPage(driver, logger);
 		wells.wellNameThreeDot();
 		wells.searchWellName(alldata.get(vTCName).get("searchWellName").toString());
-		//wells.backDropShowing_Div_Click();
-		wells.outerlayerclick();
-		
+		wells.backDropShowing_Div_Click();
+		Thread.sleep(4000);
 	}
 
 	@Then("Maximise the screen")
 	public void maximise_the_screen() throws InterruptedException {
 		WellsPage wells = new WellsPage(driver, logger);
-		
+		Thread.sleep(5000);
 		wells.maximisewindow();
 	}
 
 	@Then("verify validation message for invalid file")
 	public void verify_validation_message_for_invalid_file() throws InterruptedException {
 		WellsPage wp = new WellsPage(driver, logger);
-		try {
-			Assert.assertEquals("Validation message for invalid extension file upload",
-					"An error occurred. Please check downloaded error file", wp.get_Textget_Text_PopupMessageinvalid());
-		} catch (Exception e) {
-			
-		}
-		
+		Assert.assertEquals("Validation message for invalid extension file upload",
+				"An error occurred. Please check downloaded error file", wp.get_Textget_Text_PopupMessageinvalid());
 	}
 
 	@Then("verify validation message if well name is not being entered")
@@ -164,7 +162,7 @@ public class WellsSteps extends BaseTest {
 
 		WellNameAddPage wellnameadd = new WellNameAddPage(driver, logger);
 
-		//wellnameadd.verifyValidationMessageWellName();
+		wellnameadd.verifyValidationMessageWellName();
 		Assert.assertEquals("Validation message for Well name", "Mandatory field - required !",
 				wellnameadd.verifyValidationMessageWellName());
 	}
@@ -180,11 +178,11 @@ public class WellsSteps extends BaseTest {
 	public void verify_validation_message_if_ip_address_is_not_entered_while_creating_a_new_well()
 			throws InterruptedException {
 		WellNameAddPage wellnameadd = new WellNameAddPage(driver, logger);
-        wellnameadd.saveButton();
+
 		wellnameadd.verifyValidationMessageIPAddress();
 		Assert.assertEquals("Validation message for IP Address", "Mandatory field - required !",
 				wellnameadd.verifyValidationMessageIPAddress());
-		
+		Thread.sleep(4000);
 
 	}
 
@@ -192,7 +190,6 @@ public class WellsSteps extends BaseTest {
 	public void verify_validation_message_if_port_number_is_not_entered_while_creating_a_new_well()
 			throws InterruptedException {
 		WellNameAddPage wellnameadd = new WellNameAddPage(driver, logger);
-		wellnameadd.saveButton();
 		wellnameadd.verifyValidationMessagePort();
 		Assert.assertEquals("Validation message for Port Number", "Mandatory field - required !",
 				wellnameadd.verifyValidationMessagePort());
@@ -258,7 +255,7 @@ public class WellsSteps extends BaseTest {
 	public void observe_that_the_status_is_active_by_default() throws InterruptedException {
 		WellNameAddPage wellnameadd = new WellNameAddPage(driver, logger);
 		Assert.assertEquals("Tooltip of activeStatus", "Active", wellnameadd.get_Text_ToolTipActiveUser());
-		
+		Thread.sleep(5000);
 	}
 
 	@Then("Click on the add icon to create new Well")
@@ -273,7 +270,7 @@ public class WellsSteps extends BaseTest {
 		wp.wellNameThreeDot();
 		wp.searchWellName(alldata.get(vTCName).get("searchWellName").toString());
 		wp.backDropShowing_Div_Click();
-		
+		Thread.sleep(3000);
 	}
 
 	@Then("Observe the entry of the new well with status as Active")
@@ -285,7 +282,7 @@ public class WellsSteps extends BaseTest {
 	@Then("Add all fields except Well Name on the Add New Well tab")
 	public void add_all_fields_except_well_name_on_the_add_new_well_tab() throws InterruptedException {
 		WellNameAddPage wellnameadd = new WellNameAddPage(driver, logger);
-		
+		Thread.sleep(4000);
 		wellnameadd.deviceTypeDropdownAdd(alldata.get(vTCName).get("deviceTypeDropdownAdd").toString());
 		wellnameadd.portnumberinputAdd(alldata.get(vTCName).get("portnumberinputAdd").toString());
 		wellnameadd.RTUAddressinputAdd(alldata.get(vTCName).get("RTUAddressinputAdd").toString());
@@ -297,7 +294,7 @@ public class WellsSteps extends BaseTest {
 	public void click_on_the_three_dots_against_the_ip_address_column_inorder_to_search_a_particular_well()
 			throws InterruptedException {
 		WellsPage wp = new WellsPage(driver, logger);
-		
+		Thread.sleep(4000);
 		wp.ipAddressThreeDot();
 
 	}
@@ -305,24 +302,24 @@ public class WellsSteps extends BaseTest {
 	@Then("Enter an IP Address to be searched in the available Search box")
 	public void enter_an_ip_address_to_be_searched_in_the_available_search_box() throws InterruptedException {
 		WellsPage wp = new WellsPage(driver, logger);
-		
+		Thread.sleep(4000);
 		wp.inputIPAddressSearch(alldata.get(vTCName).get("searchipAddress").toString());
 		wp.backDropShowing_Div_Click();
-		
+		Thread.sleep(4000);
 	}
 
 	@Then("Click on the three dots against the RTU Address column inorder to search a particular Well")
 	public void click_on_the_three_dots_against_the_rtu_address_column_inorder_to_search_a_particular_well()
 			throws InterruptedException {
 		WellsPage wp = new WellsPage(driver, logger);
-		
+		Thread.sleep(4000);
 		wp.RTUAddressThreeDot();
 	}
 
 	@Then("Enter an RTU Address to be searched in the available Search box")
 	public void enter_an_rtu_address_to_be_searched_in_the_available_search_box() throws InterruptedException {
 		WellsPage wp = new WellsPage(driver, logger);
-		
+		Thread.sleep(4000);
 		wp.searchRTUAddress(alldata.get(vTCName).get("searchRTUAddress").toString());
 		wp.backDropShowing_Div_Click();
 
@@ -331,29 +328,29 @@ public class WellsSteps extends BaseTest {
 	@Then("click on save button to save well")
 	public void click_on_save_button_to_save_well() throws InterruptedException {
 		WellNameAddPage wellnameadd = new WellNameAddPage(driver, logger);
-		
+		Thread.sleep(5000);
 		wellnameadd.saveButton();
-		
+		Thread.sleep(4000);
 	}
 
 	@Then("Click on download icon")
 	public void click_on_download_icon() throws InterruptedException {
 		WellsPage wp = new WellsPage(driver, logger);
-
+		Thread.sleep(5000);
 		wp.downloadButtonWell();
 	}
 
 	@Then("deselect Active status")
 	public void deselect_active_status() throws InterruptedException {
 		WellsPage wp = new WellsPage(driver, logger);
-		
+		Thread.sleep(5000);
 		wp.activeStatusCheck();
 	}
 
 	@Then("Click on edit button for well given in the action column")
 	public void click_on_edit_button_for_well_given_in_the_action_column() throws InterruptedException {
 		WellsPage wp = new WellsPage(driver, logger);
-		
+		Thread.sleep(5000);
 		wp.wellEditButton();
 	}
 
@@ -361,20 +358,19 @@ public class WellsSteps extends BaseTest {
 	public void modify_well_name() throws InterruptedException {
 		WellNameEditPage we = new WellNameEditPage(driver, logger);
 		we.removalofEnteredTextForwellname();
-		Thread.sleep(5000);
 		we.wellnameinputEdit(alldata.get(vTCName).get("wellnameinputEdit").toString());
-		
+		Thread.sleep(5000);
 		we.saveButton();
-		
+		Thread.sleep(5000);
 	}
 
 	@Then("modify Well Device Type")
 	public void modify_well_device_type() throws InterruptedException {
 		WellNameEditPage we = new WellNameEditPage(driver, logger);
 		we.deviceTypeDropdownEdit(alldata.get(vTCName).get("deviceTypeDropdownEdit").toString());
-		
+		Thread.sleep(5000);
 		we.saveButton();
-		
+		Thread.sleep(5000);
 	}
 
 	@Then("modify RTU Address")
@@ -383,9 +379,9 @@ public class WellsSteps extends BaseTest {
 		we.removalofEnteredTextForRTUAddress();
 		we.RTUAddressinputEdit(alldata.get(vTCName).get("RTUAddressinputEdit").toString());
 		// we.backDropShowing_Div_Click();
-	
+		Thread.sleep(5000);
 		we.saveButton();
-		
+		Thread.sleep(5000);
 	}
 
 	@Then("modify password")
@@ -403,10 +399,9 @@ public class WellsSteps extends BaseTest {
 	}
 
 	@Then("modify port number")
-	public void modify_port_number() throws InterruptedException {
+	public void modify_port_number() {
 		WellNameEditPage we = new WellNameEditPage(driver, logger);
 		we.removalofEnteredTextForPortNumber();
-		Thread.sleep(4000);
 		we.portnumberinputEdit(alldata.get(vTCName).get("portnumberinputEdit").toString());
 		we.saveButton();
 	}
@@ -429,9 +424,9 @@ public class WellsSteps extends BaseTest {
 	public void verify_well_that_is_chosen_for_deleting_and_when_cancelled_to_do_so_it_does_not_get_deleted_and_exists_in_the_wells_list()
 			throws InterruptedException {
 		WellsPage wp = new WellsPage(driver, logger);
-		
+		Thread.sleep(3000);
 		wp.ConfirmationNoButton();
-		
+		Thread.sleep(3000);
 	}
 
 	@Then("Click on choose file option from popup")
@@ -440,12 +435,14 @@ public class WellsSteps extends BaseTest {
 
 		wp.choosefilebutton();
 
-		
+		Thread.sleep(4000);
 	}
 
 	@Then("Click on Well Bulk upload icon")
 	public void click_on_upload_icon() throws InterruptedException, AWTException {
 	
+
+		Thread.sleep(3000);
 
 		StringSelection ss = new StringSelection(alldata.get(vTCName).get("UploadFilePath").toString());
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
@@ -465,7 +462,7 @@ public class WellsSteps extends BaseTest {
 
 		String str = alldata.get(vTCName).get("UploadFilePath").toString();
 
-		
+		Thread.sleep(5000);
 	}
 
 	@Then("Click on Upload button to upload well successfully")
@@ -480,15 +477,15 @@ public class WellsSteps extends BaseTest {
 	public void click_on_template_download_icon() throws InterruptedException {
 		WellsPage wp = new WellsPage(driver, logger);
 		wp.templateDownloadFile();
-	
+		Thread.sleep(5000);
 	}
 
 	@Then("verify validation message if directly click on upload button")
 	public void verify_validation_message_if_directly_click_on_upload_button() throws InterruptedException {
-		;
+		Thread.sleep(3000);
 		WellsPage wp = new WellsPage(driver, logger);
 		wp.uploadButtonwell();
-		
+		Thread.sleep(3000);
 		Assert.assertEquals("Validation message for not doing bulk upload", "Please Enter the File",
 				wp.validationmessagenotuploadingfile());
 	}
@@ -511,7 +508,7 @@ public class WellsSteps extends BaseTest {
 		wellnameadd.portnumberinputAdd(alldata.get(vTCName).get("portnumberinputAdd").toString());
 		wellnameadd.RTUAddressinputAdd(alldata.get(vTCName).get("RTUAddressinputAdd").toString());
 		wellnameadd.IPAddressinputAdd(alldata.get(vTCName).get("IPAddressinputAdd").toString());
-		
+		Thread.sleep(4000);
 	}
 
 	@Then("Add all fields except IP Address on the Add Well")
@@ -523,7 +520,7 @@ public class WellsSteps extends BaseTest {
 		wellnameadd.RTUAddressinputAdd(alldata.get(vTCName).get("RTUAddressinputAdd").toString());
 		wellnameadd.passwordinputAdd(alldata.get(vTCName).get("passwordinputAdd").toString());
 		wellnameadd.IPAddressinputAdd(alldata.get(vTCName).get("IPAddressinputAdd").toString());
-		
+		Thread.sleep(4000);
 	}
 
 	@Then("Add all fields except Port Number on the Add Well")
@@ -535,7 +532,7 @@ public class WellsSteps extends BaseTest {
 		wellnameadd.RTUAddressinputAdd(alldata.get(vTCName).get("RTUAddressinputAdd").toString());
 		wellnameadd.passwordinputAdd(alldata.get(vTCName).get("passwordinputAdd").toString());
 		wellnameadd.IPAddressinputAdd(alldata.get(vTCName).get("IPAddressinputAdd").toString());
-		
+		Thread.sleep(3000);
 	}
 
 	@Then("Add all fields except Device type on the Add Well Details Page")
@@ -546,7 +543,7 @@ public class WellsSteps extends BaseTest {
 		wellnameadd.RTUAddressinputAdd(alldata.get(vTCName).get("RTUAddressinputAdd").toString());
 		wellnameadd.passwordinputAdd(alldata.get(vTCName).get("passwordinputAdd").toString());
 		wellnameadd.IPAddressinputAdd(alldata.get(vTCName).get("IPAddressinputAdd").toString());
-		
+		Thread.sleep(4000);
 
 	}
 

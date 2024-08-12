@@ -23,13 +23,6 @@ public class UserGroupsPage extends CommonActions {
 		PageFactory.initElements(driver, this);
 
 	}
-	@FindBy(xpath = "//body/app-root[1]/app-root[1]/app-home[1]/mat-sidenav-container[1]/mat-sidenav-content[1]/div[1]/div[1]/div[2]/img[1]")
-	WebElement networkStatus;
-	
-	@FindBy(css= ".cdk-overlay-container")
-	WebElement outerlayerclick;
-	
-	
 	@FindBy(xpath = "//h4")
 	WebElement headingtitle;
 
@@ -42,11 +35,8 @@ public class UserGroupsPage extends CommonActions {
 	@FindBy(xpath = "//body/div[3]/div[2]/div[1]/div[1]/div[1]/button[1]/div[1]/label[1]/input[1]")
 	WebElement activeStatus;
 	
-	@FindBy(xpath = "//body/div[3]/div[2]/div[1]/div[1]/div[1]/button[1]/div[2]/label[1]/input[1]")
+	@FindBy(xpath = "//body/div[3]/div[2]/div[1]/div[1]/div[1]/button[1]/div[2]/label[1]")
 	WebElement inactiveStatus;
-	
-	@FindBy(xpath = "//body/app-root[1]/app-root[1]/app-home[1]/mat-sidenav-container[1]/mat-sidenav-content[1]/div[2]/div[1]/app-setting[1]/div[1]/div[1]/div[1]/div[1]/app-user-group[1]/div[1]/div[1]/div[1]/img[1]")
-	WebElement refreshIcon;
 	
 	@FindBy(xpath="//thead/tr[1]/th[6]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]")
 	WebElement statusColumn;
@@ -138,9 +128,9 @@ public class UserGroupsPage extends CommonActions {
 
 
 	public void addusericon() {
-	
+		wait(addusericon,logger);
 		clickElement(addusericon, "");
-		
+		//addusericon.click();
 	}
 
 
@@ -169,28 +159,9 @@ public class UserGroupsPage extends CommonActions {
 		
 	}
 	public void managemappingicon() {
-		
+		wait(managemappingicon,logger);
 		clickElement(managemappingicon, "");
 		//managemappingicon.click();
-	}
-
-
-	public void refreshicon() {
-		
-		clickElement(refreshIcon, "");
-		
-	}
-	
-	public void networkstatus() {
-		clickElement(networkStatus, "");
-	}
-
-
-	public void outerlayerclick() {
-		
-		
-		clickElement(outerlayerclick, "");
-		
 	}
 
 }

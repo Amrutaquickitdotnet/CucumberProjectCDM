@@ -280,7 +280,12 @@ public class EdgeDeviceAdd extends CommonActions {
 	}
 
 	public String verifyValidationMessageEdgeName1() {
-		clickElement(AddListpageVerification, "");
+		AddListpageVerification.click();
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+
+		}
 
 		if (validationMessageEdgeName1 == null) {
 			return "";
@@ -292,7 +297,12 @@ public class EdgeDeviceAdd extends CommonActions {
 	}
 
 	public String verifyValidationMessageEdgeId() {
-		clickElement(AddListpageVerification, "");
+		AddListpageVerification.click();
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+
+		}
 
 		if (validationMessageEdgeId == null) {
 			return "";
@@ -304,7 +314,12 @@ public class EdgeDeviceAdd extends CommonActions {
 	}
 
 	public String verifyValidationMessageEdgeName() {
-		clickElement(AddListpageVerification, "");
+		AddListpageVerification.click();
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+
+		}
 
 		if (validationMessageEdgeName == null) {
 			return "";

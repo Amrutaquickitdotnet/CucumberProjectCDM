@@ -37,9 +37,9 @@ public class UserRoleEditPage extends CommonActions {
 	}
 
 	public void saveButtonAdd() throws InterruptedException {
-		
+		Thread.sleep(3000);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		
+		// js.executeScript("arguments[0].click();",saveAddDataBtn);
 		js.executeScript("document.querySelector(\".addButton\").click();", saveButtonAdd);
 	}
 

@@ -27,9 +27,6 @@ public class UserGroupsAddPage extends CommonActions {
 	@FindBy(css = ".cdk-overlay-backdrop-showing")
 	WebElement backDropShowing;
 	
-	@FindBy(xpath = "//body/app-root[1]/app-root[1]/app-home[1]/mat-sidenav-container[1]/mat-sidenav-content[1]/div[1]/div[1]/div[2]/img[1]")
-	WebElement networkStatus;
-	
 	@FindBy(xpath = "//a[contains(text(),'User Groups')]")
 	WebElement UserGroupstab;
 
@@ -56,40 +53,44 @@ public class UserGroupsAddPage extends CommonActions {
 	WebElement searchUserGroup;
 
 	public void inputUserGroup(String value) {
-		
-		SetInputENterKey(inputUserGroup, "");
-		SetInput(inputUserGroup, value, value);
-		
-	
+		inputUserGroup.sendKeys(Keys.ENTER);
+		// ((JavascriptExecutor) driver).executeScript("arguments[0].value =
+		// arguments[1]", value, inputUserRole);
+		inputUserGroup.sendKeys(value);
 	}
 	
 	
 	public void searchUserGroup(String value) {
-		SetInputENterKey(searchUserGroup, "");
-		SetInput(searchUserGroup, value, value);
-	
+		searchUserGroup.sendKeys(Keys.ENTER);
+		// ((JavascriptExecutor) driver).executeScript("arguments[0].value =
+		// arguments[1]", value, inputUserRole);
+		searchUserGroup.sendKeys(value);
+		searchUserGroup.sendKeys(Keys.ENTER);
 	}
 
 	public void saveusergroups() {
-		clickElement(savebtnusergroups, "");
-//		savebtnusergroups.click();
+		savebtnusergroups.click();
 
 	}
 
 	public void addbuttonicon() {
-		clickElement(addbuttonicon, "");
-		
+		addbuttonicon.click();
 	}
 
 	public void UserGroupstab() {
-		
+		try {
+			wait(UserGroupstab,logger);
 			clickElement(UserGroupstab, "");
+			//UserGroupstab.click();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 		
 	}
 
 	public void usergroupThreeDot() {
 		clickElement(usergroupThreeDot, "");
-	
+	//	usergroupThreeDot.click();
 	}
 	
 	public void deletebuttonicon() {
@@ -107,8 +108,8 @@ public class UserGroupsAddPage extends CommonActions {
 	
 	public void backDropShowing_Div_Click() {
 		if (backDropShowing != null) {
-		
-			backDropShowing.click();
+			clickElement(backDropShowing, "");
+			//backDropShowing.click();
 		}
 	}
 
@@ -118,18 +119,5 @@ public class UserGroupsAddPage extends CommonActions {
 		WebElement confirmationNoButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),'No')]")));
 		clickElement(confirmationNoButton, "");
 		//confirmationNoButton.click();
-	}
-
-
-	public void networkstatus() {
-		clickElement(networkStatus, "");
-	}
-	@FindBy(css= ".cdk-overlay-container")
-	WebElement outerlayerclick;
-	
-
-	public void outerlayerclick() {
-		clickElement(outerlayerclick, "");
-		
 	}
 }

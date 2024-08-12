@@ -24,10 +24,10 @@ public class EdgeAppConfigurationPage extends CommonActions {
 	@FindBy(xpath = "//body[1]/app-root[1]/app-root[1]/app-home[1]/mat-sidenav-container[1]/mat-sidenav-content[1]/div[2]/div[1]/app-edge-appli-config[1]/div[1]/div[1]/mat-horizontal-stepper[1]/div[2]/div[2]/form[1]/div[1]/div[1]/div[1]/div[1]/table[1]/thead[1]/tr[1]/th[2]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]")
 
 	WebElement edgeIDDot;
-
+	
 	@FindBy(xpath = "//span[contains(text(),'Save')]")
 	WebElement saveButton;
-
+	
 	@FindBy(xpath = "//body[1]/app-root[1]/app-root[1]/app-home[1]/mat-sidenav-container[1]/mat-sidenav-content[1]/div[2]/div[1]/app-edge-appli-config[1]/div[1]/div[1]/mat-horizontal-stepper[1]/div[2]/div[2]/form[1]/div[1]/div[1]/div[1]/div[1]/table[1]/thead[1]/tr[1]/th[2]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]")
 
 	WebElement bulkApplicationconfigurationBtn;
@@ -67,8 +67,8 @@ public class EdgeAppConfigurationPage extends CommonActions {
 	WebElement appGroupNameInputdeploy;
 
 	@FindBy(xpath = "//tbody/tr[1]/td[1]/mat-checkbox")
-
-	// @FindBy(xpath="/html/body/app-root/app-root/app-home/mat-sidenav-container/mat-sidenav-content/div[2]/div/app-edge-appli-config/div/div/mat-horizontal-stepper/div[2]/div[3]/form/div[1]/div/div/div/table/tbody/tr[6]/td[1]/mat-checkbox/label/span[1]")
+	
+	//@FindBy(xpath="/html/body/app-root/app-root/app-home/mat-sidenav-container/mat-sidenav-content/div[2]/div/app-edge-appli-config/div/div/mat-horizontal-stepper/div[2]/div[3]/form/div[1]/div/div/div/table/tbody/tr[6]/td[1]/mat-checkbox/label/span[1]")
 	WebElement checkboxEdgeStepThreeName;
 
 	@FindBy(xpath = "//div[contains(text(),'Config Name')]/../../..//mat-icon")
@@ -103,19 +103,24 @@ public class EdgeAppConfigurationPage extends CommonActions {
 
 	@FindBy(xpath = "//input[@formcontrolname='name']")
 	WebElement nameconfiguration;
-
+	
 	@FindBy(xpath = "//body/app-root[1]/app-root[1]/app-home[1]/mat-sidenav-container[1]/mat-sidenav-content[1]/div[2]/div[1]/app-edge-appli-config[1]/div[1]/div[1]/mat-horizontal-stepper[1]/div[2]/div[4]/form[1]/div[1]/img[1]")
 	WebElement addconfigurationicon;
 
+
 	@FindBy(xpath = "//input[@formcontrolname = 'proxy_app']")
 	WebElement proxyAppinput;
+	
+	
 
 	@FindBy(xpath = "//div[contains(text(),'  EDGE ')]/../../..//mat-icon")
 	WebElement edgeDot;
+	
 
 	@FindBy(xpath = "//mat-select[@formcontrolname='type']")
 	WebElement configurationFileType;
-
+	
+	
 	@FindBy(xpath = "//div[contains(text(),' EDGE Group Name ')]/../../..//mat-icon")
 	WebElement deployementEdgeGroupNameDot;
 
@@ -127,7 +132,8 @@ public class EdgeAppConfigurationPage extends CommonActions {
 
 	@FindBy(xpath = "//h4/span[contains(text(),'Application Deployment')]")
 	WebElement headingConfigurationTitle;
-
+	
+	
 	@FindBy(xpath = "//h4/span[contains(text(),'Application Configuration')]")
 	WebElement headingConfigurationBulk;
 
@@ -157,13 +163,13 @@ public class EdgeAppConfigurationPage extends CommonActions {
 	WebElement deployButton;
 
 	public void headingConfigurationTitleClick() {
-		clickElement(headingConfigurationTitle, "Clicking on Title of heading");
-		// headingConfigurationTitle.click();
+	clickElement(headingConfigurationTitle, "Clicking on Title of heading");
+		//headingConfigurationTitle.click();
 	}
 
 	public void BulkAppDeploymentButton() {
 		clickElement(BulkAppDeploymentButton, "");
-		// ElementExist(BulkAppDeploymentButton, getScreenshot());
+		//ElementExist(BulkAppDeploymentButton, getScreenshot());
 
 	}
 
@@ -186,19 +192,19 @@ public class EdgeAppConfigurationPage extends CommonActions {
 	public void NextButtonStep2() throws InterruptedException {
 		clickElement(NextButton2, "");
 //		NextButton2.click();
-//		
+//		Thread.sleep(3000);
 	}
 
 	public void NextButtonStep3() throws InterruptedException {
 		clickElement(NextButton3, "");
-		// NextButton3.click();
-
+		//NextButton3.click();
+		
 	}
 
 	public void NextButtonStep4() throws InterruptedException {
 		clickElement(NextButton4, "");
 //		NextButton4.click();
-//		
+//		Thread.sleep(3000);
 	}
 
 	public void appGroupNameDot() {
@@ -209,7 +215,7 @@ public class EdgeAppConfigurationPage extends CommonActions {
 
 	public void edgeDot() {
 		clickElement(edgeDot, "");
-		// edgeDot.click();
+		//edgeDot.click();
 	}
 
 	public void appGroupNameInputdeploy(String value) {
@@ -235,62 +241,84 @@ public class EdgeAppConfigurationPage extends CommonActions {
 
 	public void checkboxEdgeGroupNameStepOneName() {
 
-		clickElement(selectedCheckboxLabel, "");
+		try {
+			Thread.sleep(2000);
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+			wait.until(ExpectedConditions.elementToBeClickable(selectedCheckboxLabel));
 
-		if (selectedCheckbox != null) {
-			String checked = selectedCheckbox.getDomAttribute("checked");
-			if (checked != "checked") {
-				clickElement(selectedCheckboxLabel, "");
+			if (selectedCheckbox != null) {
+				String checked = selectedCheckbox.getDomAttribute("checked");
+				if (checked != "checked") {
+					selectedCheckboxLabel.click();
+				}
 			}
-		}
+		} catch (Exception e) {
 
+		}
 	}
 
 	public void checkboxEdgeStepThreeName() {
 
-		clickElement(selectedcheckboxEdgeStepThreeNameLabel, "");
+		try {
 
-		if (checkboxEdgeStepThreeName != null) {
-			String checked = checkboxEdgeStepThreeName.getDomAttribute("checked");
-			if (checked != "checked") {
-				clickElement(selectedcheckboxEdgeStepThreeNameLabel, "");
-				// selectedcheckboxEdgeStepThreeNameLabel.click();;
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(8));
+			wait.until(ExpectedConditions.elementToBeClickable(selectedcheckboxEdgeStepThreeNameLabel));
 
+			Thread.sleep(2000);
+			if (checkboxEdgeStepThreeName != null) {
+				String checked = checkboxEdgeStepThreeName.getDomAttribute("checked");
+				if (checked != "checked") {
+					selectedcheckboxEdgeStepThreeNameLabel.click();;
+
+				}
 			}
-		}
+		} catch (Exception e) {
 
+		}
 	}
 
 	public void checkboxConfiguration() {
-		clickElement(selectedCheckboxConfigNameLabel, "");
 
-		if (checkboxConfigName != null) {
-			String checked = checkboxConfigName.getDomAttribute("checked");
-			if (checked != "checked") {
-				clickElement(selectedCheckboxConfigNameLabel, "");
-				// selectedCheckboxConfigNameLabel.click();
+		try {
+			Thread.sleep(2000);
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(8));
+			wait.until(ExpectedConditions.elementToBeClickable(selectedCheckboxConfigNameLabel));
+                   Thread.sleep(4000);
+			if (checkboxConfigName != null) {
+				String checked = checkboxConfigName.getDomAttribute("checked");
+				if (checked != "checked") {
+					selectedCheckboxConfigNameLabel.click();
 
+				}
 			}
-		}
+			Thread.sleep(2000);
+		} catch (Exception e) {
 
+		}
+		
 	}
 
 	public void checkboxAppNameStepTwoName() {
-		clickElement(selectedCheckboxAppNameLabel, "");
+		try {
+			Thread.sleep(2000);
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+			wait.until(ExpectedConditions.elementToBeClickable(selectedCheckboxAppNameLabel));
 
-		if (checkboxAppName != null) {
-			String checked = checkboxAppName.getDomAttribute("checked");
-			if (checked != "checked") {
-				clickElement(selectedCheckboxAppNameLabel, "");
-				// selectedCheckboxAppNameLabel.click();
+			if (checkboxAppName != null) {
+				String checked = checkboxAppName.getDomAttribute("checked");
+				if (checked != "checked") {
+					selectedCheckboxAppNameLabel.click();
+				}
 			}
+		} catch (Exception e) {
+
 		}
 
 	}
-
+	
 	public void ConfigcheckboxAppNameStepThree() {
 		try {
-
+			Thread.sleep(2000);
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 			wait.until(ExpectedConditions.elementToBeClickable(selectedCheckboxAppNameLabel));
 
@@ -307,16 +335,20 @@ public class EdgeAppConfigurationPage extends CommonActions {
 	}
 
 	public void checkboxEdgeNameStepFour() {
-		clickElement(selectedCheckboxEdgeNameSacLabel, "");
+		try {
+			Thread.sleep(2000);
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+			wait.until(ExpectedConditions.elementToBeClickable(selectedCheckboxEdgeNameSacLabel));
 
-		if (checkboxEdgeName != null) {
-			String checked = checkboxEdgeName.getDomAttribute("checked");
-			if (checked != "checked") {
-				clickElement(selectedCheckboxEdgeNameSacLabel, "");
-//					selectedCheckboxEdgeNameSacLabel.click();
+			if (checkboxEdgeName != null) {
+				String checked = checkboxEdgeName.getDomAttribute("checked");
+				if (checked != "checked") {
+					selectedCheckboxEdgeNameSacLabel.click();
+				}
 			}
-		}
+		} catch (Exception e) {
 
+		}
 	}
 
 	public void backDropShowing_Div_Click() {
@@ -327,83 +359,73 @@ public class EdgeAppConfigurationPage extends CommonActions {
 
 	public void edgeGroupNameConfigDot() {
 		clickElement(edgeGroupNameConfigDot, "");
-		// edgeGroupNameConfigDot.click();
+		//edgeGroupNameConfigDot.click();
 	}
 
 	public void confirmDeployButton() {
 		clickElement(confirmDeployButton, "");
-		// confirmDeployButton.click();
+		//confirmDeployButton.click();
 	}
 
 	public void edgeVersionNameInput(String value) {
 		edgeVersionNameInput.sendKeys(value);
 	}
-
+	
 	public void confignameinput(String value) {
-		// nameconfiguration.sendKeys(Keys.ENTER);
+		//nameconfiguration.sendKeys(Keys.ENTER);
 		nameconfiguration.sendKeys(value);
 	}
 
 	public void proxyAppinput(String value) {
-		// proxyAppinput.sendKeys(Keys.ENTER);
+		//proxyAppinput.sendKeys(Keys.ENTER);
 		proxyAppinput.sendKeys(value);
 	}
 
 	public void saveButton() {
 		clickElement(saveButton, "");
-		// saveButton.click();
+		//saveButton.click();
 	}
-
 	public void applicationDeploymentGroupNameSearch(String value) {
-		SetInputENterKey(applicationDeploymentGroupNameSearch, value);
-		SetInput(applicationDeploymentGroupNameSearch, value, value);
-//		applicationDeploymentGroupNameSearch.sendKeys(Keys.ENTER);
-//		applicationDeploymentGroupNameSearch.sendKeys(value);
+		applicationDeploymentGroupNameSearch.sendKeys(Keys.ENTER);
+		applicationDeploymentGroupNameSearch.sendKeys(value);
 	}
 
 	public void applicationconfigurationEdgeIDDevice(String value) {
-		SetInputENterKey(applicationconfigurationEdgeIDDevice, value);
-		SetInput(applicationconfigurationEdgeIDDevice, value, value);
-//		applicationconfigurationEdgeIDDevice.sendKeys(Keys.ENTER);
-//		applicationconfigurationEdgeIDDevice.sendKeys(value);
+		applicationconfigurationEdgeIDDevice.sendKeys(Keys.ENTER);
+		applicationconfigurationEdgeIDDevice.sendKeys(value);
 	}
 
 	public void deploymentEdgeGroupId() {
 		clickElement(deploymentEdgeGroupId, "");
-		// deploymentEdgeGroupId.click();
+		//deploymentEdgeGroupId.click();
 	}
 
 	public void ConfigNameAppDeploymentDot() {
-
+		
 		clickElement(ConfigNameAppDeploymentDot, "");
-
-		// ConfigNameAppDeploymentDot.click();
+		
+		//ConfigNameAppDeploymentDot.click();
 
 	}
 
 	public void ConfigNameAppDeploymentInput(String value) {
-		SetInputENterKey(ConfigNameAppDeploymentInput, value);
-		SetInput(ConfigNameAppDeploymentInput, value, value);
-//		
-//		ConfigNameAppDeploymentInput.sendKeys(Keys.ENTER);
-//		ConfigNameAppDeploymentInput.sendKeys(value);
+		ConfigNameAppDeploymentInput.sendKeys(Keys.ENTER);
+		ConfigNameAppDeploymentInput.sendKeys(value);
 	}
-
 	public void headingConfigurationBulk() {
 		clickElement(headingConfigurationBulk, "");
-
-		// headingConfigurationBulk.click();
+		
+		//headingConfigurationBulk.click();
 	}
 
 	public void addconfigurationicon() {
 		clickElement(addconfigurationicon, "");
-
-		// addconfigurationicon.click();
+		
+	//	addconfigurationicon.click();
 	}
-
 	public void configurationFileType(String value) throws InterruptedException {
 
 		SelectMatOption(configurationFileType, value);
 	}
-
+	
 }

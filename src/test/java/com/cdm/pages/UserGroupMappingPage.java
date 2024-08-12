@@ -44,8 +44,6 @@ public class UserGroupMappingPage extends CommonActions {
 	@FindBy(xpath= "//ul[@class='nav']/li[2]")
 	WebElement edgeGroupsTabforgroup;
 	
-	@FindBy(xpath= "//h4")
-	WebElement headingclick;
 	
 	@FindBy(xpath= "//ul[@class='nav']/li[3]")
 	WebElement edgeDeviceTabforgroup;
@@ -180,18 +178,6 @@ public class UserGroupMappingPage extends CommonActions {
 		
 //		groupnamesearchmap.sendKeys(Keys.ENTER);
 //		groupnamesearchmap.sendKeys(value);
-	}
-
-	public void headingclickElement() {
-		
-		clickElement(headingclick, "");
-		
-	}
-	@FindBy(css= ".cdk-overlay-container")
-	WebElement outerlayerclick;
-	public void outerlayerclick() {
-		clickElement(outerlayerclick, "");
-		
 	}
 	
 

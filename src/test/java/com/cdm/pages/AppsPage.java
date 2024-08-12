@@ -24,8 +24,6 @@ public class AppsPage extends CommonActions {
 		super(driver, logger);
 		PageFactory.initElements(driver, this);
 	}
-	@FindBy(css = ".cdk-overlay-container")
-	WebElement repositoryEditToolTip;
 	
 	@FindBy(xpath = "//app-applist[1]/div[1]/div[1]/img[1]")
 	WebElement refreshlist;
@@ -39,14 +37,6 @@ public class AppsPage extends CommonActions {
 	
 	@FindBy(css = ".cdk-overlay-container")
 	WebElement statusToolTip;
-	
-	@FindBy(css = ".cdk-overlay-container")
-	WebElement repositoryVersionAppToolTip;
-	
-	
-	@FindBy(xpath = "//input[@formcontrolname='tag']")
-	WebElement repositoryVersionApp
-	;
 	
 	
 	@FindBy(css = ".cdk-overlay-container")
@@ -78,10 +68,6 @@ public class AppsPage extends CommonActions {
 	@FindBy(xpath = "//thead/tr[1]/th[1]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]")
 	WebElement applicationthreedot;
 	
-	
-	@FindBy(xpath = "//thead/tr[1]/th[1]/div[1]/span[1]/div[1]/div[2]")
-	WebElement applicationNameFilter;
-	
 	@FindBy(xpath = "//thead/tr[1]/th[2]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]")
 	WebElement architecturethreedot;
 	
@@ -103,14 +89,9 @@ public class AppsPage extends CommonActions {
 
 	
 
-	@FindBy(xpath = "//input[@formcontrolname='repositorylink']")
-	WebElement repositoryLinkEdit;
-
-	
 	@FindBy(xpath = "//input[@name='tag']")
 	WebElement versionTag;
-	
-	
+
 	@FindBy(xpath = "//input[@name='appname']")
 	WebElement applicationName;
 
@@ -220,116 +201,10 @@ public class AppsPage extends CommonActions {
 	
 	public void editButtonConfig() {
 		wait(editButtonConfig,logger);
-		//clickElement(editButtonConfig, "");
-		editButtonConfig.click();
-	}
-	
-	public void applicationNameFilter() {
-	
-		clickElement(applicationNameFilter, "");
-	}
-
-	public String get_Text_ToolTipRepositoryLink() {
-		
-
-		mouseHover(repositoryLinkEdit);
-
-
-		String repositoryLinkToolTipText = repositoryLinkToolTip.getText();
-
-		System.out.println("toolTipText-->" + repositoryLinkToolTipText);
-
-		return repositoryLinkToolTipText;
-	}
-
-	public String get_Text_ToolTipVersionApp() {
-		
-		mouseHover(repositoryVersionApp);
-
-
-		String repositoryVersionAppToolTipText = repositoryVersionAppToolTip.getText();
-
-		System.out.println("toolTipText-->" + repositoryVersionAppToolTipText);
-
-		return repositoryVersionAppToolTipText;
-		
-	}
-	
-
-	@FindBy(css = ".cdk-overlay-container")
-	WebElement repositoryArchiectureToolTip;
-	
-	@FindBy(xpath = "//input[@formcontrolname='architecture']")
-	WebElement repositoryArchiecture;
-
-	public String get_Text_ToolTipArchitecture() {
-		mouseHover(repositoryArchiecture);
-
-
-		String repositoryArchiectureText = repositoryArchiectureToolTip.getText();
-
-		System.out.println("toolTipText-->" + repositoryArchiectureText);
-
-		return repositoryArchiectureText;
-	}
-	
-	@FindBy(css = ".cdk-overlay-container")
-	WebElement configMasterEditToolTip;
-	
-	@FindBy(xpath = "//input[@formcontrolname='config_master']")
-	WebElement configMasterEdit;
-
-	public String get_Text_ToolTipConfigMaster() {
-		mouseHover(configMasterEdit);
-
-
-		String configMasterEditToolTipText = configMasterEditToolTip.getText();
-
-		System.out.println("toolTipText-->" + configMasterEditToolTipText);
-
-		return configMasterEditToolTipText;
-	}
-
-	
-	@FindBy(css = ".cdk-overlay-container")
-	WebElement configNameToolTip;
-	
-	@FindBy(xpath = "//div[contains(text(),'Config Name')]")
-	WebElement configNameLabel;
-	
-	public String get_Text_ToolTipConfigName() {
-		mouseHover(configNameLabel);
-
-
-		String configNameLabelText = configNameToolTip.getText();
-
-		System.out.println("toolTipText-->" + configNameLabelText);
-
-		return configNameLabelText;
-	}
-
-	public void minimiseWindow() {
-		driver.manage().window().minimize();
-	}
-
-	public void maximiseWindow() {
-		driver.manage().window().minimize();
-		
-	}
-
-	
-		@FindBy(css= ".cdk-overlay-container")
-		WebElement outerlayerclick;
-		public void outerlayerclick() {
-			clickElement(outerlayerclick, "");
-			
-		}
-
-		public void statusThreeDot() {
-		clickElement(stausThreeDot,"");
-		}
-		
+		clickElement(editButtonConfig, "");
+		//editButtonConfig.click();
 	}
 
 	
 	
+}

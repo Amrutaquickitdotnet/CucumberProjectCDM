@@ -15,10 +15,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+
 import com.cdm.pages.DashboardPage;
-import com.cdm.pages.HomePage;
 import com.cdm.pages.LogOutPage;
 import com.cdm.pages.LoginPage;
+
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -30,66 +31,59 @@ public class LoginPageSteps extends BaseTest {
 	public void in_login_screen_enter_user_name_valid_username() throws InterruptedException {
 		LoginPage lp = new LoginPage(driver, logger);
 		lp.enteruserid(alldata.get(vTCName).get("Userid").toString());
-
+		Thread.sleep(4000);
 	}
-
 	@Then("verification of loading proper in slow network")
 	public void verification_of_loading_proper_in_slow_network() {
 		LoginPage lp = new LoginPage(driver, logger);
-		// "Automating tasks related to a screen accessible via a Wi-Fi network using
-		// Selenium might not be possible because it is depends on various factor 2G 3 G
-		// network speed ", false);
+	//"Automating tasks related to a screen accessible via a Wi-Fi network using Selenium might not be possible because it is depends on various factor 2G 3 G network speed ", false);
 	}
-
+	
 	@Then("verify restore the password with invalid user name")
 	public void verify_restore_the_password_with_invalid_user_name() {
 		LoginPage lp = new LoginPage(driver, logger);
-
-		Assume.assumeTrue(
-				"Automating password restoration typically involves a few steps: accessing the password reset page, and password Reset functionality does not exist on current application",
-				false);
+		
+		Assume.assumeTrue("Automating password restoration typically involves a few steps: accessing the password reset page, and password Reset functionality does not exist on current application", false);
 	}
-
+	@Then("verification of background picture")
+	public void verification_of_background_picture() {
+		LoginPage lp = new LoginPage(driver, logger);
+		//"we can not automate GUT element of background picture", false);
+	}
 	
+
 
 	@Then("Verification of without login into browser copy & paste the url")
 	public void verification_of_without_login_into_browser_copy_paste_the_url() {
 		LoginPage lp = new LoginPage(driver, logger);
-		// We can not automate scenario Selenium is a powerful tool primarily used for
-		// automating web browsers. It allows you to interact with web elements,
-		// navigate through web pages, and perform various actions programmatically.",
-		// false);
+	//We can not automate scenario Selenium is a powerful tool primarily used for automating web browsers. It allows you to interact with web elements, navigate through web pages, and perform various actions programmatically.", false);
 	}
 
 	@Then("verification of screen accessible by using wi-fi network")
 	public void verification_of_screen_accessible_by_using_wi_fi_network() {
-
+		
 		LoginPage lp = new LoginPage(driver, logger);
-		// "Automating tasks related to a screen accessible via a Wi-Fi network using
-		// Selenium might not be possible because it is depends on various factor 2G 3 G
-		// network speed ", false);
-
+		//"Automating tasks related to a screen accessible via a Wi-Fi network using Selenium might not be possible because it is depends on various factor 2G 3 G network speed ", false);
+		
 	}
-
 	@Then("verification of screen accessible by using mobile network")
 	public void verification_of_screen_accessible_by_using_mobile_network() {
 		LoginPage lp = new LoginPage(driver, logger);
-		// "Automating tasks related to a screen accessible via a Wi-Fi network using
-		// Selenium might not be possible because it is depends on various factor 2G 3 G
-		// network speed ", false;
+		//"Automating tasks related to a screen accessible via a Wi-Fi network using Selenium might not be possible because it is depends on various factor 2G 3 G network speed ", false;
 	}
 
+	
 	@Then("verify visibility duration to load page for Login")
 	public void verify_visibility_duration_to_load_page_for_login() {
 		LoginPage lp = new LoginPage(driver, logger);
 		lp.calculateLoginTime();
-
+        
 	}
 
 	@When("user clicks on Login button")
 	public void user_clicks_on_login_button() {
 		LoginPage lp = new LoginPage(driver, logger);
-		// lp.loginbuttonHome();
+		//lp.loginbuttonHome();
 	}
 
 	@When("Enter password - Valid Password")
@@ -98,24 +92,27 @@ public class LoginPageSteps extends BaseTest {
 		lp.enterpwd(alldata.get(vTCName).get("Password").toString());
 
 	}
-
+	
 	@Then("click on eye icon for the password")
 	public void click_on_eye_icon_for_the_password() {
 		LoginPage lp = new LoginPage(driver, logger);
 		lp.clickshowpwd();
 	}
 
+
 	@Then("Click on Login")
 	public void click_on_login() {
 		LoginPage lp = new LoginPage(driver, logger);
 		lp.clickLoginButton();
 	}
-
+	
 	@Then("the input field should be visible")
 	public void the_input_field_should_be_visible() {
 		LoginPage lp = new LoginPage(driver, logger);
 //		Can not automate visibility
 	}
+
+
 
 	@When("In Login screen, Do not enter Username - Blank")
 	public void in_login_screen_do_not_enter_username_blank() {
@@ -139,7 +136,6 @@ public class LoginPageSteps extends BaseTest {
 		Assert.assertEquals("Validation message", "Username is required", lp.get_validationmessageusername());
 
 	}
-
 	@Then("verify restore password functionality")
 	public void verify_restore_password_functionality() {
 		LoginPage lp = new LoginPage(driver, logger);
@@ -153,25 +149,86 @@ public class LoginPageSteps extends BaseTest {
 
 	}
 
+	@Then("Login button should be horizontally aligned")
+	public void login_button_should_be_horizontally_aligned() {
+		LoginPage lp = new LoginPage(driver, logger);
+		WebElement loginButton = lp.getLoginButton();
+		// Get the location of the login button
+		Point location = loginButton.getLocation();
+
+		// Assert that the X-coordinate of the login button is within an acceptable
+		// range
+		// Adjust the expected X-coordinate based on your application's design
+		float expectedXCoordinate = 705; // Example expected X-coordinate
+		int tolerance = 5; // Example tolerance for alignment
+		Assume.assumeTrue("Alignment for button may differ on differnet resolution size", false);
+		//Assert.assertEquals(expectedXCoordinate, location.getX(), tolerance);
+	}
+
+	@Then("verify registration screen as a super admin")
+	public void verify_registration_screen_as_a_super_admin() {
+		LoginPage lp = new LoginPage(driver, logger);
+		Assume.assumeTrue("No Register Screen found on application", false);
+	}
+	@Then("verify remember me functionality")
+	public void verify_remember_me_functionality() {
+		LoginPage lp = new LoginPage(driver, logger);
+		Assume.assumeTrue("No Remember me link functionality found on ", false);
+	}
+	@Then("verify acceptance of emaild for forgot password button")
+	public void verify_acceptance_of_emaild_for_forgot_password_button() {
+		LoginPage lp = new LoginPage(driver, logger);
+		lp.forgotpasswordLink();
+		lp.setinputforgotemailidsetup(alldata.get(vTCName).get("enterForgotPassword").toString());
+		lp.getResetPasswordLink();
+		
+	}
+	@Then("click on forgot password button to reset password")
+	public void click_on_forgot_password_button_to_reset_password() {
 	
-	
-	
+		LoginPage lp = new LoginPage(driver, logger);
+		lp.forgotpasswordLink();
+		lp.setinputforgotemailidsetup(alldata.get(vTCName).get("enterForgotPassword").toString());
+	}
+
+
+
+	@Then("Login button should be vertically aligned")
+	public void login_button_should_be_vertically_aligned() {
+
+		LoginPage lp = new LoginPage(driver, logger);
+		WebElement loginButton = lp.getLoginButton();
+		// Get the location of the login button
+		Point location = loginButton.getLocation();
+//
+//		// Assert that the Y-coordinate of the login button is within an acceptable
+//		// range
+//		// Adjust the expected Y-coordinate based on your application's design
+//		int expectedYCoordinate = 235; // Example expected Y-coordinate
+//		int tolerance = 5; // Example tolerance for alignment
+//		Assert.assertEquals(expectedYCoordinate, location.getY(), tolerance);
+		Assume.assumeTrue("Alignment for button may differ on differnet resolution size", false);		
+		
+	}
 
 	@Then("Username and password fields are autofilled")
 	public void username_and_password_fields_are_autofilled() {
 		LoginPage lp = new LoginPage(driver, logger);
-		
+		lp.getUsernameFieldLength();
+		String autofilledUsername = lp.getUsernameFieldValue();
+		String autofilledPassword = lp.getPasswordFieldValue();
 
-		Assume.assumeTrue(
-				"Autofill functionality not available currently If there's a toggle or setting for auto-login, ensure it's switched on.",
-				false);
+		// Assert that the fields are autofilled with the expected values
+		Assert.assertEquals("", autofilledUsername);
+		Assert.assertEquals("", autofilledPassword);
+		
+		Assume.assumeTrue("Autofill functionality not available currently If there's a toggle or setting for auto-login, ensure it's switched on.",false);
 	}
 
 	@Then("click on Login button without adding credentials")
 	public void click_on_login_button_without_adding_credentials() throws InterruptedException {
 		Thread.sleep(3000);
 		LoginPage lp = new LoginPage(driver, logger);
-		lp.checkboxClickTermsandConditions();
 		lp.clickLoginButton();
 
 	}
@@ -194,22 +251,9 @@ public class LoginPageSteps extends BaseTest {
 	public void user_presses_tab_key_on_the_username_field() {
 		LoginPage lp = new LoginPage(driver, logger);
 		lp.getUsernameField().sendKeys(Keys.TAB);
-		
+		;
 
 	}
-	@Then("check for cancel button")
-	public void check_for_cancel_button() {
-		LoginPage lp = new LoginPage(driver, logger);
-		Assume.assumeTrue("Cancel button does not exist on application .Invalid Test Case", false);
-	}
-	@Then("verify reset password functioanlity")
-	public void verify_reset_password_functioanlity() {
-		LoginPage lp = new LoginPage(driver, logger);
-		Assume.assumeTrue("Reset password functionality does not exist on application .Invalid Test Case", false);
-	}
-
-
-
 
 	@Then("Focus should shift to the password field")
 	public void focus_should_shift_to_the_password_field() {
@@ -239,7 +283,7 @@ public class LoginPageSteps extends BaseTest {
 		lo.profileImage();
 		Thread.sleep(2000);
 		lo.logout();
-
+		Thread.sleep(4000);
 	}
 
 	@Then("I should be logged in")
@@ -259,7 +303,7 @@ public class LoginPageSteps extends BaseTest {
 	public void i_am_on_the_login_page() throws InterruptedException {
 		LoginPage lp = new LoginPage(driver, logger);
 		lp.verifyDashboard();
-
+		Thread.sleep(4000);
 	}
 
 	@When("user enters valid credentials and click on login button")
@@ -298,30 +342,31 @@ public class LoginPageSteps extends BaseTest {
 	public void user_should_be_login_successfully() throws InterruptedException {
 		System.out.println("I am in start of user_should_be_login_successfully");
 		LoginPage lp = new LoginPage(driver, logger);
-
+		Thread.sleep(4000);
 		lp.verifyDashboard();
 	}
 
 	@When("Verify forgot password functionlity")
 	public void verify_forgot_password_functionlity() {
-
-		//
+	
+	
+		// 
 	}
-
+	
 	@When("user click on forgot password button")
 	public void user_click_on_forgot_password_button() {
-		HomePage home = new HomePage(driver, logger);
+		LoginPage lp = new LoginPage(driver, logger);
 //		Assume.assumeTrue("forgot password functionality is not available", false);
-		home.forgotpasswordLink();
+		lp.forgotpasswordLink();
 	}
-
 	@Then("enter email id to reset password")
 	public void enter_email_id_to_reset_password() {
-		HomePage home = new HomePage(driver, logger);
-
-		home.setinputforgotemailidsetup(alldata.get(vTCName).get("enterForgotPassword").toString());
-		home.getResetPasswordLink();
+		LoginPage lp = new LoginPage(driver, logger);
+		
+		lp.setinputforgotemailidsetup(alldata.get(vTCName).get("enterForgotPassword").toString());
+		lp.getResetPasswordLink();
 	}
+
 
 	@When("the user enters valid credentials {string} and {string} and clicks login")
 	public void the_user_enters_valid_credentials_and_and_clicks_login(String string, String string2) {
@@ -374,7 +419,12 @@ public class LoginPageSteps extends BaseTest {
 	@Then("I should see an error message indicating invalid credentials")
 	public void i_should_see_an_error_message_indicating_invalid_credentials() {
 		LoginPage lp = new LoginPage(driver, logger);
-		Assume.assumeTrue("Not implemented invalid test case", false);
+		String expectedMessageforusername = "Username is required";
+		String expectedMessageforpassword = "Password is required";
+		String bothinvalid = "Invalid User Name !";
+		String actualMessageforpassword = lp.verifyErrorMsg();
+		String bothcredentialInvalid = lp.verifyErrorMsgforLogin();
+		Assert.assertEquals(bothinvalid, bothcredentialInvalid);
 	}
 
 	@When("user enters valid password")
@@ -401,7 +451,6 @@ public class LoginPageSteps extends BaseTest {
 	@Then("click on Login button")
 	public void click_on_login_button() throws InterruptedException {
 		LoginPage lp = new LoginPage(driver, logger);
-		lp.checkboxClickTermsandConditions();
 		lp.clickLogin();
 		Thread.sleep(5000);
 	}
@@ -478,23 +527,19 @@ public class LoginPageSteps extends BaseTest {
 	@Then("the Super admin should be redirected to the Super admin dashboard")
 	public void the_super_admin_should_be_redirected_to_the_super_admin_dashboard() throws InterruptedException {
 		LoginPage lp = new LoginPage(driver, logger);
-
+		Thread.sleep(4000);
 		lp.profileIcon();
-
+		Thread.sleep(4000);
 		lp.SuperAdmin();
 	}
-	@Then("verify auth app button")
-	public void verify_auth_app_button() {
-		LoginPage lp = new LoginPage(driver, logger);
-		Assume.assumeTrue("Auth button does not exist on application. Invalid Test case", false);
-	}
-	@Then("the user should verify compliance with login page standards")
+
+	@When("the user should verify compliance with login page standards")
 	public void the_user_should_verify_compliance_with_login_page_standards() {
 		LoginPage lp = new LoginPage(driver, logger);
-//
+
 		WebElement uname = lp.getUsernameInput();
 
-		WebElement pwd = lp.getPasswordInput();
+		WebElement pwd = lp.getUsernameInput();
 
 		lp.verifyFont(uname, alldata.get(vTCName).get("Fontfamily"));
 		lp.verifyFont(pwd, alldata.get(vTCName).get("Fontfamily"));
@@ -506,7 +551,7 @@ public class LoginPageSteps extends BaseTest {
 
 	@Then("the user waits for an extended period to simulate session timeout")
 	public void the_user_waits_for_an_extended_period_to_simulate_session_timeout() throws InterruptedException {
-		LoginPage lp = new LoginPage(driver, logger);
+		Thread.sleep(2000); // 30 minute
 	}
 
 	@Then("the user attempts to interact with the application")
@@ -528,21 +573,20 @@ public class LoginPageSteps extends BaseTest {
 		lp.enterpwd(alldata.get(vTCName).get("Password"));
 		lp.clickLoginButton();
 	}
-
+	
 	@Then("keep the username field blank")
 	public void keep_the_username_field_blank() {
 		LoginPage lp = new LoginPage(driver, logger);
 		lp.enteruserid(alldata.get(vTCName).get("Userid"));
 	}
-
 	@Then("enter details under password")
 	public void enter_details_under_password() {
 		LoginPage lp = new LoginPage(driver, logger);
-
+		
 		lp.enterpwd(alldata.get(vTCName).get("Password"));
-		lp.checkboxClickTermsandConditions();
 		lp.clickLoginButton();
 	}
+
 
 	@When("click on back button and verify page")
 	public void click_on_back_button_and_verify_page() {
@@ -585,11 +629,11 @@ public class LoginPageSteps extends BaseTest {
 	public void i_log_in_with_valid_credentials_using_different_browser() throws InterruptedException {
 		LoginPage lp = new LoginPage(driver, logger);
 		driver.get(prop.getProperty("AppUrl") + alldata.get(vTCName).get("Url"));
-		// lp.loginbuttonHome();
+		//lp.loginbuttonHome();
 		lp.enteruserid(alldata.get(vTCName).get("Userid").toString());
 		lp.enterpwd(alldata.get(vTCName).get("Password").toString());
 		lp.clickLoginButton();
-
+		 
 	}
 
 	@When("I enter max characters in the username field")
@@ -604,8 +648,9 @@ public class LoginPageSteps extends BaseTest {
 		String userId = alldata.get(vTCName).get("Userid").toString();
 		lp.setUsernameFieldLength(userId);
 		int actualCharacters = lp.getUsernameFieldLength();
-
-		Assume.assumeTrue("The username field allows more than " + userId.length() + " characters", false);
+//actualCharacters != userId.length(),
+		Assume.assumeTrue(
+				"The username field allows more than " + userId.length() + " characters", false);
 	}
 
 	@When("I enter \\{string} characters in the password field")
@@ -623,12 +668,5 @@ public class LoginPageSteps extends BaseTest {
 		Assert.assertEquals(actualCharacters <= maxCharacters,
 				"The password field allows more than " + maxCharacters + " characters");
 	}
-	
-	@Then("verify switching between input fields using TAB")
-	public void verify_switching_between_input_fields_using_tab() {
-		LoginPage lp = new LoginPage(driver, logger);
-	}
-
-
 
 }

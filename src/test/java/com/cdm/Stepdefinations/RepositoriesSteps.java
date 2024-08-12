@@ -1,7 +1,6 @@
 package com.cdm.Stepdefinations;
 
 import org.junit.Assert;
-import org.junit.Assume;
 
 import com.cdm.pages.EdgeGroupsPage;
 import com.cdm.pages.RepositoriesAddPage;
@@ -11,124 +10,14 @@ import io.cucumber.java.en.Then;
 
 public class RepositoriesSteps extends BaseTest {
 
-	@Then("Click on switching to Repositories tab")
-	public void click_on_switching_to_repositories_tab()
+	@Then("Click on Settings module from side menu bar & switching to Repositories tab")
+	public void click_on_settings_module_from_side_menu_bar_switching_to_repositories_tab()
 			throws InterruptedException {
 		RepositoriesPage rs = new RepositoriesPage(driver, logger);
-			
+		Thread.sleep(4000);
+		rs.Setting_tab();
+		Thread.sleep(4000);
 		rs.repositories_tab();
-		
-	}
-
-	@Then("verify validation message for URL without entering details")
-	public void verify_validation_message_for_url_without_entering_details() {
-		RepositoriesAddPage rap = new RepositoriesAddPage(driver, logger);
-		rap.repositoryURLAdd(alldata.get(vTCName).get("RepositoryURLAdd").toString());
-		Assert.assertEquals("Validation message for URL", "Mandatory field - required !",
-				rap.verifyValidationMessageRepositoryURL());
-	}
-
-	@Then("verify filter icon visibility for Repository Name")
-	public void verify_filter_icon_visibility_for_repository_name() {
-		RepositoriesPage rp = new RepositoriesPage(driver, logger);
-		rp.repositoriesNameThreeDot();
-		rp.repositoryNameInput(alldata.get(vTCName).get("RepositoryNameSearch").toString());
-	}
-
-	@Then("verify filter icon visibility for UserName")
-	public void verify_filter_icon_visibility_for_user_name() {
-		RepositoriesPage rp = new RepositoriesPage(driver, logger);
-		rp.usernameThreeDot();
-		rp.usernameInput(alldata.get(vTCName).get("UserNameSearch").toString());
-	}
-
-	@Then("verify filter icon visibility for Status")
-	public void verify_filter_icon_visibility_for_status() {
-		RepositoriesPage rp = new RepositoriesPage(driver, logger);
-		rp.statusDot();
-
-	}
-
-	@Then("verify to check the visualisation look of the table list")
-	public void verify_to_check_the_visualisation_look_of_the_table_list() {
-		RepositoriesPage rp = new RepositoriesPage(driver, logger);
-	}
-
-	@Then("verify alignment for all the input text fields in ADD New Screen")
-	public void verify_alignment_for_all_the_input_text_fields_in_add_new_screen() {
-
-		RepositoriesAddPage rap = new RepositoriesAddPage(driver, logger);
-		rap.repositoryURLAdd(alldata.get(vTCName).get("RepositoryURLAdd").toString());
-		Assert.assertEquals("Validation message for URL", "Mandatory field - required !",
-				rap.verifyValidationMessageRepositoryURL());
-	}
-
-	@Then("verify to check the coloumn width uniformity")
-	public void verify_to_check_the_coloumn_width_uniformity() {
-		RepositoriesPage rp = new RepositoriesPage(driver, logger);
-		Assume.assumeTrue("Can not automate column width uniformity", false);
-	}
-
-	@Then("verify standarize text format for error message below for all the text fields")
-	public void verify_standarize_text_format_for_error_message_below_for_all_the_text_fields() {
-		RepositoriesAddPage rap = new RepositoriesAddPage(driver, logger);
-		rap.repositorynameAdd(alldata.get(vTCName).get("RepositoryNameAdd").toString());
-		Assert.assertEquals("Validation message for repository Nae",
-				"Alphanumerics & Special characters of length Min = 2, Max = 32 are allowed !",
-				rap.verifyValidationMessageRepositoryName());
-	}
-
-	@Then("verify sorting functionality for the table list")
-	public void verify_sorting_functionality_for_the_table_list() {
-		RepositoriesPage rp = new RepositoriesPage(driver, logger);
-		rp.repositoryNameAsc();
-
-	}
-
-	@Then("verify accessible the page by using mobile network")
-	public void verify_accessible_the_page_by_using_mobile_network() {
-		RepositoriesPage rp = new RepositoriesPage(driver, logger);
-		Assume.assumeTrue("Mobile network depends on various factors we can not automate ", false);
-	}
-
-	@Then("verify switching between inputs fields using TAB in the repository")
-	public void verify_switching_between_inputs_fields_using_tab_in_the_repository() {
-		RepositoriesPage rp = new RepositoriesPage(driver, logger);
-	}
-
-	@Then("verify alignment of Add New,Refresh buttons on the top right side")
-	public void verify_alignment_of_add_new_refresh_buttons_on_the_top_right_side() {
-		RepositoriesPage rp = new RepositoriesPage(driver, logger);
-	}
-
-	@Then("verify alignment for maximise and minimize the screen")
-	public void verify_alignment_for_maximise_and_minimize_the_screen() {
-		RepositoriesPage rp = new RepositoriesPage(driver, logger);
-		rp.minimizewindow();
-	}
-
-	@Then("verify filter icon visibility for Data Storage Index")
-	public void verify_filter_icon_visibility_for_data_storage_index() {
-		RepositoriesPage rp = new RepositoriesPage(driver, logger);
-		rp.dataStorageIndexThreeDot();
-		rp.dataStorageIndex(alldata.get(vTCName).get("DataStorageIndexSearch").toString());
-	}
-
-	@Then("verify validation message for Data Storage Index without entering details")
-	public void verify_validation_message_for_data_storage_index_without_entering_details()
-			throws InterruptedException {
-		RepositoriesAddPage rap = new RepositoriesAddPage(driver, logger);
-		rap.datastorageindexAdd(alldata.get(vTCName).get("RepositoryDataStorageIndexAdd").toString());
-		rap.savebuttonrepository();
-	}
-
-	@Then("fill invalid details and click on save respository button")
-	public void fill_invalid_details_and_click_on_save_respository_button() {
-		RepositoriesAddPage rap = new RepositoriesAddPage(driver, logger);
-		rap.repositorynameAdd(alldata.get(vTCName).get("RepositoryNameAdd").toString());
-		Assert.assertEquals("Validation message for repository Nae",
-				"Alphanumerics & Special characters of length Min = 2, Max = 32 are allowed !",
-				rap.verifyValidationMessageRepositoryName());
 	}
 
 	@Then("Try increasing & decreasing the Zoom% \\(from {int}% to {int}%) from browsers.")
@@ -141,15 +30,9 @@ public class RepositoriesSteps extends BaseTest {
 	public void click_on_add_button_icon_on_top_right_side_of_repositories() throws InterruptedException {
 		RepositoriesPage rs = new RepositoriesPage(driver, logger);
 
+		Thread.sleep(4000);
 		rs.addButton();
-
-	}
-
-	@Then("click on save button to save repository")
-	public void click_on_save_button_to_save_repository() {
-		RepositoriesPage rs = new RepositoriesPage(driver, logger);
-
-		rs.savebuttonrepository();
+		Thread.sleep(4000);
 	}
 
 	@Then("User Name optional Text field in the Repository > Add screen")
@@ -212,35 +95,39 @@ public class RepositoriesSteps extends BaseTest {
 	public void click_on_edit_button_to_edit_repositories() throws InterruptedException {
 		RepositoriesPage rs = new RepositoriesPage(driver, logger);
 		rs.editbuttonRepository();
-
+		
 		RepositoriesAddPage rap = new RepositoriesAddPage(driver, logger);
 		rap.removalofEnteredTextForRepositoryName();
-
+		
 		rap.repositorynameAdd(alldata.get(vTCName).get("RepositoryNameAdd").toString());
-
+		
 		rap.removalofEnteredTextForRepositoryPath();
-
+		
+		
 		rap.repositorypathAdd(alldata.get(vTCName).get("RepositoryPathAdd").toString());
-
+		
+		
 		rap.removalofEnteredTextForURL();
-
+		
+		
 		rap.repositoryURLAdd(alldata.get(vTCName).get("RepositoryURLAdd").toString());
-
+		
 		rap.removalofEneredTextForUSername();
-
+		
 		rap.repositoryUserNameAdd(alldata.get(vTCName).get("RepositoryUserNameAdd").toString());
-
+		
 		rap.removalofEneredTextPassword();
-
+		
 		rap.repositoryPasswordAdd(alldata.get(vTCName).get("RepositoryPasswordAdd").toString());
-
+		
 		rap.datastorageindexAdd(alldata.get(vTCName).get("RepositoryDataStorageIndexAdd").toString());
 		Thread.sleep(4000);
-
+		
 		rap.savebuttonrepository();
-
+		
 		Thread.sleep(4000);
-
+		
+		
 	}
 
 	@Then("observe search functionality")
@@ -249,17 +136,15 @@ public class RepositoriesSteps extends BaseTest {
 
 		rs.repositoriesNameThreeDot();
 		rs.repositoryNameInput(alldata.get(vTCName).get("RepositoryNameSearch").toString());
-		//rs.backDropShowing_Div_Click();
-		rs.outerlayerclick();
-		
+		rs.backDropShowing_Div_Click();
 
 		rs.dataStorageIndexThreeDot();
 		rs.dataStorageIndex(alldata.get(vTCName).get("DataStorageIndexSearch").toString());
-		rs.outerlayerclick();
+		rs.backDropShowing_Div_Click();
 
 		rs.usernameThreeDot();
 		rs.usernameInput(alldata.get(vTCName).get("UserNameSearch").toString());
-		rs.outerlayerclick();
+		rs.backDropShowing_Div_Click();
 	}
 
 	@Then("click on three dots of repositories name and enter the value for the repositories")
@@ -270,7 +155,7 @@ public class RepositoriesSteps extends BaseTest {
 		Thread.sleep(4000);
 		try {
 			rs.repositoryNameInput(alldata.get(vTCName).get("RepositoryNameSearch").toString());
-			rs.outerlayerclick();
+			rs.backDropShowing_Div_Click();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -282,6 +167,8 @@ public class RepositoriesSteps extends BaseTest {
 	public void click_on_delete_button() throws InterruptedException {
 		RepositoriesPage rs = new RepositoriesPage(driver, logger);
 		rs.deleteButton();
+
+		Thread.sleep(4000);
 		// rs.confirmationYesButton();
 		Thread.sleep(4000);
 		rs.confirmationNoButton();
@@ -416,168 +303,6 @@ public class RepositoriesSteps extends BaseTest {
 		Assert.assertEquals("repositories validation message",
 				"Alphanumerics & Special characters of length Min = 2, Max = 32 are allowed !",
 				rap.verifyValidationMessageRepositoryName());
-	}
-
-	@Then("verify tooltip for repository name")
-	public void verify_tooltip_for_repository_name() {
-		RepositoriesPage rp = new RepositoriesPage(driver, logger);
-		Assert.assertEquals("Tooltip for repository name", "Unique Name assigned for the Repository",
-				rp.get_Text_ToolTipRepositoryName());
-	}
-
-	@Then("verify tool tip text visibilty for Data Storage Index")
-	public void verify_tool_tip_text_visibilty_for_data_storage_index() {
-		RepositoriesPage rp = new RepositoriesPage(driver, logger);
-		Assert.assertEquals("Tooltip for Data Storage Index",
-				"The data storage type for the repository being configured", rp.get_Text_ToolTipDataStorageIndex());
-	}
-
-	@Then("verify tool tip text visibilty for User Name")
-	public void verify_tool_tip_text_visibilty_for_user_name() {
-		RepositoriesPage rp = new RepositoriesPage(driver, logger);
-		Assert.assertEquals("Tooltip for username", "Valid Email ID for the repository", rp.get_Text_ToolTipUserName());
-	}
-
-	@Then("verify tool tip text visibilty for Status coloumn")
-	public void verify_tool_tip_text_visibilty_for_status_coloumn() {
-		RepositoriesPage rp = new RepositoriesPage(driver, logger);
-		Assert.assertEquals("Tooltip for Status", "Indicates the status of the repository",
-				rp.get_Text_ToolTipStatus());
-	}
-
-	@Then("verify tool tip text visibilty for EDIT button in Actions column for repositories")
-	public void verify_tool_tip_text_visibilty_for_edit_button_in_actions_column_for_repositories() {
-		RepositoriesPage rp = new RepositoriesPage(driver, logger);
-		Assert.assertEquals("Tooltip for Edit button", "Edit", rp.get_Text_ToolTipEdit());
-	}
-
-	@Then("verify tool tip text visibilty for Delete functionality button in Actions column for repositories")
-	public void verify_tool_tip_text_visibilty_for_delete_functionality_button_in_actions_column_for_repositories() {
-		RepositoriesPage rp = new RepositoriesPage(driver, logger);
-		Assert.assertEquals("Tooltip for Delete button", "Delete", rp.get_Text_ToolTipDelete());
-	}
-
-	@Then("verify tool tip text visibilty for Repository Name Input text field in ADD Screen")
-	public void verify_tool_tip_text_visibilty_for_repository_name_input_text_field_in_add_screen() {
-		RepositoriesPage rp = new RepositoriesPage(driver, logger);
-		try {
-			Assert.assertEquals("Tooltip for repository name", "Unique Name assigned for the Repository",
-					rp.get_Text_ToolTipRepositoryNameAdd());
-		} catch (Exception e) {
-		e.printStackTrace();
-		}
-		
-	}
-
-	@Then("verify tool tip text visibilty for Repository Name Input text field Edit Screen")
-	public void verify_tool_tip_text_visibilty_for_repository_name_input_text_field_edit_screen() {
-		RepositoriesPage rp = new RepositoriesPage(driver, logger);
-		rp.editbuttonRepository();
-		Assert.assertEquals("Tooltip for repository name", "Unique Name assigned for the Repository",
-				rp.get_Text_ToolTipRepositoryNameAdd());
-	}
-
-	@Then("verify tool tip text visibilty for Repository Name Input text field Edit Screen of repositories")
-	public void verify_tool_tip_text_visibilty_for_repository_name_input_text_field_edit_screen_of_repositories() {
-		try {
-			RepositoriesPage rp = new RepositoriesPage(driver, logger);
-
-			Assert.assertEquals("Tooltip for repository name", "Unique Name assigned for the Repository",
-					rp.get_Text_ToolTipRepositoryNameAdd());
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-	}
-
-	@Then("verify tool tip text visibilty for User Name Input text field in Edit Screen")
-	public void verify_tool_tip_text_visibilty_for_user_name_input_text_field_in_edit_screen() {
-		RepositoriesPage rp = new RepositoriesPage(driver, logger);
-		rp.editbuttonRepository();
-		Assert.assertEquals("Tooltip for username", "Valid Email ID for the repository",
-				rp.get_Text_ToolTipRepositoryUserNameAdd());
-	}
-
-	@Then("verify tool tip text visibilty for URL Input text field in ADD Screen")
-	public void verify_tool_tip_text_visibilty_for_url_input_text_field_in_add_screen() {
-		RepositoriesPage rp = new RepositoriesPage(driver, logger);
-		Assert.assertEquals("Tooltip for repository URL", "Path of Repository: URL, IP Address",
-				rp.get_Text_ToolTipRepositoryURLAdd());
-	}
-
-	@Then("verify to check the tool tip text visibilty for URL Input text field in Edit Screen")
-	public void verify_to_check_the_tool_tip_text_visibilty_for_url_input_text_field_in_edit_screen() {
-		RepositoriesPage rp = new RepositoriesPage(driver, logger);
-		rp.editbuttonRepository();
-		Assert.assertEquals("Tooltip for repository URL", "Path of Repository: URL, IP Address",
-				rp.get_Text_ToolTipRepositoryURLAdd());
-	}
-
-	@Then("verify tool tip text visibilty for Repository Path Input text field in ADD Screen")
-	public void verify_tool_tip_text_visibilty_for_repository_path_input_text_field_in_add_screen() {
-		RepositoriesPage rp = new RepositoriesPage(driver, logger);
-		Assert.assertEquals("Tooltip for repository Path",
-				"The file path where the repository is located. Character limits: 0-256 characters permitted.",
-				rp.get_Text_ToolTipRepositoryPathAdd());
-	}
-
-	@Then("verify to check the tool tip text visibilty for Repository Path Input text field in Edit Screen")
-	public void verify_to_check_the_tool_tip_text_visibilty_for_repository_path_input_text_field_in_edit_screen() {
-		RepositoriesPage rp = new RepositoriesPage(driver, logger);
-		rp.editbuttonRepository();
-		Assert.assertEquals("Tooltip for repository Path",
-				"The file path where the repository is located. Character limits: 0-256 characters permitted.",
-				rp.get_Text_ToolTipRepositoryPathAdd());
-		
-	
-
-	}
-
-	@Then("verify tool tip text visibilty for User Name Input text field in ADD Screen")
-	public void verify_tool_tip_text_visibilty_for_user_name_input_text_field_in_add_screen() {
-		RepositoriesPage rp = new RepositoriesPage(driver, logger);
-		Assert.assertEquals("Tooltip for username", "Valid Email ID for the repository",
-				rp.get_Text_ToolTipRepositoryUserNameAdd());
-	}
-
-	@Then("verify tool tip text visibilty for Password Input text field in Edit Screen")
-	public void verify_tool_tip_text_visibilty_for_password_input_text_field_in_edit_screen() {
-		RepositoriesPage rp = new RepositoriesPage(driver, logger);
-		rp.editbuttonRepository();
-		Assert.assertEquals("Tooltip for Password", "Valid Password for access",
-				rp.get_Text_ToolTipRepositoryPasswordAdd());
-	}
-	@Then("verify tool tip text visibilty for Data Storage Index dropdown Input text field in Edit Screen")
-	public void verify_tool_tip_text_visibilty_for_data_storage_index_dropdown_input_text_field_in_edit_screen() {
-		RepositoriesPage rp = new RepositoriesPage(driver, logger);
-		rp.editbuttonRepository();
-		Assert.assertEquals("Tooltip for Data Storage Index",
-				"The data storage type for the repository being configured",rp.get_Text_ToolTipRepositoryDataStorageAdd());
-		
-	}
-
-
-	@Then("verify tool tip text visibilty for Password Input text field in ADD Screen")
-	public void verify_tool_tip_text_visibilty_for_password_input_text_field_in_add_screen() {
-		RepositoriesPage rp = new RepositoriesPage(driver, logger);
-		Assert.assertEquals("Tooltip for Password", "Valid Password for access",
-				rp.get_Text_ToolTipRepositoryPasswordAdd());
-	}
-
-	@Then("verify tool tip text visibilty for Data Storage Index drop down Input text field in ADD Screen")
-	public void verify_tool_tip_text_visibilty_for_data_storage_index_drop_down_input_text_field_in_add_screen() {
-		RepositoriesPage rp = new RepositoriesPage(driver, logger);
-		Assert.assertEquals("Tooltip for Data Storage Index",
-				"The data storage type for the repository being configured",
-				rp.get_Text_ToolTipRepositoryDataStorageAdd());
-	}
-
-	@Then("verify tool tip text visibilty for Data Storage Index drop down Input text field in ADD Screen of repositories")
-	public void verify_tool_tip_text_visibilty_for_data_storage_index_drop_down_input_text_field_in_add_screen_of_repositories() {
-		RepositoriesPage rp = new RepositoriesPage(driver, logger);
-		Assert.assertEquals("Tooltip for Data Storage Index",
-				"The data storage type for the repository being configured",
-				rp.get_Text_ToolTipRepositoryDataStorageAdd());
 	}
 
 }

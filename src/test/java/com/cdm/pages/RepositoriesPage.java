@@ -1,7 +1,10 @@
 package com.cdm.pages;
 
+import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -17,9 +20,6 @@ public class RepositoriesPage extends CommonActions {
 		PageFactory.initElements(driver, this);
 
 	}
-	
-	@FindBy(xpath = "//input[@formcontrolname='repositoryname']/../../../../../span[2]")
-	WebElement validationMessagerepositoryName;
 	
 	@FindBy(css = ".cdk-overlay-container")
 	WebElement repositoryEditToolTip;
@@ -86,91 +86,11 @@ public class RepositoriesPage extends CommonActions {
 
 	@FindBy(css = ".cdk-overlay-backdrop-showing")
 	WebElement backDropShowing;
-	
-	@FindBy(xpath ="//thead/tr[1]/th[1]/div[1]/span[1]/div[1]/div[2]/div[2]/div[1]")
-	WebElement repositoryNameAsc;
-	
-	@FindBy(xpath = "//div[contains(text(),'Repository Name')]")
-	WebElement repositoryNameLabel;
 
-	
-	@FindBy(css = ".cdk-overlay-container")
-	WebElement repositoryNameToolTip;
-
-	@FindBy(css = ".cdk-overlay-container")
-	WebElement dataStorageIndexToolTip;
-	
-	
-	@FindBy(css = ".cdk-overlay-container")
-	WebElement statusToolTip;
-
-	@FindBy(xpath = "//div[contains(text(),'Status')]")
-	WebElement statusLabel;
-	
-	
-	@FindBy(xpath = "//div[contains(text(),'Data Storage Index')]")
-	WebElement dataStorageIndexLabel;
-	
-	
-	@FindBy(css = ".cdk-overlay-container")
-	WebElement userNameToolTip;
-	
-	
-	@FindBy(xpath = "//tbody/tr[1]/td[5]/img[1]")
-	WebElement editLabel;
-
-	@FindBy(css = ".cdk-overlay-container")
-	WebElement editToolTip;
-
-	@FindBy(xpath = "//tbody/tr[1]/td[5]/img[2]")
-	WebElement deleteLabel;
-
-	@FindBy(css = ".cdk-overlay-container")
-	WebElement deleteToolTip;
-	
-	@FindBy(xpath = "//div[contains(text(),'Username')]")
-	WebElement userNameLabel;
-	
-	@FindBy(xpath = "//tbody/tr[1]/td[5]/img[1]")
-	WebElement repositoryNameAddLabel;
-
-	@FindBy(css = ".cdk-overlay-container")
-	WebElement repositoryNameAddToolTip;
-	
-	@FindBy(xpath = "//input[@formcontrolname='url']")
-	WebElement repositoryURLAddLabel;
-
-	@FindBy(css = ".cdk-overlay-container")
-	WebElement repositoryURLToolTip;
-	
-	
-	@FindBy(xpath = "//input[@formcontrolname='repositorypath']")
-	WebElement repositoryPathAddLabel;
-
-	@FindBy(css = ".cdk-overlay-container")
-	WebElement repositoryPathAddToolTip;
-	
-	
-	@FindBy(xpath = "//input[@formcontrolname='username']")
-	WebElement repositoryUserNameAddLabel;
-
-	@FindBy(css = ".cdk-overlay-container")
-	WebElement repositoryUserNameAddToolTip;
-	
-	@FindBy(xpath = "//input[@formcontrolname='password']")
-	WebElement repositoryPasswordAddLabel;
-
-	@FindBy(css = ".cdk-overlay-container")
-	WebElement repositoryPasswordAddToolTip;
-	
-	
-	@FindBy(xpath = "//span[contains(text(),'Data Storage Index')]")
-	WebElement repositoryDataStorageAddLabel;
-
-	@FindBy(css = ".cdk-overlay-container")
-	WebElement repositoryDataStorageAddToolTip;
-	
-	 
+	public void Setting_tab() {
+		wait(Setting_tab,logger);
+		Setting_tab.click();
+	}
 
 	public void setZoomLevel(int width, int height) {
 		Dimension d = new Dimension(width, height);
@@ -294,23 +214,7 @@ public class RepositoriesPage extends CommonActions {
 
 		return repositoryAddButton;
 	}
-	
-	
 
-	public String validationMessageGroupIdwithout() {
-
-		
-		if (validationMessagerepositoryName == null) {
-			return "";
-		}
-		String message = validationMessagerepositoryName.getText();
-
-		return message.trim();
-
-	}
-	
-	
-	
 	public void savebuttonrepository() {
 		savebuttonrepository.click();
 		
@@ -322,160 +226,7 @@ public class RepositoriesPage extends CommonActions {
 		//cancelRepository.click();
 	}
 	
-	public void statusDot() {
-		status.click();
-	}
 
-	public void minimizewindow() {
-		
-		driver.manage().window().minimize();
-		driver.manage().window().maximize();
-		
-	}
-	public void repositoryNameAsc() {
-		clickElement(repositoryNameAsc, "");
-		
-	}
 	
 	
-	public String get_Text_ToolTipRepositoryName() {
-		
-		
-
-		mouseHover(repositoryNameLabel);
-
-
-		String repositoryNameToolTipText = repositoryNameToolTip.getText();
-
-		System.out.println("toolTipText-->" + repositoryNameToolTipText);
-
-		return repositoryNameToolTipText;
-	}
-
-	public String get_Text_ToolTipDataStorageIndex() {
-		mouseHover(dataStorageIndexLabel);
-
-
-		String dataStorageIndexToolTipText = dataStorageIndexToolTip.getText();
-
-		System.out.println("toolTipText-->" + dataStorageIndexToolTipText);
-
-		return dataStorageIndexToolTipText;
-	}
-
-	public String get_Text_ToolTipUserName() {
-		mouseHover(userNameLabel);
-
-
-		String userNameToolTipText = userNameToolTip.getText();
-
-		System.out.println("toolTipText-->" + userNameToolTipText);
-
-		return userNameToolTipText;
-	}
-
-	public String get_Text_ToolTipStatus() {
-		mouseHover(statusLabel);
-
-
-		String statusToolTipText = statusToolTip.getText();
-
-		System.out.println("toolTipText-->" + statusToolTipText);
-
-		return statusToolTipText;
-	}
-
-	public String get_Text_ToolTipEdit() {
-		mouseHover(editLabel);
-
-
-		String editToolTipText = editToolTip.getText();
-
-		System.out.println("toolTipText-->" + editToolTipText);
-
-		return editToolTipText;
-	}
-
-	public String get_Text_ToolTipDelete() {
-		mouseHover(deleteLabel);
-
-
-		String deleteToolTipText = deleteToolTip.getText();
-
-		System.out.println("toolTipText-->" + deleteToolTipText);
-
-		return deleteToolTipText;
-	}
-
-	public String get_Text_ToolTipRepositoryNameAdd() {
-		mouseHover(repositoryNameAddLabel);
-
-
-		String repositoryNameAddText = repositoryNameAddToolTip.getText();
-
-		System.out.println("toolTipText-->" + repositoryNameAddText);
-
-		return repositoryNameAddText;
-	}
-
-	public String get_Text_ToolTipRepositoryURLAdd() {
-		mouseHover(repositoryURLAddLabel);
-
-
-		String repositoryURLAddText = repositoryURLToolTip.getText();
-
-		System.out.println("toolTipText-->" + repositoryURLAddText);
-
-		return repositoryURLAddText;
-	}
-
-	public String get_Text_ToolTipRepositoryPathAdd() {
-		mouseHover(repositoryPathAddLabel);
-
-
-		String repositoryPathAddText = repositoryPathAddToolTip.getText();
-
-		System.out.println("toolTipText-->" + repositoryPathAddText);
-
-		return repositoryPathAddText;
-	}
-
-	public String get_Text_ToolTipRepositoryUserNameAdd() {
-		mouseHover(repositoryUserNameAddLabel);
-
-
-		String repositoryUserNameAddText = repositoryUserNameAddToolTip.getText();
-
-		System.out.println("toolTipText-->" + repositoryUserNameAddText);
-
-		return repositoryUserNameAddText;
-	}
-
-	public String get_Text_ToolTipRepositoryPasswordAdd() {
-		mouseHover(repositoryPasswordAddLabel);
-
-
-		String repositoryPasswordAddText = repositoryPasswordAddToolTip.getText();
-
-		System.out.println("toolTipText-->" + repositoryPasswordAddText);
-
-		return repositoryPasswordAddText;
-	}
-
-	public String get_Text_ToolTipRepositoryDataStorageAdd() {
-		mouseHover(repositoryDataStorageAddLabel);
-
-
-		String repositoryDataStorageAddText = repositoryDataStorageAddToolTip.getText();
-
-		System.out.println("toolTipText-->" + repositoryDataStorageAddText);
-
-		return repositoryDataStorageAddText;
-	}
-	@FindBy(css= ".cdk-overlay-container")
-	WebElement outerlayerclick;
-	public void outerlayerclick() {
-		clickElement(outerlayerclick, "");
-		
-	}
 }

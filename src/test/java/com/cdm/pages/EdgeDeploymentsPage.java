@@ -155,19 +155,21 @@ public class EdgeDeploymentsPage extends CommonActions {
 
 	public void clickEditButton() {
 
-		clickElement(EditButton, "");
-		//EditButton.click();
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		EditButton.click();
 	}
 
 	public void EdgeNameDeploymentInput(String value) {
 
-		//clickElement(backDropTransparent_Div_Click(), "");
 		backDropTransparent_Div_Click();
-		SetInputENterKey(EdgeNameDeploymentInput, value);
-		SetInput(EdgeNameDeploymentInput, value, value);
 		
-//		EdgeNameDeploymentInput.sendKeys(Keys.ENTER);
-//		EdgeNameDeploymentInput.sendKeys(value);
+		EdgeNameDeploymentInput.sendKeys(Keys.ENTER);
+		EdgeNameDeploymentInput.sendKeys(value);
 
 	}
 

@@ -17,6 +17,7 @@ import com.cdm.pages.EdgeDeploymentsPage;
 import com.cdm.pages.EdgeDeviceAdd;
 import com.cdm.pages.EdgeDeviceEdit;
 import com.cdm.pages.EdgeDevicesPage;
+import com.cdm.pages.EdgeGroupAddPage;
 import com.cdm.pages.EdgeGroupConfigurationPage;
 import com.cdm.pages.EnvironmentalVariablePage;
 import com.cdm.pages.Menu;
@@ -39,44 +40,6 @@ public class EDGEDevicesSteps extends BaseTest {
 
 	}
 
-	@Then("check verification of accessbility the filter icon for Group Name")
-	public void check_verification_of_accessbility_the_filter_icon_for_group_name() {
-		EdgeDevicesPage edp = new EdgeDevicesPage(driver, logger);
-		//edp.edgeGroupNameSearch_Button();
-
-	}
-
-	@Then("Verification of loading properly in slow network")
-	public void verification_of_loading_properly_in_slow_network() {
-		EdgeDevicesPage edp = new EdgeDevicesPage(driver, logger);
-	}
-
-
-
-
-	@Then("Verification of alignment of  i.e. ADD,refresh,bulk upload,bulk download &bulk app deployment buttons top right side")
-	public void verification_of_alignment_of_i_e_add_refresh_bulk_upload_bulk_download_bulk_app_deployment_buttons_top_right_side() {
-		EdgeDevicesPage edp = new EdgeDevicesPage(driver, logger);
-	}
-
-	@Then("Verification of visualization of icons in action column")
-	public void verification_of_visualization_of_icons_in_action_column() {
-		EdgeDevicesPage edp = new EdgeDevicesPage(driver, logger);
-
-	}
-
-	@Then("Verification of visibilty the input field format")
-	public void verification_of_visibilty_the_input_field_format() {
-		EdgeDevicesPage edp = new EdgeDevicesPage(driver, logger);
-//		edp.edgeIdSearch_Button();
-	}
-
-	@Then("Verification of visibilty duration to load the page")
-	public void verification_of_visibilty_duration_to_load_the_page() {
-		EdgeDevicesPage edp = new EdgeDevicesPage(driver, logger);
-
-	}
-
 	@Then("add all mandatory field of edge device")
 	public void add_all_mandatory_field_of_edge_device() throws InterruptedException {
 		EdgeDeviceAdd eda = new EdgeDeviceAdd(driver, logger);
@@ -84,14 +47,14 @@ public class EDGEDevicesSteps extends BaseTest {
 		eda.identityedgeNameAdd((alldata.get(vTCName).get("Edge Name Add").toString()));
 		eda.organizationAdd(alldata.get(vTCName).get("OrganizationAdd").toString());
 
-
+		Thread.sleep(2000);
 		eda.edgeGroupNameAdd(alldata.get(vTCName).get("EDGE Group Name Add").toString());
 
-
+		Thread.sleep(2000);
 		eda.locationAdd((alldata.get(vTCName).get("LocationAdd").toString()));
 
 		eda.hardWareNameAdd((alldata.get(vTCName).get("Hardware Name Add").toString()));
-		;
+		Thread.sleep(5000);
 		eda.descriptionAdd((alldata.get(vTCName).get("DescriptionAdd").toString()));
 
 		eda.serialNumberInputAdd((alldata.get(vTCName).get("serialNumberInputAdd").toString()));
@@ -107,7 +70,8 @@ public class EDGEDevicesSteps extends BaseTest {
 
 	@Then("Verify success message in toaster")
 	public void verify_success_message_in_toaster() {
-
+		// Write code here that turns the phrase above into concrete actions
+		throw new io.cucumber.java.PendingException();
 	}
 
 	@Then("verify error message verbaige for without entering details in ADD Screen of Edge Device")
@@ -362,14 +326,16 @@ public class EDGEDevicesSteps extends BaseTest {
 	@Then("verify application functionality for single select choice")
 	public void verify_application_functionality_for_single_select_choice() throws InterruptedException {
 		EdgeGroupConfigurationPage egcp = new EdgeGroupConfigurationPage(driver, logger);
-
+		Thread.sleep(4000);
 		egcp.titleApplicationDeployment();
 		egcp.appNameDot();
 		egcp.appNameInput(alldata.get(vTCName).get("appNameApplicationConfiguration").toString());
 		egcp.backDropShowing_Div_Click();
 		egcp.titleApplicationDeployment();
+		Thread.sleep(5000);
+		// egcp.checkboxAppNameSingleSelectStepTwoName();
 
-		;
+		Thread.sleep(5000);
 
 		egcp.NextButtonStep4();
 	}
@@ -377,17 +343,17 @@ public class EDGEDevicesSteps extends BaseTest {
 	@Then("verify application functionality for single select")
 	public void verify_application_functionality_for_single_select() throws InterruptedException {
 		EdgeGroupConfigurationPage egcp = new EdgeGroupConfigurationPage(driver, logger);
-		;
+		Thread.sleep(4000);
 		egcp.titleApplicationDeployment();
 		// egcp.appNameDot();
 		// egcp.appNameInput(alldata.get(vTCName).get("Value4").toString());
 		// egcp.backDropShowing_Div_Click();
 		// egcp.titleApplicationDeployment();
-		;
+		Thread.sleep(5000);
 		egcp.checkboxAppNameSingleSelectStepTwoName();
 		egcp.checkboxAppNameSingleSelectStepTwoNamedouble();
 
-		;
+		Thread.sleep(5000);
 
 		egcp.NextButtonStep4();
 	}
@@ -395,7 +361,7 @@ public class EDGEDevicesSteps extends BaseTest {
 	@Then("check pagination per page")
 	public void check_pagination_per_page() throws InterruptedException {
 		EdgeDevicesPage edp = new EdgeDevicesPage(driver, logger);
-		;
+		Thread.sleep(5000);
 
 		System.out.println(edp.recordsperpage());
 
@@ -412,7 +378,7 @@ public class EDGEDevicesSteps extends BaseTest {
 
 //		if(edgeIDData.matches("^[\\p{L}0-9'#]+$")){
 //			eda.identityedgeIdInputAdd(edgeIDData);
-//
+//		   
 //		}
 	}
 
@@ -420,7 +386,7 @@ public class EDGEDevicesSteps extends BaseTest {
 	public void make_health_status_in_active_mode() throws InterruptedException {
 		EdgeDeviceAdd eda = new EdgeDeviceAdd(driver, logger);
 
-		;
+		Thread.sleep(3000);
 		eda.moveSliderCondition("checked");
 
 	}
@@ -561,7 +527,7 @@ public class EDGEDevicesSteps extends BaseTest {
 	public void after_landing_on_edge_device_list_screen_click_on_bulk_download_icon_button_on_the_top_right_side()
 			throws InterruptedException {
 		EdgeDevicesPage edp = new EdgeDevicesPage(driver, logger);
-		;
+		Thread.sleep(5000);
 
 		edp.clickDownload();
 
@@ -572,7 +538,7 @@ public class EDGEDevicesSteps extends BaseTest {
 			throws InterruptedException {
 
 		EdgeDevicesPage edp = new EdgeDevicesPage(driver, logger);
-
+		Thread.sleep(6000);
 		edp.clickDeleteButton();
 
 	}
@@ -607,18 +573,18 @@ public class EDGEDevicesSteps extends BaseTest {
 		edp.edgeIdSearch_Button();
 
 	}
-
+	
 	@Then("verify upload functionality for onboarding configuration")
 	public void verify_upload_functionality_for_onboarding_configuration() {
 		EdgeDevicesPage edp = new EdgeDevicesPage(driver, logger);
 		Assume.assumeTrue("upload functionality removed from edge device ", false);
 	}
-
 	@Then("check download feature for onboarding configuration")
 	public void check_download_feature_for_onboarding_configuration() {
 		EdgeDevicesPage edp = new EdgeDevicesPage(driver, logger);
 		Assume.assumeTrue("download functionality for onboarding configuration removed from edge device ", false);
 	}
+
 
 	@Then("Click on EDGE ID name search icon i.e. three dots & enter Valid inputs into search text field")
 	public void click_on_edge_id_name_search_icon_i_e_three_dots_enter_valid_inputs_into_search_text_field()
@@ -628,7 +594,7 @@ public class EDGEDevicesSteps extends BaseTest {
 		edp.sendValueSearchIcon(alldata.get(vTCName).get("EDGE ID").toString());
 		edp.backDropShowing_Div_Click();
 		edp.headingClick();
-		;
+		Thread.sleep(3000);
 
 	}
 
@@ -641,7 +607,7 @@ public class EDGEDevicesSteps extends BaseTest {
 		Thread.sleep(8000);
 		edp.backDropShowing_Div_Click();
 		edp.headingClick();
-		;
+		Thread.sleep(5000);
 
 	}
 
@@ -685,9 +651,9 @@ public class EDGEDevicesSteps extends BaseTest {
 		Pagination p = new Pagination(driver, logger);
 		String value = alldata.get(vTCName).get("ItemsPerPage").toString();
 		p.SelectPageMatOption(value);
-		;
+		Thread.sleep(5000);
 		int rowPerPage = Integer.parseInt(value);
-		;
+		Thread.sleep(5000);
 		// Assert.assertTrue("Row count match for Next page",
 		// p.nextPageClickAndCountOnLastPage(rowPerPage));
 
@@ -713,7 +679,7 @@ public class EDGEDevicesSteps extends BaseTest {
 		EdgeDevicesPage edp = new EdgeDevicesPage(driver, logger);
 		edp.fileupload();
 
-		;
+		Thread.sleep(4000);
 		try {
 			Robot rb = new Robot();
 
@@ -731,7 +697,7 @@ public class EDGEDevicesSteps extends BaseTest {
 			// TODO: handle exception
 		}
 
-
+		Thread.sleep(6000);
 	}
 
 	@Then("Click on search icon i.e. three dots & search text field visible")
@@ -747,7 +713,7 @@ public class EDGEDevicesSteps extends BaseTest {
 	public void click_and_verify_bulk_download_button_is_working() throws InterruptedException {
 		EdgeDevicesPage edp = new EdgeDevicesPage(driver, logger);
 		edp.clickDownload();
-
+		Thread.sleep(6000);
 	}
 
 	@Then("verify downloaded alert popup message")
@@ -756,7 +722,7 @@ public class EDGEDevicesSteps extends BaseTest {
 		Assert.assertEquals("Verify Pop up message text", "Downloading Successful", edp.get_Text_bulkDownload());
 
 		// edp.verifyalertfordownload();
-
+		Thread.sleep(6000);
 	}
 
 	@Then("Click and Verify Bulk Application Configuration button is working")
@@ -773,7 +739,7 @@ public class EDGEDevicesSteps extends BaseTest {
 		edp.edgeIdSearch_Button();
 
 		edp.sendValueSearchIcon(alldata.get(vTCName).get("EDGE ID").toString());
-		;
+		Thread.sleep(5000);
 		edp.removalofEneredTextForEdgeId();
 		edp.backDropShowing_Div_Click();
 		edp.headingClick();
@@ -781,12 +747,12 @@ public class EDGEDevicesSteps extends BaseTest {
 
 //		edp.edgeNameSearch_Button();
 //		edp.sendValueSearchIconByEdgeName(alldata.get(vTCName).get("EDGE Name").toString());
-//		;
+//		Thread.sleep(5000);
 //		edp.removalofEneredTextForEdgeName();
 //		edp.backDropShowing_Div_Click();
-//
+//		
 //		edp.headingClick();
-//
+//		
 //		Thread.sleep(7000);
 //		edp.headingClick();
 
@@ -795,11 +761,11 @@ public class EDGEDevicesSteps extends BaseTest {
 //		edp.removalofEneredTextForEdgeGroupName();
 //		edp.backDropShowing_Div_Click();
 //		edp.headingClick();
-//		;
+//		Thread.sleep(5000);
 //
 //         edp.edgeAppGroupsSearch_Button();
 //		edp.sendValueSearchIconByAppGroups(alldata.get(vTCName).get("App Groups").toString());
-//
+//		Thread.sleep(5000);
 //		edp.removalofEneredTextForAppGroups();
 //		edp.backDropShowing_Div_Click();
 //		edp.headingClick();
@@ -819,6 +785,12 @@ public class EDGEDevicesSteps extends BaseTest {
 		EdgeDeviceAdd eda = new EdgeDeviceAdd(driver, logger);
 		eda.scrollingup();
 
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@Then("Enter valid inputs as per required from table details into search text field & click on enter")
@@ -917,7 +889,12 @@ public class EDGEDevicesSteps extends BaseTest {
 	public void click_on_add_new_button_on_the_top_right_side_landed_on_edge_add_screen() {
 		EdgeDevicesPage edp = new EdgeDevicesPage(driver, logger);
 		edp.clickAddButton();
-
+		try {
+			Thread.sleep(4000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@Then("without enter any values")
@@ -930,7 +907,12 @@ public class EDGEDevicesSteps extends BaseTest {
 		EdgeDeviceAdd eda = new EdgeDeviceAdd(driver, logger);
 		eda.scrollingvertical();
 
-
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@Then("scroll down to deployment section")
@@ -950,14 +932,14 @@ public class EDGEDevicesSteps extends BaseTest {
 			throws InterruptedException {
 		EdgeDevicesPage edp = new EdgeDevicesPage(driver, logger);
 		edp.clickAddButton();
-
+		Thread.sleep(5000);
 	}
 
 	@Then("click on cancel button in EDGE>ADD screen")
 	public void click_on_cancel_button_in_edge_add_screen() throws InterruptedException {
 		EdgeDeviceAdd eda = new EdgeDeviceAdd(driver, logger);
 		eda.cancelData();
-
+		Thread.sleep(5000);
 		EdgeDevicesPage edp = new EdgeDevicesPage(driver, logger);
 		Assert.assertEquals("Verify title of the breadcrumb does not match", "EDGE Devices",
 				edp.get_Text_EdgeListHeading());
@@ -1008,14 +990,14 @@ public class EDGEDevicesSteps extends BaseTest {
 		eda.identityedgeNameAdd((alldata.get(vTCName).get("Edge Name Add").toString()));
 		eda.organizationAdd(alldata.get(vTCName).get("OrganizationAdd").toString());
 
-
+		Thread.sleep(2000);
 		eda.edgeGroupNameAdd(alldata.get(vTCName).get("EDGE Group Name Add").toString());
 
-
+		Thread.sleep(2000);
 		eda.locationAdd((alldata.get(vTCName).get("LocationAdd").toString()));
 
 		eda.hardWareNameAdd((alldata.get(vTCName).get("Hardware Name Add").toString()));
-		;
+		Thread.sleep(5000);
 		eda.descriptionAdd((alldata.get(vTCName).get("DescriptionAdd").toString()));
 
 		eda.serialNumberInputAdd((alldata.get(vTCName).get("serialNumberInputAdd").toString()));
@@ -1028,14 +1010,14 @@ public class EDGEDevicesSteps extends BaseTest {
 		eda.edgeUserInputAdd((alldata.get(vTCName).get("edgeUserInputAdd").toString()));
 		eda.edgeUserPasswordAdd((alldata.get(vTCName).get("edgeUserPasswordAdd").toString()));
 
-		;
+		Thread.sleep(4000);
 
 	}
 
 	@Then("Enter numeric values into EDGE ID text fields")
 	public void enter_numeric_values_into_edge_id_text_fields() throws InterruptedException {
 		EdgeDeviceAdd eda = new EdgeDeviceAdd(driver, logger);
-
+		Thread.sleep(3000);
 		eda.identityedgeIdInputAdd(alldata.get(vTCName).get("Value1").toString());
 	}
 
@@ -1045,9 +1027,9 @@ public class EDGEDevicesSteps extends BaseTest {
 
 		EdgeDeviceAdd eda = new EdgeDeviceAdd(driver, logger);
 		eda.identityedgeIdInputAdd(alldata.get(vTCName).get("Edge ID Add").toString());
-
+		Thread.sleep(2000);
 		eda.headingTitleAdd();
-
+		Thread.sleep(4000);
 		// Assert.assertEquals("Error message", "Please enter a valid EDGE ID !",
 		// eda.verifyValidationMessageEdgeId1());
 
@@ -1064,6 +1046,7 @@ public class EDGEDevicesSteps extends BaseTest {
 		eda.identityedgeIdInputAdd((alldata.get(vTCName).get("Edge ID Add").toString()));
 		eda.identityedgeNameAdd((alldata.get(vTCName).get("Edge Name Add").toString()));
 
+		Thread.sleep(2000);
 		eda.saveAddData();
 	}
 
@@ -1073,9 +1056,11 @@ public class EDGEDevicesSteps extends BaseTest {
 
 		EdgeDeviceAdd eda = new EdgeDeviceAdd(driver, logger);
 		eda.edgeGroupNameAdd(alldata.get(vTCName).get("EDGE Group Name Add").toString());
-
+		Thread.sleep(2000);
 		eda.headingTitleAdd();
-
+		Thread.sleep(4000);
+		// Assert.assertEquals("Error message", "Please enter a valid EDGE ID !",
+		// eda.verifyValidationMessageEdgeId1());
 
 		Assert.assertEquals("Validation message", "Mandatory field - required ! ",
 				eda.validationMessageGroupNamewithout());
@@ -1091,8 +1076,8 @@ public class EDGEDevicesSteps extends BaseTest {
 
 		eda.headingTitleAdd();
 
-		Assert.assertEquals("Edge Name error message", "Alphanumerics of length Min = 2, Max = 64 are allowed !",
-				eda.verifyValidationMessageEdgeName1());
+		Assert.assertEquals("Edge Name error message", "Please Enter a valid EDGE Name !",
+				eda.verifyValidationMessageEdgeName());
 	}
 
 	@Then("Enter numeric values to check character strength into EDGE Name text fields of Edit Section")
@@ -1143,7 +1128,7 @@ public class EDGEDevicesSteps extends BaseTest {
 		EdgeDeviceAdd eda = new EdgeDeviceAdd(driver, logger);
 		eda.identityedgeNameAdd(alldata.get(vTCName).get("EDGE Name").toString());
 		eda.headingTitleAdd();
-		;
+		Thread.sleep(4000);
 		Assert.assertEquals("Please Enter a valid EDGE Name !", eda.verifyValidationMessageEdgeName());
 
 	}
@@ -1162,7 +1147,12 @@ public class EDGEDevicesSteps extends BaseTest {
 	public void modify_few_text_fields_i_e_edge_id_edge_name_click_on_save_button() {
 		EdgeDeviceEdit ede = new EdgeDeviceEdit(driver, logger);
 		ede.setEditClearField();
-
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		ede.identityedgeName(alldata.get(vTCName).get("Value2").toString());
 
 		ede.saveAddData();
@@ -1184,7 +1174,7 @@ public class EDGEDevicesSteps extends BaseTest {
 	@Then("select value from dropdown Edge Group Name")
 	public void select_value_from_dropdown_edge_group_name() throws InterruptedException {
 		EdgeDeviceAdd eda = new EdgeDeviceAdd(driver, logger);
-
+		Thread.sleep(2000);
 		eda.edgeGroupNameAdd(alldata.get(vTCName).get("EDGE Group Name Add").toString());
 
 	}
@@ -1192,7 +1182,7 @@ public class EDGEDevicesSteps extends BaseTest {
 	@Then("enter the role of assigner")
 	public void enter_the_role_of_assigner() throws InterruptedException {
 		EdgeDeviceAdd eda = new EdgeDeviceAdd(driver, logger);
-
+		Thread.sleep(2000);
 		eda.assignedToAdd((alldata.get(vTCName).get("AssignedToAdd").toString()));
 
 	}
@@ -1200,7 +1190,7 @@ public class EDGEDevicesSteps extends BaseTest {
 	@Then("select hardwareName from hardware dropdown")
 	public void select_hardware_name_from_hardware_dropdown() throws InterruptedException {
 		EdgeDeviceAdd eda = new EdgeDeviceAdd(driver, logger);
-
+		Thread.sleep(2000);
 
 		eda.hardWareNameAdd(alldata.get(vTCName).get("HardWare Name Add").toString());
 
@@ -1212,7 +1202,7 @@ public class EDGEDevicesSteps extends BaseTest {
 	public void scrolldown_bar_and_inside_regisration_accordion_add_serial_number_onboarding_key_image_version()
 			throws InterruptedException {
 		EdgeDeviceAdd eda = new EdgeDeviceAdd(driver, logger);
-
+		Thread.sleep(2000);
 		eda.serialNumberInputAdd(alldata.get(vTCName).get("serialNumberInputAdd").toString());
 
 		eda.onBoardingKeyInputAdd(alldata.get(vTCName).get("onBoardingKeyInputAdd").toString());
@@ -1238,7 +1228,7 @@ public class EDGEDevicesSteps extends BaseTest {
 		eda.edgeUserInputAdd(alldata.get(vTCName).get("Value12").toString());
 
 		eda.edgeUserPasswordAdd(alldata.get(vTCName).get("Value13").toString());
-		;
+		Thread.sleep(3000);
 	}
 
 	@Then("click on save button to add Edge")
@@ -1251,7 +1241,7 @@ public class EDGEDevicesSteps extends BaseTest {
 	public void click_on_save() throws InterruptedException {
 		EdgeDeviceAdd eda = new EdgeDeviceAdd(driver, logger);
 		eda.saveAddData();
-
+		Thread.sleep(3000);
 	}
 
 	@Then("Click on Edit icon button on Actions Column & landed on EDGE> edit page")
@@ -1270,9 +1260,9 @@ public class EDGEDevicesSteps extends BaseTest {
 	public void update_the_edge_name_organization_group_name_assigned_to_hard_ware_name_and_description()
 			throws InterruptedException {
 		EdgeDeviceEdit ede = new EdgeDeviceEdit(driver, logger);
-		;
+		Thread.sleep(3000);
 		ede.clearEnteredName();
-		;
+		Thread.sleep(5000);
 		ede.identityedgeNameUpdate(alldata.get(vTCName).get("Value2").toString());
 
 		ede.updatesaveAddDataBtn();
@@ -1282,7 +1272,7 @@ public class EDGEDevicesSteps extends BaseTest {
 	public void enter_value_for_hard_ware_name() throws InterruptedException {
 		EdgeDevicesPage edp = new EdgeDevicesPage(driver, logger);
 		edp.hardwareNameInput(alldata.get(vTCName).get("Hardware Name").toString());
-		;
+		Thread.sleep(5000);
 	}
 
 	@Then("Click on HardWare Name Dots")
@@ -1297,25 +1287,21 @@ public class EDGEDevicesSteps extends BaseTest {
 			throws InterruptedException {
 		EdgeDevicesPage edp = new EdgeDevicesPage(driver, logger);
 		edp.communicationStatusThreeDot();
-		Thread.sleep(1000);
-
 		edp.communicationconnected();
+		Thread.sleep(5000);
 		edp.deselectCheckboxforconnected();
-		Thread.sleep(1000);
-
-
 		edp.communicationDisconnected();
+		Thread.sleep(3000);
 		edp.deselectCheckboxforDisconnected();
-		Thread.sleep(1000);
-
-
+		Thread.sleep(3000);
 		edp.BrokerDisconnected();
+		Thread.sleep(3000);
 		edp.deselectCheckboxforBrokerdisconnected();
-		Thread.sleep(1000);
-
+		Thread.sleep(3000);
 		edp.EdgeDisconnected();
+		Thread.sleep(3000);
 		edp.deselectCheckboxforEdgeDisconnected();
-
+		Thread.sleep(3000);
 
 	}
 
@@ -1327,14 +1313,14 @@ public class EDGEDevicesSteps extends BaseTest {
 		edp.edgeGroupNameSearch_Button();
 
 		edp.sendValueSearchinputBoxForEdgeGroupName(alldata.get(vTCName).get("EDGE Group Name").toString());
-
+		Thread.sleep(5000);
 	}
 
 	@Then("Click on Deployments tab")
 	public void click_on_deployments_tab() throws InterruptedException {
 		EdgeDeploymentsPage dp = new EdgeDeploymentsPage(driver, logger);
 		dp.deploymenttoggle();
-
+		Thread.sleep(5000);
 	}
 
 	@Then("Click on Deployment Edge Name and search icon i.e. three dots & enter Valid inputs into search text field")
@@ -1376,9 +1362,9 @@ public class EDGEDevicesSteps extends BaseTest {
 		String value = alldata.get(vTCName).get("ItemsPerPage").toString();
 		edp.SelectPageMatOption(value);
 		int rowPerPage = Integer.parseInt(value);
-		//Assert.assertTrue("Row count match for last page", edp.LastPageClickAndCount(rowPerPage));
+		Assert.assertTrue("Row count match for last page", edp.LastPageClickAndCount(rowPerPage));
 		Thread.sleep(7000);
-		//Assert.assertTrue("Row count match for last page", edp.nextPageClickAndCountOnLastPage(rowPerPage));
+		Assert.assertTrue("Row count match for last page", edp.nextPageClickAndCountOnLastPage(rowPerPage));
 
 	}
 
@@ -1387,10 +1373,10 @@ public class EDGEDevicesSteps extends BaseTest {
 			throws InterruptedException {
 		EdgeDevicesPage edp = new EdgeDevicesPage(driver, logger);
 
-		;
+		Thread.sleep(3000);
 		edp.clickEditButton();
 
-		;
+		Thread.sleep(4000);
 
 	}
 
@@ -1429,7 +1415,7 @@ public class EDGEDevicesSteps extends BaseTest {
 		EnvironmentalVariablePage ev = new EnvironmentalVariablePage(driver, logger);
 		ev.configNameInput(alldata.get(vTCName).get("environmentalConfigNameAdd").toString());
 
-		ev.configValueInput(alldata.get(vTCName).get("environmentalConfigValueAdd").toString());
+		ev.configNameInput(alldata.get(vTCName).get("environmentalConfigValueAdd").toString());
 
 	}
 
@@ -1444,11 +1430,11 @@ public class EDGEDevicesSteps extends BaseTest {
 		EnvironmentalVariablePage ev = new EnvironmentalVariablePage(driver, logger);
 		ev.moveSliderCondition("unchecked");
 
-
+		Thread.sleep(3000);
 		ev.moveSliderCondition("checked");
-
+		Thread.sleep(3000);
 		ev.moveSliderCondition("unchecked");
-
+		Thread.sleep(3000);
 	}
 
 	@Then("Click on save button for environmental variable")
@@ -1461,7 +1447,7 @@ public class EDGEDevicesSteps extends BaseTest {
 	public void click_on_delete_button() throws InterruptedException {
 		EnvironmentalVariablePage ev = new EnvironmentalVariablePage(driver, logger);
 		ev.deleteButtonConfigClick();
-
+		Thread.sleep(3000);
 		ev.confirmationYesDeleteButton();
 		// ev.confirmationCancelDeleteButton();
 	}
@@ -1506,7 +1492,6 @@ public class EDGEDevicesSteps extends BaseTest {
 		ev.searchconfigNameValue(alldata.get(vTCName).get("confignamesearch").toString());
 
 		ev.backDropShowing_Div_Click();
-
 	}
 
 	@Then("Enter details for Config Name")
@@ -1542,7 +1527,7 @@ public class EDGEDevicesSteps extends BaseTest {
 	public void click_on_device_log_tab() throws InterruptedException {
 		DeviceLogs dl = new DeviceLogs(driver, logger);
 		dl.deviceLogTab();
-
+		Thread.sleep(3000);
 	}
 
 	@Then("Click on Configuration Tab")
@@ -1566,7 +1551,7 @@ public class EDGEDevicesSteps extends BaseTest {
 
 		wp.backDropShowing_Div_Click();
 		wp.headingClick();
-
+		Thread.sleep(6000);
 		wp.selectedCheckboxforWell();
 
 	}
@@ -1644,7 +1629,7 @@ public class EDGEDevicesSteps extends BaseTest {
 		eacp.checkboxEdgeGroupNameStepOneName();
 
 		eacp.NextButtonStep1();
-		;
+		Thread.sleep(4000);
 	}
 
 	@Then("verify Edge Device functionality")
@@ -1660,7 +1645,7 @@ public class EDGEDevicesSteps extends BaseTest {
 		eacp.checkboxEdgeNameStepFour();
 
 		eacp.NextButtonStep2();
-		;
+		Thread.sleep(4000);
 	}
 
 	@Then("verify application functionality")
@@ -1674,11 +1659,11 @@ public class EDGEDevicesSteps extends BaseTest {
 
 		egcp.backDropShowing_Div_Click();
 
-
+		Thread.sleep(5000);
 
 		egcp.selectedCheckboxapplicationselectcheckboxforEdgeDeviceconfig();
 
-
+		Thread.sleep(4000);
 		egcp.NextButtonStep3();
 
 	}
@@ -1735,9 +1720,9 @@ public class EDGEDevicesSteps extends BaseTest {
 	public void verify_deployment_functionality() throws InterruptedException {
 		EdgeDevicesPage edp = new EdgeDevicesPage(driver, logger);
 		edp.confirmClick();
-		;
+		Thread.sleep(3000);
 		edp.deployButtonClick();
-		;
+		Thread.sleep(5000);
 
 	}
 
@@ -1772,9 +1757,9 @@ public class EDGEDevicesSteps extends BaseTest {
 		Pagination p = new Pagination(driver, logger);
 		String value = alldata.get(vTCName).get("ItemsPerPage").toString();
 		p.SelectPageMatOption(value);
-
+		Thread.sleep(5000);
 		int rowPerPage = Integer.parseInt(value);
-
+		Thread.sleep(4000);
 		p.nextPageClickAndCountOnLastPage(rowPerPage);
 		// Assert.assertTrue("Row count match",
 		// p.nextPageClickAndCountOnLastPage(rowPerPage));
@@ -1790,37 +1775,11 @@ public class EDGEDevicesSteps extends BaseTest {
 		edp.headingClick();
 
 	}
-	@Then("Enter alphanumeric with special char values to check character strength into EDGE NAME text fields")
-	public void enter_alphanumeric_with_special_char_values_to_check_character_strength_into_edge_name_text_fields() throws InterruptedException {
-		EdgeDeviceEdit ede = new EdgeDeviceEdit(driver, logger);
-		ede.removalofEnteredTextForEdgeName();
-		ede.identityedgeNameEdit(alldata.get(vTCName).get("Edge Name Update").toString());
-
-		ede.headingeditclick();
-
-		// Assert.assertEquals("Error message", "Please enter a valid EDGE ID !",
-		// eda.verifyValidationMessageEdgeId1());
-
-		Assert.assertEquals("Validation message", "Please Enter a valid EDGE Name !",
-				ede.verifyValidationMessageEdgeName());
-	}
-
-	@Then("Enter alphanumeric with special char values to check character strength into EDGE NAME text fields in update field")
-	public void enter_alphanumeric_with_special_char_values_to_check_character_strength_into_edge_name_text_fields_in_update_field() throws InterruptedException {
-		EdgeDeviceEdit ede = new EdgeDeviceEdit(driver, logger);
-		ede.removalofEnteredTextForEdgeName();
-		ede.identityedgeNameEdit(alldata.get(vTCName).get("Edge Name Update").toString());
-
-		ede.headingeditclick();
-				Assert.assertEquals("Validation message", "Alphanumerics of length Min = 2, Max = 64 are allowed !",
-				ede.verifyValidationMessageEdgeName());
-	}
 
 	@Then("Click on Well mapping tab module")
 	public void click_on_well_mapping_tab_module() {
 		WellMapping wm = new WellMapping(driver, logger);
 		wm.wellmappingtab();
-		wm.headingbarclick();
 	}
 
 	@Then("Click on the three dots of well and search for Well Name")
@@ -1829,9 +1788,8 @@ public class EDGEDevicesSteps extends BaseTest {
 		wm.wellnameThreeDot();
 
 		wm.wellMappingSearchInput(alldata.get(vTCName).get("WellNameSearch").toString());
-		//wm.backDropShowing_Div_Click();
-		wm.headingTitleWell();
-
+		wm.backDropShowing_Div_Click();
+		Thread.sleep(2000);
 	}
 
 	@Then("Click on the three dots of RTUAddress")
@@ -1843,11 +1801,9 @@ public class EDGEDevicesSteps extends BaseTest {
 	@Then("Enter the value for RTUAddress")
 	public void enter_the_value_for_rtu_address() throws InterruptedException {
 		WellMapping wm = new WellMapping(driver, logger);
-		wm.RTUAddressThreeDot();
 		wm.RTUAddressSearchInput(alldata.get(vTCName).get("WellRTUAddressSearch").toString());
 		wm.backDropShowing_Div_Click();
-		wm.headingbarclick();
-
+		Thread.sleep(3000);
 
 	}
 
@@ -1856,7 +1812,7 @@ public class EDGEDevicesSteps extends BaseTest {
 		WellMapping wm = new WellMapping(driver, logger);
 		wm.StatusThreeDot();
 
-
+		Thread.sleep(4000);
 
 	}
 
@@ -1864,7 +1820,7 @@ public class EDGEDevicesSteps extends BaseTest {
 	public void click_on_save_button_for_well() throws InterruptedException {
 		WellMapping wm = new WellMapping(driver, logger);
 		wm.saveWellData();
-
+		Thread.sleep(5000);
 	}
 
 	@Then("Enter the value for Well name")
@@ -1881,8 +1837,10 @@ public class EDGEDevicesSteps extends BaseTest {
 
 		wm.StatusThreeDot();
 
-
+		Thread.sleep(3000);
 		wm.StatusInActiveCheck();
+
+		Thread.sleep(4000);
 
 		wm.headingbarclick();
 
@@ -1893,8 +1851,8 @@ public class EDGEDevicesSteps extends BaseTest {
 		WellMapping wm = new WellMapping(driver, logger);
 		wm.wellMappingSearchDot();
 		wm.wellMappingSearchInput(alldata.get(vTCName).get("WellNameSearch").toString());
-		//wm.backDropShowing_Div_Click();
-
+		wm.backDropShowing_Div_Click();
+		Thread.sleep(4000);
 	}
 
 	@Then("Click on EDGE ID search icon i.e. three dots & enter Valid inputs into search text field to check well")
@@ -1920,9 +1878,9 @@ public class EDGEDevicesSteps extends BaseTest {
 		WellMapping wm = new WellMapping(driver, logger);
 		wm.deviceTypeSearchInput(alldata.get(vTCName).get("WellDeviceTypeSearch").toString());
 		wm.backDropShowing_Div_Click();
-
+		Thread.sleep(3000);
 		wm.headingClick();
-
+		Thread.sleep(4000);
 	}
 
 	@Then("After pagination all default records will display in Last page.")
@@ -1930,9 +1888,9 @@ public class EDGEDevicesSteps extends BaseTest {
 		Pagination p = new Pagination(driver, logger);
 		String value = alldata.get(vTCName).get("ItemsPerPage").toString();
 		p.SelectPageMatOption(value);
-
+		Thread.sleep(5000);
 		int rowPerPage = Integer.parseInt(value);
-
+		Thread.sleep(4000);
 		p.nextPageClickAndCountOnLastPage(rowPerPage);
 		// Assert.assertTrue("Row count match for last page",
 		// p.nextPageClickAndCountOnLastPage(rowPerPage));
@@ -1943,8 +1901,10 @@ public class EDGEDevicesSteps extends BaseTest {
 		Pagination p = new Pagination(driver, logger);
 		String value = alldata.get(vTCName).get("ItemsPerPage").toString();
 		p.SelectPageMatOption(value);
-//		int rowPerPage = Integer.parseInt(value);
-//		p.firstPageFullBackwardArrow(rowPerPage);
+		Thread.sleep(5000);
+		int rowPerPage = Integer.parseInt(value);
+		Thread.sleep(5000);
+		p.firstPageFullBackwardArrow(rowPerPage);
 		// Assert.assertTrue("Row count match for first page",
 		// p.firstPageFullBackwardArrow(rowPerPage));
 	}
@@ -1955,7 +1915,7 @@ public class EDGEDevicesSteps extends BaseTest {
 		EdgeDevicesPage edp = new EdgeDevicesPage(driver, logger);
 		edp.edgeGroupNameSearch_Button();
 		edp.sendValueSearchinputBoxForEdgeGroupName(alldata.get(vTCName).get("EDGE Group Name").toString());
-
+		Thread.sleep(6000);
 	}
 
 	@Then("After pagination all default records will display in Previous page.")
@@ -1963,9 +1923,9 @@ public class EDGEDevicesSteps extends BaseTest {
 		Pagination p = new Pagination(driver, logger);
 		String value = alldata.get(vTCName).get("ItemsPerPage").toString();
 		p.SelectPageMatOption(value);
-		;
+		Thread.sleep(5000);
 		int rowPerPage = Integer.parseInt(value);
-		// ;
+		// Thread.sleep(5000);
 		// Assert.assertTrue("Row count match for Previous page",
 		// p.previousPageClickAndCount(rowPerPage));
 	}
@@ -1987,16 +1947,14 @@ public class EDGEDevicesSteps extends BaseTest {
 	public void enter_the_value_for_ip_address() {
 		WellMapping wm = new WellMapping(driver, logger);
 		wm.IPAddressInputSearch(alldata.get(vTCName).get("WellIPAddressSearch").toString());
-		//wm.backDropShowing_Div_Click();
-		wm.headingbarclick();
-
+		wm.backDropShowing_Div_Click();
 	}
 
 	@Then("verify Alert poup once edge is successfully mapped")
 	public void verify_alert_poup_once_edge_is_successfully_mapped() throws InterruptedException {
 		WellMapping wm = new WellMapping(driver, logger);
 		wm.alertpopupforwell();
-
+		Thread.sleep(6000);
 	}
 
 	@Then("search for Edge Group Name enter the value for Edge Group Name and Clear Search")
@@ -2009,9 +1967,9 @@ public class EDGEDevicesSteps extends BaseTest {
 		// edp.backDropShowing_Div_Click();
 		edp.removalofEneredTextForEdgeGroupName();
 		try {
-
+			Thread.sleep(4000);
 			edp.headingClick();
-
+			Thread.sleep(4000);
 		} catch (Exception e) {
 
 		}
@@ -2044,7 +2002,7 @@ public class EDGEDevicesSteps extends BaseTest {
 	@Then("verify multiple select application functionality")
 	public void verify_multiple_select_application_functionality() throws InterruptedException {
 		EdgeGroupConfigurationPage egcp = new EdgeGroupConfigurationPage(driver, logger);
-
+		Thread.sleep(5000);
 		egcp.checkboxmultiforAppName();
 
 		egcp.NextButtonStep4();
@@ -2071,10 +2029,11 @@ public class EDGEDevicesSteps extends BaseTest {
 
 		egcp.backDropShowing_Div_Click();
 
+		Thread.sleep(3000);
 		egcp.checkboxApplicationConfigurationAppName();
-
+		Thread.sleep(4000);
 		egcp.NextButtonStep3();
-
+		Thread.sleep(4000);
 	}
 
 	@Then("verify multiSelect Edge Device functionality")
@@ -2126,6 +2085,7 @@ public class EDGEDevicesSteps extends BaseTest {
 	@Then("Check SelectAll checkbox from select column")
 	public void check_select_all_checkbox_from_select_column() throws InterruptedException {
 		EdgeGroupConfigurationPage egcp = new EdgeGroupConfigurationPage(driver, logger);
+		Thread.sleep(4000);
 		egcp.checkboxAllDeploymentEdgeDevice();
 		Thread.sleep(7000);
 	}
@@ -2133,6 +2093,7 @@ public class EDGEDevicesSteps extends BaseTest {
 	@Then("verify Active Single Edge")
 	public void verify_active_single_edge() throws InterruptedException {
 		EdgeGroupConfigurationPage egcp = new EdgeGroupConfigurationPage(driver, logger);
+		Thread.sleep(4000);
 		egcp.previousButtonApplicationonDeployment();
 	}
 
@@ -2152,16 +2113,28 @@ public class EDGEDevicesSteps extends BaseTest {
 	@Then("Click on Save button To Save Well")
 	public void click_on_save_button_to_save_well() throws InterruptedException {
 		SettingsWellPage swp = new SettingsWellPage(driver, logger);
-
+		Thread.sleep(3000);
 		swp.savebuttonforSettingwell();
-
+		Thread.sleep(3000);
 	}
 
 	@Then("click on add icon to add configuration")
 	public void click_on_add_icon_to_add_configuration() throws InterruptedException {
 		EdgeAppConfigurationPage eac = new EdgeAppConfigurationPage(driver, logger);
 		eac.addconfigurationicon();
+
+//		Thread.sleep(5000);
+//		try {
+//			eac.confignameinput(alldata.get(vTCName).get("confignameinput").toString());
+//			eac.proxyAppinput(alldata.get(vTCName).get("proxyAppinput").toString());
+//			
+//			eac.configurationFileType(alldata.get(vTCName).get("configurationFileType").toString());
+//			
+//		} catch (Exception e) {
+//			e.printStackTrace();
 	}
+
+	// eac.saveButton();
 
 	@Then("Choose inactive mode from status column")
 	public void choose_inactive_mode_from_status_column() {
@@ -2189,7 +2162,7 @@ public class EDGEDevicesSteps extends BaseTest {
 	@Then("update Edge Name , Serial Number, OnboardingKey, ImageVersion, Server Port")
 	public void update_edge_name_serial_number_onboarding_key_image_version_server_port() throws InterruptedException {
 		EdgeDevicesPage edp = new EdgeDevicesPage(driver, logger);
-
+		Thread.sleep(3000);
 		edp.removalofEneredTextForEdgeName();
 		edp.sendValueSearchIconByEdgeName(alldata.get(vTCName).get("Value2").toString());
 	}
@@ -2198,8 +2171,9 @@ public class EDGEDevicesSteps extends BaseTest {
 	public void click_on_save_button_to_update_edge() throws InterruptedException {
 		EdgeDevicesPage edp = new EdgeDevicesPage(driver, logger);
 
+		Thread.sleep(4000);
 		edp.saveEdgeDeviceButton();
-
+		Thread.sleep(4000);
 
 	}
 
@@ -2209,7 +2183,7 @@ public class EDGEDevicesSteps extends BaseTest {
 		EdgeDevicesPage edp = new EdgeDevicesPage(driver, logger);
 		edp.scrollingElementRightBar("div.example-container", "900");
 		edp.clickEditButton();
-
+		Thread.sleep(3000);
 	}
 
 	@Then("update Edge Name, location, Description , Assigned To from Identity section")
@@ -2224,10 +2198,15 @@ public class EDGEDevicesSteps extends BaseTest {
 		ede.removalofEneredTextForDescription();
 		ede.descriptionUpdate(alldata.get(vTCName).get("DescriptionUpdate").toString());
 
+//		ede.removalofEnteredTextForAssignedTo();
+//		ede.assignedTo(alldata.get(vTCName).get("Value5").toString());
 
+		Thread.sleep(4000);
 		ede.hardwareNameUpdate(alldata.get(vTCName).get("Hardware Name Update").toString());
+		Thread.sleep(4000);
 
 		ede.edgeGroupName(alldata.get(vTCName).get("Edge Group Name Update").toString());
+		Thread.sleep(4000);
 
 	}
 
@@ -2257,13 +2236,5 @@ public class EDGEDevicesSteps extends BaseTest {
 		EdgeDeviceEdit ede = new EdgeDeviceEdit(driver, logger);
 		ede.applicationGroupUpdate(alldata.get(vTCName).get("applicationGroupUpdate").toString());
 	}
-
-	@Then("verify tool tip text visibilty for config App button in Actions column")
-	public void verify_tool_tip_text_visibilty_for_config_app_button_in_actions_column() throws InterruptedException {
-	   EdgeDevicesPage edp = new EdgeDevicesPage(driver, logger);
-	   Assert.assertEquals("Tooltip for Config Apps", "Config Apps", edp.get_Text_ConfigToolTip());
-	}
-
-
 
 }

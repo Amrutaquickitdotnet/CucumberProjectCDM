@@ -83,7 +83,7 @@ public class UserSettingsAddPage extends CommonActions {
 	}
 
 	public void firstNameinputAdd(String value) {
-		SetInputENterKey(firstNameInputAdd, "");
+		SetInputENterKey(firstNameInputAdd,"");
 
 		SetInput(firstNameInputAdd, value, value);
 //		firstNameInputAdd.sendKeys(Keys.ENTER);
@@ -91,7 +91,7 @@ public class UserSettingsAddPage extends CommonActions {
 	}
 
 	public void lastNameinputAdd(String value) {
-		SetInputENterKey(lastNameInputAdd, "");
+		SetInputENterKey(lastNameInputAdd,"");
 
 		SetInput(lastNameInputAdd, value, value);
 //		lastNameInputAdd.sendKeys(Keys.ENTER);
@@ -99,7 +99,7 @@ public class UserSettingsAddPage extends CommonActions {
 	}
 
 	public void phoneNumberInputAdd(String value) {
-		SetInputENterKey(phoneNumberInputAdd, "");
+		SetInputENterKey(phoneNumberInputAdd,"");
 
 		SetInput(phoneNumberInputAdd, value, value);
 //		
@@ -108,7 +108,7 @@ public class UserSettingsAddPage extends CommonActions {
 	}
 
 	public void emailidinputAdd(String value) {
-		SetInputENterKey(emailidInputAdd, "");
+		SetInputENterKey(emailidInputAdd,"");
 
 		SetInput(emailidInputAdd, value, value);
 //		emailidInputAdd.sendKeys(Keys.ENTER);
@@ -116,11 +116,12 @@ public class UserSettingsAddPage extends CommonActions {
 	}
 
 	public void passwordInputAddControl(String value) {
-
+		
 		passwordInputAdd.sendKeys(Keys.CONTROL + "a");
+		
 
 		SetInput(passwordInputAdd, value, value);
-		// passwordInputAdd.sendKeys(value);
+		//passwordInputAdd.sendKeys(value);
 	}
 
 	public String passwordInputattribute() {
@@ -131,19 +132,19 @@ public class UserSettingsAddPage extends CommonActions {
 	public void passwordInputAddPaste(String value) {
 		passwordInputAdd.sendKeys(Keys.CONTROL + "v");
 		passwordInputAdd.sendKeys(value);
-
+		
 		SetInput(passwordInputAdd, value, value);
 	}
 
 	public void passwordInputAddBackspace(String value) {
 		passwordInputAdd.sendKeys(Keys.BACK_SPACE);
-		// passwordInputAdd.sendKeys(value);
+		//passwordInputAdd.sendKeys(value);
 		SetInput(passwordInputAdd, value, value);
 	}
 
 	public void passwordInputAdd(String value) {
 		passwordInputAdd.sendKeys(Keys.ENTER);
-		// passwordInputAdd.sendKeys(value);
+		//passwordInputAdd.sendKeys(value);
 		SetInput(passwordInputAdd, value, value);
 	}
 
@@ -168,11 +169,10 @@ public class UserSettingsAddPage extends CommonActions {
 	}
 
 	public void saveButtonAdd() throws InterruptedException {
-//	
-//		JavascriptExecutor js = (JavascriptExecutor) driver;
-//		// js.executeScript("arguments[0].click();",saveAddDataBtn);
-//		js.executeScript("document.querySelector(\".addButton\").click();", saveButtonAdd);
-		clickElement(saveButtonAdd, "");
+		Thread.sleep(3000);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		// js.executeScript("arguments[0].click();",saveAddDataBtn);
+		js.executeScript("document.querySelector(\".addButton\").click();", saveButtonAdd);
 	}
 
 	public void cancelButtonAdd() {
@@ -230,7 +230,7 @@ public class UserSettingsAddPage extends CommonActions {
 	}
 
 	public void pressTabKeyOnEmailInput() {
-
+	
 		emailidInputAdd.sendKeys(Keys.TAB);
 	}
 
@@ -337,129 +337,5 @@ public class UserSettingsAddPage extends CommonActions {
 
 	public void moveSliderCondition(String m) {
 		moveSliderCondition(sliderOnCheckBox, sliderOnCheckBoxLabel, m);
-	}
-
-	@FindBy(xpath = "//input[@formcontrolname='firstname']")
-	WebElement firstNameAddLabel;
-
-	@FindBy(css = ".cdk-overlay-container")
-	WebElement firstNameAddToolTip;
-
-	@FindBy(xpath = "//input[@formcontrolname='lastname']")
-	WebElement lastNameAddLabel;
-
-	@FindBy(css = ".cdk-overlay-container")
-	WebElement lastNameAddToolTip;
-
-	@FindBy(xpath = "//input[@formcontrolname='contact']")
-	WebElement phoneNumberAddLabel;
-
-	@FindBy(css = ".cdk-overlay-container")
-	WebElement phoneNumberAddToolTip;
-
-	@FindBy(xpath = "//input[@formcontrolname='emailid']")
-	WebElement emailIDAddLabel;
-
-	@FindBy(css = ".cdk-overlay-container")
-	WebElement emailIDAddToolTip;
-
-	@FindBy(xpath = "//input[@formcontrolname='password']")
-	WebElement passwordAddLabel;
-
-	@FindBy(css = ".cdk-overlay-container")
-	WebElement passwordAddToolTip;
-
-	@FindBy(xpath = "//mat-select[@formcontrolname='orgid']")
-	WebElement organizationAddLabel;
-
-	@FindBy(css = ".cdk-overlay-container")
-	WebElement dashboardAddToolTip;
-
-	@FindBy(css = ".cdk-overlay-container")
-	WebElement organizationAddToolTip;
-
-	public String get_Text_ToolTipFirstNameAdd() {
-
-		mouseHover(firstNameAddLabel);
-
-		String firstNameAddToolTipText = firstNameAddToolTip.getText();
-
-		firstNameAddToolTipText.trim();
-
-		return firstNameAddToolTipText;
-	}
-
-	public String get_Text_ToolTipLastNameAdd() {
-
-		mouseHover(lastNameAddLabel);
-
-		String lastNameAddToolTipText = lastNameAddToolTip.getText();
-
-		lastNameAddToolTipText.trim();
-
-		return lastNameAddToolTipText;
-	}
-
-	public String get_Text_ToolTipPhoneNumberAdd() {
-		mouseHover(phoneNumberAddLabel);
-
-		String phoneNumberAddToolTipText = phoneNumberAddToolTip.getText();
-
-		phoneNumberAddToolTipText.trim();
-
-		return phoneNumberAddToolTipText;
-	}
-
-	public String get_Text_ToolTipEmailIdAdd() {
-		mouseHover(emailIDAddLabel);
-
-		String phoneNumberAddToolTipText = emailIDAddToolTip.getText();
-
-		phoneNumberAddToolTipText.trim();
-
-		return phoneNumberAddToolTipText;
-	}
-
-	public String get_Text_ToolTipPasswordAdd() {
-		mouseHover(passwordAddLabel);
-
-		String passwordAddToolTipText = passwordAddToolTip.getText();
-
-		passwordAddToolTipText.trim();
-
-		return passwordAddToolTipText;
-	}
-
-	public String get_Text_ToolTipOrganizationAdd() {
-		mouseHover(organizationAddLabel);
-
-		String organizationAddToolTipText = organizationAddToolTip.getText();
-
-		organizationAddToolTipText.trim();
-
-		return organizationAddToolTipText;
-	}
-
-	public Object get_Text_ToolTipdashboardDropdown() {
-		mouseHover(dashboardAdd);
-
-		String dashboardAddToolTipText = dashboardAddToolTip.getText();
-
-		dashboardAddToolTipText.trim();
-
-		return dashboardAddToolTipText;
-	}
-
-	@FindBy(css = ".cdk-overlay-container")
-	WebElement roleNameToolTip;
-
-	public Object get_Text_ToolTipRoleNameAdd() {
-		mouseHover(roleNameAdd);
-
-		String roleNameToolTipText = roleNameToolTip.getText();
-
-		roleNameToolTipText.trim();
-
-		return roleNameToolTipText;
 	}
 }

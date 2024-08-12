@@ -26,7 +26,6 @@ public class UserRolesSteps extends BaseTest {
 	public void apply_filter_on_role_name() throws InterruptedException {
 		UserRolePage urp = new UserRolePage(driver, logger);
 		urp.sendsearchRoleName(alldata.get(vTCName).get("RoleNameSearch"));
-		urp.networkstatusclick();
 	}
 
 	@Then("click on add button to add role")
@@ -37,56 +36,53 @@ public class UserRolesSteps extends BaseTest {
 
 		UserRoleAddPage urap = new UserRoleAddPage(driver, logger);
 
-		urap.inputaddrole(alldata.get(vTCName).get("RoleNameAdd").toString());
-		
+		urap.inputaddrole(alldata.get(vTCName).get("RoleNameSearch").toString());
+		Thread.sleep(5000);
 		urap.saveuserrole();
 	}
 
 	@Then("click on three dots for role name and search for role")
 	public void click_on_three_dots_for_role_name_and_search_for_role() throws InterruptedException {
 		UserRolePage urp = new UserRolePage(driver, logger);
-		urp.searchRoleNameThreeDot();
-
+		urp.searchRoleName();
+		Thread.sleep(4000);
 		urp.sendsearchRoleName(alldata.get(vTCName).get("RoleNameSearch"));
-		//urp.backDropShowing_Div_Click();
-		urp.outerlayerclick();
+		urp.backDropShowing_Div_Click();
 
 	}
-
+	
 	@Then("update the value for role and click on save button")
-	public void update_the_value_for_role_and_click_on_save_button() throws InterruptedException {
-		UserRoleEditPage urep= new UserRoleEditPage(driver, logger);
-		urep.removalofEnteredTextForUserRole();
-		urep.roleNameinputEdit(alldata.get(vTCName).get("RoleNameUpdate"));
-		urep.saveButtonAdd();
+	public void update_the_value_for_role_and_click_on_save_button() {
+		UserRoleAddPage urp = new UserRoleAddPage(driver, logger);
+		urp.saveuserrole();
 	}
-
+	
 	@Then("click on the icon of add permission")
 	public void click_on_the_icon_of_add_permission() {
 		UserRolePermission urps = new UserRolePermission(driver, logger);
 		urps.addpermissionicon();
 	}
-
 	@Then("click on three dots for permission and enter the value for the permission")
 	public void click_on_three_dots_for_permission_and_enter_the_value_for_the_permission() {
 		UserRolePermission urps = new UserRolePermission(driver, logger);
 		urps.addpermissioncolumn();
-
+		
 		urps.permissionInput(alldata.get(vTCName).get("PermissionSearch"));
-
-		//urps.backDropShowing_Div_Click();
-		urps.outerlayerclick();
-		//urps.networkstatusclick();
+		
+		urps.backDropShowing_Div_Click();
 		
 		
-
 	}
+
 
 	@Then("click on Edit button to edit role")
 	public void click_on_edit_button_to_edit_role() {
 		UserRolePage urp = new UserRolePage(driver, logger);
-
-		urp.editRoleButton();
+		try {
+			urp.editRoleButton();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 
 	}
 

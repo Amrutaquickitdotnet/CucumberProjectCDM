@@ -31,13 +31,6 @@ public class RepositoriesAddPage extends CommonActions {
 
 	@FindBy(xpath = "//input[@formcontrolname='repositoryname']/../../../../../span[2]")
 	WebElement validationMessageRepositoryName;
-	
-	@FindBy(xpath = "//input[@formcontrolname='url']/../../../../../span[1]")
-	WebElement validationMessageURLWithout;
-	
-	@FindBy(xpath = "//body/app-root[1]/app-root[1]/app-home[1]/mat-sidenav-container[1]/mat-sidenav-content[1]/div[2]/div[1]/app-repositorydetails[1]/div[1]/mat-nav-list[1]/mat-expansion-panel[1]/div[1]/div[1]/form[1]/div[2]/div[3]/div[1]/div[1]/span[1]")
-	WebElement validationMessageDataStorageWithout;
-	
 
 	@FindBy(xpath = "//input[@formcontrolname='username']/../../../../../../div/span")
 	WebElement validationMessageUserName;
@@ -128,7 +121,7 @@ public class RepositoriesAddPage extends CommonActions {
 
 	public String verifyValidationMessageRepositoryName() {
 		clickElement(AddListpageVerification, "");
-		
+		//AddListpageVerification.click();
 		try {
 			Thread.sleep(1000);
 		} catch (InterruptedException e) {
@@ -200,37 +193,6 @@ public class RepositoriesAddPage extends CommonActions {
 		return message.trim();
 	}
 
-	
-	public String verifyValidationMessagewithoutURL() {
-		clickElement(AddListpageVerification,"");
-		//AddListpageVerification.click();
-		try {
-			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-
-		}
-
-		if (validationMessageURLWithout == null) {
-			return "";
-		}
-		String message = validationMessageURLWithout.getText();
-
-		return message.trim();
-	}
-	
-	public String verifyValidationMessageDataStorageIndex() {
-		
-
-		if (validationMessageDataStorageWithout == null) {
-			return "";
-		}
-		String message = validationMessageDataStorageWithout.getText();
-
-		return message.trim();
-	}
-	
-	
-	
 	public String toggleElementcolour() {
 
 		String actualColor = toggleElement.getCssValue("background-color");

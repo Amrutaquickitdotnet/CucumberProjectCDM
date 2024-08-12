@@ -21,31 +21,13 @@ public class CertificatesPage extends CommonActions {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath = "//div[@id='toast-container']")
-	WebElement toasterSuccess;
-
 	@FindBy(xpath = "//mat-select[@role='combobox']")
 	WebElement dropdownmain;
-
-	@FindBy(xpath = "//input[@formcontrolname='ip']/../../../../../span[1]")
+	
+	@FindBy(xpath="//span[contains(text(),\" Please enter a valid Server Host IP Address!\")]")
 	WebElement validationmessageIP;
 
-	@FindBy(xpath = "//input[@formcontrolname='group']/../../../../../span[1]")
-	WebElement validationmessageGroup;
-
-	@FindBy(xpath = "//input[@formcontrolname='duration']/../../../../../span[1]")
-	WebElement validationmessageValidity;
-
-	@FindBy(xpath = "//input[@formcontrolname='cn']/../../../../../span[1]")
-	WebElement validationmessageOnboardingCertificateName;
-
-	@FindBy(xpath = "//input[@formcontrolname='org']/../../../../../span[1]")
-	WebElement validationmessageOnboardingOrganization;
-
-	@FindBy(xpath = "//input[@formcontrolname='duration']/../../../../../span[1]")
-	WebElement validationmessageOnboardingValidity;
-
-	@FindBy(xpath = "//button[contains(text(),'Download')]")
+	@FindBy(xpath = "//button[@class='addButton']")
 	WebElement downloadButton;
 
 	@FindBy(xpath = "//input[@formcontrolname='ip']")
@@ -75,8 +57,7 @@ public class CertificatesPage extends CommonActions {
 	}
 
 	public void certificateTabClick() {
-		clickElement(certificateTab, "");
-		// certificateTab.click();
+		certificateTab.click();
 	}
 
 	public void certificateType(String value) throws InterruptedException {
@@ -85,38 +66,40 @@ public class CertificatesPage extends CommonActions {
 	}
 
 	public void IPinput(String value) {
-
-		SetInputENterKey(IPInput, "");
+		
+		SetInputENterKey(IPInput,"");
 		SetInput(IPInput, value, value);
+
 
 	}
 
 	public void groupInput(String value) {
-
-		SetInputENterKey(GroupInput, "");
+		
+		SetInputENterKey(GroupInput,"");
 		SetInput(GroupInput, value, value);
 
+		
 //		GroupInput.sendKeys(Keys.ENTER);
 //		GroupInput.sendKeys(value);
 	}
 
 	public void validitydaysinput(String value) {
-		SetInputENterKey(validityDay, "");
+		SetInputENterKey(validityDay,"");
 		SetInput(validityDay, value, value);
-
+//
+//		
 //		validityDay.sendKeys(Keys.ENTER);
 //		validityDay.sendKeys(value);
 	}
 
 	public void downloadButton() throws InterruptedException {
-//		JavascriptExecutor js = (JavascriptExecutor) driver;
-//		js.executeScript("document.querySelector(\".addButton\").click();");
-		clickElement(downloadButton, "");
-
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("document.querySelector(\".addButton\").click();");
+		Thread.sleep(5000);
 	}
 
 	public void certificateName(String value) {
-		SetInputENterKey(certificateName, "");
+		SetInputENterKey(certificateName,"");
 		SetInput(certificateName, value, value);
 //		
 //		certificateName.sendKeys(Keys.ENTER);
@@ -124,25 +107,26 @@ public class CertificatesPage extends CommonActions {
 	}
 
 	public void OrganizationField(String value) {
-
-		SetInputENterKey(OrganizationField, "");
+		
+		SetInputENterKey(OrganizationField,"");
 		SetInput(OrganizationField, value, value);
-
+		
 //		OrganizationField.sendKeys(Keys.ENTER);
 //		OrganizationField.sendKeys(value);
 	}
 
 	public void validitydaysinputOnboarding(String value) {
-
-		SetInputENterKey(validityDay, "");
+		
+		SetInputENterKey(validityDay,"");
 		SetInput(validityDay, value, value);
-
+		
 //		validityDay.sendKeys(Keys.ENTER);
 //		validityDay.sendKeys(value);
 	}
 
+	
 	public String validationmessageIP() {
-
+		
 		if (validationmessageIP == null) {
 			return "";
 		}
@@ -150,148 +134,4 @@ public class CertificatesPage extends CommonActions {
 
 		return message.trim();
 	}
-
-	public String validationmessageGroup() {
-
-		if (validationmessageGroup == null) {
-			return "";
-		}
-		String message = validationmessageGroup.getText();
-
-		return message.trim();
-	}
-
-	public String validationmessageValidity() {
-
-		if (validationmessageValidity == null) {
-			return "";
-		}
-		String message = validationmessageValidity.getText();
-
-		return message.trim();
-	}
-
-	public String validationmessageOnboardingCertificateName() {
-
-		if (validationmessageOnboardingCertificateName == null) {
-			return "";
-		}
-		String message = validationmessageOnboardingCertificateName.getText();
-
-		return message.trim();
-	}
-
-	public String validationmessageOnboardingOrganization() {
-
-		if (validationmessageOnboardingOrganization == null) {
-			return "";
-		}
-		String message = validationmessageOnboardingOrganization.getText();
-
-		return message.trim();
-	}
-
-	public String validationmessageOnboardingValidity() {
-
-		if (validationmessageOnboardingValidity == null) {
-			return "";
-		}
-		String message = validationmessageOnboardingValidity.getText();
-
-		return message.trim();
-	}
-
-	public WebElement successMessage() {
-
-		System.out.println("InnerHTML of the element (get_attribute): " + toasterSuccess.getAttribute("innerHTML"));
-		System.out.println("Title on alert popup after download>" + toasterSuccess);
-		return toasterSuccess;
-
-	}
-
-	@FindBy(css = ".cdk-overlay-container")
-	WebElement serverTLSGroupTooltip;
-
-	@FindBy(xpath = "input[@formcontrolname='group']")
-	WebElement serverTLSGroup;
-
-	@FindBy(css = ".cdk-overlay-container")
-	WebElement serverTLSIPTooltip;
-
-	@FindBy(xpath = "//input[@formcontrolname='ip']")
-	WebElement serverTLSIP;
-
-	public String get_Text_ToolTipserverTLSIP() {
-
-		mouseHover(serverTLSIP);
-
-		String serverTLSIPTooltipText = serverTLSIPTooltip.getText();
-
-		serverTLSIPTooltipText.trim();
-
-		return serverTLSIPTooltipText;
-	}
-
-	public String get_Text_ToolTipserverTLSGroup() {
-
-		mouseHover(serverTLSGroup);
-
-		String serverTLSGroupTooltipText = serverTLSGroupTooltip.getText();
-
-		serverTLSGroupTooltipText.trim();
-
-		return serverTLSGroupTooltipText;
-	}
-
-	@FindBy(css = ".cdk-overlay-container")
-	WebElement serverTLSValidityTooltip;
-
-	@FindBy(xpath = "input[@formcontrolname='duration']")
-	WebElement serverTLSValidity;
-
-	@FindBy(css = ".cdk-overlay-container")
-	WebElement onboardingCertificateNameTooltip;
-
-	@FindBy(xpath = "input[@formcontrolname='cn']")
-	WebElement onboardingCertificateName;
-
-	public String get_Text_ToolTipserverTLSValidity() {
-
-		mouseHover(serverTLSValidity);
-
-		String serverTLSValidityTooltipText = serverTLSValidityTooltip.getText();
-
-		serverTLSValidityTooltipText.trim();
-
-		return serverTLSValidityTooltipText;
-	}
-
-	public String get_Text_ToolTipOnboardingCertificateName() {
-		mouseHover(onboardingCertificateName);
-
-		String onboardingCertificateNameTooltipText = onboardingCertificateNameTooltip.getText();
-
-		onboardingCertificateNameTooltipText.trim();
-
-		return onboardingCertificateNameTooltipText;
-	}
-	
-
-	@FindBy(css = ".cdk-overlay-container")
-	WebElement onboardingCertificateOrganizationTooltip;
-
-	@FindBy(xpath = "input[@formcontrolname='org']")
-	WebElement onboardingOrganization;
-	public String get_Text_ToolTipOnboardingOrganizationName() {
-		
-		
-		mouseHover(onboardingOrganization);
-
-		String onboardingCertificateOrganizationTooltipText = onboardingCertificateOrganizationTooltip.getText();
-
-		onboardingCertificateOrganizationTooltipText.trim();
-
-		return onboardingCertificateOrganizationTooltipText;
-	}
-
 }

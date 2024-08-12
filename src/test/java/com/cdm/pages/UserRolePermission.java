@@ -1,5 +1,6 @@
 package com.cdm.pages;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -48,12 +49,7 @@ public class UserRolePermission extends CommonActions {
 		}
 	}
 	
-	public void networkstatusclick() {
-		clickElement(networkstatusclick, "");
-		
-	}
-	@FindBy(xpath = "//body/app-root[1]/app-root[1]/app-home[1]/mat-sidenav-container[1]/mat-sidenav-content[1]/div[1]/div[1]/div[2]/img[1]")
-	WebElement networkstatusclick;
+
 	
 	public void permissionInput(String value) {
 		SetInputENterKey(permissionInput,"");
@@ -62,13 +58,5 @@ public class UserRolePermission extends CommonActions {
 		
 //		permissionInput.sendKeys(Keys.ENTER);
 //		permissionInput.sendKeys(value);
-	}
-
-	@FindBy(css= ".cdk-overlay-container")
-	WebElement outerlayerclick;
-		
-		public void outerlayerclick() {
-			clickElement(outerlayerclick, "");
-		
 	}
 }

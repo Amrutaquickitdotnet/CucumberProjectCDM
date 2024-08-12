@@ -1,13 +1,12 @@
 package com.cdm.common;
-import java.net.URI;
-import java.net.URISyntaxException;
+
 import java.io.File;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.Date;
-import java.util.Iterator;
+
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
@@ -23,7 +22,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.aventstack.extentreports.ExtentTest;
-import org.openqa.selenium.support.ui.WebDriverWait;
+
 public class CommonActions {
 
 	protected WebDriver driver;
@@ -48,55 +47,6 @@ public class CommonActions {
 		}
 
 	}
-	
-	public void waitElementToVisible(String xpath) {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60)); // Maximum wait time of 30 seconds
-        wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath(xpath)));
-    }
-	
-	public void waitForPageLoaded() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60)); // Maximum wait time of 30 seconds
-        wait.until(ExpectedConditions.jsReturnsValue("return document.readyState == 'complete';"));
-    }
-	
-	public  String removePath(String url) throws URISyntaxException {
-        URI uri = new URI(url);
-        String scheme = uri.getScheme();
-        String authority = uri.getAuthority();
-        return scheme + "://" + authority;
-    }
-
-    // Method to append fragment to URL
-    public  String appendFragmentWithOutPath(String fragment) throws URISyntaxException, InterruptedException {
-    	 waitForPageLoaded();
-    	 Thread.sleep(500);
-    	 String currentUrl = driver.getCurrentUrl();
-
-         // Remove path from the URL
-         String baseUrl = removePath(currentUrl);
-
-         // Append the fragment to the base URL
-         
-        URI baseUri = new URI(baseUrl);
-        URI finalUri = baseUri.resolve(fragment);
-        System.out.println(finalUri.toString());
-        
-        
-        for(int i=0;i<5;i++) {
-        	driver.get(finalUri.toString());
-        	Thread.sleep(1500);
-        	waitForPageLoaded();
-        	currentUrl=driver.getCurrentUrl();
-        	if(currentUrl.equalsIgnoreCase(finalUri.toString())) {
-        		System.out.println(currentUrl);
-        		break;
-        	}else {
-        		System.out.println(currentUrl + "  not matched with " + finalUri.toString());
-        	}
-    	}
-        
-        return finalUri.toString();
-    }
 	
 	public String getText(WebElement elm) {
 		
@@ -126,8 +76,7 @@ public class CommonActions {
 			elm.clear();
 			elm.sendKeys(Keys.ENTER);
 			logger.pass(msg + "<span class='label end-time'><a href=" + getScreenshot() + ">Screenshot</a></span>");
-			
-			return;
+			break;
 		} catch (Exception e) {
 			if(i==4) {
 			System.out.println(e.getMessage());
@@ -146,7 +95,7 @@ public class CommonActions {
 			elm.clear();
 			elm.sendKeys(data[0]);
 			logger.pass(msg + "<span class='label end-time'><a href=" + getScreenshot() + ">Screenshot</a></span>");
-			return;
+			break;
 		} catch (Exception e) {
 			if(i==4) {
 			System.out.println(e.getMessage());
@@ -165,7 +114,7 @@ public class CommonActions {
 			elm.clear();
 			elm.sendKeys(data);
 			logger.pass(msg + "<span class='label end-time'><a href=" + getScreenshot() + ">Screenshot</a></span>");
-			return;
+			break;
 		} catch (Exception e) {
 			if(i==4) {
 			System.out.println(e.getMessage());
@@ -211,7 +160,7 @@ public class CommonActions {
 			wait.until(ExpectedConditions.elementToBeClickable(elm));
 			elm.click();
 			logger.pass(msg + "<span class='label end-time'><a href=" + getScreenshot() + ">Screenshot</a></span>");
-			return;
+			break;
 		} catch (Exception e) {
 			if(i==4) {
 			System.out.println(e.getMessage());
@@ -412,24 +361,12 @@ public class CommonActions {
 	}
 
 	public void SelectMatOption(WebElement ele, String text) throws InterruptedException {
-		for (int i = 0; i < 5; i++) {
-			try {
-				
-				ele.click();
-				
-				Thread.sleep(10);
-				String xpath = "//mat-option/span[contains(text(),'" + text + "')]";
-				WebElement optionToSelect = ele.findElement(By.xpath(xpath));
-				optionToSelect.click();
-				return;
-			}catch(Exception ex) {
-				Thread.sleep(1000);
-				if(i==4) {
-					
-				}
-			}
-		}
+		ele.click();
 		
+		Thread.sleep(10);
+		String xpath = "//mat-option/span[contains(text(),'" + text + "')]";
+		WebElement optionToSelect = driver.findElement(By.xpath(xpath));
+		optionToSelect.click();
 	}
 
 	public static String capture(WebDriver driver, String screenShotName) throws IOException {

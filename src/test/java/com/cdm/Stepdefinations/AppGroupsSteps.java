@@ -24,22 +24,19 @@ public class AppGroupsSteps extends BaseTest {
 		agp.setZoomLevel(800, 600);
 
 	}
-
+	
 	@Then("verify switching between input field using TAB")
 	public void verify_switching_between_input_field_using_tab() {
 		AppGroupsPage agp = new AppGroupsPage(driver, logger);
-		agp.switchingtab();
-
+		 
+			  agp.switchingtab();
+			  
 	}
-
 	@Then("verify  alignment of ADD New,Refresh,bulk upload & bulk download buttons top right side")
 	public void verify_alignment_of_add_new_refresh_bulk_upload_bulk_download_buttons_top_right_side() {
 		AppGroupsPage agp = new AppGroupsPage(driver, logger);
-		Assume.assumeTrue(
-				"We can not automate alignment of ADD new Refresh bulk download and bulk download button, because alignment can be differ on differnt device",
-				false);
+		Assume.assumeTrue("We can not automate alignment of ADD new Refresh bulk download and bulk download button, because alignment can be differ on differnt device",false);
 	}
-
 	@When("Click on App Groups tab")
 	public void click_on_app_groups_tab() {
 		AppGroupsPage agp = new AppGroupsPage(driver, logger);
@@ -51,11 +48,11 @@ public class AppGroupsSteps extends BaseTest {
 		AppGroupsPage agp = new AppGroupsPage(driver, logger);
 		agp.addButtonAppGroup();
 	}
-
 	@Then("verify max word limit in App Group Name Text Field in the edit screen")
 	public void verify_max_word_limit_in_app_group_name_text_field_in_the_edit_screen() {
 		AppGroupsPage agp = new AppGroupsPage(driver, logger);
-
+	
+	    
 	}
 
 	@Then("verify application should load properly in slow network")
@@ -148,9 +145,9 @@ public class AppGroupsSteps extends BaseTest {
 	@Then("Do not Fill all information on Add page and hit save button")
 	public void do_not_fill_all_information_on_add_page_and_hit_save_button() throws InterruptedException {
 		AppGroupsPage agp = new AppGroupsPage(driver, logger);
-
+		Thread.sleep(4000);
 		agp.saveButton();
-
+		Thread.sleep(4000);
 	}
 
 	@When("Click on the three dots of App Group Name")
@@ -207,13 +204,13 @@ public class AppGroupsSteps extends BaseTest {
 		AppGroupsPage agp = new AppGroupsPage(driver, logger);
 		agp.statusThreeDot();
 	}
-
 	@Then("enter invalid details for App Group Name")
 	public void enter_invalid_details_for_app_group_name() {
 		AppGroupsPage agp = new AppGroupsPage(driver, logger);
 		agp.saveButton();
 	}
-
+	
+	
 	@Then("verify max word limit in App Group Display Name Text Field in the edit screen")
 	public void verify_max_word_limit_in_app_group_display_name_text_field_in_the_edit_screen() {
 		AppGroupsPage agp = new AppGroupsPage(driver, logger);
@@ -226,6 +223,8 @@ public class AppGroupsSteps extends BaseTest {
 		agp.appNameThreeDot();
 		agp.appNameSearch(alldata.get(vTCName).get("AppGroupName").toString());
 		agp.backDropShowing_Div_Click();
+
+		Thread.sleep(4000);
 
 		agp.appDisplayNameThreeDot();
 		agp.appGroupNameSearch(alldata.get(vTCName).get("AppGroupDisplayName").toString());
@@ -241,9 +240,9 @@ public class AppGroupsSteps extends BaseTest {
 	public void click_on_bulk_upload_functionality() throws InterruptedException, AWTException {
 		AppGroupsPage agp = new AppGroupsPage(driver, logger);
 		agp.bulkUploadButton();
-
+		Thread.sleep(3000);
 		agp.uploadfile();
-
+		Thread.sleep(3000);
 		StringSelection ss = new StringSelection(alldata.get(vTCName).get("FileUploadPath").toString());
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
 
@@ -260,9 +259,9 @@ public class AppGroupsSteps extends BaseTest {
 		robot.delay(90);
 		robot.keyRelease(KeyEvent.VK_ENTER);
 		agp.uploadFileTask(alldata.get(vTCName).get("FileUploadPath").toString());
-
+		Thread.sleep(3000);
 		agp.bulkUploadButtonSucess();
-
+		Thread.sleep(3000);
 	}
 
 	@Then("verify tooltip for Edit button")
@@ -287,7 +286,7 @@ public class AppGroupsSteps extends BaseTest {
 	public void click_on_three_dots_on_app_group_name_and_enter_the_value_for_app_name() throws InterruptedException {
 		AppGroupsPage agp = new AppGroupsPage(driver, logger);
 		agp.appNameThreeDot();
-
+		Thread.sleep(4000);
 		agp.appNameSearch(alldata.get(vTCName).get("AppGroupName").toString());
 		agp.backDropShowing_Div_Click();
 		Thread.sleep(7000);
@@ -311,7 +310,7 @@ public class AppGroupsSteps extends BaseTest {
 	public void click_on_save_button_to_save_app_groups() throws InterruptedException {
 		AppGroupsEditPage agep = new AppGroupsEditPage(driver, logger);
 		agep.saveButton();
-
+		Thread.sleep(5000);
 	}
 
 	@Then("Click on Edit button to edit app groups")
@@ -324,16 +323,18 @@ public class AppGroupsSteps extends BaseTest {
 	public void click_on_delete_button_to_delete_app_groups() throws InterruptedException {
 		AppGroupsPage agp = new AppGroupsPage(driver, logger);
 		agp.deleteButton();
+		Thread.sleep(4000);
 		agp.confirmationYesDeleteButton();
-
+		Thread.sleep(5000);
 	}
+
 
 	@Then("Under Status column select Active checkbox from the List")
 	public void under_status_column_select_active_checkbox_from_the_list() throws InterruptedException {
 		AppGroupsPage agp = new AppGroupsPage(driver, logger);
 
 		agp.statusinActiveCheckbox();
-
+		Thread.sleep(4000);
 	}
 
 }

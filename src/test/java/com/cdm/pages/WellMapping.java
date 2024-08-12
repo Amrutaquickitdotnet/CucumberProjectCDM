@@ -21,12 +21,7 @@ public class WellMapping extends CommonActions {
 		PageFactory.initElements(driver, this);
 
 	}
-	@FindBy(css= ".cdk-overlay-container")
-	WebElement outerlayerclick;
-	public void outerlayerclick() {
-		clickElement(outerlayerclick, "");
-		
-	}
+
 	@FindBy(xpath = "(//input[@name='options'])[1]")
 	WebElement StatusActiveCheck;
 
@@ -51,26 +46,26 @@ public class WellMapping extends CommonActions {
 
 	WebElement alertpopupforWell;
 
-	@FindBy(xpath = "//th//div[contains(text(),'Device Type')]/../../..//mat-icon")
+	@FindBy(xpath = "//div[contains(text(),'Device Type')]/../../..//mat-icon")
 
 	WebElement deviceTypeThreeDot;
 
-	@FindBy(xpath = "(//th//div[contains(text(),'RTU Address')])[1]/../../..//mat-icon")
+	@FindBy(xpath = "//div[contains(text(),'RTU Address')]/../../..//mat-icon")
+
 	WebElement RTUAddressThreeDot;
 
-	@FindBy(xpath = "//th//div[contains(text(),'Status')]/../../..//mat-icon")
+	@FindBy(xpath = "//div[contains(text(),'Status')]/../../..//mat-icon")
 
 	WebElement StatusThreeDot;
 
-	
-	@FindBy(xpath = "//a[contains(text(),'Well Mapping')]")
+	@FindBy(xpath = "//ul[@class='nav']/li[6]")
 
 	WebElement wellmappingtab;
 
 	@FindBy(xpath = "(//tbody/tr[1]/td[1]/mat-checkbox[1])[1]//label")
 	WebElement selectedCheckboxforWellLabel;
 
-	@FindBy(xpath = "//h4")
+	@FindBy(xpath = "//body/app-root[1]/app-root[1]/app-home[1]/mat-sidenav-container[1]/mat-sidenav-content[1]/div[2]/div[1]/app-device-add-edit-detail-page[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-well-link-edge-device[1]/div[1]/div[1]/h4[1]")
 	WebElement headingTitle;
 
 	@FindBy(xpath = "//h4")
@@ -178,8 +173,8 @@ public class WellMapping extends CommonActions {
 
 	public void backDropShowing_Div_Click() {
 		if (backDropShowing != null) {
-			//clickElement(backDropShowing, "");
-			backDropShowing.click();
+			clickElement(backDropShowing, "");
+			// backDropShowing.click();
 		}
 	}
 

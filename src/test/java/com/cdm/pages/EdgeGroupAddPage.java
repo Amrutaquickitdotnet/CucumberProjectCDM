@@ -1,5 +1,7 @@
 package com.cdm.pages;
 
+import java.util.Set;
+
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -18,16 +20,16 @@ public class EdgeGroupAddPage extends CommonActions {
 
 	@FindBy(css = ".cdk-overlay-container")
 	WebElement healthstatusToolTip;
-
+	
 	@FindBy(xpath = "//div/mat-tooltip-component/div[contains(text(),'Close')]")
 	WebElement closeTooltip;
-
-
-
-
+	
+	
+	
+	
 	@FindBy(xpath = "//app-console-terminal/div[1]/div[2]/i")
 	WebElement closeIcon;
-
+	
 	@FindBy(xpath = "//mat-dialog-container[@id='mat-dialog-3']")
 	WebElement iconwindow;
 
@@ -94,28 +96,36 @@ public class EdgeGroupAddPage extends CommonActions {
 	@FindBy(xpath = "//body/app-root[1]/app-root[1]/app-home[1]/mat-sidenav-container[1]/mat-sidenav-content[1]/div[2]/div[1]/app-add-edit-edgegroup[1]/div[1]/div[1]/form[1]/mat-nav-list[1]/mat-expansion-panel[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/mat-form-field[1]/div[1]/div[1]")
 	WebElement appGroup;
 
-	@FindBy(xpath = "//input[@formcontrolname='serverport']")
+	@FindBy(xpath = "//input[@id='mat-input-8']")
 	WebElement serverport;
 
-	@FindBy(xpath = "//input[@formcontrolname='maxservernode']")
+	@FindBy(xpath = "//input[@id='mat-input-9']")
 	WebElement maxServernode;
 
-	@FindBy(xpath = "//input[@formcontrolname='serverhostaddress']")
+	@FindBy(xpath = "//input[@id='mat-input-10']")
 	WebElement serverHostAddress;
 
+	@FindBy(xpath = "//tbody/tr[1]/td[5]/img[3]")
+	WebElement stopICon;
 
+	@FindBy(xpath = "//tbody/tr[1]/td[5]/img[1]")
+	WebElement groupNameEdit;
 
+	@FindBy(xpath = "//div[contains(text(),'Devices Connected')]")
+	WebElement deviceConnectedlabel;
 
+	@FindBy(xpath = "//div[contains(text(),'Devices Active')]")
+	WebElement deviceActivelabel;
 
-	@FindBy(xpath = "//input[@formcontrolname='location']")
+	@FindBy(xpath = "//input[@id='mat-input-6']")
 	WebElement locationAdd;
 
-	@FindBy(xpath = "//textarea[@formcontraolname='description']")
+	@FindBy(xpath = "//textarea[@id='mat-input-7']")
 	WebElement descriptionAdd;
 
+	@FindBy(xpath = "//div[contains(text(),'Status')]")
+	WebElement statuslabel;
 
-
-	//thead/tr[1]/th[1]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]
 	@FindBy(xpath = "//thead/tr[1]/th[1]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]")
 	WebElement GroupNameFilter;
 
@@ -171,18 +181,18 @@ public class EdgeGroupAddPage extends CommonActions {
 	WebElement saveButtonforEdgeGroup;
 
 	public void edgeGroupNameAdd(String value) {
-
+		
 		SetInputENterKey(edgeGroupNameAdd,"");
 		SetInput(edgeGroupNameAdd, value, value);
 
-
+		
 	}
 
 	public void edgeGroupIdAdd(String value) {
-
+		
 		SetInputENterKey(edgeGroupIdAdd,"");
 		SetInput(edgeGroupIdAdd, value, value);
-
+		
 //		edgeGroupIdAdd.sendKeys(Keys.ENTER);
 //		edgeGroupIdAdd.sendKeys(value);
 	}
@@ -194,6 +204,11 @@ public class EdgeGroupAddPage extends CommonActions {
 
 	public String validationMessageAppGroupwithout() {
 
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+
+		}
 
 		if (validationMessageAppGroupwithout == null) {
 			return "";
@@ -206,6 +221,11 @@ public class EdgeGroupAddPage extends CommonActions {
 
 	public String validationMessageGroupIdwithout() {
 
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+
+		}
 
 		if (validationMessageGroupIdwithout == null) {
 			return "";
@@ -218,7 +238,11 @@ public class EdgeGroupAddPage extends CommonActions {
 
 	public String validationMessageGroupId() {
 
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
 
+		}
 
 		if (validationMessageGroupId == null) {
 			return "";
@@ -231,6 +255,11 @@ public class EdgeGroupAddPage extends CommonActions {
 
 	public String validationMessageGroupNamewithout() {
 
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+
+		}
 
 		if (validationMessageGroupNamewithout == null) {
 			return "";
@@ -243,6 +272,12 @@ public class EdgeGroupAddPage extends CommonActions {
 
 	public String validationMessageServerHostIDwithout() {
 
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+
+		}
+
 		if (validationMessageServerHostIDwithout == null) {
 			return "";
 		}
@@ -254,6 +289,11 @@ public class EdgeGroupAddPage extends CommonActions {
 
 	public String validationMessageServerPortwithout() {
 
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+
+		}
 
 		if (validationMessageServerPortwithout == null) {
 			return "";
@@ -266,7 +306,11 @@ public class EdgeGroupAddPage extends CommonActions {
 
 	public String verifyValidationMessageGroupName1() {
 
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
 
+		}
 
 		if (validationMessageGroupName1 == null) {
 			return "";
@@ -279,6 +323,11 @@ public class EdgeGroupAddPage extends CommonActions {
 
 	public String verifyValidationMessageEdgeIDAdd() {
 
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+
+		}
 
 		if (validationMessageGroupId == null) {
 			return "";
@@ -291,12 +340,16 @@ public class EdgeGroupAddPage extends CommonActions {
 
 	public void saveButtonUpload() {
 		clickElement(saveButtonUpload,"");
-		//saveButtonUpload.click();
+		saveButtonUpload.click();
 	}
 
 	public String verifyValidationMessageGroupID() {
 
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
 
+		}
 
 		if (validationMessageGroupId == null) {
 			return "";
@@ -309,7 +362,7 @@ public class EdgeGroupAddPage extends CommonActions {
 
 	public void saveButtonforEdgeGroup() {
 		clickElement(saveButtonforEdgeGroup, "");
-		//saveButtonforEdgeGroup.click();
+		saveButtonforEdgeGroup.click();
 	}
 
 	public void scrollingverticalAdd() {
@@ -318,6 +371,11 @@ public class EdgeGroupAddPage extends CommonActions {
 	}
 
 	public String verifyValidationMessageGroupName() {
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+
+		}
 
 		if (validationMessageGroupName == null) {
 			return "";
@@ -354,12 +412,11 @@ public class EdgeGroupAddPage extends CommonActions {
 	}
 
 	public void DeviceActive() {
-		clickElement(DeviceActive, "Clicking on device Active");
-//		if (DeviceActive.isDisplayed()) {
-//			System.out.println("Element is visible");
-//		} else {
-//			System.out.println("Element is not visible");
-//		}
+		if (DeviceActive.isDisplayed()) {
+			System.out.println("Element is visible");
+		} else {
+			System.out.println("Element is not visible");
+		}
 
 	}
 
@@ -373,7 +430,7 @@ public class EdgeGroupAddPage extends CommonActions {
 	}
 
 	public void switchToSecondInput() {
-
+		
 		edgeGroupNameAdd.sendKeys(Keys.TAB);
 	}
 
@@ -397,7 +454,87 @@ public class EdgeGroupAddPage extends CommonActions {
 		return GroupNameAddText;
 	}
 
+	public String get_Text_ToolTipDeviceConnected() {
+		mouseHover(deviceConnectedlabel);
 
+		String deviceConnectedlabelText = deviceConnectedToolTip.getText();
+
+		deviceConnectedlabelText.trim();
+
+		return deviceConnectedlabelText;
+	}
+
+	public String get_Text_ToolTipDeviceActive() {
+		mouseHover(deviceActivelabel);
+
+		String deviceActiveText = deviceActiveToolTip.getText();
+
+		deviceActiveText.trim();
+
+		return deviceActiveText;
+	}
+
+	public String get_Text_ToolTipStatus() {
+		mouseHover(statuslabel);
+
+		String statuslabelText = statusToolTip.getText();
+
+		statuslabelText.trim();
+
+		return statuslabelText;
+	}
+
+	public String get_Text_ToolTipEdit() {
+		mouseHover(groupNameEdit);
+
+		String deviceConnectedlabelText = editToolTip.getText();
+
+		deviceConnectedlabelText.trim();
+
+		return deviceConnectedlabelText;
+	}
+
+	public String get_Text_ToolTipDelete() {
+		mouseHover(groupNameDelete);
+
+		String deleteText = deleteToolTip.getText();
+
+		deleteText.trim();
+
+		return deleteText;
+	}
+
+	public String get_Text_ToolTipConsole() {
+		mouseHover(consoleIcon);
+
+		String consoleIconText = consoleToolTip.getText();
+
+		consoleIconText.trim();
+
+		return consoleIconText;
+	}
+	
+	public String get_Text_ToolTipClose() {
+
+		mouseHover(closeIcon);
+		wait(closeTooltip,logger);
+
+		String closeToolTipIconText = closeTooltip.getText();
+
+		closeToolTipIconText.trim();
+
+		return closeToolTipIconText;
+	}
+
+	public String get_Text_ToolTipStop() {
+		mouseHover(stopICon);
+
+		String stopIconText = stopToolTip.getText();
+
+		stopIconText.trim();
+
+		return stopIconText;
+	}
 
 	public String get_Text_ToolTipHealthStatus() {
 		mouseHover(healthstatus);
@@ -490,13 +627,13 @@ public class EdgeGroupAddPage extends CommonActions {
 	}
 
 	public void maximisescreen() {
-
+		
 		driver.manage().window().maximize();
-
+		
 	}
 
 	public void minimizeScreen() {
 		driver.manage().window().minimize();
-
+		
 	}
 }

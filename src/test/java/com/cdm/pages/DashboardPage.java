@@ -127,8 +127,7 @@ public class DashboardPage extends CommonActions {
 	}
 
 	public void updateProfile() {
-		clickElement(updateProfile,"");
-		//updateProfile.click();
+		updateProfile.click();
 	}
 
 	public void changePassword() {

@@ -112,21 +112,15 @@ public class EdgeDeviceEdit extends CommonActions {
 	WebElement applicationGroupSelectUpdate;
 
 	public void identityedgeIdInputUpdate(String value) {
-		SetInputENterKey(identityedgeIdUpdate, "");
-		SetInput(identityedgeIdUpdate, value, value);
-//		
-//		identityedgeIdUpdate.sendKeys(Keys.ENTER);
-//		identityedgeIdUpdate.sendKeys(value);
+		identityedgeIdUpdate.sendKeys(Keys.ENTER);
+		identityedgeIdUpdate.sendKeys(value);
 	}
 
 	public void edgeAssignedToUpdate(String value) throws InterruptedException {
 
-		SetInputENterKey(edgeAssignedToUpdate, "");
-		SetInput(edgeAssignedToUpdate, value, value);
-		
-//		edgeAssignedToUpdate.sendKeys(value);
-//		
-//		edgeAssignedToUpdate.click();
+		edgeAssignedToUpdate.sendKeys(value);
+		Thread.sleep(6000);
+		edgeAssignedToUpdate.click();
 
 	}
 
@@ -179,9 +173,13 @@ public class EdgeDeviceEdit extends CommonActions {
 	}
 
 	public String verifyValidationMessageEdgeId() {
-		clickElement(EditListpageVerification,"");
-		//EditListpageVerification.click();
-		
+		EditListpageVerification.click();
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+
+		}
+
 		if (validationMessageEdgeId == null) {
 			return "";
 		}
@@ -192,13 +190,12 @@ public class EdgeDeviceEdit extends CommonActions {
 	}
 
 	public String verifyValidationMessageEdgeName() {
-		clickElement(EditListpageVerification,"");
-		//EditListpageVerification.click();
-//		try {
-//			Thread.sleep(1000);
-//		} catch (InterruptedException e) {
-//
-//		}
+		EditListpageVerification.click();
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+
+		}
 
 		if (validationMessageEdgeName == null) {
 			return "";
@@ -236,6 +233,7 @@ public class EdgeDeviceEdit extends CommonActions {
 
 	public void performAutosuggestion(String partialText, String value) {
 
+		// Enter partial text
 		assignedtoUpdate.sendKeys(value);
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
 		// Wait for autosuggestion dropdown to appear
@@ -457,8 +455,6 @@ public class EdgeDeviceEdit extends CommonActions {
 
 	public String verifyValidationMessageEdgeNameEdit() {
 		EditListpageVerification.click();
-		
-		clickElement(EditListpageVerification, "");
 		try {
 			Thread.sleep(1000);
 		} catch (InterruptedException e) {
@@ -475,7 +471,7 @@ public class EdgeDeviceEdit extends CommonActions {
 	}
 
 	public void identityedgeNameEdit(String value) throws InterruptedException {
-		
+		Thread.sleep(3000);
 
 		SetInputENterKey(identityedgeNameEdit, "");
 		SetInput(identityedgeNameEdit, value, value);

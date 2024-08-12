@@ -18,25 +18,21 @@ public class WellNameAddPage extends CommonActions {
 
 		PageFactory.initElements(driver, this);
 	}
-	@FindBy(css= ".cdk-overlay-container")
-	WebElement outerlayerclick;
-	public void outerlayerclick() {
-		clickElement(outerlayerclick, "");
-		
-	}
-
+	
 	@FindBy(css = ".cdk-overlay-container")
 	WebElement activeUserToolTip;
 
-	@FindBy(xpath = "//div[@class='slider round']")
+	@FindBy(xpath="//div[@class='slider round']")
 	WebElement sliderRound;
-
+	
+	
+	
 	@FindBy(xpath = "//*[@id= 'isActive']")
 	WebElement sliderOnCheckBox;
 
 	@FindBy(xpath = "//*[@id='isActive']/..")
 	WebElement sliderOnCheckBoxLabel;
-
+	
 	@FindBy(xpath = "//input[@formcontrolname ='wellname']")
 	WebElement wellnameinputAdd;
 
@@ -64,7 +60,7 @@ public class WellNameAddPage extends CommonActions {
 	@FindBy(xpath = "//div[@class='tableCard']/div/div/span/img[1]")
 	WebElement addButtonWell;
 
-	@FindBy(xpath = "//input[@formcontrolname='wellname']/../../../../../span[1]/span")
+	@FindBy(xpath = "(//input[@formcontrolname='wellname']/../../../../../span[1]/span)")
 	WebElement validationMessgaeWellName;
 
 	@FindBy(xpath = "(//input[@formcontrolname='port']/../../../../../span[1]/span)")
@@ -78,7 +74,7 @@ public class WellNameAddPage extends CommonActions {
 
 	@FindBy(xpath = "(//input[@formcontrolname='ipaddress']/../../../../../span[1]/span[1])")
 	WebElement validationMessgaeIPAddress;
-
+	
 	@FindBy(xpath = "(//input[@formcontrolname='ipaddress']/../../../../../span[1]/span[2])")
 	WebElement validationMessgaeIPAddress1;
 
@@ -90,28 +86,26 @@ public class WellNameAddPage extends CommonActions {
 
 	public void backDropShowing_Div_Click() {
 		if (backDropShowing != null) {
-			// clickElement(backDropShowing,"");
-			backDropShowing.click();
+			//clickElement(backDropShowing,"");
+            backDropShowing.click();
 		}
 	}
 
 	public void addbutton() throws InterruptedException {
-		clickElement(addButtonWell, "");
+	clickElement(addButtonWell,"");
 //		addButtonWell.click();
 	}
 
 	public void cancelButtonwell() {
-		clickElement(cancelButtonwell, "");
+		clickElement(cancelButtonwell,"");
 //		cancelButtonwell.click();
 
 	}
 
 	public void saveButton() {
-//		JavascriptExecutor js = (JavascriptExecutor) driver;
-//
-//		js.executeScript("document.querySelector(\".addButton\").click()");
+		JavascriptExecutor	js = (JavascriptExecutor)driver;
 		
-		clickElement(saveButtonWell, "");
+		js.executeScript("document.querySelector(\".addButton\").click()");
 
 	}
 
@@ -170,7 +164,7 @@ public class WellNameAddPage extends CommonActions {
 		return message.trim();
 
 	}
-
+	
 	public String verifyValidationMessageIPAddress1() throws InterruptedException {
 
 		if (validationMessgaeIPAddress1 == null) {
@@ -217,31 +211,31 @@ public class WellNameAddPage extends CommonActions {
 	}
 
 	public void wellnameinputAdd(String value) {
-		SetInputENterKey(wellnameinputAdd, "");
+		SetInputENterKey(wellnameinputAdd,"");
 		SetInput(wellnameinputAdd, value, value);
-
+		
 //		wellnameinputAdd.sendKeys(Keys.ENTER);
 //		wellnameinputAdd.sendKeys(value);
 	}
 
 	public void portnumberinputAdd(String value) {
-		SetInputENterKey(portNumberinputAdd, "");
+		SetInputENterKey(portNumberinputAdd,"");
 		SetInput(portNumberinputAdd, value, value);
-
+		
 //		portNumberinputAdd.sendKeys(Keys.ENTER);
 //		portNumberinputAdd.sendKeys(value);
 	}
 
 	public void RTUAddressinputAdd(String value) {
-		SetInputENterKey(RTUAddressinputAdd, "");
+		SetInputENterKey(RTUAddressinputAdd,"");
 		SetInput(RTUAddressinputAdd, value, value);
-
+		
 //		RTUAddressinputAdd.sendKeys(Keys.ENTER);
 //		RTUAddressinputAdd.sendKeys(value);
 	}
 
 	public void passwordinputAdd(String value) {
-		SetInputENterKey(passwordinputAdd, "");
+		SetInputENterKey(passwordinputAdd,"");
 		SetInput(passwordinputAdd, value, value);
 //		
 //		passwordinputAdd.sendKeys(Keys.ENTER);
@@ -249,20 +243,20 @@ public class WellNameAddPage extends CommonActions {
 	}
 
 	public void IPAddressinputAdd(String value) {
-		SetInputENterKey(IPAddressinputAdd, "");
+		SetInputENterKey(IPAddressinputAdd,"");
 		SetInput(IPAddressinputAdd, value, value);
-
+		
 //		IPAddressinputAdd.sendKeys(Keys.ENTER);
 //		IPAddressinputAdd.sendKeys(value);
 	}
 
 	public void deviceTypeDropdownAdd(String value) throws InterruptedException {
-		wait(deviceTypeAdd, logger);
+            wait(deviceTypeAdd,logger);
 		SelectMatOption(deviceTypeAdd, value);
 	}
-
+	
 	public void moveSliderCondition(String m) {
-		moveSliderCondition(sliderOnCheckBox, sliderOnCheckBoxLabel, m);
+		moveSliderCondition(sliderOnCheckBox,sliderOnCheckBoxLabel,m);
 	}
 
 	public String get_Text_ToolTipActiveUser() {

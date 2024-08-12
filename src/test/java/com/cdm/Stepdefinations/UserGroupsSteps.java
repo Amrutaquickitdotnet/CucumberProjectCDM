@@ -17,7 +17,7 @@ public class UserGroupsSteps extends BaseTest {
 	public void click_on_users_groups_tab_from_right_panel_of_the_screen() throws InterruptedException {
 		UserGroupsAddPage uga = new UserGroupsAddPage(driver, logger);
 		uga.UserGroupstab();
-		
+		Thread.sleep(4000);
 
 	}
 
@@ -25,9 +25,9 @@ public class UserGroupsSteps extends BaseTest {
 	public void click_on_add_button_to_add_user_group() throws InterruptedException {
 		UserGroupsAddPage uga = new UserGroupsAddPage(driver, logger);
 		uga.addbuttonicon();
-		
+		Thread.sleep(5000);
 		uga.inputUserGroup(alldata.get(vTCName).get("UserGroupNameAdd").toString());
-		
+		Thread.sleep(5000);
 		uga.saveusergroups();
 	}
 
@@ -35,26 +35,23 @@ public class UserGroupsSteps extends BaseTest {
 	public void click_on_edit_button_to_edit_user_group() throws Exception {
 		UserGroupEditPage ugep = new UserGroupEditPage(driver, logger);
 		ugep.usergroupEditicon();
-		
+		Thread.sleep(2000);
 
 	}
 	@Then("click on three dots for user group and serach for user group")
 	public void click_on_three_dots_for_user_group_and_serach_for_user_group() {
 		UserGroupsAddPage uga = new UserGroupsAddPage(driver, logger);
 		uga.usergroupThreeDot();
-		uga.searchUserGroup(alldata.get(vTCName).get("UserGroupNameSearch").toString());
-		
-		//uga.backDropShowing_Div_Click();
-		uga.outerlayerclick();
+		uga.inputUserGroup(alldata.get(vTCName).get("UserGroupNameSearch").toString());
 	}
 	@Then("observe that a User Groups that is chosen for deleting and when Cancelled to do so, it does not get deleted and exists in the User Groups list")
 	public void observe_that_a_user_groups_that_is_chosen_for_deleting_and_when_cancelled_to_do_so_it_does_not_get_deleted_and_exists_in_the_user_groups_list()
 			throws InterruptedException {
 		UserGroupsAddPage uga = new UserGroupsAddPage(driver, logger);
 		uga.deletebuttonicon();
-		
+		Thread.sleep(3000);
 		uga.confirmationNoButton();
-		
+		Thread.sleep(3000);
 	}
 
 	@Then("click on add users icon")
@@ -68,32 +65,30 @@ public class UserGroupsSteps extends BaseTest {
 			throws InterruptedException {
 		UserGroupsPage ugp = new UserGroupsPage(driver, logger);
 		ugp.usergroupThreeDot();
-		
+		Thread.sleep(2000);
 		ugp.searchUserGroup(alldata.get(vTCName).get("UserGroupNameSearch").toString());
-       ugp.backDropShowing_Div_Click();
-       
-         ugp.outerlayerclick();
-		
+
+		Thread.sleep(5000);
 	}
 
 	@Then("click on cancel button to return back of user group list page")
 	public void click_on_cancel_button_to_return_back_of_user_group_list_page() throws InterruptedException {
 		UserGroupEditPage ugep = new UserGroupEditPage(driver, logger);
 		ugep.cancelbutton();
-		
+		Thread.sleep(2000);
 	}
 
 	@Then("Select the Active users by choosing users depending on wish to map")
 	public void select_the_active_users_by_choosing_users_depending_on_wish_to_map() throws InterruptedException {
 		MappinguserListPage mulp = new MappinguserListPage(driver, logger);
 		mulp.firstnameThreeDot();
-		
+		Thread.sleep(2000);
 		mulp.firstnameSearch(alldata.get(vTCName).get("FirstNameSearch").toString());
 		mulp.backDropShowing_Div_Click();
-		
+		Thread.sleep(4000);
 		mulp.checkboxAddUsers();
 
-		
+		Thread.sleep(2000);
 	}
 
 	@Then("select status inactive")
@@ -101,11 +96,11 @@ public class UserGroupsSteps extends BaseTest {
 		UserGroupsPage ugp = new UserGroupsPage(driver, logger);
 		ugp.statusColumn();
 		ugp.activeStatus();
-		
+		Thread.sleep(3000);
 		ugp.inactiveStatus();
-		
+		Thread.sleep(3000);
 		// ugp.headingtitle();
-		
+		Thread.sleep(3000);
 	}
 
 	@Then("the checkbox should be disabled")
@@ -119,7 +114,7 @@ public class UserGroupsSteps extends BaseTest {
 	public void click_on_cancel_button_to_cancel_map() throws InterruptedException {
 		MappinguserListPage mulp = new MappinguserListPage(driver, logger);
 		mulp.cancelbuttonmap();
-		
+		Thread.sleep(2000);
 	}
 
 	@Then("update the value for usergroup and click on save button")
@@ -127,7 +122,7 @@ public class UserGroupsSteps extends BaseTest {
 		UserGroupEditPage ugep = new UserGroupEditPage(driver, logger);
 		ugep.removalofEnteredTextForUserGroups();
 		ugep.usergroupnameedit(alldata.get(vTCName).get("UserGroupNameEdit").toString());
-		
+		Thread.sleep(5000);
 		ugep.saveButtonAdd();
 	}
 
@@ -135,12 +130,10 @@ public class UserGroupsSteps extends BaseTest {
 	public void click_on_three_dots_for_user_group_and_search_for_user_group() throws InterruptedException {
 		UserGroupsAddPage uga = new UserGroupsAddPage(driver, logger);
 		uga.usergroupThreeDot();
-		
+		Thread.sleep(4000);
 		uga.searchUserGroup(alldata.get(vTCName).get("UserGroupNameSearch").toString());
 		uga.backDropShowing_Div_Click();
-		
-		uga.networkstatus();
-		
+		Thread.sleep(4000);
 
 	}
 
@@ -148,17 +141,16 @@ public class UserGroupsSteps extends BaseTest {
 	public void click_on_delete_icon_from_actions_column_to_delete_user_group_name() throws InterruptedException {
 		UserGroupsAddPage uga = new UserGroupsAddPage(driver, logger);
 		uga.deletebuttonicon();
-		
-		//uga.confirmationYesButton();
+		Thread.sleep(6000);
+		uga.confirmationYesButton();
 	}
 
-	@Then("Click on the Manage Mapping icon present against a User Group")
-	public void click_on_the_manage_mapping_icon_present_against_a_user_group() {
+	@Then("Click on the \"Manage Mapping' icon present against a User Group")
+	public void click_on_the_manage_mapping_icon_present_against_a_user_group() throws InterruptedException {
 		UserGroupsPage ugp = new UserGroupsPage(driver, logger);
 		ugp.managemappingicon();
-		
+		Thread.sleep(2000);
 	}
-
 
 	@Then("Select EDGE Devices to map with the User Group")
 	public void select_edge_devices_to_map_with_the_user_group() {
@@ -171,19 +163,19 @@ public class UserGroupsSteps extends BaseTest {
 	public void click_on_three_dots_of_edge_name_and_enter_the_value_for_edge_name() throws InterruptedException {
 		UserGroupMappingPage ugmp = new UserGroupMappingPage(driver, logger);
 		ugmp.edgenamethreedotgroup();
-		
+		Thread.sleep(2000);
+
 		ugmp.edgenamesearchmap(alldata.get(vTCName).get("EdgeNameSearch").toString());
-		//ugmp.backDropShowing_Div_Click();
-		ugmp.outerlayerclick();
-		
-		ugmp.headingclickElement();
+		ugmp.backDropShowing_Div_Click();
+		Thread.sleep(2000);
+
 	}
 
 	@Then("select the Active Edge device by checking checkbox")
 	public void select_the_active_edge_device_by_checking_checkbox() throws InterruptedException {
 		UserGroupMappingPage ugmp = new UserGroupMappingPage(driver, logger);
 		ugmp.checkboxManagemapping();
-		
+		Thread.sleep(2000);
 	}
 
 	@Then("deselect the Active Edge device by checking checkbox")
@@ -203,9 +195,9 @@ public class UserGroupsSteps extends BaseTest {
 		UserGroupMappingPage ugmp = new UserGroupMappingPage(driver, logger);
 		ugmp.UserGroupNameThreeDot();
 
+		Thread.sleep(3000);
 
 		ugmp.groupnamesearchmap(alldata.get(vTCName).get("GroupNameSearch").toString());
-		
 	}
 
 	@Then("select the Active Group Name by checking checkbox")
@@ -218,7 +210,7 @@ public class UserGroupsSteps extends BaseTest {
 	public void deselect_the_active_group_name_by_checking_checkbox() throws InterruptedException {
 		UserGroupMappingPage ugmp = new UserGroupMappingPage(driver, logger);
 		ugmp.checkboxManagemapping();
-		
+		Thread.sleep(3000);
 	}
 
 }

@@ -22,52 +22,56 @@ public class EdgeDevicesPage extends CommonActions {
 		super(driver, logger);
 		PageFactory.initElements(driver, this);
 	}
-
-	@FindBy(xpath = "//thead/tr[1]/th[3]/div[1]/span[1]/div[1]/div[2]")
+	
+	
+	@FindBy(xpath=	"//thead/tr[1]/th[3]/div[1]/span[1]/div[1]/div[2]")
 	WebElement edgegroupnametip;
 
-	@FindBy(xpath = "//tbody/tr[1]/td[8]/span[1]/img[1]")
+	
+	@FindBy(xpath=	"//tbody/tr[1]/td[8]/span[1]/img[1]")
 	WebElement deployAppsicon;
-
+	
 	@FindBy(css = ".cdk-overlay-container")
 	WebElement edgeGroupNameTooltip;
-
+	
 	@FindBy(css = ".cdk-overlay-container")
 	WebElement statusTooltip;
-
+	
 	@FindBy(css = ".cdk-overlay-container")
 	WebElement deleteTooltip;
-
+	
 	@FindBy(css = ".cdk-overlay-container")
 	WebElement deployTooltip;
-
+	
 	@FindBy(css = ".cdk-overlay-container")
 	WebElement configAppsTooltip;
-
+	
 	@FindBy(xpath = "//span[contains(text(),' Configurations')]")
 	WebElement ConfigurationsTab;
-
+	
 	@FindBy(xpath = "//app-device-add-edit-detail-page/div/div/div/div/div[2]/button[1]")
 	WebElement saveEdgeDeviceButton;
-
+	
 	@FindBy(xpath = "//thead/tr[1]/th[6]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]")
 	WebElement communicationStatusThreeDot;
-
+	
+	
 	@FindBy(xpath = "//body/div[3]/div[2]/div[1]/div[1]/div[1]/button[1]/div[1]/label[1]/input[1]")
 	WebElement communicationconnected;
-
+	
 	@FindBy(xpath = "//body/div[3]/div[2]/div[1]/div[1]/div[1]/button[1]/div[2]/label[1]/input[1]")
 	WebElement communicationDisconnected;
-
+	
 	@FindBy(xpath = "//body/div[3]/div[2]/div[1]/div[1]/div[1]/button[1]/div[3]/label[1]/input[1]")
 	WebElement EdgeDisconnected;
-
+	
 	@FindBy(xpath = "//body/div[3]/div[2]/div[1]/div[1]/div[1]/button[1]/div[4]/label[1]")
 	WebElement BrokerDisconnected;
-
+	
 	@FindBy(xpath = "//body/app-root[1]/app-root[1]/app-home[1]/mat-sidenav-container[1]/mat-sidenav-content[1]/div[2]/div[1]/app-device[1]/div[1]/div[1]/div[1]/img[5]")
 	WebElement bulkConfigurationEdgeDevice;
-
+	
+	
 	@FindBy(xpath = "//table[@id='matTable']/tbody")
 	WebElement tableEdgeDevice;
 
@@ -117,9 +121,9 @@ public class EdgeDevicesPage extends CommonActions {
 	@FindBy(xpath = "//thead/tr[1]/th[1]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]")
 	WebElement edgeIdsearchClickDot;
 
-	@FindBy(xpath = "//div[@id='toast-container']")
+	@FindBy(xpath="//div[@id='toast-container']")
 	WebElement verifyalertfordownload;
-
+	
 	@FindBy(xpath = "//thead/tr[1]/th[3]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]")
 	WebElement edgeGroupNameIconDot;
 
@@ -131,16 +135,16 @@ public class EdgeDevicesPage extends CommonActions {
 
 	@FindBy(xpath = "//thead/tr[1]/th[5]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]")
 	WebElement hardwareName;
-
+	
 	@FindBy(xpath = "//thead/tr[1]/th[7]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]")
 	WebElement status;
 
 	@FindBy(xpath = "//input[@name='devicename']")
 	WebElement edgeIdInput;
-
+	
 	@FindBy(xpath = "//input[@name='devicename']")
 	WebElement statusActive;
-
+	
 	@FindBy(xpath = "(//input[@name='options'])[2]")
 	WebElement statusInactive;
 
@@ -162,6 +166,7 @@ public class EdgeDevicesPage extends CommonActions {
 	@FindBy(xpath = "//tbody/tr[1]/td[8]/img[1]")
 	WebElement EditButton;
 
+	
 	@FindBy(xpath = "//tbody/tr[1]/td[8]/img[2]")
 	WebElement DeleteButton;
 
@@ -186,25 +191,27 @@ public class EdgeDevicesPage extends CommonActions {
 
 	@FindBy(css = ".cdk-overlay-backdrop cdk-overlay-transparent-backdrop cdk-overlay-backdrop-showing")
 	WebElement backDropTransparent;
-
+	
 	@FindBy(xpath = "//tbody/tr[1]/td[8]/span[1]/img[1]")
 	WebElement deployclickfromActionsColumn;
-
+	
+	
 	@FindBy(xpath = "//button/span[contains(text(),'Confirm')]/..")
 	WebElement confirmDeployButton;
 
 	@FindBy(xpath = "//button[@type='submit'][2]")
 	WebElement deployButton;
-
+	
+	
 	public void confirmClick() {
-		clickElement(confirmDeployButton, "");
-
-		// confirmDeployButton.click();
+		clickElement(confirmDeployButton,"");
+		
+		//confirmDeployButton.click();
 	}
 
 	public void deployButtonClick() {
-		clickElement(deployButton, "");
-		// deployButton.click();
+		clickElement(deployButton,"");
+		//deployButton.click();
 	}
 	/*
 	 * @FindBy(xpath =
@@ -215,25 +222,30 @@ public class EdgeDevicesPage extends CommonActions {
 	public void clickondeployimage() {
 
 		clickElement(deployclickfromActionsColumn, "");
-		// deployclickfromActionsColumn.click();
+		//deployclickfromActionsColumn.click();
 	}
 
-//	public String get_Text_ToolTipviewAlert() {
-//		scrollingElementRightBar("div.example-container", "900");
-//		try {
-//			Thread.sleep(30);
-//		} catch (InterruptedException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//		mouseHover(viewAlertButton);
-//
-//		
-//		// mouseRollHoverDelete();
-//		String toolTipAlert = AlertButtonToolTip.getText();
-//		System.out.println("toolTipText-->" + toolTipAlert);
-//		return toolTipAlert;
-//	}
+	public String get_Text_ToolTipviewAlert() {
+		scrollingElementRightBar("div.example-container", "900");
+		try {
+			Thread.sleep(30);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		mouseHover(viewAlertButton);
+
+		try {
+			Thread.sleep(30);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		// mouseRollHoverDelete();
+		String toolTipAlert = AlertButtonToolTip.getText();
+		System.out.println("toolTipText-->" + toolTipAlert);
+		return toolTipAlert;
+	}
 
 	public void mouseRollHoverDelete() {
 		scrollingElementRightBar("div.example-container", "900");
@@ -243,11 +255,21 @@ public class EdgeDevicesPage extends CommonActions {
 	public String get_Text_ToolTipDelete() {
 		// To get the tool tip text and assert
 		scrollingElementRightBar("div.example-container", "900");
-		
+		try {
+			Thread.sleep(30);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 		mouseHover(DeleteButton);
 
-		
+		try {
+			Thread.sleep(30);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		// mouseRollHoverDelete();
 
 		String deletetoolTipText = DeleteButtonToolTip.getText();
@@ -260,10 +282,21 @@ public class EdgeDevicesPage extends CommonActions {
 	public String get_Text_ToolTipEdit() {
 		// To get the tool tip text and assert
 		scrollingElementRightBar("div.example-container", "900");
-		
+		try {
+			Thread.sleep(30);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 		mouseHover(EditButton);
 
+		try {
+			Thread.sleep(30);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 		String edittoolTipText = EditButtonToolTip.getText();
 
@@ -274,7 +307,7 @@ public class EdgeDevicesPage extends CommonActions {
 
 	public void edgeIdSearch_Button() {
 
-		// clickElement(edgeIdsearchClickDot, "Clicking on 3 dots for Edge Id ");
+		//clickElement(edgeIdsearchClickDot, "Clicking on 3 dots for Edge Id ");
 
 		edgeIdsearchClickDot.click();
 	}
@@ -309,35 +342,37 @@ public class EdgeDevicesPage extends CommonActions {
 	}
 
 	public void hardwareNameSearchDot() {
-		clickElement(hardwareName, "Clicking on 3 dots of HardwareName");
+		// clickElement(hardwareName, "Clicking on 3 dots of HardwareName");
 
-		// hardwareName.click();
+		hardwareName.click();
 	}
 
 	public void headingClick() throws InterruptedException {
-		clickElement(headingTitle, "");
-		// headingTitle.click();
-
+		
+		headingTitle.click();
+		Thread.sleep(3000);
+		
 	}
 
 	public void Confirmation_YesButton() {
-		clickElement(ConfirmationYesButton, "");
-		// ConfirmationYesButton.click();
+		
+		ConfirmationYesButton.click();
 	}
 
 	public void Confirmation_NoButton() {
-		clickElement(ConfirmationNoButton, "Clicking on confirmation on Cancel button");
-		// ConfirmationNoButton.click();
+		// clickElement(ConfirmationNoButton, "Clicking on confirmation on Cancel
+		// button");
+		ConfirmationNoButton.click();
 	}
 
 	public void clickRefreshButton() {
 		clickElement(Refresh_btn, "Clicking on confirmation on refresh button");
-		// Refresh_btn.click();
+		//Refresh_btn.click();
 	}
 
 	public void sendValueSearchIcon(String value) {
 
-		SetInputENterKey(edgeIdInput, "");
+		SetInputENterKey(edgeIdInput,"");
 		SetInput(edgeIdInput, value, value);
 //		
 //		edgeIdInput.sendKeys(Keys.ENTER);
@@ -345,7 +380,7 @@ public class EdgeDevicesPage extends CommonActions {
 	}
 
 	public void sendValueSearchIconByEdgeName(String value) {
-		SetInputENterKey(edgeNameInput, "");
+		SetInputENterKey(edgeNameInput,"");
 		SetInput(edgeNameInput, value, value);
 
 //		edgeNameInput.sendKeys(Keys.ENTER);
@@ -354,8 +389,8 @@ public class EdgeDevicesPage extends CommonActions {
 	}
 
 	public void editValueSearchIconByEdgeName(String value) {
-
-		SetInputENterKey(edgeNameInput, "");
+		
+		SetInputENterKey(edgeNameInput,"");
 		SetInput(edgeNameInput, value, value);
 //		edgeNameInput.sendKeys(Keys.ENTER);
 //
@@ -365,25 +400,25 @@ public class EdgeDevicesPage extends CommonActions {
 	}
 
 	public void sendValueSearchinputBoxForEdgeGroupName(String value) {
-		SetInputENterKey(edgeGroupNameInput, "");
+		SetInputENterKey(edgeGroupNameInput,"");
 		SetInput(edgeGroupNameInput, value, value);
-
+		
 //		edgeGroupNameInput.sendKeys(Keys.ENTER);
 //		edgeGroupNameInput.sendKeys(value);
 	}
 
 	public void sendValueSearchIconByAppGroups(String value) {
-
-		SetInputENterKey(edgeAppgroupsInput, "");
+		
+		SetInputENterKey(edgeAppgroupsInput,"");
 		SetInput(edgeAppgroupsInput, value, value);
-
+		
 //		edgeAppgroupsInput.sendKeys(Keys.ENTER);
 //		edgeAppgroupsInput.sendKeys(value);
 	}
 
 	public void hardwareNameInput(String value) {
-
-		SetInputENterKey(hardWareNameInput, "");
+		
+		SetInputENterKey(hardWareNameInput,"");
 		SetInput(hardWareNameInput, value, value);
 //		
 //		
@@ -423,22 +458,22 @@ public class EdgeDevicesPage extends CommonActions {
 
 	public void clickAddButton() {
 		clickElement(Add_btn, "");
-		// Add_btn.click();
+		//Add_btn.click();
 	}
 
 	public void clickBulkUpload() {
 		clickElement(BulkUpload_btn, "Clicking on bulkUpload button");
-		// BulkUpload_btn.click();
+		//BulkUpload_btn.click();
 	}
 
 	public void clickDownload() {
 		clickElement(Download_btn, "");
-		// Download_btn.click();
+		//Download_btn.click();
 	}
 
 	public void clickConfiguration() {
 		clickElement(Configuration_Icon_Button, "");
-		// Configuration_Icon_Button.click();
+		//Configuration_Icon_Button.click();
 	}
 
 	public boolean isVisibleRefresh() {
@@ -446,11 +481,12 @@ public class EdgeDevicesPage extends CommonActions {
 		return Refresh_btn != null && Refresh_btn.isDisplayed();
 	}
 
+	
+	
 	public boolean isVisibleDeploy() {
 
 		return deployButton != null && deployButton.isDisplayed();
 	}
-
 	public boolean isVisibleAdd() {
 
 		return Add_btn != null && Add_btn.isDisplayed();
@@ -480,14 +516,14 @@ public class EdgeDevicesPage extends CommonActions {
 
 		scrollingElementRightBar("div.example-container", "900");
 		clickElement(EditButton, "");
-		// EditButton.click();
+		//EditButton.click();
 	}
 
 	public void clickDeleteButton() {
 
 		scrollingElementRightBar("div.example-container", "900");
 		clickElement(DeleteButton, "");
-		// DeleteButton.click();
+		//DeleteButton.click();
 	}
 
 	public String get_Text_AddEdgeDevice() {
@@ -505,17 +541,17 @@ public class EdgeDevicesPage extends CommonActions {
 		return EdgeDeviceList;
 
 	}
-
+	
 	public String get_Text_bulkDownload() {
 
 		String bulkdownloadText = verifyalertfordownload.getText();
-
+		
 		String bulkdownloadalert = verifyalertfordownload.getAttribute("innerHTML");
 
-		System.out.println(
-				"InnerHTML of the element (get_attribute): " + verifyalertfordownload.getAttribute("innerHTML"));
+	    System.out.println("InnerHTML of the element (get_attribute): " + verifyalertfordownload.getAttribute("innerHTML"));
 		System.out.println("Title on alert popup after download>" + bulkdownloadalert);
 		return bulkdownloadalert;
+		
 
 	}
 
@@ -525,13 +561,13 @@ public class EdgeDevicesPage extends CommonActions {
 	}
 
 	public void WebDevices_heading() {
-		clickElement(WebDevices_heading, "");
-		// WebDevices_heading.click();
+		clickElement(WebDevices_heading,"");
+		//WebDevices_heading.click();
 	}
 
 	public void Configuration_Icon_Button() {
-		clickElement(Configuration_Icon_Button, "");
-		// Configuration_Icon_Button.click();
+		clickElement(Configuration_Icon_Button,"");
+		//Configuration_Icon_Button.click();
 	}
 
 	public void edgeDeviceScreenshot() {
@@ -565,7 +601,7 @@ public class EdgeDevicesPage extends CommonActions {
 
 	public void configurationcolumnListPage() {
 		clickElement(configurationcolumnListPage, "");
-		// configurationcolumnListPage.click();
+		//configurationcolumnListPage.click();
 	}
 
 	public int[] getEdgeNameMinMaxCharLength() {
@@ -576,16 +612,16 @@ public class EdgeDevicesPage extends CommonActions {
 	}
 
 	public void uploadFileForEdgeDevice(String value) {
-		SetInputENterKey(uploadFileForEdgeDevice, "");
+		SetInputENterKey(uploadFileForEdgeDevice,"");
 		SetInput(uploadFileForEdgeDevice, value, value);
-
+		
 //		uploadFileForEdgeDevice.sendKeys(Keys.ENTER);
 //		uploadFileForEdgeDevice.sendKeys(value);
 	}
 
 	public void uploadFileForEdgeDeviceClick() {
 		clickElement(uploadFileForEdgeDevice, "");
-		// uploadFileForEdgeDevice.click();
+		//uploadFileForEdgeDevice.click();
 	}//
 
 	public String recordsperpage() {
@@ -610,126 +646,117 @@ public class EdgeDevicesPage extends CommonActions {
 
 	public void configurationIcon() {
 		clickElement(configurationIcon, "");
-		// configurationIcon.click();
+		//configurationIcon.click();
 	}
-
+	
 	public void bulkConfigurationEdgeDevice() {
 		clickElement(bulkConfigurationEdgeDevice, "");
-		// bulkConfigurationEdgeDevice.click();
+		//bulkConfigurationEdgeDevice.click();
 	}
-
 	public void checkdisabledeploybutton() {
 		// Check if button1 is enabled
-		if (!deployButton.isEnabled()) {
+        if (!deployButton.isEnabled()) {
+          
+            confirmClick();
 
-			confirmClick();
-
-		} else {
-
-			Assert.assertTrue(isVisibleDeploy());
-		}
+           
+        } else {
+           
+            Assert.assertTrue(isVisibleDeploy());
+        }
 	}
-
+	
 	public void ConfigurationsTab() {
 		clickElement(ConfigurationsTab, "");
-		// ConfigurationsTab.click();
+		//ConfigurationsTab.click();
 	}
-
+	
 	public void statusInactive() throws InterruptedException {
 		clickElement(statusInactive, "");
 //		statusInactive.click();
 	}
-
 	public void status() {
-		wait(status, logger);
+		wait(status,logger);
 		clickElement(status, "");
 //		status.click();
 	}
 
 	public void saveEdgeDeviceButton() {
 		clickElement(saveEdgeDeviceButton, "");
-		// saveEdgeDeviceButton.click();
-
+		//saveEdgeDeviceButton.click();
+		
 	}
-
 	public void deselectCheckboxforconnected() {
-
-		if (communicationconnected.isSelected()) {
-			communicationconnected.click();
-		}
-	}
-
+	   
+	    if (communicationconnected.isSelected()) {
+	    	communicationconnected.click();
+	    }
+	  }
 	public void deselectCheckboxforDisconnected() {
+		   
+	    if (communicationDisconnected.isSelected()) {
+	    	communicationDisconnected.click();
+	    }
+	  }
 
-		if (communicationDisconnected.isSelected()) {
-			communicationDisconnected.click();
-		}
-	}
-
+	
 	public void deselectCheckboxforEdgeDisconnected() {
-
-		if (EdgeDisconnected.isSelected()) {
-			clickElement(EdgeDisconnected, "");
-			// EdgeDisconnected.click();
-		}
-	}
-
+		   
+	    if (EdgeDisconnected.isSelected()) {
+	    	clickElement(EdgeDisconnected, "");
+	    	//EdgeDisconnected.click();
+	    }
+	  }
+	
 	public void deselectCheckboxforBrokerdisconnected() {
+		   
+	    if (!BrokerDisconnected.isSelected()) {
+	    	clickElement(BrokerDisconnected, "");
+	    	//BrokerDisconnected.click();
+	    }
+	  }
 
-		if (!BrokerDisconnected.isSelected()) {
-			clickElement(BrokerDisconnected, "");
-			// BrokerDisconnected.click();
-		}
-	}
-
-	public boolean isCheckboxSelectedforconnected() {
-
-		return communicationconnected.isSelected();
-	}
-
+	  public boolean isCheckboxSelectedforconnected() {
+	    
+	    return communicationconnected.isSelected();
+	  }
 	public void communicationconnected() {
 		if (!communicationconnected.isSelected()) {
-			
-			communicationconnected.click();
+			clickElement(communicationconnected, "");
+			//communicationconnected.click();
 		}
-
-	}
-
-	public void communicationDisconnected() {
-		if (!communicationDisconnected.isSelected()) {
 		
-		communicationDisconnected.click();
-		}
 	}
-
+	public void communicationDisconnected() {
+		clickElement(communicationDisconnected, "");
+	//	communicationDisconnected.click();
+	}
 	public void EdgeDisconnected() {
-		if (!EdgeDisconnected.isSelected()) {
-			
-			EdgeDisconnected.click();
-			}
-		// EdgeDisconnected.click();
+		clickElement(EdgeDisconnected, "");
+		//EdgeDisconnected.click();
 	}
-
 	public void BrokerDisconnected() {
-		if (!BrokerDisconnected.isSelected()) {
-			
-			BrokerDisconnected.click();
-		}
+		clickElement(BrokerDisconnected, "");
+		
+		//BrokerDisconnected.click();
 	}
-
 	public void communicationStatusThreeDot() {
-		//clickElement(communicationStatusThreeDot, "");
-		communicationStatusThreeDot.click();
+		clickElement(communicationStatusThreeDot, "");
+		//communicationStatusThreeDot.click();
 	}
 
 	public String verifyalertfordownload() {
 		return getText(verifyalertfordownload);
-		// verifyalertfordownload.getText();
+		//verifyalertfordownload.getText();
 	}
+	
+	
 
 	public String get_Text_deleteToolTip() throws InterruptedException {
 
 		mouseHover(DeleteButton);
+
+		Thread.sleep(3000);
 
 		if (deleteTooltip != null) {
 			String deleteTooltipText = deleteTooltip.getText();
@@ -740,10 +767,12 @@ public class EdgeDevicesPage extends CommonActions {
 		}
 		return "";
 	}
-
+	
 	public String get_Text_deployToolTip() throws InterruptedException {
 
 		mouseHover(deployAppsicon);
+
+		Thread.sleep(3000);
 
 		if (deployTooltip != null) {
 			String deployTooltipText = deployTooltip.getText();
@@ -754,23 +783,14 @@ public class EdgeDevicesPage extends CommonActions {
 		}
 		return "";
 	}
-	public String get_Text_ConfigToolTip() throws InterruptedException {
-
-		mouseHover(configurationIcon);
-
-		if (configAppsTooltip != null) {
-			String configAppsTooltipText = configAppsTooltip.getText();
-
-			System.out.println("toolTipText-->" + configAppsTooltipText);
-
-			return configAppsTooltipText;
-		}
-		return "";
-	}
+	
+	
 	public String get_Text_configToolTip() throws InterruptedException {
 
 		mouseHover(Configuration_Icon_Button);
 
+		Thread.sleep(3000);
+
 		if (configAppsTooltip != null) {
 			String configAppsTooltipText = configAppsTooltip.getText();
 
@@ -780,10 +800,12 @@ public class EdgeDevicesPage extends CommonActions {
 		}
 		return "";
 	}
-
+	
 	public String get_Text_edgeGroupNameToolTip() throws InterruptedException {
 
 		mouseHover(edgegroupnametip);
+
+		Thread.sleep(3000);
 
 		if (edgeGroupNameTooltip != null) {
 			String edgeGroupNameTooltipText = edgeGroupNameTooltip.getText();
@@ -794,10 +816,12 @@ public class EdgeDevicesPage extends CommonActions {
 		}
 		return "";
 	}
-
+	
 	public String get_Text_StatusToolTip() throws InterruptedException {
 
 		mouseHover(status);
+
+		Thread.sleep(3000);
 
 		if (statusTooltip != null) {
 			String statusTooltipText = statusTooltip.getText();
@@ -808,5 +832,5 @@ public class EdgeDevicesPage extends CommonActions {
 		}
 		return "";
 	}
-
-}
+	
+	}

@@ -19,12 +19,6 @@ public class WellNameEditPage extends CommonActions {
 
 		PageFactory.initElements(driver, this);
 	}
-	@FindBy(css= ".cdk-overlay-container")
-	WebElement outerlayerclick;
-	public void outerlayerclick() {
-		clickElement(outerlayerclick, "");
-		
-	}
 
 	@FindBy(xpath = "//*[@id= 'isActive']")
 	WebElement sliderOnCheckBox;

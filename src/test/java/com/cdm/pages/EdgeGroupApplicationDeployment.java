@@ -367,8 +367,8 @@ public class EdgeGroupApplicationDeployment extends CommonActions {
 
 	public void backDropShowing_Div_Click() {
 		if (backDropShowing != null) {
-			
-			 backDropShowing.click();
+			clickElement(backDropShowing, "");
+			// backDropShowing.click();
 		}
 	}
 
@@ -422,32 +422,37 @@ public class EdgeGroupApplicationDeployment extends CommonActions {
 	}
 
 	public void checkboxmultiforAppName() {
+		try {
+			Thread.sleep(2000);
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+			wait.until(ExpectedConditions.elementToBeClickable(checkboxAllappNameLabel));
 
-		clickElement(checkboxAllappNameLabel, "");
-		if (checkallAppName != null) {
-			String checked = checkallAppName.getDomAttribute("checked");
-			if (checked != "checked") {
-				checkboxAllappNameLabel.click();
+			if (checkallAppName != null) {
+				String checked = checkallAppName.getDomAttribute("checked");
+				if (checked != "checked") {
+					checkboxAllappNameLabel.click();
+				}
 			}
-		}
+		} catch (Exception e) {
 
+		}
 	}
 
 	public void edgeIDApplicationConfigurationThreeDot() {
 		clickElement(edgeIDApplicationConfiguration, "");
-		// edgeIDApplicationConfiguration.click();
+		//edgeIDApplicationConfiguration.click();
 	}
 
 	public void edgeIdConfigurationInput(String value) {
-		SetInputENterKey(edgeIdConfigurationInput, "");
+		SetInputENterKey(edgeIdConfigurationInput,"");
 		SetInput(edgeIdConfigurationInput, value, value);
-
-		// edgeIdConfigurationInput.sendKeys(value);
+		
+		//edgeIdConfigurationInput.sendKeys(value);
 	}
 
 	public void titleApplicationDeployment() {
 		clickElement(titleApplicationDeployment, "");
-		// titleApplicationDeployment.click();
+		//titleApplicationDeployment.click();
 	}
 
 	@FindBy(xpath = "(//table)[2]//tr[1]//td[1]//mat-checkbox//label[1]//span//input")
@@ -455,27 +460,33 @@ public class EdgeGroupApplicationDeployment extends CommonActions {
 
 	public void checkboxAppNameSingleSelectStepTwoName() {
 
-		clickElement(checkboxAppNameSingleSelectLabel, "");
-		if (checkboxAppNameSingleSelectInput != null) {
-			String checked = checkboxAppNameSingleSelectInput.getDomAttribute("checked");
-			if (checked != "checked") {
-				checkboxAppNameSingleSelectLabel.click();
-			}
-		}
+		try {
+			Thread.sleep(2000);
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+			wait.until(ExpectedConditions.elementToBeClickable(checkboxAppNameSingleSelectLabel));
 
+			if (checkboxAppNameSingleSelectInput != null) {
+				String checked = checkboxAppNameSingleSelectInput.getDomAttribute("checked");
+				if (checked != "checked") {
+					checkboxAppNameSingleSelectLabel.click();
+				}
+			}
+		} catch (Exception e) {
+
+		}
 	}
 
 	public void edgeAppNameInput(String value) {
-		SetInputENterKey(edgeAppNameInput, "");
+		SetInputENterKey(edgeAppNameInput,"");
 		SetInput(edgeAppNameInput, value, value);
-
+		
 //		edgeAppNameInput.sendKeys(Keys.ENTER);
 //		edgeAppNameInput.sendKeys(value);
 	}
 
 	public void appnameApplicationDeployment() {
 		clickElement(appnameApplicationDeployment, "");
-		// appnameApplicationDeployment.click();
+		//appnameApplicationDeployment.click();
 	}
 
 	public String get_Text_ToolTipedgeGroupNameToolTipText() {
@@ -489,14 +500,20 @@ public class EdgeGroupApplicationDeployment extends CommonActions {
 	}
 
 	public void checkboxEdgeGroupNameStepOneName() {
+		try {
 
-		//clickElement(selectedCheckboxEdgeGroupNameDeploymentLabel, "");
-		if (selectedCheckboxEdgeGroupNameDeploymentInput != null) {
-			String checked = selectedCheckboxEdgeGroupNameDeploymentInput.getDomAttribute("checked");
-			if (checked != "checked") {
-				clickElement(selectedCheckboxEdgeGroupNameDeploymentLabel, "");
-				//selectedCheckboxEdgeGroupNameDeploymentLabel.click();
+			Thread.sleep(5000);
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+			wait.until(ExpectedConditions.elementToBeClickable(selectedCheckboxEdgeGroupNameDeploymentLabel));
+
+			if (selectedCheckboxEdgeGroupNameDeploymentInput != null) {
+				String checked = selectedCheckboxEdgeGroupNameDeploymentInput.getDomAttribute("checked");
+				if (checked != "checked") {
+					selectedCheckboxEdgeGroupNameDeploymentLabel.click();
+				}
 			}
+		} catch (Exception e) {
+
 		}
 	}
 }

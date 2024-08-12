@@ -28,85 +28,7 @@ public class EdgeGroupsPage extends CommonActions {
 		super(driver, logger);
 		PageFactory.initElements(driver, this);
 	}
-	@FindBy(css = ".cdk-overlay-container")
-	WebElement healthstatusToolTip;
-	
-	@FindBy(xpath = "//tbody/tr[1]/td[5]/img[1]")
-	WebElement groupNameEdit;
-	
-	@FindBy(xpath = "//div/mat-tooltip-component/div[contains(text(),'Close')]")
-	WebElement closeTooltip;
-	
 
-	
-	@FindBy(xpath = "//div[contains(text(),'Devices Connected')]")
-	WebElement deviceConnectedlabel;
-
-	@FindBy(xpath = "//div[contains(text(),'Devices Active')]")
-	WebElement deviceActivelabel;
-
-	@FindBy(xpath = "//app-console-terminal/div[1]/div[2]/i")
-	WebElement closeIcon;
-	
-	@FindBy(xpath = "//mat-dialog-container[@id='mat-dialog-3']")
-	WebElement iconwindow;
-
-	@FindBy(css = ".cdk-overlay-container")
-	WebElement groupIDToolTip;
-
-	@FindBy(css = ".cdk-overlay-container")
-	WebElement groupNamefieldToolTip;
-
-	@FindBy(css = ".cdk-overlay-container")
-	WebElement locationToolTip;
-
-	@FindBy(css = ".cdk-overlay-container")
-	WebElement descriptionsToolTip;
-
-	@FindBy(css = ".cdk-overlay-container")
-	WebElement appGroupToolTip;
-
-	@FindBy(css = ".cdk-overlay-container")
-	WebElement serverportToolTip;
-
-	@FindBy(css = ".cdk-overlay-container")
-	WebElement serverNodeToolTip;
-
-	@FindBy(css = ".cdk-overlay-container")
-	WebElement serverHostAddressToolTip;
-
-	@FindBy(css = ".cdk-overlay-container")
-	WebElement groupNameToolTip;
-
-	@FindBy(css = ".cdk-overlay-container")
-	WebElement editToolTip;
-
-	@FindBy(css = ".cdk-overlay-container")
-	WebElement statusToolTip;
-
-	@FindBy(css = ".cdk-overlay-container")
-	WebElement consoleToolTip;
-
-	@FindBy(css = ".cdk-overlay-container")
-	WebElement deleteToolTip;
-
-	@FindBy(css = ".cdk-overlay-container")
-	WebElement stopToolTip;
-
-	@FindBy(css = ".cdk-overlay-container")
-	WebElement deviceConnectedToolTip;
-
-	@FindBy(css = ".cdk-overlay-container")
-	WebElement deviceActiveToolTip;
-
-	@FindBy(xpath = "//div[contains(text(),'Group Name')]")
-	WebElement groupNameLabel;
-
-	@FindBy(xpath = "//tbody/tr[1]/td[5]/img[2]")
-	WebElement groupNameDelete;
-
-	@FindBy(xpath = "//tbody/tr[1]/td[5]/img[4]")
-	WebElement consoleIcon;
 	String popupHandle;
 
 	@FindBy(xpath = "//span[contains(text(),'Cancel')]")
@@ -133,10 +55,6 @@ public class EdgeGroupsPage extends CommonActions {
 
 	@FindBy(xpath = "//span[@class='text-danger ng-star-inserted']")
 	WebElement validationMessageEdgeName;
-	
-
-	@FindBy(xpath = "//tbody/tr[1]/td[5]/img[3]")
-	WebElement stopICon;
 
 	@FindBy(xpath = "//body/div[3]/div[2]/div[1]/mat-dialog-container[1]/app-edgegrouplicenseupload[1]/form[1]/div[1]/input[1]")
 	WebElement licenseUploadChooseFile;
@@ -165,7 +83,7 @@ public class EdgeGroupsPage extends CommonActions {
 	@FindBy(xpath = "//button[@class='calButton']")
 	WebElement cancelButton;
 
-	@FindBy(xpath = "//li[2]/a/span[contains(text(),'EDGE Groups')]")
+	@FindBy(xpath = "/html/body/app-root/app-root/app-home/mat-sidenav-container/mat-sidenav/div/mat-nav-list/ul/li[2]/a/span[contains(text(),'EDGE Groups')]")
 	WebElement EdgeGroupTab;
 
 	@FindBy(xpath = "//input[@type='file']")
@@ -214,7 +132,7 @@ public class EdgeGroupsPage extends CommonActions {
 	@FindBy(css = ".cdk-overlay-container mat-tooltip-component div")
 	WebElement ConsoleButtonToolTip;
 
-	@FindBy(xpath = "//tbody/tr[1]/td[5]/img[3]")
+	@FindBy(xpath = "//tbody/tr[1]/td[6]/img[3]")
 	WebElement stopButton;
 
 	@FindBy(xpath = "//h2[contains(text(),'EDGE Groups')]")
@@ -223,7 +141,9 @@ public class EdgeGroupsPage extends CommonActions {
 	@FindBy(xpath = "//tbody/tr[1]/td[6]/img[3]")
 	WebElement stopIconEdgeGroup;
 
-	
+	@FindBy(xpath = "//tbody/tr[1]/td[5]/img[4]")
+	WebElement consoleIcon;
+
 	@FindBy(xpath = "//thead/tr[1]/th[4]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]")
 	WebElement devicesActiveThreeDot;
 
@@ -266,9 +186,6 @@ public class EdgeGroupsPage extends CommonActions {
 
 	@FindBy(xpath = "//input[@data-placeholder='Maximum']")
 	WebElement deviceConnectedInputMax;
-	
-	@FindBy(xpath = "//div[contains(text(),'Status')]")
-	WebElement statuslabel;
 
 	// DeviceActive
 	@FindBy(xpath = "//input[@id='mat-input-4']")
@@ -315,7 +232,7 @@ public class EdgeGroupsPage extends CommonActions {
 	@FindBy(xpath = "/html/body/app-root/app-root/app-home/mat-sidenav-container/mat-sidenav-content/div[1]/div/div[1]/div/p/img")
 	WebElement Collapse_btn;
 
-	@FindBy(xpath = "//app-controller/div/div/div/img[2]")
+	@FindBy(xpath = "//div[@class='tableCard']/div/div/img[2]")
 	WebElement Add_btn;
 
 	@FindBy(xpath = "//button[@class='calButton']")
@@ -437,8 +354,8 @@ public class EdgeGroupsPage extends CommonActions {
 
 	public void checkEdgeGrouptab() {
 
-		clickElement(EdgeGroup_btn, "");
-		
+		clickElement(EdgeGroup_btn, "checkgroup tab");
+		System.out.println("this has been run honey");
 	}
 
 	public void groupNameThreeDot() {
@@ -910,7 +827,7 @@ clickElement(deleteEdgeGroupColumn, "");
 
 	public void clickEdgeGroups() {
 		clickElement(EdgeGroupTab, "");
-		//EdgeGroupTab.click();
+		// EdgeGroupTab.click();
 	}
 
 	public void edgegroupstatusInactive() {
@@ -1004,87 +921,6 @@ clickElement(deleteEdgeGroupColumn, "");
 		} else {
 			System.out.println("Column widths are not uniform.");
 		}
-	}
-	public String get_Text_ToolTipDeviceConnected() {
-		mouseHover(deviceConnectedlabel);
-
-		String deviceConnectedlabelText = deviceConnectedToolTip.getText();
-
-		deviceConnectedlabelText.trim();
-
-		return deviceConnectedlabelText;
-	}
-
-	public String get_Text_ToolTipDeviceActive() {
-		mouseHover(deviceActivelabel);
-
-		String deviceActiveText = deviceActiveToolTip.getText();
-
-		deviceActiveText.trim();
-
-		return deviceActiveText;
-	}
-
-	public String get_Text_ToolTipStatus() {
-		mouseHover(statuslabel);
-
-		String statuslabelText = statusToolTip.getText();
-
-		statuslabelText.trim();
-
-		return statuslabelText;
-	}
-
-	public String get_Text_ToolTipEdit() {
-		mouseHover(groupNameEdit);
-
-		String deviceConnectedlabelText = editToolTip.getText();
-
-		deviceConnectedlabelText.trim();
-
-		return deviceConnectedlabelText;
-	}
-
-	public String get_Text_ToolTipDelete() {
-		mouseHover(groupNameDelete);
-
-		String deleteText = deleteToolTip.getText();
-
-		deleteText.trim();
-
-		return deleteText;
-	}
-
-	public String get_Text_ToolTipConsole() {
-		mouseHover(consoleIcon);
-
-		String consoleIconText = consoleToolTip.getText();
-
-		consoleIconText.trim();
-
-		return consoleIconText;
-	}
-	
-	public String get_Text_ToolTipClose() {
-
-		mouseHover(closeIcon);
-		wait(closeTooltip,logger);
-
-		String closeToolTipIconText = closeTooltip.getText();
-
-		closeToolTipIconText.trim();
-
-		return closeToolTipIconText;
-	}
-
-	public String get_Text_ToolTipStop() {
-		mouseHover(stopICon);
-
-		String stopIconText = stopToolTip.getText();
-
-		stopIconText.trim();
-
-		return stopIconText;
 	}
 
 }
