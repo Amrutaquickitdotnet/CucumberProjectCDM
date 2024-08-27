@@ -1,17 +1,14 @@
 package com.cdm.Stepdefinations;
 
 import java.util.Iterator;
-
 import java.util.Set;
 
 import org.junit.Assert;
 import org.junit.Assume;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
@@ -50,7 +47,7 @@ public class LoginPageSteps extends BaseTest {
 				false);
 	}
 
-	
+
 
 	@Then("Verification of without login into browser copy & paste the url")
 	public void verification_of_without_login_into_browser_copy_paste_the_url() {
@@ -153,14 +150,14 @@ public class LoginPageSteps extends BaseTest {
 
 	}
 
-	
-	
-	
+
+
+
 
 	@Then("Username and password fields are autofilled")
 	public void username_and_password_fields_are_autofilled() {
 		LoginPage lp = new LoginPage(driver, logger);
-		
+
 
 		Assume.assumeTrue(
 				"Autofill functionality not available currently If there's a toggle or setting for auto-login, ensure it's switched on.",
@@ -171,6 +168,7 @@ public class LoginPageSteps extends BaseTest {
 	public void click_on_login_button_without_adding_credentials() throws InterruptedException {
 		Thread.sleep(3000);
 		LoginPage lp = new LoginPage(driver, logger);
+		lp.checkboxClickTermsandConditions();
 		lp.clickLoginButton();
 
 	}
@@ -193,7 +191,7 @@ public class LoginPageSteps extends BaseTest {
 	public void user_presses_tab_key_on_the_username_field() {
 		LoginPage lp = new LoginPage(driver, logger);
 		lp.getUsernameField().sendKeys(Keys.TAB);
-		
+
 
 	}
 	@Then("check for cancel button")
@@ -400,6 +398,7 @@ public class LoginPageSteps extends BaseTest {
 	@Then("click on Login button")
 	public void click_on_login_button() throws InterruptedException {
 		LoginPage lp = new LoginPage(driver, logger);
+		lp.checkboxClickTermsandConditions();
 		lp.clickLogin();
 		Thread.sleep(5000);
 	}
@@ -538,6 +537,7 @@ public class LoginPageSteps extends BaseTest {
 		LoginPage lp = new LoginPage(driver, logger);
 
 		lp.enterpwd(alldata.get(vTCName).get("Password"));
+		lp.checkboxClickTermsandConditions();
 		lp.clickLoginButton();
 	}
 
@@ -620,7 +620,7 @@ public class LoginPageSteps extends BaseTest {
 		Assert.assertEquals(actualCharacters <= maxCharacters,
 				"The password field allows more than " + maxCharacters + " characters");
 	}
-	
+
 	@Then("verify switching between input fields using TAB")
 	public void verify_switching_between_input_fields_using_tab() {
 		LoginPage lp = new LoginPage(driver, logger);

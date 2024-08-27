@@ -48,8 +48,8 @@ public class UserRolesSteps extends BaseTest {
 		urp.searchRoleNameThreeDot();
 
 		urp.sendsearchRoleName(alldata.get(vTCName).get("RoleNameSearch"));
-		urp.backDropShowing_Div_Click();
-		urp.networkstatusclick();
+		//urp.backDropShowing_Div_Click();
+		urp.outerlayerclick();
 
 	}
 
@@ -74,8 +74,9 @@ public class UserRolesSteps extends BaseTest {
 
 		urps.permissionInput(alldata.get(vTCName).get("PermissionSearch"));
 
-		urps.backDropShowing_Div_Click();
-		urps.networkstatusclick();
+		//urps.backDropShowing_Div_Click();
+		urps.outerlayerclick();
+		//urps.networkstatusclick();
 		
 		
 

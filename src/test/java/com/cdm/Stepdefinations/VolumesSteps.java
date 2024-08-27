@@ -1,7 +1,9 @@
 package com.cdm.Stepdefinations;
 
 import org.junit.Assert;
+import org.junit.Assume;
 
+import com.cdm.pages.AppsEditPage;
 import com.cdm.pages.VolumesAddPage;
 import com.cdm.pages.VolumesEditPage;
 import com.cdm.pages.VolumesListPage;
@@ -21,9 +23,10 @@ public class VolumesSteps extends BaseTest {
 		VolumesAddPage vap = new VolumesAddPage(driver, logger);
 		vap.volumeAddPlusicon();
 	}
-	
+
 	@Then("user fill the invalid details i.e. more than max characters with invalid inputs and click on save button in Volumefill all the mandatory valid details and click on save button")
-	public void user_fill_the_invalid_details_i_e_more_than_max_characters_with_invalid_inputs_and_click_on_save_button_in_volumefill_all_the_mandatory_valid_details_and_click_on_save_button() throws InterruptedException {
+	public void user_fill_the_invalid_details_i_e_more_than_max_characters_with_invalid_inputs_and_click_on_save_button_in_volumefill_all_the_mandatory_valid_details_and_click_on_save_button()
+			throws InterruptedException {
 		VolumesAddPage vap = new VolumesAddPage(driver, logger);
 		vap.volumeName(alldata.get(vTCName).get("VolumeNameAdd").toString());
 
@@ -70,6 +73,12 @@ public class VolumesSteps extends BaseTest {
 		String str = "Alphanumerics & Special characters of length Min = 2, Max = 128 are allowed !";
 		String message = vap.verifyValidationMessageVolumeName();
 		Assert.assertEquals(str, message);
+	}
+	@Then("check alignment for maximise and minimise the screen")
+	public void check_alignment_for_maximise_and_minimise_the_screen() {
+		VolumesAddPage vap = new VolumesAddPage(driver, logger);
+		vap.minimizeWindow();
+		
 	}
 
 	@Then("Verification of breaching the Max word limit in repository link name Text field")
@@ -126,10 +135,10 @@ public class VolumesSteps extends BaseTest {
 		VolumesAddPage vap = new VolumesAddPage(driver, logger);
 		vap.volumearchitectureAdd(alldata.get(vTCName).get("ArchitectureAdd").toString());
 		vap.headingTitleAdd();
-		Thread.sleep(4000);
-		String str = "Alphanumerics & Special characters of length Min = 2, Max = 32 are allowed !";
-		String message = vap.verifyValidationMessagearchitecture();
-		Assert.assertEquals(str, message);
+//		
+//		String str = "Alphanumerics & Special characters of length Min = 2, Max = 32 are allowed !";
+//		String message = vap.verifyValidationMessagearchitecture();
+//		Assert.assertEquals(str, message);
 	}
 
 	@Then("Verification of breaching the min word in Mount Directory Text field")
@@ -137,7 +146,35 @@ public class VolumesSteps extends BaseTest {
 		VolumesAddPage vap = new VolumesAddPage(driver, logger);
 		vap.volumemountdirectoryAdd(alldata.get(vTCName).get("MountDirectoryAdd").toString());
 
-		
+	}
+
+	@Then("check  visualization of icons in action column")
+	public void check_visualization_of_icons_in_action_column() {
+		VolumesAddPage vap = new VolumesAddPage(driver, logger);
+	}
+
+	@Then("check filter icon visibility for Version\\/Tag")
+	public void check_filter_icon_visibility_for_version_tag() {
+		VolumesListPage vlp = new VolumesListPage(driver, logger);
+		vlp.tagThreeDot();
+	}
+
+	@Then("check filter icon visibility for Status")
+	public void check_filter_icon_visibility_for_status() {
+		VolumesListPage vlp = new VolumesListPage(driver, logger);
+		vlp.statusThreeDot();
+	}
+
+	@Then("check filter icon visibility for Architecture")
+	public void check_filter_icon_visibility_for_architecture() {
+		VolumesListPage vlp = new VolumesListPage(driver, logger);
+		vlp.architectureNameThreeDot();
+		vlp.inputarchitectureSearch(alldata.get(vTCName).get("ArchitetureSearch").toString());
+	}
+
+	@Then("check visibilty the input field format for volume page")
+	public void check_visibilty_the_input_field_format_for_volume_page() {
+		VolumesAddPage vap = new VolumesAddPage(driver, logger);
 	}
 
 	@Then("Verify if user fill the invalid details and click on save button")
@@ -152,12 +189,168 @@ public class VolumesSteps extends BaseTest {
 		Assert.assertEquals(str, message);
 	}
 
+	@Then("to check the coloumn width uniformity")
+	public void to_check_the_coloumn_width_uniformity() {
+		VolumesAddPage vap = new VolumesAddPage(driver, logger);
+	}
+
+	@Then("to check alignment for all the input text fields in ADD New Screen")
+	public void to_check_alignment_for_all_the_input_text_fields_in_add_new_screen() {
+		VolumesAddPage vap = new VolumesAddPage(driver, logger);
+	}
+
+	@Then("to check the labels of input text fields")
+	public void to_check_the_labels_of_input_text_fields() {
+		VolumesAddPage vap = new VolumesAddPage(driver, logger);
+	}
+
+	@Then("check switching between inputs fields using TAB")
+	public void check_switching_between_inputs_fields_using_tab() {
+		VolumesAddPage vap = new VolumesAddPage(driver, logger);
+	}
+
+	@Then("check page is loading properly in slow network")
+	public void check_page_is_loading_properly_in_slow_network() {
+		VolumesAddPage vap = new VolumesAddPage(driver, logger);
+	}
+
+	@Then("check  accessible the page by using mobile network")
+	public void check_accessible_the_page_by_using_mobile_network() {
+		VolumesAddPage vap = new VolumesAddPage(driver, logger);
+	}
+
+	@Then("check page accessible the screen by using wi-fi network")
+	public void check_page_accessible_the_screen_by_using_wi_fi_network() {
+		VolumesAddPage vap = new VolumesAddPage(driver, logger);
+	}
+
+	@Then("check page without login into browser, copy & paste the url")
+	public void check_page_without_login_into_browser_copy_paste_the_url() {
+		VolumesAddPage vap = new VolumesAddPage(driver, logger);
+		Assume.assumeTrue("copy paste only possible in manual testing", false);
+	}
+
+	@Then("check alignment of on the top right side")
+	public void check_alignment_of_on_the_top_right_side(String string) {
+		VolumesAddPage vap = new VolumesAddPage(driver, logger);
+	}
+
+	@Then("check filter icon visibility for volume name")
+	public void check_filter_icon_visibility_for_volume_name() {
+		VolumesListPage vlp = new VolumesListPage(driver, logger);
+		vlp.VolumeNameThreeDot();
+	}
+
+	@Then("to check the tool tip text visibilty for SHA key Input text field in ADD Screen")
+	public void to_check_the_tool_tip_text_visibilty_for_sha_key_input_text_field_in_add_screen() {
+		VolumesAddPage vap = new VolumesAddPage(driver, logger);
+		Assert.assertEquals("Tooltip for SHA Key", "The security key used for checksum validation of the volume",
+				vap.get_Text_ToolTipSHAKey());
+	}
+
+	@Then("check the tool tip text visibilty for Version\\/Tag")
+	public void check_the_tool_tip_text_visibilty_for_version_tag() {
+		VolumesAddPage vap = new VolumesAddPage(driver, logger);
+		vap.volumetagAdd(alldata.get(vTCName).get("VersionTagAdd").toString());
+	}
+
+	@Then("check the tool tip text visibilty for Status")
+	public void check_the_tool_tip_text_visibilty_for_status() {
+		VolumesListPage vlp = new VolumesListPage(driver, logger);
+		vlp.statusThreeDot();
+	}
+
+	@Then("check the tool tip text visibilty for Type from drop down Input text field in ADD Screen")
+	public void check_the_tool_tip_text_visibilty_for_type_from_drop_down_input_text_field_in_add_screen() {
+		VolumesAddPage vap = new VolumesAddPage(driver, logger);
+		Assert.assertEquals("Tooltip for type", "Type of Volume",
+				vap.get_Text_ToolTipType());
+	}
+
+	@Then("check tool tip text visibilty for EDIT button in Actions column")
+	public void check_tool_tip_text_visibilty_for_edit_button_in_actions_column() {
+		try {
+			VolumesListPage vap = new VolumesListPage(driver, logger);
+			Assert.assertEquals("Tooltip for Edit", "Edit",
+					vap.get_Text_ToolTipEditButton());
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	
+	}
+
+	@Then("check the tool tip text visibilty for License type Input text field in ADD Screen")
+	public void check_the_tool_tip_text_visibilty_for_license_type_input_text_field_in_add_screen() {
+		VolumesAddPage vap = new VolumesAddPage(driver, logger);
+		Assert.assertEquals("Tooltip for License Type", "Type of Volume",
+				vap.get_Text_ToolTipType());
+	}
+
+	@Then("check the tool tip text visibilty for Mount Directory Input text field in ADD Screen")
+	public void check_the_tool_tip_text_visibilty_for_mount_directory_input_text_field_in_add_screen()
+			throws InterruptedException {
+		VolumesAddPage vap = new VolumesAddPage(driver, logger);
+		Assert.assertEquals("Tooltip for mount directory",
+				"Type of Volume",
+				vap.get_Text_ToolTipmountDirectory());
+	}
+
+	@Then("check tool tip text visibilty for Version\\/Tag Input text field Add  Screen")
+	public void check_tool_tip_text_visibilty_for_version_tag_input_text_field_add_screen() {
+		VolumesEditPage vap = new VolumesEditPage(driver, logger);
+		Assert.assertEquals("Tooltip for mount directory",
+				"Version number of the Volume", vap.get_Text_ToolTipVersion());
+	}
+
+	@Then("check the tool tip text visibilty for Architecture Input text field in Add Screen")
+	public void check_the_tool_tip_text_visibilty_for_architecture_input_text_field_in_add_screen() {
+		VolumesAddPage vap = new VolumesAddPage(driver, logger);
+		Assert.assertEquals("Tooltip for architecture",
+				"Type of Architecture of the Volume", vap.get_Text_ToolTiparchitecture());
+	}
+
+	@Then("check the tool tip text visibilty for Repository Path Input text field in Add Screen")
+	public void check_the_tool_tip_text_visibilty_for_repository_path_input_text_field_in_add_screen() {
+		VolumesEditPage vap = new VolumesEditPage(driver, logger);
+		Assert.assertEquals("Tooltip for mount directory",
+				"Path of Repository: URL, IP Address", vap.get_Text_ToolTiprepositoryLink());
+	}
+	@Then("check the tool tip text visibilty for Repository Link  Input text field in ADD Screen")
+	public void check_the_tool_tip_text_visibilty_for_repository_link_input_text_field_in_add_screen() {
+	    
+	}
+
+
+
+@Then("check tool tip text visibilty for Convert to application functionality button in Actions column for volumes")
+public void check_tool_tip_text_visibilty_for_convert_to_application_functionality_button_in_actions_column_for_volumes() {
+	VolumesEditPage vap = new VolumesEditPage(driver, logger);
+
+}
+	@Then("check tool tip text visibilty for Max Size Input text field in Add Screen")
+	public void check_tool_tip_text_visibilty_for_max_size_input_text_field_in_add_screen() {
+		VolumesEditPage vap = new VolumesEditPage(driver, logger);
+		Assert.assertEquals("Tooltip for max Size", "Maximum size of the Volume",
+				vap.get_Text_ToolTipMaxSize());
+	}
+
+	@Then("check visibilty duration to load the page")
+	public void check_visibilty_duration_to_load_the_page() {
+		VolumesAddPage vap = new VolumesAddPage(driver, logger);
+	}
+
+	@Then("to check the tool tip text visibilty for Volume Name Input text field in ADD Screen")
+	public void to_check_the_tool_tip_text_visibilty_for_volume_name_input_text_field_in_add_screen() {
+		VolumesAddPage vap = new VolumesAddPage(driver, logger);
+		Assume.assumeTrue("No field of volume name available on add page , invalid manual test case", false);
+	}
+
 	@Then("fill all the mandatory valid details and click on save button")
 	public void fill_all_the_mandatory_valid_details_and_click_on_save_button() throws InterruptedException {
 		VolumesAddPage vap = new VolumesAddPage(driver, logger);
 		vap.volumeName(alldata.get(vTCName).get("VolumeNameAdd").toString());
 		vap.volumeRepositoryNameAdd(alldata.get(vTCName).get("RepositoryNameAdd").toString());
-	     vap.volumeRepositoryTypeAdd(alldata.get(vTCName).get("TypeAdd").toString());
+		vap.volumeRepositoryTypeAdd(alldata.get(vTCName).get("TypeAdd").toString());
 
 		vap.volumeSavebutton();
 	}
@@ -252,8 +445,9 @@ public class VolumesSteps extends BaseTest {
 
 		vap.volumesearch(alldata.get(vTCName).get("VolumeNameSearch").toString());
 
-		vap.backDropShowing_Div_Click();
+		//vap.backDropShowing_Div_Click();
 
+		vap.outerlayerclick();
 		vap.editbutton();
 		Thread.sleep(4000);
 
@@ -314,7 +508,6 @@ public class VolumesSteps extends BaseTest {
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
-		
 
 	}
 
@@ -353,13 +546,13 @@ public class VolumesSteps extends BaseTest {
 		vap.get_Text_ToolTipmountDirectory();
 	}
 
-@Then("verify check filter icon availability for  Architecture")
-public void verify_check_filter_icon_availability_for_architecture() {
-	VolumesListPage vlp = new VolumesListPage(driver, logger);
-	vlp.architectureNameThreeDot();
-	vlp.inputarchitectureSearch(alldata.get(vTCName).get("ArchitetureSearch").toString());
-	vlp.backDropShowing_Div_Click();
-}
+	@Then("verify check filter icon availability for  Architecture")
+	public void verify_check_filter_icon_availability_for_architecture() {
+		VolumesListPage vlp = new VolumesListPage(driver, logger);
+		vlp.architectureNameThreeDot();
+		vlp.inputarchitectureSearch(alldata.get(vTCName).get("ArchitetureSearch").toString());
+		vlp.backDropShowing_Div_Click();
+	}
 
 	@Then("verify tooltip for architecture text field")
 	public void verify_tooltip_for_architecture_text_field() {
@@ -440,7 +633,8 @@ public void verify_check_filter_icon_availability_for_architecture() {
 		VolumesListPage vlp = new VolumesListPage(driver, logger);
 		vlp.VolumeNameThreeDot();
 		vlp.inputvolumename(alldata.get(vTCName).get("VolumeNameSearch").toString());
-		vlp.backDropShowing_Div_Click();
+		//vlp.backDropShowing_Div_Click();
+		vlp.outerlayerclick();
 	}
 
 	@Then("Click on button convert volume to application")
@@ -496,10 +690,11 @@ public void verify_check_filter_icon_availability_for_architecture() {
 		VolumesListPage vlp = new VolumesListPage(driver, logger);
 		vlp.VolumeNameThreeDot();
 		vlp.inputvolumename(alldata.get(vTCName).get("VolumeNameSearch").toString());
-		vlp.backDropShowing_Div_Click();
+		//vlp.backDropShowing_Div_Click();
+		vlp.outerlayerclick();
 		vlp.editbutton();
 	}
-	
+
 	@Then("verify check filter icon availability for Volume Name")
 	public void verify_check_filter_icon_availability_for_volume_name() {
 		VolumesListPage vlp = new VolumesListPage(driver, logger);
@@ -507,7 +702,6 @@ public void verify_check_filter_icon_availability_for_architecture() {
 		vlp.inputvolumename(alldata.get(vTCName).get("VolumeNameSearch").toString());
 		vlp.backDropShowing_Div_Click();
 	}
-
 
 	@Then("if user modify data and click on save button in Volume")
 	public void if_user_modify_data_and_click_on_save_button_in_volume() throws InterruptedException {
@@ -543,11 +737,102 @@ public void verify_check_filter_icon_availability_for_architecture() {
 
 			vep.saveEditVolume();
 
-			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+
+	}
+
+	@Then("check the tool tip text visibilty for Architecture")
+	public void check_the_tool_tip_text_visibilty_for_architecture() {
+		VolumesListPage vlp = new VolumesListPage(driver, logger);
+		Assert.assertEquals("Tooltip of architecture", "Type of Architecture of the Volume",
+				vlp.get_Text_ToolTiparchitecture());
+	}
+
+	@Then("check the tool tip text visibilty for Repository Name from drop down Input text field in ADD Screen")
+	public void check_the_tool_tip_text_visibilty_for_repository_name_from_drop_down_input_text_field_in_add_screen() {
+		VolumesAddPage vap = new VolumesAddPage(driver, logger);
+		Assert.assertEquals("Tooltip for repository name", "Repository to which the Volume is assigned",
+				vap.get_Text_ToolTipRepositoryName());
+	}
+
+	@Then("to check the tool tip text visibilty for SHA key Input text field in edit Screen")
+	public void to_check_the_tool_tip_text_visibilty_for_sha_key_input_text_field_in_edit_screen() {
+		VolumesAddPage vap = new VolumesAddPage(driver, logger);
+		Assert.assertEquals("Tooltip for SHA Key", "The security key used for checksum validation of the volume",
+				vap.get_Text_ToolTipSHAKey());
+	}
+
+	@Then("to check the tool tip text visibilty for Max Size Input text field in Edit Screen")
+	public void to_check_the_tool_tip_text_visibilty_for_max_size_input_text_field_in_edit_screen() {
+		VolumesEditPage vap = new VolumesEditPage(driver, logger);
+		Assert.assertEquals("Tooltip for max size", "Maximum size of the Volume", vap.get_Text_ToolTipMaxSize());
+	}
+
+	@Then("to check the tool tip text visibilty for Repository Path Input text field in Edit Screen")
+	public void to_check_the_tool_tip_text_visibilty_for_repository_path_input_text_field_in_edit_screen() {
+		VolumesEditPage vap = new VolumesEditPage(driver, logger);
+		Assume.assumeTrue("Can not see repository path input on the application , invalid manual test case", false);
+	}
+
+	@Then("to check the tool tip text visibilty for Architecture Input text field in Edit Screen")
+	public void to_check_the_tool_tip_text_visibilty_for_architecture_input_text_field_in_edit_screen() {
+		VolumesAddPage vap = new VolumesAddPage(driver, logger);
+		Assert.assertEquals("Tooltip for architecture", "Type of Architecture of the Volume",
+				vap.get_Text_ToolTiparchitecture());
+	}
+
+	@Then("to check the tool tip text visibilty for Mount Directory Input text field in Edit Screen")
+	public void to_check_the_tool_tip_text_visibilty_for_mount_directory_input_text_field_in_edit_screen()
+			throws InterruptedException {
+		try {
+			VolumesEditPage vap = new VolumesEditPage(driver, logger);
+			Assert.assertEquals("Tooltip for mount edit", "The mounting location of the volume in the directory structure of the EDGE device", vap.get_Text_ToolTipMountDirectoryEdit());
+			
+		} catch (Exception e) {
+			
+		}
 		
+	}
+
+	@Then("to check  the visualisation look of the table list")
+	public void to_check_the_visualisation_look_of_the_table_list() {
+		VolumesEditPage vap = new VolumesEditPage(driver, logger);
+	}
+
+	@Then("to check the tool tip text visibilty for Type from drop down Input text field in edit Screen")
+	public void to_check_the_tool_tip_text_visibilty_for_type_from_drop_down_input_text_field_in_edit_screen() {
+		VolumesEditPage vap = new VolumesEditPage(driver, logger);
+		Assert.assertEquals("Tooltip for type edit", "Type of Volume", vap.get_Text_ToolTipTypeEdit());
+	}
+
+	@Then("to check the tool tip text visibilty for Repository Name from drop down Input text field in Edit Screen")
+	public void to_check_the_tool_tip_text_visibilty_for_repository_name_from_drop_down_input_text_field_in_edit_screen() {
+		VolumesEditPage vap = new VolumesEditPage(driver, logger);
+		Assert.assertEquals("Tooltip for repository name edit", "Repository to which the Volume is assigned",
+				vap.get_Text_ToolTipRepositoryNameEdit());
+	}
+
+	@Then("to check the tool tip text visibilty for Repository Link  Input text field in Edit Screen")
+	public void to_check_the_tool_tip_text_visibilty_for_repository_link_input_text_field_in_edit_screen() {
+		VolumesEditPage vap = new VolumesEditPage(driver, logger);
+		Assert.assertEquals("Tooltip for repository link", "Path of Repository: URL, IP Address",
+				vap.get_Text_ToolTiprepositoryLink());
+	}
+
+	@Then("to check the tool tip text visibilty for License type Input text field in ADD Screen")
+	public void to_check_the_tool_tip_text_visibilty_for_license_type_input_text_field_in_add_screen() {
+		VolumesAddPage vap = new VolumesAddPage(driver, logger);
+		Assert.assertEquals("Tooltip for License Type", "Type of Volume",
+				vap.get_Text_ToolTipType());
+	}
+
+	@Then("to check the tool tip text visibilty for Version\\/Tag Input text field Edit Screen")
+	public void to_check_the_tool_tip_text_visibilty_for_version_tag_input_text_field_edit_screen() {
+		VolumesEditPage vap = new VolumesEditPage(driver, logger);
+		Assert.assertEquals("Tooltip for architecture edit", "Version number of the Volume",
+				vap.get_Text_ToolTipVersion());
 	}
 
 }

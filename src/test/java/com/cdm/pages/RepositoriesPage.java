@@ -122,7 +122,7 @@ public class RepositoriesPage extends CommonActions {
 	@FindBy(css = ".cdk-overlay-container")
 	WebElement editToolTip;
 
-	@FindBy(xpath = "//tbody/tr[1]/td[5]/img[1]")
+	@FindBy(xpath = "//tbody/tr[1]/td[5]/img[2]")
 	WebElement deleteLabel;
 
 	@FindBy(css = ".cdk-overlay-container")
@@ -157,7 +157,7 @@ public class RepositoriesPage extends CommonActions {
 	@FindBy(css = ".cdk-overlay-container")
 	WebElement repositoryUserNameAddToolTip;
 	
-	@FindBy(xpath = "//input[@formcontrolname='username']")
+	@FindBy(xpath = "//input[@formcontrolname='password']")
 	WebElement repositoryPasswordAddLabel;
 
 	@FindBy(css = ".cdk-overlay-container")

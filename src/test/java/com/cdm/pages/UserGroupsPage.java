@@ -138,9 +138,9 @@ public class UserGroupsPage extends CommonActions {
 
 
 	public void addusericon() {
-		wait(addusericon,logger);
+	
 		clickElement(addusericon, "");
-		//addusericon.click();
+		
 	}
 
 

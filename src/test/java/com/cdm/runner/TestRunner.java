@@ -9,44 +9,44 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(
 
 		//features = "src/test/resources/Features/Login.feature",
-		// features = "src/test/resources/Features/GenearlTab.feature",
+		//features = "src/test/resources/Features/GenearlTab.feature",
 
-		// features = "src/test/resources/Features/Dashboard.feature",
+		//features = "src/test/resources/Features/Dashboard.feature",
 		//features = "src/test/resources/Features/EDGEGroupsNew.feature",
 
 		//features = "src/test/resources/Features/EDGEDevicesNew.feature",
 
-		// features = "src/test/resources/Features/Deployments.feature",
+		//features = "src/test/resources/Features/Deployments.feature",
 
-		// features = "src/test/resources/Features/ConfigurationsNew.feature",
+		//features = "src/test/resources/Features/ConfigurationsNew.feature",
 
-	//features = "src/test/resources/Features/Licenses.feature",
+		//features = "src/test/resources/Features/Licenses.feature",
 
-		// features = "src/test/resources/Features/AppGroupsNew.feature",
+		//features = "src/test/resources/Features/AppGroupsNew.feature",
 
-		// features = "src/test/resources/Features/Reports.feature",
+		//features = "src/test/resources/Features/Reports.feature",
 
-		// features = "src/test/resources/Features/UsersSettingsNew.feature",
+		//features = "src/test/resources/Features/Users.feature",
 
 		//features = "src/test/resources/Features/UserGroups.feature",
 
 		//features = "src/test/resources/Features/UserRoles.feature",
 
-		//features = "src/test/resources/Features/Notifications.feature",
+		// features = "src/test/resources/Features/Notifications.feature",
 
-		// features = "src/test/resources/Features/hardware.feature",
+	//features = "src/test/resources/Features/hardware.feature",
 
-		// features = "src/test/resources/Features/Volumes.feature",
+		features = "src/test/resources/Features/Volumes.feature",
 
-		features = "src/test/resources/Features/Repositories.feature",
+		//features = "src/test/resources/Features/Repositories.feature",
 
-		// features = "src/test/resources/Features/Apps.feature",
+		//features = "src/test/resources/Features/Apps.feature",
 
-	//features = "src/test/resources/Features/Wells.feature",
+		//features = "src/test/resources/Features/Wells.feature",
 
 		//features = "src/test/resources/Features/certificates.feature",
 
-		// features = "src/test/resources/Features/About.feature",
+		//features = "src/test/resources/Features/About.feature",
 
 		glue = { "com.cdm.Stepdefinations" },
 

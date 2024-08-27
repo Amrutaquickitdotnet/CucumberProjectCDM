@@ -2,7 +2,6 @@ package com.cdm.pages;
 
 
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -19,20 +18,20 @@ public class EdgeGroupEditPage extends CommonActions {
 	}
 	@FindBy(css = ".cdk-overlay-container")
 	WebElement appGroupToolTip;
-	
-	
+
+
 	@FindBy(css = ".cdk-overlay-container")
 	WebElement maxServerNodeToolTip;
-	
+
 	@FindBy(css = ".cdk-overlay-container")
 	WebElement serverHostAddressToolTip;
-	
+
 	@FindBy(css = ".cdk-overlay-container")
 	WebElement serverPortToolTip;
-	
+
 	@FindBy(xpath = "//button[@class='addButton')]")
 	WebElement saveButtononEdgeEditPage;
-	
+
 	@FindBy(xpath = "//input[@formcontrolname='serverhostaddress']")
 	WebElement serverHostAddressInput;
 
@@ -40,67 +39,67 @@ public class EdgeGroupEditPage extends CommonActions {
 	WebElement serialNumberAdd;
 	// serverport
 
-	
+
 	@FindBy(xpath = "//input[@formcontrolname='maxservernode']")
 	WebElement maxserverNode;
-	
-	
+
+
 	@FindBy(xpath = "//input[@formcontrolname='serverport']")
 	WebElement serverPortInput;
-	
+
 	@FindBy(xpath = "//mat-select[@formcontrolname='appgroupid']")
 	WebElement applicationGroupName;
-	
-	@FindBy(xpath = "//body/div[3]/div[2]/div[1]/mat-dialog-container[1]/app-edge-onboarding-upload[1]/div[3]/button[2]")
+
+	@FindBy(xpath = "//button[contains(text(),'Save')]")
 	WebElement saveButtonfinalonboarding;
-	
-	
+
+
 	@FindBy(xpath = "//input[@type='file']")
 	WebElement onboardingCertificateUpload;
-	
-	
+
+
 	@FindBy(xpath = "//input[@type='file']")
 	WebElement EdgeConfigurationUpload;
-	
+
 	@FindBy(xpath = "//body/app-root[1]/app-root[1]/app-home[1]/mat-sidenav-container[1]/mat-sidenav-content[1]/div[2]/div[1]/app-add-edit-edgegroup[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/mat-nav-list[1]/mat-expansion-panel[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/img[1]")
 	WebElement onboardingCertificateIcon;
-	
+
 	public void onboardingCertificateIcon() {
 		clickElement(onboardingCertificateIcon, "");
 		//onboardingCertificateIcon.click();
 	}
-	
-	
+
+
 	public void onboardingCertificateUpload(String value) {
 		SetInputENterKey(onboardingCertificateUpload,"");
 		SetInput(onboardingCertificateUpload, value, value);
 		//onboardingCertificateUpload.sendKeys(Keys.ENTER);
 		//onboardingCertificateUpload.sendKeys(value);
 	}
-	
-	
+
+
 public void EdgeConfigurationUpload(String value) {
 	SetInputENterKey(EdgeConfigurationUpload,"");
 	SetInput(EdgeConfigurationUpload, value, value);
-	
+
 //	EdgeConfigurationUpload.sendKeys(Keys.ENTER);
 //	EdgeConfigurationUpload.sendKeys(value);
 	}
-	
+
 	public void uploadfile() throws InterruptedException {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 
-	
+
 		js.executeScript("arguments[0].click();",onboardingCertificateUpload);
-		
-		
+
+
 	}
-	
+
 	public void scrollingverticalAdd() {
 
 		scrollingvertical("div.pagefooter", "0", "500");
 	}
-	
+
 	public void applicationGroupName(String value) throws InterruptedException {
 		wait(applicationGroupName,logger);
 		SelectMatOption(applicationGroupName, value);
@@ -109,7 +108,7 @@ public void EdgeConfigurationUpload(String value) {
 
 		SetInputENterKey(serverHostAddressInput,"");
 		SetInput(serverHostAddressInput, value, value);
-		
+
 		//serverHostAddressInput.sendKeys(value);
 	}
 
@@ -119,22 +118,22 @@ public void EdgeConfigurationUpload(String value) {
 
 		//serverPortInput.sendKeys(value);
 	}
-	
+
 	public void saveButtononEdgeEdit() {
 		clickElement(saveButtononEdgeEditPage,"");
 		//saveButtononEdgeEditPage.click();
 	}
-	
+
 
 	public void saveButtonfinalonboarding() throws InterruptedException {
-		
-		wait(saveButtonfinalonboarding,logger);
-		
+
+		//wait(saveButtonfinalonboarding,logger);
+
 		clickElement(saveButtonfinalonboarding,"");
-		
+
 		//saveButtonfinalonboarding.click();
-		
-		
+
+
 	}
 
 
@@ -142,13 +141,13 @@ public void EdgeConfigurationUpload(String value) {
 		SetInputENterKey(serialNumberAdd,"");
 		SetInput(serialNumberAdd, value, value);
 
-//		
+//
 //		serialNumberAdd.sendKeys(Keys.ENTER);
 //		serialNumberAdd.sendKeys(value);
-		
+
 	}
-	
-	
+
+
 	public String get_Text_ToolTipappGroup() {
 		mouseHover(applicationGroupName);
 
@@ -158,8 +157,8 @@ public void EdgeConfigurationUpload(String value) {
 
 		return appGroupToolTipText;
 	}
-	
-	
+
+
 	public String get_Text_ToolTipmaxServerNode() {
 		mouseHover(maxserverNode);
 
@@ -169,7 +168,7 @@ public void EdgeConfigurationUpload(String value) {
 
 		return maxServerNodeToolTipText;
 	}
-	
+
 	public String get_Text_ToolTipmaxServerPort() {
 		mouseHover(serverPortInput);
 
@@ -179,8 +178,8 @@ public void EdgeConfigurationUpload(String value) {
 
 		return serverPortToolTipText;
 	}
-	
-	
+
+
 	public String get_Text_ToolTipmaxServerHostAddress() {
 		mouseHover(serverHostAddressInput);
 
@@ -190,6 +189,6 @@ public void EdgeConfigurationUpload(String value) {
 
 		return serverHostAddressToolTipText;
 	}
-	
-	
+
+
 }

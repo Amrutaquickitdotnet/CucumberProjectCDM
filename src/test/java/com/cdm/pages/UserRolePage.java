@@ -88,4 +88,12 @@ public class UserRolePage extends CommonActions {
 		
 	}
 
+	@FindBy(css= ".cdk-overlay-container")
+	WebElement outerlayerclick;
+		
+		public void outerlayerclick() {
+			clickElement(outerlayerclick, "");
+		
+	}
+
 }

@@ -1,5 +1,5 @@
-#@SheetAPPGROUPS
-#Feature: APPGROUPS
+@SheetAPPGROUPS
+Feature: APPGROUPS
 #
 #@Test
 #Scenario: TC01_Verification of Browser Compatibility of APP Group Listing Screen of the application
@@ -420,12 +420,13 @@
 #And Click on App Groups tab
 #Then verify to check the column width & size resolution
 #
-#@Test
-#Scenario: TC42_Verification of accessbility the filter icon for Status
-#Given User launch application in chrome browser
-#When user enters credentials and click on login button
-#And Click on App Groups tab
-#Then check filter icon visibility for Status column
+@Test
+Scenario: TC42_Verification of accessbility the filter icon for Status
+Given User launch application in chrome browser
+Then click on login button on home page
+When user enters credentials and click on login button
+And Click on App Groups tab
+Then check filter icon visibility for Status column
 #
 #@Test
 #Scenario: TC43_Verification to check the column width & size resolution

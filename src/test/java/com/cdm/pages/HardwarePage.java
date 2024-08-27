@@ -5,7 +5,6 @@ import java.time.Duration;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -15,8 +14,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.aventstack.extentreports.ExtentTest;
 import com.cdm.common.CommonActions;
-
-import io.cucumber.java.en.Then;
 
 public class HardwarePage extends CommonActions {
 
@@ -54,6 +51,9 @@ public class HardwarePage extends CommonActions {
 
 	@FindBy(xpath = "//thead/tr[1]/th[6]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]")
 	WebElement hardwareosthreedot;
+
+	@FindBy(xpath ="//thead/tr[1]/th[1]/div[1]/span[1]/div[1]/div[2]")
+	WebElement sortHardwareName;
 
 	@FindBy(xpath = "//button[@class='addButton']")
 	WebElement hardwareSavebutton;
@@ -107,7 +107,7 @@ public class HardwarePage extends CommonActions {
 		SetInputENterKey(hardwareDisplayName, "");
 		SetInput(hardwareDisplayName, value, value);
 
-//		
+//
 //		hardwareDisplayName.sendKeys(Keys.ENTER);
 //		hardwareDisplayName.sendKeys(value);
 	}
@@ -116,7 +116,7 @@ public class HardwarePage extends CommonActions {
 		SetInputENterKey(hardwareDescription, "");
 		SetInput(hardwareDescription, value, value);
 
-//		
+//
 //		hardwareDescription.sendKeys(Keys.ENTER);
 //		hardwareDescription.sendKeys(value);
 	}
@@ -124,7 +124,7 @@ public class HardwarePage extends CommonActions {
 	public void hardwareModel(String value) {
 		SetInputENterKey(hardwareModel, "");
 		SetInput(hardwareModel, value, value);
-//		
+//
 //		hardwareModel.sendKeys(Keys.ENTER);
 //		hardwareModel.sendKeys(value);
 	}
@@ -133,7 +133,7 @@ public class HardwarePage extends CommonActions {
 
 		SetInputENterKey(hardwareOS, "");
 		SetInput(hardwareOS, value, value);
-//		
+//
 //		hardwareOS.sendKeys(Keys.ENTER);
 //		hardwareOS.sendKeys(value);
 	}
@@ -142,7 +142,7 @@ public class HardwarePage extends CommonActions {
 		SetInputENterKey(hardwareMake, "");
 		SetInput(hardwareMake, value, value);
 
-//		
+//
 //		hardwareMake.sendKeys(Keys.ENTER);
 //		hardwareMake.sendKeys(value);
 	}
@@ -150,7 +150,7 @@ public class HardwarePage extends CommonActions {
 	public void hardwareProcessor(String value) {
 		SetInputENterKey(hardwareProcessor, "");
 		SetInput(hardwareProcessor, value, value);
-//		
+//
 //		hardwareProcessor.sendKeys(Keys.ENTER);
 //		hardwareProcessor.sendKeys(value);
 	}
@@ -250,5 +250,100 @@ public class HardwarePage extends CommonActions {
 		clickElement(confirmationNoButton, "");
 
 		// confirmationNoButton.click();
+	}
+	@FindBy(css = ".cdk-overlay-container")
+	WebElement hardwareNameTooltip;
+
+
+	@FindBy(xpath = "//thead/tr[1]/th[7]/div[1]/span[1]/div[1]/div[1]")
+	WebElement hardwareStatus;
+
+	@FindBy(css = ".cdk-overlay-container")
+	WebElement hardwareStatusTooltip;
+
+
+	@FindBy(xpath = "//div[contains(text(),'Hardware Name')]")
+	WebElement hardwareNameLabel;
+
+	@FindBy(css = ".cdk-overlay-container")
+	WebElement hardwareDisplayNameTooltip;
+
+	@FindBy(css = ".cdk-overlay-container")
+	WebElement hardwareMakeTooltip;
+
+
+	@FindBy(css = ".cdk-overlay-container")
+	WebElement hardwareModelTooltip;
+
+
+	@FindBy(xpath = "//div[contains(text(),'Hardware Display Name')]")
+	WebElement hardwareDisplayNameLabel;
+
+
+	public String get_Text_ToolTipHardwareName() {
+		mouseHover(hardwareNameLabel);
+
+		String hardwareNameTooltipText = hardwareNameTooltip.getText();
+
+		hardwareNameTooltipText.trim();
+
+		return hardwareNameTooltipText;
+	}
+	@FindBy(css= ".cdk-overlay-container")
+	WebElement outerlayerclick;
+	public void outerlayerclick() {
+		clickElement(outerlayerclick, "");
+
+	}
+
+	public String get_Text_ToolTipHardwareDisplayName() throws Exception {
+
+
+		mouseHover(hardwareDisplayNameLabel);
+
+		Thread.sleep(4000);
+
+		String hardwareDisplayNameTooltipText = hardwareDisplayNameTooltip.getText();
+
+		hardwareDisplayNameTooltipText.trim();
+
+		return hardwareDisplayNameTooltipText;
+
+	}
+
+	public String get_Text_ToolTipHardwareMake() {
+		mouseHover(hardwareMake);
+
+		String hardwareMakeTooltipText = hardwareMakeTooltip.getText();
+
+		hardwareMakeTooltipText.trim();
+
+		return hardwareMakeTooltipText;
+	}
+
+	public String get_Text_ToolTipHardwareModel() {
+		mouseHover(hardwareModel);
+
+		String hardwareModelTooltipText = hardwareModelTooltip.getText();
+
+		hardwareModelTooltipText.trim();
+
+		return hardwareModelTooltipText;
+	}
+
+	public String get_Text_ToolTipHardwareStatus() {
+		mouseHover(hardwareStatus);
+
+		String hardwareStatusTooltipText = hardwareStatusTooltip.getText();
+
+		hardwareStatusTooltipText.trim();
+
+		return hardwareStatusTooltipText;
+	}
+
+	public void sortHardwareName() {
+
+		clickElement(sortHardwareName,"");
+
 	}
 }

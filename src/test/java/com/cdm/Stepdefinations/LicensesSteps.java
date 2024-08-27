@@ -228,14 +228,14 @@ public class LicensesSteps extends BaseTest {
 
 	@Then("Verification of  the refresh icon when Host Id filter is applied")
 	public void verification_of_the_refresh_icon_when_host_id_filter_is_applied() throws InterruptedException {
-		
+
 		LicensesPage lp = new LicensesPage(driver, logger);
 
 		lp.hostIdThreeDot();
 
 		lp.hostidInput(alldata.get(vTCName).get("hostidsearch").toString());
 		lp.backDropShowing_Div_Click();
-		
+
 	}
 
 	@Then("click on three dots for License Type")
@@ -283,7 +283,7 @@ public class LicensesSteps extends BaseTest {
 public void verify_check_filter_icon_availability_for_license_type() {
 	LicensesPage lp = new LicensesPage(driver, logger);
 	lp.licenseTypeThreeDot();
-	
+
 }
 
 @Then("verify check filter icon availability for Version")
@@ -304,12 +304,12 @@ public void verify_check_filter_icon_availability_for_version() {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-	
+
 	}
 	@Then("verify tool tip text visibilty for License Deployment under Actions column")
 	public void verify_tool_tip_text_visibilty_for_license_deployment_under_actions_column() {
 		LicensesPage lp = new LicensesPage(driver, logger);
-		
+
 	}
 	@Then("verify tool tip text visibilty for License revoke under Actions")
 	public void verify_tool_tip_text_visibilty_for_license_revoke_under_actions() {
@@ -319,7 +319,7 @@ public void verify_check_filter_icon_availability_for_version() {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 	}
 
 	@Then("verify tool tip text visibilty for deActivate License button in Actions column")
@@ -336,7 +336,7 @@ public void verify_check_filter_icon_availability_for_version() {
 	}
 
 	@Then("verify tooltip  for Host ID")
-	public void verify_tooltip_for_host_id() {
+	public void verify_tooltip_for_host_id() throws InterruptedException {
 		LicensesPage lp = new LicensesPage(driver, logger);
 		Assert.assertEquals("Tooltip for Host ID", "Host ID", lp.get_Text_ToolTipHostID());
 	}
@@ -345,7 +345,7 @@ public void verify_check_filter_icon_availability_for_version() {
 		LicensesPage lp = new LicensesPage(driver, logger);
 		lp.issueDateThreeDot();
 	}
-	
+
 	@Then("verify page accessbility the filter icon for Expiry Date")
 	public void verify_page_accessbility_the_filter_icon_for_expiry_date() {
 		LicensesPage lp = new LicensesPage(driver, logger);
@@ -495,7 +495,7 @@ public void verify_check_filter_icon_availability_for_version() {
 	}
 
 	@Then("verify tool tip text visibilty for Host ID")
-	public void verify_tool_tip_text_visibilty_for_host_id() {
+	public void verify_tool_tip_text_visibilty_for_host_id() throws InterruptedException {
 		LicensesPage lp = new LicensesPage(driver, logger);
 		Assert.assertEquals("Tooltip for Host ID", "Host ID", lp.get_Text_ToolTipHostID());
 
@@ -516,7 +516,7 @@ public void verify_check_filter_icon_availability_for_version() {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 	}
 
 	@Then("verify tool tip text visibilty for License Tracker button at the top navigation")
@@ -527,7 +527,7 @@ public void verify_check_filter_icon_availability_for_version() {
 		} catch (Exception e) {
 		e.printStackTrace();
 		}
-		
+
 	}
 
 	@Then("wait for window eight hours")

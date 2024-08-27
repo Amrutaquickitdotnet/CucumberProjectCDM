@@ -133,7 +133,7 @@ public class EdgeGroupConfigurationPage extends CommonActions {
 	@FindBy(xpath = "//div[@role='tabpanel' and @aria-expanded='true']//table//mat-checkbox//input")
 	WebElement selectedCheckboxAppNameConfigInputBoxField;
 
-	@FindBy(xpath = "//div[@role='tabpanel' and @aria-expanded='true']//table//mat-checkbox//label")
+	@FindBy(xpath = "//div[@role='tabpanel' and @aria-expanded='true']//table//mat-checkbox//label[1]")
 	WebElement selectedCheckboxAppNameConfigLabelType;
 
 	@FindBy(xpath = "(//div[@aria-expanded='true']//table)//mat-checkbox//input)")
@@ -395,8 +395,8 @@ public class EdgeGroupConfigurationPage extends CommonActions {
 		if (selectedCheckboxAppNameConfigInputBoxField != null) {
 			String checked = selectedCheckboxAppNameConfigInputBoxField.getDomAttribute("checked");
 			if (checked != "checked") {
-				clickElement(selectedCheckboxAppNameConfigLabelType, "");
-				// selectedCheckboxAppNameConfigLabelType.click();
+//				clickElement(selectedCheckboxAppNameConfigLabelType, "");
+				selectedCheckboxAppNameConfigLabelType.click();
 			}
 		}
 	}

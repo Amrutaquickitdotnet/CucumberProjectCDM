@@ -3,7 +3,6 @@ package com.cdm.Stepdefinations;
 import java.io.FileInputStream;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.time.Duration;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -19,7 +18,6 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -74,14 +72,14 @@ public class BaseTest {
 //				options.addArguments("--proxy-server='direct://'");
 //				options.addArguments("--proxy-bypass-list=*");
 //				options.addArguments("--start-maximized");
-//			
+//
 //				options.addArguments("--disable-dev-shm-usage");
 //				options.addArguments("--no-sandbox");
 //				options.addArguments("--ignore-certificate-errors");
 //				options.addArguments("--remote-allow-origins=*");
 //				// options.addArguments("--disable notifications");
-//				options.addArguments("--headless");
-//				options.addArguments("--disable-gpu");
+		options.addArguments("--headless");
+				options.addArguments("--disable-gpu");
 				options.setExperimentalOption("excludeSwitches", new String[] { "enable-automation" });
 //				options.addArguments("start-maximized");
 //				options.setExperimentalOption("credentials_enable_service", false);
@@ -92,7 +90,7 @@ public class BaseTest {
 				try {
 					driver = new ChromeDriver(options);
 				} catch (Exception ex) {
-					
+
 					ex.printStackTrace();
 					try {
 						Thread.sleep(1000);
@@ -100,7 +98,7 @@ public class BaseTest {
 					} catch (InterruptedException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
-						
+
 					}
 				}
 
@@ -118,8 +116,8 @@ public class BaseTest {
 			//driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(time));
 			return;
 		}
-		
-		
+
+
 		if(driver ==null) {
 			EdgeOptions edgeOptions = new EdgeOptions();
 	        edgeOptions.addArguments("headless");

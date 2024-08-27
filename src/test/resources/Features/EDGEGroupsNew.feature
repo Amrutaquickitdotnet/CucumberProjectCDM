@@ -466,18 +466,18 @@ Feature: EDGEGROUPS
 #When user enters credentials and click on login button
 #Then Click on EDGE Group module from side menu bar
 #
-#@Test
-#Scenario: TC47_Verification of upload of onboarding EDGE Configuration in Registration section in Edit screen of EDGE Group Edit module by Super admin/Admin user
-#Given User launch application in chrome browser
-#Then click on login button on home page
-#When user enters credentials and click on login button
-#And click on EDGE Group
-#Then Click on the three dots of GroupName
-#And enter text in the field of GroupName
-#Then Click on Edit Edge Group button
-#Then Click on Onboarding Certificate icon of Edge Configurations
-#Then browse the upload document and upload for Registration section for OnBoarding Certificate
-#Then Save the certificates
+@Test
+Scenario: TC47_Verification of upload of onboarding EDGE Configuration in Registration section in Edit screen of EDGE Group Edit module by Super admin/Admin user
+Given User launch application in chrome browser
+Then click on login button on home page
+When user enters credentials and click on login button
+And click on EDGE Group
+Then Click on the three dots of GroupName
+And enter text in the field of GroupName
+Then Click on Edit Edge Group button
+Then Click on Onboarding Certificate icon of Edge Configurations
+Then browse the upload document and upload for Registration section for OnBoarding Certificate
+Then Save the certificates
 #
 #
 #
@@ -674,6 +674,7 @@ Feature: EDGEGROUPS
 #@Test
 #Scenario: TC65_Verification of error message verbaige for entering invalid details for EDGE Group ID Text field in ADD screen
 #Given User launch application in chrome browser
+#Then click on login button on home page
 #When user enters credentials and click on login button
 #Then Click on EDGE Group module from side menu bar
 #Then Click on Add button
@@ -755,7 +756,7 @@ Feature: EDGEGROUPS
 #Then scroll down page
 #Then enter all fields under deployment
 #Then Click on Save button to save Edge group
-#Then verify standarize text format for error message in toaster
+#Then verify standarize text format for success message in toaster
 #
 #
 #@Test
@@ -994,7 +995,7 @@ Feature: EDGEGROUPS
 #And enter the value for Minimum searchbox for device Active
 #And enter the value for maximum searchbox for device Active
 #And Click on submit button
-
+#
 #
 #
 #@Test
@@ -1405,9 +1406,9 @@ Feature: EDGEGROUPS
 #When user enters credentials and click on login button
 #Then Click on EDGE Group module from side menu bar
 #And Verification of descending order sorting functionality for the table list
-
-
-
+#
+#
+#
 #@Test
 #Scenario: TC141_Verification of Stop Functionality of Edge Groups
 #Given User launch application in chrome browser
@@ -1417,36 +1418,30 @@ Feature: EDGEGROUPS
 #Then Click on the three dots of GroupName
 #And enter text in the field of GroupName
 #Then Click on Stop button
-
-#@Test
+#
+#@Obsolete
 #Scenario: TC142_Verify Edit functionality for edge Group Name under Registration Section for upload
 #Given User launch application in chrome browser
-#When user enters credentials and click on login button
 #Then click on login button on home page
+#When user enters credentials and click on login button
+#And click on EDGE Group
+#
+#
+#@Test
+#Scenario: TC143_Verify Edit functionality of Edge Group
+#Given User launch application in chrome browser
+#Then click on login button on home page
+#When user enters credentials and click on login button
 #And click on EDGE Group
 #Then Click on the three dots of GroupName
-#And enter text in the field of GroupName for Edit
+#Then enter text in the field of GroupName for Edit
 #Then Click on Edit Edge Group button
-#Then scroll down page 
-#Then Click on upload icon of Edge Configurations
-#And browse the upload document and upload for Registration section
-#And Click on save data for Edge Group
-#
-@Test
-Scenario: TC143_Verify Edit functionality of Edge Group
-Given User launch application in chrome browser
-Then click on login button on home page
-When user enters credentials and click on login button
-And click on EDGE Group
-Then Click on the three dots of GroupName
-Then enter text in the field of GroupName for Edit
-Then Click on Edit Edge Group button
-Then remove the text for Edge group Name which already entered and fill with new entry
-Then remove the text for location which already entered and fill with new entry
-Then remove the text for description which already entered and fill with new entry
-Then scroll down page
-Then choose App group for updation
-Then remove the text for Maximum Server node and fill with new entry
-Then remove the text for Server Host Address and fill with new entry
-Then remove the text for Server Port and fill with new entry
-Then Click on save data for Edge Group
+#Then remove the text for Edge group Name which already entered and fill with new entry
+#Then remove the text for location which already entered and fill with new entry
+#Then remove the text for description which already entered and fill with new entry
+#Then scroll down page
+#Then choose App group for updation
+#Then remove the text for Maximum Server node and fill with new entry
+#Then remove the text for Server Host Address and fill with new entry
+#Then remove the text for Server Port and fill with new entry
+#Then Click on save data for Edge Group

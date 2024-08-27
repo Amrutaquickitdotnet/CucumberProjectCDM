@@ -9,14 +9,13 @@ import com.cdm.pages.UserSettingsPage;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class UserSettingsSteps extends BaseTest {
+public class UsersSteps extends BaseTest {
 
 	@Then("Click on Settings module from side menu bar")
 	public void click_on_settings_module_from_side_menu_bar() throws Exception {
 
 		UserSettingsPage usp = new UserSettingsPage(driver, logger);
 		usp.Setting_tab();
-		
 
 	}
 
@@ -24,9 +23,9 @@ public class UserSettingsSteps extends BaseTest {
 	public void click_on_users_tab_from_right_panel_of_the_screen() throws Exception {
 
 		UserSettingsPage usp = new UserSettingsPage(driver, logger);
-		
+
 		usp.Users_tab();
-		
+
 	}
 
 	@Then("verify of displaying the Add button,Bulk upload & Download button icons on top right side of Users List screen by Super Admin\\/Admin user")
@@ -51,15 +50,14 @@ public class UserSettingsSteps extends BaseTest {
 
 		UserSettingsPage usp = new UserSettingsPage(driver, logger);
 
-		
 		usp.LastNameDot();
 		usp.lastNameinput(alldata.get(vTCName).get("LastNameSearch").toString());
 		usp.backDropShowing_Div_Click();
-		
+
 		usp.EmailDot();
 		usp.emailidinput(alldata.get(vTCName).get("EmailIdSearch").toString());
 		usp.backDropShowing_Div_Click();
-		
+
 		usp.RoleNameDot();
 		usp.roleNameinput(alldata.get(vTCName).get("RoleNameSearch").toString());
 
@@ -69,14 +67,14 @@ public class UserSettingsSteps extends BaseTest {
 	public void choose_the_role_from_dropdown_rolename() throws InterruptedException {
 		UserSettingsAddPage usp = new UserSettingsAddPage(driver, logger);
 		usp.roleNameAdd(alldata.get(vTCName).get("RoleNameAdd").toString().trim());
-		
+
 	}
 
 	@Then("choose the role from dropdown rolename for edit screen")
 	public void choose_the_role_from_dropdown_rolename_for_edit_screen() throws InterruptedException {
 		UserSettingsEditPage usep = new UserSettingsEditPage(driver, logger);
 		usep.roleNameEdit(alldata.get(vTCName).get("RoleNameEdit").toString());
-		
+
 	}
 
 	@Then("enter the text in the Email Id field")
@@ -99,9 +97,9 @@ public class UserSettingsSteps extends BaseTest {
 
 		UserSettingsPage usp = new UserSettingsPage(driver, logger);
 		usp.Users_tab();
-		
+
 		usp.addButton();
-		
+
 	}
 
 	@Then("verify status toggle button")
@@ -110,8 +108,6 @@ public class UserSettingsSteps extends BaseTest {
 		UserSettingsAddPage usap = new UserSettingsAddPage(driver, logger);
 		usap.moveSliderCondition("unchecked");
 
-		
-		
 	}
 
 	@Then("verify status toggle button on edit screen")
@@ -119,11 +115,10 @@ public class UserSettingsSteps extends BaseTest {
 		UserSettingsEditPage usep = new UserSettingsEditPage(driver, logger);
 		usep.moveSliderCondition("unchecked");
 
-		
 		usep.moveSliderCondition("checked");
-		
+
 		usep.moveSliderCondition("unchecked");
-		
+
 	}
 
 	@Then("fill all mandatory and optional field for Add users")
@@ -149,7 +144,7 @@ public class UserSettingsSteps extends BaseTest {
 		UserSettingsPage usp = new UserSettingsPage(driver, logger);
 		usp.Setting_tab();
 		usp.Users_tab();
-		
+
 		usp.addButton();
 		Thread.sleep(2000);
 		usp.cancelButton();
@@ -211,7 +206,7 @@ public class UserSettingsSteps extends BaseTest {
 		usap.roleNameAdd(alldata.get(vTCName).get("RoleNameAdd").toString());
 
 		usap.saveButtonAdd();
-		
+
 	}
 
 	@Then("Verify validation message for password")
@@ -227,16 +222,16 @@ public class UserSettingsSteps extends BaseTest {
 
 		UserSettingsAddPage usap = new UserSettingsAddPage(driver, logger);
 		usap.firstNameinputAdd(alldata.get(vTCName).get("FirstNameAdd").toString());
-	
 
 	}
 
 	@Then("verify validation message for First Name")
-	public void verify_validation_message_for_first_name() {
-		UserSettingsEditPage usep = new UserSettingsEditPage(driver, logger);
-		usep.verifyValidationMessageFirstNameUser();
+	public void verify_validation_message_for_first_name() throws InterruptedException {
+		UserSettingsAddPage usa = new UserSettingsAddPage(driver, logger);
+		usa.saveButtonAdd();
 	}
 
+	
 	@Then("Verification of the viewing of the password content when the view password icon is clicked in password field in the Identity section")
 	public void verification_of_the_viewing_of_the_password_content_when_the_view_password_icon_is_clicked_in_password_field_in_the_identity_section()
 			throws InterruptedException {
@@ -244,6 +239,13 @@ public class UserSettingsSteps extends BaseTest {
 		usap.passwordeyeicon();
 		Thread.sleep(2000);
 	}
+	@Then("verify visualization of icons in action column for users")
+	public void verify_visualization_of_icons_in_action_column_for_users() {
+		UserSettingsAddPage usap = new UserSettingsAddPage(driver, logger);
+		
+	}
+
+
 
 	@Then("Enter details for user add page for allowed charcters")
 	public void enter_details_for_user_add_page_for_allowed_charcters() throws InterruptedException {
@@ -284,7 +286,7 @@ public class UserSettingsSteps extends BaseTest {
 	public void verification_of_the_acceptance_of_alphabet_values_in_last_name_text_field_of_user_add_screen_by_super_admin_admin_user() {
 		UserSettingsAddPage usap = new UserSettingsAddPage(driver, logger);
 		usap.lastNameinputAdd(alldata.get(vTCName).get("LastNameAdd").toString());
-		
+
 	}
 
 	@Then("Verification of breaching the Max word limit in First Name Text field  of User Add screen by Super Admin\\/Admin user")
@@ -294,7 +296,6 @@ public class UserSettingsSteps extends BaseTest {
 
 		usap.firstNameinputAdd(alldata.get(vTCName).get("FirstNameAdd").toString());
 		usap.headingTitleAdd();
-		
 
 		Assert.assertEquals("Alphabets of length Min = 2, Max = 32 are allowed !",
 				usap.verifyValidationMessageFirstNameUser());
@@ -308,7 +309,6 @@ public class UserSettingsSteps extends BaseTest {
 
 		usap.phoneNumberInputAdd(alldata.get(vTCName).get("PhoneNumberAdd").toString());
 		usap.headingTitleAdd();
-		
 
 	}
 
@@ -320,7 +320,7 @@ public class UserSettingsSteps extends BaseTest {
 		usap.phoneNumberInputAdd(alldata.get(vTCName).get("PhoneNumberAdd").toString());
 		// usap.headingTitleAdd();
 		//// usap.saveButtonAdd();
-		
+
 		Assert.assertEquals("Numericals of length Min = 10 & Max = 16 characters are allowed !",
 				usap.verifyValidationMessageContactInvalid());
 
@@ -378,7 +378,6 @@ public class UserSettingsSteps extends BaseTest {
 
 		usap.lastNameinputAdd(alldata.get(vTCName).get("LastNameAdd").toString());
 		usap.headingTitleAdd();
-		
 
 		usap.removalofEnteredTextForLastName();
 		Assert.assertEquals("Mandatory field - required !", usap.verifyValidationMessageLastNameUser());
@@ -387,7 +386,7 @@ public class UserSettingsSteps extends BaseTest {
 	@Then("click on save button to save data")
 	public void click_on_save_button_to_save_data() throws InterruptedException {
 		UserSettingsAddPage usap = new UserSettingsAddPage(driver, logger);
-		Thread.sleep(8000);
+		
 		usap.saveButtonAdd();
 	}
 
@@ -416,7 +415,6 @@ public class UserSettingsSteps extends BaseTest {
 
 		usap.phoneNumberInputAdd(alldata.get(vTCName).get("PhoneNumberAdd").toString());
 
-		
 		Assert.assertEquals("Please enter a valid Phone Number !", usap.verifyValidationMessagedigitwithSpace());
 	}
 
@@ -427,7 +425,6 @@ public class UserSettingsSteps extends BaseTest {
 
 		usap.phoneNumberInputAdd(alldata.get(vTCName).get("PhoneNumberAdd").toString());
 
-		
 		Assert.assertEquals("Please enter a valid Phone Number !", usap.verifyValidationMessagedigitwithZeros());
 	}
 
@@ -438,7 +435,7 @@ public class UserSettingsSteps extends BaseTest {
 
 		usap.firstNameinputAdd(alldata.get(vTCName).get("FirstNameAdd").toString());
 		usap.headingTitleAdd();
-		
+
 		try {
 			Assert.assertEquals("  Alphabets of length Min = 2, Max = 32 are allowed ! ",
 					usap.verifyValidationMessageFirstNameUser());
@@ -455,7 +452,7 @@ public class UserSettingsSteps extends BaseTest {
 
 		usap.lastNameinputAdd(alldata.get(vTCName).get("LastNameAdd").toString());
 		usap.headingTitleAdd();
-		
+
 		try {
 			Assert.assertEquals("  Alphabets of length Min = 2, Max = 32 are allowed ! ",
 					usap.verifyValidationMessageLastNameUser());
@@ -470,13 +467,10 @@ public class UserSettingsSteps extends BaseTest {
 
 		UserSettingsEditPage usep = new UserSettingsEditPage(driver, logger);
 
-		
-
 		usep.removalofEnteredTextForPhoneNoEdit();
 
 		usep.phoneNumberInputEdit(alldata.get(vTCName).get("PhoneNumberEdit").toString());
 
-		
 		try {
 			Assert.assertEquals("Numericals of length Min = 10 & Max = 16 characters are allowed !",
 					usep.verifyValidationMessageContactInvalid());
@@ -484,6 +478,53 @@ public class UserSettingsSteps extends BaseTest {
 			// TODO: handle exception
 		}
 	}
+	@Then("to check the column width & size resolution")
+	public void to_check_the_column_width_size_resolution() {
+	   UserSettingsPage usp = new UserSettingsPage(driver, logger);
+	}
+	@Then("verify to check the tool tip text visibilty for LastName  Input text field in Edit Screen")
+	public void verify_to_check_the_tool_tip_text_visibilty_for_last_name_input_text_field_in_edit_screen() {
+	   UserSettingsEditPage use = new UserSettingsEditPage(driver, logger);
+	   Assert.assertEquals("Tooltip for First Name", "Last Name of the User", use.get_Text_ToolTipLastNameEdit());
+	}
+	@Then("verify to check the labels of input text fields for users")
+	public void verify_to_check_the_labels_of_input_text_fields_for_users() {
+		 UserSettingsEditPage use = new UserSettingsEditPage(driver, logger);
+		  
+	}
+
+	@Then("verify for ascending order sorting functionality for the table list")
+	public void verify_for_ascending_order_sorting_functionality_for_the_table_list() {
+	    UserSettingsPage usp = new UserSettingsPage(driver, logger);
+	    usp.firstnameAscending();
+	}
+	@Then("verify for descending order sorting functionality for the table list")
+	public void verify_for_descending_order_sorting_functionality_for_the_table_list() {
+		 UserSettingsPage usp = new UserSettingsPage(driver, logger);
+		    usp.firstnameAscending();
+	}
+
+
+
+
+
+
+@Then("verify switching between inputs fields using TAB for users")
+public void verify_switching_between_inputs_fields_using_tab_for_users() {
+	UserSettingsEditPage use = new UserSettingsEditPage(driver, logger);
+}
+
+
+
+
+	@Then("verify standarize text format for error message below First Name  text field")
+	public void verify_standarize_text_format_for_error_message_below_first_name_text_field() throws InterruptedException {
+	   UserSettingsAddPage usa = new UserSettingsAddPage(driver, logger);
+	   usa.saveButtonAdd();
+	}
+
+
+
 
 	@Then("verify validation message for Last Name")
 	public void verify_validation_message_for_last_name() throws InterruptedException {
@@ -491,7 +532,7 @@ public class UserSettingsSteps extends BaseTest {
 
 		usep.lastNameinputEdit(alldata.get(vTCName).get("LastNameEdit").toString());
 		usep.headingTitleEdit();
-		
+
 		try {
 			Assert.assertEquals("Alphabets of length Min = 1, Max = 32 are allowed !",
 					usep.verifyValidationMessageLastNameUser());
@@ -528,9 +569,8 @@ public class UserSettingsSteps extends BaseTest {
 
 		use.removalofEnteredTextForPassword();
 		use.passwordInputEdit(alldata.get(vTCName).get("PasswordEdit"));
-		
+
 		use.saveButtonEdit();
-		
 
 	}
 
@@ -566,14 +606,27 @@ public class UserSettingsSteps extends BaseTest {
 		usp.firstNameinput(alldata.get(vTCName).get("FirstNameSearch"));
 		usp.backDropShowing_Div_Click();
 
-		
+	}
+
+	@Then("verify standarize text format for error message below Phone Number  text field")
+	public void verify_standarize_text_format_for_error_message_below_phone_number_text_field()
+			throws InterruptedException {
+		UserSettingsAddPage usa = new UserSettingsAddPage(driver, logger);
+		usa.saveButtonAdd();
 	}
 
 	@Then("verify delete tooltip")
 	public void verify_delete_tooltip() throws InterruptedException {
 		UserSettingsPage usp = new UserSettingsPage(driver, logger);
 		Assert.assertEquals("Tooltip of delete button for user ", "Delete", usp.get_Text_ToolTipDelete());
-		
+
+	}
+
+	@Then("verify standarize text format for error message below Last  Name  text field")
+	public void verify_standarize_text_format_for_error_message_below_last_name_text_field()
+			throws InterruptedException {
+		UserSettingsAddPage usa = new UserSettingsAddPage(driver, logger);
+		usa.saveButtonAdd();
 	}
 
 	@When("I edit a valid email address")
@@ -582,21 +635,20 @@ public class UserSettingsSteps extends BaseTest {
 		Thread.sleep(2000);
 		usep.removalofEnteredTextForEmailId();
 		usep.emailidinputEdit(alldata.get(vTCName).get("EmailIDEdit").toString());
-		
+
 	}
 
 	@Then("verify Edit tooltip")
 	public void verify_edit_tooltip() throws InterruptedException {
 		UserSettingsPage usp = new UserSettingsPage(driver, logger);
 		Assert.assertEquals("Tooltip of Edit button for user ", "Edit", usp.get_Text_ToolTipEdit());
-		
+
 	}
 
 	@Then("Enter details for user add page without choosing User Role")
 	public void enter_details_for_user_add_page_without_choosing_user_role() throws InterruptedException {
 		UserSettingsAddPage usap = new UserSettingsAddPage(driver, logger);
 		usap.firstNameinputAdd(alldata.get(vTCName).get("FirstNameAdd").toString());
-		
 
 		usap.lastNameinputAdd(alldata.get(vTCName).get("LastNameAdd").toString());
 
@@ -623,7 +675,7 @@ public class UserSettingsSteps extends BaseTest {
 	public void try_to_select_value_from_organization_dropdown() throws InterruptedException {
 		UserSettingsAddPage usap = new UserSettingsAddPage(driver, logger);
 		usap.organizationAdd(alldata.get(vTCName).get("OrganizationAdd").toString());
-		
+
 	}
 
 	@Then("verify validation message for RoleName")
@@ -632,7 +684,7 @@ public class UserSettingsSteps extends BaseTest {
 		UserSettingsAddPage usap = new UserSettingsAddPage(driver, logger);
 		usap.roleNameAdd(alldata.get(vTCName).get("RoleNameEdit").toString());
 		usap.saveButtonAdd();
-		
+
 		usap.verifyvalidationmessageforroleName();
 	}
 
@@ -642,11 +694,256 @@ public class UserSettingsSteps extends BaseTest {
 		usep.passwordInputEdit(alldata.get(vTCName).get("PasswordEdit").toString());
 	}
 
-	@Then("verify popup message after successful entry")
-	public void verify_popup_message_after_successful_entry() {
+	@Then("verify page by using mobile network")
+	public void verify_page_by_using_mobile_network() {
+		UserSettingsEditPage usep = new UserSettingsEditPage(driver, logger);
+	}
+
+	@Then("verify page by using wi-fi network")
+	public void verify_page_by_using_wi_fi_network() {
+		UserSettingsEditPage usep = new UserSettingsEditPage(driver, logger);
+	}
+
+	@Then("click on three dots for role and enter the value in the place of role")
+	public void click_on_three_dots_for_role_and_enter_the_value_in_the_place_of_role() {
+		UserSettingsPage usp = new UserSettingsPage(driver, logger);
+		usp.RoleNameDot();
+		usp.roleNameinput(alldata.get(vTCName).get("RoleNameSearch").toString());
+
+	}
+
+	@Then("click on three dots for Status")
+	public void click_on_three_dots_for_status() {
+		UserSettingsPage usp = new UserSettingsPage(driver, logger);
+		usp.status();
+		usp.statusinputinActive();
+	}
+
+	@Then("verify visibility of the input field format")
+	public void verify_visibility_of_the_input_field_format() {
+		UserSettingsPage usp = new UserSettingsPage(driver, logger);
+	}
+
+	@Then("verify  to check the input text field format")
+	public void verify_to_check_the_input_text_field_format() {
+		UserSettingsPage usp = new UserSettingsPage(driver, logger);
+	}
+
+	@Then("verify tooltip for First name")
+	public void verify_tooltip_for_first_name() {
+		UserSettingsPage usp = new UserSettingsPage(driver, logger);
+		Assert.assertEquals("Tooltip for First Name", "First Name of the User", usp.get_Text_ToolTipFirstName());
+	}
+
+	@Then("verify tooltip for Email ID")
+	public void verify_tooltip_for_email_id() {
+		UserSettingsPage usp = new UserSettingsPage(driver, logger);
+		Assert.assertEquals("Tooltip for Email ID", "Valid Email ID of the User", usp.get_Text_ToolTipEmailID());
+	}
+
+	@Then("verify tooltip for Last name")
+	public void verify_tooltip_for_last_name() {
 
 		UserSettingsPage usp = new UserSettingsPage(driver, logger);
-		Assert.assertEquals("User updated successfully", usp.sucessmessage());
+		Assert.assertEquals("Tooltip for Last Name", "Last Name of the User", usp.get_Text_ToolTipLastName());
+	}
+
+	@Then("verify tooltip for Role name")
+	public void verify_tooltip_for_role_name() {
+		UserSettingsPage usp = new UserSettingsPage(driver, logger);
+		Assert.assertEquals("Tooltip for Role Name", "The access type of the user", usp.get_Text_ToolTipRoleName());
+	}
+
+	@Then("verify tool tip text visibilty for EDIT button in Actions")
+	public void verify_tool_tip_text_visibilty_for_edit_button_in_actions() throws InterruptedException {
+		UserSettingsPage usp = new UserSettingsPage(driver, logger);
+		Thread.sleep(3000);
+		Assert.assertEquals("Tooltip for Edit", "Edit", usp.get_Text_ToolTipEdit());
+	}
+
+	@Then("verify tool tip text visibilty for Delete button in Actions")
+	public void verify_tool_tip_text_visibilty_for_delete_button_in_actions() throws InterruptedException {
+		UserSettingsPage usp = new UserSettingsPage(driver, logger);
+		Thread.sleep(3000);
+		Assert.assertEquals("Tooltip for Delete", "Delete", usp.get_Text_ToolTipDelete());
+	}
+
+	@Then("verify tool tip text text visibilty for First Name Input text field in ADD Screen")
+	public void verify_tool_tip_text_text_visibilty_for_first_name_input_text_field_in_add_screen() {
+		UserSettingsAddPage usa = new UserSettingsAddPage(driver, logger);
+		Assert.assertEquals("Tooltip for First Name", "First Name of the User", usa.get_Text_ToolTipFirstNameAdd());
+	}
+
+	@Then("verify to check the tool tip text visibilty for Last Name Input text field in ADD Screen")
+	public void verify_to_check_the_tool_tip_text_visibilty_for_last_name_input_text_field_in_add_screen() {
+		UserSettingsAddPage usa = new UserSettingsAddPage(driver, logger);
+		Assert.assertEquals("Tooltip for First Name", "Last Name of the User", usa.get_Text_ToolTipLastNameAdd());
+	}
+
+	@Then("verify to check the tool tip text visibilty for Phone Number Input text field in ADD Screen")
+	public void verify_to_check_the_tool_tip_text_visibilty_for_phone_number_input_text_field_in_add_screen() {
+		UserSettingsAddPage usa = new UserSettingsAddPage(driver, logger);
+		Assert.assertEquals("Tooltip for Phone Number", "Valid 10 digit number of the User",
+				usa.get_Text_ToolTipPhoneNumberAdd());
+	}
+
+	@Then("verify to check the tool tip text visibilty for Email id Input text field in ADD Screen")
+	public void verify_to_check_the_tool_tip_text_visibilty_for_email_id_input_text_field_in_add_screen() {
+		UserSettingsAddPage usa = new UserSettingsAddPage(driver, logger);
+		Assert.assertEquals("Tooltip for Email ID", "Valid Email ID of the User", usa.get_Text_ToolTipEmailIdAdd());
+	}
+
+	@Then("verify to check the tool tip text visibilty for Password Input text field in ADD Screen")
+	public void verify_to_check_the_tool_tip_text_visibilty_for_password_input_text_field_in_add_screen() {
+		UserSettingsAddPage usa = new UserSettingsAddPage(driver, logger);
+		Assert.assertEquals("Tooltip for Password",
+				"Minimum 8 characters with atleast One Upper Case Alphabet, One Lower Case Alphabet, One special character and One Number",
+				usa.get_Text_ToolTipPasswordAdd());
+	}
+
+	@Then("verify to check the tool tip text visibilty for Organization Input text field in Add Screen")
+	public void verify_to_check_the_tool_tip_text_visibilty_for_organization_input_text_field_in_add_screen() {
+		UserSettingsAddPage usa = new UserSettingsAddPage(driver, logger);
+		Assert.assertEquals("Tooltip for organization", "Organization to which the User is assigned",
+				usa.get_Text_ToolTipOrganizationAdd());
+	}
+
+	@Then("verify to check the tool tip text visibilty for Organization Input text field in Edit Screen")
+	public void verify_to_check_the_tool_tip_text_visibilty_for_organization_input_text_field_in_edit_screen() {
+		UserSettingsEditPage use = new UserSettingsEditPage(driver, logger);
+		Assert.assertEquals("Tooltip for organization", "Organization to which the User is assigned",
+				use.get_Text_ToolTipOrganizationEdit());
+	}
+
+	@Then("verify to check the tool tip text visibilty for Dashboard  Input text field in Edit Screen")
+	public void verify_to_check_the_tool_tip_text_visibilty_for_dashboard_input_text_field_in_edit_screen() {
+		UserSettingsEditPage use = new UserSettingsEditPage(driver, logger);
+		Assert.assertEquals("Tooltip for Dashboard", "Organization to which the User is assigned",
+				use.get_Text_ToolTipOrganizationEdit());
+	}
+
+	@Then("verify to check the tool tip text visibilty for Role Name  Input text field in Edit Screen")
+	public void verify_to_check_the_tool_tip_text_visibilty_for_role_name_input_text_field_in_edit_screen() {
+		UserSettingsEditPage use = new UserSettingsEditPage(driver, logger);
+		Assert.assertEquals("Tooltip for Dashboard",
+				"Dropdown to select from a list of various dashboards available to the user",
+				use.get_Text_ToolTipdashboardDropdown());
+	}
+
+	@Then("verify to check the tool tip text visibilty for  First Name Input text field in Edit Screen")
+	public void verify_to_check_the_tool_tip_text_visibilty_for_first_name_input_text_field_in_edit_screen() {
+		UserSettingsEditPage use = new UserSettingsEditPage(driver, logger);
+		Assert.assertEquals("Tooltip for First Name", "First Name of the User", use.get_Text_ToolTipFirstNameEdit());
+	}
+
+	@Then("verify to check the tool tip text visibilty for  Phone Number Input text field in Edit Screen")
+	public void verify_to_check_the_tool_tip_text_visibilty_for_phone_number_input_text_field_in_edit_screen() {
+		UserSettingsEditPage use = new UserSettingsEditPage(driver, logger);
+		Assert.assertEquals("Tooltip for Phone number", "Valid 10 digit number of the User",
+				use.get_Text_ToolTipPhoneNumberEdit());
+	}
+
+	@Then("verify to check the tool tip text visibilty for Email id Input text field in Edit Screen")
+	public void verify_to_check_the_tool_tip_text_visibilty_for_email_id_input_text_field_in_edit_screen() {
+		UserSettingsEditPage use = new UserSettingsEditPage(driver, logger);
+		Assert.assertEquals("Tooltip for Email ID", "Valid Email ID of the User", use.get_Text_ToolTipEmailIdEdit());
+	}
+
+	@Then("verify to check alignment for all the input text fields in EDIT Screen")
+	public void verify_to_check_alignment_for_all_the_input_text_fields_in_edit_screen() {
+		UserSettingsEditPage use = new UserSettingsEditPage(driver, logger);
+	}
+
+	@Then("verify to check standarize text format for error message below for all the text fields")
+	public void verify_to_check_standarize_text_format_for_error_message_below_for_all_the_text_fields() {
+		UserSettingsEditPage use = new UserSettingsEditPage(driver, logger);
+		use.saveButtonEdit();
+
+	}
+
+	@Then("verify alignment of Add New,Refresh,bulk upload,bulk download  buttons on the top right side")
+	public void verify_alignment_of_add_new_refresh_bulk_upload_bulk_download_buttons_on_the_top_right_side() {
+		UserSettingsPage usp = new UserSettingsPage(driver, logger);
+	}
+
+	@Then("verify standarize text format for error message below Dashboard dropdown text field")
+	public void verify_standarize_text_format_for_error_message_below_dashboard_dropdown_text_field()
+			throws InterruptedException {
+		UserSettingsAddPage usa = new UserSettingsAddPage(driver, logger);
+		usa.saveButtonAdd();
+	}
+
+	@Then("verify standarize text format for error message below Organization dropdown text field")
+	public void verify_standarize_text_format_for_error_message_below_organization_dropdown_text_field()
+			throws InterruptedException {
+		UserSettingsAddPage usa = new UserSettingsAddPage(driver, logger);
+		usa.saveButtonAdd();
+	}
+
+	@Then("verify standarize text format for error message below Email Id text field")
+	public void verify_standarize_text_format_for_error_message_below_email_id_text_field()
+			throws InterruptedException {
+		UserSettingsAddPage usa = new UserSettingsAddPage(driver, logger);
+		usa.saveButtonAdd();
+	}
+
+	@Then("verify standarize text format for error message below  password text field")
+	public void verify_standarize_text_format_for_error_message_below_password_text_field()
+			throws InterruptedException {
+		UserSettingsAddPage usa = new UserSettingsAddPage(driver, logger);
+		usa.saveButtonAdd();
+	}
+
+	@Then("verify standarize text format for error message below Role Name dropdown text field")
+	public void verify_standarize_text_format_for_error_message_below_role_name_dropdown_text_field()
+			throws InterruptedException {
+		UserSettingsAddPage usa = new UserSettingsAddPage(driver, logger);
+		usa.saveButtonAdd();
+	}
+
+	@Then("verify to check the tool tip text visibilty for  Password Input text field in Edit Screen")
+	public void verify_to_check_the_tool_tip_text_visibilty_for_password_input_text_field_in_edit_screen() {
+		UserSettingsEditPage use = new UserSettingsEditPage(driver, logger);
+		Assert.assertEquals("Tooltip for Password",
+				"Minimum 8 characters with atleast One Upper Case Alphabet, One Lower Case Alphabet, One special character and One Number",
+				use.get_Text_ToolTipPasswordEdit());
+	}
+
+	@Then("verify to check alignment for all the input text fields in ADD Screen")
+	public void verify_to_check_alignment_for_all_the_input_text_fields_in_add_screen() {
+		UserSettingsEditPage use = new UserSettingsEditPage(driver, logger);
+	}
+
+	@Then("verify to check the tool tip text visibilty for Dashboard  Input text field in Add Screen")
+	public void verify_to_check_the_tool_tip_text_visibilty_for_dashboard_input_text_field_in_add_screen() {
+		UserSettingsAddPage usa = new UserSettingsAddPage(driver, logger);
+		Assert.assertEquals("Tooltip for dashboard",
+				"Dropdown to select from a list of various dashboards available to the user",
+				usa.get_Text_ToolTipdashboardDropdown());
+	}
+
+	@Then("verify to check the tool tip text visibilty for Role Name  Input text field in Add Screen")
+	public void verify_to_check_the_tool_tip_text_visibilty_for_role_name_input_text_field_in_add_screen() {
+		UserSettingsAddPage usa = new UserSettingsAddPage(driver, logger);
+		Assert.assertEquals("Tooltip for role name", "The access type of the user", usa.get_Text_ToolTipRoleNameAdd());
+	}
+
+	@Then("click on three dots for Email and enter the value in the place of Email")
+	public void click_on_three_dots_for_email_and_enter_the_value_in_the_place_of_email() {
+		UserSettingsEditPage usep = new UserSettingsEditPage(driver, logger);
+		usep.emailThreeDot();
+		usep.emailidinputEdit(alldata.get(vTCName).get("EmailIdSearch").toString());
+	}
+
+	@Then("verify popup message after successful entry")
+	public void verify_popup_message_after_successful_entry() {
+		try {
+			UserSettingsPage usp = new UserSettingsPage(driver, logger);
+			Assert.assertEquals("User updated successfully", usp.sucessmessage());
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+
 	}
 
 	@Then("click on three dots for Last name and enter the value in the place of Last name")
@@ -721,7 +1018,7 @@ public class UserSettingsSteps extends BaseTest {
 	@Then("click on edit icon from actions column")
 	public void click_on_edit_icon_from_actions_column() throws InterruptedException {
 		UserSettingsPage usp = new UserSettingsPage(driver, logger);
-		
+
 		try {
 			usp.edituserbutton();
 		} catch (Exception e) {

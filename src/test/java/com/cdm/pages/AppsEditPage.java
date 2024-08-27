@@ -101,13 +101,15 @@ public class AppsEditPage extends CommonActions {
 
 	
 public void saveapp() throws InterruptedException {
-	Thread.sleep(3000);
+	
+	//clickElement(saveAddDataBtn, "");
 	JavascriptExecutor js = (JavascriptExecutor) driver;
 	js.executeScript("document.querySelector(\".addButton\").click()");
 }
 
 public void cancelapp() {
-	cancel.click();
+	//cancel.click();
+	clickElement(cancel, "");
 }
 	public void applicationName(String value) {
 		
@@ -229,6 +231,22 @@ public void cancelapp() {
 		return appDisplayNameText;
 	}
 	
+	@FindBy(css = ".cdk-overlay-container")
+	WebElement viewVolumeDetailsToolTip;
+	
+	@FindBy(xpath = "//tbody/tr[1]/td[5]/img[1]")
+	WebElement viewVolumeDetails;
+	
+	public String get_Text_ToolTipviewVolumeDetails() {
+		mouseHover(viewVolumeDetails);
+
+		String viewVolumeDetailsToolTipText = viewVolumeDetailsToolTip.getText();
+
+		viewVolumeDetailsToolTipText.trim();
+
+		return viewVolumeDetailsToolTipText;
+	}
+	
 	
 	public String get_Text_ToolTipRepositoryLink() {
 		mouseHover(repositoryLink);
@@ -344,6 +362,20 @@ public void cancelapp() {
 		return removalofEneredText(rootVolume);
 
 		
+	}
+	@FindBy(css = ".cdk-overlay-container")
+	WebElement repositoryLinkNameToolTip;
+	
+	@FindBy(xpath = "//input[@formcontrolname='repositorylink']")
+	WebElement repositoryLinkName;
+	
+	public String get_Text_ToolTipRepositoryLinkName() {
+		mouseHover(repositoryLinkName);
+	String repositoryLinkNameToolTipText = repositoryLinkNameToolTip.getText();
+
+		System.out.println("toolTipText-->" + repositoryLinkNameToolTipText);
+		return repositoryLinkNameToolTipText;
+
 	}
 	
 }

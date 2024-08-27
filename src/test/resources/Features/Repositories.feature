@@ -2,41 +2,31 @@
 
 Feature: REPOSITORIES
 
-#
-#@Test
-#
-#Scenario: TC01_Verification of Browser Compatibility of Repositories module of the application
-#Given User launch application in chrome browser
-#Then click on login button on home page
-#When user enters credentials and click on login button
-#Then Click on Settings module from side menu bar
-#Then Click on switching to Repositories tab
 
 @Test
 
-Scenario: TC02_Verification of resizing the Repositories module as per different zoom levels
+Scenario: TC01_Verification of Browser Compatibility of Repositories module of the application
 Given User launch application in chrome browser
 Then click on login button on home page
 When user enters credentials and click on login button
 Then Click on Settings module from side menu bar
 Then Click on switching to Repositories tab
 
+@Test
+Scenario: TC02_Verification of resizing the Repositories module as per different zoom levels
+Given User launch application in chrome browser
+Then click on login button on home page
+When user enters credentials and click on login button
+Then Click on Settings module from side menu bar
+Then Click on switching to Repositories tab
 Then Try increasing & decreasing the Zoom% (from 50% to 150%) from browsers.
 
-
-
 @Test
-
 Scenario: TC03_Verification of viewing the Repositories table details by Super admin/Admin user
-
 Given User launch application in chrome browser
-
 Then click on login button on home page
-
 When user enters credentials and click on login button
-
 Then Click on Settings module from side menu bar
-
 Then Click on switching to Repositories tab
 
 
@@ -144,24 +134,12 @@ Then After pagination all default records will display in Last page.
 @Test
 
 Scenario: TC09_Verification of Pagination using Forward button functionality in the Repositories  List screen
-
 Given User launch application in chrome browser
-
 Then click on login button on home page
-
 When user enters credentials and click on login button
-
 Then Click on Settings module from side menu bar
-
 Then Click on switching to Repositories tab
-
 Then After pagination all default records will display in Next page.
-
-
-
-
-
-
 
 @Test
 
@@ -1123,7 +1101,6 @@ Given User launch application in chrome browser
 Then click on login button on home page
 When user enters credentials and click on login button
 Then Click on Settings module from side menu bar
-
 Then Click on switching to Repositories tab
 Then verify visibilty duration to load the page
 
@@ -1133,7 +1110,6 @@ Given User launch application in chrome browser
 Then click on login button on home page
 When user enters credentials and click on login button
 Then Click on Settings module from side menu bar
-
 Then Click on switching to Repositories tab
 Then verify visibilty the input field format
 
@@ -1143,17 +1119,15 @@ Given User launch application in chrome browser
 Then click on login button on home page
 When user enters credentials and click on login button
 Then Click on Settings module from side menu bar
-
 Then Click on switching to Repositories tab
 Then verify alignment of Add New,Refresh buttons on the top right side
 
 @Test
 Scenario: TC64_Verfication of visualization of icons in action columns 
-Given User launch application in chrome browse
+Given User launch application in chrome browser
 Then click on login button on home page
 When user enters credentials and click on login button
 Then Click on Settings module from side menu bar
-
 Then Click on switching to Repositories tab
 Then verify visualization of icons in action column
 
@@ -1173,7 +1147,6 @@ Given User launch application in chrome browser
 Then click on login button on home page
 When user enters credentials and click on login button
 Then Click on Settings module from side menu bar
-
 Then Click on switching to Repositories tab
 Then verify accessible the page by using mobile network
 
@@ -1183,7 +1156,6 @@ Given User launch application in chrome browser
 Then click on login button on home page
 When user enters credentials and click on login button
 Then Click on Settings module from side menu bar
-
 Then Click on switching to Repositories tab
 Then verify page accessible the screen by using wi-fi network
 
@@ -1216,7 +1188,6 @@ Given User launch application in chrome browser
 Then click on login button on home page
 When user enters credentials and click on login button
 Then Click on Settings module from side menu bar
-
 Then Click on switching to Repositories tab
 Then verify filter icon visibility for Data Storage Index
 
@@ -1247,7 +1218,6 @@ Given User launch application in chrome browser
 Then click on login button on home page
 When user enters credentials and click on login button
 Then Click on Settings module from side menu bar
-
 Then Click on switching to Repositories tab
 Then verify visibilty duration to load the page
 
@@ -1258,7 +1228,6 @@ Given User launch application in chrome browser
 Then click on login button on home page
 When user enters credentials and click on login button
 Then Click on Settings module from side menu bar
-
 Then Click on switching to Repositories tab
 Then verify visibilty the input field format
 
@@ -1279,7 +1248,6 @@ Given User launch application in chrome browser
 Then click on login button on home page
 When user enters credentials and click on login button
 Then Click on Settings module from side menu bar
-
 Then Click on switching to Repositories tab
 Then verify filter icon visibility for Data Storage Index
 
@@ -1290,7 +1258,6 @@ Given User launch application in chrome browser
 Then click on login button on home page
 When user enters credentials and click on login button
 Then Click on Settings module from side menu bar
-
 Then Click on switching to Repositories tab
 Then verify filter icon visibility for UserName
 
@@ -1300,7 +1267,6 @@ Given User launch application in chrome browser
 Then click on login button on home page
 When user enters credentials and click on login button
 Then Click on Settings module from side menu bar
-
 Then Click on switching to Repositories tab
 Then verify filter icon visibility for Status
 
@@ -1330,7 +1296,6 @@ Given User launch application in chrome browser
 Then click on login button on home page
 When user enters credentials and click on login button
 Then Click on Settings module from side menu bar
-
 Then Click on switching to Repositories tab
 Then After pagination all default records will display in Last page.
 
@@ -1340,7 +1305,6 @@ Given User launch application in chrome browser
 Then click on login button on home page
 When user enters credentials and click on login button
 Then Click on Settings module from side menu bar
-
 Then Click on switching to Repositories tab
 Then After pagination all default records will display in Last page.
 
@@ -1350,7 +1314,6 @@ Given User launch application in chrome browser
 Then click on login button on home page
 When user enters credentials and click on login button
 Then Click on Settings module from side menu bar
-
 Then Click on switching to Repositories tab
 Then verify tooltip for repository name
 
@@ -1404,7 +1367,6 @@ Given User launch application in chrome browser
 Then click on login button on home page
 When user enters credentials and click on login button
 Then Click on Settings module from side menu bar
-
 Then Click on switching to Repositories tab
 Then Scroll horizontal 
 Then verify tool tip text visibilty for Delete functionality button in Actions column for repositories
@@ -1415,7 +1377,6 @@ Given User launch application in chrome browser
 Then click on login button on home page
 When user enters credentials and click on login button
 Then Click on Settings module from side menu bar
-
 Then Click on switching to Repositories tab
 Then Click on Add button icon on top right side of repositories 
 Then verify tool tip text visibilty for Repository Name Input text field in ADD Screen
@@ -1438,7 +1399,6 @@ Given User launch application in chrome browser
 Then click on login button on home page
 When user enters credentials and click on login button
 Then Click on Settings module from side menu bar
-
 Then Click on switching to Repositories tab
 Then Click on Add button icon on top right side of repositories 
 Then verify tool tip text visibilty for Repository Path Input text field in ADD Screen
@@ -1449,7 +1409,6 @@ Given User launch application in chrome browser
 Then click on login button on home page
 When user enters credentials and click on login button
 Then Click on Settings module from side menu bar
-
 Then Click on switching to Repositories tab
 Then Click on Add button icon on top right side of repositories 
 Then verify tool tip text visibilty for User Name Input text field in ADD Screen
@@ -1460,7 +1419,6 @@ Given User launch application in chrome browser
 Then click on login button on home page
 When user enters credentials and click on login button
 Then Click on Settings module from side menu bar
-
 Then Click on switching to Repositories tab
 Then Click on Add button icon on top right side of repositories 
 Then verify tool tip text visibilty for Password Input text field in ADD Screen
@@ -1520,7 +1478,6 @@ Given User launch application in chrome browser
 Then click on login button on home page
 When user enters credentials and click on login button
 Then Click on Settings module from side menu bar
-
 Then Click on switching to Repositories tab
 Then Scroll horizontal 
 Then verify to check the tool tip text visibilty for Repository Path Input text field in Edit Screen
@@ -1532,7 +1489,6 @@ Given User launch application in chrome browser
 Then click on login button on home page
 When user enters credentials and click on login button
 Then Click on Settings module from side menu bar
-
 Then Click on switching to Repositories tab
 Then Scroll horizontal 
 Then verify tool tip text visibilty for User Name Input text field in Edit Screen
@@ -1543,7 +1499,6 @@ Given User launch application in chrome browser
 Then click on login button on home page
 When user enters credentials and click on login button
 Then Click on Settings module from side menu bar
-
 Then Click on switching to Repositories tab
 Then Scroll horizontal
 Then click on Edit button to edit repositories
@@ -1556,7 +1511,6 @@ Given User launch application in chrome browser
 Then click on login button on home page
 When user enters credentials and click on login button
 Then Click on Settings module from side menu bar
-
 Then Click on switching to Repositories tab
 Then verify alignment for maximise and minimize the screen
 
@@ -1566,7 +1520,6 @@ Given User launch application in chrome browser
 Then click on login button on home page
 When user enters credentials and click on login button
 Then Click on Settings module from side menu bar
-
 Then Click on switching to Repositories tab
 Then verify to check the text varbaige for all the input labels text field
 
@@ -1576,7 +1529,6 @@ Given User launch application in chrome browser
 Then click on login button on home page
 When user enters credentials and click on login button
 Then Click on Settings module from side menu bar
-
 Then Click on switching to Repositories tab
 Then verify to check the text varbaige for all the input labels text field
 
@@ -1676,7 +1628,6 @@ Given User launch application in chrome browser
 Then click on login button on home page
 When user enters credentials and click on login button
 Then Click on Settings module from side menu bar
-
 Then Click on switching to Repositories tab
 Then verify alignment for all the input text fields in EDIT Screen
 
@@ -1686,7 +1637,6 @@ Given User launch application in chrome browser
 Then click on login button on home page
 When user enters credentials and click on login button
 Then Click on Settings module from side menu bar
-
 Then Click on switching to Repositories tab
 Then Click on Add button icon on top right side of repositories
 Then verify standarize text format for error message below for all the text fields
@@ -1697,7 +1647,6 @@ Given User launch application in chrome browser
 Then click on login button on home page
 When user enters credentials and click on login button
 Then Click on Settings module from side menu bar
-
 Then Click on switching to Repositories tab
 Then Click on Add button icon on top right side of repositories
 Then verify standarize text format for error message below for all the text fields

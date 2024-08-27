@@ -6,13 +6,10 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -217,7 +214,7 @@ public class LicensesPage extends CommonActions {
 	}
 
 	public void calenderIcon() {
-		
+
 		clickElement(calenderIcon, "");
 		//calenderIcon.click();
 	}
@@ -345,7 +342,7 @@ public class LicensesPage extends CommonActions {
 
 	public void licenseTrackerIcon() {
 		clickElement(licenseTrackerIcon, "");
-		
+
 	}
 
 	public void bulkDownloadIcon() {
@@ -360,7 +357,7 @@ public class LicensesPage extends CommonActions {
 
 	public void inActiveCheckBox() {
 		clickElement(inActiveCheckBox, "");
-		
+
 	}
 
 	public void bulkDownloadButton() {
@@ -501,11 +498,12 @@ public class LicensesPage extends CommonActions {
 	@FindBy(css = ".cdk-overlay-container")
 	WebElement licenseDeploymentTooltip;
 
-	public String get_Text_ToolTipHostID() {
+	public String get_Text_ToolTipHostID() throws InterruptedException {
 		mouseHover(hostID);
 
 		String hostIDToolTipText = hostIDToolTip.getText();
 
+		Thread.sleep(2000);
 		hostIDToolTipText.trim();
 
 		return hostIDToolTipText;
@@ -821,7 +819,7 @@ public class LicensesPage extends CommonActions {
 	public void deploymentDateArrowFilter() {
 		clickElement(deploymentDateArrowFilter, "");
 	}
-	
+
 	public void expiryDateArrowFilter() {
 		clickElement(expiryDateArrowFilter, "");
 	}

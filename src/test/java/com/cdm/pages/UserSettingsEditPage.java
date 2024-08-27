@@ -49,7 +49,7 @@ public class UserSettingsEditPage extends CommonActions {
 	@FindBy(xpath = "//mat-select[@formcontrolname='rolemasterid']")
 	WebElement roleNameEdit;
 
-	@FindBy(xpath = "//button[@class='addButton']")
+	@FindBy(xpath = "//button[@class='EditButton']")
 	WebElement saveButtonEdit;
 
 	@FindBy(xpath = "//button[contains(text(),'Cancel')]")
@@ -59,48 +59,48 @@ public class UserSettingsEditPage extends CommonActions {
 	WebElement headingTitleEdit;
 
 	public void headingTitleEdit() {
-		clickElement(headingTitleEdit,"");
-		//headingTitleEdit.click();
+		clickElement(headingTitleEdit, "");
+		// headingTitleEdit.click();
 	}
 
 	public void firstNameinputEdit(String value) {
-		SetInputENterKey(firstNameInputEdit,"");
+		SetInputENterKey(firstNameInputEdit, "");
 		SetInput(firstNameInputEdit, value, value);
-		
+
 //		firstNameInputEdit.sendKeys(Keys.ENTER);
 //		firstNameInputEdit.sendKeys(value);
 	}
 
 	public void lastNameinputEdit(String value) {
-		SetInputENterKey(lastNameInputEdit,"");
+		SetInputENterKey(lastNameInputEdit, "");
 		SetInput(lastNameInputEdit, value, value);
 //		lastNameInputEdit.sendKeys(Keys.ENTER);
 //		lastNameInputEdit.sendKeys(value);
 	}
 
 	public void phoneNumberInputEdit(String value) {
-		SetInputENterKey(phoneNumberInputEdit,"");
+		SetInputENterKey(phoneNumberInputEdit, "");
 		SetInput(phoneNumberInputEdit, value, value);
 //		phoneNumberInputEdit.sendKeys(Keys.ENTER);
 //		phoneNumberInputEdit.sendKeys(value);
 	}
 
 	public void emailidinputEdit(String value) {
-		SetInputENterKey(phoneNumberInputEdit,"");
+		SetInputENterKey(phoneNumberInputEdit, "");
 		SetInput(phoneNumberInputEdit, value, value);
 //		emailidInputEdit.sendKeys(Keys.ENTER);
 //		emailidInputEdit.sendKeys(value);
 	}
 
 	public void passwordInputEdit(String value) {
-		SetInputENterKey(passwordInputEdit,"");
+		SetInputENterKey(passwordInputEdit, "");
 		SetInput(passwordInputEdit, value, value);
 //		passwordInputEdit.sendKeys(Keys.ENTER);
 //		passwordInputEdit.sendKeys(value);
 	}
 
 	public void roleNameinputEdit(String value) {
-		SetInputENterKey(roleNameEdit,"");
+		SetInputENterKey(roleNameEdit, "");
 		SetInput(roleNameEdit, value, value);
 //		roleNameEdit.sendKeys(Keys.ENTER);
 //		roleNameEdit.sendKeys(value);
@@ -122,12 +122,12 @@ public class UserSettingsEditPage extends CommonActions {
 	}
 
 	public void saveButtonEdit() {
-		clickElement(saveButtonEdit,"");
-		//saveButtonEdit.click();
+		clickElement(saveButtonEdit, "");
+		// saveButtonEdit.click();
 	}
 
 	public void cancelButtonEdit() {
-		clickElement(cancelButtonEdit,"");
+		clickElement(cancelButtonEdit, "");
 		cancelButtonEdit.click();
 	}
 
@@ -271,6 +271,141 @@ public class UserSettingsEditPage extends CommonActions {
 
 	public void moveSliderCondition(String m) {
 		moveSliderCondition(sliderOnCheckBox, sliderOnCheckBoxLabel, m);
+	}
+
+	@FindBy(xpath = "//input[@formcontrolname='firstname']")
+	WebElement firstNameEditLabel;
+
+	@FindBy(css = ".cdk-overlay-container")
+	WebElement firstNameEditToolTip;
+	
+	@FindBy(xpath = "//input[@formcontrolname='lastname']")
+	WebElement lastNameEditLabel;
+
+	@FindBy(css = ".cdk-overlay-container")
+	WebElement lastNameEditToolTip;
+	
+	
+	@FindBy(xpath = "//input[@formcontrolname='contact']")
+	WebElement phoneNumberEditLabel;
+
+	@FindBy(css = ".cdk-overlay-container")
+	WebElement phoneNumberEditToolTip;
+	
+	
+	@FindBy(xpath = "//input[@formcontrolname='emailid']")
+	WebElement emailIDEditLabel;
+
+	@FindBy(css = ".cdk-overlay-container")
+	WebElement emailIDEditToolTip;
+	
+
+	@FindBy(xpath = "//input[@formcontrolname='password']")
+	WebElement passwordEditLabel;
+
+	@FindBy(css = ".cdk-overlay-container")
+	WebElement passwordEditToolTip;
+	
+	@FindBy(xpath = "//mat-select[@formcontrolname='orgid']")
+	WebElement organizationEditLabel;
+
+	@FindBy(css = ".cdk-overlay-container")
+	WebElement dashboardEditToolTip;
+	
+
+	@FindBy(css = ".cdk-overlay-container")
+	WebElement organizationEditToolTip;
+	
+	public String get_Text_ToolTipFirstNameEdit() {
+	
+		mouseHover(firstNameEditLabel);
+
+		String firstNameEditToolTipText = firstNameEditToolTip.getText();
+
+		firstNameEditToolTipText.trim();
+
+		return firstNameEditToolTipText;
+	}
+
+	public String get_Text_ToolTipLastNameEdit() {
+		
+		mouseHover(lastNameEditLabel);
+
+		String lastNameEditToolTipText = lastNameEditToolTip.getText();
+
+		lastNameEditToolTipText.trim();
+
+		return lastNameEditToolTipText;
+	}
+
+	public String get_Text_ToolTipPhoneNumberEdit() {
+		mouseHover(phoneNumberEditLabel);
+
+		String phoneNumberEditToolTipText = phoneNumberEditToolTip.getText();
+
+		phoneNumberEditToolTipText.trim();
+
+		return phoneNumberEditToolTipText;
+	}
+
+	public String get_Text_ToolTipEmailIdEdit() {
+		mouseHover(emailIDEditLabel);
+
+		String phoneNumberEditToolTipText = emailIDEditToolTip.getText();
+
+		phoneNumberEditToolTipText.trim();
+
+		return phoneNumberEditToolTipText;
+	}
+
+	public String get_Text_ToolTipPasswordEdit() {
+		mouseHover(passwordEditLabel);
+
+		String passwordEditToolTipText = passwordEditToolTip.getText();
+
+		passwordEditToolTipText.trim();
+
+		return passwordEditToolTipText;
+	}
+
+	public String get_Text_ToolTipOrganizationEdit() {
+		mouseHover(organizationEditLabel);
+
+		String organizationEditToolTipText = organizationEditToolTip.getText();
+
+		organizationEditToolTipText.trim();
+
+		return organizationEditToolTipText;
+	}
+
+	public Object get_Text_ToolTipdashboardDropdown() {
+		mouseHover(dashboardEdit);
+
+		String dashboardEditToolTipText = dashboardEditToolTip.getText();
+
+		dashboardEditToolTipText.trim();
+
+		return dashboardEditToolTipText;	
+	}
+	@FindBy(xpath = "//thead/tr[1]/th[3]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]")
+	WebElement emailThreeDot;
+
+	public void emailThreeDot() {
+		clickElement(emailThreeDot, "");
+
+	}
+
+	@FindBy(xpath = "//thead/tr[1]/th[4]/div[1]/app-filter[1]/div[1]/a[1]/mat-icon[1]")
+	WebElement roleNameThreeDot;
+
+	public void roleNameThreeDot() {
+		clickElement(roleNameThreeDot, "");
+		
+	}
+
+	public void roleNameSearchInput(String string) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

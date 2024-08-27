@@ -1,8 +1,6 @@
 package com.cdm.Stepdefinations;
 
 import java.awt.AWTException;
-import java.util.Iterator;
-import java.util.Set;
 
 import org.junit.Assert;
 import org.junit.Assume;
@@ -102,10 +100,10 @@ public class DeploymentsSteps extends BaseTest {
 			throws InterruptedException {
 		DeploymentsmodulePage dmp = new DeploymentsmodulePage(driver, logger);
 		dmp.edgeNameThreeDotDeploy();
-		
+
 		dmp.inputEdgeNameDeploy(alldata.get(vTCName).get("EdgeNameSearch").toString());
 		//dmp.backDropShowing_Div_Click();
-		
+
 	}
 
 	@Then("Click on App Name search icon i.e. three dots & enter Valid inputs into search text field of App Name")
@@ -122,11 +120,11 @@ public class DeploymentsSteps extends BaseTest {
 			throws InterruptedException {
 		DeploymentsmodulePage dmp = new DeploymentsmodulePage(driver, logger);
 		dmp.appNameDeployThreeDot();
-		
+
 		dmp.inputAppNameDeploy(alldata.get(vTCName).get("AppNameSearch").toString());
-		
+
 		dmp.backDropShowing_Div_Click();
-		
+
 		dmp.clickingonheading();
 	}
 
@@ -224,7 +222,7 @@ public class DeploymentsSteps extends BaseTest {
 			throws InterruptedException {
 		DeploymentsmodulePage dmp = new DeploymentsmodulePage(driver, logger);
 		dmp.errorThreeDotDeploy();
-		
+
 		Thread.sleep(2000);
 	    dmp.inputErrorDeploy(alldata.get(vTCName).get("ErrorSearch").toString());
 	;
@@ -289,11 +287,11 @@ public class DeploymentsSteps extends BaseTest {
 		DeploymentsmodulePage dmp = new DeploymentsmodulePage(driver, logger);
 		dmp.scrollingElementRightBar("div.example-container", "900");
 
-		
+
 			dmp.volumeNamePopUpThreeDot();
 
 		dmp.inputVolumeNameDetailsPageDeploy(alldata.get(vTCName).get("VolumeNameDetailsSearch").toString());
-	
+
 
 	}
 
@@ -495,7 +493,7 @@ public class DeploymentsSteps extends BaseTest {
 //		Thread.sleep(3000);
 //		dmp.removalofEnteredTextForStatusDetails();
 		Assume.assumeTrue("Invalid Test case as there are no serach text field associated with status column", false);
-		
+
 	}
 
 	@Then("Click on pagination part it will display default records will display")
@@ -503,9 +501,9 @@ public class DeploymentsSteps extends BaseTest {
 		Pagination p = new Pagination(driver, logger);
 		String value = alldata.get(vTCName).get("ItemPerPage").toString();
 		p.SelectPageMatOption(value);
-		
+
 		int rowPerPage = Integer.parseInt(value);
-		
+
 // Assert.assertTrue("Row count match for next page",
 // p.nextPageClickAndCountOnLastPage(rowPerPage));
 	}
@@ -607,7 +605,7 @@ public class DeploymentsSteps extends BaseTest {
 		DeploymentsmodulePage dmp = new DeploymentsmodulePage(driver, logger);
 		Assert.assertEquals("Tooltip of delete", "Delete", dmp.get_Text_ToolTipforDelete());
 	}
-	
+
 	@Then("verify alignment for maximize & minimize the screen")
 	public void verify_alignment_for_maximize_minimize_the_screen() {
 		DeploymentsmodulePage dmp = new DeploymentsmodulePage(driver, logger);
@@ -619,12 +617,12 @@ public class DeploymentsSteps extends BaseTest {
 	public void verify_tool_tip_text_visibilty_for_close_button_in_deployed_volume_details_in_history_view_screen() throws InterruptedException {
 		DeploymentsmodulePage dmp = new DeploymentsmodulePage(driver, logger);
 		dmp.infoicon();
-		
-		
+
+
 		Assert.assertEquals("Tooltip of close", "Close", dmp.get_Text_ToolTipClose());
 	}
 
-	
+
 
 	@Then("verify tool tip text visibility for Last updated")
 	public void verify_tool_tip_text_visibility_for_last_updated() {
@@ -639,15 +637,15 @@ public class DeploymentsSteps extends BaseTest {
 
 
 
-	
+
 	@Then("verify tool tip text visibility for Error")
 	public void verify_tool_tip_text_visibility_for_error() {
 		DeploymentsmodulePage dmp = new DeploymentsmodulePage(driver, logger);
-		Assert.assertEquals("Tooltip Error", "Lists any deployment errors", dmp.get_Text_ToolTipforError());
+		Assert.assertEquals("Tooltip Error", "Lists of any deployment errors", dmp.get_Text_ToolTipforError());
 	}
-	
-	
-	
+
+
+
 	@Then("Verfication to check the alignment of Refresh,bulk download & History View buttons on the top right side")
 	public void verfication_to_check_the_alignment_of_refresh_bulk_download_history_view_buttons_on_the_top_right_side() {
 		DeploymentsmodulePage dmp = new DeploymentsmodulePage(driver, logger);

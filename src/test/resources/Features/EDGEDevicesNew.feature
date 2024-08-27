@@ -1,5 +1,5 @@
-#@SheetEDGEDEVICESNEW
-#Feature: EDGE Devices
+@SheetEDGEDEVICESNEW
+Feature: EDGE Devices
 #
 #@Test
 #Scenario: TC01_Verification of Browser Compatibility of EDGE Device module of the application
@@ -385,15 +385,15 @@
 #Then Click on ADD New button on the top right side & landed on EDGE>ADD Screen
 #Then Enter numeric values to check character strength into EDGE ID text fields
 #
-#@Test
-#Scenario: TC044_Verification of the acceptance of Alphanumeric and special characters values in EDGE Name Text field in the Identity section of User Add screen by Super admin/Admin user
-#Given User launch application in chrome browser
-#Then click on login button on home page
-#When user enters credentials and click on login button
-#Then Click on EDGE Device module from side menu bar
-#And After landing on EDGE Device List screen
-#Then Click on ADD New button on the top right side & landed on EDGE>ADD Screen
-#Then Enter alphanumeric with special char values to check character strength into EDGE NAME text fields on Add Screen
+@Test
+Scenario: TC044_Verification of the acceptance of Alphanumeric and special characters values in EDGE Name Text field in the Identity section of User Add screen by Super admin/Admin user
+Given User launch application in chrome browser
+Then click on login button on home page
+When user enters credentials and click on login button
+Then Click on EDGE Device module from side menu bar
+And After landing on EDGE Device List screen
+Then Click on ADD New button on the top right side & landed on EDGE>ADD Screen
+Then Enter alphanumeric with special char values to check character strength into EDGE NAME text fields on Add Screen
 #
 #
 #@Test
@@ -544,18 +544,18 @@
 #Then verify application functionality for single select choice
 #
 #
-#@Test
-#Scenario: TC059_Verification of Single select of the Active Application for deploy of EDGE module by Super admin/Admin user  & Operator users
-#Given User launch application in chrome browser
-#Then click on login button on home page
-#And user enters credentials and click on login button
-#Then Click on EDGE Device module from side menu bar
-#And After landing on EDGE Device List screen
-#Then Click on EDGE ID search icon i.e. three dots & enter Valid inputs into search text field
-#Then After landing on EDGE Device List screen scroll horizontal
-#Then Click on Deploy apps button on the Actions column & landed on EDGE>Application Deployment screen
-#Then verify application functionality for single select choice
-#Then Verify deployment functionality
+@Test
+Scenario: TC059_Verification of Single select of the Active Application for deploy of EDGE module by Super admin/Admin user  & Operator users
+Given User launch application in chrome browser
+Then click on login button on home page
+And user enters credentials and click on login button
+Then Click on EDGE Device module from side menu bar
+And After landing on EDGE Device List screen
+Then Click on EDGE ID search icon i.e. three dots & enter Valid inputs into search text field
+Then After landing on EDGE Device List screen scroll horizontal
+Then Click on Deploy apps button on the Actions column & landed on EDGE>Application Deployment screen
+Then verify application functionality for single select choice
+Then Verify deployment functionality
 #
 #
 #@Test
@@ -1455,16 +1455,96 @@
 #Then verify tool tip text visibilty for Input text field Health card in EDIT Screen
 #
 #
-#@Test
-#Scenario: TC143_Verification to check the tool tip text visibilty for Input text field Registration card in EDIT Screen
-#Given User launch application in chrome browser
-#Then click on login button on home page
-#When user enters credentials and click on login button
-#Then Click on EDGE Device module from side menu bar
-#Then After landing on EDGE Device List screen scroll horizontal and Click on EDIT icon button
-#Then Verification to check the tool tip text visibilty for Input text field Registration card in EDIT Screen
-#
-#
+@Test
+Scenario: TC144_Verification to check the tool tip text visibilty for Input text field Deployment card in EDIT Screen
+Given User launch application in chrome browser
+Then click on login button on home page
+When user enters credentials and click on login button
+Then Click on EDGE Device module from side menu bar
+Then After landing on EDGE Device List screen scroll horizontal and Click on EDIT icon button
+Then Verification to check the tool tip text visibilty for Input text field Registration card in EDIT Screen
+
+@Test
+Scenario: TC147_Verification of alignment for maximize & minimize the screen
+Given User launch application in chrome browser
+Then click on login button on home page
+When user enters credentials and click on login button
+Then Click on EDGE Device module from side menu bar
+Then check the alignmnet for maximise and minimize the screen
+
+@Test
+Scenario: TC148_Verification of tool tip text validity for all the tool tips
+Given User launch application in chrome browser
+Then click on login button on home page
+When user enters credentials and click on login button
+Then Click on EDGE Device module from side menu bar
+And scroll horizontal to see status column
+Then After landing on EDGE Device List screen please Mousehover on EDIT icon button
+
+@Test  
+Scenario: TC149_Verification to check the multi select options while doing pagination
+Given User launch application in chrome browser
+Then click on login button on home page
+When user enters credentials and click on login button
+Then Click on EDGE Device module from side menu bar
+Then Click on Pagination is in footer Below left side
+
+@Test  
+Scenario: TC150_Verification of check the multi select options for screen
+Given User launch application in chrome browser
+Then click on login button on home page
+When user enters credentials and click on login button
+Then Click on EDGE Device module from side menu bar
+Then Click on Pagination is in footer Below left side
+
+@Test
+Scenario: TC151_Verification to check the text varbaige for all the input labels text field
+Given User launch application in chrome browser
+Then click on login button on home page
+When user enters credentials and click on login button
+Then Click on EDGE Device module from side menu bar
+And After landing on EDGE Device List screen
+Then Click on ADD New button on the top right side & landed on EDGE>ADD Screen
+Then Verification of error message verbaige for entering invalid details for Hardware Name
+
+
+@Test
+Scenario: TC152_Verification to check the content for all the error messages
+Given User launch application in chrome browser
+Then click on login button on home page
+When user enters credentials and click on login button
+Then Click on EDGE Device module from side menu bar
+And After landing on EDGE Device List screen
+Then Click on ADD New button on the top right side & landed on EDGE>ADD Screen
+Then Verification of error message verbaige for entering invalid details for Hardware Name
+
+@Test
+Scenario: TC153_Verification to check the input text field format
+Given User launch application in chrome browser
+Then click on login button on home page
+When user enters credentials and click on login button
+Then Click on EDGE Device module from side menu bar
+Then After landing on EDGE Device List screen scroll horizontal and Click on EDIT icon button
+Then verify alignment for all the input text fields in ADD Screen
+
+
+@Test
+Scenario: TC154_Verification to check the visualisation look of the table list
+Given User launch application in chrome browser
+Then click on login button on home page
+When user enters credentials and click on login button
+Then Click on EDGE Device module from side menu bar
+Then verify to check the visualisation look of the table list
+
+@Test
+Scenario: TC155_Verification to check the coloumn width uniformity
+Given User launch application in chrome browser
+Then click on login button on home page
+When user enters credentials and click on login button
+Then Click on EDGE Device module from side menu bar
+Then After landing on EDGE Device List screen scroll horizontal and Click on EDIT icon button
+Then verify to check the coloumn width uniformity
+
 #@Test
 #Scenario: TC156_Verification of alignment for all the input text fields in ADD Screen
 #Given User launch application in chrome browser

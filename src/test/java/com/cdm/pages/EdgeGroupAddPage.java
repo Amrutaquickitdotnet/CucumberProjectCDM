@@ -1,7 +1,5 @@
 package com.cdm.pages;
 
-import java.util.Set;
-
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -20,16 +18,16 @@ public class EdgeGroupAddPage extends CommonActions {
 
 	@FindBy(css = ".cdk-overlay-container")
 	WebElement healthstatusToolTip;
-	
+
 	@FindBy(xpath = "//div/mat-tooltip-component/div[contains(text(),'Close')]")
 	WebElement closeTooltip;
-	
-	
-	
-	
+
+
+
+
 	@FindBy(xpath = "//app-console-terminal/div[1]/div[2]/i")
 	WebElement closeIcon;
-	
+
 	@FindBy(xpath = "//mat-dialog-container[@id='mat-dialog-3']")
 	WebElement iconwindow;
 
@@ -108,7 +106,7 @@ public class EdgeGroupAddPage extends CommonActions {
 
 
 
-	
+
 	@FindBy(xpath = "//input[@formcontrolname='location']")
 	WebElement locationAdd;
 
@@ -173,18 +171,18 @@ public class EdgeGroupAddPage extends CommonActions {
 	WebElement saveButtonforEdgeGroup;
 
 	public void edgeGroupNameAdd(String value) {
-		
+
 		SetInputENterKey(edgeGroupNameAdd,"");
 		SetInput(edgeGroupNameAdd, value, value);
 
-		
+
 	}
 
 	public void edgeGroupIdAdd(String value) {
-		
+
 		SetInputENterKey(edgeGroupIdAdd,"");
 		SetInput(edgeGroupIdAdd, value, value);
-		
+
 //		edgeGroupIdAdd.sendKeys(Keys.ENTER);
 //		edgeGroupIdAdd.sendKeys(value);
 	}
@@ -196,7 +194,7 @@ public class EdgeGroupAddPage extends CommonActions {
 
 	public String validationMessageAppGroupwithout() {
 
-		
+
 		if (validationMessageAppGroupwithout == null) {
 			return "";
 		}
@@ -208,7 +206,7 @@ public class EdgeGroupAddPage extends CommonActions {
 
 	public String validationMessageGroupIdwithout() {
 
-		
+
 		if (validationMessageGroupIdwithout == null) {
 			return "";
 		}
@@ -220,7 +218,7 @@ public class EdgeGroupAddPage extends CommonActions {
 
 	public String validationMessageGroupId() {
 
-		
+
 
 		if (validationMessageGroupId == null) {
 			return "";
@@ -256,7 +254,7 @@ public class EdgeGroupAddPage extends CommonActions {
 
 	public String validationMessageServerPortwithout() {
 
-		
+
 		if (validationMessageServerPortwithout == null) {
 			return "";
 		}
@@ -268,7 +266,7 @@ public class EdgeGroupAddPage extends CommonActions {
 
 	public String verifyValidationMessageGroupName1() {
 
-		
+
 
 		if (validationMessageGroupName1 == null) {
 			return "";
@@ -298,7 +296,7 @@ public class EdgeGroupAddPage extends CommonActions {
 
 	public String verifyValidationMessageGroupID() {
 
-		
+
 
 		if (validationMessageGroupId == null) {
 			return "";
@@ -320,7 +318,7 @@ public class EdgeGroupAddPage extends CommonActions {
 	}
 
 	public String verifyValidationMessageGroupName() {
-		
+
 		if (validationMessageGroupName == null) {
 			return "";
 		}
@@ -356,11 +354,12 @@ public class EdgeGroupAddPage extends CommonActions {
 	}
 
 	public void DeviceActive() {
-		if (DeviceActive.isDisplayed()) {
-			System.out.println("Element is visible");
-		} else {
-			System.out.println("Element is not visible");
-		}
+		clickElement(DeviceActive, "Clicking on device Active");
+//		if (DeviceActive.isDisplayed()) {
+//			System.out.println("Element is visible");
+//		} else {
+//			System.out.println("Element is not visible");
+//		}
 
 	}
 
@@ -374,7 +373,7 @@ public class EdgeGroupAddPage extends CommonActions {
 	}
 
 	public void switchToSecondInput() {
-		
+
 		edgeGroupNameAdd.sendKeys(Keys.TAB);
 	}
 
@@ -398,7 +397,7 @@ public class EdgeGroupAddPage extends CommonActions {
 		return GroupNameAddText;
 	}
 
-	
+
 
 	public String get_Text_ToolTipHealthStatus() {
 		mouseHover(healthstatus);
@@ -491,13 +490,13 @@ public class EdgeGroupAddPage extends CommonActions {
 	}
 
 	public void maximisescreen() {
-		
+
 		driver.manage().window().maximize();
-		
+
 	}
 
 	public void minimizeScreen() {
 		driver.manage().window().minimize();
-		
+
 	}
 }
